@@ -1,4 +1,8 @@
 {
+  "build:sass:prod": "sass src/static/scss:public/static/css --style compressed",
+  "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
+  "build:prod": "npm run build:eleventy:public & npm run build:sass:public",
+
   "name": "garance",
   "version": "1.0.0",
   "description": "*G*raphe *A*rchivistique pour la *R*echerche, l'*A*ccès et la *N*avigation des *C*onnaissances *E*nhancées",
