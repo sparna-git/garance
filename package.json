@@ -1,0 +1,16 @@
+{
+  "name": "garance",
+  "version": "1.0.0",
+  "description": "*G*raphe *A*rchivistique pour la *R*echerche, l'*A*ccès et la *N*avigation des *C*onnaissances *E*nhancées",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
