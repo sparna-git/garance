@@ -1,0 +1,16 @@
+name: Eleventy Compile
+# Controls when the workflow will run
+on: [push]  
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  runs-on: ubuntu-18.04
+  steps:
+    - uses: actions/checkout@master
+    - name: Build
+      uses: TartanLlama/actions-eleventy@master
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        publish_dir: public
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        install_dependencies: true
