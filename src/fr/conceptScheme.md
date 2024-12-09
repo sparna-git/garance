@@ -9,6 +9,8 @@ permalink: "{{ locale }}/conceptScheme/{{ cs.id | notation }}/"
 
 {% set jsonScheme = metadata.scheme["@context"] | json %}
 
+{{ page.url }}
+
 <main id="ConceptScheme">
 
   <!-- Header -->
