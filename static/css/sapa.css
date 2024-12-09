@@ -1,0 +1,41 @@
+.navbar-nav .nav-link{
+    color: #111111;
+  }
+
+.dropend .dropdown-toggle{
+    color: salmon;
+    margin-left: 1em;
+  }
+
+.dropdown-item:hover{
+    background-color: lightsalmon;
+    /*color: #fff;*/
+  }
+
+.dropdown .dropdown-menu{
+    display: none;
+  }
+
+.dropdown:hover > .dropdown-menu, .dropend:hover > .dropdown-menu{
+    display: block;
+    margin-top: .125em;
+    margin-left: .125em;
+  }
+
+@media screen and (min-width:769px) {
+    .dropend:hover > .dropdown-menu{
+      position: absolute;
+      top: 0;
+      left: 100%;
+    }
+    .dropend .dropdown-toggle{
+      margin-left: .5em;
+    }
+}
+
+/** d3js tree **/
+.node text {
+    font-size: 14px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+    fill: #000;
+}

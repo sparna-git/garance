@@ -1,0 +1,17 @@
+---
+layout: main.njk
+---
+
+<div class="row">
+	<div class="col-md">
+	    <h1 class="title-Header">{{ title | i18n }}</h1>
+		<br>
+		<ul>
+			{%- for item in metadata.scheme.graph -%}
+                <li>
+					<a href="/{{ page.lang }}/conceptScheme/{{ item.id | notation  }}">{{ item.id | notation }} : {{ item.dctitle | Label(locale) }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} Concepts</small>
+				</li>
+			{%- endfor-%}
+		</ul>
+    </div>
+</div>

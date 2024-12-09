@@ -1,11 +1,7 @@
 {
-  "build:sass:prod": "sass src/static/scss:public/static/css --style compressed",
-  "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
-  "build:prod": "npm run build:eleventy:public & npm run build:sass:public",
-
   "name": "garance",
   "version": "1.0.0",
-  "description": "*G*raphe *A*rchivistique pour la *R*echerche, l'*A*ccès et la *N*avigation des *C*onnaissances *E*nhancées",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
@@ -14,7 +10,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "awesomplete": "^1.1.5",
+    "d3": "^7.9.0",
+    "d3-request": "^1.0.6",
+    "eleventy-plugin-i18n": "^0.1.3",
+    "jsonld": "^8.3.2",
+    "nunjucks": "^3.2.4",
+    "rdf-parse": "^2.3.3",
+    "rdf-serialize": "^2.2.3",
+    "streamify-string": "^1.0.1"
   }
 }
