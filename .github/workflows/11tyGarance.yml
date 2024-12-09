@@ -12,8 +12,7 @@ jobs:
           node-version: "18"
       - name: Install dependencies & build
         run: |
-          npm ci
-          npm run build 
+          npm ci 
           
       - name: Persist npm cache
         uses: actions/cache@v3
@@ -27,8 +26,7 @@ jobs:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
 
-      #- run: npm install
-      #- run: npm run build-ghpages
+      - run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
