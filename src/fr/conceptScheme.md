@@ -4,7 +4,7 @@ pagination:
     data: metadata.scheme.graph
     size: 1
     alias: cs
-permalink: "{{ locale }}/conceptScheme/{{ cs.id | notation | slugify }}/"
+permalink: "{{ locale }}/conceptScheme/{{ cs.id | notation }}/"
 ---
 
 {% set jsonScheme = metadata.scheme["@context"] | json %}
