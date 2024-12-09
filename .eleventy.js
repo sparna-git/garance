@@ -16,7 +16,6 @@ const translations = require('./src/_data/i18n');
 
 AssetCache.concurrency = 4;
 
-
 module.exports = function (eleventyConfig) {
 
   eleventyConfig.setNunjucksEnvironmentOptions({
@@ -31,13 +30,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("getId", async function (dataset,concept) {
 
-    console.log("***************"+ concept +"***************")
-    
     const data = [dataset]
     var result = data.find(x => x.id === concept)
     const jsonResult = result["skos:inScheme"]
     const reponse = jsonResult.split(":")[1]
-    console.log("========== "+reponse+" ==========")
     
     return reponse
   });
