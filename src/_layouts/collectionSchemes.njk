@@ -9,7 +9,7 @@ layout: main.njk
 		<ul>
 			{%- for item in metadata.scheme.graph -%}
                 <li>
-					<a href="/{{ page.lang }}/conceptScheme/{{ item.id | notation  }}">{{ item.id | notation }} : {{ item.dctitle | Label(locale) }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} Concepts</small>
+					<a href="/garance/{{ page.lang }}/conceptScheme/{{ item.id | notation  }}">{{ item.id | notation }} : {{ item.dctitle | Label(locale) }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} Concepts</small>
 				</li>
 			{%- endfor-%}
 		</ul>
