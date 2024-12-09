@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-witdth">
+        <title>Archives Nationales</title>
+
+        <!-- bootsrap -->
+        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">     
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <!-- awesomplete -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.css" 
+            integrity="sha512-JcmylNmvdZJ8UcYcSDFWhvE6DwI8bKcnPKvBlwU2w/aRJ6qiZErv1Ixq99ykZgy3cCSp+QJp9su5buNLQjytng==" 
+            crossorigin="anonymous" 
+            referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.js" 
+            integrity="sha512-t3zV/oAkSZUrvb/7p1q1+uh/i56JinQ+bmiulnHhbHZc7dq09CxJ1BByyi7A4+lF76+CcJtSVFtb7na7Oe7Cgg==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <!-- anchors -->
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+        <!-- d3js -->
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        
+        <!-- bootstrap icons -->
+        <script src=" https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/js/all.min.js "></script>
+        <link href=" https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/fontawesome.min.css " rel="stylesheet">
+
+        <!-- css -->
+        <style type="text/css">
+            .navbar-nav li:hover > ul.dropdown-menu {
+                display: block;
+            }
+            .dropdown-submenu {
+                position:relative;
+            }
+            .dropdown-submenu > .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top:-6px;
+            }
+
+            /* rotate caret on hover */
+            .dropdown-menu > li > a:hover:after {
+                text-decoration: underline;
+                transform: rotate(-90deg);
+            }
+
+            /* title */
+            .h1 > title-Header {
+                display: contents;
+            }
+
+            /** Diagram ***/
+            .link {
+                fill: none;
+                stroke: #555;
+                stroke-opacity: 0.2;
+                stroke-width: 2px;
+            }
+            svg {
+                border: none;
+            }
+
+            /* fil d'ariane */
+            .container .breadcrumb {
+                border: none;
+                border-radius: 0;
+                /*border-bottom: 1px solid #ccc;*/
+            }
+
+            .breadcrumb ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .breadcrumb li:not(:last-child)::after {
+                display: inline-block;
+                margin: 0 0.25rem;
+                content: " > ";
+            }
+
+            /* so that the main body content is not hidden by the navbar */
+            body {
+                padding-top: 80px;
+            }
+
+            /* so that the anchor is not hidden by the navbar when deep-linking */
+            html {
+                scroll-padding-top: 60px;
+            }
+
+            /* background of navbar */
+            .bg-performing-arts {
+                background-color: #083658;
+            }
+
+            /* concepts number */
+            .numConcepts {
+                font-size: small;
+                font-style: italic;
+            }
+
+            /* so that URI sticks to the title */
+            .ConceptScheme-title {
+                margin-bottom:-0.06em;
+            }
+
+            /* so that URI sticks to the title */
+            .concept-title {
+                margin-bottom:-0.2em;
+            }
+
+            /* make the URI smaller */
+            .concept-URI {
+                font-size:85%;
+            }
+
+            /* so that autocompletions mark text stay black even though we use a dark theme */
+            mark {
+                color: rgb(34, 34, 34);
+            }
+
+            .footerSAPA {
+                font-size: 0.8em;
+                font-style: italic;
+                color: #B0B0B0;
+                text-align: center;
+            }            
+        </style>
+    </head>
+    <body>
+        <!-- Navbar menu -->
+        <nav class="navbar navbar-expand-lg fixed-top bg-performing-arts" data-bs-theme="dark"> 
+            <div class="container">
+                <a class="navbar-brand" href="/">Archives Nationales</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    TEST
+                                <a>    
+                    </ul>
+                <div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <section id = "contenu">
+                <main id="ConceptScheme">
+  <!-- Header -->
+  <div class="row">
+    <div class="col-md">
+        <h1 class="ConceptScheme-title">Thésaurus des types de lieux</h1>
+    </div>
+    <!-- URI -->
+    <p class="concept-URI">
+        <code >
+            <a href="http://data.archives-nationales.culture.gouv.fr/placeTypes">http://data.archives-nationales.culture.gouv.fr/placeTypes</a>
+        </code>          
+    </p>
+    <!-- Description -->
+    <p>Thésaurus Des Types De Lieux (entités Géo-historiques). Saisi
+            Manuellement En Se Fondant Sur Les Catégories De Lieux Sous-jacentes Ou Implicites Dans
+            Les Ri Actuels Du Sia. Des Enrichissements, Modifications De Structure Et Alignements
+            Sont Prévus.</p>
+    <br>
+  </div>
+  <hr>
+</main>
+<!-- Liste de concepts -->
+<div id="Concepts">
+  <div class="row">
+	  <div class="col-md">
+      <ul>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/%C3%A9l%C3%A9ment%20d%27hydrographie">élément d'hydrographie</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique">élément de géographie physique</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/%C3%AEle">île</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/a%C3%A9rodrome">aérodrome</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/abbaye">abbaye</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/aire%20g%C3%A9ographique%20naturelle">aire géographique naturelle</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/am%C3%A9nagement%20ou%20construction">aménagement ou construction</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/ancienne%20commune">ancienne commune française</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/arrondissement">arrondissement français</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/arrondissement%20municipal">arrondissement municipal</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/baie">baie</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/barrage">barrage</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/base%20a%C3%A9rienne">base aérienne</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/bourg">bourg</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/camp%20de%20concentration">camp de concentration</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/camp%20militaire">camp militaire</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/canal">canal</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/canton">canton français</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/cap">cap</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/ch%C3%A2teau">château</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/cimeti%C3%A8re%20militaire">cimetière militaire</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/cit%C3%A9%20sanitaire">cité sanitaire</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/col">col</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/commune">commune française</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/cours%20d%27eau">cours d'eau</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/d%C3%A9partement">département français</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/for%C3%AAt">forêt</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/fortification">fortification</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/gare%20ferroviaire">gare ferroviaire</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/gorge">gorge</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/grotte">grotte</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/h%C3%B4pital">hôpital</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/hameau">hameau</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/lac">lac</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/lieu-dit">lieu-dit</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/maison%20royale%20de%20sant%C3%A9">maison royale de santé</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/manoir">manoir</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/massif">massif</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/montagne">montagne</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/monument%20comm%C3%A9moratif">monument commémoratif</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/parc%20industriel">parc industriel</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/paroisse">paroisse</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/pays">pays</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/phare">phare</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/pic">pic</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/plage">plage</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/plateau">plateau</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/pointe">pointe</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/pont">pont</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/pont-canal">pont-canal</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/port">port</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/prison">prison</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/quartier">quartier</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/r%C3%A9gion">région française</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/sanctuaire">sanctuaire</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/site%20nucl%C3%A9aire">site nucléaire</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/sommet">sommet</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/station%20baln%C3%A9aire">station balnéaire</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/station%20de%20ski">station de ski</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/territoire%20ou%20ville%20%C3%A9tranger">territoire ou ville étranger</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/vall%C3%A9e">vallée</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/viaduc">viaduc</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/village">village</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/ville%20nouvelle">ville nouvelle</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/voie%20urbaine">voie urbaine</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/volcan">volcan</a></li></p>
+<p><li><a href="//fr/conceptScheme/placetypes/concept/placeType/zone%20naturelle">zone naturelle</a></li></p>
+<p><ul>
+</div></p>
+  </div>  
+</div>
+<script>
+  // generate anchors on each h5 title
+  anchors.options.placement = 'left';
+  anchors.options.icon = '#';
+  anchors.add('h5');
+</script>
+<!-- d3js -->
+<script type="text/javascript">
+  // recuperer tous les concepts
+  const data = [{"id":"an:placeType/%C3%A9l%C3%A9ment%20d%27hydrographie","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"narrower":[{"id":"an:placeType/lac","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"lac"}]}],"notation":null,"prefLabel":[{"@language":"fr","@value":"élément d'hydrographie"}]},{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"narrower":[{"id":"an:placeType/aire%20g%C3%A9ographique%20naturelle","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aire géographique naturelle"}]},{"id":"an:placeType/%C3%A9l%C3%A9ment%20d%27hydrographie","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément d'hydrographie"}]},{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]}],"notation":null,"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},{"id":"an:placeType/%C3%AEle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"definition":[{"@language":"fr","@value":"Masse de terre entourée d'eau de manière permanente ou\n            parfois de manière temporaire en fonction des marées. L'eau baignant les îles peut être\n            celle d'un océan, d'une mer, d'un lac ou d'un cours d'eau. Les îles peuvent être\n            temporaires (banc de sable, volcans, etc.) ou permanentes, isolées ou groupées avec\n            d'autres îles et peuvent alors former un archipel. Une petite île est parfois désignée\n            sous les termes d'îlet ou d'îlot. Les îles peuvent être reliées à d'autres îles ou à un\n            continent par une chaussée, un pont ou un tunnel (source : Wikipédia)."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"île"}]},{"id":"an:placeType/a%C3%A9rodrome","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"aérodrome"}]},{"id":"an:placeType/abbaye","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"abbaye"}]},{"id":"an:placeType/aire%20g%C3%A9ographique%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"aire géographique naturelle"}]},{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"narrower":[{"id":"an:placeType/abbaye","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"abbaye"}]},{"id":"an:placeType/ch%C3%A2teau","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"château"}]},{"id":"an:placeType/prison","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"prison"}]},{"id":"an:placeType/camp%20de%20concentration","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"camp de concentration"}]},{"id":"an:placeType/h%C3%B4pital","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"hôpital"}]},{"id":"an:placeType/maison%20royale%20de%20sant%C3%A9","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"maison royale de santé"}]},{"id":"an:placeType/canal","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"canal"}]},{"id":"an:placeType/camp%20militaire","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"camp militaire"}]},{"id":"an:placeType/station%20de%20ski","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"station de ski"}]},{"id":"an:placeType/a%C3%A9rodrome","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aérodrome"}]},{"id":"an:placeType/pont","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"pont"}]},{"id":"an:placeType/barrage","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"barrage"}]},{"id":"an:placeType/port","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"port"}]},{"id":"an:placeType/phare","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"phare"}]},{"id":"an:placeType/station%20baln%C3%A9aire","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"station balnéaire"}]},{"id":"an:placeType/gare%20ferroviaire","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"gare ferroviaire"}]},{"id":"an:placeType/cit%C3%A9%20sanitaire","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"cité sanitaire"}]},{"id":"an:placeType/fortification","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"fortification"}]},{"id":"an:placeType/parc%20industriel","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"parc industriel"}]},{"id":"an:placeType/site%20nucl%C3%A9aire","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"site nucléaire"}]},{"id":"an:placeType/base%20a%C3%A9rienne","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"base aérienne"}]},{"id":"an:placeType/cimeti%C3%A8re%20militaire","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"cimetière militaire"}]},{"id":"an:placeType/monument%20comm%C3%A9moratif","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"monument commémoratif"}]},{"id":"an:placeType/manoir","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"manoir"}]},{"id":"an:placeType/sanctuaire","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"sanctuaire"}]}],"notation":null,"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},{"id":"an:placeType/ancienne%20commune","type":["Concept","rico:PlaceType"],"notation":null,"prefLabel":[{"@language":"fr","@value":"ancienne commune française"}]},{"id":"an:placeType/arrondissement","type":["Concept","rico:PlaceType"],"notation":null,"prefLabel":[{"@language":"fr","@value":"arrondissement français"}]},{"id":"an:placeType/arrondissement%20municipal","type":["Concept","rico:PlaceType"],"notation":null,"prefLabel":[{"@language":"fr","@value":"arrondissement municipal"}]},{"id":"an:placeType/baie","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"definition":[{"@language":"fr","@value":"En géographie, une baie est une échancrure du littoral mais\n            aussi de la berge d'un lac. Une baie est moins grande qu'un golfe et moins profonde\n            qu'une rade. Une baie de petite dimension est plutôt appelée anse. Si l'échancrure est\n            de très petite dimension, on parle d'une crique. En général, un ou plusieurs fleuves se\n            jettent dans une baie. (source : Wikipédia)."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"baie"}]},{"id":"an:placeType/barrage","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"barrage"}]},{"id":"an:placeType/base%20a%C3%A9rienne","type":["Concept","rico:PlaceType"],"altLabel":[{"@language":"fr","@value":"base aérienne militaire"}],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"definition":[{"@language":"fr","@value":"Aérodrome ou partie d'un aérodrome utilisée par les forces\n            armées d'un pays pour mettre en œuvre la composante aérienne\n            "}],"notation":null,"prefLabel":[{"@language":"fr","@value":"base aérienne"}]},{"id":"an:placeType/bourg","type":["Concept","rico:PlaceType"],"definition":[{"@language":"fr","@value":"Un bourg est une agglomération rurale plus importante que la\n            ville, où se tient ordinairement le marché des villages environnants1 et qui tient lieu\n            de centre administratif local (un droit de fortification existait à l'époque médiévale)\n            ce qui le distingue de la simple bourgade. On parle généralement de bourg pour désigner\n            une localité de taille intermédiaire entre le village et la ville, sans faubourg ni\n            banlieue. Sur le plan administratif, le bourg peut être le chef-lieu d'une commune dont\n            peuvent dépendre des villages et hameaux. Cependant, la fonction et l'importance\n            symbolique, économique ou politique du bourg ont pu évoluer au cours des siècles et le\n            terme même a changé de sens. Ainsi, en régions d'habitat dispersé, notamment dans les\n            régions bocagères françaises, le terme désigne simplement le chef-lieu de la commune où\n            il arrive que l'on ne trouve guère que les quelques bâtiments publics : l'église, la\n            mairie, l'école (en général fermée aujourd'hui), un commerce (souvent un\n            café-épicerie-bureau de tabac). "}],"notation":null,"prefLabel":[{"@language":"fr","@value":"bourg"}]},{"id":"an:placeType/camp%20de%20concentration","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"camp de concentration"}]},{"id":"an:placeType/camp%20militaire","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"camp militaire"}]},{"id":"an:placeType/canal","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"canal"}]},{"id":"an:placeType/canton","type":["Concept","rico:PlaceType"],"notation":null,"prefLabel":[{"@language":"fr","@value":"canton français"}]},{"id":"an:placeType/cap","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"cap"}]},{"id":"an:placeType/ch%C3%A2teau","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"château"}]},{"id":"an:placeType/cimeti%C3%A8re%20militaire","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"definition":[{"@language":"fr","@value":"Lieu où sont inhumés les soldats morts lors d'une\n            guerre"}],"notation":null,"prefLabel":[{"@language":"fr","@value":"cimetière militaire"}]},{"id":"an:placeType/cit%C3%A9%20sanitaire","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"cité sanitaire"}]},{"id":"an:placeType/col","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"col"}]},{"id":"an:placeType/commune","type":["Concept","rico:PlaceType"],"notation":null,"prefLabel":[{"@language":"fr","@value":"commune française"}]},{"id":"an:placeType/cours%20d%27eau","type":["Concept","rico:PlaceType"],"altLabel":[{"@language":"fr","@value":"cours d’eau"},{"@language":"fr","@value":"rivière"}],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20d%27hydrographie","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"élément d'hydrographie"}]},"definition":[{"@language":"fr","@value":"Tout écoulement terrestre d'eau liquide entre une source et\n            une embouchure avec un débit à module supérieur à zéro (source :\n            Wikipédia)."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"cours d'eau"}]},{"id":"an:placeType/d%C3%A9partement","type":["Concept","rico:PlaceType"],"notation":null,"prefLabel":[{"@language":"fr","@value":"département français"}]},{"id":"an:placeType/for%C3%AAt","type":["Concept","rico:PlaceType"],"altLabel":[{"@language":"fr","@value":"bois"}],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"forêt"}]},{"id":"an:placeType/fortification","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"fortification"}]},{"id":"an:placeType/gare%20ferroviaire","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"gare ferroviaire"}]},{"id":"an:placeType/gorge","type":["Concept","rico:PlaceType"],"altLabel":[{"@language":"fr","@value":"canyon"}],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"definition":[{"@language":"fr","@value":"Une gorge (appelé aussi en anglais canyon, de l'espagnol\n            cañón), est un passage encaissé entre deux reliefs résultant de l'érosion hydraulique\n            sur tout type de roche mais préférentiellement sur les sédimentaires. Une gorge\n            peut-être confondue avec une clue ou un défilé. (source : Wikipédia)."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"gorge"}]},{"id":"an:placeType/grotte","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"definition":[{"@language":"fr","@value":"En géomorphologie, une grotte est une cavité souterraine\n            naturelle comportant au moins une partie horizontale accessible. (source :\n            Wikipédia)."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"grotte"}]},{"id":"an:placeType/h%C3%B4pital","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"hôpital"}]},{"id":"an:placeType/hameau","type":["Concept","rico:PlaceType"],"altLabel":[{"@language":"fr","@value":"écart"}],"definition":[{"@language":"fr","@value":"Groupe d’habitations en milieu rural, généralement trop petit\n            pour être considéré comme un village. L’élément fondateur est très souvent une\n            ferme."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"hameau"}]},{"id":"an:placeType/lac","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20d%27hydrographie","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"élément d'hydrographie"}]},"definition":[{"@language":"fr","@value":"Étendue d'eau terrestre : bassin, étang, lac, mare (source :\n            vocabulaire IGN)."}],"exactMatch":[{"id":"http://data.ign.fr/id/codes/topo/typedezai/Lac"}],"notation":null,"prefLabel":[{"@language":"fr","@value":"lac"}]},{"id":"an:placeType/lieu-dit","type":["Concept","rico:PlaceType"],"definition":[{"@language":"fr","@value":"Lieu habité autrefois ou\n            aujourd'hui"}],"notation":null,"prefLabel":[{"@language":"fr","@value":"lieu-dit"}]},{"id":"an:placeType/maison%20royale%20de%20sant%C3%A9","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"maison royale de santé"}]},{"id":"an:placeType/manoir","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"manoir"}]},{"id":"an:placeType/massif","type":["Concept","rico:PlaceType"],"altLabel":[{"@language":"fr","@value":"massif montagneux"}],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"definition":[{"@language":"fr","@value":"Ensemble de montagnes formant un bloc continu qui suit une\n            ligne de crête, et s'oppose à une chaîne de montagnes. Il présente la particularité de\n            former un ensemble de reliefs continus, séparé souvent par des rivières, des vallées,\n            entourés d'abîmes ou des reliefs distincts (source : Wikipédia)."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"massif"}]},{"id":"an:placeType/montagne","type":["Concept","rico:PlaceType"],"altLabel":[{"@language":"fr","@value":"mont"}],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"definition":[{"@language":"fr","@value":"Forme topographique de relief positif, à la surface de\n            planètes telluriques, et faisant partie d'un ensemble — une chaîne de montagnes — ou\n            formant un relief isolé (source : Wikipédia)."}],"exactMatch":[{"id":"http://data.ign.fr/id/codes/topo/typederelief/Montagne"}],"notation":null,"prefLabel":[{"@language":"fr","@value":"montagne"}]},{"id":"an:placeType/monument%20comm%C3%A9moratif","type":["Concept","rico:PlaceType"],"altLabel":[{"@language":"fr","@value":"mémorial"}],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"definition":[{"@language":"fr","@value":"Monument érigé en souvenir d'un événement, ou / et, en\n            l’honneur d'une ou plusieurs personnes décédées (source : Wikipédia)."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"monument commémoratif"}]},{"id":"an:placeType/parc%20industriel","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"parc industriel"}]},{"id":"an:placeType/paroisse","type":["Concept","rico:PlaceType"],"definition":[{"@language":"fr","@value":"Organisation qui est originellement, dans le christianisme,\n            la subdivision de base d'un diocèse de l'Église. La paroisse occupe un rôle essentiel\n            dans la vie religieuse, elle est le lieu de culte, de célébration pour les croyants.\n            "}],"notation":null,"prefLabel":[{"@language":"fr","@value":"paroisse"}]},{"id":"an:placeType/pays","type":["Concept","rico:PlaceType"],"notation":null,"prefLabel":[{"@language":"fr","@value":"pays"}]},{"id":"an:placeType/phare","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"phare"}]},{"id":"an:placeType/pic","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"definition":[{"@language":"fr","@value":"Sommet montagneux assez pointu (source :\n            Wikipédia)."}],"exactMatch":[{"id":"http://data.ign.fr/id/codes/topo/typederelief/Pic"}],"notation":null,"prefLabel":[{"@language":"fr","@value":"pic"}]},{"id":"an:placeType/plage","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"plage"}]},{"id":"an:placeType/plateau","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"definition":[{"@language":"fr","@value":"Aire géographique où les cours d'eau sont encaissés, par\n            opposition aux plaines où les cours d'eau coulent à fleur de sol. Le relief y est peu\n            marqué, ce qui différencie un plateau d'une montagne (source :\n            Wikipédia)."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"plateau"}]},{"id":"an:placeType/pointe","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"pointe"}]},{"id":"an:placeType/pont","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"narrower":[{"id":"an:placeType/pont-canal","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"pont-canal"}]},{"id":"an:placeType/viaduc","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"viaduc"}]}],"notation":null,"prefLabel":[{"@language":"fr","@value":"pont"}]},{"id":"an:placeType/pont-canal","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/pont","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"prefLabel":[{"@language":"fr","@value":"pont"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"pont-canal"}]},{"id":"an:placeType/port","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"port"}]},{"id":"an:placeType/prison","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"prison"}]},{"id":"an:placeType/quartier","type":["Concept","rico:PlaceType"],"definition":[{"@language":"fr","@value":"partie d'une\n            ville."}],"exactMatch":[{"id":"http://data.ign.fr/id/codes/topo/typedezai/Quartier"}],"notation":null,"prefLabel":[{"@language":"fr","@value":"quartier"}]},{"id":"an:placeType/r%C3%A9gion","type":["Concept","rico:PlaceType"],"notation":null,"prefLabel":[{"@language":"fr","@value":"région française"}]},{"id":"an:placeType/sanctuaire","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"definition":[{"@language":"fr","@value":"En anthropologie religieuse, un sanctuaire (de sanctus, «\n            sacré ») est généralement un édifice ou lieu rendu (par « consécration ») ou devenu\n            sacré, par son association au Divin ou Transcendant. Le terme désigne donc un site\n            sacré. (source : Wikipédia)."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"sanctuaire"}]},{"id":"an:placeType/site%20nucl%C3%A9aire","type":["Concept","rico:PlaceType"],"altLabel":[{"@language":"fr","@value":"centrale nucléaire"}],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"site nucléaire"}]},{"id":"an:placeType/sommet","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"definition":[{"@language":"fr","@value":"Point haut du relief non caractérisé par un profil abrupt\n            (source : vocabulaire IGN)."}],"exactMatch":[{"id":"http://data.ign.fr/id/codes/topo/typederelief/Sommet"}],"notation":null,"prefLabel":[{"@language":"fr","@value":"sommet"}]},{"id":"an:placeType/station%20baln%C3%A9aire","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"station balnéaire"}]},{"id":"an:placeType/station%20de%20ski","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"station de ski"}]},{"id":"an:placeType/territoire%20ou%20ville%20%C3%A9tranger","type":["Concept","rico:PlaceType"],"notation":null,"prefLabel":[{"@language":"fr","@value":"territoire ou ville étranger"}]},{"id":"an:placeType/vall%C3%A9e","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"definition":[{"@language":"fr","@value":"Dépression géographique généralement de forme allongée et\n            façonnée dans le relief par un cours d'eau (vallée fluviale) ou un glacier (vallée\n            glaciaire) (source : Wikipédia)."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"vallée"}]},{"id":"an:placeType/viaduc","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/pont","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/am%C3%A9nagement%20ou%20construction","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"aménagement ou construction"}]},"prefLabel":[{"@language":"fr","@value":"pont"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"viaduc"}]},{"id":"an:placeType/village","type":["Concept","rico:PlaceType"],"definition":[{"@language":"fr","@value":"agglomération rurale caractérisée par un habitat plus ou\n            moins concentré, possédant des services de première nécessité et offrant une forme de\n            vie communautaire."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"village"}]},{"id":"an:placeType/ville%20nouvelle","type":["Concept","rico:PlaceType"],"definition":[{"@language":"fr","@value":"Une ville nouvelle, ville neuve ou ville planifiée est une\n            ville, ou un ensemble de communes, qui naît généralement d’une volonté politique, et qui\n            se construit peu à peu sur un emplacement auparavant peu ou pas habité (source :\n            Wikipédia)."}],"notation":null,"prefLabel":[{"@language":"fr","@value":"ville nouvelle"}]},{"id":"an:placeType/voie%20urbaine","type":["Concept","rico:PlaceType"],"notation":null,"prefLabel":[{"@language":"fr","@value":"voie urbaine"}]},{"id":"an:placeType/volcan","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]},"notation":null,"prefLabel":[{"@language":"fr","@value":"volcan"}]},{"id":"an:placeType/zone%20naturelle","type":["Concept","rico:PlaceType"],"broader":{"id":"an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"élément de géographie physique"}]},"narrower":[{"id":"an:placeType/for%C3%AAt","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"forêt"}]},{"id":"an:placeType/col","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"col"}]},{"id":"an:placeType/plage","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"plage"}]},{"id":"an:placeType/volcan","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"volcan"}]},{"id":"an:placeType/cap","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"cap"}]},{"id":"an:placeType/pointe","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"pointe"}]},{"id":"an:placeType/pic","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"pic"}]},{"id":"an:placeType/sommet","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"sommet"}]},{"id":"an:placeType/montagne","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"montagne"}]},{"id":"an:placeType/massif","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"massif"}]},{"id":"an:placeType/plateau","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"plateau"}]},{"id":"an:placeType/vall%C3%A9e","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"vallée"}]},{"id":"an:placeType/%C3%AEle","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"île"}]},{"id":"an:placeType/grotte","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"grotte"}]},{"id":"an:placeType/gorge","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"gorge"}]},{"id":"an:placeType/baie","type":["Concept","rico:PlaceType"],"prefLabel":[{"@language":"fr","@value":"baie"}]}],"notation":null,"prefLabel":[{"@language":"fr","@value":"zone naturelle"}]}]
+  /* THOMAS : il faut ajouter dans le tableau de data un noeud qui correspond à la racine de l'arbre à dessigner */
+  const conceptScheme_Header = {"id": "an:placeTypes","prefLabel":[]}
+  const title_conceptScheme = []
+  data.push(conceptScheme_Header);
+
+    // Specify the charts’ dimensions. The height is variable, depending on the layout.
+    const width = 928;
+    const marginTop = 10;
+    const marginRight = 20;
+    const marginBottom = 10;
+    const marginLeft = 40;
+
+    const root = d3.stratify()
+      .id((d) => d.id)
+      .parentId((d) => {
+        if(d.broader) {
+          return d.broader.id
+        } else { 
+          if(d.type && d.type.includes("Concept")) return data.at(-1).id;
+          else return null; 
+        }
+      })
+    (data);
+
+    const dx = 14;
+    const dy = (width - marginRight - marginLeft) / (1 + root.height);
+
+    // Define the tree layout and the shape for links.
+    const tree = d3.tree().nodeSize([dx, dy]);
+    const diagonal = d3.linkHorizontal().x(d => d.y).y(d => d.x);
+
+    // Create the SVG container, a layer for the links and a layer for the nodes.
+    const svg = d3.select("svg")
+    //.attr("width", width)
+    .attr("width", "100%")
+    //.attr("height", dx)
+    .attr("height", "80%")
+    .attr("viewBox", [-marginLeft, -marginTop, width, dx])
+    //.attr("style", "max-width: 100%; height: auto; font: 12px sans-serif;");
+    .attr("style", "max-width: 100%; font: 12px sans-serif;");
+
+    const gLink = svg.append("g")
+        .attr("fill", "none")
+        .attr("stroke", "#555")
+        .attr("stroke-opacity", 0.4)
+        .attr("stroke-width", 1.5);
+
+    const gNode = svg.append("g")
+        .attr("cursor", "pointer")
+        .attr("pointer-events", "all");
+  
+    function update(event,source) {
+        const duration = event?.altKey ? 2500 : 250; // hold the alt key to slow down the transition
+        const nodes = root.descendants().reverse();
+        const links = root.links();
+
+        // Compute the new tree layout.
+        tree(root);
+
+        let left = root;
+        let right = root;
+        root.eachBefore(node => {
+          if (node.x < left.x) left = node;
+          if (node.x > right.x) right = node;
+        });
+
+        const height = right.x - left.x + marginTop + marginBottom;
+        const transition = svg.transition()
+            .duration(duration)
+            //.attr("height", height)
+            .attr("height", "80%")
+            .attr("viewBox", [-marginLeft, left.x - marginTop, width, height])
+            .tween("resize", window.ResizeObserver ? null : () => () => svg.dispatch("toggle"));
+        
+        // Update the nodes…
+        const node = gNode.selectAll("g")
+          .data(nodes, d => d.data.id);
+
+        // Enter any new nodes at the parent's previous position.
+        const nodeEnter = node.enter().append("g")
+            .attr("transform", d => `translate(${source.y0},${source.x0})`)
+            .attr("fill-opacity", 0)
+            .attr("stroke-opacity", 0)
+            .on("click", (event, d) => {
+              d.children = d.children ? null : d._children;
+              update(event, d);
+            });
+        
+        nodeEnter.append("circle")
+          .attr("r", 2.5)
+          .attr("fill", d => d._children ? "#555" : "#999")
+          .attr("stroke-width", 10);
+
+        const nodeRef = nodeEnter.append("a")
+          .attr("href", d => "#"+d.data.notation)
+
+        nodeRef.append("text")
+            .attr("dy", "0.40em")
+            //.attr("x", d => d._children ? -6 : 6)
+            .attr("x", d => d._children ? -6 : 6)
+            .attr("text-anchor", d => d._children ? "end" : "start")
+            // .attr("text-anchor", d => d.data.prefLabel ? "end" : "start")
+            .text(d => d.data.prefLabel.filter(i => i["@language"] == "en")[0]["@value"])
+            .attr("stroke-linejoin", "round")
+            .attr("stroke-width", 3)
+            .attr("stroke", "white")
+            .attr("paint-order", "stroke");
+        
+        // Transition nodes to their new position.
+        const nodeUpdate = node.merge(nodeEnter).transition(transition)
+            .attr("transform", d => `translate(${d.y},${d.x})`)
+            .attr("fill-opacity", 1)
+            .attr("stroke-opacity", 1);
+
+        // Transition exiting nodes to the parent's new position.
+        const nodeExit = node.exit().transition(transition).remove()
+            .attr("transform", d => `translate(${source.y},${source.x})`)
+            .attr("fill-opacity", 0)
+            .attr("stroke-opacity", 0);
+
+        // Update the links…
+        const link = gLink.selectAll("path")
+          //.data(links, d => d.target.id);
+          .data(links, d => d.target.data.id.split(":")[1])
+
+        // Enter any new links at the parent's previous position.
+        const linkEnter = link.enter().append("path")
+            .attr("d", d => {
+              const o = {x: source.x0, y: source.y0};
+              return diagonal({source: o, target: o});
+            });
+        
+        // Transition links to their new position.
+        link.merge(linkEnter).transition(transition)
+            .attr("d", diagonal);
+
+        // Transition exiting nodes to the parent's new position.
+        link.exit().transition(transition).remove()
+            .attr("d", d => {
+              const o = {x: source.x, y: source.y};
+              return diagonal({source: o, target: o});
+            });
+
+        // Stash the old positions for transition.
+        root.eachBefore(d => {
+          d.x0 = d.x;
+          d.y0 = d.y;
+        });
+      }
+    
+    root.x0 = dy / 2;
+    root.y0 = 0;
+    root.descendants().forEach((d, i) => {
+      d.id = i;
+      d._children = d.children;
+    });
+
+    update(null, root);
+
+    svg.node();
+
+</script>
+            </section>
+        </div>
+    <hr>
+        
+        
+    </body>
+    <!-- footer --> 
+    <footer class="footerSAPA">
+        Last updated on 12/9/2024
+        <br />
+        <br />
+    </footer>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-witdth">
+        <title>Archives Nationales</title>
+
+        <!-- bootsrap -->
+        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">     
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        <!-- awesomplete -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.css" 
+            integrity="sha512-JcmylNmvdZJ8UcYcSDFWhvE6DwI8bKcnPKvBlwU2w/aRJ6qiZErv1Ixq99ykZgy3cCSp+QJp9su5buNLQjytng==" 
+            crossorigin="anonymous" 
+            referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.js" 
+            integrity="sha512-t3zV/oAkSZUrvb/7p1q1+uh/i56JinQ+bmiulnHhbHZc7dq09CxJ1BByyi7A4+lF76+CcJtSVFtb7na7Oe7Cgg==" 
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <!-- anchors -->
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+        <!-- d3js -->
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        
+        <!-- bootstrap icons -->
+        <script src=" https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/js/all.min.js "></script>
+        <link href=" https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/fontawesome.min.css " rel="stylesheet">
+
+        <!-- css -->
+        <style type="text/css">
+            .navbar-nav li:hover > ul.dropdown-menu {
+                display: block;
+            }
+            .dropdown-submenu {
+                position:relative;
+            }
+            .dropdown-submenu > .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top:-6px;
+            }
+
+            /* rotate caret on hover */
+            .dropdown-menu > li > a:hover:after {
+                text-decoration: underline;
+                transform: rotate(-90deg);
+            }
+
+            /* title */
+            .h1 > title-Header {
+                display: contents;
+            }
+
+            /** Diagram ***/
+            .link {
+                fill: none;
+                stroke: #555;
+                stroke-opacity: 0.2;
+                stroke-width: 2px;
+            }
+            svg {
+                border: none;
+            }
+
+            /* fil d'ariane */
+            .container .breadcrumb {
+                border: none;
+                border-radius: 0;
+                /*border-bottom: 1px solid #ccc;*/
+            }
+
+            .breadcrumb ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .breadcrumb li:not(:last-child)::after {
+                display: inline-block;
+                margin: 0 0.25rem;
+                content: " > ";
+            }
+
+            /* so that the main body content is not hidden by the navbar */
+            body {
+                padding-top: 80px;
+            }
+
+            /* so that the anchor is not hidden by the navbar when deep-linking */
+            html {
+                scroll-padding-top: 60px;
+            }
+
+            /* background of navbar */
+            .bg-performing-arts {
+                background-color: #083658;
+            }
+
+            /* concepts number */
+            .numConcepts {
+                font-size: small;
+                font-style: italic;
+            }
+
+            /* so that URI sticks to the title */
+            .ConceptScheme-title {
+                margin-bottom:-0.06em;
+            }
+
+            /* so that URI sticks to the title */
+            .concept-title {
+                margin-bottom:-0.2em;
+            }
+
+            /* make the URI smaller */
+            .concept-URI {
+                font-size:85%;
+            }
+
+            /* so that autocompletions mark text stay black even though we use a dark theme */
+            mark {
+                color: rgb(34, 34, 34);
+            }
+
+            .footerSAPA {
+                font-size: 0.8em;
+                font-style: italic;
+                color: #B0B0B0;
+                text-align: center;
+            }            
+        </style>
+    </head>
+    <body>
+        <!-- Navbar menu -->
+        <nav class="navbar navbar-expand-lg fixed-top bg-performing-arts" data-bs-theme="dark"> 
+            <div class="container">
+                <a class="navbar-brand" href="/">Archives Nationales</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    TEST
+                                <a>    
+                    </ul>
+                <div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <section id = "contenu">
+                
+<div class="row">
+	<div class="col-md">
+	    <h1 class="title-Header">Graphe Archivistique pour la Recherche, l'Accès et la Navigation des Connaissances Enhancées.</h1>
+		<br>
+		<ul><li>
+					<a href="/fr/conceptScheme/documentaryFormTypes">documentaryFormTypes : Thésaurus des types de documents</a> <small class="numConcepts"> - 243 Concepts</small>
+				</li><li>
+					<a href="/fr/conceptScheme/placeTypes">placeTypes : Thésaurus des types de lieux</a> <small class="numConcepts"> - 67 Concepts</small>
+				</li></ul>
+    </div>
+</div>
+            </section>
+        </div>
+    <hr>
+        
+        
+    </body>
+    <!-- footer --> 
+    <footer class="footerSAPA">
+        Last updated on 12/9/2024
+        <br />
+        <br />
+    </footer>
+</html>
