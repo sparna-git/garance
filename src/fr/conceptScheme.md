@@ -9,8 +9,6 @@ permalink: "/{{ locale }}/conceptScheme/{{ cs.id | notation }}/"
 
 {% set jsonScheme = metadata.scheme["@context"] | json %}
 
-{{ page.url }}
-
 <main id="ConceptScheme">
 
   <!-- Header -->
@@ -38,7 +36,7 @@ permalink: "/{{ locale }}/conceptScheme/{{ cs.id | notation }}/"
 	  <div class="col-md">
       <ul>
         {% for concepts in cs.inverse_inScheme %}
-          <li><a href="/{{ page.url }}concept/{{ concepts.id | notation }}">{{ concepts.prefLabel | Label(locale) }}</a></li>
+          <li><a href="/garance/{{ page.url }}concept/{{ concepts.id | notation }}">{{ concepts.prefLabel | Label(locale) }}</a></li>
         {% endfor %}
       <ul>
     </div>
