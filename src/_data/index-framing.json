@@ -1,0 +1,64 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "included": "@included",
+
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rico": "https://www.ica.org/standards/RiC/ontology#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "html": "http://www.w3.org/1999/xhtml",
+    "an": "http://data.archives-nationales.culture.gouv.fr/",
+
+    "ConceptScheme": "skos:ConceptScheme",
+    "Concept": "skos:Concept",
+
+    "inverse_inScheme": {
+      "@reverse": "skos:inScheme"
+    },
+    "dctitle": {
+      "@id": "dc:title",
+      "@container": "@set"
+    },
+    "dcdescription": {
+      "@id": "dc:description",
+      "@container": "@set"
+    },
+    "prefLabel": {
+      "@id": "skos:prefLabel",
+      "@container": "@set"
+    },
+    "altLabel": {
+      "@id": "skos:altLabel",
+      "@container": "@set"
+    },
+    "narrower": {
+      "@id": "skos:narrower",
+      "@container": "@set"
+    },
+    "subject": "dct:subject",
+    "notation": "skos:notation",
+    "broader": "skos:broader",
+    "definition": {
+      "@id": "skos:definition",
+      "@container": "@set"
+    },
+    "exactMatch": {
+      "@id": "skos:exactMatch",
+      "@container": "@set"
+    }
+  },
+
+  "@explicit": true,
+  "type": "ConceptScheme",
+  "dctitle": {},
+  "inverse_inScheme": {
+    "@explicit": true
+  }
+}

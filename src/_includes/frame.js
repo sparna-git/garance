@@ -29,7 +29,8 @@ module.exports = async function (inputRdfPath,inputFramingPath, MEMORYKEY) {
 	// We convert the RDF JSON-LD, which is JSON with semantics embedded.
 	const doc = await jsonld.fromRDF(nQuadsString, {format: 'application/n-quads'});
 	//console.log(framed)
-	// Write jsonld file  
+	// Write jsonld file
+	/*  
 	fs.writeFile('an_concepts.jsonld',JSON.stringify(doc),err => {
 		if (err) {
 			console.log(err);
@@ -37,7 +38,7 @@ module.exports = async function (inputRdfPath,inputFramingPath, MEMORYKEY) {
 			console.log('ok');
 		}
 	});
-	
+	*/
 	
 	// We use the frame and the JSON-LD generated earlier to generate a new JSON-LD document based on the frame.
 	const framed = await jsonld.frame(doc, JSON.parse(inputFRAMING));
