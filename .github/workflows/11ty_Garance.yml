@@ -2,7 +2,7 @@ name: Garance 11ty Build
 on: workflow_dispatch
 jobs:
   build_deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
       - name: Build
