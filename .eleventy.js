@@ -25,10 +25,7 @@ module.exports = function (eleventyConfig) {
   // Return the ID
   eleventyConfig.addFilter("getLangues", async function (dataset, locale) {
     const getAllLangues = dataset.find((fl) => fl["dctitle"] === "dctitle");
-    console.log(getAllLangues);
     const dctitles = dataset.find((fl) => fl["@language"] === locale);
-    console.log("Trouve");
-    console.log(dctitles);
     if (dctitles) {
       return true;
     } else {
