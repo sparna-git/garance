@@ -1,12 +1,19 @@
 name: 11ty Build
 on: workflow_dispatch
 jobs:
-  build_deploy:
-    runs-on: ubuntu-20.04
-    steps:
+  build:
+      runs-on: ${{ matrix.os }}
+      strategy:
+        matrix:
+          os: ["ubuntu-latest", "windows-latest"]
+          node: ["18", "20", "22"]
+      name: Node.js ${{ matrix.node }} on ${{ matrix.os }}
+      steps:
       - uses: actions/checkout@master
       - name: Build
-        uses: TartanLlama/actions-eleventy@v1.3        
+        uses: TartanLlama/actions-eleventy@v1.3
+        with:
+          install_dependencies: true
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
