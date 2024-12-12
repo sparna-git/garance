@@ -1,62 +1,41 @@
-//npm install jsonld
-const jsonld = require("jsonld");
-// npm install rdf-parse
-const rdfParser = require("rdf-parse").default;
-// npm install rdf-serialize
-const rdfSerializer = require("rdf-serialize").default;
-// npm install @11ty/eleventy-fetch
-const { AssetCache } = require("@11ty/eleventy-fetch");
-const nunjucks = require('nunjucks');
-const EleventyBaseError = require("@11ty/eleventy/src/EleventyBaseError");
+// Eleventy Version 3.0 with node.js >18
 
-/* Internationalization i18n : Jorge */
-const { EleventyI18nPlugin } = require("@11ty/eleventy");
-const i18n = require('eleventy-plugin-i18n');
+const nunjucks = require("nunjucks");
+// internationalization
+const i18n = require("eleventy-plugin-i18n");
+
 const translations = require("./src/_data/i18n");
 
-AssetCache.concurrency = 4;
+module.exports = async function (eleventyConfig) {
+  const { EleventyI18nPlugin } = await import("@11ty/eleventy");
 
-module.exports = function (eleventyConfig) {
   eleventyConfig.setNunjucksEnvironmentOptions({
     throwOnUndefined: true,
     autoescape: false, // warning: don’t do this!
   });
 
-  // Return the ID
-  eleventyConfig.addFilter("getLangues", async function (dataset, locale) {
-    const getAllLangues = dataset.find((fl) => fl["dctitle"] === "dctitle");
-    const dctitles = dataset.find((fl) => fl["@language"] === locale);
-    if (dctitles) {
-      return true;
-    } else {
-      return false;
-    }
+  // ************** plugin **************************
+  // internationalization
+  eleventyConfig.addPlugin(EleventyI18nPlugin, {
+    defaultLanguage: "fr", // Required
+    errorMode: "allow-fallback", // Opting out of "strict"
   });
 
+  // translation
+  eleventyConfig.addPlugin(i18n, {
+    translations,
+    fallbackLocales: {
+      fr: "fr",
+    },
+  });
+
+  // ***************** Filter ***********************
   // Return the ID
   eleventyConfig.addFilter("notation", async function (concept) {
     return concept.split(":")[1];
   });
 
-  eleventyConfig.addFilter("getURL", async function (inputContext, concept) {
-    const inputPrefix = concept.split(":")[0];
-    const inputConcept = concept.split(":")[1];
-
-    const obj = JSON.parse(inputContext);
-    const uriFound = JSON.stringify(obj, [inputPrefix]);
-    const objOutput = JSON.parse(uriFound);
-    return objOutput[inputPrefix] + inputConcept;
-  });
-
-  //
-  eleventyConfig.addFilter("relative", (absoluteUrl, page) => {
-    if (!absoluteUrl.startsWith("/")) {
-      throw new Error("URL is already relative");
-    }
-    const relativeUrl = require("path").relative(page.url, absoluteUrl);
-    return relativeUrl;
-  });
-
+  // label
   eleventyConfig.addFilter("label", function (arr, locale) {
     if (arr) {
       var jsonFilter = [arr].find((f) => f["@language"] === locale);
@@ -74,6 +53,18 @@ module.exports = function (eleventyConfig) {
         return jsonFilter["@value"];
       }
     }
+  });
+
+  // URL
+  eleventyConfig.addFilter("getURL", async function (inputContext, concept) {
+    
+    const inputPrefix = concept.split(":")[0];
+    const inputConcept = concept.split(":")[1];
+
+    const obj = JSON.parse(inputContext);
+    const uriFound = JSON.stringify(obj, [inputPrefix]);
+    const objOutput = JSON.parse(uriFound);
+    return objOutput[inputPrefix] + inputConcept;
   });
 
   /**
@@ -94,23 +85,6 @@ module.exports = function (eleventyConfig) {
     const jsonString = JSON.stringify(value);
     return new nunjucks.runtime.markSafe(jsonString);
   });
-
-  // internationalization
-  eleventyConfig.addPlugin(EleventyI18nPlugin, {
-    defaultLanguage: "fr", // Required
-    errorMode: "allow-fallback", // Opting out of "strict"
-  });
-
-  // translation
-  eleventyConfig.addPlugin(i18n, {
-    translations,
-    fallbackLocales: {
-      fr: "fr",
-    },
-  });
-
-  // pass-through
-  eleventyConfig.addPassthroughCopy({ static: "/" });
 
   return {
     markdownTemplateEngine: "njk",

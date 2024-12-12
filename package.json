@@ -1,7 +1,6 @@
 {
-  "name": "garance",
+  "name": "garance_local",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
@@ -10,16 +9,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
-  },
+  "description": "",
   "dependencies": {
-    "@11ty/eleventy-fetch": "^4.0.1",
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-fetch": "^5.0.1",
     "eleventy-plugin-i18n": "^0.1.3",
     "jsonld": "^8.3.2",
     "nunjucks": "^3.2.4",
-    "rdf-parse": "^2.3.3",
-    "rdf-serialize": "^2.2.3",
+    "rdf-parse": "^4.0.0",
+    "rdf-serialize": "^4.0.1",
     "streamify-string": "^1.0.1"
   }
 }
