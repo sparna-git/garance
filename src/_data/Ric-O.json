@@ -1,0 +1,26 @@
+[
+  {
+    "language": "en",
+    "id": "an:documentaryFormTypes",
+    "element": "dc:title",
+    "description": "Thesaurus of document types"
+  },
+  {
+    "language": "en",
+    "id": "an:documentaryFormTypes",
+    "element": "dc:description",
+    "description": "Document Type Thesaurus. Result of the automatic conversion into Rdf"
+  },
+  {
+    "language": "en",
+    "id": "an:placeTypes",
+    "element": "dc:title",
+    "description": "Thesaurus of Place Types"
+  },
+  {
+    "language": "en",
+    "id": "an:placeTypes",
+    "element": "dc:description",
+    "description": "Thesaurus of place types (geo-historical entities). Manually entered based on the underlying or implicit place categories in the current SIA IRs. Enrichments"
+  }
+]

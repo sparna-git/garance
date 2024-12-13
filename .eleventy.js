@@ -3,8 +3,9 @@
 const nunjucks = require("nunjucks");
 // internationalization
 const i18n = require("eleventy-plugin-i18n");
-
-const translations = require("./src/_data/i18n");
+//
+//const translations = require("./src/_data/i18n");
+const translations = require("./src/_data/translations");
 
 module.exports = async function (eleventyConfig) {
   const { EleventyI18nPlugin } = await import("@11ty/eleventy");
