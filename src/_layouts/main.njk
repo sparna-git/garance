@@ -90,7 +90,7 @@
         <!-- Navbar menu -->
         <nav class="navbar navbar-expand-lg fixed-top bg-performing-arts" data-bs-theme="dark"> 
             <div class="container">
-                <a class="navbar-brand" href="/{{ locale }}">{{ 'garance' | i18n }}</a>
+                <a class="navbar-brand" href="/garance/{{ locale }}">{{ 'garance' | i18n }}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -105,7 +105,7 @@
                     {% set pageUrl = page.url.split('/').slice(2).join('/') %}
                     {% if locales.length %}                        
                         {% for locale in locales -%}
-                            <a href="/{{ locale.code }}/{{ pageUrl }}" rel="alternate" hreflang="{{ locale.code }}">{{ locale.label }}</a>
+                            <a href="/garance/{{ locale.code }}/{{ pageUrl }}" rel="alternate" hreflang="{{ locale.code }}">{{ locale.label }}</a>
                         {% endfor -%}                        
                     {% endif %}                    
                 </div>

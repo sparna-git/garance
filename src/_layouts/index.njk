@@ -9,7 +9,7 @@ layout: main.njk
 			<ul>
 				{%- for item in index.graph -%}
 					<li>
-						<a href="/{{ page.lang }}/voc/{{ item.id | notation  }}">{{ item.id | notation }} : {{ item.dctitle | label("fr") }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} Concepts</small>
+						<a href="/garance/{{ locale }}/voc/{{ item.id | notation  }}">{{ item.id | notation }} : {{ item.dctitle | label("fr") }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} Concepts</small>
 					</li>
 				{%- endfor-%}
 			</ul>
