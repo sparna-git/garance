@@ -1,11 +1,12 @@
 // Eleventy Version 3.0 with node.js >18
 
 const nunjucks = require("nunjucks");
+
 // internationalization
 const i18n = require("eleventy-plugin-i18n");
-//
-//const translations = require("./src/_data/i18n");
-const translations = require("./src/_data/translations");
+
+// Traductions
+const translations = require("./src/_data/translations.js");
 
 module.exports = async function (eleventyConfig) {
   const { EleventyI18nPlugin } = await import("@11ty/eleventy");
@@ -29,8 +30,8 @@ module.exports = async function (eleventyConfig) {
       fr: "fr",
     },
   });
-
   // ***************** Filter ***********************
+  
   // Return the ID
   eleventyConfig.addFilter("notation", async function (concept) {
     return concept.split(":")[1];
@@ -58,7 +59,6 @@ module.exports = async function (eleventyConfig) {
 
   // URL
   eleventyConfig.addFilter("getURL", async function (inputContext, concept) {
-    
     const inputPrefix = concept.split(":")[0];
     const inputConcept = concept.split(":")[1];
 

@@ -21,7 +21,8 @@
 
 
     "inverse_inScheme" : {
-      "@reverse" : "skos:inScheme"
+      "@reverse": "skos:inScheme",
+      "@container": "@set"
     },
     "dctitle" : {
       "@id" : "dc:title",
