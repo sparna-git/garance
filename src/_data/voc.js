@@ -2,7 +2,7 @@
 const frame = require("../_includes/frame.js");
 
 // Read Files
-const TURTLE_FILE = "./src/_data/concepts/concepts_mini.ttl";
+const TURTLE_FILE = "./src/_data/concepts";
 // Framing
 const FRAMING_FILE_VOC = "./src/_data/voc-framing.json";
 // Cache Local

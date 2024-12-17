@@ -1,8 +1,6 @@
 module.exports = {
-  title: {
-    en: "Archival Graph for Research, Knowledge Access and Navigation Enhancer."
-  },
-  garance: { 
-    en: "Madder" 
-  },
+  en: {
+    title: "Archival Graph for Research, Knowledge Access and Navigation Enhancer.",
+    garance: "Madder" 
+  }
 };

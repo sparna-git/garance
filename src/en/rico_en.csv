@@ -1,0 +1,401 @@
+ricoId,label
+accumulationRelation_role,has the role of the Accumulation Relation
+organicProvenanceRelation_role,has the role of the Organic Provenance Relation
+activityDocumentationRelation_role,has the role of the Activity Documentation Relation
+eventRelation_role,has the role of the Event Relation
+organicOrFunctionalProvenanceRelation_role,has the role of the Organic or functional provenance            Relation
+activityIsContextOfRelation,activity is context of relation
+thingIsContextOfRelation,thing is context of relation
+asConcernsActivity,as concerns activity
+affectsOrAffected,affects or affected
+hasOrHadParticipant,has or had participant
+isOrWasAffectedBy,is or was affected by
+agentControlRelation_role,has the role of the Agent Control Relation
+agentHierarchicalRelation_role,has the role of the Agent Hierarchical Relation
+authorityRelation_role,has the role of the Authority Relation
+agentHasOrHadLocation,agent has or had location
+hasOrHadLocation,has or had location
+isAgentAssociatedWithPlace,is agent associated with place
+isOrWasLocationOfAgent,is or was location of agent
+agentToAgentRelation_role,has the role of the Agent Relation
+agentTemporalRelation_role,has the role of the Agent Temporal Relation
+temporalRelation_role,has the role of the Temporal Relation
+relation_role,has the role of the Relation
+appellationRelation_role,has the role of the Appellation Relation
+relationHasContext,relation has context
+authorizedBy,authorized by
+isAssociatedWithRule,is associated with rule
+authorizes,authorizes
+thingIsTargetOfRelation,thing is target of relation
+mandateRelation_role,has the role of the Mandate Relation
+relationHasSource,relation has source
+isRuleAssociatedWith,is rule associated with
+thingIsSourceOfRelation,thing is source of relation
+relationHasTarget,relation has target
+authorizingAgent,authorizing agent
+isAuthorizingAgentInMandateRelation,is authorizing agent in mandate relation
+authorshipRelation_role,has the role of the Authorship Relation
+creationRelation_role,has the role of the Creation Relation
+childRelation_role,has the role of the Child Relation
+descendanceRelation_role,has the role of the Descendance Relation
+contained,contained
+containsOrContained,contains or contained
+hadPart,had part
+wasContainedBy,was contained by
+hasOrHadPart,has or had part
+isAssociatedWithPlace,is associated with place
+isPlaceAssociatedWith,is place associated with
+isOrWasContainedBy,is or was contained by
+containsTransitive,contains transitive
+hasPartTransitive,has part transitive
+isContainedByTransitive,is contained by transitive
+correspondenceRelation_role,has the role of the Correspondence Relation
+knowingRelation_role,has the role of the Knowing Relation
+creationWithRole,creation with role
+roleIsContextOfCreationRelation,role is context of creation relation
+derivationRelation_role,has the role of the Derivation Relation
+instantiationToInstantiationRelation_role,has the role of the Instantiation to Instantiation            Relation
+familyRelation_role,has the role of the Family Relation
+describesOrDescribed,describes or described
+hasOrHadSubject,has or had subject
+isOrWasDescribedBy,is or was described by
+directlyContains,contains directly
+hasDirectPart,has direct part
+isDirectlyContainedBy,is directly contained by
+directlyFollowsInSequence,directly follows in sequence
+followsInSequenceTransitive,follows in sequence transitive
+directlyPrecedesInSequence,directly precedes in sequence
+directlyIncludes,directly includes
+includesTransitive,includes transitive
+isDirectlyIncludedIn,is directly included in
+precedesInSequenceTransitive,precedes in sequence transitive
+documentedBy,documented by
+isOrganicOrFunctionalProvenanceOf,is organic or functional provenance of
+resultsOrResultedIn,results or resulted in
+documents,documents
+hasOrganicOrFunctionalProvenance,has organic or functional provenance
+resultsOrResultedFrom,results or resulted from
+evidences,evidences
+thingIsConnectedToRelation,thing is connected to relation
+isEvidencedBy,is evidenced by
+existsOrExistedIn,exists or existed in
+isAgentAssociatedWithAgent,is agent associated with agent
+hasOrHadPosition,has or had position
+positionToGroupRelation_role,has the role of the Position to Group Relation
+expressesOrExpressed,expresses or expressed
+isOrWasExpressedBy,is or was expressed by
+followedInSequence,followed in sequence
+followsOrFollowed,follows or followed
+precededInSequence,preceded in sequence
+followsInTime,follows in time
+precedesInTime,precedes in time
+isRelatedTo,is related to
+precedesOrPreceded,precedes or preceded
+sequentialRelation_role,has the role of the Sequential Relation
+functionalEquivalenceRelation_role,has the role of the Functional Equivalence Relation
+groupSubdivisionRelation_role,has the role of the Group Subdivision Relation
+wholePartRelation_role,has the role of the Whole Part Relation
+hadComponent,had component
+hasOrHadComponent,has or had component
+wasComponentOf,was component of
+hadConstituent,had constituent
+hasOrHadConstituent,has or had constituent
+wasConstituentOf,was constituent of
+wasPartOf,was part of
+hadSubdivision,had subdivision
+hadSubordinate,had subordinate
+hasOrHadSubdivision,has or had subdivision
+wasSubdivisionOf,was subdivision of
+hadSubevent,had subevent
+hasOrHadSubevent,has or had subevent
+wasSubeventOf,was subevent of
+hasOrHadSubordinate,has or had subordinate
+wasSubordinateTo,was subordinate to
+hasAccumulator,has accumulator
+hasOrganicProvenance,has organic provenance
+isAccumulatorOf,is accumulator of
+hasActivityType,has activity type
+hasOrHadCategory,has or had category
+isActivityTypeOf,is activity type of
+hasAddressee,has addressee
+isAddresseeOf,is addressee of
+hasAncestor,has ancestor
+hasFamilyAssociationWith,has family association with
+isSuccessorOf,is successor of
+hasDescendant,has descendant
+hasAuthor,has author
+hasCreator,has creator
+isAuthorOf,is author of
+hasBeginningDate,has beginning date
+isAssociatedWithDate,is associated with date
+isBeginningDateOf,is beginning date of
+hasBirthDate,has birth date
+isBirthDateOf,is birth date of
+hasBirthPlace,has birth place
+isBirthPlaceOf,is birth place of
+hasCarrierType,has carrier type
+isCarrierTypeOf,is carrier type of
+hasChild,has child
+isChildOf,is child of
+hasCollector,has collector
+isCollectorOf,is collector of
+hasComponentTransitive,has component transitive
+isComponentOfTransitive,is component of transitive
+hasConstituentTransitive,has constituent transitive
+isConstituentOfTransitive,is constituent of transitive
+hasContentOfType,has content of type
+isContentTypeOf,is content type of
+hasCopy,has copy
+hasGeneticLinkToRecordResource,has genetic link to record resource
+isCopyOf,is copy of
+hasCreationDate,has creation date
+isCreationDateOf,is creation date of
+isCreatorOf,is creator of
+hasDateType,has date type
+isDateTypeOf,is date type of
+hasDeathDate,has death date
+hasEndDate,has end date
+isDeathDateOf,is death date of
+hasDeathPlace,has death place
+isDeathPlaceOf,is death place of
+hasSuccessor,has successor
+hasDestructionDate,has destruction date
+isDestructionDateOf,is destruction date of
+hasDirectComponent,has direct component
+isDirectComponentOf,is direct component of
+hasDirectConstituent,has direct constituent
+isDirectConstituentOf,is direct constituent of
+isDirectPartOf,is direct part of
+hasDirectSubdivision,has direct subdivision
+hasDirectSubordinate,has direct subordinate
+hasSubdivisionTransitive,has subdivision transitive
+isDirectSubdivisionOf,is direct subdivision of
+hasDirectSubevent,has direct subevent
+hasSubeventTransitive,has subevent transitive
+isDirectSubeventOf,is direct subevent of
+hasSubordinateTransitive,has subordinate transitive
+isDirectSubordinateTo,is direct subordinate to
+hasDocumentaryFormType,has documentary form type
+isDocumentaryFormTypeOf,is documentary form type of
+hasDraft,has draft
+isDraftOf,is draft of
+isEndDateOf,is end date of
+hasEventType,has event type
+isEventTypeOf,is event type of
+hasExtent,has extent
+isExtentOf,is extent of
+hasExtentType,has extent type
+isExtentTypeOf,is extent type of
+relationConnects,relation connects
+hasFamilyType,has family type
+isFamilyTypeOf,is family type of
+isRecordResourceAssociatedWithRecordResource,is record resource associated with record resource
+recordResourceGeneticRelation_role,has the role of the Record Resource Genetic Relation
+hasIdentifierType,has identifier type
+isIdentifierTypeOf,is identifier type of
+hasModificationDate,has modification date
+isModificationDateOf,is modification date of
+hasOrHadAgentName,has or had agent name
+hasOrHadName,has or had name
+isOrWasAgentNameOf,is or was agent name of
+hasOrHadAllMembersWithCategory,has or had all members with category
+isOrWasCategoryOfAllMembersOf,is or was category of all members of
+hasOrHadAllMembersWithContentType,has or had all members with content type
+isOrWasContentTypeOfAllMembersOf,is or was content type of all members of
+hasOrHadAllMembersWithCreationDate,has or had all members with creation date
+isOrWasCreationDateOfAllMembersOf,is or was creation date of all members of
+hasOrHadAllMembersWithDocumentaryFormType,has or had all members with documentary form type
+isOrWasDocumentaryFormTypeOfAllMembersOf,is or was documentary form type of all members of
+hasOrHadAllMembersWithLanguage,has or had all members with language
+isOrWasLanguageOfAllMembersOf,is or was language of all members of
+hasOrHadAllMembersWithLegalStatus,has or had all members with legal status
+isOrWasLegalStatusOfAllMembersOf,is or was legal status of all members of
+hasOrHadAllMembersWithRecordState,has or had all members with record state
+isOrWasRecordStateOfAllMembersOf,is or was record state of all members of
+hasOrHadAnalogueInstantiation,has or had analogue instantiation
+hasOrHadInstantiation,has or had instantiation
+isOrWasAnalogueInstantiationOf,is or was analogue instantiation of
+hasOrHadAppellation,has or had appellation
+isOrWasAppellationOf,is or was appellation of
+hasOrHadAuthorityOver,has or had authority over
+isOrWasUnderAuthorityOf,is or was under authority of
+isOrWasCategoryOf,is or was category of
+typeRelation_role,has the role of the Type Relation
+isInstantiationAssociatedWithInstantiation,is instantiation associated with instantiation
+isOrWasComponentOf,is or was component of
+isOrWasConstituentOf,is or was constituent of
+hasOrHadController,has or had controller
+isOrWasSubordinateTo,is or was subordinate to
+isOrWasControllerOf,is or was controller of
+hasOrHadCoordinates,has or had coordinates
+isOrWasCoordinatesOf,is or was coordinates of
+hasOrHadCorporateBodyType,has or had corporate body type
+isOrWasCorporateBodyTypeOf,is or was corporate body type of
+hasOrHadCorrespondent,has or had correspondent
+knows,knows
+hasOrHadDemographicGroup,has or had demographic group
+isOrWasDemographicGroupOf,is or was demographic group of
+hasOrHadDerivedInstantiation,has or had derived instantiation
+isOrWasDerivedFromInstantiation,is or was derived from instantiation
+hasOrHadDigitalInstantiation,has or had digital instantiation
+isOrWasDigitalInstantiationOf,is or was digital instantiation of
+hasOrHadEmployer,has or had employer
+isOrWasEmployerOf,is or was employer of
+hasOrHadHolder,has or had holder
+hasOrHadManager,has or had manager
+isOrWasHolderOf,is or was holder of
+recordResourceHoldingRelation_role,has the role of the Record Resource Holding Relation
+hasOrHadIdentifier,has or had identifier
+isOrWasIdentifierOf,is or was identifier of
+isOrWasInstantiationOf,is or was instantiation of
+recordResourceToInstantiationRelation_role,has the role of the Record Resource to Instantiation            Relation
+hasOrHadIntellectualPropertyRightsHolder,has or had intellectual property rights holder
+isOrWasHolderOfIntellectualPropertyRightsOf,is or was holder of intellectual property rights of
+intellectualPropertyRightsRelation_role,has the role of the Intellectual Property Rights            Relation
+hasOrHadJurisdiction,has or had jurisdiction
+isOrWasJurisdictionOf,is or was jurisdiction of
+hasOrHadLanguage,has or had language
+isOrWasLanguageOf,is or was language of
+hasOrHadLeader,has or had leader
+isOrWasLeaderOf,is or was leader of
+leadershipRelation_role,has the role of the Leadership Relation
+hasOrHadLegalStatus,has or had legal status
+isOrWasLegalStatusOf,is or was legal status of
+isOrWasLocationOf,is or was location of
+hasOrHadMainSubject,has or had main subject
+isOrWasMainSubjectOf,is or was main subject of
+isOrWasManagerOf,is or was manager of
+managementRelation_role,has the role of the Management Relation
+hasOrHadMandateType,has or had mandate type
+hasOrHadRuleType,has or had rule type
+isOrWasMandateTypeOf,is or was mandate type of
+hasOrHadMember,has or had member
+isOrWasMemberOf,is or was member of
+membershipRelation_role,has the role of the Membership Relation
+hasOrHadMostMembersWithCreationDate,has or had most members with creation date
+hasOrHadSomeMembersWithCreationDate,has or had some members with creation date
+isOrWasCreationDateOfMostMembersOf,is or was creation date of most members of
+isOrWasNameOf,is or was name of
+hasOrHadOccupationOfType,has or had occupation of type
+isOrWasOccupationTypeOf,is or was occupation type of
+hasOrHadOwner,has or had owner
+isOrWasOwnerOf,is or was owner of
+ownershipRelation_role,has the role of the Ownership Relation
+isOrWasPartOf,is or was part of
+isEventAssociatedWith,is event associated with
+isOrWasParticipantIn,is or was participant in
+hasOrHadPhysicalLocation,has or had physical location
+isOrWasPhysicalLocationOf,is or was physical location of
+hasOrHadPlaceName,has or had place name
+isOrWasPlaceNameOf,is or was place name of
+hasOrHadPlaceType,has or had place type
+isOrWasPlaceTypeOf,is or was place type of
+isOrWasRuleTypeOf,is or was rule type of
+hasOrHadSomeMembersWithCategory,has or had some members with category
+isOrWasCategoryOfSomeMembersOf,is or was category of some members of
+hasOrHadSomeMembersWithContentType,has or had some members with content type
+isOrWasContentTypeOfSomeMembersOf,is or was content type of some members of
+isOrWasCreationDateOfSomeMembersOf,is or was creation date of some members of
+hasOrHadSomeMembersWithDocumentaryFormType,has or had some members with documentary form type
+isOrWasDocumentaryFormTypeOfSomeMembersOf,is or was documentary form type of some members of
+hasOrHadSomeMembersWithLanguage,has or had some members with language
+isOrWasLanguageOfSomeMembersOf,is or was language of some members of
+hasOrHadSomeMembersWithLegalStatus,has or had some members with legal status
+isOrWasLegalStatusOfSomeMembersOf,is or was legal status of some members of
+hasOrHadSomeMembersWithRecordState,has or had some members with record state
+isOrWasRecordStateOfSomeMembersOf,is or was record state of some members of
+hasOrHadSpouse,has or had spouse
+spouseRelation_role,has the role of the Spouse Relation
+hasOrHadStudent,has or had student
+hasOrHadTeacher,has or had teacher
+teachingRelation_role,has the role of the Teaching Relation
+isOrWasSubdivisionOf,is or was subdivision of
+isAssociatedWithEvent,is associated with event
+isOrWasSubeventOf,is or was subevent of
+isOrWasSubjectOf,is or was subject of
+hasOrHadTitle,has or had title
+isOrWasTitleOf,is or was title of
+hasOrHadWorkRelationWith,has or had work relation with
+workRelation_role,has the role of the Work Relation
+isOrganicProvenanceOf,is organic provenance of
+hasOriginal,has original
+isOriginalOf,is original of
+isPartOfTransitive,is part of transitive
+hasProductionTechniqueType,has production technique type
+isProductionTechniqueTypeOf,is production technique type of
+hasPublicationDate,has publication date
+isPublicationDateOf,is publication date of
+hasPublisher,has publisher
+isPublisherOf,is publisher of
+hasReceiver,has receiver
+isReceiverOf,is receiver of
+hasRecordSetType,has record set type
+isRecordSetTypeOf,is record set type of
+hasRecordState,has record state
+isRecordStateOf,is record state of
+hasReply,has reply
+isReplyTo,is reply to
+hasRepresentationType,has representation type
+isRepresentationTypeOf,is representation type of
+hasSender,has sender
+isSenderOf,is sender of
+hasSibling,has sibling
+siblingRelation_role,has the role of the Sibling Relation
+isSubdivisionOfTransitive,is subdivision of transitive
+isSubeventOfTransitive,is subevent of transitive
+isSubordinateToTransitive,is subordinate to transitive
+hasUnitOfMeasurement,has unit of measurement
+isUnitOfMeasurementOf,is unit of measurement of
+hasWithin,has within
+isDateAssociatedWith,is date associated with
+isWithin,is within
+included,included
+includesOrIncluded,includes or included
+wasIncludedIn,was included in
+isOrWasIncludedIn,is or was included in
+isIncludedInTransitive,is included in transitive
+intersects,intersects
+isPlaceAssociatedWithAgent,is place associated with agent
+placeRelation_role,has the role of the Place Relation
+ruleRelation_role,has the role of the Rule Relation
+isDateOfOccurrenceOf,is date of occurrence of
+occurredAtDate,occurred at date
+isEquivalentTo,is equivalent to
+isFromUseDateOf,is from use date of
+wasUsedFromDate,was used from date
+isFunctionallyEquivalentTo,is functionally equivalent to
+isLastUpdateDateOf,is last update date of
+wasLastUpdatedAtDate,was last updated at date
+isOrWasAdjacentTo,is or was adjacent to
+isOrWasEnforcedBy,is or was enforced by
+isOrWasResponsibleForEnforcing,is or was responsible for enforcing
+isOrWasOccupiedBy,is or was occupied by
+occupiesOrOccupied,occupies or occupied
+positionHoldingRelation_role,has the role of the Position Holding Relation
+isOrWasPerformedBy,is or was performed by
+performsOrPerformed,performs or performed
+performanceRelation_role,has the role of the Performance Relation
+isOrWasRegulatedBy,is or was regulated by
+regulatesOrRegulated,regulates or regulated
+recordResourceToRecordResourceRelation_role,has the role of the Record Resource to Record Resource            Relation
+isResponsibleForIssuing,is responsible for issuing
+issuedBy,issued by
+isToUseDateOf,is to use date of
+wasUsedToDate,was used to date
+knowingOfRelation_role,has the role of the Knowing Of Relation
+knownBy,known by
+knowsOf,knows of
+leadershipWithPosition,leadership with position
+positionIsContextOfLeadershipRelation,position is context of leadership relation
+membershipWithPosition,membership with position
+positionIsContextOfMembershipRelation,position is context of membership relation
+migratedFrom,migrated from
+migratedInto,migrated into
+migrationRelation_role,has the role of the Migration Relation
+overlapsOrOverlapped,overlaps or overlapped
+proxyFor,proxy for
+proxyIn,proxy in
+resultedFromTheMergerOf,resulted from the merger of
+wasMergedInto,was merged into
+resultedFromTheSplitOf,resulted from the split of
+wasSplitInto,was split into

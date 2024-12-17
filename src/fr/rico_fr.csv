@@ -1,0 +1,401 @@
+ricoId,label
+accumulationRelation_role,a le rôle de la Relation d’accumulation
+organicProvenanceRelation_role,a le rôle de la Relation de provenance organique
+activityDocumentationRelation_role,a le rôle de la Relation entre activités et ressources            archivistiques
+eventRelation_role,a le rôle de la Relation impliquant un événement
+organicOrFunctionalProvenanceRelation_role,a le rôle de la Relation de provenance organique ou            fonctionnelle
+activityIsContextOfRelation,activité est le contexte de la relation
+thingIsContextOfRelation,chose est le contexte de la relation
+asConcernsActivity,en ce qui concerne l’activité
+affectsOrAffected,affecte ou a affecté
+hasOrHadParticipant,a ou a eu pour participant
+isOrWasAffectedBy,est ou a été affecté par
+agentControlRelation_role,a le rôle de la Relation de contrôle entre agents
+agentHierarchicalRelation_role,a le rôle de la Relation hiérarchique entre agents
+authorityRelation_role,a le rôle de la Relation d’autorité
+agentHasOrHadLocation,agent a ou a eu pour localisation
+hasOrHadLocation,a ou a eu pour localisation
+isAgentAssociatedWithPlace,est un agent associé au lieu
+isOrWasLocationOfAgent,est ou a été la localisation de l'agent
+agentToAgentRelation_role,a le rôle de la Relation entre agents
+agentTemporalRelation_role,a le rôle de la Relation temporelle entre agents
+temporalRelation_role,a le rôle de la Relation temporelle
+relation_role,a le rôle de la Relation
+appellationRelation_role,a le rôle de la Relation d’appellation
+relationHasContext,relation a pour contexte
+authorizedBy,autorisé par
+isAssociatedWithRule,est associé à la règle
+authorizes,autorise
+thingIsTargetOfRelation,chose est la cible de la relation
+mandateRelation_role,a le rôle de la Relation impliquant un mandat
+relationHasSource,relation a pour source
+isRuleAssociatedWith,est une règle associée à
+thingIsSourceOfRelation,chose est la source de la relation
+relationHasTarget,relation a pour cible
+authorizingAgent,autorisation donnée par l’agent
+isAuthorizingAgentInMandateRelation,est l’agent donnant l’autorisation dans la relation impliquant un            mandat
+authorshipRelation_role,a le rôle de la Relation de responsabilité            intellectuelle
+creationRelation_role,a le rôle de la Relation de création
+childRelation_role,a le rôle de la Relation de filiation
+descendanceRelation_role,a le rôle de la Relation de descendance
+contained,a contenu
+containsOrContained,contient ou a contenu
+hadPart,a eu pour partie
+wasContainedBy,a été contenu par
+hasOrHadPart,a ou a eu pour partie
+isAssociatedWithPlace,est associé au lieu
+isPlaceAssociatedWith,est un lieu associé à
+isOrWasContainedBy,est ou a été contenu par
+containsTransitive,contient transitif
+hasPartTransitive,a pour partie transitif
+isContainedByTransitive,est contenu par transitif
+correspondenceRelation_role,a le rôle de la Relation épistolaire
+knowingRelation_role,a le rôle de la Relation de connaissance entre            personnes
+creationWithRole,création avec pour rôle
+roleIsContextOfCreationRelation,rôle est le contexte de la relation de création
+derivationRelation_role,a le rôle de la Relation de dérivation
+instantiationToInstantiationRelation_role,a le rôle de la Relation entre instanciations
+familyRelation_role,a le rôle de la Relation familiale
+describesOrDescribed,décrit ou a décrit
+hasOrHadSubject,a ou a eu pour sujet
+isOrWasDescribedBy,est ou a été décrit par
+directlyContains,contient directement
+hasDirectPart,a directement pour partie
+isDirectlyContainedBy,est directement contenu par
+directlyFollowsInSequence,suit directement dans la séquence
+followsInSequenceTransitive,suit dans la séquence transitif
+directlyPrecedesInSequence,précède directement dans la séquence
+directlyIncludes,inclut directement
+includesTransitive,inclut transitif
+isDirectlyIncludedIn,est directement inclus dans
+precedesInSequenceTransitive,précède dans la séquence transitif
+documentedBy,est documenté par
+isOrganicOrFunctionalProvenanceOf,est la provenance organique ou fonctionnelle de
+resultsOrResultedIn,a ou a eu pour résultat
+documents,documente
+hasOrganicOrFunctionalProvenance,a pour provenance organique ou fonctionnelle
+resultsOrResultedFrom,résulte ou a résulté de
+evidences,atteste de
+thingIsConnectedToRelation,chose est connectée à la relation
+isEvidencedBy,est attestée par
+existsOrExistedIn,existe ou a existé dans
+isAgentAssociatedWithAgent,est un agent associé à l’agent
+hasOrHadPosition,occupe ou a occupé le poste
+positionToGroupRelation_role,a le rôle de la Relation entre un poste et un groupe
+expressesOrExpressed,exprime ou a exprimé
+isOrWasExpressedBy,est ou a été exprimé par
+followedInSequence,a suivi dans la séquence
+followsOrFollowed,suit ou a suivi
+precededInSequence,a précédé dans la séquence
+followsInTime,suit dans le temps
+precedesInTime,précède dans le temps
+isRelatedTo,est relié à
+precedesOrPreceded,précède ou a précédé
+sequentialRelation_role,a le rôle de la Relation séquentielle
+functionalEquivalenceRelation_role,a le rôle de la Relation d’équivalence fonctionnelle
+groupSubdivisionRelation_role,a le rôle de la Relation de subdivision entre groupes            d’agents
+wholePartRelation_role,a le rôle de la Relation partitive
+hadComponent,a eu pour composant
+hasOrHadComponent,a ou a eu pour composant
+wasComponentOf,a été le composant de
+hadConstituent,a eu pour constituant
+hasOrHadConstituent,a ou a eu pour constituant
+wasConstituentOf,a été un constituant de
+wasPartOf,a fait partie de
+hadSubdivision,a eu pour subdivision
+hadSubordinate,a eu pour subalterne
+hasOrHadSubdivision,a ou a eu pour subdivision
+wasSubdivisionOf,a été une subdivision de
+hadSubevent,a été constitué de l’événement
+hasOrHadSubevent,est ou a été constitué de l’événement
+wasSubeventOf,a été un événement constitutif de l'événement
+hasOrHadSubordinate,a ou a eu pour subalterne
+wasSubordinateTo,a été subalterne de
+hasAccumulator,est accumulé par
+hasOrganicProvenance,a pour provenance organique
+isAccumulatorOf,accumule
+hasActivityType,a pour type d’activité
+hasOrHadCategory,a ou a eu pour catégorie
+isActivityTypeOf,est le type d’activité de
+hasAddressee,a pour destinataire
+isAddresseeOf,est le destinataire de
+hasAncestor,a pour ancêtre
+hasFamilyAssociationWith,a une relation familiale avec
+isSuccessorOf,est le successeur de
+hasDescendant,a pour descendant
+hasAuthor,a pour responsable intellectuel
+hasCreator,a pour créateur
+isAuthorOf,est le responsable intellectuel de
+hasBeginningDate,a pour date de début
+isAssociatedWithDate,est associé à la date
+isBeginningDateOf,est la date de début de
+hasBirthDate,a pour date de naissance
+isBirthDateOf,est la date de naissance de
+hasBirthPlace,a pour lieu de naissance
+isBirthPlaceOf,est le lieu de naissance de
+hasCarrierType,a pour type de support
+isCarrierTypeOf,est le type de support de
+hasChild,a pour enfant
+isChildOf,est l’enfant de
+hasCollector,est collecté par
+isCollectorOf,collecte
+hasComponentTransitive,a pour composant transitif
+isComponentOfTransitive,est un composant de transitif
+hasConstituentTransitive,a pour constituant transitif
+isConstituentOfTransitive,est le constituant de transitif
+hasContentOfType,a pour type de contenu
+isContentTypeOf,est le type de contenu de
+hasCopy,a pour copie
+hasGeneticLinkToRecordResource,a une relation génétique avec la ressource            archivistique
+isCopyOf,est la copie de
+hasCreationDate,a pour date de création
+isCreationDateOf,est la date de création de
+isCreatorOf,est le créateur de
+hasDateType,a pour type de date
+isDateTypeOf,est le type de date de
+hasDeathDate,a pour date de décès
+hasEndDate,a pour date de fin
+isDeathDateOf,est la date de décès de
+hasDeathPlace,a pour lieu de décès
+isDeathPlaceOf,est le lieu de décès de
+hasSuccessor,a pour successeur
+hasDestructionDate,a pour date de destruction
+isDestructionDateOf,est la date de destruction de
+hasDirectComponent,a directement pour composant
+isDirectComponentOf,est le composant direct de
+hasDirectConstituent,a directement pour constituant
+isDirectConstituentOf,est un constituant direct de
+isDirectPartOf,fait directement partie de
+hasDirectSubdivision,a directement pour subdivision
+hasDirectSubordinate,a directement pour subalterne
+hasSubdivisionTransitive,a pour subdivision transitif
+isDirectSubdivisionOf,est la subdivision directe de
+hasDirectSubevent,est directement constitué de l’événement
+hasSubeventTransitive,est constitué de l’événement transitif
+isDirectSubeventOf,est un événement constituant directement l’événement
+hasSubordinateTransitive,a pour subalterne transitif
+isDirectSubordinateTo,est directement subalterne de
+hasDocumentaryFormType,a pour type d’objet informationnel
+isDocumentaryFormTypeOf,est le type de document de
+hasDraft,a pour ébauche
+isDraftOf,est l’ébauche de
+isEndDateOf,est la date de fin de
+hasEventType,a pour type d’événement
+isEventTypeOf,est le type d’événement de
+hasExtent,a pour mesure
+isExtentOf,est la mesure de
+hasExtentType,a pour type de mesure
+isExtentTypeOf,est le type de mesure de
+relationConnects,relation connecte
+hasFamilyType,a pour type de famille
+isFamilyTypeOf,est le type de famille de
+isRecordResourceAssociatedWithRecordResource,est une ressource archivistique associée avec la ressource            archivistique
+recordResourceGeneticRelation_role,a le rôle de la Relation génétique entre des ressources            archivistiques
+hasIdentifierType,a pour type d’identifiant
+isIdentifierTypeOf,est le type d’identifiant de
+hasModificationDate,a pour date de modification
+isModificationDateOf,est une date de modification de
+hasOrHadAgentName,a ou a eu pour nom d’agent
+hasOrHadName,a ou a eu pour nom
+isOrWasAgentNameOf,est ou a été le nom de
+hasOrHadAllMembersWithCategory,inclut ou a inclus des membres ayant tous pour            catégorie
+isOrWasCategoryOfAllMembersOf,est ou a été la catégorie de tous les membres de
+hasOrHadAllMembersWithContentType,inclut ou a inclus des membres ayant tous pour type de            contenu
+isOrWasContentTypeOfAllMembersOf,est ou a été le type de contenu de tous les membres            de
+hasOrHadAllMembersWithCreationDate,inclut ou a inclus des membres ayant tous pour date de            création
+isOrWasCreationDateOfAllMembersOf,est ou a été la date de création de tous les membres            de
+hasOrHadAllMembersWithDocumentaryFormType,inclut ou a inclus des membres ayant tous pour type
+isOrWasDocumentaryFormTypeOfAllMembersOf,est ou a été le type de document de tous les membres            de
+hasOrHadAllMembersWithLanguage,inclut ou a inclus des membres ayant tous pour langue
+isOrWasLanguageOfAllMembersOf,est ou a été la langue de tous les membres de
+hasOrHadAllMembersWithLegalStatus,inclut ou a inclus des membres ayant tous pour statut            légal
+isOrWasLegalStatusOfAllMembersOf,est ou a été le statut légal de tous les membres de
+hasOrHadAllMembersWithRecordState,inclut ou a inclus des membres ayant tous pour état
+isOrWasRecordStateOfAllMembersOf,a ou a été l’état de tous les membres de
+hasOrHadAnalogueInstantiation,a ou a eu pour instanciation analogique
+hasOrHadInstantiation,a ou a eu pour instanciation
+isOrWasAnalogueInstantiationOf,est ou a été une instanciation analogique de
+hasOrHadAppellation,a ou a eu pour appellation
+isOrWasAppellationOf,est ou a été l’appellation de
+hasOrHadAuthorityOver,a ou a eu autorité sur
+isOrWasUnderAuthorityOf,est ou a été sous l’autorité de
+isOrWasCategoryOf,est ou a été la catégorie de
+typeRelation_role,a le rôle de la Relation de catégorisation
+isInstantiationAssociatedWithInstantiation,est associée à l’instanciation
+isOrWasComponentOf,est ou a été un composant de
+isOrWasConstituentOf,est ou a été un constituant de
+hasOrHadController,est ou a été contrôlé par
+isOrWasSubordinateTo,est ou a été le subalterne de
+isOrWasControllerOf,contrôle ou a contrôlé
+hasOrHadCoordinates,a ou a eu pour coordonnées
+isOrWasCoordinatesOf,ont ou ont été les coordonnées de
+hasOrHadCorporateBodyType,a ou a eu pour type de collectivité
+isOrWasCorporateBodyTypeOf,est ou a été le type de collectivité de
+hasOrHadCorrespondent,a ou a eu pour correspondant
+knows,connaît
+hasOrHadDemographicGroup,a ou a eu pour catégorie démographique
+isOrWasDemographicGroupOf,est ou a été la catégorie démographique de
+hasOrHadDerivedInstantiation,a ou a eu pour instanciation dérivée
+isOrWasDerivedFromInstantiation,est ou a été une instanciation dérivée de
+hasOrHadDigitalInstantiation,a ou a eu pour instanciation numérique
+isOrWasDigitalInstantiationOf,est ou a été une instanciation numérique de
+hasOrHadEmployer,a ou a eu pour employeur
+isOrWasEmployerOf,a ou a été l'employeur de
+hasOrHadHolder,est ou a été détenu par
+hasOrHadManager,a ou a eu pour gestionnaire
+isOrWasHolderOf,détient ou a détenu
+recordResourceHoldingRelation_role,a le rôle de la Relation entre agents et ressources archivistiques            ou instanciations conservées
+hasOrHadIdentifier,a ou a eu pour identifiant
+isOrWasIdentifierOf,est ou a été l’identifiant de
+isOrWasInstantiationOf,est ou a été une instanciation de
+recordResourceToInstantiationRelation_role,a le rôle de la Relation d’instanciation
+hasOrHadIntellectualPropertyRightsHolder,a ou a eu comme détenteur des droits de propriété            intellectuelle
+isOrWasHolderOfIntellectualPropertyRightsOf,détient ou a détenu les droits de propriété intellectuelle            sur
+intellectualPropertyRightsRelation_role,a le rôle de la Relation de propriété intellectuelle
+hasOrHadJurisdiction,a ou a eu pour ressort
+isOrWasJurisdictionOf,est ou a été le ressort de
+hasOrHadLanguage,a ou a eu pour langue
+isOrWasLanguageOf,est ou a été la langue de
+hasOrHadLeader,a ou a eu pour dirigeant
+isOrWasLeaderOf,est ou a été le dirigeant de
+leadershipRelation_role,a le rôle de la Relation de direction
+hasOrHadLegalStatus,a ou a eu pour statut légal
+isOrWasLegalStatusOf,est ou a été le statut légal de
+isOrWasLocationOf,est ou a été la localisation de
+hasOrHadMainSubject,a ou a eu pour sujet principal
+isOrWasMainSubjectOf,est ou a été le sujet principal de
+isOrWasManagerOf,est ou a été le gestionnaire de
+managementRelation_role,a le rôle de la Relation de gestion
+hasOrHadMandateType,a ou a eu pour type de mandat
+hasOrHadRuleType,a ou a eu pour type de règle
+isOrWasMandateTypeOf,est ou a été le type de mandat de
+hasOrHadMember,a ou a eu pour membre
+isOrWasMemberOf,est ou a été membre de
+membershipRelation_role,a le rôle de la Relation d’appartenance
+hasOrHadMostMembersWithCreationDate,inclut ou a inclus des membres dont la plupart ont pour date de            création
+hasOrHadSomeMembersWithCreationDate,inclut ou a inclus des membres ayant pour date de            création
+isOrWasCreationDateOfMostMembersOf,est ou a été la date de création de la plupart des membres            de
+isOrWasNameOf,est ou a été le nom de
+hasOrHadOccupationOfType,a ou a eu pour type d’occupation
+isOrWasOccupationTypeOf,est ou a été le type d’occupation de
+hasOrHadOwner,a ou a eu pour propriétaire
+isOrWasOwnerOf,est ou a été propriétaire de
+ownershipRelation_role,a le rôle de la Relation de propriété
+isOrWasPartOf,est ou a été une partie de
+isEventAssociatedWith,est un événement associé a
+isOrWasParticipantIn,participe ou a participé à
+hasOrHadPhysicalLocation,a ou a eu pour localisation physique
+isOrWasPhysicalLocationOf,a ou a été la localisation physique de
+hasOrHadPlaceName,a ou a eu pour nom de lieu
+isOrWasPlaceNameOf,a ou a été le nom de lieu de
+hasOrHadPlaceType,a ou a eu pour type de lieu
+isOrWasPlaceTypeOf,a ou a été le type de lieu de
+isOrWasRuleTypeOf,est ou a été le type de règle de
+hasOrHadSomeMembersWithCategory,inclut ou a inclus des membres ayant pour type
+isOrWasCategoryOfSomeMembersOf,est ou a été la catégorie de certains membres de
+hasOrHadSomeMembersWithContentType,inclut ou a inclus des membres ayant pour type de            contenu
+isOrWasContentTypeOfSomeMembersOf,est ou a été le type de contenu de certains membres            de
+isOrWasCreationDateOfSomeMembersOf,est ou a été la date de création de certains membres            de
+hasOrHadSomeMembersWithDocumentaryFormType,inclut ou a inclus des membres ayant pour type de            document
+isOrWasDocumentaryFormTypeOfSomeMembersOf,est ou a été le type de document de certains membres            de
+hasOrHadSomeMembersWithLanguage,inclut ou a inclus des membres ayant pour langue
+isOrWasLanguageOfSomeMembersOf,est ou a été la langue de certains membres de
+hasOrHadSomeMembersWithLegalStatus,inclut ou a inclus des membres ayant pour statut            légal
+isOrWasLegalStatusOfSomeMembersOf,est ou a été le statut légal de certains membres de
+hasOrHadSomeMembersWithRecordState,inclut ou a inclus des membres ayant pour état
+isOrWasRecordStateOfSomeMembersOf,a ou a été l’état de certains membres de
+hasOrHadSpouse,a ou a eu pour conjoint
+spouseRelation_role,a le rôle de la Relation matrimoniale
+hasOrHadStudent,a ou a eu pour étudiant
+hasOrHadTeacher,a ou a eu pour enseignant
+teachingRelation_role,a le rôle de la Relation entre enseignants et            étudiants
+isOrWasSubdivisionOf,est ou a été une subdivision de
+isAssociatedWithEvent,est associé à l’événement
+isOrWasSubeventOf,est ou a été un événement constituant de
+isOrWasSubjectOf,est ou a été le sujet de
+hasOrHadTitle,a ou a eu pour intitulé
+isOrWasTitleOf,est ou a été l’intitulé de
+hasOrHadWorkRelationWith,a ou a eu une relation professionnelle avec
+workRelation_role,a le rôle de la Relation de travail
+isOrganicProvenanceOf,est la provenance organique de
+hasOriginal,a pour original
+isOriginalOf,est l’original de
+isPartOfTransitive,est une partie de transitif
+hasProductionTechniqueType,a pour type de technique de production
+isProductionTechniqueTypeOf,est le type de technique de production de
+hasPublicationDate,a pour date de publication
+isPublicationDateOf,est la date de publication de
+hasPublisher,a pour éditeur
+isPublisherOf,est l’éditeur de
+hasReceiver,est reçu par
+isReceiverOf,reçoit
+hasRecordSetType,a pour type d’ensemble d’objets informationnels
+isRecordSetTypeOf,est le type d’ensemble d’objets informationnels de
+hasRecordState,a pour état
+isRecordStateOf,est l’état de
+hasReply,a pour réponse
+isReplyTo,est une réponse à
+hasRepresentationType,a pour type de représentation
+isRepresentationTypeOf,est le type de représentation de
+hasSender,a pour expéditeur
+isSenderOf,est l’expéditeur de
+hasSibling,a pour frère ou sœur
+siblingRelation_role,a le rôle de la Relation de fratrie
+isSubdivisionOfTransitive,est une subdivision de transitif
+isSubeventOfTransitive,est un événement constituant de transitif
+isSubordinateToTransitive,est subalterne de transitif
+hasUnitOfMeasurement,a pour unité de mesure
+isUnitOfMeasurementOf,est l’unité de mesure de
+hasWithin,contient
+isDateAssociatedWith,est une date associée a
+isWithin,est contenu dans
+included,a inclus
+includesOrIncluded,inclut ou a inclus
+wasIncludedIn,a été inclus dans
+isOrWasIncludedIn,est ou a été inclus dans
+isIncludedInTransitive,est inclus dans transitif
+intersects,intersecte
+isPlaceAssociatedWithAgent,est un lieu associé à l'agent
+placeRelation_role,a le rôle de la Relation impliquant un lieu
+ruleRelation_role,a le rôle de la Relation impliquant une règle
+isDateOfOccurrenceOf,est la date d'occurrence de
+occurredAtDate,a pour date d'occurrence
+isEquivalentTo,est l’équivalent de
+isFromUseDateOf,est la date à partir de laquelle est utilisé
+wasUsedFromDate,a été utilisé à partir de la date
+isFunctionallyEquivalentTo,est fonctionnellement équivalente à
+isLastUpdateDateOf,est la date de dernière mise à jour de
+wasLastUpdatedAtDate,a pour date de dernière mise à jour
+isOrWasAdjacentTo,est ou a été adjacent à
+isOrWasEnforcedBy,est ou a été imposé par
+isOrWasResponsibleForEnforcing,impose ou a imposé
+isOrWasOccupiedBy,est ou a été occupé par
+occupiesOrOccupied,occupe ou a occupé
+positionHoldingRelation_role,a le rôle de la Relation entre une personne et un            poste
+isOrWasPerformedBy,est ou a été réalisée par
+performsOrPerformed,exerce ou a exercé
+performanceRelation_role,a le rôle de la Relation entre activités et agents
+isOrWasRegulatedBy,est ou a été régulé par
+regulatesOrRegulated,régule ou a régulé
+recordResourceToRecordResourceRelation_role,a le rôle de la Relation entre ressources            archivistiques
+isResponsibleForIssuing,est chargé de rendre publique
+issuedBy,rendue publique par
+isToUseDateOf,est la date jusqu’à laquelle est utilisé
+wasUsedToDate,a été utilisé jusqu’à la date
+knowingOfRelation_role,a le rôle de la Relation de connaissance à propos d’une            personne
+knownBy,est connue par
+knowsOf,a connaissance de la personne
+leadershipWithPosition,relation de direction dans le cadre du poste
+positionIsContextOfLeadershipRelation,poste est le contexte de la relation de direction
+membershipWithPosition,relation d’appartenance dans le cadre du poste
+positionIsContextOfMembershipRelation,poste est le contexte de la relation d'appartenance
+migratedFrom,a été produite par migration de
+migratedInto,a été migrée vers
+migrationRelation_role,a le rôle de la Relation de migration
+overlapsOrOverlapped,chevauche ou a chevauché
+proxyFor,proxy pour
+proxyIn,proxy dans
+resultedFromTheMergerOf,résulte de la fusion de
+wasMergedInto,a été fusionné dans
+resultedFromTheSplitOf,résulte de la séparation de
+wasSplitInto,a été séparé en
