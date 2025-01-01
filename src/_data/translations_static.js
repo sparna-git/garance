@@ -1,8 +1,8 @@
 const gStructure = require("../_includes/structure")
 
 /* Fichiers de traduction de langue */
-const data_fr = require("../fr/i18n")
-const data_en = require("../en/i18n");
+const data_fr = require("../_data/i18n/fr/garance");
+const data_en = require("../_data/i18n/en/garance");
 
 // Créer une estructure et returne une résultat de type objet
 /*

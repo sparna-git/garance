@@ -32,14 +32,19 @@ module.exports = async function (eleventyConfig) {
   });
   // ***************** Filter ***********************
   
-  // Return the ID
-  eleventyConfig.addFilter("notation", async function (concept) {
-    return concept.split(":")[1];
+  // Return the localName of the prefixed URI in parameter
+  eleventyConfig.addFilter("localName", async function (uri) {
+    return uri.split(":")[1];
   });
 
-  // label
-  eleventyConfig.addFilter("label", function (arr, locale) {
+  /**
+   * Returns the first element in the array (or single item) having @language
+   * equal to the provided language code,
+   * or the first item if none matches the language code
+   **/
+  eleventyConfig.addFilter("lang", function (arr, locale) {
     if (arr) {
+      // if t
       var jsonFilter = [arr].find((f) => f["@language"] === locale);
       if (jsonFilter === undefined) {
         result = "";

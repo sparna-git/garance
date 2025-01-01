@@ -4,7 +4,7 @@ pagination:
     data: voc.graph
     size: 1
     alias: vocabulary
-permalink: "/{{ locale }}/voc/{{ vocabulary.id | notation }}/"
+permalink: "/{{ locale }}/voc/{{ vocabulary.id | localName }}/"
 ---
 
 {% set jsonScheme = voc["@context"] | json %}
@@ -13,7 +13,7 @@ permalink: "/{{ locale }}/voc/{{ vocabulary.id | notation }}/"
   <!-- Header -->
   <div class="row">
     <div class="col-md">
-        <h1 class="ConceptScheme-title">{{ vocabulary.dctitle | label('fr') | title | capitalize }}</h1>
+        <h1 class="ConceptScheme-title">{{ vocabulary.title | lang('fr') }}</h1>
     </div>
     <!-- URI -->
     <p class="concept-URI">
@@ -22,7 +22,7 @@ permalink: "/{{ locale }}/voc/{{ vocabulary.id | notation }}/"
         </code>          
     </p>
     <!-- Description -->
-    <p>{{ vocabulary.dcdescription | label('fr') | title }}</p>
+    <p>{{ vocabulary.description | lang('fr') }}</p>
     <br>
   </div>
   <hr>
@@ -33,7 +33,7 @@ permalink: "/{{ locale }}/voc/{{ vocabulary.id | notation }}/"
       <div class="col-md">
         <ul>
           {% for concepts in vocabulary.inverse_inScheme %}
-            <li><a href="/garance/{{ page.url }}concept/{{ concepts.id | notation }}">{{ concepts.prefLabel | label('fr') }}</a></li>
+            <li><a href="../{{ concepts.id | localName }}">{{ concepts.prefLabel | lang('fr') }}</a></li>
           {% endfor %}
         <ul>
       </div>

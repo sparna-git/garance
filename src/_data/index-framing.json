@@ -23,11 +23,11 @@
       "@reverse": "skos:inScheme",
       "@container": "@set"
     },
-    "dctitle": {
+    "title": {
       "@id": "dc:title",
       "@container": "@set"
     },
-    "dcdescription": {
+    "description": {
       "@id": "dc:description",
       "@container": "@set"
     },
@@ -58,7 +58,7 @@
 
   "@explicit": true,
   "type": "ConceptScheme",
-  "dctitle": {},
+  "title": {},
   "inverse_inScheme": {
     "@explicit": true
   }

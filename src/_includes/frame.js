@@ -12,15 +12,31 @@ const { AssetCache } = require("@11ty/eleventy-fetch");
 const { resolve } = require("path");
 const path = require("path");
 
-module.exports = async function (dirRdfPath, inputFramingPath, MEMORYKEY) {
-  let inputFRAMING = fs.readFileSync(inputFramingPath, {ncoding: "utf8", flag: "r"});
+module.exports = async function (dirRdfPath, framingSpecPath, MEMORYKEY) {
+  
+  // first look if there is something in the cache
 
-  // lire directory
+  // Pass in your unique custom cache key
+  let assetCache = new AssetCache(MEMORYKEY);
+  // check if the cache is fresh within the last day
+  if (assetCache.isCacheValid("1d")) {
+    // return cached data.
+    return assetCache.getCachedValue(); // a promise
+  }
+  // nothing in cache, concat the RDF files and apply framing
+
+  let framingSpec = fs.readFileSync(framingSpecPath, {ncoding: "utf8", flag: "r"});
+
+  // lire le directory
   const list_files = fs.readdirSync(dirRdfPath);
-  // récupérer le resultat dans une seule string
+  
+  // string nQuad finale concaténant le contenu de tous les fichiers
   let nQuadsString_output = "";
+  
+  // pour chaque fichier dans le répertoire ...
   for (f of list_files) {
     path_file = dirRdfPath + "/" + f;
+    // si l'extension est .rdf ...
     if (path.extname(f) === ".rdf") {
       // read file
       let inputRDF = fs.readFileSync(path_file, {encoding: "utf8",flag: "r"});
@@ -30,25 +46,21 @@ module.exports = async function (dirRdfPath, inputFramingPath, MEMORYKEY) {
       const quadStream = rdfParser.parse(streamRDF, {contentType: "application/rdf+xml",baseIRI: "http://example.org"});
       const textStream = rdfSerializer.serialize(quadStream, {contentType: "application/n-quads"});
       const nQuadsString = await streamToString(textStream);
+      
+      // concat into final BIG n-quads string
       nQuadsString_output += nQuadsString;
     }
   }
+
   // We convert the RDF JSON-LD, which is JSON with semantics embedded.
   const doc = await jsonld.fromRDF(nQuadsString_output, {format: "application/n-quads"});
   // We use the frame and the JSON-LD generated earlier to generate a new JSON-LD document based on the frame.
-  const framed = await jsonld.frame(doc, JSON.parse(inputFRAMING));
+  const framed = await jsonld.frame(doc, JSON.parse(framingSpec));
 
   // ********************** Cache local **********************
-  // Pass in your unique custom cache key
-  let asset = new AssetCache(MEMORYKEY);
-  // check if the cache is fresh within the last day
-  if (asset.isCacheValid("1d")) {
-    // return cached data.
-    return asset.getCachedValue(); // a promise
-  }
   let JsonResult = framed;
   // do some expensive operation here, this is simplified for brevity
-  await asset.save(JsonResult, "json");
+  await assetCache.save(JsonResult, "json");
 
   return JsonResult;
 }

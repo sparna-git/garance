@@ -2,8 +2,8 @@ const fs = require("fs"); //
 const gStructure = require("../_includes/structure")
 
 // appelle les fichiers csv
-const file_rico_fr = "./src/fr/rico_fr.csv";
-const file_rico_en = "./src/en/rico_en.csv";
+const file_rico_fr = "./src/_data/i18n/fr/rico.csv";
+const file_rico_en = "./src/_data/i18n/en/rico.csv";
 const rico_fr = fs.readFileSync(file_rico_fr, { encoding: "utf-8", flag: "r" });
 const rico_en = fs.readFileSync(file_rico_en, { encoding: "utf-8", flag: "r" });
 
