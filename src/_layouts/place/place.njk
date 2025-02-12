@@ -1,0 +1,18 @@
+---
+layout: main.njk
+pagination:
+    data: place.graph
+    size: 1
+    alias: places
+permalink: "/{{ locale }}/place/{{ places.id | localName }}/"
+---
+
+
+<main id="place">
+    <div class="row">
+        <div class="col-md">
+            <h1 class="ConceptScheme-title">{{ places.title | lang('fr') }}</h1>
+        </div>
+    </div>
+    {{ places | json}}    
+</main>

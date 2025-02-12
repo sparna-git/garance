@@ -1,3 +1,0 @@
----
-layout: voc.njk
----

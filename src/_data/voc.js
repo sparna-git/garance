@@ -4,7 +4,7 @@ const frame = require("../_includes/frame.js");
 // Read Files
 const TURTLE_FILE = "./src/_data/concepts";
 // Framing
-const FRAMING_FILE_VOC = "./src/_data/voc-framing.json";
+const FRAMING_FILE_VOC = "./src/_data/framings/voc-framing.json";
 // Cache Local
 const MEMORY_VOC = "skos_vocabulary";
 

@@ -1,0 +1,18 @@
+---
+layout: main.njk
+---
+
+<main id="personnesPhysiques">
+    <!-- Liste de concepts -->
+    <div class="row">
+        <div class="col-md">
+            {% if personnesId.graph %}
+                <ul>
+                    {% for pp in personnesId.graph %}
+                        <li><a href="personne/{{ pp.id | localName }}">{{ pp.label | lang("fr") | title }}</a></li>
+                    {% endfor %}
+                </ul>    
+            {% endif %}
+        </div>
+    </div>
+</main>

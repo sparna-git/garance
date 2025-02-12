@@ -1,0 +1,15 @@
+---
+layout: main.njk
+---
+
+<main id="agents_collectivites">
+    <div class="row">
+        <div class="col-md">
+            <ul>
+            {% for collectivite in acollectivites.graph %}
+                <li><a href="../collectivites/collectivite/{{ collectivite.id | localName }}">{{ collectivite.label | lang('fr') }}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>    
+</main>

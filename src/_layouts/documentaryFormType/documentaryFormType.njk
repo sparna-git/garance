@@ -2,14 +2,14 @@
 layout: main.njk
 ---
 
-<main id="vocabulary">
+<main id="documentaryFormType">
 	<div class="row">
 		<div class="col-md">
 			<h1 class="title-Header">{{ 'title' | i18n }}</h1>
 			<ul>
 				{%- for item in index.graph -%}
 					<li>
-						<a href="voc/{{ item.id | localName }}/index.html">{{ item.id | localName }} : {{ item.title | lang("fr") }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} concepts</small>
+						<a href="{{ item.id | localName }}">{{ item.title | lang("fr") }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} concepts</small>
 					</li>
 				{%- endfor-%}
 			</ul>

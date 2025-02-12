@@ -3,7 +3,7 @@ const frame = require("../_includes/frame.js");
 // Read Files
 const TURTLE_FILE = "./src/_data/concepts";
 // Framing
-const FRAMING_FILE_INDEX = "./src/_data/index-framing.json";
+const FRAMING_FILE_INDEX = "./src/_data/framings/index-framing.json";
 // Cache Local
 const MEMORY_INDEX = "skos_index";
 

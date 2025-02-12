@@ -1,5 +1,4 @@
 // Eleventy Version 3.0 with node.js >18
-
 const nunjucks = require("nunjucks");
 
 // internationalization
@@ -7,6 +6,7 @@ const i18n = require("eleventy-plugin-i18n");
 
 // Traductions
 const translations = require("./src/_data/translations.js");
+//console.log(translations);
 
 module.exports = async function (eleventyConfig) {
   const { EleventyI18nPlugin } = await import("@11ty/eleventy");
@@ -31,10 +31,14 @@ module.exports = async function (eleventyConfig) {
     },
   });
   // ***************** Filter ***********************
-  
+
   // Return the localName of the prefixed URI in parameter
   eleventyConfig.addFilter("localName", async function (uri) {
-    return uri.split(":")[1];
+    const splitURL = uri.substring(uri.lastIndexOf("/") + 1);
+    if (splitURL === undefined ) {
+      splitURL = uri.split(":")[1]
+    } 
+    return splitURL;
   });
 
   /**
@@ -44,12 +48,13 @@ module.exports = async function (eleventyConfig) {
    **/
   eleventyConfig.addFilter("lang", function (arr, locale) {
     if (arr) {
-      // if t
+      // filter for language
       var jsonFilter = [arr].find((f) => f["@language"] === locale);
       if (jsonFilter === undefined) {
         result = "";
         for (let index = 0; index < arr.length; index++) {
           const element = arr[index];
+
           if (element["@language"] === locale) {
             result = element["@value"];
           }
@@ -64,13 +69,31 @@ module.exports = async function (eleventyConfig) {
 
   // URL
   eleventyConfig.addFilter("getURL", async function (inputContext, concept) {
+    
     const inputPrefix = concept.split(":")[0];
     const inputConcept = concept.split(":")[1];
 
     const obj = JSON.parse(inputContext);
     const uriFound = JSON.stringify(obj, [inputPrefix]);
+    
     const objOutput = JSON.parse(uriFound);
-    return objOutput[inputPrefix] + inputConcept;
+    
+    return objOutput[inputPrefix] != undefined ? objOutput[inputPrefix] + inputConcept : concept;
+  });
+
+  eleventyConfig.addFilter("dateModified", async function (dateModified) {
+
+    console.log("Date Modified: " + dateModified);
+
+    const newDate = [];
+    if (dateModified.length > 1) {
+      
+      const dateOutput = dateModified.reduce(function(a,b) {return a > b ? a : b});
+      
+      return `<span>${dateOutput}</span>`;
+    } else {
+      return `<span>${dateModified}</span>`;
+    }
   });
 
   /**
@@ -92,6 +115,84 @@ module.exports = async function (eleventyConfig) {
     return new nunjucks.runtime.markSafe(jsonString);
   });
 
+  eleventyConfig.addFilter("traduction", function (label, labelTraduction) {
+    if (labelTraduction) {
+      return labelTraduction;
+    } else {
+      return label;
+    }
+  });
+
+  eleventyConfig.addFilter("sortJson",function(jsonSection, locale) {
+
+    //
+    const ObjOutput = new Object();
+    const map1 = new Map();
+    for (let index = 0; index < jsonSection.length; index++) {
+      const e = jsonSection[index];
+      const key = e.id;   
+      e.label.forEach(l => {
+        if (l["@language"] === locale) {
+          map1.set(key, l["@value"]);
+        }
+      })
+    }
+    // sort
+    const mapSort = new Map([...map1.entries()].sort((a, b) => a[1] - b[1]));
+    // convert to object output
+    return Object.fromEntries(mapSort);
+
+  });
+
+  // skos:exactMatch
+  eleventyConfig.addShortcode("getexactMatch", async function (jsonData) {
+    var outputTag = "";
+    if (jsonData.length > 0) {
+      var obj = JSON.parse(jsonData);
+      var tag = "";
+      // if json data is a String
+      if (typeof obj === "string") {
+        tag += `<li>${obj}</li>`;
+      } else {
+        // if json data is an object
+        var nCountSource = obj.length;
+        if (nCountSource > 0) {
+          for (const s of obj) {
+            if (typeof s === "string") {
+              tag += `<li>${s}</li>`;
+            } else {
+              nCountData = s.length;
+              if (nCountData > 0) {
+                for (let index = 0; index < s.length; index++) {
+                  const element = s[index];
+                  tag += `<li><a href="${element.id}">${element.id}</a></li>`;
+                }
+              } else {
+                tag += `<li><a href="${s.id}">${s.id}</a></li>`;
+              }
+            }
+          }
+        } else {
+          tag += `<li><a href="${obj.id}">${obj.id}</a></li>`;
+        }
+      }
+
+      outputTag = `<div class="row">
+        <div class="col-1">
+          <h6>Alignments</h6>
+        </div>
+        <div class="col">  
+          <ul>  
+          ${tag}
+          </ul>
+        </div>
+      </div>`;
+    }
+
+    return outputTag;
+  });
+
+  
   return {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",

@@ -12,6 +12,14 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
         
+        <script src="https://cdn.jsdelivr.net/npm/@lemonadejs/timeline/dist/index.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lemonadejs/timeline/dist/style.min.css" />
+
+        <!-- anchors -->
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+        <!-- d3js -->
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
         <!-- css -->
         <style type="text/css">
             .navbar-nav li:hover > ul.dropdown-menu {
@@ -35,6 +43,38 @@
             /* title */
             .h1 > title-Header {
                 display: contents;
+            }
+
+            /** Diagram ***/
+            .link {
+                fill: none;
+                stroke: #555;
+                stroke-opacity: 0.2;
+                stroke-width: 2px;
+            }
+            svg {
+                border: none;
+            }
+
+            /* fil d'ariane */
+            .container .breadcrumb {
+                border: none;
+                border-radius: 0;
+                /*border-bottom: 1px solid #ccc;*/
+            }
+
+            .breadcrumb ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .breadcrumb li:not(:last-child)::after {
+                display: inline-block;
+                margin: 0 0.25rem;
+                content: " > ";
             }
 
             /* so that the main body content is not hidden by the navbar */
@@ -77,6 +117,8 @@
             mark {
                 color: rgb(34, 34, 34);
             }
+
+
 
             .footer {
                 font-size: 0.8em;
