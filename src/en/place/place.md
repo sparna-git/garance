@@ -1,3 +1,0 @@
----
-layout: place/place.njk
----

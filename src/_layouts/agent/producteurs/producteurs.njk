@@ -1,0 +1,19 @@
+---
+layout: main.njk
+---
+
+<main id="agent_Producteurs">
+    <!-- Liste de concepts -->
+    <div class="row">
+        <div class="col-md">
+            {% if aproducteurs.graph %}
+                {% set sProducteurs = aproducteurs.graph | sortJson(local)%}
+                <ul>
+                    {% for p in sProducteurs %}                        
+                        <li><a href="producteur/{{ p.id | json | localName }}">{{ p.label | title }}</a></li>
+                    {% endfor %}
+                </ul>    
+            {% endif %}
+        </div>
+    </div>
+</main>

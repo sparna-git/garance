@@ -1,10 +1,10 @@
 ---
 layout: main.njk
 pagination:
-      data: apersonnes.graph
+      data: aproducteurs.graph
       size: 1
-      alias: app
-permalink: "{{ locale }}/agents/personnes/personne/{{ app.id | localName }}/"
+      alias: apro
+permalink: "{{ locale }}/agents/producteurs/producteur/{{ apro.id | localName }}/"
 ---
 
 {% set jsonScheme = apersonnes["@context"] | json %}
@@ -13,17 +13,17 @@ permalink: "{{ locale }}/agents/personnes/personne/{{ app.id | localName }}/"
     <header>
       <div class="row">
         <div class="col-md">
-          <h1 class="ConceptScheme-title">{{ app.label | lang("fr") }}</h1>
+          <h1 class="ConceptScheme-title">{{ apro.label | lang("fr") }}</h1>
         </div>
         <!-- URI -->
         <p class="concept-URI">
           <code >
-              <a href="{{ jsonScheme | getURL(app.id) }}">{{ jsonScheme | getURL(app.id) }}</a>
+              <a href="{{ jsonScheme | getURL(apro.id) }}">{{ jsonScheme | getURL(apro.id) }}</a>
           </code>
         </p>
         <!-- type -->
-        {% if app.type %}    
-          {% for t in app.type %}
+        {% if apro.type %}    
+          {% for t in apro.type %}
           <p class="type-subject">
             <span>
               <a href="{{ jsonScheme | getURL(t) }}">{{ t }}</a>        
@@ -47,12 +47,12 @@ permalink: "{{ locale }}/agents/personnes/personne/{{ app.id | localName }}/"
       </div>
       <div class="col-9">
         <p>
-        {{ app.label | lang("fr") }}
+        {{ apro.label | lang("fr") }}
         </p>  
       </div>    
       
       <!-- BirthDate -->
-      {% if app["rico:birthDate"] %}
+      {% if apro["rico:birthDate"] %}
         {% set ricoLabel = "rico:birthDate" | i18n(local) %}
         <div class="row">
           <div class="col-3">
@@ -61,7 +61,7 @@ permalink: "{{ locale }}/agents/personnes/personne/{{ app.id | localName }}/"
           </div>
           <div class="col-9">
             <p>
-              {{app["rico:birthDate"]["@value"]}}
+              {{apro["rico:birthDate"]["@value"]}}
             </p>  
           </div>    
         </div>
@@ -79,7 +79,7 @@ permalink: "{{ locale }}/agents/personnes/personne/{{ app.id | localName }}/"
         </div>
         <div class="col-9">
           <p>
-            {{ app["rico:history"][0]["@value"] }}
+            {{ apro["rico:history"][0]["@value"] }}
           </p>  
         </div>
       {% endif %}
@@ -92,7 +92,7 @@ permalink: "{{ locale }}/agents/personnes/personne/{{ app.id | localName }}/"
         </p>
       </div>
       <div class="col-9">
-        {% for t in app.type %}
+        {% for t in apro.type %}
         <p>
           <span>
             <a href="{{ jsonScheme | getURL(t) }}" target="_blank">{{ jsonScheme | getURL(t) }}</a>
@@ -102,7 +102,7 @@ permalink: "{{ locale }}/agents/personnes/personne/{{ app.id | localName }}/"
       </div> 
 
       <!-- -->
-      {% set aTOR = app["rico:agentIsTargetOfAgentOriginationRelation"] | length %}
+      {% set aTOR = apro["rico:agentIsTargetOfAgentOriginationRelation"] | length %}
       {% if aTOR > 0 %}
       {% set labelaOR = "rico:agentIsTargetOfAgentOriginationRelation" | i18n(local) %}
       <div class="col-3">
@@ -112,7 +112,7 @@ permalink: "{{ locale }}/agents/personnes/personne/{{ app.id | localName }}/"
         </p>
       </div>
       <div class="col-9">
-        {% for aOR in app["rico:agentIsTargetOfAgentOriginationRelation"] %}
+        {% for aOR in apro["rico:agentIsTargetOfAgentOriginationRelation"] %}
         
         {% endfor %}  
         

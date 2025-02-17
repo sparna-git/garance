@@ -7,9 +7,10 @@ layout: main.njk
     <div class="row">
         <div class="col-md">
             {% if personnesId.graph %}
+                {% set sPersonnes = personnesId.graph | sortJson(local)%}
                 <ul>
-                    {% for pp in personnesId.graph %}
-                        <li><a href="personne/{{ pp.id | localName }}">{{ pp.label | lang("fr") | title }}</a></li>
+                    {% for pp in sPersonnes %}                        
+                        <li><a href="personne/{{ pp.id | json | localName }}">{{ pp.label | title }}</a></li>
                     {% endfor %}
                 </ul>    
             {% endif %}

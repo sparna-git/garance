@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "included": "@included",
+
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rico": "https://www.ica.org/standards/RiC/ontology#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "html": "http://www.w3.org/1999/xhtml",
+    "an": "http://data.archives-nationales.culture.gouv.fr/",
+
+    "rico:Person": "rico:Person",
+    "rico:Agent": "rico:Agent",
+    "rico:Place": "rico:Place",
+    "rico:FamilyRelation": "rico:FamilyRelation",
+    "rico:MembershipRelation": "rico:MembershipRelation",
+    "rico:AgentToAgentRelation": "rico:AgentToAgentRelation",
+    "rico:AgentTemporalRelation": "rico:AgentTemporalRelation",
+    "rico:AgentOriginationRelation": "rico:AgentOriginationRelation",
+    "rico:AgentHierarchicalRelation": "rico:AgentHierarchicalRelation",
+    "label": {
+      "@id": "rdfs:label",
+      "@container": "@set"
+    },
+    "rico:isOrWasDescribedBy": {
+      "@id": "rico:isOrWasDescribedBy",
+      "@container": "@set"
+    },
+    "rico:beginningDate": "rico:beginningDate",
+    "rico:birthDate": "rico:birthDate",
+    "rico:deathDate": "rico:deathDate",
+    "rico:history": {
+      "@id": "rico:history",
+      "@container": "@set"
+    },
+    "rico:hasOrHadAgentName": {
+      "@id": "rico:hasOrHadAgentName",
+      "@container": "@set"
+    },
+    "rico:agentIsTargetOfAgentOriginationRelation": {
+      "@id": "rico:agentIsTargetOfAgentOriginationRelation",
+      "@container": "@set"
+    },
+    "rico:agentIsTargetOfPerformanceRelation": {
+      "@id": "rico:agentIsTargetOfPerformanceRelation",
+      "@container": "@set"
+    },
+    "prefLabel": {
+      "@id": "skos:prefLabel",
+      "@container": "@set"
+    },
+    "altLabel": {
+      "@id": "skos:altLabel",
+      "@container": "@set"
+    },
+    "rico:AgentName": "rico:AgentName"
+  },
+
+  "@explicit": true,
+  "type": [
+    "rico:Agent",
+    "rico:Place",
+    "rico:FamilyRelation",
+    "rico:MembershipRelation",
+    "rico:AgentToAgentRelation",
+    "rico:AgentTemporalRelation",
+    "rico:AgentOriginationRelation",
+    "rico:AgentHierarchicalRelation"
+  ],
+  "title": {
+    "@explicit": true
+  },
+  "label": {},
+  "rico:history": {},
+  "rico:beginningDate": {},
+  "rico:birthDate": {},
+  "rico:deathDate": {},
+  "prefLabel": {},
+  "rico:hasOrHadAgentName": {
+    "@explicit": true
+  },
+  "rico:agentIsTargetOfAgentOriginationRelation": {
+    "@explicit": true
+  },
+  "rico:agentIsTargetOfPerformanceRelation": {
+    "@explicit": true
+  }
+}
