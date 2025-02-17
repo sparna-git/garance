@@ -1,13 +1,13 @@
 ---
 layout: main.njk
 pagination:
-    data: voc.graph
+    data: vocabularies.graph
     size: 1
     alias: vocabulary
-permalink: "{{ locale }}/documentaryFormType/{{ vocabulary.id | localName }}/"
+permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
 ---
 
-{% set jsonScheme = voc["@context"] | json %}
+{% set jsonScheme = vocabularies["@context"] | json %}
 
 <main id="type">
   <!-- Header -->
@@ -24,12 +24,12 @@ permalink: "{{ locale }}/documentaryFormType/{{ vocabulary.id | localName }}/"
     <!-- Description -->
     <p>{{ vocabulary.description | lang('fr') }}</p>
    
-    <!-- Cretator -->
+    <!-- Creator -->
     {% if vocabulary.creator %}
     <div class="row">
       <div class="col-2">
-        {% set labelCreator = "dcterms:creator" | i18n(locale) %}
-        <h6><span>{{ labelCreator | traduction("creator") }}</span></h6>
+        {% set title = "dcterms:creator" | i18n(locale) %}
+        <h6><span>{{ title }}</span></h6>
       </div>
       <div class="col-6">
         {% for c in vocabulary.creator %}
@@ -44,8 +44,8 @@ permalink: "{{ locale }}/documentaryFormType/{{ vocabulary.id | localName }}/"
     {% if vocabulary.datemodified %}
       <div class="row">
         <div class="col-2">
-          {% set labelCreator = "dcterms:modified" | i18n(locale) %}
-          <h6><span>{{ labelCreator | traduction("dcterms:modified") }}</span></h6>
+          {% set title = "dcterms:modified" | i18n(locale) %}
+          <h6><span>{{ title }}</span></h6>
         </div>
         <div class="col-6">
           <span>{{ vocabulary.datemodified | dateModified }}</span>
@@ -57,8 +57,8 @@ permalink: "{{ locale }}/documentaryFormType/{{ vocabulary.id | localName }}/"
     {% if vocabulary.coverage %}
       <div class="row">
         <div class="col-2">
-          {% set labelCreator = "dc:coverage" | i18n(locale) %}
-          <h6><span>{{ labelCreator | traduction("dc:coverage") }}</span></h6>
+          {% set title = "dc:coverage" | i18n(locale) %}
+          <h6><span>{{ title }}</span></h6>
         </div>
         <div class="col-6">
           <span>{{ vocabulary.coverage | lang('fr') }}</span>
@@ -70,8 +70,8 @@ permalink: "{{ locale }}/documentaryFormType/{{ vocabulary.id | localName }}/"
     {% if vocabulary.rights %}
       <div class="row">
         <div class="col-2">
-          {% set labelCreator = "dc:rights" | i18n(locale) %}
-          <h6><span>{{ labelCreator | traduction("dc:rights") }}</span></h6>
+          {% set title = "dc:rights" | i18n(locale) %}
+          <h6><span>{{ title }}</span></h6>
         </div>
         <div class="col-10">
           <p><span>{{ vocabulary.rights | lang('fr') }}</span></p>
@@ -83,8 +83,8 @@ permalink: "{{ locale }}/documentaryFormType/{{ vocabulary.id | localName }}/"
     {% if vocabulary.historyNote %}
       <div class="row">
         <div class="col-2">
-          {% set labelCreator = "skos:historyNote" | i18n(locale) %}
-          <h6><span>{{ labelCreator | traduction("skos:historyNote") }}</span></h6>
+          {% set title = "skos:historyNote" | i18n(locale) %}
+          <h6><span>{{ title }}</span></h6>
         </div>
         <div class="col-10">
           <section>{{ vocabulary.historyNote["@value"] }}</section>
@@ -169,8 +169,8 @@ permalink: "{{ locale }}/documentaryFormType/{{ vocabulary.id | localName }}/"
           {% if concepts.altLabel %}
             <div class="row">
               <div class="col-1">
-                {% set synonyms = "skos:altLabel" | i18n(locale) %}
-                <h6>{{ synonyms | traduction("skos:altLabel") }}</h6>
+                {% set title = "skos:altLabel" | i18n(locale) %}
+                <h6>{{ title }}</h6>
               </div>
               <div class="col">
                 <ul>
@@ -186,13 +186,15 @@ permalink: "{{ locale }}/documentaryFormType/{{ vocabulary.id | localName }}/"
           {% if concepts.definition %}
             <div class="row">
               <div class="col-1">
-                {% set definition = "skos:definition" | i18n(locale) %}
-                <h6>{{ definition | traduction("skos:altLabel") }}</h6>                
+                {% set title = "skos:definition" | i18n(locale) %}
+                <h6>{{ title }}</h6>                
               </div>
               <div class="col">
-                {%- for element in concepts.definition -%}
-                  <li>{{ element["@language"] }} : {{ element["@value"] }}</li>                  
-                {%- endfor -%}
+                <ul>
+                  {%- for element in concepts.definition -%}
+                    <li>{{ element["@language"] }} : {{ element["@value"] }}</li>                  
+                  {%- endfor -%}
+                </ul>
               </div>
             </div>
           {% endif %}
@@ -219,13 +221,15 @@ permalink: "{{ locale }}/documentaryFormType/{{ vocabulary.id | localName }}/"
           {% if concepts.scopenote %}
             <div class="row">
               <div class="col-1">
-                {% set definition = "skos:definition" | i18n(locale) %}
-                <h6>{{ definition | traduction("skos:altLabel") }}</h6>                
+                {% set title = "skos:scopeNote" | i18n(locale) %}
+                <h6>{{ title }}</h6>                
               </div>
               <div class="col">
-                {%- for element in concepts.scopenote -%}
-                  <li>{{ element["@language"] }} : {{ element["@value"] }}</li>                  
-                {%- endfor -%}
+                <ul>
+                  {%- for element in concepts.scopenote -%}
+                    <li>{{ element["@language"] }} : {{ element["@value"] }}</li>                  
+                  {%- endfor -%}
+                </ul>
               </div>
             </div>
           {% endif %}
@@ -236,8 +240,8 @@ permalink: "{{ locale }}/documentaryFormType/{{ vocabulary.id | localName }}/"
           {% if concepts.changenote %}
             <div class="row">
               <div class="col-1">
-                {% set definition = "skos:changeNote" | i18n(locale) %}
-                <h6>{{ definition | traduction("skos:changeNote") }}</h6>                
+                {% set title = "skos:changeNote" | i18n(locale) %}
+                <h6>{{ title }}</h6>                
               </div>
               <div class="col">
                 {{ concepts.changenote | json }}
@@ -258,7 +262,6 @@ permalink: "{{ locale }}/documentaryFormType/{{ vocabulary.id | localName }}/"
   <hr style="margin-top: 10px;">
   {% endfor %}
 
-  <p>{{ vocabulary | json }}</p>
 </main>
 
 <!-- anchor -->

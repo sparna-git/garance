@@ -115,14 +115,6 @@ module.exports = async function (eleventyConfig) {
     return new nunjucks.runtime.markSafe(jsonString);
   });
 
-  eleventyConfig.addFilter("traduction", function (label, labelTraduction) {
-    if (labelTraduction) {
-      return labelTraduction;
-    } else {
-      return label;
-    }
-  });
-
   eleventyConfig.addFilter("sortJson",function(jsonSection, locale) {
 
     //

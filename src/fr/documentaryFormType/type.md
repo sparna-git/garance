@@ -1,3 +1,0 @@
----
-layout: documentaryFormType/type.njk
----
