@@ -1,0 +1,3 @@
+---
+layout: documentaryFormType/documentaryFormType.njk
+---
