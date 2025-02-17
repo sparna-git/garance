@@ -12,6 +12,14 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
         
+        <script src="https://cdn.jsdelivr.net/npm/@lemonadejs/timeline/dist/index.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lemonadejs/timeline/dist/style.min.css" />
+
+        <!-- anchors -->
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+        <!-- d3js -->
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
         <!-- css -->
         <style type="text/css">
             .navbar-nav li:hover > ul.dropdown-menu {
@@ -35,6 +43,38 @@
             /* title */
             .h1 > title-Header {
                 display: contents;
+            }
+
+            /** Diagram ***/
+            .link {
+                fill: none;
+                stroke: #555;
+                stroke-opacity: 0.2;
+                stroke-width: 2px;
+            }
+            svg {
+                border: none;
+            }
+
+            /* fil d'ariane */
+            .container .breadcrumb {
+                border: none;
+                border-radius: 0;
+                /*border-bottom: 1px solid #ccc;*/
+            }
+
+            .breadcrumb ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .breadcrumb li:not(:last-child)::after {
+                display: inline-block;
+                margin: 0 0.25rem;
+                content: " > ";
             }
 
             /* so that the main body content is not hidden by the navbar */
@@ -78,6 +118,8 @@
                 color: rgb(34, 34, 34);
             }
 
+
+
             .footer {
                 font-size: 0.8em;
                 font-style: italic;
@@ -97,7 +139,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavMenu">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">TEST<a>
+                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">TEST<a>
                         </li>   
                     </ul>
                 <div>
@@ -114,41 +156,14 @@
         <div class="container">
             <section id = "contenu">
                 
-<main id="vocabulary">
-	<div class="row">
-		<div class="col-md">
-			<h1 class="title-Header">Graphe Archivistique pour la Recherche, l'Accès et la Navigation des Connaissances Enhancées.</h1>
-			<ul><li>
-						<a href="/garance/fr/voc/activityTypes">activityTypes : Thésaurus des fonctions des collectivités</a> <small class="numConcepts"> - 190 Concepts</small>
-					</li><li>
-						<a href="/garance/fr/voc/carrierTypes">carrierTypes : Thésaurus des types de supports des instantiations</a> <small class="numConcepts"> - 49 Concepts</small>
-					</li><li>
-						<a href="/garance/fr/voc/corporateBodyTypes">corporateBodyTypes : Thésaurus des catégories de collectivités</a> <small class="numConcepts"> - 63 Concepts</small>
-					</li><li>
-						<a href="/garance/fr/voc/documentaryFormTypes">documentaryFormTypes : Thésaurus des types de documents</a> <small class="numConcepts"> - 243 Concepts</small>
-					</li><li>
-						<a href="/garance/fr/voc/languages">languages : Thésaurus des langues</a> <small class="numConcepts"> - 10 Concepts</small>
-					</li><li>
-						<a href="/garance/fr/voc/occupationTypes">occupationTypes : Thésaurus des fonctions, métiers et professions
-                        des personnes</a> <small class="numConcepts"> - 381 Concepts</small>
-					</li><li>
-						<a href="/garance/fr/voc/placeTypes">placeTypes : Thésaurus des types de lieux</a> <small class="numConcepts"> - 67 Concepts</small>
-					</li><li>
-						<a href="/garance/fr/voc/productionTechniqueTypes">productionTechniqueTypes : Thésaurus des types de technique de production des instantiations</a> <small class="numConcepts"> - 3 Concepts</small>
-					</li><li>
-						<a href="/garance/fr/voc/recordSetTypes">recordSetTypes : Thésaurus des types de groupes de documents</a> <small class="numConcepts"> - 24 Concepts</small>
-					</li><li>
-						<a href="/garance/fr/voc/recordStates">recordStates : Thésaurus des états des documents</a> <small class="numConcepts"> - 1 Concepts</small>
-					</li><li>
-						<a href="/garance/fr/voc/representationTypes">representationTypes : Thésaurus des types de représentation des instantiations</a> <small class="numConcepts"> - 2 Concepts</small>
-					</li><li>
-						<a href="/garance/fr/voc/things">things : Thésaurus des mots-matières</a> <small class="numConcepts"> - 2219 Concepts</small>
-					</li></ul>
-			
-		</div>
-	</div>
-</main>
 
+<section>
+    <ul>
+        <li><a href="/fr/documentaryFormType/">documentaryFormType</a></li>
+        <li><a href="/fr/agents/">Agents</a></li>
+        <li><a href="/fr/place/">Places</a></li>        
+    </ul>
+<section>
             </section>
         </div>
     <hr>
@@ -157,7 +172,7 @@
     </body>
     <!-- footer --> 
     <footer class="footer">
-        Last updated on 12/17/2024
+        Last updated on 2/17/2025
         <br />
         <br />
     </footer>
