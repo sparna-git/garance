@@ -133,9 +133,9 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
         {% set conceptId = concepts | json %}
         <!-- Title -->
         {% if concepts.notation %}
-          <h5 class="concept-title" id="{{ concepts.notation }}"><small>{{ concepts.notation }} - </small>{{ concepts.prefLabel | lang('fr') | title }}</h5>
+          <h5 class="concept-title" id="{{ concepts.notation }}"><small>{{ concepts.notation }} - </small>{{ concepts.prefLabel | lang('fr') }}</h5>
         {% else %}
-          <h5 class="concept-title" id="{{ concepts.id | localName }}">{{ concepts.prefLabel | lang('fr') | title }}</h5>
+          <h5 class="concept-title" id="{{ concepts.id | localName }}">{{ concepts.prefLabel | lang('fr') }}</h5>
         {% endif %}
         
         <!-- URI -->
@@ -159,30 +159,30 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="{{ jsonScheme | getURL(vocabulary.id) }}">{{ vocabulary.title | lang('fr') | title }}</a>
+                    <a href="{{ jsonScheme | getURL(vocabulary.id) }}">{{ vocabulary.title | lang('fr') }}</a>
                   </li>                
                 
                   {% if concepts.broader %}
 
                     {% if concepts.broader.broader.broader.broader %}                    
                       <li>
-                        <a href="{{ jsonScheme | getURL(concepts.broader.broader.broader.broader.id) }}">{{ concepts.broader.broader.broader.broader.prefLabel | lang('fr') | title }}</a>
+                        <a href="{{ jsonScheme | getURL(concepts.broader.broader.broader.broader.id) }}">{{ concepts.broader.broader.broader.broader.prefLabel | lang('fr') }}</a>
                       </li>
                     {% endif %}
                     
                     {% if concepts.broader.broader.broader %}
                       <li>
-                        <a href="{{ jsonScheme | getURL(concepts.broader.broader.broader.id) }}">{{ concepts.broader.broader.broader.prefLabel | lang('fr') | title }}</a>
+                        <a href="{{ jsonScheme | getURL(concepts.broader.broader.broader.id) }}">{{ concepts.broader.broader.broader.prefLabel | lang('fr') }}</a>
                       </li>
                     {% endif %}
 
                     {% if concepts.broader.broader %}
                       <li>
-                        <a href="{{ jsonScheme | getURL(concepts.broader.broader.id) }}">{{ concepts.broader.broader.prefLabel | lang('fr') | title }}</a>
+                        <a href="{{ jsonScheme | getURL(concepts.broader.broader.id) }}">{{ concepts.broader.broader.prefLabel | lang('fr') }}</a>
                       </li>
                     {% endif %}
                     <li>
-                      {{ concepts.prefLabel | lang('fr') | title }}
+                      {{ concepts.prefLabel | lang('fr') }}
                     </li> 
                   {% endif %}
                 </ul>
