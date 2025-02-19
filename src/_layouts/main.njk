@@ -12,14 +12,14 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
         
-        <script src="https://cdn.jsdelivr.net/npm/@lemonadejs/timeline/dist/index.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@lemonadejs/timeline/dist/style.min.css" />
-
         <!-- anchors -->
         <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
         <!-- d3js -->
         <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
+        <!-- fontawesome -->
+        <link href="/assets/fa/css/all.min.css" rel="stylesheet"/>
+        
         <!-- css -->
         <style type="text/css">
             .navbar-nav li:hover > ul.dropdown-menu {
@@ -118,7 +118,90 @@
                 color: rgb(34, 34, 34);
             }
 
+            /* TimeLine */
+            @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
 
+            * {
+                pading: 0;
+                margin: 0;
+                //font-family: "Lato", sans-serif;
+                position: relative;
+            }
+
+            .timeline {
+                padding: 10px 0px;
+                width: 80%;
+                margin-left: 3%;
+                margin-bottom: 10px;
+            }
+
+            /*
+            .timeline:before {
+                content: "";
+                position: absolute;
+                top: 40px;
+                left: 35px;
+                width: 3px;
+                height: calc(100% - 80px);
+                background: #c0392b;
+            }
+            */
+
+            .timeline .column {
+                margin: 40px 40px 40px 10px;
+            }
+
+            .timeline .column .title h1 {
+                font-size: 30px;
+                color: rgba(0,0,0,0.1);
+                font-family: serif;
+                letter-spacing: 3px;
+            }
+
+            /*
+            .timeline .column .title h1:before {
+                content: "";
+                position: absolute;
+                left: -62px;
+                top: 86px;
+                width: 10x²px;
+                height: 10px;
+                background: #fff;
+                border: 3px solid #c0392b;
+            }
+            */
+
+            .timeline .column .description p {
+                font-size: 15px;
+                line-height: 20px;
+                margin-left: 20px;
+                margin-top: 10px;
+                font-family: serif;
+            }
+
+            .timeline .column .description {
+                border-left: 1px solid #000;
+            }
+
+            .main {
+                width: 80%;
+                margin-left: 10%;
+                margin-top: 80px;
+            }
+
+            .main h1 {
+                font-size: 80px;
+                line-height: 60px;
+            }
+
+            .main p {
+                font-size: 13px;
+                line-height: 20px;
+                font-family: serif;
+                text-align: right;
+            }
+
+            /* End Timeline css */
 
             .footer {
                 font-size: 0.8em;
@@ -126,6 +209,7 @@
                 color: #B0B0B0;
                 text-align: center;
             }
+            
         </style>
     </head>
     <body>

@@ -59,6 +59,14 @@
       "@id": "skos:exactMatch",
       "@container": "@set"
     },
+    "closeMatch": {
+      "@id": "skos:closeMatch",
+      "@container": "@set"
+    },
+    "relatedMatch": {
+      "@id": "skos:relatedMatch",
+      "@container": "@set"
+    },
     "coverage": "dc:coverage",
     "rights": "dc:rights",
     "historyNote": "skos:historyNote",
@@ -107,6 +115,12 @@
       "@omitDefault": true
     },
     "exactMatch": {
+      "@omitDefault": true
+    },
+    "closeMatch": {
+      "@omitDefault": true
+    },
+    "relatedMatch": {
       "@omitDefault": true
     },
     "broader": {

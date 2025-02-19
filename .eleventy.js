@@ -35,9 +35,9 @@ module.exports = async function (eleventyConfig) {
   // Return the localName of the prefixed URI in parameter
   eleventyConfig.addFilter("localName", async function (uri) {
     const splitURL = uri.substring(uri.lastIndexOf("/") + 1);
-    if (splitURL === undefined ) {
-      splitURL = uri.split(":")[1]
-    } 
+    if (splitURL === undefined) {
+      splitURL = uri.split(":")[1];
+    }
     return splitURL;
   });
 
@@ -69,30 +69,81 @@ module.exports = async function (eleventyConfig) {
 
   // URL
   eleventyConfig.addFilter("getURL", async function (inputContext, concept) {
-    
     const inputPrefix = concept.split(":")[0];
     const inputConcept = concept.split(":")[1];
 
     const obj = JSON.parse(inputContext);
     const uriFound = JSON.stringify(obj, [inputPrefix]);
-    
+
     const objOutput = JSON.parse(uriFound);
-    
-    return objOutput[inputPrefix] != undefined ? objOutput[inputPrefix] + inputConcept : concept;
+
+    return objOutput[inputPrefix] != undefined
+      ? objOutput[inputPrefix] + inputConcept
+      : concept;
   });
 
   eleventyConfig.addFilter("dateModified", async function (dateModified) {
+    const arrDates = [];
+    dateModified.forEach((eDate) => {
+      const newDate = new Date(eDate);
+      arrDates.push(newDate);
+    });
+    // get Max date
+    const dateOutput = new Date(Math.max(...arrDates.map(Date.parse)));
+    return dateOutput.toLocaleDateString();
+  });
 
-    console.log("Date Modified: " + dateModified);
+  eleventyConfig.addFilter("timeline", function (jsonChangeNote, locale) {
+    const tData = [];
+    let JsonObj = JSON.stringify(jsonChangeNote);
+    JsonObj = JSON.parse(JsonObj);
+    for (let index = 0; index < JsonObj.length; index++) {
+      const element = JsonObj[index];
 
-    const newDate = [];
-    if (dateModified.length > 1) {
-      
-      const dateOutput = dateModified.reduce(function(a,b) {return a > b ? a : b});
-      
-      return `<span>${dateOutput}</span>`;
+      let dateNote = element["dc:date"];
+      if (!isValidateDateFormate(element["dc:date"])) {
+        if (isValidateYear(element["dc:date"])) {
+          dateNote = new Date(element["dc:date"], "01", "01");
+        }
+      } else {
+        dateNote = new Date(dateNote);
+      }
+
+      if (element["rdf:value"]["@language"] === locale) {
+        const t = {
+          dateOper: dateNote,
+          date: element["dc:date"],
+          description: element["rdf:value"]["@value"],
+        };
+        tData.push(t);
+      }
+    }
+
+    if (tData.length > 1) {
+      let jsonObj = JSON.stringify(tData);
+      jsonObj = JSON.parse(jsonObj);
+      const newJsonCode = jsonObj.sort((a, b) => {
+        const aValue = a.dateOper;
+        const bValue = b.dateOper;
+        if (aValue < bValue) {
+          return -1;
+        }
+        if (aValue > bValue) {
+          return 1;
+        }
+        return 0;
+      });
+      return newJsonCode;
     } else {
-      return `<span>${dateModified}</span>`;
+      return tData;
+    }
+  });
+
+  eleventyConfig.addFilter("traduction", function (label, labelTraduction) {
+    if (labelTraduction) {
+      return labelTraduction;
+    } else {
+      return label;
     }
   });
 
@@ -115,15 +166,16 @@ module.exports = async function (eleventyConfig) {
     return new nunjucks.runtime.markSafe(jsonString);
   });
 
-  eleventyConfig.addFilter("sortJson",function(jsonSection, locale) {
+  /*
+  eleventyConfig.addFilter("sortJson",function(jsonSection, locale,element) {
 
     //
     const ObjOutput = new Object();
     const map1 = new Map();
     for (let index = 0; index < jsonSection.length; index++) {
       const e = jsonSection[index];
-      const key = e.id;   
-      e.label.forEach(l => {
+      const key = e.id;
+      e[element].forEach(l => {
         if (l["@language"] === locale) {
           map1.set(key, l["@value"]);
         }
@@ -135,8 +187,35 @@ module.exports = async function (eleventyConfig) {
     return Object.fromEntries(mapSort);
 
   });
+  */
+
+  eleventyConfig.addFilter("jsonSort", function (jsonContent, element) {
+    const newJsonCode = jsonContent.sort((a, b) => {
+      const aValue = JSON.stringify(Object.values(a[element][0]).sort());
+      const bValue = JSON.stringify(Object.values(b[element][0]).sort());
+      if (aValue < bValue) {
+        return -1;
+      }
+      if (aValue > bValue) {
+        return 1;
+      }
+      return 0;
+    });
+
+    return newJsonCode;
+  });
+
+  eleventyConfig.addFilter("flagPrint", function (jsonData) {
+    const Broader = jsonData.find((e) => e.broader);
+    if (Broader) {
+      return true;
+    } else {
+      return false;
+    }
+  });
 
   // skos:exactMatch
+  /*
   eleventyConfig.addShortcode("getexactMatch", async function (jsonData) {
     var outputTag = "";
     if (jsonData.length > 0) {
@@ -184,7 +263,11 @@ module.exports = async function (eleventyConfig) {
     return outputTag;
   });
 
-  
+  */
+
+  // pass-through
+  eleventyConfig.addPassthroughCopy({ static: "/" });
+
   return {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
@@ -197,3 +280,14 @@ module.exports = async function (eleventyConfig) {
     },
   };
 };
+
+
+function isValidateDateFormate(dateString) {
+  let regex = /^\d{4}-\d{2}-\d{2}$/;
+  return dateString.match(regex) !== null;
+}
+
+function isValidateYear(yearString) {
+  let regex = /^\d{4}-\d{2}-\d{2}$/;
+  return yearString.match(regex) !== null;
+}

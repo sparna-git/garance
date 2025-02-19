@@ -6,8 +6,9 @@ layout: main.njk
 	<div class="row">
 		<div class="col-md">
 			<h1 class="title-Header">{{ 'title' | i18n }}</h1>
+			{% set sortIndex = index.graph | jsonSort("title") %}
 			<ul>
-				{%- for item in index.graph -%}
+				{%- for item in sortIndex -%}
 					<li>
 						<a href="{{ item.id | localName }}">{{ item.title | lang("fr") }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} concepts</small>
 					</li>
