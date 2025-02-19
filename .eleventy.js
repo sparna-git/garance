@@ -191,15 +191,9 @@ module.exports = async function (eleventyConfig) {
 
   eleventyConfig.addFilter("jsonSort", function (jsonContent, element) {
     const newJsonCode = jsonContent.sort((a, b) => {
-      const aValue = JSON.stringify(Object.values(a[element][0]).sort());
-      const bValue = JSON.stringify(Object.values(b[element][0]).sort());
-      if (aValue < bValue) {
-        return -1;
-      }
-      if (aValue > bValue) {
-        return 1;
-      }
-      return 0;
+      const aValue = JSON.stringify(Object.values(a[element][0]));
+      const bValue = JSON.stringify(Object.values(b[element][0]));
+      return aValue.localeCompare(bValue);
     });
 
     return newJsonCode;
