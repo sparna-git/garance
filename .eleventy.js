@@ -206,12 +206,9 @@ module.exports = async function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("flagPrint", function (jsonData) {
-    const Broader = jsonData.find((e) => e.broader);
-    if (Broader) {
-      return true;
-    } else {
-      return false;
-    }
+    const containsBroader = jsonData.find((e) => e.broader);
+    const numberOfConcepts = jsonData.length;
+    return containsBroader && (numberOfConcepts < 1000);
   });
 
   // skos:exactMatch

@@ -39,7 +39,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             <a href="{{ c["foaf:homepage"] }}">{{ c["foaf:name"]["@value"] }}</a>
             
             <span>
-                <a href="{{ c["foaf:mbox"] }}"><i class="fa-solid fa-envelope"></i></a>
+                <a href="mailto:{{ c["foaf:mbox"] }}"><i class="fa-solid fa-envelope"></i></a>
             </span>
             </p>
           </div>
@@ -106,14 +106,16 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
       {% for conceptType in sortInverseInScheme[0].type %}
         {% if conceptType != "Concept" %}
           <div class="alert alert-secondary" role="alert">
-              <em>Ces concepts sont tous aussi des instances de la classe “<b>{{ conceptType | i18n(locale) }}</b>”.</em>
+              <em>{{ "These concepts have all the type" | i18n(locale) }} “<b>{{ conceptType | i18n(locale) }}</b>”.</em>
           </div>
         {% endif %}
       {% endfor %}
     {% endif %}
     
   </div>
+
   <hr>
+
   <!-- Tree -->
   {% set flagPrintTree =  vocabulary.inverse_inScheme | flagPrint %}
   {% if flagPrintTree %}

@@ -223,7 +223,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavMenu">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1 href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">TEST<a>
+                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">TEST<a>
                         </li>   
                     </ul>
                 <div>
@@ -231,7 +231,7 @@
                     {% set pageUrl = page.url.split('/').slice(2).join('/') %}
                     {% if locales.length %}                        
                         {% for locale in locales -%}
-                            <a href="/garance/{{ locale.code }}/{{ pageUrl }}" rel="alternate" hreflang="{{ locale.code }}">{{ locale.label }}</a>
+                            <a href="../{{ locale.code }}/{{ pageUrl }}" rel="alternate" hreflang="{{ locale.code }}">{{ locale.label }}</a>
                         {% endfor -%}                        
                     {% endif %}                    
                 </div>
@@ -249,7 +249,7 @@
     </body>
     <!-- footer --> 
     <footer class="footer">
-        Last updated on {{ helpers.currentDate() }}
+        {{ 'last updated on' | i18n }} {{ helpers.currentDate() }}
         <br />
         <br />
     </footer>
