@@ -1,0 +1,3632 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-witdth">
+        <title>Garance</title>
+
+        <!-- bootstrap -->
+        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">     
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        
+        <!-- anchors -->
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+        <!-- d3js -->
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+        <!-- fontawesome -->
+        <link href="/assets/fa/css/all.min.css" rel="stylesheet"/>
+        
+        <!-- css -->
+        <style type="text/css">
+            .navbar-nav li:hover > ul.dropdown-menu {
+                display: block;
+            }
+            .dropdown-submenu {
+                position:relative;
+            }
+            .dropdown-submenu > .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top:-6px;
+            }
+
+            /* rotate caret on hover */
+            .dropdown-menu > li > a:hover:after {
+                text-decoration: underline;
+                transform: rotate(-90deg);
+            }
+
+            /* title */
+            .h1 > title-Header {
+                display: contents;
+            }
+
+            /** Diagram ***/
+            .link {
+                fill: none;
+                stroke: #555;
+                stroke-opacity: 0.2;
+                stroke-width: 2px;
+            }
+            svg {
+                border: none;
+            }
+
+            /* fil d'ariane */
+            .container .breadcrumb {
+                border: none;
+                border-radius: 0;
+                /*border-bottom: 1px solid #ccc;*/
+            }
+
+            .breadcrumb ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .breadcrumb li:not(:last-child)::after {
+                display: inline-block;
+                margin: 0 0.25rem;
+                content: " > ";
+            }
+
+            /* so that the main body content is not hidden by the navbar */
+            body {
+                padding-top: 80px;
+            }
+
+            /* so that the anchor is not hidden by the navbar when deep-linking */
+            html {
+                scroll-padding-top: 60px;
+            }
+
+            /* background of navbar */
+            .bg-performing-arts {
+                background-color: #083658;
+            }
+
+            /* concepts number */
+            .numConcepts {
+                font-size: small;
+                font-style: italic;
+            }
+
+            /* so that URI sticks to the title */
+            .ConceptScheme-title {
+                margin-bottom:-0.06em;
+            }
+
+            /* so that URI sticks to the title */
+            .concept-title {
+                margin-bottom:-0.2em;
+            }
+
+            /* make the URI smaller */
+            .concept-URI {
+                font-size:85%;
+            }
+
+            /* so that autocompletions mark text stay black even though we use a dark theme */
+            mark {
+                color: rgb(34, 34, 34);
+            }
+
+            /* TimeLine */
+            @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+            * {
+                pading: 0;
+                margin: 0;
+                //font-family: "Lato", sans-serif;
+                position: relative;
+            }
+
+            .timeline {
+                padding: 10px 0px;
+                width: 80%;
+                margin-left: 3%;
+                margin-bottom: 10px;
+            }
+
+            /*
+            .timeline:before {
+                content: "";
+                position: absolute;
+                top: 40px;
+                left: 35px;
+                width: 3px;
+                height: calc(100% - 80px);
+                background: #c0392b;
+            }
+            */
+
+            .timeline .column {
+                margin: 40px 40px 40px 10px;
+            }
+
+            .timeline .column .title h1 {
+                font-size: 30px;
+                color: rgba(0,0,0,0.1);
+                font-family: serif;
+                letter-spacing: 3px;
+            }
+
+            /*
+            .timeline .column .title h1:before {
+                content: "";
+                position: absolute;
+                left: -62px;
+                top: 86px;
+                width: 10x²px;
+                height: 10px;
+                background: #fff;
+                border: 3px solid #c0392b;
+            }
+            */
+
+            .timeline .column .description p {
+                font-size: 15px;
+                line-height: 20px;
+                margin-left: 20px;
+                margin-top: 10px;
+                font-family: serif;
+            }
+
+            .timeline .column .description {
+                border-left: 1px solid #000;
+            }
+
+            .main {
+                width: 80%;
+                margin-left: 10%;
+                margin-top: 80px;
+            }
+
+            .main h1 {
+                font-size: 80px;
+                line-height: 60px;
+            }
+
+            .main p {
+                font-size: 13px;
+                line-height: 20px;
+                font-family: serif;
+                text-align: right;
+            }
+
+            /* End Timeline css */
+
+            .footer {
+                font-size: 0.8em;
+                font-style: italic;
+                color: #B0B0B0;
+                text-align: center;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <!-- Navbar menu -->
+        <nav class="navbar navbar-expand-lg fixed-top bg-performing-arts" data-bs-theme="dark"> 
+            <div class="container">
+                <a class="navbar-brand" href="/fr">Garance</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavMenu">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">TEST<a>
+                        </li>   
+                    </ul>
+                <div>
+                <div class="menu-menu-principal-container">
+                    
+                                            
+                        <a href="../fr/vocabularies/languages/" rel="alternate" hreflang="fr">FR</a>
+                        <a href="../en/vocabularies/languages/" rel="alternate" hreflang="en">EN</a>
+                                            
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <section id = "contenu">
+                
+
+
+
+<main id="vocabulary">
+  <!-- Header -->
+  <div class="row">
+    <div class="col-md">
+        <h1 class="ConceptScheme-title">Liste des langues</h1>
+    </div>
+    <!-- URI -->
+    <p class="concept-URI">
+        <code >
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/languages">https://rdf.archives-nationales.culture.gouv.fr/languages</a>
+        </code>          
+    </p>
+    <!-- Description -->
+    <p>Liste des langues des documents et des agents. Produite
+            manuellement, en RDF/XML conforme à RiC-O 1.0.1, à partir des données contenues dans la
+            liste des langues (FRAN_RI_100) interne au système d'information archivistique (SIA) des
+            Archives nationales. Cette version prend en compte la totalité des langues déclarées
+            dans la liste SIA. Les relations d'équivalence avec le vocabulaire des codes ISO 639-2
+            pour la représentation des langues de la Library of Congress
+            (http://id.loc.gov/vocabulary/iso639-2) ont été ajoutées ainsi que les labels en
+            anglais.</p>
+   
+    <!-- Creator -->
+    
+    <div class="row">
+      <div class="col-2">
+        
+        <h6><span>Créateur</span></h6>
+      </div>
+      <div class="col-6">
+        
+          <div class="row">
+            <p>
+            <a href="https://www.archives-nationales.culture.gouv.fr">Archives nationales (France). Lab</a>
+            
+            <span>
+                <a href="mailto:le-lab.archives-nationales@culture.gouv.fr"><i class="fa-solid fa-envelope"></i></a>
+            </span>
+            </p>
+          </div>
+        
+      </div>
+    </div>  
+    
+    
+    <!-- dcterms:modified -->
+    
+      <div class="row">
+        <div class="col-2">
+          
+          <h6><span>Dernière mise à jour</span></h6>
+        </div>
+        <div class="col-6">
+          <span>7/29/2024</span>
+        </div>  
+      </div>
+    
+
+    <!-- dc:coverage -->
+    
+
+    <!-- dc:rights -->
+    
+      <div class="row">
+        <div class="col-2">
+          
+          <h6><span>Droits</span></h6>
+        </div>
+        <div class="col-10">
+          <p><span>Ces données étant des informations publiques, l'usager dispose d'un
+            droit non exclusif et gratuit de libre « réutilisation » à des fins commerciales ou non,
+            dans le monde entier et pour une durée illimitée. Il doit accompagner chaque rediffusion
+            des informations de l'indication précise de l'origine des métadonnées : « Archives
+            nationales (France) », date des métadonnées (mars 2022), nom du référentiel (fourni dans
+            le fichier Excel qui en donne la liste). Voir à ce sujet la page :
+            https://www.archives-nationales.culture.gouv.fr/fr/web/guest/reutilisation-des-donnees-publiques.</span></p>
+        </div> 
+      </div>
+    
+
+    <!-- skos:historyNote -->
+    
+      <div class="row">
+        <div class="col-2">
+          
+          <h6><span>Note historique</span></h6>
+        </div>
+        <div class="col-10">
+          
+          
+             <ul>
+                <li xml:lang="fr">Mars-avril 2022 : revu le fichier, pour utiliser directement
+                    la norme SKOS et ajouter des métadonnées à ce vocabulaire.</li>
+                <li xml:lang="fr">Juillet 2024 : ajouté à la main les 24 entrées manquantes.
+                    Complété par la déclaration des codes de langue à l'aide de skos:notation. Mis à
+                    jour les métadonnées.</li>
+            </ul>
+        
+        </div>
+      </div>
+    
+
+    <!-- Datatype -->
+    
+      
+        
+      
+        
+          <div class="alert alert-secondary" role="alert">
+              <em>Ces concepts ont tous le type “<b>rico:Language</b>”.</em>
+          </div>
+        
+      
+    
+    
+  </div>
+
+  <hr>
+
+  <!-- Tree -->
+  
+  
+  
+  <!-- Liste de concepts -->
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="ger"><small>ger - </small>Allemand</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name5">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name5</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Allemand/ger</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : German</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/ger">http://id.loc.gov/vocabulary/iso639-2/ger</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="eng"><small>eng - </small>Anglais</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name6">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name6</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Anglais/eng</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : English</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/eng">http://id.loc.gov/vocabulary/iso639-2/eng</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="ara"><small>ara - </small>Arabe</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6qh7b8yep--z64lmk0i2mn7">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6qh7b8yep--z64lmk0i2mn7</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Arabe/ara</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Arabic</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/ara">http://id.loc.gov/vocabulary/iso639-2/ara</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="aze"><small>aze - </small>Azéri</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z3d22v2n--9g3z9ixlsrfs">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z3d22v2n--9g3z9ixlsrfs</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Azeri/aze</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Azerbaijani</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/aze">http://id.loc.gov/vocabulary/iso639-2/aze</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="bul"><small>bul - </small>Bulgare</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z8bswcw5--bop1vrrfo305">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z8bswcw5--bop1vrrfo305</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Bulgare/bul</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Bulgarian</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/bul">http://id.loc.gov/vocabulary/iso639-2/bul</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="cat"><small>cat - </small>Catalan</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6g899b3ht-jm6991yabdi">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6g899b3ht-jm6991yabdi</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Valencien</li><li>Valencian</li><li>Catalan/cat</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Catalan</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/cat">http://id.loc.gov/vocabulary/iso639-2/cat</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="chi"><small>chi - </small>Chinois</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-27t3kwreg-1uog59frz3duy">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-27t3kwreg-1uog59frz3duy</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Chinois/chi</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Chinese</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/chi">http://id.loc.gov/vocabulary/iso639-2/chi</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="kor"><small>kor - </small>Coréen</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-9wmjrgwzs-7qd7q10efdgg">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-9wmjrgwzs-7qd7q10efdgg</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Coréen/kor</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Korean</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/kor">http://id.loc.gov/vocabulary/iso639-2/kor</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="hrv"><small>hrv - </small>Croate</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z0mrdqvo--1r4hvkea941qa">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z0mrdqvo--1r4hvkea941qa</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Croate/hrv</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Croatian</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/hrv">http://id.loc.gov/vocabulary/iso639-2/hrv</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="dan"><small>dan - </small>Danois</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6vjqcpn3q-legpg1oy9jog">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6vjqcpn3q-legpg1oy9jog</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Danois/dan</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Danish</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/dan">http://id.loc.gov/vocabulary/iso639-2/dan</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="spa"><small>spa - </small>Espagnol</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name7">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name7</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Castillan</li><li>Castilian</li><li>Espagnol/spa</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Spanish</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/spa">http://id.loc.gov/vocabulary/iso639-2/spa</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="fre"><small>fre - </small>Français</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name4">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name4</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Français/fre</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : French</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/fre">http://id.loc.gov/vocabulary/iso639-2/fre</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="heb"><small>heb - </small>Hébreu</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6eqlgu6jp--12ojio4wuez4">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6eqlgu6jp--12ojio4wuez4</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Hébreu/heb</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Hebrew</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/heb">http://id.loc.gov/vocabulary/iso639-2/heb</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="hun"><small>hun - </small>Hongrois</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-bs1vo2qq7--3z3urgeudicx">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-bs1vo2qq7--3z3urgeudicx</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Hongrois/hun</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Hungarian</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/hun">http://id.loc.gov/vocabulary/iso639-2/hun</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="und"><small>und - </small>Indéterminée</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-oss057ra-ggj18pxos22n">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-oss057ra-ggj18pxos22n</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Indéterminé/und</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Undetermined</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/und">http://id.loc.gov/vocabulary/iso639-2/und</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="ita"><small>ita - </small>Italien</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1r5pt0vk2-1nbochkgb87dc">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1r5pt0vk2-1nbochkgb87dc</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Italien/ita</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Italian</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/ita">http://id.loc.gov/vocabulary/iso639-2/ita</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="jpn"><small>jpn - </small>Japonais</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1r86elmsk--4sn2z2z095po">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1r86elmsk--4sn2z2z095po</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Japonais/jpn</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Japanese</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/jpn">http://id.loc.gov/vocabulary/iso639-2/jpn</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="khm"><small>khm - </small>Khmer Central</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-5mat7mwfw--1qvprgefpak31">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-5mat7mwfw--1qvprgefpak31</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Khmer/khm</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Central Khmer</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/khm">http://id.loc.gov/vocabulary/iso639-2/khm</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="ber"><small>ber - </small>Langues Berbères</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-24jvl4ifg-qm3enyls0r1n">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-24jvl4ifg-qm3enyls0r1n</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Langues berbères/ber</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Berber languages</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/ber">http://id.loc.gov/vocabulary/iso639-2/ber</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="inc"><small>inc - </small>Langues Indo-aryennes</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4twkixgif--23mscu52ldz1">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4twkixgif--23mscu52ldz1</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Langues indo-aryennes/inc</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Indic languages</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/inc">http://id.loc.gov/vocabulary/iso639-2/inc</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="lat"><small>lat - </small>Latin</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name9">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name9</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Latin/lat</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Latin</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/lat">http://id.loc.gov/vocabulary/iso639-2/lat</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="dut"><small>dut - </small>Néerlandais</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4tzanfz87-1k0iqbn7n8x8o">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4tzanfz87-1k0iqbn7n8x8o</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Flamand</li><li>Flemish</li><li>Néerlandais, flamand/dut/nld</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Dutch</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/dut">http://id.loc.gov/vocabulary/iso639-2/dut</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="fas"><small>fas - </small>Persan</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-15g3k8cw6a-5hplkafjklx2">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-15g3k8cw6a-5hplkafjklx2</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Persan/fas</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Persian</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/fas">http://id.loc.gov/vocabulary/iso639-2/fas</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="pol"><small>pol - </small>Polonais</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-3tvxs9qn3qg-n9p1uew8e4c">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-3tvxs9qn3qg-n9p1uew8e4c</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Polonais/pol</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Polish</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/pol">http://id.loc.gov/vocabulary/iso639-2/pol</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="por"><small>por - </small>Portugais</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-27r4eyoru--nr0heo55wfg1">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-27r4eyoru--nr0heo55wfg1</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Portugais/por</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Portuguese</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/por">http://id.loc.gov/vocabulary/iso639-2/por</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="rum"><small>rum - </small>Roumain</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6gxlaatn3--1u5awn9rlvci0">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6gxlaatn3--1u5awn9rlvci0</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Roumain/rum</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Romanian</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/rum">http://id.loc.gov/vocabulary/iso639-2/rum</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="rus"><small>rus - </small>Russe</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1sjflaasd--2gtom2adgool">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1sjflaasd--2gtom2adgool</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Russe/rus</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Russian</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/rus">http://id.loc.gov/vocabulary/iso639-2/rus</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="srp"><small>srp - </small>Serbe</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z4ym2kus--yx1gl0wxj41a">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z4ym2kus--yx1gl0wxj41a</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Serbe/srp</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Serbian</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/srp">http://id.loc.gov/vocabulary/iso639-2/srp</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="swe"><small>swe - </small>Suédois</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-3tvuh76enzs--1jtgafq8a1fvw">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-3tvuh76enzs--1jtgafq8a1fvw</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Suédois/swe</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Swedish</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/swe">http://id.loc.gov/vocabulary/iso639-2/swe</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="cze"><small>cze - </small>Tchèque</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-796696222-1lamgv0pyrkcz">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-796696222-1lamgv0pyrkcz</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Tchèque/cze</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Czech</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/cze">http://id.loc.gov/vocabulary/iso639-2/cze</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="tur"><small>tur - </small>Turc</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-bs3x454oq--1qhi5aucvlmxf">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-bs3x454oq--1qhi5aucvlmxf</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Turc/tur</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Turkish</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/tur">http://id.loc.gov/vocabulary/iso639-2/tur</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="ukr"><small>ukr - </small>Ukrainien</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4vsa9mk3v--1e6zs93j5v3r9">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4vsa9mk3v--1e6zs93j5v3r9</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Ukrainien/ukr</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Ukrainian</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/ukr">http://id.loc.gov/vocabulary/iso639-2/ukr</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="vie"><small>vie - </small>Vietnamien</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-2dc92nrgy--1tzv3kr2sefc7">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-2dc92nrgy--1tzv3kr2sefc7</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Vietnamien/vie</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Vietnamese</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/vie">http://id.loc.gov/vocabulary/iso639-2/vie</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+  <div class="row"> 
+      <div class="col">
+        
+        <!-- Title -->
+        
+          <h5 class="concept-title" id="yid"><small>yid - </small>Yiddish</h5>
+        
+        
+        <!-- URI -->
+        <p class="concept-URI">
+          <code>
+            <a href="https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6esxwiu96--12luf1wb9fqf8">https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6esxwiu96--12luf1wb9fqf8</a>
+          </code>
+          <br /> 
+          <!-- Sparql Query -->
+        </p>
+
+        <div class="container">
+
+          <!-- breadcrumb -->
+          
+
+          <!-- Synonyms -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Synonymes</h6>
+              </div>
+              <div class="col">
+                <ul><li>Yiddish/yid</li></ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:definition -->
+          
+
+          <!-- Translation -->
+          
+            <div class="row">
+              <div class="col-1">
+                <h6>Translations</h6>
+              </div>
+              <div class="col">
+                <ul>
+                    <li>en : Yiddish</li>                  
+                  </ul>
+              </div>
+            </div>
+          
+
+          <!-- scopeNote -->
+          
+
+          <!-- skos:example -->
+          
+          <!-- skos:changeNote -->
+          
+
+          <!-- skos:exactMatch -->
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Alignements</h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  
+                    <li><a href="http://id.loc.gov/vocabulary/iso639-2/yid">http://id.loc.gov/vocabulary/iso639-2/yid</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          
+
+          <!-- skos:closeMatch -->
+          
+
+          <!-- skos:relatedMatch -->
+          
+
+
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  
+
+</main>
+
+<!-- anchor -->
+<script>
+  // generate anchors on each h5 title
+  anchors.options.placement = 'left';
+  anchors.options.icon = '#';
+  anchors.add('h5');
+</script>
+
+<!-- d3js -->
+<script type="text/javascript">
+  // recuperer tous les concepts
+  const data = [{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name5","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Allemand/ger"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ger"}],"example":null,"notation":"ger","scopenote":null,"prefLabel":[{"@language":"fr","@value":"allemand"},{"@language":"en","@value":"German"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name6","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Anglais/eng"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/eng"}],"example":null,"notation":"eng","scopenote":null,"prefLabel":[{"@language":"fr","@value":"anglais"},{"@language":"en","@value":"English"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6qh7b8yep--z64lmk0i2mn7","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Arabe/ara"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ara"}],"example":null,"notation":"ara","scopenote":null,"prefLabel":[{"@language":"fr","@value":"arabe"},{"@language":"en","@value":"Arabic"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z3d22v2n--9g3z9ixlsrfs","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Azeri/aze"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/aze"}],"example":null,"notation":"aze","scopenote":null,"prefLabel":[{"@language":"fr","@value":"azéri"},{"@language":"en","@value":"Azerbaijani"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z8bswcw5--bop1vrrfo305","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Bulgare/bul"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/bul"}],"example":null,"notation":"bul","scopenote":null,"prefLabel":[{"@language":"fr","@value":"bulgare"},{"@language":"en","@value":"Bulgarian"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6g899b3ht-jm6991yabdi","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"valencien"},{"@language":"en","@value":"Valencian"},{"@language":"fr","@value":"Catalan/cat"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/cat"}],"example":null,"notation":"cat","scopenote":null,"prefLabel":[{"@language":"fr","@value":"catalan"},{"@language":"en","@value":"Catalan"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-27t3kwreg-1uog59frz3duy","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Chinois/chi"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/chi"}],"example":null,"notation":"chi","scopenote":null,"prefLabel":[{"@language":"fr","@value":"chinois"},{"@language":"en","@value":"Chinese"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-9wmjrgwzs-7qd7q10efdgg","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Coréen/kor"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/kor"}],"example":null,"notation":"kor","scopenote":null,"prefLabel":[{"@language":"fr","@value":"coréen"},{"@language":"en","@value":"Korean"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z0mrdqvo--1r4hvkea941qa","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Croate/hrv"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/hrv"}],"example":null,"notation":"hrv","scopenote":null,"prefLabel":[{"@language":"fr","@value":"croate"},{"@language":"en","@value":"Croatian"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6vjqcpn3q-legpg1oy9jog","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Danois/dan"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/dan"}],"example":null,"notation":"dan","scopenote":null,"prefLabel":[{"@language":"fr","@value":"danois"},{"@language":"en","@value":"Danish"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name7","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"castillan"},{"@language":"en","@value":"Castilian"},{"@language":"fr","@value":"Espagnol/spa"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/spa"}],"example":null,"notation":"spa","scopenote":null,"prefLabel":[{"@language":"fr","@value":"espagnol"},{"@language":"en","@value":"Spanish"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name4","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Français/fre"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/fre"}],"example":null,"notation":"fre","scopenote":null,"prefLabel":[{"@language":"fr","@value":"français"},{"@language":"en","@value":"French"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6eqlgu6jp--12ojio4wuez4","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Hébreu/heb"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/heb"}],"example":null,"notation":"heb","scopenote":null,"prefLabel":[{"@language":"fr","@value":"hébreu"},{"@language":"en","@value":"Hebrew"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-bs1vo2qq7--3z3urgeudicx","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Hongrois/hun"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/hun"}],"example":null,"notation":"hun","scopenote":null,"prefLabel":[{"@language":"fr","@value":"hongrois"},{"@language":"en","@value":"Hungarian"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-oss057ra-ggj18pxos22n","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Indéterminé/und"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/und"}],"example":null,"notation":"und","scopenote":null,"prefLabel":[{"@language":"fr","@value":"indéterminée"},{"@language":"en","@value":"Undetermined"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1r5pt0vk2-1nbochkgb87dc","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Italien/ita"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ita"}],"example":null,"notation":"ita","scopenote":null,"prefLabel":[{"@language":"fr","@value":"italien"},{"@language":"en","@value":"Italian"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1r86elmsk--4sn2z2z095po","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Japonais/jpn"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/jpn"}],"example":null,"notation":"jpn","scopenote":null,"prefLabel":[{"@language":"fr","@value":"japonais"},{"@language":"en","@value":"Japanese"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-5mat7mwfw--1qvprgefpak31","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Khmer/khm"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/khm"}],"example":null,"notation":"khm","scopenote":null,"prefLabel":[{"@language":"fr","@value":"khmer central"},{"@language":"en","@value":"Central Khmer"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-24jvl4ifg-qm3enyls0r1n","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"langues berbères/ber"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ber"}],"example":null,"notation":"ber","scopenote":null,"prefLabel":[{"@language":"fr","@value":"langues berbères"},{"@language":"en","@value":"Berber languages"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4twkixgif--23mscu52ldz1","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"langues indo-aryennes/inc"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/inc"}],"example":null,"notation":"inc","scopenote":null,"prefLabel":[{"@language":"fr","@value":"langues indo-aryennes"},{"@language":"en","@value":"Indic languages"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name9","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Latin/lat"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/lat"}],"example":null,"notation":"lat","scopenote":null,"prefLabel":[{"@language":"fr","@value":"latin"},{"@language":"en","@value":"Latin"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4tzanfz87-1k0iqbn7n8x8o","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"flamand"},{"@language":"en","@value":"Flemish"},{"@language":"fr","@value":"Néerlandais, flamand/dut/nld"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/dut"}],"example":null,"notation":"dut","scopenote":null,"prefLabel":[{"@language":"fr","@value":"néerlandais"},{"@language":"en","@value":"Dutch"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-15g3k8cw6a-5hplkafjklx2","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Persan/fas"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/fas"}],"example":null,"notation":"fas","scopenote":null,"prefLabel":[{"@language":"fr","@value":"persan"},{"@language":"en","@value":"Persian"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-3tvxs9qn3qg-n9p1uew8e4c","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Polonais/pol"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/pol"}],"example":null,"notation":"pol","scopenote":null,"prefLabel":[{"@language":"fr","@value":"polonais"},{"@language":"en","@value":"Polish"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-27r4eyoru--nr0heo55wfg1","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Portugais/por"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/por"}],"example":null,"notation":"por","scopenote":null,"prefLabel":[{"@language":"fr","@value":"portugais"},{"@language":"en","@value":"Portuguese"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6gxlaatn3--1u5awn9rlvci0","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Roumain/rum"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/rum"}],"example":null,"notation":"rum","scopenote":null,"prefLabel":[{"@language":"fr","@value":"roumain"},{"@language":"en","@value":"Romanian"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1sjflaasd--2gtom2adgool","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Russe/rus"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/rus"}],"example":null,"notation":"rus","scopenote":null,"prefLabel":[{"@language":"fr","@value":"russe"},{"@language":"en","@value":"Russian"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z4ym2kus--yx1gl0wxj41a","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Serbe/srp"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/srp"}],"example":null,"notation":"srp","scopenote":null,"prefLabel":[{"@language":"fr","@value":"serbe"},{"@language":"en","@value":"Serbian"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-3tvuh76enzs--1jtgafq8a1fvw","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Suédois/swe"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/swe"}],"example":null,"notation":"swe","scopenote":null,"prefLabel":[{"@language":"fr","@value":"suédois"},{"@language":"en","@value":"Swedish"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-796696222-1lamgv0pyrkcz","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Tchèque/cze"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/cze"}],"example":null,"notation":"cze","scopenote":null,"prefLabel":[{"@language":"fr","@value":"tchèque"},{"@language":"en","@value":"Czech"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-bs3x454oq--1qhi5aucvlmxf","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Turc/tur"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/tur"}],"example":null,"notation":"tur","scopenote":null,"prefLabel":[{"@language":"fr","@value":"turc"},{"@language":"en","@value":"Turkish"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4vsa9mk3v--1e6zs93j5v3r9","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Ukrainien/ukr"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ukr"}],"example":null,"notation":"ukr","scopenote":null,"prefLabel":[{"@language":"fr","@value":"ukrainien"},{"@language":"en","@value":"Ukrainian"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-2dc92nrgy--1tzv3kr2sefc7","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Vietnamien/vie"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/vie"}],"example":null,"notation":"vie","scopenote":null,"prefLabel":[{"@language":"fr","@value":"vietnamien"},{"@language":"en","@value":"Vietnamese"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6esxwiu96--12luf1wb9fqf8","type":["Concept","rico:Language"],"altLabel":[{"@language":"fr","@value":"Yiddish/yid"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/yid"}],"example":null,"notation":"yid","scopenote":null,"prefLabel":[{"@language":"fr","@value":"yiddish"},{"@language":"en","@value":"Yiddish"}]}]
+  /* THOMAS : il faut ajouter dans le tableau de data un noeud qui correspond à la racine de l'arbre à dessigner */
+  const conceptScheme_Header = {"id": "https://rdf.archives-nationales.culture.gouv.fr/languages","prefLabel":[{"@language":"fr","@value":"Liste des langues"}]}
+  const title_conceptScheme = []
+
+  
+    data.push(conceptScheme_Header);
+
+      // Specify the charts’ dimensions. The height is variable, depending on the layout.
+      const width = 928;
+      const marginTop = 10;
+      const marginRight = 20;
+      const marginBottom = 10;
+      const marginLeft = 40;
+
+      const root = d3.stratify()
+        .id((d) => d.id)
+        .parentId((d) => {
+          if(d.broader) {
+            return d.broader.id
+          } else { 
+            if(d.type && d.type.includes("Concept")) return data.at(-1).id;
+            else return null; 
+          }
+        })
+      (data);
+
+      const dx = 14;
+      const dy = (width - marginRight - marginLeft) / (1 + root.height);
+
+      // Define the tree layout and the shape for links.
+      const tree = d3.tree().nodeSize([dx, dy]);
+      const diagonal = d3.linkHorizontal().x(d => d.y).y(d => d.x);
+
+      // Create the SVG container, a layer for the links and a layer for the nodes.
+      const svg = d3.select("svg")
+        //.attr("width", width)
+        .attr("width", "100%")
+        //.attr("height", dx)
+        .attr("height", "80%")
+        .attr("viewBox", [-marginLeft, -marginTop, width, dx])
+        //.attr("style", "max-width: 100%; height: auto; font: 12px sans-serif;");
+        .attr("style", "max-width: 100%; font: 12px sans-serif;");
+
+      const gLink = svg.append("g")
+          .attr("fill", "none")
+          .attr("stroke", "#555")
+          .attr("stroke-opacity", 0.4)
+          .attr("stroke-width", 1.5);
+
+      const gNode = svg.append("g")
+          .attr("cursor", "pointer")
+          .attr("pointer-events", "all");
+    
+      function update(event,source) {
+          const duration = event?.altKey ? 2500 : 250; // hold the alt key to slow down the transition
+          const nodes = root.descendants().reverse();
+          const links = root.links();
+
+          // Compute the new tree layout.
+          tree(root);
+
+          let left = root;
+          let right = root;
+          root.eachBefore(node => {
+            if (node.x < left.x) left = node;
+            if (node.x > right.x) right = node;
+          });
+
+          const height = right.x - left.x + marginTop + marginBottom;
+          const transition = svg.transition()
+              .duration(duration)
+              //.attr("height", height)
+              .attr("height", "80%")
+              .attr("viewBox", [-marginLeft, left.x - marginTop, width, height])
+              .tween("resize", window.ResizeObserver ? null : () => () => svg.dispatch("toggle"));
+          
+          // Update the nodes…
+          const node = gNode.selectAll("g")
+            .data(nodes, d => d.data.id);
+
+          // Enter any new nodes at the parent's previous position.
+          const nodeEnter = node.enter().append("g")
+              .attr("transform", d => `translate(${source.y0},${source.x0})`)
+              .attr("fill-opacity", 0)
+              .attr("stroke-opacity", 0)
+              .on("click", (event, d) => {
+                d.children = d.children ? null : d._children;
+                update(event, d);
+              });
+          
+          nodeEnter.append("circle")
+            .attr("r", 2.5)
+            .attr("fill", d => d._children ? "#555" : "#999")
+            .attr("stroke-width", 10);
+
+          const nodeRef = nodeEnter.append("a")
+            .attr("href", d => "#"+d.data.notation)
+
+          nodeRef.append("text")
+              .attr("dy", "0.40em")
+              //.attr("x", d => d._children ? -6 : 6)
+              .attr("x", d => d._children ? -6 : 6)
+              .attr("text-anchor", d => d._children ? "end" : "start")
+              // .attr("text-anchor", d => d.data.prefLabel ? "end" : "start")
+              .text(d => d.data.prefLabel.filter(i => i["@language"] == "fr")[0]["@value"])
+              .attr("stroke-linejoin", "round")
+              .attr("stroke-width", 3)
+              .attr("stroke", "white")
+              .attr("paint-order", "stroke");
+          
+          // Transition nodes to their new position.
+          const nodeUpdate = node.merge(nodeEnter).transition(transition)
+              .attr("transform", d => `translate(${d.y},${d.x})`)
+              .attr("fill-opacity", 1)
+              .attr("stroke-opacity", 1);
+
+          // Transition exiting nodes to the parent's new position.
+          const nodeExit = node.exit().transition(transition).remove()
+              .attr("transform", d => `translate(${source.y},${source.x})`)
+              .attr("fill-opacity", 0)
+              .attr("stroke-opacity", 0);
+
+          // Update the links…
+          const link = gLink.selectAll("path")
+            //.data(links, d => d.target.id);
+            .data(links, d => d.target.data.id.split(":")[1])
+
+          // Enter any new links at the parent's previous position.
+          const linkEnter = link.enter().append("path")
+              .attr("d", d => {
+                const o = {x: source.x0, y: source.y0};
+                return diagonal({source: o, target: o});
+              });
+          
+          // Transition links to their new position.
+          link.merge(linkEnter).transition(transition)
+              .attr("d", diagonal);
+
+          // Transition exiting nodes to the parent's new position.
+          link.exit().transition(transition).remove()
+              .attr("d", d => {
+                const o = {x: source.x, y: source.y};
+                return diagonal({source: o, target: o});
+              });
+
+          // Stash the old positions for transition.
+          root.eachBefore(d => {
+            d.x0 = d.x;
+            d.y0 = d.y;
+          });
+        }
+      
+      root.x0 = dy / 2;
+      root.y0 = 0;
+      root.descendants().forEach((d, i) => {
+        d.id = i;
+        d._children = d.children;
+      });
+
+      update(null, root);
+
+      svg.node();
+  
+</script>
+
+<!-- breadcrumb -->
+<script>
+  
+</script>
+
+<!-- timeline -->
+<script type="text/javascript">
+
+</script>
+            </section>
+        </div>
+    <hr>
+        
+        
+    </body>
+    <!-- footer --> 
+    <footer class="footer">
+        dernière mise à jour le 2/19/2025
+        <br />
+        <br />
+    </footer>
+</html>
