@@ -1,6 +1,6 @@
 # GARANCE
 
-*G*raphe *A*rchivistique pour la *R*echerche, l'*A*ccès et la *N*avigation des *C*onnaissances *E*nhancées
+*G*raphe des *A*rchives nationales pour la *R*echerche, l'*A*ccès et la *N*avigation des *C*onnaissances *E*nrichies
 
 ## Liens
 
