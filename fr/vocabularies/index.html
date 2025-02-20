@@ -21,6 +21,7 @@
         <link href="/assets/fa/css/all.min.css" rel="stylesheet"/>
         
         <!-- css -->
+        <link rel='stylesheet' href="/assets/css/timeline.css" type='text/css' />
         <style type="text/css">
             .navbar-nav li:hover > ul.dropdown-menu {
                 display: block;
@@ -118,103 +119,32 @@
                 color: rgb(34, 34, 34);
             }
 
-            /* TimeLine */
-            @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
-
-            * {
-                pading: 0;
-                margin: 0;
-                //font-family: "Lato", sans-serif;
-                position: relative;
-            }
-
-            .timeline {
-                padding: 10px 0px;
-                width: 80%;
-                margin-left: 3%;
-                margin-bottom: 10px;
-            }
-
-            /*
-            .timeline:before {
-                content: "";
-                position: absolute;
-                top: 40px;
-                left: 35px;
-                width: 3px;
-                height: calc(100% - 80px);
-                background: #c0392b;
-            }
-            */
-
-            .timeline .column {
-                margin: 40px 40px 40px 10px;
-            }
-
-            .timeline .column .title h1 {
-                font-size: 30px;
-                color: rgba(0,0,0,0.1);
-                font-family: serif;
-                letter-spacing: 3px;
-            }
-
-            /*
-            .timeline .column .title h1:before {
-                content: "";
-                position: absolute;
-                left: -62px;
-                top: 86px;
-                width: 10x²px;
-                height: 10px;
-                background: #fff;
-                border: 3px solid #c0392b;
-            }
-            */
-
-            .timeline .column .description p {
-                font-size: 15px;
-                line-height: 20px;
-                margin-left: 20px;
-                margin-top: 10px;
-                font-family: serif;
-            }
-
-            .timeline .column .description {
-                border-left: 1px solid #000;
-            }
-
-            .main {
-                width: 80%;
-                margin-left: 10%;
-                margin-top: 80px;
-            }
-
-            .main h1 {
-                font-size: 80px;
-                line-height: 60px;
-            }
-
-            .main p {
-                font-size: 13px;
-                line-height: 20px;
-                font-family: serif;
-                text-align: right;
-            }
-
-            /* End Timeline css */
-
             .footer {
                 font-size: 0.8em;
                 font-style: italic;
                 color: #B0B0B0;
                 text-align: center;
             }
-            
+
+            .section_garance {
+                margin-top: 50px;
+                margin-bottom: 60px;                
+            }
+
+            .section_body {
+                margin-top: 50px;
+                margin-bottom: 60px;                
+            }
+
+            .section_garance ul {
+                margin-top: 50px;
+                margin-bottom: 60px;
+            }            
         </style>
     </head>
     <body>
         <!-- Navbar menu -->
-        <nav class="navbar navbar-expand-lg fixed-top bg-performing-arts" data-bs-theme="dark"> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
             <div class="container">
                 <a class="navbar-brand" href="/fr">Garance</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -222,65 +152,65 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavMenu">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Vocabularies -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">TEST<a>
-                        </li>   
+                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Vocabulaires contrôlés<a>
+                            
+                                
+                                <ul class="dropdown-menu">
+                                
+                                    <li><a class="dropdown-item" href="vocabularies/identifierTypes">Liste des types d'identifiants des entités</a></li>
+                                
+                                    <li><a class="dropdown-item" href="vocabularies/recordStates">Thésaurus des états des documents</a></li>
+                                
+                                    <li><a class="dropdown-item" href="vocabularies/occupationTypes">Thésaurus des fonctions, métiers et professions des
+         personnes</a></li>
+                                
+                                </ul>
+                            
+                        </li>
+                        <!-- Agents -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Agents<a>
+                        </li>
+                        <!-- Lieux -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Places<a>
+                        </li>
                     </ul>
                 <div>
                 <div class="menu-menu-principal-container">
                     
-                                            
-                        <a href="../fr/vocabularies/" rel="alternate" hreflang="fr">FR</a>
-                        <a href="../en/vocabularies/" rel="alternate" hreflang="en">EN</a>
-                                            
+                        <a href="/en/vocabularies/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
+                                               
                 </div>
             </div>
         </nav>
-
+        <!-- show all contents -->
         <div class="container">
             <section id = "contenu">
                 
-<main id="documentaryFormType">
+
+
+<main class="section_garance" id="documentaryFormType">
 	<div class="row">
 		<div class="col-md">
-			<h1 class="title-Header">Vocabulaires contrôlés</h1>
-			
+			<h1 class="title-Header">Vocabulaires contrôlés</h1>			
 			<ul><li>
-						<a href="languages">Liste des langues</a> <small class="numConcepts"> - 34 concepts</small>
-					</li><li>
-						<a href="corporateBodyTypes">Thésaurus des catégories de collectivités</a> <small class="numConcepts"> - 64 concepts</small>
+						<a href="identifierTypes">Liste des types d'identifiants des entités</a> <small class="numConcepts"> - 5 concepts</small>
 					</li><li>
 						<a href="recordStates">Thésaurus des états des documents</a> <small class="numConcepts"> - 30 concepts</small>
 					</li><li>
-						<a href="activityTypes">Thésaurus des fonctions des collectivités</a> <small class="numConcepts"> - 191 concepts</small>
-					</li><li>
-						<a href="occupationTypes">Thésaurus des fonctions, métiers et professions
-                        des personnes</a> <small class="numConcepts"> - 423 concepts</small>
-					</li><li>
-						<a href="things">Thésaurus des mots-matières</a> <small class="numConcepts"> - 2219 concepts</small>
-					</li><li>
-						<a href="documentaryFormTypes">Thésaurus des types de documents</a> <small class="numConcepts"> - 245 concepts</small>
-					</li><li>
-						<a href="recordSetTypes">Thésaurus des types de groupes de documents</a> <small class="numConcepts"> - 25 concepts</small>
-					</li><li>
-						<a href="placeTypes">Thésaurus des types de lieux</a> <small class="numConcepts"> - 67 concepts</small>
-					</li><li>
-						<a href="representationTypes">Thésaurus des types de représentation des instanciations</a> <small class="numConcepts"> - 2 concepts</small>
-					</li><li>
-						<a href="carrierTypes">Thésaurus des types de supports des instanciations</a> <small class="numConcepts"> - 51 concepts</small>
-					</li><li>
-						<a href="productionTechniqueTypes">Thésaurus des types de technique de production des instanciations</a> <small class="numConcepts"> - 3 concepts</small>
-					</li></ul>
-			
+						<a href="occupationTypes">Thésaurus des fonctions, métiers et professions des
+         personnes</a> <small class="numConcepts"> - 427 concepts</small>
+					</li></ul>			
 		</div>
 	</div>
 </main>
 
             </section>
         </div>
-    <hr>
-        
-        
+        <hr>
     </body>
     <!-- footer --> 
     <footer class="footer">
