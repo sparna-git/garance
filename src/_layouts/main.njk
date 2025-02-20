@@ -78,14 +78,9 @@
                 content: " > ";
             }
 
-            /* so that the main body content is not hidden by the navbar */
-            body {
-                padding-top: 80px;
-            }
-
             /* so that the anchor is not hidden by the navbar when deep-linking */
             html {
-                scroll-padding-top: 60px;
+                scroll-padding-top: 10px;
             }
 
             /* background of navbar */
@@ -157,9 +152,9 @@
                             <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'vocabularies' | i18n }}<a>
                             {% if index.graph %}
                                 {% set sortVocabularies = index.graph | jsonSort("title") %}
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu">  
                                 {% for voc in sortVocabularies %}
-                                    <li><a class="dropdown-item" href="/vocabulary/{{ voc.id | localName }}">{{ voc.title | lang("fr") }}</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/{{ voc.id | localName }}">{{ voc.title | lang("fr") }}</a></li>
                                 {% endfor %}
                                 </ul>
                             {% endif %}

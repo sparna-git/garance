@@ -101,7 +101,19 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
       </div>
     {% endif %}
 
-    <!-- Datatype -->
+    <!-- Resource -->
+    <div class="row">
+        <div class="col-2">
+          <h6><span>{{ "download" | i18n }}</span></h6>
+        </div>
+        <div class="col-10">
+          <a href="https://github.com/ArchivesNationalesFR/Referentiels/tree/version_2/concepts/rdf/">
+            <img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="TTL">
+          </a>
+        </div>
+    </div>
+
+    <!-- Additionnal class -->
     {% if sortInverseInScheme %}
       {% for conceptType in sortInverseInScheme[0].type %}
         {% if conceptType != "Concept" %}
@@ -111,16 +123,6 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
         {% endif %}
       {% endfor %}
     {% endif %}
-
-    <!-- Resource -->
-    <div class="row">
-        <h6><span>{{ "document" | i18n }}</span></h6>
-        <div class="col-10">
-          <a href="https://github.com/ArchivesNationalesFR/Referentiels/tree/version_2/concepts/rdf/">
-            <img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="TTL">
-          </a>
-        </div>
-    </div>
     
   </div>
 

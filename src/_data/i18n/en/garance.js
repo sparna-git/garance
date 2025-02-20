@@ -8,7 +8,7 @@ module.exports = {
     "These concepts have all the type": "These concepts have all the type",
     agents: "Agents",
     lieux: "Places",
-    document: "Download",
+    download: "Download data",
 
     // properties, classes, etc
     "skos:altLabel": "Synonyms",

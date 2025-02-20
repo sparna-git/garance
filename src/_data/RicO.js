@@ -41,7 +41,7 @@ function readCSV(data, langue) {
   // creer l'objetc
   const objLanguage = new Object();
   // split data csv
-  const data_clean = data.split("\r\n");
+  const data_clean = data.split(/\r?\n/);
   // pour chaque line on v
   const entries = new Map();
   data_clean.forEach((l) => {
