@@ -1,7 +1,7 @@
 module.exports = {
   fr: {
     title:
-      "Graphe Archivistique pour la Recherche, l'Accès et la Navigation des Connaissances Enhancées.",
+      "Graphe des Archives nationales pour la Recherche, l’Accès et la Navigation des Connaissances Enrichies",
     garance: "Garance",
     "last updated on": "dernière mise à jour le",
     "vocabularies": "Vocabulaires contrôlés",
