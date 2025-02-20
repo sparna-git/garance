@@ -10,7 +10,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
 {% set jsonScheme = vocabularies["@context"] | json %}
 {% set sortInverseInScheme = vocabulary.inverse_inScheme | jsonSort("prefLabel") %}
 
-<main id="vocabulary">
+<main class="section_body" id="vocabulary">
   <!-- Header -->
   <div class="row">
     <div class="col-md">
