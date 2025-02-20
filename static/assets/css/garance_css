@@ -1,0 +1,8 @@
+.index_garance {
+                margin-top: 50px;
+                margin-bottom: 60px;
+            }
+.ul-margin {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}

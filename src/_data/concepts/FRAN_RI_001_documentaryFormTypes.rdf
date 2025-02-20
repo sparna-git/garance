@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rdf:RDF xmlns:cc="http://creativecommons.org/ns#"
-         xmlns:dc="http://purl.org/dc/elements/1.1/"
-         xmlns:dcterms="http://purl.org/dc/terms/"
-         xmlns:foaf="http://xmlns.com/foaf/0.1/"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:rico="https://www.ica.org/standards/RiC/ontology#"
-         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-         xml:base="https://rdf.archives-nationales.culture.gouv.fr/">
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:html="http://www.w3.org/1999/xhtml"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:rico="https://www.ica.org/standards/RiC/ontology#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xml:base="https://rdf.archives-nationales.culture.gouv.fr/">
    <skos:ConceptScheme rdf:about="documentaryFormTypes">
-      <dc:description xml:lang="fr">Thésaurus des types de documents. Résulte de la conversion automatique en RDF, conforme à SKOS et RiC-O 1.0.1, du référentiel XML correspondant (une partie du fichier RI_001 des AN). Des enrichissements, modifications de structure et alignements sont prévus dans les prochains mois.</dc:description>
-      <dc:source xml:lang="fr">FRAN_RI_001 (export du SIA des AnF du 6 août 2024,
-                        version 1.8 dans le SIA)</dc:source>
-      <dc:title xml:lang="fr">Thésaurus des types de documents</dc:title>
+      <dcterms:title xml:lang="fr">Thésaurus des types de documents</dcterms:title>
+      <dcterms:description xml:lang="fr">Thésaurus des types de documents. Résulte de la conversion
+         automatique en RDF, conforme à SKOS et RiC-O 1.1, d’une partie du référentiel XML
+         correspondant dit des types de documents (fichier FRAN_RI_001.xml, version 1.8) dans le
+         système d’information archivistique (SIA) des Archives nationales de France (AnF). Des
+         enrichissements, modifications de structure et alignements sont prévus dans les prochains
+         mois.</dcterms:description>
+      <dcat:version xml:lang="fr">2.0 (février 2025)</dcat:version>
+      <dc:source xml:lang="fr">Fichier FRAN_RI_001.xml, version 1.8 ; exporté du système
+         d’information archivistique (SIA) des Archives nationales de France (AnF) le 21 janvier
+         2025 (date de dernière modification dans le SIA : 2024-12-19)</dc:source>
       <dcterms:creator>
          <foaf:Organization>
             <foaf:mbox>le-lab.archives-nationales@culture.gouv.fr</foaf:mbox>
@@ -22,40 +27,54 @@
             <foaf:name xml:lang="fr">Archives nationales (France). Lab</foaf:name>
          </foaf:Organization>
       </dcterms:creator>
+      <dcterms:publisher>
+         <foaf:Organization>
+            <foaf:name xml:lang="fr">Archives nationales de France</foaf:name>
+            <owl:sameAs rdf:resource="https://rdf.archives-nationales.culture.gouv.fr/agent/005061"
+            />
+         </foaf:Organization>
+      </dcterms:publisher>
       <dcterms:created>2019</dcterms:created>
       <dcterms:modified>2021-11</dcterms:modified>
       <dcterms:modified>2022-03-20</dcterms:modified>
       <dcterms:modified>2024-10-10T17:22:42.9550014+02:00</dcterms:modified>
+      <dcterms:modified>2025-02-18T18:08:19.0201246+01:00</dcterms:modified>
       <dc:coverage xml:lang="fr">du Moyen Âge à nos jours</dc:coverage>
       <dc:language>fr-FR</dc:language>
+      <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-2/fre"/>
       <dc:type xml:lang="fr">Thésaurus</dc:type>
-      <dc:rights xml:lang="fr">Ces données étant des informations publiques, l'usager dispose d'un droit non exclusif
-        et gratuit de libre « réutilisation » à des fins commerciales ou non, dans le monde entier
-        et pour une durée illimitée. Il doit accompagner chaque rediffusion des informations de
-        l'indication précise de l'origine des métadonnées : « Archives nationales (France) », date
-        des métadonnées (mars 2022), nom du référentiel (fourni dans le fichier Excel qui en donne
-        la liste). Voir à ce sujet la page :
-        https://www.archives-nationales.culture.gouv.fr/fr/web/guest/reutilisation-des-donnees-publiques.</dc:rights>
+      <dc:rights xml:lang="fr">Ces données étant des informations publiques, l’usager dispose d’un
+         droit non exclusif et gratuit de libre « réutilisation » à des fins commerciales ou non,
+         dans le monde entier et pour une durée illimitée, de ce référentiel. Il doit accompagner
+         chaque rediffusion des informations de l’indication précise de l’origine des métadonnées :
+         « Archives nationales de France », du nom du référentiel, de son identifiant (URI), du
+         numéro et date de la version du référentiel.</dc:rights>
+      <dcat:distribution>
+         <dcat:Distribution>
+            <dcat:title>version CSV issue du présent fichier RDF</dcat:title>
+            <dcat:mediaType rdf:resource="http://www.iana.org/assignments/media-types/text/csv"/>
+         </dcat:Distribution>
+      </dcat:distribution>
       <skos:historyNote rdf:parseType="Literal">
          <html:ul>
-            <html:li xml:lang="fr">Modifié manuellement en novembre 2021 la
-                                description de l'album
-                                (documentaryFormType/FRAN_RI_001-d3nd89vnrk--16wap6q8xb894)
-                                (instance des deux classes RecordSetType et DocumentaryFormType pour
-                                l'instant).</html:li>
-            <html:li xml:lang="fr">Mars-mai 2022 : regénéré le fichier.
-                                Enrichissement des métadonnées du vocabulaire. Ajout de quelques
-                                concepts (rapport de préfet, rapport de stage, enquête judiciaire)
-                                et relations d'association, et, le 2 mai 2022, de quelques
-                                définitions et de trois nouveaux concepts (répertoire de notaire,
-                                liste d'actes notariés, mention d'acte notarié), pour la description
-                                des archives notariales. Quelques autres concepts ont été supprimés
-                                (sont désormais des instances de la classe RecordSetType).</html:li>
-            <html:li xml:lang="fr">Août 2024 : regénéré le fichier. Mise à jour des
-                                métadonnées du vocabulaire. Suppression de notes éditoriales et
-                                historiques non pertinentes. Ajout de quelques concepts entre mai
-                                2022 et mai 2024 : entretien ; mémoire judiciaire ;
-                                recours. Un concept déplacé dans le référentiel des statuts des documents ('extrait d'acte'). Relations ajoutées au concept 'minute notariale'.</html:li>
+            <html:li xml:lang="fr">Modifié manuellement en novembre 2021 la description de l'album
+               (documentaryFormType/FRAN_RI_001-d3nd89vnrk--16wap6q8xb894) (instance des deux
+               classes RecordSetType et DocumentaryFormType pour l'instant).</html:li>
+            <html:li xml:lang="fr">Mars-mai 2022 : regénéré le fichier. Enrichissement des
+               métadonnées du vocabulaire. Ajout de quelques concepts (rapport de préfet, rapport de
+               stage, enquête judiciaire) et relations d'association, et, le 2 mai 2022, de quelques
+               définitions et de trois nouveaux concepts (répertoire de notaire, liste d'actes
+               notariés, mention d'acte notarié), pour la description des archives notariales.
+               Quelques autres concepts ont été supprimés (sont désormais des instances de la classe
+               RecordSetType).</html:li>
+            <html:li xml:lang="fr">Août 2024 : regénéré le fichier. Mise à jour des métadonnées du
+               vocabulaire. Suppression de notes éditoriales et historiques non pertinentes. Ajout
+               de quelques concepts entre mai 2022 et mai 2024 : entretien ; mémoire judiciaire ;
+               recours. Un concept déplacé dans le référentiel des statuts des documents ('extrait
+               d'acte'). Relations ajoutées au concept 'minute notariale'.</html:li>
+            <html:li xml:lang="fr">Février 2025 : regénéré le fichier. Cette version du vocabulaire
+               ne compte pas de nouveau concept. Les métadonnées du fichier SKOS ont été
+               enrichies.</html:li>
          </html:ul>
       </skos:historyNote>
       <skos:hasTopConcept rdf:resource="documentaryFormType/FRAN_RI_001-d3nd89amxp--lr0xlor5wm53"/>
@@ -284,7 +303,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">acte d'état civil</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">acte d’état civil</skos:prefLabel>
       <skos:altLabel xml:lang="fr">acte de naissance</skos:altLabel>
       <skos:altLabel xml:lang="fr">acte de décès</skos:altLabel>
       <skos:altLabel xml:lang="fr">acte de mariage</skos:altLabel>
@@ -296,7 +315,7 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">acte de vente</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">acte d'achat</skos:altLabel>
+      <skos:altLabel xml:lang="fr">acte d’achat</skos:altLabel>
       <skos:altLabel xml:lang="fr">acquisition</skos:altLabel>
       <skos:altLabel xml:lang="fr">adjudication</skos:altLabel>
       <skos:narrower rdf:resource="documentaryFormType/FRAN_RI_001-d3nd89me2v-1xfyihxuch3po"/>
@@ -312,7 +331,8 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">acte notarié</skos:prefLabel>
-      <skos:definition xml:lang="fr">Acte établi par un notaire. (source : Département du Minutier central des notaires de Paris) </skos:definition>
+      <skos:definition xml:lang="fr">Acte établi par un notaire. (source : Département du Minutier
+         central des notaires de Paris)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>02/05/2022</dc:date>
@@ -331,7 +351,10 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">acte imparfait</skos:prefLabel>
-      <skos:definition xml:lang="fr">Acte préparé par un notaire, mais n’ayant pas abouti de manière définitive, en général de par la volonté des parties, ayant renoncé à la transaction avant que l’acte soit « parfait ». (source : Département du Minutier central des notaires de Paris) </skos:definition>
+      <skos:definition xml:lang="fr">Acte préparé par un notaire, mais n’ayant pas abouti de manière
+         définitive, en général de par la volonté des parties, ayant renoncé à la transaction avant
+         que l’acte soit « parfait ». (source : Département du Minutier central des notaires de
+         Paris)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>02/05/2022</dc:date>
@@ -344,7 +367,18 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">brevet notarié</skos:prefLabel>
-      <skos:definition xml:lang="fr">Acte notarié dont le premier original, à la différence de la minute notariale, n’est pas conservé par le notaire ayant instrumenté, mais remis aux parties signataires. Les parties peuvent rapporter un brevet au notaire ou à son successeur pour que celui-ci soit déposé au rang des minutes ou grossoyé (copié dans les formes), de même que certains brevets ont pu rester à l’étude sans avoir été récupérés par les parties. Le brevet, jusqu’à la loi du 25 ventôse an XI (16 mars 1803) réorganisant le notariat, n’est pas inscrit, à la différence de la minute notariale, au répertoire du notaire. Il figure cependant au répertoire dans une colonne spécifique après cette réforme, même s’il n’est pas plus conservé par le notaire qu’auparavant et toujours remis directement aux parties signataires. Le brevet correspondant à une forme allégée d’acte notarié, seuls des actes d’importance relativement modeste peuvent être passés sous cette forme. (source : DMC) </skos:definition>
+      <skos:definition xml:lang="fr">Acte notarié dont le premier original, à la différence de la
+         minute notariale, n’est pas conservé par le notaire ayant instrumenté, mais remis aux
+         parties signataires. Les parties peuvent rapporter un brevet au notaire ou à son successeur
+         pour que celui-ci soit déposé au rang des minutes ou grossoyé (copié dans les formes), de
+         même que certains brevets ont pu rester à l’étude sans avoir été récupérés par les parties.
+         Le brevet, jusqu’à la loi du 25 ventôse an XI (16 mars 1803) réorganisant le notariat,
+         n’est pas inscrit, à la différence de la minute notariale, au répertoire du notaire. Il
+         figure cependant au répertoire dans une colonne spécifique après cette réforme, même s’il
+         n’est pas plus conservé par le notaire qu’auparavant et toujours remis directement aux
+         parties signataires. Le brevet correspondant à une forme allégée d’acte notarié, seuls des
+         actes d’importance relativement modeste peuvent être passés sous cette forme. (source :
+         DMC)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>02/05/2022</dc:date>
@@ -357,7 +391,12 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">minute notariale</skos:prefLabel>
-      <skos:definition xml:lang="fr">Premier original d’un acte notarié, complet de toutes ses annexes, dont le notaire a charge de la conservation jusqu’à ce que la loi en transfère la responsabilité à un service public d’archives. La minute est signée du ou des notaires et des parties à l’acte. Elle est inscrite au répertoire de ce même notaire et fait foi (valeur probatoire), constituant un acte authentique au sens du Code civil. (source : Département du Minutier central des notaires de Paris) </skos:definition>
+      <skos:definition xml:lang="fr">Premier original d’un acte notarié, complet de toutes ses
+         annexes, dont le notaire a charge de la conservation jusqu’à ce que la loi en transfère la
+         responsabilité à un service public d’archives. La minute est signée du ou des notaires et
+         des parties à l’acte. Elle est inscrite au répertoire de ce même notaire et fait foi
+         (valeur probatoire), constituant un acte authentique au sens du Code civil. (source :
+         Département du Minutier central des notaires de Paris)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>02/05/2022</dc:date>
@@ -379,11 +418,13 @@
       <skos:changeNote>
          <rdf:Description>
             <dc:date>14/03/2022</dc:date>
-            <rdf:value xml:lang="fr">classe modifiée (changée en DocumentaryFormType) le [14/03/2022]</rdf:value>
+            <rdf:value xml:lang="fr">classe modifiée (changée en DocumentaryFormType) le
+               [14/03/2022]</rdf:value>
          </rdf:Description>
       </skos:changeNote>
       <skos:closeMatch rdf:resource="http://www.cei.lmu.de/VID/#VID_353"/>
-      <skos:relatedMatch rdf:resource="https://rdf.archives-nationales.culture.gouv.fr/recordState/FRAN_RI_001-d-60xqn2has--17fino3q6vkd2"/>
+      <skos:relatedMatch
+         rdf:resource="https://rdf.archives-nationales.culture.gouv.fr/recordState/FRAN_RI_001-d-60xqn2has--17fino3q6vkd2"/>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd89nbho-16u3osxzn3rkw"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd89ryrj--o10l2ijvrpqj">
@@ -392,7 +433,12 @@
       <skos:prefLabel xml:lang="fr">protêt</skos:prefLabel>
       <skos:altLabel xml:lang="fr">protestation</skos:altLabel>
       <skos:altLabel xml:lang="fr">protest</skos:altLabel>
-      <skos:definition xml:lang="fr">Le "protêt" est un acte formel par lequel un huissier ou un notaire qui a présenté un effet de commerce (billet à ordre ou lettre de change) au tiré constate, si la présentation est faite avant l'échéance, que le tiré refuse de l'accepter, ou, si la présentation est faite à l'échéance, que le tiré refuse de payer ou déclare ne pas pouvoir payer la somme pour laquelle le titre a été créé. (S. Braudo, dictionnaire du droit privé. dictionnaire-juridique.com)</skos:definition>
+      <skos:definition xml:lang="fr">Le "protêt" est un acte formel par lequel un huissier ou un
+         notaire qui a présenté un effet de commerce (billet à ordre ou lettre de change) au tiré
+         constate, si la présentation est faite avant l’échéance, que le tiré refuse de l’accepter,
+         ou, si la présentation est faite à l’échéance, que le tiré refuse de payer ou déclare ne
+         pas pouvoir payer la somme pour laquelle le titre a été créé. (S. Braudo, dictionnaire du
+         droit privé. dictionnaire-juridique.com)</skos:definition>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd89nbho-16u3osxzn3rkw"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd89svym-c1cv76xovth5">
@@ -441,7 +487,8 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">arrêt</skos:prefLabel>
-      <skos:definition xml:lang="fr">S'applique notamment aux actes de la Cour des comptes en matière de jugement des comptes.</skos:definition>
+      <skos:definition xml:lang="fr">S’applique notamment aux actes de la Cour des comptes en
+         matière de jugement des comptes.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd89zbh0-fn2zvsslz5jg">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -465,13 +512,13 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">autorisation d'exercice professionnel</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">autorisation d’exercice professionnel</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8a4ikt-188w81hj6hr3q">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">autorisation d'urbanisme</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">autorisation d’urbanisme</skos:prefLabel>
       <skos:definition xml:lang="fr">19ème siècle.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8a5fk4--1m1zy9p8828mv">
@@ -485,7 +532,7 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8a6cje--1rvuw06021kbf">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">avant-projet d'architecture</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">avant-projet d’architecture</skos:prefLabel>
       <skos:altLabel xml:lang="fr">avant-projet détaillé</skos:altLabel>
       <skos:altLabel xml:lang="fr">avant-projet sommaire</skos:altLabel>
       <skos:altLabel xml:lang="fr">avant-projet définitif</skos:altLabel>
@@ -503,7 +550,9 @@
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">avis</skos:prefLabel>
       <skos:altLabel xml:lang="fr">avis de parents</skos:altLabel>
-      <skos:definition xml:lang="fr">Préciser de quelle autorité émane l'avis reviendrait à créer un champ trop restrictif. C'est pourquoi il est préférable de ne faire figurer ici que le terme générique.</skos:definition>
+      <skos:definition xml:lang="fr">Préciser de quelle autorité émane l’avis reviendrait à créer un
+         champ trop restrictif. C’est pourquoi il est préférable de ne faire figurer ici que le
+         terme générique.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8aa0od--1ethxybiwgeht">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -546,7 +595,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">brevet d'invention</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">brevet d’invention</skos:prefLabel>
       <skos:note xml:lang="fr">Terme employé également dans le référentiel Matières.</skos:note>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8aficf-avwqwtl95mym">
@@ -555,7 +604,8 @@
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">brochure</skos:prefLabel>
       <skos:altLabel xml:lang="fr">presse institutionnelle</skos:altLabel>
-      <skos:definition xml:lang="fr">S'emploie pour désigner toutes sortes de dépliants, plaquettes... </skos:definition>
+      <skos:definition xml:lang="fr">S’emploie pour désigner toutes sortes de dépliants,
+         plaquettes...</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8agfbq-1cqelmqz0i5zl">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -587,7 +637,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">cahier d'enchères</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">cahier d’enchères</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d699mmx4aaw--1kgyjvv9o6hwd">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -605,15 +655,15 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">carte d'identité</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">carte nationale d'identité</skos:altLabel>
+      <skos:prefLabel xml:lang="fr">carte d’identité</skos:prefLabel>
+      <skos:altLabel xml:lang="fr">carte nationale d’identité</skos:altLabel>
       <skos:note xml:lang="fr">Terme employé également dans le référentiel Matières.</skos:note>
       <skos:narrower rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8anw4m-zatcn4uvaz1w"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8anw4m-zatcn4uvaz1w">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">carte d'identité professionnelle</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">carte d’identité professionnelle</skos:prefLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8amz5b--1agydv44ah78d"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8aosw6--1tccysg7gm8n0">
@@ -645,7 +695,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">carton d'invitation</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">carton d’invitation</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8ash15-1hyjwj2tqpu7s">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -685,7 +735,8 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">chanson</skos:prefLabel>
-      <skos:definition xml:lang="fr">Correspond à la fois au texte des paroles et aux partitions musicales. Terme employé également dans le référentiel Matières.</skos:definition>
+      <skos:definition xml:lang="fr">Correspond à la fois au texte des paroles et aux partitions
+         musicales. Terme employé également dans le référentiel Matières.</skos:definition>
       <skos:narrower rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8axyhf--o5847a110xxj"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8axyhf--o5847a110xxj">
@@ -699,7 +750,8 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">charte</skos:prefLabel>
-      <skos:definition xml:lang="fr">S'emploie pour les documents solennels médiévaux et d'Ancien Régime.</skos:definition>
+      <skos:definition xml:lang="fr">S’emploie pour les documents solennels médiévaux et d’Ancien
+         Régime.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8b0d50-f15b2jnbt9l1">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -743,28 +795,33 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">compte administratif</skos:prefLabel>
-      <skos:definition xml:lang="fr">Finances locales : compte établi en fin d'exercice, retraçant les mouvements effectifs de dépenses et de recettes de la collectivité, par le président de l'assemblée délibérante (INSEE).</skos:definition>
+      <skos:definition xml:lang="fr">Finances locales : compte établi en fin d’exercice, retraçant
+         les mouvements effectifs de dépenses et de recettes de la collectivité, par le président de
+         l’assemblée délibérante (INSEE).</skos:definition>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8b42sa-2vo6rr7qrxfh"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8b5v0t--1nmsgc3k8tunk">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">compte d'exécution testamentaire</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">compte d’exécution testamentaire</skos:prefLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8b42sa-2vo6rr7qrxfh"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8b6rkl--1pb1om5b2zaqu">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">compte de gestion</skos:prefLabel>
-      <skos:definition xml:lang="fr">Finances locales : compte établi par le comptable public, retraçant les débits et les crédits de la collectivité.</skos:definition>
+      <skos:definition xml:lang="fr">Finances locales : compte établi par le comptable public,
+         retraçant les débits et les crédits de la collectivité.</skos:definition>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8b42sa-2vo6rr7qrxfh"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8b7o4d--hng40wumuywm">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">compte de résultat</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">compte d'exploitation</skos:altLabel>
-      <skos:definition xml:lang="fr">Sociétés et associations : liste de toutes les recettes encaissées et de toutes les dépenses consommées sur une période de généralement 12 mois.</skos:definition>
+      <skos:altLabel xml:lang="fr">compte d’exploitation</skos:altLabel>
+      <skos:definition xml:lang="fr">Sociétés et associations : liste de toutes les recettes
+         encaissées et de toutes les dépenses consommées sur une période de généralement 12
+         mois.</skos:definition>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8b42sa-2vo6rr7qrxfh"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8b8lyq--xe6wjcf38tck">
@@ -823,7 +880,7 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8bgd43-1oyb50e7d0dxd">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">contrat d'apprentissage</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">contrat d’apprentissage</skos:prefLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8bffx1--ohw07a50f03g"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8bh85k-zoce6yspjkhr">
@@ -843,7 +900,8 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">marché</skos:prefLabel>
-      <skos:definition xml:lang="fr">Type de contrat concernant essentiellement la construction et l'artisanat.</skos:definition>
+      <skos:definition xml:lang="fr">Type de contrat concernant essentiellement la construction et
+         l’artisanat.</skos:definition>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8bffx1--ohw07a50f03g"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8biyg8--qf7axzw7kjv1">
@@ -857,7 +915,8 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">convention collective</skos:prefLabel>
-      <skos:definition xml:lang="fr">Code du travail art. L 2221-1 et 2221-2. Terme employé également dans le référentiel Matières.</skos:definition>
+      <skos:definition xml:lang="fr">Code du travail art. L 2221-1 et 2221-2. Terme employé
+         également dans le référentiel Matières.</skos:definition>
       <skos:related rdf:resource="documentaryFormType/FRAN_RI_001-d699mmxork4-13sopuexhsw4"/>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8biyg8--qf7axzw7kjv1"/>
    </skos:Concept>
@@ -899,7 +958,9 @@
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">décision</skos:prefLabel>
       <skos:altLabel xml:lang="fr">arbitrage</skos:altLabel>
-      <skos:definition xml:lang="fr">Préciser de quelle autorité émane la décision reviendrait à créer un champ trop restrictif. C'est pourquoi il est préférable de ne faire figurer ici que le terme générique.</skos:definition>
+      <skos:definition xml:lang="fr">Préciser de quelle autorité émane la décision reviendrait à
+         créer un champ trop restrictif. C’est pourquoi il est préférable de ne faire figurer ici
+         que le terme générique.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8bq6ez-1daxfsx19z37l">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -914,7 +975,7 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8br23p-1mttyh3fzcdtb">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">déclaration d'utilité publique</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">déclaration d’utilité publique</skos:prefLabel>
       <skos:note xml:lang="fr">Terme employé également dans le référentiel Matières.</skos:note>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8bq6ez-1daxfsx19z37l"/>
    </skos:Concept>
@@ -935,14 +996,15 @@
       <skos:altLabel xml:lang="fr">reconnaissances seigneuriales</skos:altLabel>
       <skos:altLabel xml:lang="fr">foi et hommage</skos:altLabel>
       <skos:altLabel xml:lang="fr">aveu et dénombrement</skos:altLabel>
-      <skos:definition xml:lang="fr">liste d'autorité archives locales : édition 2011 nouveau descripteur.</skos:definition>
+      <skos:definition xml:lang="fr">liste d’autorité archives locales : édition 2011 nouveau
+         descripteur.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8bu6u9--mvcoswza7lg8">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">décret</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">décret d'application</skos:altLabel>
+      <skos:altLabel xml:lang="fr">décret d’application</skos:altLabel>
       <skos:note xml:lang="fr">Terme employé également dans le référentiel Matières.</skos:note>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8bv05n-qt4ad5kscmt">
@@ -951,7 +1013,9 @@
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">délibération</skos:prefLabel>
       <skos:altLabel xml:lang="fr">direction</skos:altLabel>
-      <skos:definition xml:lang="fr">direction : régie que des créanciers font, par le moyen de syndic ou directeur, des biens qui leur ont été abandonnés par leur débiteur (dictionnaire de l'Académie française, 6è éd., 1835).</skos:definition>
+      <skos:definition xml:lang="fr">direction : régie que des créanciers font, par le moyen de
+         syndic ou directeur, des biens qui leur ont été abandonnés par leur débiteur (dictionnaire
+         de l’Académie française, 6è éd., 1835).</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8bvtwj-12zl8fa6bkzyy">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -963,7 +1027,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">dépôt d'argent</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">dépôt d’argent</skos:prefLabel>
       <skos:altLabel xml:lang="fr">apport</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8bwnv7-ot62i2ixeny3">
@@ -977,7 +1041,8 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">dictionnaire</skos:prefLabel>
-      <skos:definition xml:lang="fr">liste d'autorité archives locales : édition 2011 nouveau descripteur.</skos:definition>
+      <skos:definition xml:lang="fr">liste d’autorité archives locales : édition 2011 nouveau
+         descripteur.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8bxhm4-3r2dxdm3wy4n">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -1008,7 +1073,8 @@
       <skos:altLabel xml:lang="fr">document peint</skos:altLabel>
       <skos:altLabel xml:lang="fr">estampe</skos:altLabel>
       <skos:altLabel xml:lang="fr">gravure</skos:altLabel>
-      <skos:definition xml:lang="fr">liste d'autorité archives locales : édition 2011 nouveau descripteur qui remplace document figuré </skos:definition>
+      <skos:definition xml:lang="fr">liste d’autorité archives locales : édition 2011 nouveau
+         descripteur qui remplace document figuré</skos:definition>
       <skos:editorialNote xml:lang="fr">nota : à revoir</skos:editorialNote>
       <skos:narrower rdf:resource="documentaryFormType/FRAN_RI_001-d3nd89tt5o--dhoqf04g1o4n"/>
       <skos:narrower rdf:resource="documentaryFormType/FRAN_RI_001-d3nd89vnrk--16wap6q8xb894"/>
@@ -1030,15 +1096,17 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">album</skos:prefLabel>
-      <skos:definition xml:lang="fr">S'emploie pour les albums de documents graphiques. </skos:definition>
-      <skos:editorialNote xml:lang="fr">Classe RiC-O : RecordSetType et DocumentaryFormType (à revoir)</skos:editorialNote>
+      <skos:definition xml:lang="fr">S’emploie pour les albums de documents
+         graphiques.</skos:definition>
+      <skos:editorialNote xml:lang="fr">Classe RiC-O : RecordSetType et DocumentaryFormType (à
+         revoir)</skos:editorialNote>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8c1ubq--3r55qs4uf7jy">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">caricature</skos:prefLabel>
-      <skos:definition xml:lang="fr">S'emploie pour les documents graphiques.</skos:definition>
+      <skos:definition xml:lang="fr">S’emploie pour les documents graphiques.</skos:definition>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8c2nuv-lqflm4w8o3jx">
@@ -1072,7 +1140,8 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">document photographique</skos:prefLabel>
       <skos:altLabel xml:lang="fr">photographie</skos:altLabel>
-      <skos:definition xml:lang="fr">liste d'autorité archives locales : édition 2011 nouveau descripteur qui remplace photographie.</skos:definition>
+      <skos:definition xml:lang="fr">liste d’autorité archives locales : édition 2011 nouveau
+         descripteur qui remplace photographie.</skos:definition>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3m00w8g07q-sdu6w3nalpjf">
@@ -1084,7 +1153,7 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d5b8d39l88-ayk74wlyh5u7">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">plan d'architecture</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">plan d’architecture</skos:prefLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8c7kty--1jayoglt0nbys">
@@ -1092,7 +1161,8 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">document préparatoire</skos:prefLabel>
-      <skos:definition xml:lang="fr">A n'utiliser que pour des documents de cabinet ministériel.</skos:definition>
+      <skos:definition xml:lang="fr">A n’utiliser que pour des documents de cabinet
+         ministériel.</skos:definition>
       <skos:narrower rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8c8eku--r057lyeffdqo"/>
       <skos:narrower rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8c97w8--dnuy8p45vg4v"/>
    </skos:Concept>
@@ -1100,14 +1170,18 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">projet de loi</skos:prefLabel>
-      <skos:definition xml:lang="fr">Projet de texte législatif déposé au Parlement à l’initiative du gouvernement (vie-publique.fr). Terme employé également dans le référentiel Matières.</skos:definition>
+      <skos:definition xml:lang="fr">Projet de texte législatif déposé au Parlement à l’initiative
+         du gouvernement (vie-publique.fr). Terme employé également dans le référentiel
+         Matières.</skos:definition>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8c7kty--1jayoglt0nbys"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8c97w8--dnuy8p45vg4v">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">proposition de loi</skos:prefLabel>
-      <skos:definition xml:lang="fr">Projet de texte législatif déposé au Parlement à l’initiative d’un ou plusieurs parlementaires (vie-publique.fr). Terme employé également dans le référentiel Matières.</skos:definition>
+      <skos:definition xml:lang="fr">Projet de texte législatif déposé au Parlement à l’initiative
+         d’un ou plusieurs parlementaires (vie-publique.fr). Terme employé également dans le
+         référentiel Matières.</skos:definition>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8c7kty--1jayoglt0nbys"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8cauyi-zz087oqu7vc">
@@ -1132,7 +1206,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">carnet de santé</skos:prefLabel>
-      <skos:definition xml:lang="fr">Désigne le carnet médical d'un individu.</skos:definition>
+      <skos:definition xml:lang="fr">Désigne le carnet médical d’un individu.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8cppz6--vy9l7i1cqerr">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -1147,7 +1221,8 @@
       <skos:prefLabel xml:lang="fr">écrit du for privé</skos:prefLabel>
       <skos:altLabel xml:lang="fr">livre de raison</skos:altLabel>
       <skos:altLabel xml:lang="fr">journal intime</skos:altLabel>
-      <skos:definition xml:lang="fr">liste d'autorité archives locales : édition 2011 nouveau descripteur.</skos:definition>
+      <skos:definition xml:lang="fr">liste d’autorité archives locales : édition 2011 nouveau
+         descripteur.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8cqjak--6kazwjfiraz1">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -1168,17 +1243,20 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">enquête d'opinion</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">sondage d'opinion</skos:altLabel>
+      <skos:prefLabel xml:lang="fr">enquête d’opinion</skos:prefLabel>
+      <skos:altLabel xml:lang="fr">sondage d’opinion</skos:altLabel>
       <skos:altLabel xml:lang="fr">sondage</skos:altLabel>
-      <skos:definition xml:lang="fr">Terme employé également dans les référentiels Matières et Fonctions.</skos:definition>
+      <skos:definition xml:lang="fr">Terme employé également dans les référentiels Matières et
+         Fonctions.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d-9zyvvh698-15cn917pr1q9n">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">enquête judiciaire</skos:prefLabel>
-      <skos:definition xml:lang="fr">L’enquête judiciaire regroupe les investigations effectuées pour déterminer les auteurs d’une infraction ainsi que les conditions dans lesquelles celle-ci a été commise. </skos:definition>
+      <skos:definition xml:lang="fr">L’enquête judiciaire regroupe les investigations effectuées
+         pour déterminer les auteurs d’une infraction ainsi que les conditions dans lesquelles
+         celle-ci a été commise.</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>24/09/2021</dc:date>
@@ -1192,7 +1270,9 @@
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">entretien</skos:prefLabel>
       <skos:altLabel xml:lang="fr">interview</skos:altLabel>
-      <skos:definition xml:lang="fr">Échange de propos sur un sujet déterminé. Le terme est à employer quelle que soit la forme de la captation (écrite, filmée, enregistrée…)</skos:definition>
+      <skos:definition xml:lang="fr">Échange de propos sur un sujet déterminé. Le terme est à
+         employer quelle que soit la forme de la captation (écrite, filmée,
+         enregistrée…)</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8ct0bi-j2s6oluymdb0">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -1201,7 +1281,8 @@
       <skos:prefLabel xml:lang="fr">étude</skos:prefLabel>
       <skos:altLabel xml:lang="fr">étude technique</skos:altLabel>
       <skos:altLabel xml:lang="fr">livre blanc</skos:altLabel>
-      <skos:definition xml:lang="fr">Terme employé également dans les référentiels Matières et Fonctions.</skos:definition>
+      <skos:definition xml:lang="fr">Terme employé également dans les référentiels Matières et
+         Fonctions.</skos:definition>
       <skos:related rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8cs6kl--1rj0hw58nlipu"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8cttmv-l7h2ocjuub4j">
@@ -1215,7 +1296,8 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">fiche</skos:prefLabel>
-      <skos:relatedMatch rdf:resource="https://rdf.archives-nationales.culture.gouv.fr/recordSetType/FRAN_RI_001-d3nd8cw9ss--1lp7knf1ldpoh"/>
+      <skos:relatedMatch
+         rdf:resource="https://rdf.archives-nationales.culture.gouv.fr/recordSetType/FRAN_RI_001-d3nd8cw9ss--1lp7knf1ldpoh"/>
       <skos:narrower rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8cvghe-1kylp0q3gbg04"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8cvghe-1kylp0q3gbg04">
@@ -1223,7 +1305,8 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">fiche nominative</skos:prefLabel>
       <skos:altLabel xml:lang="fr">fiche biographique</skos:altLabel>
-      <skos:relatedMatch rdf:resource="https://rdf.archives-nationales.culture.gouv.fr/recordSetType/FRAN_RI_001-d3nd8cjyto-q7qr9ug1zqo4"/>
+      <skos:relatedMatch
+         rdf:resource="https://rdf.archives-nationales.culture.gouv.fr/recordSetType/FRAN_RI_001-d3nd8cjyto-q7qr9ug1zqo4"/>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8cun60--uh9evbx7ph8h"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3m00w7j24y--17vivdkfnfhha">
@@ -1295,7 +1378,8 @@
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">liquidation</skos:prefLabel>
       <skos:altLabel xml:lang="fr">dissolution</skos:altLabel>
-      <skos:definition xml:lang="fr">Terme employé également dans le référentiel Fonctions.</skos:definition>
+      <skos:definition xml:lang="fr">Terme employé également dans le référentiel
+         Fonctions.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8d5qds--1ik00q3toqh7h">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -1313,7 +1397,9 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">liste d’actes notariés</skos:prefLabel>
-      <skos:definition xml:lang="fr">Subdivision logique d'un répertoire de notaire, concernant le plus souvent une période donnée, par exemple une année. (source : Département du Minutier central des notaires de Paris) </skos:definition>
+      <skos:definition xml:lang="fr">Subdivision logique d’un répertoire de notaire, concernant le
+         plus souvent une période donnée, par exemple une année. (source : Département du Minutier
+         central des notaires de Paris)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>02/05/2022</dc:date>
@@ -1342,7 +1428,7 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8d86z8--nc6f6fn0zh7v">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">rôle d'équipage</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">rôle d’équipage</skos:prefLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8d5qds--1ik00q3toqh7h"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8d90al--tpw5gwi66l5">
@@ -1398,7 +1484,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">livre d'or</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">livre d’or</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8deo7p--14r13itx7glib">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -1459,14 +1545,18 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">mémoire judiciaire</skos:prefLabel>
-      <skos:definition xml:lang="fr">Document écrit adressé à une juridiction dans lequel les parties exposent leurs demandes et arguments respectifs</skos:definition>
+      <skos:definition xml:lang="fr">Document écrit adressé à une juridiction dans lequel les
+         parties exposent leurs demandes et arguments respectifs</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d-a9cel0wzc--1ki1j5devjps">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">mention d’acte notarié</skos:prefLabel>
-      <skos:definition xml:lang="fr">Mention d’un acte dans une liste d'actes notariés. Le notaire y spécifie toujours la date de l’acte (année et mois, pas toujours le quantième dans le mois), le type d’acte, le nom de l’intéressé ou des parties. (source : département du Minutier central des notaires de Paris) </skos:definition>
+      <skos:definition xml:lang="fr">Mention d’un acte dans une liste d’actes notariés. Le notaire y
+         spécifie toujours la date de l’acte (année et mois, pas toujours le quantième dans le
+         mois), le type d’acte, le nom de l’intéressé ou des parties. (source : département du
+         Minutier central des notaires de Paris)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>02/05/2022</dc:date>
@@ -1502,7 +1592,8 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">nécrologie</skos:prefLabel>
-      <skos:definition xml:lang="fr">liste d'autorité archives locales : édition 2011 nouveau descripteur.</skos:definition>
+      <skos:definition xml:lang="fr">liste d’autorité archives locales : édition 2011 nouveau
+         descripteur.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3m00w87l5p--n59ufveu4od0">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -1532,7 +1623,8 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">note de renseignement</skos:prefLabel>
-      <skos:definition xml:lang="fr">A utiliser exclusivement pour les documents produits par les services de renseignement.</skos:definition>
+      <skos:definition xml:lang="fr">A utiliser exclusivement pour les documents produits par les
+         services de renseignement.</skos:definition>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8dv9j1-1wzteoks8ncyf"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8dwvij--dxmn3hgfi7ft">
@@ -1554,7 +1646,10 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">objet</skos:prefLabel>
-      <skos:definition xml:lang="fr">S'emploie pour signaler la présence de produits publicitaires et de promotion, comme les stylos, les tee-shirts, les épinglettes, etc., d'autres types d'objets comme les brassards d'enfants, des banderoles, des échantillons de tissus, des objets de bonneterie, etc... </skos:definition>
+      <skos:definition xml:lang="fr">S’emploie pour signaler la présence de produits publicitaires
+         et de promotion, comme les stylos, les tee-shirts, les épinglettes, etc., d’autres types
+         d’objets comme les brassards d’enfants, des banderoles, des échantillons de tissus, des
+         objets de bonneterie, etc...</skos:definition>
       <skos:editorialNote xml:lang="fr">classe CRM : E22 Man-Made Object</skos:editorialNote>
       <skos:editorialNote xml:lang="fr">à revoir</skos:editorialNote>
       <skos:narrower rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8dzbgn--kx5r3hrwq042"/>
@@ -1572,7 +1667,7 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8e4fjt--v7edms58lehc">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">panneau d'exposition</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">panneau d’exposition</skos:prefLabel>
       <skos:editorialNote xml:lang="fr">classe CRM : E22 Man-Made Object</skos:editorialNote>
       <skos:editorialNote xml:lang="fr">à revoir</skos:editorialNote>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8dyhxi--4gp1f9bymco5"/>
@@ -1590,7 +1685,12 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">obligation</skos:prefLabel>
-      <skos:definition xml:lang="fr">Terme désignant le lien de droit créé par l'effet de la loi ou par la volonté de celui ou de ceux qui s'engagent en vue de fournir ou de recevoir un bien ou une prestation. Dans le langage courant cette expression est souvent prise comme synonyme de contrat ou de convention. En fait un contrat est constitué d'un ensemble d'obligations (S. Braudo, dictionnaire du droit privé. dictionnaire-juridique.com).</skos:definition>
+      <skos:definition xml:lang="fr">Terme désignant le lien de droit créé par l’effet de la loi ou
+         par la volonté de celui ou de ceux qui s’engagent en vue de fournir ou de recevoir un bien
+         ou une prestation. Dans le langage courant cette expression est souvent prise comme
+         synonyme de contrat ou de convention. En fait un contrat est constitué d’un ensemble
+         d’obligations (S. Braudo, dictionnaire du droit privé.
+         dictionnaire-juridique.com).</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8e1shl-1dj0p1ikqjdhk">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -1665,17 +1765,17 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">plan d'urbanisme</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">plan d'alignement</skos:altLabel>
+      <skos:prefLabel xml:lang="fr">plan d’urbanisme</skos:prefLabel>
+      <skos:altLabel xml:lang="fr">plan d’alignement</skos:altLabel>
       <skos:narrower rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8ebtrl--1lrfjh1qyje5z"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8ebtrl--1lrfjh1qyje5z">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">plan local d'urbanisme</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">plan local d’urbanisme</skos:prefLabel>
       <skos:altLabel xml:lang="fr">PLU</skos:altLabel>
       <skos:altLabel xml:lang="fr">POS</skos:altLabel>
-      <skos:altLabel xml:lang="fr">plan d'occupation des sols</skos:altLabel>
+      <skos:altLabel xml:lang="fr">plan d’occupation des sols</skos:altLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8eb08g--1106d226t24ck"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8edh1n--6pmbenfru38u">
@@ -1689,7 +1789,7 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8eead0--3bapblsmqsry">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">procès-verbal d'élection</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">procès-verbal d’élection</skos:prefLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8edh1n--6pmbenfru38u"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8ef4bo-p1s4bb3ribhy">
@@ -1755,7 +1855,7 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8emhw6--rupez9gtu0e7">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">questionnaire d'enquête</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">questionnaire d’enquête</skos:prefLabel>
       <skos:altLabel xml:lang="fr">feuille de ménage</skos:altLabel>
       <skos:altLabel xml:lang="fr">document de base</skos:altLabel>
       <skos:related rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8f7o41-9cqbc6rfh0vz"/>
@@ -1789,20 +1889,20 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8eo4qp-jbnqxqbck7hc">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">rapport d'activité</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">bilan d'activité</skos:altLabel>
+      <skos:prefLabel xml:lang="fr">rapport d’activité</skos:prefLabel>
+      <skos:altLabel xml:lang="fr">bilan d’activité</skos:altLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8enb7k-1qnyt9apv8kp"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8ephw0-e8yd9fnc9jg4">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">rapport d'expertise</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">rapport d’expertise</skos:prefLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8enb7k-1qnyt9apv8kp"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8eqc2f-16m16wcjqinq0">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">rapport d'inspection</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">rapport d’inspection</skos:prefLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8enb7k-1qnyt9apv8kp"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8er613-rkvliu4vixfb">
@@ -1815,7 +1915,11 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">rapport de préfet</skos:prefLabel>
-      <skos:definition xml:lang="fr">Typologie documentaire par laquelle le préfet rend compte au ministère de l’Intérieur de la situation politique, économique et sociale du département. La périodicité et l’organisation interne du rapport sont encadrées par circulaire. Outre le rapport d’ensemble, le plus souvent mensuel, les préfets peuvent être sollicités sur un sujet précis. </skos:definition>
+      <skos:definition xml:lang="fr">Typologie documentaire par laquelle le préfet rend compte au
+         ministère de l’Intérieur de la situation politique, économique et sociale du département.
+         La périodicité et l’organisation interne du rapport sont encadrées par circulaire. Outre le
+         rapport d’ensemble, le plus souvent mensuel, les préfets peuvent être sollicités sur un
+         sujet précis.</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>24/09/2021</dc:date>
@@ -1827,7 +1931,7 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d5b8d3d2om--1ln9pxb9dh20t">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">rapport des forces de l'ordre</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">rapport des forces de l’ordre</skos:prefLabel>
       <skos:altLabel xml:lang="fr">rapport de police</skos:altLabel>
       <skos:altLabel xml:lang="fr">rapport de gendarmerie</skos:altLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8enb7k-1qnyt9apv8kp"/>
@@ -1856,7 +1960,10 @@
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">recours</skos:prefLabel>
-      <skos:definition xml:lang="fr">Action par laquelle un plaideur conteste une décision administrative ou judiciaire en demandant un nouvel examen du litige [Dictionnaire de l'Académie française : http://dictionnaire-academie.fr/article/A9R098]. Le terme est à employer dans l'acception d'un dossier de demande effectivement déposé</skos:definition>
+      <skos:definition xml:lang="fr">Action par laquelle un plaideur conteste une décision
+         administrative ou judiciaire en demandant un nouvel examen du litige [Dictionnaire de
+         l’Académie française : http://dictionnaire-academie.fr/article/A9R098]. Le terme est à
+         employer dans l’acception d’un dossier de demande effectivement déposé</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8evac2--7ly6xmca840y">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -1879,8 +1986,8 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8ewxtv-emejh4l9df9g">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">registre d'audience</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">plumitif d'audience</skos:altLabel>
+      <skos:prefLabel xml:lang="fr">registre d’audience</skos:prefLabel>
+      <skos:altLabel xml:lang="fr">plumitif d’audience</skos:altLabel>
       <skos:editorialNote xml:lang="fr">nota : à revoir</skos:editorialNote>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8evac2--7ly6xmca840y"/>
    </skos:Concept>
@@ -1904,7 +2011,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">registre protestant</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">registre d'état civil protestant</skos:altLabel>
+      <skos:altLabel xml:lang="fr">registre d’état civil protestant</skos:altLabel>
       <skos:editorialNote xml:lang="fr">nota : à revoir</skos:editorialNote>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8exrkr-g90l7b20gkft"/>
    </skos:Concept>
@@ -1924,7 +2031,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">remboursement d'office</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">remboursement d’office</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8f1w3i-10u4aitg4g2jq">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
@@ -1952,7 +2059,7 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8f3jla--to36ja96m31q">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">répertoire d'officier public ministériel</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">répertoire d’officier public ministériel</skos:prefLabel>
       <skos:editorialNote xml:lang="fr">nota : à revoir</skos:editorialNote>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8f2pue--m9a3gl0xq4zp"/>
       <skos:narrower rdf:resource="documentaryFormType/FRAN_RI_001-d-a04blhkno-92bbw9jou9ed"/>
@@ -1961,7 +2068,17 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:prefLabel xml:lang="fr">répertoire de notaire</skos:prefLabel>
-      <skos:definition xml:lang="fr">Liste, en général chronologique, se présentant sous forme de registre ou d’ensemble de feuillets, que le notaire a obligation de tenir, aujourd’hui jour par jour, en y faisant figurer date, nature de l’acte (titre qui en caractérise le contenu, par exemple : vente, procuration, inventaire…), espèce de l’acte (minute ou brevet), noms des parties et toutes autres mentions prescrites par la loi ou les règlements. Le temps ayant passé, et une fois versé avec les minutes dans un service public d’archives, il sert principalement à repérer un acte donné en l’absence outils de recherche plus commodes, mais le répertoire, comme la minute, comporte intrinsèquement une valeur probatoire, donnant date certaine à l’acte, permettant d’effectuer le récolement des minutes d’une étude notariale lors d’un changement de titulaire, permettant un contrôle de la fiscalité des actes. (source : Département du Minutier central des notaires de Paris) </skos:definition>
+      <skos:definition xml:lang="fr">Liste, en général chronologique, se présentant sous forme de
+         registre ou d’ensemble de feuillets, que le notaire a obligation de tenir, aujourd’hui jour
+         par jour, en y faisant figurer date, nature de l’acte (titre qui en caractérise le contenu,
+         par exemple : vente, procuration, inventaire…), espèce de l’acte (minute ou brevet), noms
+         des parties et toutes autres mentions prescrites par la loi ou les règlements. Le temps
+         ayant passé, et une fois versé avec les minutes dans un service public d’archives, il sert
+         principalement à repérer un acte donné en l’absence outils de recherche plus commodes, mais
+         le répertoire, comme la minute, comporte intrinsèquement une valeur probatoire, donnant
+         date certaine à l’acte, permettant d’effectuer le récolement des minutes d’une étude
+         notariale lors d’un changement de titulaire, permettant un contrôle de la fiscalité des
+         actes. (source : Département du Minutier central des notaires de Paris)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>02/05/2022</dc:date>
@@ -1991,7 +2108,8 @@
       <skos:prefLabel xml:lang="fr">statistique</skos:prefLabel>
       <skos:altLabel xml:lang="fr">recensement</skos:altLabel>
       <skos:altLabel xml:lang="fr">tableau statistique</skos:altLabel>
-      <skos:definition xml:lang="fr">Terme employé également dans les référentiels Matières et Fonctions.</skos:definition>
+      <skos:definition xml:lang="fr">Terme employé également dans les référentiels Matières et
+         Fonctions.</skos:definition>
       <skos:related rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8emhw6--rupez9gtu0e7"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8f8hn6-1cv55keqf50vh">
@@ -2014,7 +2132,7 @@
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3nd8faaiz--12govod7cujwg">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">statuts d'association</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">statuts d’association</skos:prefLabel>
       <skos:broader rdf:resource="documentaryFormType/FRAN_RI_001-d3nd8f8hn6-1cv55keqf50vh"/>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3m00w7w5k2-1s3b7nsr7ls5d">
@@ -2119,7 +2237,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>
       <skos:inScheme rdf:resource="documentaryFormTypes"/>
       <skos:topConceptOf rdf:resource="documentaryFormTypes"/>
-      <skos:prefLabel xml:lang="fr">traité d'office</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">traité d’office</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="documentaryFormType/FRAN_RI_001-d3m00w8dl27--jxkj8k5bbsim">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#DocumentaryFormType"/>

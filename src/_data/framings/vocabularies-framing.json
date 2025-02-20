@@ -24,18 +24,21 @@
       "@container": "@set"
     },
     "title": {
-      "@id": "dc:title",
+      "@id": "dcterms:title",
       "@container": "@set"
     },
     "description": {
-      "@id": "dc:description",
+      "@id": "dcterms:description",
       "@container": "@set"
     },
     "creator": {
       "@id": "dcterms:creator",
       "@container": "@set"
     },
-    "datemodified": "dcterms:modified",
+    "datemodified": {
+      "@id": "dcterms:modified",
+      "@container": "@set"
+    },
     "prefLabel": {
       "@id": "skos:prefLabel",
       "@container": "@set"
@@ -70,7 +73,10 @@
     "coverage": "dc:coverage",
     "rights": "dc:rights",
     "historyNote": "skos:historyNote",
-    "scopenote": "skos:note",
+    "scopenote": {
+      "@id": "skos:note",
+      "@container": "@set"
+    },
     "example": "skos:example",
     "changenote": {
       "@id": "skos:changeNote",

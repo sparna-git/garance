@@ -4,8 +4,11 @@ module.exports = {
       "Graphe des Archives nationales pour la Recherche, l’Accès et la Navigation des Connaissances Enrichies",
     garance: "Garance",
     "last updated on": "last updated on",
-    "vocabularies": "Controlled vocabularies",
+    vocabularies: "Controlled vocabularies",
     "These concepts have all the type": "These concepts have all the type",
+    agents: "Agents",
+    lieux: "Places",
+    document: "Download",
 
     // properties, classes, etc
     "skos:altLabel": "Synonyms",
@@ -13,6 +16,7 @@ module.exports = {
     "skos:narrower": "Children",
     "skos:scopeNote": "Scope note",
     "skos:changeNote": "Change note",
+    "skos:example": "Example",
     "skos:broader": "Hierarchy",
     "dcterms:creator": "Creator",
     "dcterms:modified": "Last updated",

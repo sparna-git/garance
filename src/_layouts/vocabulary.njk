@@ -111,6 +111,16 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
         {% endif %}
       {% endfor %}
     {% endif %}
+
+    <!-- Resource -->
+    <div class="row">
+        <h6><span>{{ "document" | i18n }}</span></h6>
+        <div class="col-10">
+          <a href="https://github.com/ArchivesNationalesFR/Referentiels/tree/version_2/concepts/rdf/">
+            <img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="TTL">
+          </a>
+        </div>
+    </div>
     
   </div>
 
@@ -243,7 +253,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
           {% endif %}
 
           <!-- scopeNote -->
-          {% if concepts.scopenote %}
+          {% if concepts.scopenote.length > 0 %}
             <div class="row">
               <div class="col-1">
                 {% set title = "skos:scopeNote" | i18n(locale) %}
@@ -260,6 +270,17 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
           {% endif %}
 
           <!-- skos:example -->
+          {% if concepts.example %}
+            <div class="row">
+              <div class="col-1">
+                {% set title = "skos:example" | i18n %}
+                <h6>{{ title }}</h6>                
+              </div>
+              <div class="col">
+                {{ concepts.example | json }}
+              </div>
+            </div>
+          {% endif %}
           
           <!-- skos:changeNote -->
           {% if concepts.changenote %}
@@ -270,24 +291,20 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
               </div>
               <div class="col">
                 {% set cnotes = concepts.changenote | timeline(locale) %}
-                <ul>
-                <div class="timeline">
-                {% for t in cnotes %}
-                  <li>
-                  <div class="column">
-                    <div class="title">
-                      <h1> {{ t.date }} </h1>                      
-                    </div>
-                    <div class="description">
-                      <p>{{ t.description | capitalize }}</p>
-                    </div>
+                <!-- timeline -->
+                <div class="changeNote_container">
+                  <div class="changeNote_wrapper">
+                    <ul class="changeNote_sessions">
+                    {% for t in cnotes %}
+                      <li>
+                        <div class="changeNote_date">{{ t.date }} : <span>{{ t.description | capitalize }}</span></div>                        
+                      </li>
+                    {% endfor %}
+                    </ul>
                   </div>
-                  </li>
-                {% endfor %}
-              </div>
+                </div>
               </div>
             </div>
-
           {% endif %}
 
           <!-- skos:exactMatch -->
@@ -459,7 +476,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             .attr("stroke-width", 10);
 
           const nodeRef = nodeEnter.append("a")
-            .attr("href", d => "#"+d.data.notation)
+            .attr("href", d => "#"+d.data.id.substring(d.data.id.lastIndexOf("/") + 1))
 
           nodeRef.append("text")
               .attr("dy", "0.40em")

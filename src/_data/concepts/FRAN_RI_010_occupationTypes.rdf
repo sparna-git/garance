@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rdf:RDF xmlns:cc="http://creativecommons.org/ns#"
-         xmlns:dc="http://purl.org/dc/elements/1.1/"
-         xmlns:dcterms="http://purl.org/dc/terms/"
-         xmlns:foaf="http://xmlns.com/foaf/0.1/"
-         xmlns:html="http://www.w3.org/1999/xhtml"
-         xmlns:owl="http://www.w3.org/2002/07/owl#"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-         xmlns:rico="https://www.ica.org/standards/RiC/ontology#"
-         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-         xml:base="https://rdf.archives-nationales.culture.gouv.fr/">
+<rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:html="http://www.w3.org/1999/xhtml"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:rico="https://www.ica.org/standards/RiC/ontology#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xml:base="https://rdf.archives-nationales.culture.gouv.fr/">
    <skos:ConceptScheme rdf:about="occupationTypes">
-      <dc:description xml:lang="fr">Thésaurus des fonctions, métiers et professions
-                        des personnes. Résulte de la conversion automatique en RDF, conforme à SKOS et RiC-O 1.0.1, du référentiel XML correspondant. Des enrichissements, modifications de
-                                structure et alignements sont prévus dans les prochains
-                                mois.</dc:description>
-      <dc:source xml:lang="fr">FRAN_RI_010</dc:source>
-      <dc:title xml:lang="fr">Thésaurus des fonctions, métiers et professions
-                        des personnes</dc:title>
+      <dcterms:title xml:lang="fr">Thésaurus des fonctions, métiers et professions des
+         personnes</dcterms:title>
+      <dcterms:description xml:lang="fr">Thésaurus des fonctions, métiers et professions des
+         personnes. Résulte de la conversion automatique en RDF, conforme à SKOS et RiC-O 1.1, du
+         référentiel XML correspondant (fichier FRAN_RI_010.xml, version 1.9) dans le système
+         d’information archivistique (SIA) des Archives nationales de France (AnF). Des
+         enrichissements, modifications de structure et alignements sont prévus dans les prochains
+         mois.</dcterms:description>
+      <dcat:version xml:lang="fr">2.0 (février 2025)</dcat:version>
+      <dc:source xml:lang="fr">Fichier FRAN_RI_010.xml, version 1.9 ; exporté du système
+         d’information archivistique (SIA) des Archives nationales de France (AnF) le 21 janvier
+         2025 (date de dernière modification dans le SIA : 2024-12-17)</dc:source>
       <dcterms:creator>
          <foaf:Organization>
             <foaf:mbox>le-lab.archives-nationales@culture.gouv.fr</foaf:mbox>
@@ -25,27 +28,43 @@
             <foaf:name xml:lang="fr">Archives nationales (France). Lab</foaf:name>
          </foaf:Organization>
       </dcterms:creator>
+      <dcterms:publisher>
+         <foaf:Organization>
+            <foaf:name xml:lang="fr">Archives nationales de France</foaf:name>
+            <owl:sameAs rdf:resource="https://rdf.archives-nationales.culture.gouv.fr/agent/005061"
+            />
+         </foaf:Organization>
+      </dcterms:publisher>
       <dcterms:created>2021-04-16</dcterms:created>
       <dcterms:modified>2022-04-08</dcterms:modified>
       <dcterms:modified>2024-10-10T17:41:34.6127763+02:00</dcterms:modified>
+      <dcterms:modified>2025-02-18T18:08:19.0201246+01:00</dcterms:modified>
       <dc:coverage xml:lang="fr">du Moyen Âge à nos jours</dc:coverage>
       <dc:language>fr-FR</dc:language>
+      <dcterms:language rdf:resource="http://id.loc.gov/vocabulary/iso639-2/fre"/>
       <dc:type xml:lang="fr">Thésaurus</dc:type>
-      <dc:rights xml:lang="fr">Ces données étant des informations publiques, l'usager dispose d'un droit non exclusif
-        et gratuit de libre « réutilisation » à des fins commerciales ou non, dans le monde entier
-        et pour une durée illimitée. Il doit accompagner chaque rediffusion des informations de
-        l'indication précise de l'origine des métadonnées : « Archives nationales (France) », date
-        des métadonnées (mars 2022), nom du référentiel (fourni dans le fichier Excel qui en donne
-        la liste). Voir à ce sujet la page :
-        https://www.archives-nationales.culture.gouv.fr/fr/web/guest/reutilisation-des-donnees-publiques.</dc:rights>
+      <dc:rights xml:lang="fr">Ces données étant des informations publiques, l’usager dispose d’un
+         droit non exclusif et gratuit de libre « réutilisation » à des fins commerciales ou non,
+         dans le monde entier et pour une durée illimitée, de ce référentiel. Il doit accompagner
+         chaque rediffusion des informations de l’indication précise de l’origine des métadonnées :
+         « Archives nationales de France », du nom du référentiel, de son identifiant (URI), du
+         numéro et date de la version du référentiel.</dc:rights>
+      <dcat:distribution>
+         <dcat:Distribution>
+            <dcat:title>version CSV issue du présent fichier RDF</dcat:title>
+            <dcat:mediaType rdf:resource="http://www.iana.org/assignments/media-types/text/csv"/>
+         </dcat:Distribution>
+      </dcat:distribution>
       <skos:historyNote rdf:parseType="Literal">
          <html:ul>
-            <html:li xml:lang="fr">Avril 2022 : regénéré le fichier.
-                                    Enrichissement des métadonnées du vocabulaire.</html:li>
-            <html:li xml:lang="fr">Juillet 2024 : regénéré le fichier. Cette version du vocabulaire compte 42
-                                        nouveaux concepts, et des libellés alternatifs ont aussi été
-                                        ajoutés à certains concepts existants. Mise à jour des métadonnées du
-                                    vocabulaire.</html:li>
+            <html:li xml:lang="fr">Avril 2022 : regénéré le fichier. Enrichissement des métadonnées
+               du vocabulaire.</html:li>
+            <html:li xml:lang="fr">Juillet 2024 : regénéré le fichier. Cette version du vocabulaire
+               compte 42 nouveaux concepts, et des libellés alternatifs ont aussi été ajoutés à
+               certains concepts existants. Mise à jour des métadonnées du vocabulaire.</html:li>
+            <html:li xml:lang="fr">Février 2025 : regénéré le fichier. Cette version du vocabulaire
+               compte 4 nouveaux concepts : agrégé de philosophie, maître de conférence, militant
+               associatif, sociologue. Les métadonnées du fichier SKOS ont été enrichies.</html:li>
          </html:ul>
       </skos:historyNote>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msitg1r--hdkjr3pb151x"/>
@@ -62,6 +81,7 @@
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msiptbd--1tevc99z2lyne"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msk5gi0--1s6iqt9d92qzm"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msixvp9-178n3lc5ghzq6"/>
+      <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d-1ojuhwtqcjj--6jj5hyn0plyz"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msjbjqf--1uzbe260ejrd5"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msk2vsq--1wlumycc62nh3"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msj12zg--s5xb7u1f4uq0"/>
@@ -290,6 +310,7 @@
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msjakh4--199q9gt5tklbg"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msjy3v4--oimn0b7kuvf4"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msjrzzt--h057kx4iinzv"/>
+      <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d-1oksc7uuzm1--7f7nbwh4py1f"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msk4nz5--1okvjytf4gh5q"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d3m0bl6y76a--bri9aetb4c8o"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d-6jo73y19j--kj4ht9vy2mvf"/>
@@ -319,6 +340,7 @@
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d3nyu9wj3q--zbhn87kjg3md"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msj53l0-1180obzunmkm7"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msio349-1nb475aqsemr0"/>
+      <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d-1okoah836l1--1lwud32yr5hyr"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msk3h6v--1a7obp35gqwv3"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msjwc2y--1sprujko1h4ru"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msjnw86-64seh0fmw8hj"/>
@@ -435,6 +457,7 @@
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msj9l7t-1gb5a09kkzrmp"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msjnau1-1dftmizt8mjfs"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msj7zrv-cbjgw9zhxm7q"/>
+      <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d-1ojvt8fh4z5--1xdz6cai15q5g"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d-7lhn8dk74--1fblyuk3b97hr"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d3m0bl74an5--hol3tca0mdgf"/>
       <skos:hasTopConcept rdf:resource="occupationType/FRAN_RI_010-d699msjx4lt--1wcrunnkl2dvy"/>
@@ -484,8 +507,12 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">académicien</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">membre de l'Institut</skos:altLabel>
-      <skos:definition xml:lang="fr">Membre d'une classe de l'Institut et en particulier de l'Académie française. L'académicien peut être membre de l'Académie française, de l'Académie des inscriptions et belles-lettres, de l'Académie des sciences, de l'Académie des beaux-arts ou de l'Académie des sciences morales et politiques (source : Larousse)</skos:definition>
+      <skos:altLabel xml:lang="fr">membre de l’Institut</skos:altLabel>
+      <skos:definition xml:lang="fr">Membre d’une classe de l’Institut et en particulier de
+         l’Académie française. L’académicien peut être membre de l’Académie française, de l’Académie
+         des inscriptions et belles-lettres, de l’Académie des sciences, de l’Académie des
+         beaux-arts ou de l’Académie des sciences morales et politiques (source :
+         Larousse)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>23/11/2021</dc:date>
@@ -528,7 +555,7 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">administrateur de société</skos:prefLabel>
       <skos:altLabel xml:lang="fr">gérant</skos:altLabel>
-      <skos:altLabel xml:lang="fr">cadre dirigeant d'entreprise</skos:altLabel>
+      <skos:altLabel xml:lang="fr">cadre dirigeant d’entreprise</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjwqce-yhark80jormz">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -546,8 +573,10 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">agent d'affaires</skos:prefLabel>
-      <skos:definition xml:lang="fr">Commerçant intermédiaire chargé de gérer les affaires et intérêts d’autrui, d’administrer ses biens. (d’après le TLFI notice « agent »  et le Larousse en ligne (2023))</skos:definition>
+      <skos:prefLabel xml:lang="fr">agent d’affaires</skos:prefLabel>
+      <skos:definition xml:lang="fr">Commerçant intermédiaire chargé de gérer les affaires et
+         intérêts d’autrui, d’administrer ses biens. (d’après le TLFI notice « agent »  et le
+         Larousse en ligne (2023))</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -584,6 +613,12 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">agent secret</skos:prefLabel>
       <skos:altLabel xml:lang="fr">espion</skos:altLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-1ojuhwtqcjj--6jj5hyn0plyz">
+      <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
+      <skos:inScheme rdf:resource="occupationTypes"/>
+      <skos:topConceptOf rdf:resource="occupationTypes"/>
+      <skos:prefLabel xml:lang="fr">agrégé de philosophie</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjbjqf--1uzbe260ejrd5">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -695,7 +730,11 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">auxiliaire de justice</skos:prefLabel>
       <skos:altLabel xml:lang="fr">crieur</skos:altLabel>
-      <skos:definition xml:lang="fr">Les auxiliaires de justice désignent les différentes personnes qui, bien que n’étant pas investies de la fonction de trancher les litiges à l’instar des magistrats, participent par l’exercice de leur profession au fonctionnement quotidien du service public de la justice (avocat, greffier, huissier, notaire, avoué, expert) (vie-publique.fr)</skos:definition>
+      <skos:definition xml:lang="fr">Les auxiliaires de justice désignent les différentes personnes
+         qui, bien que n’étant pas investies de la fonction de trancher les litiges à l’instar des
+         magistrats, participent par l’exercice de leur profession au fonctionnement quotidien du
+         service public de la justice (avocat, greffier, huissier, notaire, avoué, expert)
+         (vie-publique.fr)</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msj742x--12cnnohd8i9wj">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -756,9 +795,9 @@
       <skos:prefLabel xml:lang="fr">batteur de métal</skos:prefLabel>
       <skos:altLabel xml:lang="fr">poêlier</skos:altLabel>
       <skos:altLabel xml:lang="fr">affineur</skos:altLabel>
-      <skos:altLabel xml:lang="fr">batteur d'or et d'argent</skos:altLabel>
+      <skos:altLabel xml:lang="fr">batteur d’or et d’argent</skos:altLabel>
       <skos:altLabel xml:lang="fr">dinandier</skos:altLabel>
-      <skos:altLabel xml:lang="fr">tireur d'or et d'argent</skos:altLabel>
+      <skos:altLabel xml:lang="fr">tireur d’or et d’argent</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msj2rzr--ce53d0ay0p71">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -816,9 +855,11 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">cadre d'entreprise</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">cadre d’entreprise</skos:prefLabel>
       <skos:altLabel xml:lang="fr">cadre supérieur</skos:altLabel>
-      <skos:definition xml:lang="fr">Personne qui, au sein d’une entreprise, est investie d'une fonction de commandement de contrôle, de direction. (d’après le TLFI notice « cadre »)</skos:definition>
+      <skos:definition xml:lang="fr">Personne qui, au sein d’une entreprise, est investie d’une
+         fonction de commandement de contrôle, de direction. (d’après le TLFI notice
+         « cadre »)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -874,8 +915,9 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">chancelier d'université</skos:prefLabel>
-      <skos:definition xml:lang="fr">gardien du sceau de l'université / Chanoine qui conférait les degrés et délivrait les diplômes.</skos:definition>
+      <skos:prefLabel xml:lang="fr">chancelier d’université</skos:prefLabel>
+      <skos:definition xml:lang="fr">gardien du sceau de l’université / Chanoine qui conférait les
+         degrés et délivrait les diplômes.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl70jy9-17so73v5xuia7">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -913,13 +955,15 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">chargé de mission au cabinet du Premier ministre</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">chargé de mission au cabinet du Premier
+         ministre</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-2y6qhp38yq--1v6g7dvex4e2o">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">chargé de mission au cabinet du président de la République</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">chargé de mission au cabinet du président de la
+         République</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjilo8-nlzo91q1gzma">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -942,13 +986,16 @@
       <skos:altLabel xml:lang="fr">braconnier</skos:altLabel>
       <skos:altLabel xml:lang="fr">chasseuse</skos:altLabel>
       <skos:altLabel xml:lang="fr">veneur</skos:altLabel>
-      <skos:definition xml:lang="fr">Personne qui pratique le sport de la chasse. (d’après le TLFI notice « chasseur »)</skos:definition>
+      <skos:definition xml:lang="fr">Personne qui pratique le sport de la chasse. (d’après le TLFI
+         notice « chasseur »)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
             <rdf:value xml:lang="fr">Ajouté le [04/08/2023]</rdf:value>
          </rdf:Description>
       </skos:changeNote>
+      <skos:scopeNote xml:lang="fr">Concerne uniquement la chasse d’animaux
+         sauvages.</skos:scopeNote>
       <skos:exactMatch rdf:resource="http://www.wikidata.org/entity/Q1714828"/>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msiu7s3--1umdyplfsmam1">
@@ -961,11 +1008,11 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">chef d'entreprise</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">homme d'affaires</skos:altLabel>
+      <skos:prefLabel xml:lang="fr">chef d’entreprise</skos:prefLabel>
+      <skos:altLabel xml:lang="fr">homme d’affaires</skos:altLabel>
       <skos:altLabel xml:lang="fr">entrepreneur</skos:altLabel>
       <skos:altLabel xml:lang="fr">industriel</skos:altLabel>
-      <skos:altLabel xml:lang="fr">directeur d'entreprise</skos:altLabel>
+      <skos:altLabel xml:lang="fr">directeur d’entreprise</skos:altLabel>
       <skos:altLabel xml:lang="fr">président-directeur-général</skos:altLabel>
       <skos:altLabel xml:lang="fr">maître de forge</skos:altLabel>
       <skos:altLabel xml:lang="fr">directeur de manufacture</skos:altLabel>
@@ -974,22 +1021,23 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">chef d'Etat</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">chef d’Etat</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjgg0x-1b8f6hw6bkvph">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">chef d'orchestre</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">chef d’orchestre</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-1009896yv--378hf9s9l062">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">chef de service d'administration centrale</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">chef de service d’administration centrale</skos:prefLabel>
       <skos:altLabel xml:lang="fr">haut fonctionnaire</skos:altLabel>
       <skos:altLabel xml:lang="fr">secrétaire général de ministère</skos:altLabel>
-      <skos:definition xml:lang="fr">chef de bureau, de département, de service, de direction au sein de l'administration centrale</skos:definition>
+      <skos:definition xml:lang="fr">chef de bureau, de département, de service, de direction au
+         sein de l’administration centrale</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjr0qi-1uga2yy7rguqm">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -1031,7 +1079,8 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">cimentier</skos:prefLabel>
-      <skos:definition xml:lang="fr">Ouvrier qui fabrique et emploie du ciment. (d’après le TLFI notice « cimentier »)</skos:definition>
+      <skos:definition xml:lang="fr">Ouvrier qui fabrique et emploie du ciment. (d’après le TLFI
+         notice « cimentier »)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -1050,8 +1099,10 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">clerc d'huissier</skos:prefLabel>
-      <skos:definition xml:lang="fr">Employé(e) travaillant dans l'étude d'huissier; employé, serviteur, secrétaire d'un personnage, d'un groupement de personnes, d'un organisme officiels. (Source : TLFI notice « clerc »)</skos:definition>
+      <skos:prefLabel xml:lang="fr">clerc d’huissier</skos:prefLabel>
+      <skos:definition xml:lang="fr">Employé(e) travaillant dans l’étude d’huissier; employé,
+         serviteur, secrétaire d’un personnage, d’un groupement de personnes, d’un organisme
+         officiels. (Source : TLFI notice « clerc »)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -1089,7 +1140,7 @@
       <skos:altLabel xml:lang="fr">marchand</skos:altLabel>
       <skos:altLabel xml:lang="fr">détaillant</skos:altLabel>
       <skos:altLabel xml:lang="fr">grossiste</skos:altLabel>
-      <skos:definition xml:lang="fr">S'applique au commerce de détail.</skos:definition>
+      <skos:definition xml:lang="fr">S’applique au commerce de détail.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-78fgtdfkw-r8n4a29cez1l">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -1097,7 +1148,10 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">commis</skos:prefLabel>
       <skos:altLabel xml:lang="fr">commise</skos:altLabel>
-      <skos:definition xml:lang="fr">Employé(e) subalterne qui peut être chargé(e) de la vente dans un commerce, de l’exécution de tâches manuelles dans une exploitation agricole ou des écritures dans une administration. (d’après le TLFI notice « commis » et le Larousse en ligne (2023))</skos:definition>
+      <skos:definition xml:lang="fr">Employé(e) subalterne qui peut être chargé(e) de la vente dans
+         un commerce, de l’exécution de tâches manuelles dans une exploitation agricole ou des
+         écritures dans une administration. (d’après le TLFI notice « commis » et le Larousse en
+         ligne (2023))</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -1110,7 +1164,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">commis d'administration (Ancien Régime)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">commis d’administration (Ancien Régime)</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl6x2dd-1l2khvksguxs4">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -1146,7 +1200,8 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">commissaire général des fortifications (Ancien Régime)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">commissaire général des fortifications (Ancien
+         Régime)</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msiwf0g-1aa6noos8nbln">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -1205,7 +1260,8 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">conseiller au cabinet du président de la République</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">conseiller au cabinet du président de la
+         République</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl77u7c--gq05ipagl2u5">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -1217,7 +1273,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">conseiller d'Etat (Ancien Régime)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">conseiller d’Etat (Ancien Régime)</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl6y18d--aonljmhbs7v3">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -1241,7 +1297,8 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">conservateur (patrimoine)</skos:prefLabel>
-      <skos:definition xml:lang="fr">Ne s'applique pas au corps actuel de la Fonction publique.</skos:definition>
+      <skos:definition xml:lang="fr">Ne s’applique pas au corps actuel de la Fonction
+         publique.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl6wmx6-d0rz0z0g5ixm">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -1283,7 +1340,8 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">contrôleur général des bâtiments (Ancien Régime)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">contrôleur général des bâtiments (Ancien
+         Régime)</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl74pat-1xh1ln7rqogds">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -1352,7 +1410,8 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">dactylographe</skos:prefLabel>
-      <skos:definition xml:lang="fr">Employé(e) chargé(e) de transcrire, ou d'écrire des textes à la machine à écrire. (Source : TLFI notice « dactylographe »)</skos:definition>
+      <skos:definition xml:lang="fr">Employé(e) chargé(e) de transcrire, ou d’écrire des textes à la
+         machine à écrire. (Source : TLFI notice « dactylographe »)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -1398,7 +1457,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">demandeur d'emploi</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">demandeur d’emploi</skos:prefLabel>
       <skos:altLabel xml:lang="fr">chômeur</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msk32xg--18i1mtijx6s4v">
@@ -1440,7 +1499,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">directeur d'établissement d'enseignement</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">directeur d’établissement d’enseignement</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl6sa1n--46hufdqzbjap">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -1458,7 +1517,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">dirigeant d'organisation d'employeurs</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">dirigeant d’organisation d’employeurs</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msipbvu--al53jh9equfg">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -1485,7 +1544,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">docteur d'université</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">docteur d’université</skos:prefLabel>
       <skos:altLabel xml:lang="fr">docteur</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msj21uh--ujxcalbpcp6v">
@@ -1504,7 +1563,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">doyen d'université</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">doyen d’université</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjcizq--aacnkx7imrc1">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -1592,7 +1651,7 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">élu local</skos:prefLabel>
       <skos:altLabel xml:lang="fr">adjoint au maire</skos:altLabel>
-      <skos:altLabel xml:lang="fr">conseiller d'arrondissement</skos:altLabel>
+      <skos:altLabel xml:lang="fr">conseiller d’arrondissement</skos:altLabel>
       <skos:altLabel xml:lang="fr">conseiller général</skos:altLabel>
       <skos:altLabel xml:lang="fr">conseiller municipal</skos:altLabel>
       <skos:altLabel xml:lang="fr">conseiller régional</skos:altLabel>
@@ -1608,7 +1667,10 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">employé</skos:prefLabel>
       <skos:altLabel xml:lang="fr">employée</skos:altLabel>
-      <skos:definition xml:lang="fr">Personne qui travaille sous les ordres de quelqu’un dans un bureau, une administration, un magasin ou chez un particulier et dont le travail est plutôt intellectuel. (d’après le TLFI notice « employé » et le Larousse en ligne (2023))</skos:definition>
+      <skos:definition xml:lang="fr">Personne qui travaille sous les ordres de quelqu’un dans un
+         bureau, une administration, un magasin ou chez un particulier et dont le travail est plutôt
+         intellectuel. (d’après le TLFI notice « employé » et le Larousse en ligne
+         (2023))</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -1621,9 +1683,10 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">employé d'administration</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">employée d'administration</skos:altLabel>
-      <skos:definition xml:lang="fr">Salarié(e) qui travaille dans une administration.</skos:definition>
+      <skos:prefLabel xml:lang="fr">employé d’administration</skos:prefLabel>
+      <skos:altLabel xml:lang="fr">employée d’administration</skos:altLabel>
+      <skos:definition xml:lang="fr">Salarié(e) qui travaille dans une
+         administration.</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -1637,7 +1700,9 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">employé de banque</skos:prefLabel>
       <skos:altLabel xml:lang="fr">employée de banque</skos:altLabel>
-      <skos:definition xml:lang="fr">Salarié(e) qui travaille dans une banque, soit en agence bancaire avec les clients, soit dans l'un des services administratifs de la banque. (Source : Wikipédia (2023))</skos:definition>
+      <skos:definition xml:lang="fr">Salarié(e) qui travaille dans une banque, soit en agence
+         bancaire avec les clients, soit dans l’un des services administratifs de la banque.
+         (Source : Wikipédia (2023))</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -1652,7 +1717,10 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">employé de bureau</skos:prefLabel>
       <skos:altLabel xml:lang="fr">employée de bureau</skos:altLabel>
-      <skos:definition xml:lang="fr">Salarié(e) travaillant dans un bureau, sans fonction de commandement ou de décision, pour effectuer des tâches de nature administrative, telles qu’écritures, dactylographie, enregistrement, transcription, tri et rangement de documents, secrétariat. (Source : Wiktionary (2023))</skos:definition>
+      <skos:definition xml:lang="fr">Salarié(e) travaillant dans un bureau, sans fonction de
+         commandement ou de décision, pour effectuer des tâches de nature administrative, telles
+         qu’écritures, dactylographie, enregistrement, transcription, tri et rangement de documents,
+         secrétariat. (Source : Wiktionary (2023))</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -1689,7 +1757,9 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">employé subalterne</skos:prefLabel>
       <skos:altLabel xml:lang="fr">employée subalterne</skos:altLabel>
-      <skos:definition xml:lang="fr">Salarié(e) qui se trouve dans une position subordonnée (garçon, assistant, etc.) et qui occupe donc un rang peu élevé dans la hiérarchie professionnelle. (d’après le TLFI notice « subalterne » et le Larousse en ligne (2023))</skos:definition>
+      <skos:definition xml:lang="fr">Salarié(e) qui se trouve dans une position subordonnée (garçon,
+         assistant, etc.) et qui occupe donc un rang peu élevé dans la hiérarchie professionnelle.
+         (d’après le TLFI notice « subalterne » et le Larousse en ligne (2023))</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -1751,10 +1821,10 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">fabricant d'accessoires vestimentaires</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">fabricant d’accessoires vestimentaires</skos:prefLabel>
       <skos:altLabel xml:lang="fr">aiguillier</skos:altLabel>
       <skos:altLabel xml:lang="fr">bonnetier</skos:altLabel>
-      <skos:altLabel xml:lang="fr">fabricant d'accessoires de mode</skos:altLabel>
+      <skos:altLabel xml:lang="fr">fabricant d’accessoires de mode</skos:altLabel>
       <skos:altLabel xml:lang="fr">plumassier</skos:altLabel>
       <skos:altLabel xml:lang="fr">modiste</skos:altLabel>
       <skos:altLabel xml:lang="fr">formier</skos:altLabel>
@@ -1766,7 +1836,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">facteur d'instruments de musique</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">facteur d’instruments de musique</skos:prefLabel>
       <skos:altLabel xml:lang="fr">archetier</skos:altLabel>
       <skos:altLabel xml:lang="fr">luthier</skos:altLabel>
    </skos:Concept>
@@ -1923,13 +1993,14 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">grand maître de l'artillerie (Ancien Régime)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">grand maître de l’artillerie (Ancien Régime)</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl7an80--1igec9t065fzk">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">grand officier de la maison du roi (Ancien Régime)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">grand officier de la maison du roi (Ancien
+         Régime)</skos:prefLabel>
       <skos:altLabel xml:lang="fr">grand maître de la Garde-robe</skos:altLabel>
       <skos:altLabel xml:lang="fr">grand prévôt de France</skos:altLabel>
       <skos:altLabel xml:lang="fr">grand louvetier de France</skos:altLabel>
@@ -2206,7 +2277,8 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">logeur</skos:prefLabel>
       <skos:altLabel xml:lang="fr">logeuse</skos:altLabel>
-      <skos:definition xml:lang="fr">Personne qui loue des chambres meublées. (Source : Larousse en ligne (2023))</skos:definition>
+      <skos:definition xml:lang="fr">Personne qui loue des chambres meublées. (Source : Larousse en
+         ligne (2023))</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -2255,7 +2327,13 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">maître d'hôtel</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">maître d’hôtel</skos:prefLabel>
+   </skos:Concept>
+   <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-1oksc7uuzm1--7f7nbwh4py1f">
+      <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
+      <skos:inScheme rdf:resource="occupationTypes"/>
+      <skos:topConceptOf rdf:resource="occupationTypes"/>
+      <skos:prefLabel xml:lang="fr">maître de conférence</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msk4nz5--1okvjytf4gh5q">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2273,7 +2351,8 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">maître des requêtes au Conseil d'Etat (après la Révolution)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">maître des requêtes au Conseil d’Etat (après la
+         Révolution)</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msimtk5--1mnyoaja2cwlx">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2343,7 +2422,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">membre de l'administration préfectorale</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">membre de l’administration préfectorale</skos:prefLabel>
       <skos:altLabel xml:lang="fr">conseiller de préfecture</skos:altLabel>
       <skos:altLabel xml:lang="fr">président de conseil de préfecture</skos:altLabel>
       <skos:altLabel xml:lang="fr">secrétaire général de la préfecture</skos:altLabel>
@@ -2355,7 +2434,7 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">membre de la Chambre des Pairs </skos:prefLabel>
       <skos:altLabel xml:lang="fr">Pair de France</skos:altLabel>
-      <skos:definition xml:lang="fr">S'applique entre 1814 et 1848</skos:definition>
+      <skos:definition xml:lang="fr">S’applique entre 1814 et 1848</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>18/07/2022</dc:date>
@@ -2367,7 +2446,8 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">membre de la Cour des comptes (après la Révolution)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">membre de la Cour des comptes (après la
+         Révolution)</skos:prefLabel>
       <skos:altLabel xml:lang="fr">auditeur à la Cour des comptes</skos:altLabel>
       <skos:altLabel xml:lang="fr">conseiller maître à la Cour des comptes</skos:altLabel>
       <skos:altLabel xml:lang="fr">conseiller référendaire à la Cour des comptes</skos:altLabel>
@@ -2376,7 +2456,8 @@
       <skos:altLabel xml:lang="fr">premier président de la Cour des comptes</skos:altLabel>
       <skos:altLabel xml:lang="fr">président de chambre à la Cour des comptes</skos:altLabel>
       <skos:altLabel xml:lang="fr">rapporteur à la Cour des comptes</skos:altLabel>
-      <skos:definition xml:lang="fr">S'applique pour les conseillers, auditeurs, rapporteurs et experts à la cour des comptes</skos:definition>
+      <skos:definition xml:lang="fr">S’applique pour les conseillers, auditeurs, rapporteurs et
+         experts à la cour des comptes</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-40bg594b0-nbq63vdtems5">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2389,7 +2470,9 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">membre du cabinet du président de la République</skos:prefLabel>
-      <skos:definition xml:lang="fr">directeur du cabinet, secrétaire général, secrétaire général adjoint, chef de cabinet, chef de cabinet adjoint, conseiller, chargé de mission, chef de l'Etat-Major particulier</skos:definition>
+      <skos:definition xml:lang="fr">directeur du cabinet, secrétaire général, secrétaire général
+         adjoint, chef de cabinet, chef de cabinet adjoint, conseiller, chargé de mission, chef de
+         l’Etat-Major particulier</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-49883jbnk-1oo1y10zm7a27">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2409,10 +2492,10 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">membre du Conseil d'État</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">auditeur au Conseil d'État</skos:altLabel>
-      <skos:altLabel xml:lang="fr">conseiller d'État</skos:altLabel>
-      <skos:altLabel xml:lang="fr">vice-président du Conseil d'État</skos:altLabel>
+      <skos:prefLabel xml:lang="fr">membre du Conseil d’État</skos:prefLabel>
+      <skos:altLabel xml:lang="fr">auditeur au Conseil d’État</skos:altLabel>
+      <skos:altLabel xml:lang="fr">conseiller d’État</skos:altLabel>
+      <skos:altLabel xml:lang="fr">vice-président du Conseil d’État</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-474lcovck--c3a5i3atkh3s">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2430,7 +2513,8 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">membre du Conseil économique, social et environnemental</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">membre du Conseil économique, social et
+         environnemental</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-466vobm0g--1ohcf6acrdsdx">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2479,6 +2563,12 @@
       <skos:altLabel xml:lang="fr">1ère classe</skos:altLabel>
       <skos:altLabel xml:lang="fr">soldat</skos:altLabel>
    </skos:Concept>
+   <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-1okoah836l1--1lwud32yr5hyr">
+      <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
+      <skos:inScheme rdf:resource="occupationTypes"/>
+      <skos:topConceptOf rdf:resource="occupationTypes"/>
+      <skos:prefLabel xml:lang="fr">militant associatif</skos:prefLabel>
+   </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msk3h6v--1a7obp35gqwv3">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
@@ -2497,7 +2587,7 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">ministre</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">ministre d'État</skos:altLabel>
+      <skos:altLabel xml:lang="fr">ministre d’État</skos:altLabel>
       <skos:altLabel xml:lang="fr">ministre délégué</skos:altLabel>
       <skos:altLabel xml:lang="fr">ministre sans portefeuille</skos:altLabel>
    </skos:Concept>
@@ -2506,7 +2596,7 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">miroitier</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">miroitier d'art</skos:altLabel>
+      <skos:altLabel xml:lang="fr">miroitier d’art</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msk2oo0--79ifv7fxyatt">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2537,7 +2627,8 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">négociant</skos:prefLabel>
-      <skos:definition xml:lang="fr">S'applique au comerce international et au commerce de gros.</skos:definition>
+      <skos:definition xml:lang="fr">S’applique au comerce international et au commerce de
+         gros.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3nyu9x713-9kcjiv44l4wh">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2580,13 +2671,14 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">officier de l'Argenterie et menus-plaisirs du roi (Ancien Régime)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">officier de l’Argenterie et menus-plaisirs du roi (Ancien
+         Régime)</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl6uajh-17so9m00veyub">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">officier de l'Ecurie du roi (Ancien Régime)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">officier de l’Ecurie du roi (Ancien Régime)</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl73our-1a847lpy8zk63">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2610,13 +2702,15 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">officier de la Garde-robe du roi (Ancien Régime)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">officier de la Garde-robe du roi (Ancien
+         Régime)</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl75fg2-1y17ypyh0oyxz">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">officier de la maison militaire du roi (Ancien Régime)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">officier de la maison militaire du roi (Ancien
+         Régime)</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjnhyq--1o5g3frrdl8ez">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2646,7 +2740,13 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">officier ministériel ou public</skos:prefLabel>
-      <skos:definition xml:lang="fr">Un officier public ou ministériel est une personne titulaire d'un office conféré par l'État et nommé par décision d'un ministre. Les avoués près les cours d'appel, les huissiers de justice, les notaires, les avocats au Conseil d'État et à la Cour de cassation sont des officiers ministériels. Certains d'entre eux sont également des officiers publics, en raison de leur pouvoir d'authentifier des actes juridiques ou judiciaires et de procéder à l'exécution des décisions de justice (cas des notaires, huissiers de justice,...).(Insee).</skos:definition>
+      <skos:definition xml:lang="fr">Un officier public ou ministériel est une personne titulaire
+         d’un office conféré par l’État et nommé par décision d’un ministre. Les avoués près les
+         cours d’appel, les huissiers de justice, les notaires, les avocats au Conseil d’État et à
+         la Cour de cassation sont des officiers ministériels. Certains d’entre eux sont également
+         des officiers publics, en raison de leur pouvoir d’authentifier des actes juridiques ou
+         judiciaires et de procéder à l’exécution des décisions de justice (cas des notaires,
+         huissiers de justice,...).(Insee).</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msiy4ta-49puw2zygzof">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2671,7 +2771,9 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">ouvrier</skos:prefLabel>
       <skos:altLabel xml:lang="fr">ouvrière</skos:altLabel>
-      <skos:definition xml:lang="fr">Travailleur, travailleuse qui exécute pour le compte d'autrui, moyennant salaire, un travail manuel (dans un atelier, une mine, une manufacture, une usine, une exploitation agricole). (Source : TLFI notice « ouvrier »)</skos:definition>
+      <skos:definition xml:lang="fr">Travailleur, travailleuse qui exécute pour le compte d’autrui,
+         moyennant salaire, un travail manuel (dans un atelier, une mine, une manufacture, une
+         usine, une exploitation agricole). (Source : TLFI notice « ouvrier »)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -2687,16 +2789,18 @@
       <skos:prefLabel xml:lang="fr">ouvrier agricole</skos:prefLabel>
       <skos:altLabel xml:lang="fr">vendangeur</skos:altLabel>
       <skos:altLabel xml:lang="fr">batteur de grains</skos:altLabel>
-      <skos:altLabel xml:lang="fr">garçon d'écurie</skos:altLabel>
+      <skos:altLabel xml:lang="fr">garçon d’écurie</skos:altLabel>
       <skos:altLabel xml:lang="fr">palefrenier</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-7jgjur4oo-1w00h0cj7fgpa">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">ouvrier d'usine</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">ouvrière d'usine</skos:altLabel>
-      <skos:definition xml:lang="fr">Travailleur, travailleuse qui exécute pour le compte d'autrui, moyennant salaire, un travail manuel dans une usine. (Source : TLFI notice « ouvrier »)</skos:definition>
+      <skos:prefLabel xml:lang="fr">ouvrier d’usine</skos:prefLabel>
+      <skos:altLabel xml:lang="fr">ouvrière d’usine</skos:altLabel>
+      <skos:definition xml:lang="fr">Travailleur, travailleuse qui exécute pour le compte d’autrui,
+         moyennant salaire, un travail manuel dans une usine. (Source : TLFI notice
+         « ouvrier »)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -2732,7 +2836,8 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">parlementaire</skos:prefLabel>
       <skos:altLabel xml:lang="fr">représentant du peuple</skos:altLabel>
-      <skos:definition xml:lang="fr">A utiliser pour les membres des assemblées législatives. Pour l'Ancien Régime, voir magistrat.</skos:definition>
+      <skos:definition xml:lang="fr">A utiliser pour les membres des assemblées législatives. Pour
+         l’Ancien Régime, voir magistrat.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjywdy--1v2ykrath5h63">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2760,7 +2865,7 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">paumier</skos:prefLabel>
-      <skos:definition xml:lang="fr">Directeur d'une salle de jeu de paume.</skos:definition>
+      <skos:definition xml:lang="fr">Directeur d’une salle de jeu de paume.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjrlc4-1o42iifxh4nku">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2795,7 +2900,7 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">percepteur</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">élu d'élection</skos:altLabel>
+      <skos:altLabel xml:lang="fr">élu d’élection</skos:altLabel>
       <skos:altLabel xml:lang="fr">receveur-percepteur</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl72k1u--1fkdzqu8xv3r8">
@@ -2845,7 +2950,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">pilote d'avion</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">pilote d’avion</skos:prefLabel>
       <skos:altLabel xml:lang="fr">aviateur</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msin2o6-103zw4s4x9u6w">
@@ -2896,7 +3001,8 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">porte-parole au cabinet du président de la République</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">porte-parole au cabinet du président de la
+         République</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msis82p--1lv2p14dqjh97">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -2922,7 +3028,13 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">préfet de police de Paris</skos:prefLabel>
-      <skos:definition xml:lang="fr">Le préfet de police de Paris, sous l'autorité du ministre de l'Intérieur, est responsable de l’ensemble du dispositif de sécurité intérieure sur le territoire de Paris et des départements des Hauts-de-Seine, de la Seine-Saint-Denis et du Val-de-Marne. Il a, à ce titre, la charge de l'ordre public, qu'il met en œuvre au travers de ses propres directions de police ou en faisant appel aux unités de la gendarmerie nationale ou aux compagnies républicaines de sécurité. (Source : https://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_police_(Paris))</skos:definition>
+      <skos:definition xml:lang="fr">Le préfet de police de Paris, sous l’autorité du ministre de
+         l’Intérieur, est responsable de l’ensemble du dispositif de sécurité intérieure sur le
+         territoire de Paris et des départements des Hauts-de-Seine, de la Seine-Saint-Denis et du
+         Val-de-Marne. Il a, à ce titre, la charge de l’ordre public, qu’il met en œuvre au travers
+         de ses propres directions de police ou en faisant appel aux unités de la gendarmerie
+         nationale ou aux compagnies républicaines de sécurité. (Source :
+         https://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_police_(Paris))</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>26/07/2022</dc:date>
@@ -2936,7 +3048,18 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">préfet de police des Bouches-du-Rhône</skos:prefLabel>
       <skos:altLabel xml:lang="fr">préfet de police de Marseille</skos:altLabel>
-      <skos:definition xml:lang="fr">Le préfet de police des Bouches-du-Rhône dirige la préfecture de police des Bouches-du-Rhône, qui est l'institution chargée de mettre en œuvre la politique nationale de sécurité intérieure dans le département des Bouches-du-Rhône. La fonction de préfet de police des Bouches-du-Rhône est créée par décret en date du 15 octobre 2012. Un préfet délégué pour la police a été institué dans les Bouches-du-Rhône en 1972. Renommé en 1989 préfet adjoint pour la sécurité, puis en 1993, préfet délégué pour la sécurité et la défense. Couramment dénommés « préfet de police », ces préfets assistent en fait le préfet de zone pour animer et coordonner l’action des services de police dans le département. À la suite de nombreux règlements de compte impliquant des trafiquants de drogue dans l'agglomération marseillaise,un préfet de police de plein exercice pour les Bouches-du-Rhône en 2012. (Source : https://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_police_des_Bouches-du-Rh%C3%B4ne)</skos:definition>
+      <skos:definition xml:lang="fr">Le préfet de police des Bouches-du-Rhône dirige la préfecture
+         de police des Bouches-du-Rhône, qui est l’institution chargée de mettre en œuvre la
+         politique nationale de sécurité intérieure dans le département des Bouches-du-Rhône. La
+         fonction de préfet de police des Bouches-du-Rhône est créée par décret en date du 15
+         octobre 2012. Un préfet délégué pour la police a été institué dans les Bouches-du-Rhône en
+         1972. Renommé en 1989 préfet adjoint pour la sécurité, puis en 1993, préfet délégué pour la
+         sécurité et la défense. Couramment dénommés « préfet de police », ces préfets assistent en
+         fait le préfet de zone pour animer et coordonner l’action des services de police dans le
+         département. À la suite de nombreux règlements de compte impliquant des trafiquants de
+         drogue dans l’agglomération marseillaise,un préfet de police de plein exercice pour les
+         Bouches-du-Rhône en 2012. (Source :
+         https://fr.wikipedia.org/wiki/Pr%C3%A9fecture_de_police_des_Bouches-du-Rh%C3%B4ne)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>26/07/2022</dc:date>
@@ -2972,19 +3095,19 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">président de l'Assemblée constituante</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">président de l’Assemblée constituante</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjhgh0--4j827yzv1s19">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">président de l'Assemblée nationale</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">président de l’Assemblée nationale</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-41suuyxf0--1f45hruwtz9py">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">président de l'Assemblée nationale législative</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">président de l’Assemblée nationale législative</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-425zo373c-1f5ywkn7d9pxa">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -3081,7 +3204,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">producteur d'émissions de radio ou télévision</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">producteur d’émissions de radio ou télévision</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msiw6ap-45btn6xbxo3i">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -3094,7 +3217,8 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">propriétaire</skos:prefLabel>
-      <skos:definition xml:lang="fr">Personne qui possède un bien, et plus particulièrement un bien immeuble ou un bien-fonds. (Source : TLFI notice « propriétaire »)</skos:definition>
+      <skos:definition xml:lang="fr">Personne qui possède un bien, et plus particulièrement un bien
+         immeuble ou un bien-fonds. (Source : TLFI notice « propriétaire »)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -3108,14 +3232,21 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">psychiatre</skos:prefLabel>
-      <skos:definition xml:lang="fr">Médecin spécialisé en santé mentale, exerçant la psychiatrie</skos:definition>
+      <skos:definition xml:lang="fr">Médecin spécialisé en santé mentale, exerçant la
+         psychiatrie</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-8o1o09an5--1hqno6l8gqwkw">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">psychologue</skos:prefLabel>
-      <skos:definition xml:lang="fr">En France, le titre de psychologue est protégé et reconnu par l’État depuis 1985. Pour faire usage du titre, le psychologue a fait des études de psychologie permettant l'obtention d'une licence et d'un Master 2 accompagnées de la réalisation d'un mémoire de fin d'études et d'un stage annuel professionnalisant. Les psychologues sont par ailleurs tenus de faire enregistrer leurs diplômes auprès de l'agence régionale de santé (ARS) de leur secteur d'exercice (activité salariée, libérale ou mixte).</skos:definition>
+      <skos:definition xml:lang="fr">En France, le titre de psychologue est protégé et reconnu par
+         l’État depuis 1985. Pour faire usage du titre, le psychologue a fait des études de
+         psychologie permettant l’obtention d’une licence et d’un Master 2 accompagnées de la
+         réalisation d’un mémoire de fin d’études et d’un stage annuel professionnalisant. Les
+         psychologues sont par ailleurs tenus de faire enregistrer leurs diplômes auprès de l’agence
+         régionale de santé (ARS) de leur secteur d’exercice (activité salariée, libérale ou
+         mixte).</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msiym8t-1hfhc1cu1lp04">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -3152,8 +3283,9 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">recteur d'université</skos:prefLabel>
-      <skos:definition xml:lang="fr">représentant élu d'une université au Moyen-Age.</skos:definition>
+      <skos:prefLabel xml:lang="fr">recteur d’université</skos:prefLabel>
+      <skos:definition xml:lang="fr">représentant élu d’une université au
+         Moyen-Age.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msikopd--xib7lmf6g7up">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -3167,7 +3299,8 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">rentier</skos:prefLabel>
       <skos:altLabel xml:lang="fr">rentière</skos:altLabel>
-      <skos:definition xml:lang="fr">Personne qui a des rentes, qui vit de revenus non professionnels. (d’après le TLFI notice « rentier »)</skos:definition>
+      <skos:definition xml:lang="fr">Personne qui a des rentes, qui vit de revenus non
+         professionnels. (d’après le TLFI notice « rentier »)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -3180,11 +3313,13 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">représentant officiel du gouvernement dans une colonie ou dans un territoire étranger</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">représentant officiel du gouvernement dans une colonie ou dans
+         un territoire étranger</skos:prefLabel>
       <skos:altLabel xml:lang="fr">gouverneur général</skos:altLabel>
       <skos:altLabel xml:lang="fr">résident général</skos:altLabel>
       <skos:altLabel xml:lang="fr">secrétaire général</skos:altLabel>
-      <skos:definition xml:lang="fr">S'applique au résident général, au gouverneur général, au secrétaire général dans les colonies ou territoire étranger.</skos:definition>
+      <skos:definition xml:lang="fr">S’applique au résident général, au gouverneur général, au
+         secrétaire général dans les colonies ou territoire étranger.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-2dlouru40-16uts12xdm4zl">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -3197,8 +3332,9 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">responsable d'établissement public</skos:prefLabel>
-      <skos:definition xml:lang="fr">peut être utilisé pour les présidents d'université</skos:definition>
+      <skos:prefLabel xml:lang="fr">responsable d’établissement public</skos:prefLabel>
+      <skos:definition xml:lang="fr">peut être utilisé pour les présidents
+         d’université</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjfums--1u0fzz7t9yqj6">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -3247,8 +3383,8 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">sculpteur</skos:prefLabel>
-      <skos:altLabel xml:lang="fr">tailleur d'images</skos:altLabel>
-      <skos:altLabel xml:lang="fr">tailleur d'antiques</skos:altLabel>
+      <skos:altLabel xml:lang="fr">tailleur d’images</skos:altLabel>
+      <skos:altLabel xml:lang="fr">tailleur d’antiques</skos:altLabel>
       <skos:altLabel xml:lang="fr">tombier</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msj4ugz--1lgbq1d52vyvi">
@@ -3261,13 +3397,13 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">secrétaire d'Etat</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">secrétaire d’Etat</skos:prefLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl70eel--65ak92lk2gdp">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">secrétaire d'Etat (Ancien Régime)</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">secrétaire d’Etat (Ancien Régime)</skos:prefLabel>
       <skos:altLabel xml:lang="fr">secrétaire des commandements</skos:altLabel>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d3m0bl73710--wnojjgx6y55f">
@@ -3310,13 +3446,21 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">serveur</skos:prefLabel>
    </skos:Concept>
+   <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-1ojvt8fh4z5--1xdz6cai15q5g">
+      <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
+      <skos:inScheme rdf:resource="occupationTypes"/>
+      <skos:topConceptOf rdf:resource="occupationTypes"/>
+      <skos:prefLabel xml:lang="fr">sociologue</skos:prefLabel>
+   </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-7lhn8dk74--1fblyuk3b97hr">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">sommelier</skos:prefLabel>
       <skos:altLabel xml:lang="fr">sommelière</skos:altLabel>
-      <skos:definition xml:lang="fr">Personne responsable des vins et des boissons alcoolisées, de la vaisselle et du linge de table dans le milieu de la restauration ou dans une grande maison. (d’après le TLFI notice « sommelier » et Wikipédia (2023))</skos:definition>
+      <skos:definition xml:lang="fr">Personne responsable des vins et des boissons alcoolisées, de
+         la vaisselle et du linge de table dans le milieu de la restauration ou dans une grande
+         maison. (d’après le TLFI notice « sommelier » et Wikipédia (2023))</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -3374,13 +3518,16 @@
       <skos:altLabel xml:lang="fr">athlète</skos:altLabel>
       <skos:altLabel xml:lang="fr">gymnaste</skos:altLabel>
       <skos:altLabel xml:lang="fr">sportive</skos:altLabel>
-      <skos:definition xml:lang="fr">Personne qui pratique un ou plusieurs sports. (d’après le TLFI notice « sportif »)</skos:definition>
+      <skos:definition xml:lang="fr">Personne qui pratique un ou plusieurs sports. (d’après le TLFI
+         notice « sportif »)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
             <rdf:value xml:lang="fr">Ajouté le [04/08/2023]</rdf:value>
          </rdf:Description>
       </skos:changeNote>
+      <skos:scopeNote xml:lang="fr">S’applique aux personnes qui ont une pratique professionnelle du
+         sport.</skos:scopeNote>
       <skos:exactMatch rdf:resource="http://www.wikidata.org/entity/Q2066131"/>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d-7n3g3ppps-14cl4p5f9cq31">
@@ -3390,7 +3537,8 @@
       <skos:prefLabel xml:lang="fr">standardiste</skos:prefLabel>
       <skos:altLabel xml:lang="fr">demoiselle du téléphone</skos:altLabel>
       <skos:altLabel xml:lang="fr">téléphoniste</skos:altLabel>
-      <skos:definition xml:lang="fr">Personne chargée du service d'un standard téléphonique. (Source : TLFI notice « standardiste »)</skos:definition>
+      <skos:definition xml:lang="fr">Personne chargée du service d’un standard téléphonique.
+         (Source : TLFI notice « standardiste »)</skos:definition>
       <skos:changeNote>
          <rdf:Description>
             <dc:date>04/08/2023</dc:date>
@@ -3411,7 +3559,8 @@
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">syndicaliste</skos:prefLabel>
       <skos:altLabel xml:lang="fr">dirigeant syndical</skos:altLabel>
-      <skos:definition xml:lang="fr">S'applique aussi pour les présidents d'organisations patronales</skos:definition>
+      <skos:definition xml:lang="fr">S’applique aussi pour les présidents d’organisations
+         patronales</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjg8w7-10vykcaxq88j4">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -3443,7 +3592,7 @@
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
-      <skos:prefLabel xml:lang="fr">tailleur d'habits</skos:prefLabel>
+      <skos:prefLabel xml:lang="fr">tailleur d’habits</skos:prefLabel>
       <skos:altLabel xml:lang="fr">ravaudeur</skos:altLabel>
       <skos:altLabel xml:lang="fr">retoucheur</skos:altLabel>
       <skos:altLabel xml:lang="fr">tailleur</skos:altLabel>
@@ -3509,7 +3658,7 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">tourneur</skos:prefLabel>
-      <skos:definition xml:lang="fr">S'applique à tous les matériaux.</skos:definition>
+      <skos:definition xml:lang="fr">S’applique à tous les matériaux.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjadcf-jdxhdmc1t73a">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>
@@ -3560,7 +3709,7 @@
       <skos:inScheme rdf:resource="occupationTypes"/>
       <skos:topConceptOf rdf:resource="occupationTypes"/>
       <skos:prefLabel xml:lang="fr">trésorier-payeur-général</skos:prefLabel>
-      <skos:definition xml:lang="fr">S'applique à la période contemporaine.</skos:definition>
+      <skos:definition xml:lang="fr">S’applique à la période contemporaine.</skos:definition>
    </skos:Concept>
    <skos:Concept rdf:about="occupationType/FRAN_RI_010-d699msjw4y9--3czdp7gnzrpg">
       <rdf:type rdf:resource="https://www.ica.org/standards/RiC/ontology#OccupationType"/>

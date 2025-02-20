@@ -2,19 +2,19 @@
 layout: main.njk
 ---
 
-<main id="documentaryFormType">
+{% set sortIndex = index.graph | jsonSort("title") %}
+
+<main class="section_garance" id="documentaryFormType">
 	<div class="row">
 		<div class="col-md">
-			<h1 class="title-Header">{{ 'vocabularies' | i18n }}</h1>
-			{% set sortIndex = index.graph | jsonSort("title") %}
+			<h1 class="title-Header">{{ 'vocabularies' | i18n }}</h1>			
 			<ul>
 				{%- for item in sortIndex -%}
 					<li>
 						<a href="{{ item.id | localName }}">{{ item.title | lang("fr") }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} concepts</small>
 					</li>
 				{%- endfor-%}
-			</ul>
-			
+			</ul>			
 		</div>
 	</div>
 </main>
