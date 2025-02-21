@@ -163,7 +163,7 @@
                                 {% set sortVocabularies = index.graph | jsonSort("title") %}
                                 <ul class="dropdown-menu">  
                                 {% for voc in sortVocabularies %}
-                                    <li><a class="dropdown-item" href="{{ voc.id | localName }} | relative(page)">{{ voc.title | lang("fr") }}</a></li>
+                                    <li><a class="dropdown-item" href="{{ voc.id | localName }}">{{ voc.title | lang("fr") }}</a></li>
                                 {% endfor %}
                                 </ul>
                             {% endif %}
@@ -183,14 +183,14 @@
                     {% if locale === "fr" %}
                         {% set pageURLEN = page.url | replace("/fr/", "/en/") %}
                         <span>
-                            <a href="./{{ pageURLEN }}" ><img src="{{ '/assets/images/'}}{{'EN.png' }}" alt =""/></a>
+                            <a href="./{{ pageURLEN }}" ><img src="/assets/images/EN.png" alt =""/></a>
                         </span>                        
                     {% endif %}
 
                     {% if locale === "en" %}
                         {% set pageURLFR = page.url | replace("/en/", "/fr/") %}
                         <span>
-                            <a href="{{ pageURLFR }}" ><img src="{{ '/assets/images/'}}{{'FR.png' }}" alt =""/></a>
+                            <a href="{{ pageURLFR }}" ><img src="/assets/images/FR.png" alt =""/></a>
                         </span>                        
                     {% endif %}
                 </div>
