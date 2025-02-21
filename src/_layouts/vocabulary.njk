@@ -565,6 +565,36 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
         d._children = d.children;
       });
 
+
+      {% if vocabulary.inverse_inScheme | length > 1000 %}
+
+        function toggleL1(d) {
+          d.children.forEach(toggleAll);
+        }
+
+        function toggleAll(d) {
+          if (d.children) {
+            d.children.forEach(toggleAll);
+            toggle(d);
+          }
+        }
+
+        // Toggle children.
+        function toggle(d) {
+          if (d.children) {
+            d._children = d.children;
+            d.children = null;
+          } else {
+            d.children = d._children;
+            d._children = null;
+          }
+        }
+
+        // Initialize the display to show only the first level
+        root.children.forEach(toggleL1);
+
+      {% endif %}
+
       update(null, root);
 
       svg.node();

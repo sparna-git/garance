@@ -192,8 +192,7 @@ module.exports = async function (eleventyConfig) {
 
   eleventyConfig.addFilter("flagPrint", function (jsonData) {
     const containsBroader = jsonData.find((e) => e.broader);
-    const numberOfConcepts = jsonData.length;
-    return containsBroader && (numberOfConcepts < 1000);
+    return containsBroader;
   });
 
   // pass-through
