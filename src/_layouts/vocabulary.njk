@@ -194,6 +194,12 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
                         <a href="{{ jsonScheme | getURL(concepts.broader.broader.id) }}">{{ concepts.broader.broader.prefLabel | lang('fr') }}</a>
                       </li>
                     {% endif %}
+
+                    {% if concepts.broader %}
+                      <li>
+                        <a href="{{ jsonScheme | getURL(concepts.broader.id) }}">{{ concepts.broader.prefLabel | lang('fr') }}</a>
+                      </li>
+                    {% endif %}
                     <li>
                       {{ concepts.prefLabel | lang('fr') }}
                     </li> 
