@@ -182,14 +182,14 @@
                     {% if locale === "fr" %}
                         {% set pageURLEN = page.url | replace("/fr/", "/en/") %}
                         <span>
-                            <a href="{{ pageURLEN }}" ><img src="{{ '/assets/images/EN.png' | relative(page) }}" alt =""/></a>
+                            <a href="{{ pageURLEN | relative(page) }}" ><img src="{{ '/assets/images/EN.png' | relative(page) }}" alt =""/></a>
                         </span>                        
                     {% endif %}
 
                     {% if locale === "en" %}
                         {% set pageURLFR = page.url | replace("/en/", "/fr/") %}
                         <span>
-                            <a href="{{ pageURLFR }}" ><img src="{{ '/assets/images/FR.png' | relative(page) }}" alt =""/></a>
+                            <a href="{{ pageURLFR | relative(page) }}" ><img src="{{ '/assets/images/FR.png' | relative(page) }}" alt =""/></a>
                         </span>                        
                     {% endif %}
                 </div>
