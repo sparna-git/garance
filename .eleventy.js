@@ -166,28 +166,19 @@ module.exports = async function (eleventyConfig) {
     return new nunjucks.runtime.markSafe(jsonString);
   });
 
-  /*
-  eleventyConfig.addFilter("sortJson",function(jsonSection, locale,element) {
-
-    //
-    const ObjOutput = new Object();
-    const map1 = new Map();
-    for (let index = 0; index < jsonSection.length; index++) {
-      const e = jsonSection[index];
-      const key = e.id;
-      e[element].forEach(l => {
-        if (l["@language"] === locale) {
-          map1.set(key, l["@value"]);
-        }
-      })
+  // filters
+  // allows to make an absolute URL relative. Use it like this :
+  // {{ '/assets/old-website/uploads/2014/09/illustration.jpg' | relative(page) }}
+  eleventyConfig.addFilter(
+    "relative",
+    (absoluteUrl, page) => {
+      if (!absoluteUrl.startsWith('/')) {
+        throw new Error('URL is already relative')
+      }
+      const relativeUrl = require("path").relative(page.url, absoluteUrl);
+      return relativeUrl;
     }
-    // sort
-    const mapSort = new Map([...map1.entries()].sort((a, b) => a[1] - b[1]));
-    // convert to object output
-    return Object.fromEntries(mapSort);
-
-  });
-  */
+  );
 
   eleventyConfig.addFilter("jsonSort", function (jsonContent, element) {
     const newJsonCode = jsonContent.sort((a, b) => {
@@ -204,57 +195,6 @@ module.exports = async function (eleventyConfig) {
     const numberOfConcepts = jsonData.length;
     return containsBroader && (numberOfConcepts < 1000);
   });
-
-  // skos:exactMatch
-  /*
-  eleventyConfig.addShortcode("getexactMatch", async function (jsonData) {
-    var outputTag = "";
-    if (jsonData.length > 0) {
-      var obj = JSON.parse(jsonData);
-      var tag = "";
-      // if json data is a String
-      if (typeof obj === "string") {
-        tag += `<li>${obj}</li>`;
-      } else {
-        // if json data is an object
-        var nCountSource = obj.length;
-        if (nCountSource > 0) {
-          for (const s of obj) {
-            if (typeof s === "string") {
-              tag += `<li>${s}</li>`;
-            } else {
-              nCountData = s.length;
-              if (nCountData > 0) {
-                for (let index = 0; index < s.length; index++) {
-                  const element = s[index];
-                  tag += `<li><a href="${element.id}">${element.id}</a></li>`;
-                }
-              } else {
-                tag += `<li><a href="${s.id}">${s.id}</a></li>`;
-              }
-            }
-          }
-        } else {
-          tag += `<li><a href="${obj.id}">${obj.id}</a></li>`;
-        }
-      }
-
-      outputTag = `<div class="row">
-        <div class="col-1">
-          <h6>Alignments</h6>
-        </div>
-        <div class="col">  
-          <ul>  
-          ${tag}
-          </ul>
-        </div>
-      </div>`;
-    }
-
-    return outputTag;
-  });
-
-  */
 
   // pass-through
   eleventyConfig.addPassthroughCopy({ static: "/" });
