@@ -190,7 +190,7 @@
                     {% if locale === "en" %}
                         {% set pageURLFR = page.url | replace("/en/", "/fr/") %}
                         <span>
-                            <a href="{{ pageURLFR }}" ><img src="/assets/images/FR.png" alt =""/></a>
+                            <a href="{{ pageURLFR }}" ><img src="assets/images/FR.png" alt =""/></a>
                         </span>                        
                     {% endif %}
                 </div>
@@ -211,22 +211,3 @@
         <br />
     </footer>
 </html>
-
-
-<script>
-    function splitURL(url, languageURL) {
-
-        if (url.length > 1) {
-        // remove empty element
-        const token = url.filter((e) => e);
-        console.log(token);
-        // remove language code
-        if (token.length > 1) {
-        token = token.filter(function(langurl) {
-            return langurl != languageURL;
-        });
-        } else {
-            return "/"
-        }            
-    }
-<script>    
