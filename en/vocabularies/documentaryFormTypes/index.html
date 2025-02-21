@@ -139,12 +139,16 @@
             .section_garance ul {
                 margin-top: 50px;
                 margin-bottom: 60px;
-            }            
+            }
+
+            .botton_marging {
+                margin-bottom: 30px;
+            }        
         </style>
     </head>
     <body>
         <!-- Navbar menu -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
             <div class="container">
                 <a class="navbar-brand" href="/en">Garance</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -157,20 +161,20 @@
                             <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Controlled vocabularies<a>
                             
                                 
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu">  
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/identifierTypes">Liste des types d'identifiants des entités</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/identifierTypes">Liste des types d'identifiants des entités</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/recordStates">Thésaurus des états des documents</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/recordStates">Thésaurus des états des documents</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/occupationTypes">Thésaurus des fonctions, métiers et professions des
+                                    <li><a class="dropdown-item" href="vocabularies/occupationTypes">Thésaurus des fonctions, métiers et professions des
          personnes</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/things">Thésaurus des mots-matières</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/things">Thésaurus des mots-matières</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/documentaryFormTypes">Thésaurus des types de documents</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/documentaryFormTypes">Thésaurus des types de documents</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/recordSetTypes">Thésaurus des types de groupes de documents</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/recordSetTypes">Thésaurus des types de groupes de documents</a></li>
                                 
                                 </ul>
                             
@@ -187,28 +191,15 @@
                 <div>
                 <div class="menu-menu-principal-container">
                     
-                        <a href="/en/vocabularies/identifierTypes/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/occupationTypes/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/recordSetTypes/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/recordStates/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/things/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/documentaryFormTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/identifierTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/occupationTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/recordSetTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/recordStates/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/things/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                                               
+                        
+                    
+
+                    
+                        
+                        <span>
+                            <a href="/fr/vocabularies/documentaryFormTypes/" ><img src="/assets/images/FR.png" alt =""/></a>
+                        </span>                        
+                    
                 </div>
             </div>
         </nav>
@@ -341,28 +332,30 @@
       </div>
     
 
-    <!-- Datatype -->
-    
-      
-        
-      
-        
-          <div class="alert alert-secondary" role="alert">
-              <em>These concepts have all the type “<b>rico:DocumentaryFormType</b>”.</em>
-          </div>
-        
-      
-    
-
     <!-- Resource -->
-    <div class="row">
-        <h6><span>Download</span></h6>
+    <div class="row botton_marging">
+        <div class="col-2">
+          <h6><span>Download data</span></h6>
+        </div>
         <div class="col-10">
           <a href="https://github.com/ArchivesNationalesFR/Referentiels/tree/version_2/concepts/rdf/">
             <img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="TTL">
           </a>
         </div>
     </div>
+
+    <!-- Additionnal class -->
+    
+      
+        
+      
+        
+          <div class="alert alert-secondary" role="alert">
+              <em>These concepts have all the type “<b>Documentary Form Type</b>”.</em>
+          </div>
+        
+      
+    
     
   </div>
 
@@ -379,6 +372,7 @@
   
   
   <!-- Liste de concepts -->
+  
   
   <div class="row"> 
       <div class="col">
@@ -461,6 +455,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -557,6 +553,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -661,6 +659,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -755,6 +755,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -859,6 +861,36 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89gsbd--7jyxbksw47a6">Accord Bilatéral</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89hpq6--ykqozermv564">Accord Commercial</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89inkj-17j8bdf8gjgqx">Accord Économique</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89jl74--slaqp849yovm">Traité</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -925,6 +957,28 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d699mmxork4-13sopuexhsw4">Accord De Travail</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89fuos-1vonceo73v7dz">Accord International</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -989,6 +1043,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1093,6 +1149,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1157,6 +1215,24 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89me2v-1xfyihxuch3po">Titre De Propriété</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -1272,6 +1348,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1357,6 +1435,36 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89o8wi--1rme6ynsra3qz">Acte Imparfait</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89p6j3-16rea8x5it1b">Brevet Notarié</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89r14z-1fb7upmwc7u9n">Minute Notariale</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89ryrj--o10l2ijvrpqj">Protêt</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1411,6 +1519,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1477,6 +1587,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1561,6 +1673,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1615,6 +1729,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1710,6 +1826,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1776,6 +1894,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1832,6 +1952,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1886,6 +2008,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1955,6 +2079,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2011,6 +2137,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2065,6 +2193,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2153,6 +2283,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2209,6 +2341,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2263,6 +2397,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2329,6 +2465,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2423,6 +2561,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2505,6 +2645,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2559,6 +2701,28 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8a6cje--1rvuw06021kbf">Avant-projet D’architecture</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8a79y8-1dfpx0fshw8e4">Avant-projet De Loi</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -2639,6 +2803,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2715,6 +2881,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2771,6 +2939,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2825,6 +2995,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2919,6 +3091,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2973,6 +3147,24 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8adodt-10xe2w7xfhlp1">Bilan Comptable</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -3039,6 +3231,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3162,6 +3356,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3239,6 +3435,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3305,6 +3503,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3359,6 +3559,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3427,6 +3629,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3481,6 +3685,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3539,6 +3745,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3595,6 +3803,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3649,6 +3859,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3743,6 +3955,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3807,6 +4021,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3891,6 +4107,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3973,6 +4191,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4049,6 +4269,24 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8anw4m-zatcn4uvaz1w">Carte D’identité Professionnelle</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4103,6 +4341,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4169,6 +4409,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4243,6 +4485,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4327,6 +4571,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4381,6 +4627,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4439,6 +4687,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4493,6 +4743,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4561,6 +4813,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4617,6 +4871,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4671,6 +4927,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4740,6 +4998,24 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8axyhf--o5847a110xxj">Partition Musicale</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4807,6 +5083,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4861,6 +5139,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4929,6 +5209,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4993,6 +5275,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5061,6 +5345,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5115,6 +5401,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5211,6 +5499,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5291,6 +5581,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5384,6 +5676,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5490,6 +5784,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5570,6 +5866,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5654,6 +5952,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5734,6 +6034,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5828,6 +6130,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5884,6 +6188,28 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8bbaj9-1n5zjfal1y6o0">Compte-rendu De Séance</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8bc6va-220mbs6oh245">Compte-rendu Interministériel</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5938,6 +6264,44 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8b4ywk-y3cj65e4cs22">Compte Administratif</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8b5v0t--1nmsgc3k8tunk">Compte D’exécution Testamentaire</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8b6rkl--1pb1om5b2zaqu">Compte De Gestion</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8b7o4d--hng40wumuywm">Compte De Résultat</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8b8lyq--xe6wjcf38tck">Compte De Tutelle</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8b9iii-j62nzxz3kbxi">Compte Financier</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -6004,6 +6368,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -6088,6 +6454,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6168,6 +6536,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -6262,6 +6632,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6316,6 +6688,36 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8bgd43-1oyb50e7d0dxd">Contrat D’apprentissage</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8bh85k-zoce6yspjkhr">Contrat De Mariage</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3m00w7r99q-o99xkn05llek">Contrat De Travail</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8bi371-1mjp07dkae4vt">Marché</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -6411,6 +6813,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6465,6 +6869,24 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8bjtpg--fuudgtkg2jxu">Convention Collective</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -6523,6 +6945,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6579,6 +7003,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6633,6 +7059,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -6701,6 +7129,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6755,6 +7185,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -6821,6 +7253,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -6929,6 +7363,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7005,6 +7441,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7099,6 +7537,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7174,6 +7614,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7268,6 +7710,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7332,6 +7776,28 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8br23p-1mttyh3fzcdtb">Déclaration D’utilité Publique</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8btbl1-1f4ir0hueyo3t">Déclaration Fiscale</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -7408,6 +7874,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7488,6 +7956,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7542,6 +8012,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7610,6 +8082,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7664,6 +8138,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7752,6 +8228,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7819,6 +8297,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7875,6 +8355,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7929,6 +8411,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7995,6 +8479,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -8089,6 +8575,24 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8a15fm--9k46ej38wfc8">Atlas</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8164,6 +8668,56 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89tt5o--dhoqf04g1o4n">Affiche</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd89vnrk--16wap6q8xb894">Album</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8c1ubq--3r55qs4uf7jy">Caricature</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8c2nuv-lqflm4w8o3jx">Carte À Jouer</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8c4ax5--zozxdc7l7vkq">Carte Postale</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d699mmwtm0y-1c9x716tm2v76">Document Cartographique</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d5b8d41cch--81zpek4vv4lp">Document Photographique</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3m00w8g07q-sdu6w3nalpjf">Plan</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d5b8d39l88-ayk74wlyh5u7">Plan D’architecture</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -8269,6 +8823,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8334,6 +8890,28 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8c8eku--r057lyeffdqo">Projet De Loi</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8c97w8--dnuy8p45vg4v">Proposition De Loi</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -8402,6 +8980,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8456,6 +9036,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -8535,6 +9117,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8599,6 +9183,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -8676,6 +9262,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -8764,6 +9352,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8828,6 +9418,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -8908,6 +9500,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8985,6 +9579,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9039,6 +9635,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9133,6 +9731,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9201,6 +9801,24 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8cvghe-1kylp0q3gbg04">Fiche Nominative</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -9273,6 +9891,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9327,6 +9947,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9395,6 +10017,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9449,6 +10073,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9533,6 +10159,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9587,6 +10215,24 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8d1j9y--1stj96clt05y3">Inventaire Après Décès</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -9645,6 +10291,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9701,6 +10349,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9755,6 +10405,24 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8d43ja-1ba23lmjf0lwp">Ordre De Mission</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -9832,6 +10500,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9946,6 +10616,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10048,6 +10720,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10130,6 +10804,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10194,6 +10870,36 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-a30srcwqc-iqa4ovt0t2mp">Liste D’actes Notariés</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8d6jwx-1w1u7lgvs2456">Liste Électorale</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8d7dg2--xr5j8rtdxjz6">Liste Nominative</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8d86z8--nc6f6fn0zh7v">Rôle D’équipage</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -10262,6 +10968,24 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8d9t6g--15b2xaj9jrcis">Pièce Comptable</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10316,6 +11040,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -10384,6 +11110,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10440,6 +11168,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10494,6 +11224,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -10560,6 +11292,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -10644,6 +11378,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10700,6 +11436,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10754,6 +11492,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -10849,6 +11589,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10903,6 +11645,24 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8dqfsd-rhe7zwagavj2">Modèle De Fabrique</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -10987,6 +11747,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11052,6 +11814,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11141,6 +11905,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11195,6 +11961,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11277,6 +12045,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11394,6 +12164,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
             <div class="row">
@@ -11504,6 +12276,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11570,6 +12344,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11634,6 +12410,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11703,6 +12481,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11769,6 +12549,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11823,6 +12605,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11918,6 +12702,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12000,6 +12786,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12054,6 +12842,28 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8dw2mo--1khfprp60ozcr">Note De Renseignement</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8dwvij--dxmn3hgfi7ft">Note De Service</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -12120,6 +12930,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12189,6 +13001,32 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8dzbgn--kx5r3hrwq042">Médaille</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8e4fjt--v7edms58lehc">Panneau D’exposition</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8e04s1--vnadxljv3hvq">Sceau</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -12262,6 +13100,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12326,6 +13166,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12410,6 +13252,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12466,6 +13310,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12520,6 +13366,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12604,6 +13452,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12668,6 +13518,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12752,6 +13604,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12816,6 +13670,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12910,6 +13766,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12976,6 +13834,24 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8e7pw5-wqa045fjwwu5">Permis De Recherche</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13040,6 +13916,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -13134,6 +14012,32 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8dama2--lppp3o1hmxyn">Décision De Paiement</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8dbflg-15uovbijc0oz">Devis</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8dc8p2-nyxarkw0ppoi">Quittance</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13190,6 +14094,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13244,6 +14150,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -13328,6 +14236,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13392,6 +14302,24 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8ebtrl--1lrfjh1qyje5z">Plan Local D’urbanisme</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -13486,6 +14414,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13578,6 +14508,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13660,6 +14592,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13740,6 +14674,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -13834,6 +14770,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13888,6 +14826,28 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8eead0--3bapblsmqsry">Procès-verbal D’élection</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8ef4bo-p1s4bb3ribhy">Procès-verbal De Séance</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -13956,6 +14916,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14012,6 +14974,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14066,6 +15030,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14162,6 +15128,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14216,6 +15184,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14310,6 +15280,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14419,6 +15391,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14475,6 +15449,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14529,6 +15505,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14605,6 +15583,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14699,6 +15679,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14753,6 +15735,24 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8emhw6--rupez9gtu0e7">Questionnaire D’enquête</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -14839,6 +15839,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14933,6 +15935,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15013,6 +16017,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15097,6 +16103,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15177,6 +16185,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15293,6 +16303,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15373,6 +16385,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15467,6 +16481,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15521,6 +16537,48 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8eo4qp-jbnqxqbck7hc">Rapport D’activité</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8ephw0-e8yd9fnc9jg4">Rapport D’expertise</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8eqc2f-16m16wcjqinq0">Rapport D’inspection</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8er613-rkvliu4vixfb">Rapport De Mission</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-9znm4smzw-6l0o7waf3hoh">Rapport De Préfet</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d5b8d3d2om--1ln9pxb9dh20t">Rapport Des Forces De L’ordre</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8erzrz-y95y3lea0qci">Rapport De Stage</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -15589,6 +16647,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15643,6 +16703,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15712,6 +16774,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15806,6 +16870,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15892,6 +16958,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15972,6 +17040,28 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8eyl3w-w73dhs5yfzo5">Registre De Catholicité</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8ezf2k-a865ob82ft2b">Registre Protestant</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -16070,6 +17160,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16136,6 +17228,32 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8ew42y--1xrcx35yo3e4b">Main Courante</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8ewxtv-emejh4l9df9g">Registre D’audience</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8exrkr-g90l7b20gkft">Registre Paroissial</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16190,6 +17308,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -16248,6 +17368,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16302,6 +17424,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -16368,6 +17492,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -16450,6 +17576,24 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-a04blhkno-92bbw9jou9ed">Répertoire De Notaire</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -16576,6 +17720,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16630,6 +17776,24 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8f3jla--to36ja96m31q">Répertoire D’officier Public Ministériel</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -16714,6 +17878,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16796,6 +17962,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16850,6 +18018,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -16927,6 +18097,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17011,6 +18183,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17065,6 +18239,28 @@
           
 
           <!-- skos:exactMatch -->
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8f9b6b-1ezu1k5fbcyoz">Acte De Société</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8faaiz--12govod7cujwg">Statuts D’association</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
           
 
           <!-- skos:closeMatch -->
@@ -17123,6 +18319,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17177,6 +18375,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17235,6 +18435,24 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8fcr4e-s5wrmy9gzwd9">Mercuriale</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17291,6 +18509,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17345,6 +18565,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17413,6 +18635,24 @@
           <!-- skos:exactMatch -->
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3nd8fg18y-170lylob5uuur">Plan Terrier</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17479,6 +18719,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17543,6 +18785,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17619,6 +18863,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17703,6 +18949,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17779,6 +19027,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17833,6 +19083,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17891,6 +19143,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17945,6 +19199,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -18053,6 +19309,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -18119,6 +19377,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -18132,7 +19392,6 @@
     </div>
   <hr style="margin-top: 10px;">
   
-
 </main>
 
 <!-- anchor -->
@@ -18327,8 +19586,27 @@
     </body>
     <!-- footer --> 
     <footer class="footer">
-        last updated on 2/20/2025
+        last updated on 2/21/2025
         <br />
         <br />
     </footer>
 </html>
+
+
+<script>
+    function splitURL(url, languageURL) {
+
+        if (url.length > 1) {
+        // remove empty element
+        const token = url.filter((e) => e);
+        console.log(token);
+        // remove language code
+        if (token.length > 1) {
+        token = token.filter(function(langurl) {
+            return langurl != languageURL;
+        });
+        } else {
+            return "/"
+        }            
+    }
+<script>    

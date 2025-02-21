@@ -139,12 +139,16 @@
             .section_garance ul {
                 margin-top: 50px;
                 margin-bottom: 60px;
-            }            
+            }
+
+            .botton_marging {
+                margin-bottom: 30px;
+            }        
         </style>
     </head>
     <body>
         <!-- Navbar menu -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
             <div class="container">
                 <a class="navbar-brand" href="/en">Garance</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -157,20 +161,20 @@
                             <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Controlled vocabularies<a>
                             
                                 
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu">  
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/identifierTypes">Liste des types d'identifiants des entités</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/identifierTypes">Liste des types d'identifiants des entités</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/recordStates">Thésaurus des états des documents</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/recordStates">Thésaurus des états des documents</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/occupationTypes">Thésaurus des fonctions, métiers et professions des
+                                    <li><a class="dropdown-item" href="vocabularies/occupationTypes">Thésaurus des fonctions, métiers et professions des
          personnes</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/things">Thésaurus des mots-matières</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/things">Thésaurus des mots-matières</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/documentaryFormTypes">Thésaurus des types de documents</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/documentaryFormTypes">Thésaurus des types de documents</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/recordSetTypes">Thésaurus des types de groupes de documents</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/recordSetTypes">Thésaurus des types de groupes de documents</a></li>
                                 
                                 </ul>
                             
@@ -187,28 +191,15 @@
                 <div>
                 <div class="menu-menu-principal-container">
                     
-                        <a href="/en/vocabularies/documentaryFormTypes/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/identifierTypes/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/recordSetTypes/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/recordStates/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/things/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/documentaryFormTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/identifierTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/occupationTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/recordSetTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/recordStates/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/things/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                                               
+                        
+                    
+
+                    
+                        
+                        <span>
+                            <a href="/fr/vocabularies/occupationTypes/" ><img src="/assets/images/FR.png" alt =""/></a>
+                        </span>                        
+                    
                 </div>
             </div>
         </nav>
@@ -332,28 +323,30 @@
       </div>
     
 
-    <!-- Datatype -->
-    
-      
-        
-      
-        
-          <div class="alert alert-secondary" role="alert">
-              <em>These concepts have all the type “<b>rico:OccupationType</b>”.</em>
-          </div>
-        
-      
-    
-
     <!-- Resource -->
-    <div class="row">
-        <h6><span>Download</span></h6>
+    <div class="row botton_marging">
+        <div class="col-2">
+          <h6><span>Download data</span></h6>
+        </div>
         <div class="col-10">
           <a href="https://github.com/ArchivesNationalesFR/Referentiels/tree/version_2/concepts/rdf/">
             <img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="TTL">
           </a>
         </div>
     </div>
+
+    <!-- Additionnal class -->
+    
+      
+        
+      
+        
+          <div class="alert alert-secondary" role="alert">
+              <em>These concepts have all the type “<b>Occupation Type</b>”.</em>
+          </div>
+        
+      
+    
     
   </div>
 
@@ -364,6 +357,7 @@
   
   
   <!-- Liste de concepts -->
+  
   
   <div class="row"> 
       <div class="col">
@@ -416,6 +410,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -516,6 +512,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -570,6 +568,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -636,6 +636,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -714,6 +716,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -780,6 +784,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -834,6 +840,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -902,6 +910,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -956,6 +966,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1058,6 +1070,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1122,6 +1136,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1190,6 +1206,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1244,6 +1262,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1312,6 +1332,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1366,6 +1388,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1434,6 +1458,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1488,6 +1514,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1546,6 +1574,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1602,6 +1632,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1656,6 +1688,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1724,6 +1758,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1790,6 +1826,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1844,6 +1882,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1902,6 +1942,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1956,6 +1998,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2014,6 +2058,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2068,6 +2114,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2136,6 +2184,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2190,6 +2240,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2248,6 +2300,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2302,6 +2356,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2384,6 +2440,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2440,6 +2498,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2494,6 +2554,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2562,6 +2624,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2616,6 +2680,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2674,6 +2740,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2728,6 +2796,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2796,6 +2866,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2860,6 +2932,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2928,6 +3002,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2982,6 +3058,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3050,6 +3128,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3114,6 +3194,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3182,6 +3264,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3246,6 +3330,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3314,6 +3400,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3368,6 +3456,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3480,6 +3570,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3534,6 +3626,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3592,6 +3686,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3646,6 +3742,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3704,6 +3802,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3760,6 +3860,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3814,6 +3916,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3880,6 +3984,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3949,6 +4055,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4005,6 +4113,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4059,6 +4169,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4127,6 +4239,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4181,6 +4295,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4249,6 +4365,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4306,6 +4424,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4361,6 +4481,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4429,6 +4551,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4483,6 +4607,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4594,6 +4720,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4648,6 +4776,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4716,6 +4846,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4772,6 +4904,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4826,6 +4960,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -4905,6 +5041,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -4959,6 +5097,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5027,6 +5167,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5091,6 +5233,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5159,6 +5303,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5223,6 +5369,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5310,6 +5458,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5374,6 +5524,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5476,6 +5628,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5530,6 +5684,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5598,6 +5754,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5662,6 +5820,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5740,6 +5900,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -5794,6 +5956,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -5893,6 +6057,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
             <div class="row">
@@ -5963,6 +6129,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6017,6 +6185,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -6075,6 +6245,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6131,6 +6303,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6185,6 +6359,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -6244,6 +6420,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6300,6 +6478,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6354,6 +6534,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -6422,6 +6604,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6488,6 +6672,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6542,6 +6728,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -6610,6 +6798,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6666,6 +6856,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6720,6 +6912,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -6779,6 +6973,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6835,6 +7031,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -6889,6 +7087,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -6957,6 +7157,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7011,6 +7213,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7080,6 +7284,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7134,6 +7340,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7192,6 +7400,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7246,6 +7456,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7304,6 +7516,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7360,6 +7574,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7414,6 +7630,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7473,6 +7691,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7527,6 +7747,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7585,6 +7807,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7639,6 +7863,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7697,6 +7923,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7751,6 +7979,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7819,6 +8049,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -7883,6 +8115,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -7951,6 +8185,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8005,6 +8241,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -8106,6 +8344,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8160,6 +8400,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -8228,6 +8470,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8284,6 +8528,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8338,6 +8584,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -8406,6 +8654,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8462,6 +8712,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8516,6 +8768,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -8584,6 +8838,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8648,6 +8904,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -8716,6 +8974,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8770,6 +9030,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -8828,6 +9090,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8884,6 +9148,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -8938,6 +9204,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9006,6 +9274,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9072,6 +9342,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9126,6 +9398,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9194,6 +9468,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9248,6 +9524,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9306,6 +9584,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9360,6 +9640,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9428,6 +9710,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9484,6 +9768,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9538,6 +9824,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9606,6 +9894,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9660,6 +9950,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9728,6 +10020,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9782,6 +10076,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9840,6 +10136,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -9894,6 +10192,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -9962,6 +10262,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10028,6 +10330,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10082,6 +10386,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -10177,6 +10483,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -10287,6 +10595,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -10400,6 +10710,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10466,6 +10778,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10530,6 +10844,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -10626,6 +10942,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -10739,6 +11057,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10793,6 +11113,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -10851,6 +11173,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10907,6 +11231,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -10961,6 +11287,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11029,6 +11357,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11083,6 +11413,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11151,6 +11483,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11205,6 +11539,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11273,6 +11609,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11337,6 +11675,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11405,6 +11745,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11459,6 +11801,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11517,6 +11861,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11571,6 +11917,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11639,6 +11987,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11705,6 +12055,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11759,6 +12111,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11827,6 +12181,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -11881,6 +12237,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -11949,6 +12307,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12003,6 +12363,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12061,6 +12423,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12115,6 +12479,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12183,6 +12549,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12237,6 +12605,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12305,6 +12675,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12359,6 +12731,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12417,6 +12791,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12471,6 +12847,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12529,6 +12907,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12585,6 +12965,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12639,6 +13021,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12708,6 +13092,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12762,6 +13148,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12830,6 +13218,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -12894,6 +13284,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -12962,6 +13354,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13016,6 +13410,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -13074,6 +13470,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13128,6 +13526,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -13186,6 +13586,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13242,6 +13644,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13296,6 +13700,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -13364,6 +13770,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13418,6 +13826,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -13486,6 +13896,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13542,6 +13954,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13596,6 +14010,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -13664,6 +14080,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13718,6 +14136,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -13776,6 +14196,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13830,6 +14252,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -13898,6 +14322,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -13952,6 +14378,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14010,6 +14438,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14064,6 +14494,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14122,6 +14554,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14176,6 +14610,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14234,6 +14670,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14288,6 +14726,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14346,6 +14786,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14402,6 +14844,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14456,6 +14900,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14524,6 +14970,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14590,6 +15038,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14644,6 +15094,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14712,6 +15164,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14778,6 +15232,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14832,6 +15288,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -14900,6 +15358,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -14956,6 +15416,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15010,6 +15472,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15076,6 +15540,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15173,6 +15639,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15229,6 +15697,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15283,6 +15753,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15351,6 +15823,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15415,6 +15889,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15483,6 +15959,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15537,6 +16015,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15595,6 +16075,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15649,6 +16131,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15707,6 +16191,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15762,6 +16248,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -15830,6 +16318,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15886,6 +16376,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -15940,6 +16432,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -16008,6 +16502,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16062,6 +16558,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -16130,6 +16628,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16186,6 +16686,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16240,6 +16742,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -16308,6 +16812,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16372,6 +16878,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -16468,6 +16976,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16546,6 +17056,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16600,6 +17112,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -16670,6 +17184,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16736,6 +17252,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16790,6 +17308,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -16858,6 +17378,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16914,6 +17436,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -16968,6 +17492,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17027,6 +17553,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17081,6 +17609,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17149,6 +17679,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17205,6 +17737,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17259,6 +17793,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17327,6 +17863,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17393,6 +17931,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17447,6 +17987,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17515,6 +18057,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17569,6 +18113,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17637,6 +18183,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17703,6 +18251,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17757,6 +18307,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17815,6 +18367,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17871,6 +18425,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -17925,6 +18481,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -17994,6 +18552,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -18050,6 +18610,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -18104,6 +18666,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -18172,6 +18736,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -18226,6 +18792,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -18285,6 +18853,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -18339,6 +18909,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -18397,6 +18969,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -18453,6 +19027,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -18507,6 +19083,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -18566,6 +19144,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -18621,6 +19201,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -18689,6 +19271,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -18743,6 +19327,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -18809,6 +19395,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -18883,6 +19471,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -18947,6 +19537,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -19015,6 +19607,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -19079,6 +19673,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -19191,6 +19787,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -19301,6 +19899,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -19355,6 +19955,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -19423,6 +20025,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -19477,6 +20081,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -19556,6 +20162,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -19622,6 +20230,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -19676,6 +20286,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -19744,6 +20356,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -19808,6 +20422,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -19876,6 +20492,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -19932,6 +20550,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -19986,6 +20606,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -20054,6 +20676,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -20120,6 +20744,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -20174,6 +20800,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -20232,6 +20860,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -20286,6 +20916,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -20344,6 +20976,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -20398,6 +21032,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -20466,6 +21102,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -20520,6 +21158,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -20588,6 +21228,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -20642,6 +21284,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -20710,6 +21354,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -20774,6 +21420,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -20842,6 +21490,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -20908,6 +21558,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -20962,6 +21614,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -21019,6 +21673,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -21087,6 +21743,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -21141,6 +21799,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -21231,6 +21891,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -21338,6 +22000,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -21392,6 +22056,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -21450,6 +22116,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -21504,6 +22172,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -21562,6 +22232,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -21616,6 +22288,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -21674,6 +22348,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -21728,6 +22404,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -21786,6 +22464,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -21840,6 +22520,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -21898,6 +22580,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -21952,6 +22636,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -22010,6 +22696,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -22064,6 +22752,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -22122,6 +22812,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -22178,6 +22870,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -22232,6 +22926,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -22300,6 +22996,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -22354,6 +23052,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -22412,6 +23112,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -22466,6 +23168,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -22524,6 +23228,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -22578,6 +23284,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -22636,6 +23344,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -22692,6 +23402,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -22746,6 +23458,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -22847,6 +23561,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -22912,6 +23628,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -22986,6 +23704,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -23040,6 +23760,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -23098,6 +23820,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -23154,6 +23878,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -23208,6 +23934,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -23274,6 +24002,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -23343,6 +24073,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -23397,6 +24129,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -23508,6 +24242,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -23586,6 +24322,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -23650,6 +24388,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -23719,6 +24459,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -23773,6 +24515,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -23841,6 +24585,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -23895,6 +24641,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -23953,6 +24701,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -24009,6 +24759,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -24063,6 +24815,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -24131,6 +24885,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -24197,6 +24953,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -24251,6 +25009,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -24319,6 +25079,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -24375,6 +25137,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -24429,6 +25193,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -24497,6 +25263,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -24561,6 +25329,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -24629,6 +25399,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -24685,6 +25457,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -24739,6 +25513,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -24851,6 +25627,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -24915,6 +25693,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -24983,6 +25763,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -25037,6 +25819,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -25103,6 +25887,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -25214,6 +26000,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -25323,6 +26111,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -25379,6 +26169,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -25433,6 +26225,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -25512,6 +26306,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -25566,6 +26362,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -25634,6 +26432,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -25698,6 +26498,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -25766,6 +26568,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -25830,6 +26634,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -25898,6 +26704,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -25954,6 +26762,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -26008,6 +26818,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -26076,6 +26888,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -26130,6 +26944,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -26198,6 +27014,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -26262,6 +27080,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -26330,6 +27150,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -26396,6 +27218,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -26450,6 +27274,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -26518,6 +27344,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -26584,6 +27412,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -26640,6 +27470,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -26694,6 +27526,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -26762,6 +27596,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -26818,6 +27654,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -26872,6 +27710,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -26940,6 +27780,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -26994,6 +27836,8 @@
           
 
           <!-- skos:exactMatch -->
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -27062,6 +27906,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -27128,6 +27974,8 @@
           <!-- skos:exactMatch -->
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -27141,7 +27989,6 @@
     </div>
   <hr style="margin-top: 10px;">
   
-
 </main>
 
 <!-- anchor -->
@@ -27336,8 +28183,27 @@
     </body>
     <!-- footer --> 
     <footer class="footer">
-        last updated on 2/20/2025
+        last updated on 2/21/2025
         <br />
         <br />
     </footer>
 </html>
+
+
+<script>
+    function splitURL(url, languageURL) {
+
+        if (url.length > 1) {
+        // remove empty element
+        const token = url.filter((e) => e);
+        console.log(token);
+        // remove language code
+        if (token.length > 1) {
+        token = token.filter(function(langurl) {
+            return langurl != languageURL;
+        });
+        } else {
+            return "/"
+        }            
+    }
+<script>    

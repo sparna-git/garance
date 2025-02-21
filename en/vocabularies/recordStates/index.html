@@ -139,12 +139,16 @@
             .section_garance ul {
                 margin-top: 50px;
                 margin-bottom: 60px;
-            }            
+            }
+
+            .botton_marging {
+                margin-bottom: 30px;
+            }        
         </style>
     </head>
     <body>
         <!-- Navbar menu -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
             <div class="container">
                 <a class="navbar-brand" href="/en">Garance</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -157,20 +161,20 @@
                             <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Controlled vocabularies<a>
                             
                                 
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu">  
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/identifierTypes">Liste des types d'identifiants des entités</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/identifierTypes">Liste des types d'identifiants des entités</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/recordStates">Thésaurus des états des documents</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/recordStates">Thésaurus des états des documents</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/occupationTypes">Thésaurus des fonctions, métiers et professions des
+                                    <li><a class="dropdown-item" href="vocabularies/occupationTypes">Thésaurus des fonctions, métiers et professions des
          personnes</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/things">Thésaurus des mots-matières</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/things">Thésaurus des mots-matières</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/documentaryFormTypes">Thésaurus des types de documents</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/documentaryFormTypes">Thésaurus des types de documents</a></li>
                                 
-                                    <li><a class="dropdown-item" href="/vocabulary/recordSetTypes">Thésaurus des types de groupes de documents</a></li>
+                                    <li><a class="dropdown-item" href="vocabularies/recordSetTypes">Thésaurus des types de groupes de documents</a></li>
                                 
                                 </ul>
                             
@@ -187,28 +191,15 @@
                 <div>
                 <div class="menu-menu-principal-container">
                     
-                        <a href="/en/vocabularies/documentaryFormTypes/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/identifierTypes/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/occupationTypes/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/recordSetTypes/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/en/vocabularies/things/" lang="en" hreflang="en"><img src="/assets/images/EN.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/documentaryFormTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/identifierTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/occupationTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/recordSetTypes/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/recordStates/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                    /
-                        <a href="/fr/vocabularies/things/" lang="fr" hreflang="fr"><img src="/assets/images/FR.png" alt =""/></a>
-                                               
+                        
+                    
+
+                    
+                        
+                        <span>
+                            <a href="/fr/vocabularies/recordStates/" ><img src="/assets/images/FR.png" alt =""/></a>
+                        </span>                        
+                    
                 </div>
             </div>
         </nav>
@@ -333,28 +324,30 @@
       </div>
     
 
-    <!-- Datatype -->
-    
-      
-        
-      
-        
-          <div class="alert alert-secondary" role="alert">
-              <em>These concepts have all the type “<b>rico:RecordState</b>”.</em>
-          </div>
-        
-      
-    
-
     <!-- Resource -->
-    <div class="row">
-        <h6><span>Download</span></h6>
+    <div class="row botton_marging">
+        <div class="col-2">
+          <h6><span>Download data</span></h6>
+        </div>
         <div class="col-10">
           <a href="https://github.com/ArchivesNationalesFR/Referentiels/tree/version_2/concepts/rdf/">
             <img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="TTL">
           </a>
         </div>
     </div>
+
+    <!-- Additionnal class -->
+    
+      
+        
+      
+        
+          <div class="alert alert-secondary" role="alert">
+              <em>These concepts have all the type “<b>Record State</b>”.</em>
+          </div>
+        
+      
+    
     
   </div>
 
@@ -371,6 +364,7 @@
   
   
   <!-- Liste de concepts -->
+  
   
   <div class="row"> 
       <div class="col">
@@ -460,6 +454,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -561,6 +557,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -673,6 +671,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -813,6 +813,44 @@
             </div>
           
 
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-95syv5nvo-usflanrzxtkg">Copie Conforme</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-97at5bjsw--u688kxdppcy9">Copie De Chancellerie</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-985uqpl3s-1k3i4yfl1myau">Copie Enregistrée</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-98yheu10c--1dhxakzzoeqts">Copie Judiciaire</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-99t1j5n3c--1obbuv2ji4yy2">Copie Notariée</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-9ag71ol70-l5bgs9hqcofr">Copie Sous Le Sceau</a>
+                    </li>
+                  
+                </ul>  
+              </div>
+            </div>
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -939,6 +977,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1082,6 +1122,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1210,6 +1252,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1343,6 +1387,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1469,6 +1515,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1598,6 +1646,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -1731,6 +1781,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1861,6 +1913,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -1986,6 +2040,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2116,6 +2172,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -2249,6 +2307,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2346,6 +2406,44 @@
                     <li><a href="http://www.cei.lmu.de/VID/#VID_53">http://www.cei.lmu.de/VID/#VID_53</a></li>
                   
                 </ul>
+              </div>
+            </div>
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d3m00w6tom1--17yz38y8bszt8">Copie Authentique</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-8rcewtjuo-1iih9sd7ft00z">Copie Collationnée</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-8s25ss3us-1b1easskq1gz2">Copie Figurée</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-8l7sr97nk-dbrollg6e657">Copie Informe</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-8t3d5vx80--13q42ggc3d3tv">Copie Insérée</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-8tx8o7th0--ksmkod8w8asj">Copie Libre</a>
+                    </li>
+                  
+                </ul>  
               </div>
             </div>
           
@@ -2453,6 +2551,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2551,6 +2651,24 @@
                     <li><a href="http://www.cei.lmu.de/VID/#VID_46">http://www.cei.lmu.de/VID/#VID_46</a></li>
                   
                 </ul>
+              </div>
+            </div>
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-2k9q1mtvk-msa3c8uc0tqi">Réexpédition</a>
+                    </li>
+                  
+                </ul>  
               </div>
             </div>
           
@@ -2681,6 +2799,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -2777,6 +2897,24 @@
                     <li><a href="http://www.cei.lmu.de/VID/#VID_87">http://www.cei.lmu.de/VID/#VID_87</a></li>
                   
                 </ul>
+              </div>
+            </div>
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-9gwynw27k--10mwh2owqrqdi">Extrait Authentique</a>
+                    </li>
+                  
+                </ul>  
               </div>
             </div>
           
@@ -2909,6 +3047,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3008,6 +3148,24 @@
                     <li><a href="http://www.cei.lmu.de/VID/#VID_353">http://www.cei.lmu.de/VID/#VID_353</a></li>
                   
                 </ul>
+              </div>
+            </div>
+          
+
+          
+            <div class="row">
+              <div class="col-1">
+                
+                <h6>Children</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  
+                    <li>
+                      <a href="#FRAN_RI_001-d-64b7ejzp4-1ec7ktnhrg2j">Minute Originale</a>
+                    </li>
+                  
+                </ul>  
               </div>
             </div>
           
@@ -3130,6 +3288,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3234,6 +3394,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3334,6 +3496,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3437,6 +3601,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3535,6 +3701,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3674,6 +3842,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3774,6 +3944,8 @@
                 </ul>
               </div>
             </div>
+          
+
           
 
           <!-- skos:closeMatch -->
@@ -3878,6 +4050,8 @@
             </div>
           
 
+          
+
           <!-- skos:closeMatch -->
           
 
@@ -3891,7 +4065,6 @@
     </div>
   <hr style="margin-top: 10px;">
   
-
 </main>
 
 <!-- anchor -->
@@ -4086,8 +4259,27 @@
     </body>
     <!-- footer --> 
     <footer class="footer">
-        last updated on 2/20/2025
+        last updated on 2/21/2025
         <br />
         <br />
     </footer>
 </html>
+
+
+<script>
+    function splitURL(url, languageURL) {
+
+        if (url.length > 1) {
+        // remove empty element
+        const token = url.filter((e) => e);
+        console.log(token);
+        // remove language code
+        if (token.length > 1) {
+        token = token.filter(function(langurl) {
+            return langurl != languageURL;
+        });
+        } else {
+            return "/"
+        }            
+    }
+<script>    
