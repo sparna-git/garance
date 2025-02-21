@@ -293,7 +293,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
                 <h6>{{ title }}</h6>                
               </div>
               <div class="col">
-                {% set cnotes = concepts.changenote | timeline(locale) %}
+                {% set cnotes = concepts.changenote | timeline("fr") %}
                 <!-- timeline -->
                 <div class="changeNote_container">
                   <div class="changeNote_wrapper">
