@@ -150,12 +150,16 @@
         <!-- Navbar menu -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
             <div class="container">
+                <a href="https://www.archives-nationales.culture.gouv.fr/"><img src="{{ '/assets/images/archives-nationales.png' | relative(page) }} " style="width:200px;" /></a>
+                &nbsp;
+                &nbsp;
                 <a class="navbar-brand" href="{{ ['/', locale] | join | relative(page) }}">{{ 'garance' | i18n }}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavMenu">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                         <!-- Vocabularies -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'vocabularies' | i18n }}<a>
@@ -176,6 +180,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'lieux' | i18n }}<a>
                         </li>
+
                     </ul>
                 <div>
                 <div class="menu-menu-principal-container">

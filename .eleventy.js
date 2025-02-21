@@ -173,7 +173,7 @@ module.exports = async function (eleventyConfig) {
     "relative",
     (absoluteUrl, page) => {
       if (!absoluteUrl.startsWith('/')) {
-        throw new Error('URL is already relative')
+        throw new Error('URL is already relative : '+absoluteUrl)
       }
       const relativeUrl = require("path").relative(page.url, absoluteUrl);
       return relativeUrl;
