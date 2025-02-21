@@ -150,7 +150,7 @@
         <!-- Navbar menu -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
             <div class="container">
-                <a class="navbar-brand" href="garance/{{ locale }}">{{ 'garance' | i18n }}</a>
+                <a class="navbar-brand" href="/garance/{{ locale }}">{{ 'garance' | i18n }}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -163,7 +163,7 @@
                                 {% set sortVocabularies = index.graph | jsonSort("title") %}
                                 <ul class="dropdown-menu">  
                                 {% for voc in sortVocabularies %}
-                                    <li><a class="dropdown-item" href="/vocabularies/{{ voc.id | localName }}">{{ voc.title | lang("fr") }}</a></li>
+                                    <li><a class="dropdown-item" href="{{ locale }}/vocabularies/{{ voc.id | localName }}">{{ voc.title | lang("fr") }}</a></li>
                                 {% endfor %}
                                 </ul>
                             {% endif %}
