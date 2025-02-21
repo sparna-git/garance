@@ -78,9 +78,14 @@
                 content: " > ";
             }
 
+            /* so that the main body content is not hidden by the navbar */
+            body {
+                padding-top: 80px;
+            }
+
             /* so that the anchor is not hidden by the navbar when deep-linking */
             html {
-                scroll-padding-top: 10px;
+                scroll-padding-top: 60px;
             }
 
             /* background of navbar */
@@ -134,12 +139,16 @@
             .section_garance ul {
                 margin-top: 50px;
                 margin-bottom: 60px;
-            }            
+            }
+
+            .botton_marging {
+                margin-bottom: 30px;
+            }        
         </style>
     </head>
     <body>
         <!-- Navbar menu -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
             <div class="container">
                 <a class="navbar-brand" href="/{{ locale }}">{{ 'garance' | i18n }}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -170,9 +179,21 @@
                     </ul>
                 <div>
                 <div class="menu-menu-principal-container">
-                    {% for link in page.url | locale_links %} {%-if not loop.first %}/{% endif %}
-                        <a href="{{ link.url }}" lang="{{ link.lang }}" hreflang="{{ link.lang }}"><img src="{{ '/assets/images/'}}{{ link.lang | upper }}{{'.png' }}" alt =""/></a>
-                    {% endfor %}                           
+                    
+                        
+                    {% if locale === "fr" %}
+                        {% set pageURLEN = page.url | replace("/fr/", "/en/") %}
+                        <span>
+                            <a href="{{ pageURLEN }}" ><img src="{{ '/assets/images/'}}{{'EN.png' }}" alt =""/></a>
+                        </span>                        
+                    {% endif %}
+
+                    {% if locale === "en" %}
+                        {% set pageURLFR = page.url | replace("/en/", "/fr/") %}
+                        <span>
+                            <a href="{{ pageURLFR }}" ><img src="{{ '/assets/images/'}}{{'FR.png' }}" alt =""/></a>
+                        </span>                        
+                    {% endif %}
                 </div>
             </div>
         </nav>
@@ -191,3 +212,22 @@
         <br />
     </footer>
 </html>
+
+
+<script>
+    function splitURL(url, languageURL) {
+
+        if (url.length > 1) {
+        // remove empty element
+        const token = url.filter((e) => e);
+        console.log(token);
+        // remove language code
+        if (token.length > 1) {
+        token = token.filter(function(langurl) {
+            return langurl != languageURL;
+        });
+        } else {
+            return "/"
+        }            
+    }
+<script>    

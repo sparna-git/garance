@@ -102,7 +102,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
     {% endif %}
 
     <!-- Resource -->
-    <div class="row">
+    <div class="row botton_marging">
         <div class="col-2">
           <h6><span>{{ "download" | i18n }}</span></h6>
         </div>
@@ -139,6 +139,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
   {% endif %}
   
   <!-- Liste de concepts -->
+  
   {% for concepts in sortInverseInScheme %}
   <div class="row"> 
       <div class="col">
@@ -326,6 +327,24 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
+          {% if concepts.narrower %}
+            <div class="row">
+              <div class="col-1">
+                {% set title = "skos:narrower" | i18n %}
+                <h6>{{ title }}</h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  {% for narrowerConcept in concepts.narrower %}
+                    <li>
+                      <a href="#{{ narrowerConcept.id | localName }}">{{ narrowerConcept.prefLabel | lang("fr") | title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>  
+              </div>
+            </div>
+          {% endif %}
+
           <!-- skos:closeMatch -->
           {% if concepts.closeMatch %}
             <div class="row">
@@ -367,7 +386,6 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
     </div>
   <hr style="margin-top: 10px;">
   {% endfor %}
-
 </main>
 
 <!-- anchor -->
