@@ -150,7 +150,7 @@
         <!-- Navbar menu -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
             <div class="container">
-                <a class="navbar-brand" href="en">Garance</a>
+                <a class="navbar-brand" href=".">Garance</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -163,18 +163,18 @@
                                 
                                 <ul class="dropdown-menu">  
                                 
-                                    <li><a class="dropdown-item" href="vocabularies/identifierTypes">Liste des types d'identifiants des entités</a></li>
+                                    <li><a class="dropdown-item" href="/vocabularies/identifierTypes">Liste des types d'identifiants des entités</a></li>
                                 
-                                    <li><a class="dropdown-item" href="vocabularies/recordStates">Thésaurus des états des documents</a></li>
+                                    <li><a class="dropdown-item" href="/vocabularies/recordStates">Thésaurus des états des documents</a></li>
                                 
-                                    <li><a class="dropdown-item" href="vocabularies/occupationTypes">Thésaurus des fonctions, métiers et professions des
+                                    <li><a class="dropdown-item" href="/vocabularies/occupationTypes">Thésaurus des fonctions, métiers et professions des
          personnes</a></li>
                                 
-                                    <li><a class="dropdown-item" href="vocabularies/things">Thésaurus des mots-matières</a></li>
+                                    <li><a class="dropdown-item" href="/vocabularies/things">Thésaurus des mots-matières</a></li>
                                 
-                                    <li><a class="dropdown-item" href="vocabularies/documentaryFormTypes">Thésaurus des types de documents</a></li>
+                                    <li><a class="dropdown-item" href="/vocabularies/documentaryFormTypes">Thésaurus des types de documents</a></li>
                                 
-                                    <li><a class="dropdown-item" href="vocabularies/recordSetTypes">Thésaurus des types de groupes de documents</a></li>
+                                    <li><a class="dropdown-item" href="/vocabularies/recordSetTypes">Thésaurus des types de groupes de documents</a></li>
                                 
                                 </ul>
                             
@@ -28187,22 +28187,3 @@
         <br />
     </footer>
 </html>
-
-
-<script>
-    function splitURL(url, languageURL) {
-
-        if (url.length > 1) {
-        // remove empty element
-        const token = url.filter((e) => e);
-        console.log(token);
-        // remove language code
-        if (token.length > 1) {
-        token = token.filter(function(langurl) {
-            return langurl != languageURL;
-        });
-        } else {
-            return "/"
-        }            
-    }
-<script>    
