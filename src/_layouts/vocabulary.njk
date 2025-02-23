@@ -219,7 +219,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
               <div class="col">
                 <ul>
                   {%- for element in concepts.altLabel -%}
-                    <li>{{ element["@value"] | capitalize }}</li>                  
+                    <li>{{ element["@value"] }}</li>                  
                   {%- endfor -%}
                 </ul>
               </div>
@@ -306,7 +306,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
                     <ul class="changeNote_sessions">
                     {% for t in cnotes %}
                       <li>
-                        <div class="changeNote_date">{{ t.date }} : <span>{{ t.description | capitalize }}</span></div>                        
+                        <div class="changeNote_date">{{ t.date }} : <span>{{ t.description }}</span></div>                        
                       </li>
                     {% endfor %}
                     </ul>
