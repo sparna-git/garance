@@ -56,7 +56,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
           <h6><span>{{ title }}</span></h6>
         </div>
         <div class="col-6">
-          <span>{{ vocabulary.datemodified | dateModified }}</span>
+          <span>{{ vocabulary.datemodified | getMaxDate }}</span>
         </div>  
       </div>
     {% endif %}
@@ -129,7 +129,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
   <hr>
 
   <!-- Tree -->
-  {% set flagPrintTree =  vocabulary.inverse_inScheme | flagPrint %}
+  {% set flagPrintTree =  vocabulary.inverse_inScheme | hasBroader %}
   {% if flagPrintTree %}
   <div class="row">
     <div class='col'>

@@ -96,9 +96,9 @@ module.exports = {
           : concept;
     },
 
-    dateModified: function (dateModified) {
+    getMaxDate: function (dateArray) {
         const arrDates = [];
-        dateModified.forEach((eDate) => {
+        dateArray.forEach((eDate) => {
           const newDate = new Date(eDate);
           arrDates.push(newDate);
         });
@@ -153,14 +153,6 @@ module.exports = {
         }
     },
 
-    traduction: function (label, labelTraduction) {
-        if (labelTraduction) {
-          return labelTraduction;
-        } else {
-          return label;
-        }
-    },
-
     /**
     * https://stackoverflow.com/questions/46426306/how-to-safely-render-json-into-an-inline-script-using-nunjucks
     * Returns a JSON stringified version of the value, safe for inclusion in an
@@ -201,8 +193,8 @@ module.exports = {
         return newJsonCode;
     },
 
-    flagPrint: function (jsonData) {
-        const containsBroader = jsonData.find((e) => e.broader);
+    hasBroader: function (conceptArray) {
+        const containsBroader = conceptArray.find((e) => e.broader);
         return containsBroader;
     }
 }
