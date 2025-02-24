@@ -1,0 +1,164 @@
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top:-6px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+}
+
+/* title */
+.h1 > title-Header {
+    display: contents;
+}
+
+/** Diagram ***/
+.link {
+    fill: none;
+    stroke: #555;
+    stroke-opacity: 0.2;
+    stroke-width: 2px;
+}
+svg {
+    border: none;
+}
+
+/* fil d'ariane */
+.container .breadcrumb {
+    border: none;
+    border-radius: 0;
+    /*border-bottom: 1px solid #ccc;*/
+}
+
+.breadcrumb ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    display: inline-block;
+    margin: 0 0.25rem;
+    content: " > ";
+}
+
+/* so that the main body content is not hidden by the navbar */
+body {
+    padding-top: 65px;
+}
+
+/* so that the anchor is not hidden by the navbar when deep-linking */
+html {
+    scroll-padding-top: 73px;
+}
+
+/* background of navbar */
+.bg-performing-arts {
+    background-color: #083658;
+}
+
+/* concepts number */
+.numConcepts {
+    font-size: small;
+    font-style: italic;
+}
+
+/* so that URI sticks to the title */
+.ConceptScheme-title {
+    margin-bottom:-0.06em;
+}
+
+/* so that URI sticks to the title */
+.concept-title {
+    margin-bottom:-0.2em;
+}
+
+/* make the URI smaller */
+.concept-URI {
+    font-size:85%;
+}
+
+/* so that autocompletions mark text stay black even though we use a dark theme */
+mark {
+    color: rgb(34, 34, 34);
+}
+
+.footer {
+    font-size: 0.8em;
+    font-style: italic;
+    color: #B0B0B0;
+    text-align: center;
+}
+
+.section_garance {
+    margin-top: 50px;
+    margin-bottom: 60px;                
+}
+
+.section_body {
+    margin-top: 50px;
+    margin-bottom: 60px;                
+}
+
+.section_garance ul {
+    margin-top: 50px;
+    margin-bottom: 60px;
+}
+
+.botton_marging {
+    margin-bottom: 30px;
+}  
+
+
+
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  background: linear-gradient(45deg, #96b9ac, #022745);
+  color: #fff;
+  border-radius: 4px 4px 0 0;
+  right: 15px;
+  bottom: 0;
+  transition: none;
+  visibility: hidden;
+  opacity: 0;
+  width: 64px;
+  height: 34px;
+  text-decoration: none;
+}
+
+.back-to-top i {
+  line-height: 0;
+  font-size: 20px;
+}
+
+.back-to-top:focus {
+  background: linear-gradient(45deg, #96b9ac, #022745);
+  color: #fff;
+  outline: none;
+}
+
+.back-to-top:hover {
+  background: #022745;
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}

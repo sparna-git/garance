@@ -7,155 +7,29 @@
 
         <!-- bootstrap -->
         <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">     
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-        
-        <!-- anchors -->
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-        <!-- d3js -->
-        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
         <!-- fontawesome -->
-        <link href="../../../assets/fa/css/all.min.css" rel="stylesheet"/>
+        <link href="../../../assets/fa/css/all.min.css" rel="stylesheet"/>        
         
         <!-- css -->
+        <link rel='stylesheet' href="../../../assets/css/garance.css" type='text/css' />
         <link rel='stylesheet' href="../../../assets/css/timeline.css" type='text/css' />
-        <style type="text/css">
-            .navbar-nav li:hover > ul.dropdown-menu {
-                display: block;
-            }
-            .dropdown-submenu {
-                position:relative;
-            }
-            .dropdown-submenu > .dropdown-menu {
-                top: 0;
-                left: 100%;
-                margin-top:-6px;
-            }
-
-            /* rotate caret on hover */
-            .dropdown-menu > li > a:hover:after {
-                text-decoration: underline;
-                transform: rotate(-90deg);
-            }
-
-            /* title */
-            .h1 > title-Header {
-                display: contents;
-            }
-
-            /** Diagram ***/
-            .link {
-                fill: none;
-                stroke: #555;
-                stroke-opacity: 0.2;
-                stroke-width: 2px;
-            }
-            svg {
-                border: none;
-            }
-
-            /* fil d'ariane */
-            .container .breadcrumb {
-                border: none;
-                border-radius: 0;
-                /*border-bottom: 1px solid #ccc;*/
-            }
-
-            .breadcrumb ul {
-                display: flex;
-                flex-wrap: wrap;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            .breadcrumb li:not(:last-child)::after {
-                display: inline-block;
-                margin: 0 0.25rem;
-                content: " > ";
-            }
-
-            /* so that the main body content is not hidden by the navbar */
-            body {
-                padding-top: 80px;
-            }
-
-            /* so that the anchor is not hidden by the navbar when deep-linking */
-            html {
-                scroll-padding-top: 60px;
-            }
-
-            /* background of navbar */
-            .bg-performing-arts {
-                background-color: #083658;
-            }
-
-            /* concepts number */
-            .numConcepts {
-                font-size: small;
-                font-style: italic;
-            }
-
-            /* so that URI sticks to the title */
-            .ConceptScheme-title {
-                margin-bottom:-0.06em;
-            }
-
-            /* so that URI sticks to the title */
-            .concept-title {
-                margin-bottom:-0.2em;
-            }
-
-            /* make the URI smaller */
-            .concept-URI {
-                font-size:85%;
-            }
-
-            /* so that autocompletions mark text stay black even though we use a dark theme */
-            mark {
-                color: rgb(34, 34, 34);
-            }
-
-            .footer {
-                font-size: 0.8em;
-                font-style: italic;
-                color: #B0B0B0;
-                text-align: center;
-            }
-
-            .section_garance {
-                margin-top: 50px;
-                margin-bottom: 60px;                
-            }
-
-            .section_body {
-                margin-top: 50px;
-                margin-bottom: 60px;                
-            }
-
-            .section_garance ul {
-                margin-top: 50px;
-                margin-bottom: 60px;
-            }
-
-            .botton_marging {
-                margin-bottom: 30px;
-            }        
-        </style>
+        
     </head>
     <body>
         <!-- Navbar menu -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
             <div class="container">
+                <a href="https://www.archives-nationales.culture.gouv.fr/"><img src="../../../assets/images/archives-nationales.png " style="width:200px;" /></a>
+                &nbsp;
+                &nbsp;
                 <a class="navbar-brand" href="../..">Garance</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavMenu">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                         <!-- Vocabularies -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Controlled vocabularies<a>
@@ -187,6 +61,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Places<a>
                         </li>
+
                     </ul>
                 <div>
                 <div class="menu-menu-principal-container">
@@ -387,7 +262,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Prieur</li></ul>
+                <ul><li>prieur</li></ul>
               </div>
             </div>
           
@@ -455,7 +330,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Membre de l’institut</li></ul>
+                <ul><li>membre de l’Institut</li></ul>
               </div>
             </div>
           
@@ -617,7 +492,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Artiste dramatique</li><li>Comédien</li></ul>
+                <ul><li>artiste dramatique</li><li>comédien</li></ul>
               </div>
             </div>
           
@@ -685,7 +560,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Subdélégué</li></ul>
+                <ul><li>subdélégué</li></ul>
               </div>
             </div>
           
@@ -763,7 +638,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Gérant</li><li>Cadre dirigeant d’entreprise</li></ul>
+                <ul><li>gérant</li><li>cadre dirigeant d’entreprise</li></ul>
               </div>
             </div>
           
@@ -889,7 +764,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Fermier général</li></ul>
+                <ul><li>fermier général</li></ul>
               </div>
             </div>
           
@@ -1121,7 +996,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Changeur</li></ul>
+                <ul><li>changeur</li></ul>
               </div>
             </div>
           
@@ -1189,7 +1064,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Veilleur de nuit</li><li>Vigile</li><li>Gardien</li></ul>
+                <ul><li>veilleur de nuit</li><li>vigile</li><li>gardien</li></ul>
               </div>
             </div>
           
@@ -1315,7 +1190,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Espion</li></ul>
+                <ul><li>espion</li></ul>
               </div>
             </div>
           
@@ -1441,7 +1316,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Métayer</li><li>Exploitant agricole</li><li>Laboureur</li><li>Cultivateur</li></ul>
+                <ul><li>métayer</li><li>exploitant agricole</li><li>laboureur</li><li>cultivateur</li></ul>
               </div>
             </div>
           
@@ -1741,7 +1616,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Animateur socio-culturel</li><li>Animateur socio-éducatif</li></ul>
+                <ul><li>animateur socio-culturel</li><li>animateur socio-éducatif</li></ul>
               </div>
             </div>
           
@@ -1809,7 +1684,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Pisciculteur</li></ul>
+                <ul><li>pisciculteur</li></ul>
               </div>
             </div>
           
@@ -2167,7 +2042,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Fourbisseur</li></ul>
+                <ul><li>fourbisseur</li></ul>
               </div>
             </div>
           
@@ -2409,7 +2284,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Crieur</li></ul>
+                <ul><li>crieur</li></ul>
               </div>
             </div>
           
@@ -2607,7 +2482,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bâtonnier</li><li>Solliciteur</li></ul>
+                <ul><li>bâtonnier</li><li>solliciteur</li></ul>
               </div>
             </div>
           
@@ -2849,7 +2724,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Financier</li></ul>
+                <ul><li>financier</li></ul>
               </div>
             </div>
           
@@ -2917,7 +2792,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Marinier</li></ul>
+                <ul><li>marinier</li></ul>
               </div>
             </div>
           
@@ -2985,7 +2860,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Poêlier</li><li>Affineur</li><li>Batteur d’or et d’argent</li><li>Dinandier</li><li>Tireur d’or et d’argent</li></ul>
+                <ul><li>poêlier</li><li>affineur</li><li>batteur d’or et d’argent</li><li>dinandier</li><li>tireur d’or et d’argent</li></ul>
               </div>
             </div>
           
@@ -3111,7 +2986,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Sabotier</li><li>Galochier</li><li>Savetier</li></ul>
+                <ul><li>sabotier</li><li>galochier</li><li>savetier</li></ul>
               </div>
             </div>
           
@@ -3179,7 +3054,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Écorcheur</li></ul>
+                <ul><li>écorcheur</li></ul>
               </div>
             </div>
           
@@ -3247,7 +3122,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Panetier</li><li>Talemelier</li></ul>
+                <ul><li>panetier</li><li>talemelier</li></ul>
               </div>
             </div>
           
@@ -3315,7 +3190,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Exécuteur des arrêts criminels</li><li>Exécuteur des hautes oeuvres</li></ul>
+                <ul><li>exécuteur des arrêts criminels</li><li>exécuteur des hautes oeuvres</li></ul>
               </div>
             </div>
           
@@ -3383,7 +3258,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Chiffonnier</li><li>Fripier</li></ul>
+                <ul><li>chiffonnier</li><li>fripier</li></ul>
               </div>
             </div>
           
@@ -3509,7 +3384,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Cadre supérieur</li></ul>
+                <ul><li>cadre supérieur</li></ul>
               </div>
             </div>
           
@@ -3973,7 +3848,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Géographe</li></ul>
+                <ul><li>géographe</li></ul>
               </div>
             </div>
           
@@ -4226,7 +4101,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Artiste lyrique</li></ul>
+                <ul><li>artiste lyrique</li></ul>
               </div>
             </div>
           
@@ -4352,7 +4227,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Tripier</li></ul>
+                <ul><li>tripier</li></ul>
               </div>
             </div>
           
@@ -4538,7 +4413,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Charpentier de marine</li></ul>
+                <ul><li>charpentier de marine</li></ul>
               </div>
             </div>
           
@@ -4664,7 +4539,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Braconnier</li><li>Chasseuse</li><li>Veneur</li></ul>
+                <ul><li>braconnier</li><li>chasseuse</li><li>veneur</li></ul>
               </div>
             </div>
           
@@ -4837,7 +4712,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Homme d’affaires</li><li>Entrepreneur</li><li>Industriel</li><li>Directeur d’entreprise</li><li>Président-directeur-général</li><li>Maître de forge</li><li>Directeur de manufacture</li></ul>
+                <ul><li>homme d’affaires</li><li>entrepreneur</li><li>industriel</li><li>directeur d’entreprise</li><li>président-directeur-général</li><li>maître de forge</li><li>directeur de manufacture</li></ul>
               </div>
             </div>
           
@@ -5021,7 +4896,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Haut fonctionnaire</li><li>Secrétaire général de ministère</li></ul>
+                <ul><li>haut fonctionnaire</li><li>secrétaire général de ministère</li></ul>
               </div>
             </div>
           
@@ -5158,7 +5033,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Scientifique</li><li>Savant</li></ul>
+                <ul><li>scientifique</li><li>savant</li></ul>
               </div>
             </div>
           
@@ -5226,7 +5101,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Dentiste</li></ul>
+                <ul><li>dentiste</li></ul>
               </div>
             </div>
           
@@ -5294,7 +5169,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Barbier chirurgien</li></ul>
+                <ul><li>barbier chirurgien</li></ul>
               </div>
             </div>
           
@@ -5362,7 +5237,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Confiseur</li></ul>
+                <ul><li>confiseur</li></ul>
               </div>
             </div>
           
@@ -5521,7 +5396,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Chandelier</li></ul>
+                <ul><li>chandelier</li></ul>
               </div>
             </div>
           
@@ -5753,7 +5628,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Barbier</li><li>Perruquier</li></ul>
+                <ul><li>barbier</li><li>perruquier</li></ul>
               </div>
             </div>
           
@@ -5821,7 +5696,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Marchand ambulant</li></ul>
+                <ul><li>marchand ambulant</li></ul>
               </div>
             </div>
           
@@ -5889,7 +5764,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Marchand</li><li>Détaillant</li><li>Grossiste</li></ul>
+                <ul><li>marchand</li><li>détaillant</li><li>grossiste</li></ul>
               </div>
             </div>
           
@@ -6025,7 +5900,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Commise</li></ul>
+                <ul><li>commise</li></ul>
               </div>
             </div>
           
@@ -6607,7 +6482,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Agent comptable</li><li>Expert-comptable</li></ul>
+                <ul><li>agent comptable</li><li>expert-comptable</li></ul>
               </div>
             </div>
           
@@ -6675,7 +6550,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Portier</li></ul>
+                <ul><li>portier</li></ul>
               </div>
             </div>
           
@@ -6801,7 +6676,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Postillon</li><li>Cocher</li></ul>
+                <ul><li>postillon</li><li>cocher</li></ul>
               </div>
             </div>
           
@@ -7160,7 +7035,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Conseiller à la chambre des deniers</li><li>Conseiller à la cour des monnaies</li><li>Conseiller à la chambre des comptes</li><li>Conseiller à la cour des comptes (ancien régime)</li><li>Conseiller à la cour des aides</li></ul>
+                <ul><li>conseiller à la Chambre des deniers</li><li>conseiller à la Cour des monnaies</li><li>conseiller à la Chambre des comptes</li><li>conseiller à la Cour des comptes (Ancien Régime)</li><li>conseiller à la Cour des aides</li></ul>
               </div>
             </div>
           
@@ -8052,7 +7927,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Tuilier</li><li>Chaumier</li><li>Lauzier</li><li>Ardoisier</li></ul>
+                <ul><li>tuilier</li><li>chaumier</li><li>lauzier</li><li>ardoisier</li></ul>
               </div>
             </div>
           
@@ -8120,7 +7995,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Fromager</li><li>Laitier</li><li>Beurrier</li></ul>
+                <ul><li>fromager</li><li>laitier</li><li>beurrier</li></ul>
               </div>
             </div>
           
@@ -8188,7 +8063,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Rôtisseur</li></ul>
+                <ul><li>rôtisseur</li></ul>
               </div>
             </div>
           
@@ -8477,7 +8352,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Argenteur</li><li>Ciseleur</li><li>Doreur</li><li>Gypsier</li><li>Laqueur</li><li>Mosaïste</li><li>Peintre héraldiste</li><li>Staffeur-stucateur</li><li>Émailleur</li></ul>
+                <ul><li>argenteur</li><li>ciseleur</li><li>doreur</li><li>gypsier</li><li>laqueur</li><li>mosaïste</li><li>peintre héraldiste</li><li>staffeur-stucateur</li><li>émailleur</li></ul>
               </div>
             </div>
           
@@ -8661,7 +8536,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Chômeur</li></ul>
+                <ul><li>chômeur</li></ul>
               </div>
             </div>
           
@@ -8845,7 +8720,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Député aux états généraux (ancien régime)</li></ul>
+                <ul><li>député aux États généraux (Ancien Régime)</li></ul>
               </div>
             </div>
           
@@ -8913,7 +8788,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Imagier</li><li>Enlumineur</li></ul>
+                <ul><li>imagier</li><li>enlumineur</li></ul>
               </div>
             </div>
           
@@ -8981,7 +8856,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Consul (diplomatie)</li><li>Ministre plénipotentiaire</li></ul>
+                <ul><li>consul (diplomatie)</li><li>ministre plénipotentiaire</li></ul>
               </div>
             </div>
           
@@ -9281,7 +9156,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Personnalité politique</li></ul>
+                <ul><li>personnalité politique</li></ul>
               </div>
             </div>
           
@@ -9349,7 +9224,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Liquoriste</li><li>Brasseur</li></ul>
+                <ul><li>liquoriste</li><li>brasseur</li></ul>
               </div>
             </div>
           
@@ -9475,7 +9350,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Docteur</li></ul>
+                <ul><li>docteur</li></ul>
               </div>
             </div>
           
@@ -9717,7 +9592,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bahutier</li><li>Coffretier</li><li>Marqueteur</li><li>Vernisseur</li></ul>
+                <ul><li>bahutier</li><li>coffretier</li><li>marqueteur</li><li>vernisseur</li></ul>
               </div>
             </div>
           
@@ -9901,7 +9776,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Argentier</li><li>Régisseur</li></ul>
+                <ul><li>argentier</li><li>régisseur</li></ul>
               </div>
             </div>
           
@@ -10027,7 +9902,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Scénariste</li><li>Poète</li><li>Auteur dramatique</li><li>Littérateur</li></ul>
+                <ul><li>scénariste</li><li>poète</li><li>auteur dramatique</li><li>littérateur</li></ul>
               </div>
             </div>
           
@@ -10269,7 +10144,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bouvier</li><li>Porcher</li><li>Vacher</li><li>Berger</li></ul>
+                <ul><li>bouvier</li><li>porcher</li><li>vacher</li><li>berger</li></ul>
               </div>
             </div>
           
@@ -10337,7 +10212,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Adjoint au maire</li><li>Conseiller d’arrondissement</li><li>Conseiller général</li><li>Conseiller municipal</li><li>Conseiller régional</li><li>Maire</li><li>Président de conseil général</li><li>Président de conseil municipal</li><li>Président de conseil régional</li><li>Vice-président de conseil général</li></ul>
+                <ul><li>adjoint au maire</li><li>conseiller d’arrondissement</li><li>conseiller général</li><li>conseiller municipal</li><li>conseiller régional</li><li>maire</li><li>président de conseil général</li><li>président de conseil municipal</li><li>président de conseil régional</li><li>vice-président de conseil général</li></ul>
               </div>
             </div>
           
@@ -10463,7 +10338,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Employée d’administration</li></ul>
+                <ul><li>employée d’administration</li></ul>
               </div>
             </div>
           
@@ -10564,7 +10439,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Employée de banque</li></ul>
+                <ul><li>employée de banque</li></ul>
               </div>
             </div>
           
@@ -10680,7 +10555,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Employée de bureau</li></ul>
+                <ul><li>employée de bureau</li></ul>
               </div>
             </div>
           
@@ -10797,7 +10672,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Caissier</li></ul>
+                <ul><li>caissier</li></ul>
               </div>
             </div>
           
@@ -10865,7 +10740,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Écuyer</li><li>Aide ménagère à domicile</li><li>Gouvernante</li><li>Domestique</li><li>Femme de ménage</li><li>Femme de chambre</li><li>Serviteur</li><li>Valet de pied</li><li>Valet de chambre</li></ul>
+                <ul><li>écuyer</li><li>aide ménagère à domicile</li><li>gouvernante</li><li>domestique</li><li>femme de ménage</li><li>femme de chambre</li><li>serviteur</li><li>valet de pied</li><li>valet de chambre</li></ul>
               </div>
             </div>
           
@@ -10933,7 +10808,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Employée subalterne</li></ul>
+                <ul><li>employée subalterne</li></ul>
               </div>
             </div>
           
@@ -11035,7 +10910,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Employée</li></ul>
+                <ul><li>employée</li></ul>
               </div>
             </div>
           
@@ -11384,7 +11259,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Archevêque</li></ul>
+                <ul><li>archevêque</li></ul>
               </div>
             </div>
           
@@ -11510,7 +11385,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bûcheron</li></ul>
+                <ul><li>bûcheron</li></ul>
               </div>
             </div>
           
@@ -11636,7 +11511,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Aiguillier</li><li>Bonnetier</li><li>Fabricant d’accessoires de mode</li><li>Plumassier</li><li>Modiste</li><li>Formier</li><li>Éventailliste</li><li>Corsetier</li><li>Chapelier</li></ul>
+                <ul><li>aiguillier</li><li>bonnetier</li><li>fabricant d’accessoires de mode</li><li>plumassier</li><li>modiste</li><li>formier</li><li>éventailliste</li><li>corsetier</li><li>chapelier</li></ul>
               </div>
             </div>
           
@@ -11704,7 +11579,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Archetier</li><li>Luthier</li></ul>
+                <ul><li>archetier</li><li>luthier</li></ul>
               </div>
             </div>
           
@@ -11772,7 +11647,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Facteur des postes</li><li>Facteur</li><li>Préposé</li></ul>
+                <ul><li>facteur des postes</li><li>facteur</li><li>préposé</li></ul>
               </div>
             </div>
           
@@ -12014,7 +11889,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Saltimbanque</li><li>Camelot</li></ul>
+                <ul><li>saltimbanque</li><li>camelot</li></ul>
               </div>
             </div>
           
@@ -12082,7 +11957,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Tôlier</li><li>Éperonnier</li><li>Ferblantier</li><li>Lormier</li><li>Cloutier</li><li>Coutelier</li><li>Bronzier</li><li>Chaudronnier</li><li>Ferronnier</li><li>Taillandier</li></ul>
+                <ul><li>tôlier</li><li>éperonnier</li><li>ferblantier</li><li>lormier</li><li>cloutier</li><li>coutelier</li><li>bronzier</li><li>chaudronnier</li><li>ferronnier</li><li>taillandier</li></ul>
               </div>
             </div>
           
@@ -12208,7 +12083,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Pelletier</li></ul>
+                <ul><li>pelletier</li></ul>
               </div>
             </div>
           
@@ -12334,7 +12209,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Garde forestier</li></ul>
+                <ul><li>garde forestier</li></ul>
               </div>
             </div>
           
@@ -12576,7 +12451,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Surveillant de prison</li><li>Geôlier</li></ul>
+                <ul><li>surveillant de prison</li><li>geôlier</li></ul>
               </div>
             </div>
           
@@ -12702,7 +12577,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Topographe</li><li>Toiseur</li><li>Géomètre-expert</li><li>Arpenteur</li></ul>
+                <ul><li>topographe</li><li>toiseur</li><li>géomètre-expert</li><li>arpenteur</li></ul>
               </div>
             </div>
           
@@ -13119,7 +12994,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Grand maître de la garde-robe</li><li>Grand prévôt de france</li><li>Grand louvetier de france</li><li>Grand maître des cérémonies</li><li>Grand fauconnier de france</li><li>Grand échanson de france</li><li>Grand veneur de france</li><li>Grand aumônier de france</li></ul>
+                <ul><li>grand maître de la Garde-robe</li><li>grand prévôt de France</li><li>grand louvetier de France</li><li>grand maître des cérémonies</li><li>grand fauconnier de France</li><li>grand échanson de France</li><li>grand veneur de France</li><li>grand aumônier de France</li></ul>
               </div>
             </div>
           
@@ -13245,7 +13120,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Maquettiste</li><li>Infographiste</li></ul>
+                <ul><li>maquettiste</li><li>infographiste</li></ul>
               </div>
             </div>
           
@@ -13313,7 +13188,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Médailleur</li><li>Lithographe</li></ul>
+                <ul><li>médailleur</li><li>lithographe</li></ul>
               </div>
             </div>
           
@@ -13381,7 +13256,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Greffier de commerce</li></ul>
+                <ul><li>greffier de commerce</li></ul>
               </div>
             </div>
           
@@ -13797,7 +13672,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Aubergiste</li></ul>
+                <ul><li>aubergiste</li></ul>
               </div>
             </div>
           
@@ -13923,7 +13798,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Audiencier</li><li>Bedeau</li><li>Appariteur</li></ul>
+                <ul><li>audiencier</li><li>bedeau</li><li>appariteur</li></ul>
               </div>
             </div>
           
@@ -14107,7 +13982,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Relieur</li><li>Typographe</li><li>Photograveur</li></ul>
+                <ul><li>relieur</li><li>typographe</li><li>photograveur</li></ul>
               </div>
             </div>
           
@@ -14349,7 +14224,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Vérificateur</li></ul>
+                <ul><li>vérificateur</li></ul>
               </div>
             </div>
           
@@ -14997,7 +14872,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Manouvrier</li><li>Gagne-denier</li></ul>
+                <ul><li>manouvrier</li><li>gagne-denier</li></ul>
               </div>
             </div>
           
@@ -15065,7 +14940,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Rédacteur en chef</li></ul>
+                <ul><li>rédacteur en chef</li></ul>
               </div>
             </div>
           
@@ -15191,7 +15066,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Jurisconsulte</li><li>Homme de loi</li></ul>
+                <ul><li>jurisconsulte</li><li>homme de loi</li></ul>
               </div>
             </div>
           
@@ -15259,7 +15134,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Emballeur</li></ul>
+                <ul><li>emballeur</li></ul>
               </div>
             </div>
           
@@ -15385,7 +15260,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bouquiniste</li></ul>
+                <ul><li>bouquiniste</li></ul>
               </div>
             </div>
           
@@ -15569,7 +15444,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Coursier</li></ul>
+                <ul><li>coursier</li></ul>
               </div>
             </div>
           
@@ -15637,7 +15512,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Logeuse</li></ul>
+                <ul><li>logeuse</li></ul>
               </div>
             </div>
           
@@ -15854,7 +15729,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Plâtrier</li><li>Briqueteur</li></ul>
+                <ul><li>plâtrier</li><li>briqueteur</li></ul>
               </div>
             </div>
           
@@ -15922,7 +15797,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Fort des halles</li><li>Portefaix</li><li>Porteur</li><li>Manutentionnaire</li></ul>
+                <ul><li>fort des halles</li><li>portefaix</li><li>porteur</li><li>manutentionnaire</li></ul>
               </div>
             </div>
           
@@ -15990,7 +15865,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Parlementaire (ancien régime)</li></ul>
+                <ul><li>parlementaire (Ancien Régime)</li></ul>
               </div>
             </div>
           
@@ -16349,7 +16224,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bossetier</li><li>Vitrailliste</li></ul>
+                <ul><li>bossetier</li><li>vitrailliste</li></ul>
               </div>
             </div>
           
@@ -16533,7 +16408,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Pêcheur</li></ul>
+                <ul><li>pêcheur</li></ul>
               </div>
             </div>
           
@@ -16659,7 +16534,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Colletier</li><li>Gibecier</li><li>Gantier</li><li>Ceinturier</li></ul>
+                <ul><li>colletier</li><li>gibecier</li><li>gantier</li><li>ceinturier</li></ul>
               </div>
             </div>
           
@@ -16843,7 +16718,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Chef de cabinet</li><li>Conseiller technique</li><li>Directeur de cabinet</li></ul>
+                <ul><li>chef de cabinet</li><li>conseiller technique</li><li>directeur de cabinet</li></ul>
               </div>
             </div>
           
@@ -16911,7 +16786,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Conseiller de préfecture</li><li>Président de conseil de préfecture</li><li>Secrétaire général de la préfecture</li><li>Vice-président de conseil de préfecture</li></ul>
+                <ul><li>conseiller de préfecture</li><li>président de conseil de préfecture</li><li>secrétaire général de la préfecture</li><li>vice-président de conseil de préfecture</li></ul>
               </div>
             </div>
           
@@ -16979,7 +16854,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Pair de france</li></ul>
+                <ul><li>Pair de France</li></ul>
               </div>
             </div>
           
@@ -17080,7 +16955,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Auditeur à la cour des comptes</li><li>Conseiller maître à la cour des comptes</li><li>Conseiller référendaire à la cour des comptes</li><li>Conseiller à la cour des comptes</li><li>Expert à la cour des comptes</li><li>Premier président de la cour des comptes</li><li>Président de chambre à la cour des comptes</li><li>Rapporteur à la cour des comptes</li></ul>
+                <ul><li>auditeur à la Cour des comptes</li><li>conseiller maître à la Cour des comptes</li><li>conseiller référendaire à la Cour des comptes</li><li>conseiller à la Cour des comptes</li><li>expert à la Cour des comptes</li><li>premier président de la Cour des comptes</li><li>président de chambre à la Cour des comptes</li><li>rapporteur à la Cour des comptes</li></ul>
               </div>
             </div>
           
@@ -17287,7 +17162,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Chef de cabinet préfectoral</li><li>Directeur de cabinet préfectoral</li></ul>
+                <ul><li>chef de cabinet préfectoral</li><li>directeur de cabinet préfectoral</li></ul>
               </div>
             </div>
           
@@ -17413,7 +17288,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Auditeur au conseil d’état</li><li>Conseiller d’état</li><li>Vice-président du conseil d’état</li></ul>
+                <ul><li>auditeur au Conseil d’État</li><li>conseiller d’État</li><li>vice-président du Conseil d’État</li></ul>
               </div>
             </div>
           
@@ -17714,7 +17589,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Scieur</li><li>Boisselier</li></ul>
+                <ul><li>scieur</li><li>boisselier</li></ul>
               </div>
             </div>
           
@@ -17898,7 +17773,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Gendarme</li><li>Brigadier</li><li>Quartier maître</li><li>Matelot</li><li>Caporal-chef</li><li>Caporal</li><li>1ère classe</li><li>Soldat</li></ul>
+                <ul><li>gendarme</li><li>brigadier</li><li>quartier maître</li><li>matelot</li><li>caporal-chef</li><li>caporal</li><li>1ère classe</li><li>soldat</li></ul>
               </div>
             </div>
           
@@ -17966,7 +17841,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Maréchal de camp</li></ul>
+                <ul><li>maréchal de camp</li></ul>
               </div>
             </div>
           
@@ -18092,7 +17967,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Activiste politique</li></ul>
+                <ul><li>activiste politique</li></ul>
               </div>
             </div>
           
@@ -18218,7 +18093,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Ministre d’état</li><li>Ministre délégué</li><li>Ministre sans portefeuille</li></ul>
+                <ul><li>ministre d’État</li><li>ministre délégué</li><li>ministre sans portefeuille</li></ul>
               </div>
             </div>
           
@@ -18286,7 +18161,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Miroitier d’art</li></ul>
+                <ul><li>miroitier d’art</li></ul>
               </div>
             </div>
           
@@ -18771,7 +18646,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Aide de camp</li><li>Capitaine de vaisseau</li><li>Capitaine de frégate</li><li>Capitaine de corvette</li><li>Lieutenant de vaisseau</li><li>Enseigne de vaisseau</li><li>Colonel</li><li>Lieutenant-colonel</li><li>Commandant</li><li>Capitaine</li><li>Lieutenant</li><li>Sous-lieutenant</li><li>Aspirant</li></ul>
+                <ul><li>aide de camp</li><li>capitaine de vaisseau</li><li>capitaine de frégate</li><li>capitaine de corvette</li><li>lieutenant de vaisseau</li><li>enseigne de vaisseau</li><li>colonel</li><li>lieutenant-colonel</li><li>commandant</li><li>capitaine</li><li>lieutenant</li><li>sous-lieutenant</li><li>aspirant</li></ul>
               </div>
             </div>
           
@@ -19306,7 +19181,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Capitaine de navire</li></ul>
+                <ul><li>capitaine de navire</li></ul>
               </div>
             </div>
           
@@ -19432,7 +19307,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Lieutenant général des armées du roi</li><li>Maréchal</li><li>Général</li><li>Amiral</li></ul>
+                <ul><li>lieutenant général des armées du roi</li><li>maréchal</li><li>général</li><li>amiral</li></ul>
               </div>
             </div>
           
@@ -19574,7 +19449,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Lunetier</li></ul>
+                <ul><li>lunetier</li></ul>
               </div>
             </div>
           
@@ -19642,7 +19517,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Lapidaire</li><li>Joaillier</li><li>Bijoutier</li><li>Pétissier</li></ul>
+                <ul><li>lapidaire</li><li>joaillier</li><li>bijoutier</li><li>pétissier</li></ul>
               </div>
             </div>
           
@@ -19710,7 +19585,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Vendangeur</li><li>Batteur de grains</li><li>Garçon d’écurie</li><li>Palefrenier</li></ul>
+                <ul><li>vendangeur</li><li>batteur de grains</li><li>garçon d’écurie</li><li>palefrenier</li></ul>
               </div>
             </div>
           
@@ -19778,7 +19653,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Ouvrière d’usine</li></ul>
+                <ul><li>ouvrière d’usine</li></ul>
               </div>
             </div>
           
@@ -19894,7 +19769,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Ouvrière</li></ul>
+                <ul><li>ouvrière</li></ul>
               </div>
             </div>
           
@@ -20068,7 +19943,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Fabricant de papier peint</li><li>Cartonnier</li><li>Fabricant de papier</li></ul>
+                <ul><li>fabricant de papier peint</li><li>cartonnier</li><li>fabricant de papier</li></ul>
               </div>
             </div>
           
@@ -20194,7 +20069,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Représentant du peuple</li></ul>
+                <ul><li>représentant du peuple</li></ul>
               </div>
             </div>
           
@@ -20273,7 +20148,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Toilier</li><li>Rubanier</li></ul>
+                <ul><li>toilier</li><li>rubanier</li></ul>
               </div>
             </div>
           
@@ -20399,7 +20274,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Oublieur</li></ul>
+                <ul><li>oublieur</li></ul>
               </div>
             </div>
           
@@ -20535,7 +20410,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Carreleur-mosaïste</li><li>Moquettiste-solier</li><li>Parqueteur</li></ul>
+                <ul><li>carreleur-mosaïste</li><li>moquettiste-solier</li><li>parqueteur</li></ul>
               </div>
             </div>
           
@@ -20719,7 +20594,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Artiste peintre</li></ul>
+                <ul><li>artiste peintre</li></ul>
               </div>
             </div>
           
@@ -20787,7 +20662,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Élu d’élection</li><li>Receveur-percepteur</li></ul>
+                <ul><li>élu d’élection</li><li>receveur-percepteur</li></ul>
               </div>
             </div>
           
@@ -21145,7 +21020,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Apothicaire</li></ul>
+                <ul><li>apothicaire</li></ul>
               </div>
             </div>
           
@@ -21271,7 +21146,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Aviateur</li></ul>
+                <ul><li>aviateur</li></ul>
               </div>
             </div>
           
@@ -21397,7 +21272,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Fontainier</li><li>Chauffagiste</li></ul>
+                <ul><li>fontainier</li><li>chauffagiste</li></ul>
               </div>
             </div>
           
@@ -21465,7 +21340,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Écailler</li><li>Mareyeur</li></ul>
+                <ul><li>écailler</li><li>mareyeur</li></ul>
               </div>
             </div>
           
@@ -21533,7 +21408,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Commissaire de police</li><li>Inspecteur de police</li><li>Gardien de la paix</li></ul>
+                <ul><li>commissaire de police</li><li>inspecteur de police</li><li>gardien de la paix</li></ul>
               </div>
             </div>
           
@@ -21601,7 +21476,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Sapeur-pompier</li></ul>
+                <ul><li>sapeur-pompier</li></ul>
               </div>
             </div>
           
@@ -21786,7 +21661,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Céramiste</li></ul>
+                <ul><li>céramiste</li></ul>
               </div>
             </div>
           
@@ -22008,7 +21883,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Préfet de police de marseille</li></ul>
+                <ul><li>préfet de police de Marseille</li></ul>
               </div>
             </div>
           
@@ -23047,7 +22922,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Aumônier</li></ul>
+                <ul><li>aumônier</li></ul>
               </div>
             </div>
           
@@ -24059,7 +23934,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Fumiste</li></ul>
+                <ul><li>fumiste</li></ul>
               </div>
             </div>
           
@@ -24254,7 +24129,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Rentière</li></ul>
+                <ul><li>rentière</li></ul>
               </div>
             </div>
           
@@ -24370,7 +24245,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Gouverneur général</li><li>Résident général</li><li>Secrétaire général</li></ul>
+                <ul><li>gouverneur général</li><li>résident général</li><li>secrétaire général</li></ul>
               </div>
             </div>
           
@@ -24644,7 +24519,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Traiteur</li><li>Tavernier</li><li>Limonadier</li><li>Gargotier</li><li>Cafetier</li><li>Cabaretier</li></ul>
+                <ul><li>traiteur</li><li>tavernier</li><li>limonadier</li><li>gargotier</li><li>cafetier</li><li>cabaretier</li></ul>
               </div>
             </div>
           
@@ -24944,7 +24819,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Tailleur d’images</li><li>Tailleur d’antiques</li><li>Tombier</li></ul>
+                <ul><li>tailleur d’images</li><li>tailleur d’antiques</li><li>tombier</li></ul>
               </div>
             </div>
           
@@ -25012,7 +24887,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Secrétaire des commandements</li></ul>
+                <ul><li>secrétaire des commandements</li></ul>
               </div>
             </div>
           
@@ -25138,7 +25013,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Secrétaire du conseil</li></ul>
+                <ul><li>secrétaire du Conseil</li></ul>
               </div>
             </div>
           
@@ -25322,7 +25197,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bourrelier</li></ul>
+                <ul><li>bourrelier</li></ul>
               </div>
             </div>
           
@@ -25390,7 +25265,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Sénateur inamovible</li></ul>
+                <ul><li>sénateur inamovible</li></ul>
               </div>
             </div>
           
@@ -25458,7 +25333,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Métallier-serrurier</li></ul>
+                <ul><li>métallier-serrurier</li></ul>
               </div>
             </div>
           
@@ -25642,7 +25517,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Sommelière</li></ul>
+                <ul><li>sommelière</li></ul>
               </div>
             </div>
           
@@ -25758,7 +25633,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Carillonneur</li></ul>
+                <ul><li>carillonneur</li></ul>
               </div>
             </div>
           
@@ -25826,7 +25701,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Maître principal</li><li>Premier maître</li><li>Second maître</li><li>Major</li><li>Adjudant-chef</li><li>Adjudant</li><li>Sergent-chef</li><li>Sergent</li><li>Officier-marinier</li></ul>
+                <ul><li>maître principal</li><li>premier maître</li><li>second maître</li><li>major</li><li>adjudant-chef</li><li>adjudant</li><li>sergent-chef</li><li>sergent</li><li>officier-marinier</li></ul>
               </div>
             </div>
           
@@ -25952,7 +25827,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Impératrice</li><li>Tsar</li><li>Empereur</li><li>Régente</li><li>Reine</li><li>Régent</li><li>Roi</li></ul>
+                <ul><li>impératrice</li><li>tsar</li><li>empereur</li><li>régente</li><li>reine</li><li>régent</li><li>roi</li></ul>
               </div>
             </div>
           
@@ -26020,7 +25895,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Athlète</li><li>Gymnaste</li><li>Sportive</li></ul>
+                <ul><li>athlète</li><li>gymnaste</li><li>sportive</li></ul>
               </div>
             </div>
           
@@ -26135,7 +26010,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Demoiselle du téléphone</li><li>Téléphoniste</li></ul>
+                <ul><li>demoiselle du téléphone</li><li>téléphoniste</li></ul>
               </div>
             </div>
           
@@ -26366,7 +26241,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Dirigeant syndical</li></ul>
+                <ul><li>dirigeant syndical</li></ul>
               </div>
             </div>
           
@@ -26503,7 +26378,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Patenôtrier</li><li>Nacrier</li><li>Ivoirier</li><li>Écailliste</li><li>Cornier</li><li>Brossier</li><li>Boutonnier</li><li>Bimbelotier</li></ul>
+                <ul><li>patenôtrier</li><li>nacrier</li><li>ivoirier</li><li>écailliste</li><li>cornier</li><li>brossier</li><li>boutonnier</li><li>bimbelotier</li></ul>
               </div>
             </div>
           
@@ -26571,7 +26446,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Ravaudeur</li><li>Retoucheur</li><li>Tailleur</li><li>Couturier</li></ul>
+                <ul><li>ravaudeur</li><li>retoucheur</li><li>tailleur</li><li>couturier</li></ul>
               </div>
             </div>
           
@@ -26639,7 +26514,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Marbrier</li><li>Appareilleur</li></ul>
+                <ul><li>marbrier</li><li>appareilleur</li></ul>
               </div>
             </div>
           
@@ -26707,7 +26582,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Baudroyer</li><li>Courroyeur</li><li>Corroyeur</li><li>Pareur</li><li>Peaussier</li><li>Parcheminier</li><li>Mégissier</li></ul>
+                <ul><li>baudroyer</li><li>courroyeur</li><li>corroyeur</li><li>pareur</li><li>peaussier</li><li>parcheminier</li><li>mégissier</li></ul>
               </div>
             </div>
           
@@ -26775,7 +26650,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Courtepointier</li></ul>
+                <ul><li>courtepointier</li></ul>
               </div>
             </div>
           
@@ -26959,7 +26834,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Tissutier</li><li>Couverturier</li><li>Lissier</li></ul>
+                <ul><li>tissutier</li><li>couverturier</li><li>lissier</li></ul>
               </div>
             </div>
           
@@ -27221,7 +27096,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Voiturier</li></ul>
+                <ul><li>voiturier</li></ul>
               </div>
             </div>
           
@@ -27289,7 +27164,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Conseiller en économie sociale familiale</li><li>Éducateur</li><li>Assistant familial</li><li>Assistant social</li></ul>
+                <ul><li>conseiller en économie sociale familiale</li><li>éducateur</li><li>assistant familial</li><li>assistant social</li></ul>
               </div>
             </div>
           
@@ -27415,7 +27290,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Payeur</li><li>Receveur</li></ul>
+                <ul><li>payeur</li><li>receveur</li></ul>
               </div>
             </div>
           
@@ -27667,7 +27542,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Souffleur de verre</li></ul>
+                <ul><li>souffleur de verre</li></ul>
               </div>
             </div>
           
@@ -27851,7 +27726,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Vigneron</li></ul>
+                <ul><li>vigneron</li></ul>
               </div>
             </div>
           
@@ -27977,7 +27852,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Poulailler</li></ul>
+                <ul><li>poulailler</li></ul>
               </div>
             </div>
           
@@ -28045,7 +27920,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Représentant de commerce</li><li>Commis voyageur</li></ul>
+                <ul><li>représentant de commerce</li><li>commis voyageur</li></ul>
               </div>
             </div>
           
@@ -28256,6 +28131,9 @@
         d._children = d.children;
       });
 
+
+      
+
       update(null, root);
 
       svg.node();
@@ -28274,11 +28152,33 @@
             </section>
         </div>
         <hr>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up"></i></a>
+        <!-- footer --> 
+        <footer class="footer">
+            last updated on 2/24/2025
+            <br />
+            <br />
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        
+        <!-- anchors -->
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+        <!-- d3js -->
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <script src="../../../assets/js/garance.js"></script>
+
+          <script>
+            // generate anchors on each h5 title
+            anchors.options.placement = 'left';
+            anchors.options.icon = '#';
+            anchors.add('h5');
+          </script>
     </body>
-    <!-- footer --> 
-    <footer class="footer">
-        last updated on 2/21/2025
-        <br />
-        <br />
-    </footer>
+
+
+    
 </html>

@@ -7,155 +7,29 @@
 
         <!-- bootstrap -->
         <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">     
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-        
-        <!-- anchors -->
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-        <!-- d3js -->
-        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
         <!-- fontawesome -->
-        <link href="../../../assets/fa/css/all.min.css" rel="stylesheet"/>
+        <link href="../../../assets/fa/css/all.min.css" rel="stylesheet"/>        
         
         <!-- css -->
+        <link rel='stylesheet' href="../../../assets/css/garance.css" type='text/css' />
         <link rel='stylesheet' href="../../../assets/css/timeline.css" type='text/css' />
-        <style type="text/css">
-            .navbar-nav li:hover > ul.dropdown-menu {
-                display: block;
-            }
-            .dropdown-submenu {
-                position:relative;
-            }
-            .dropdown-submenu > .dropdown-menu {
-                top: 0;
-                left: 100%;
-                margin-top:-6px;
-            }
-
-            /* rotate caret on hover */
-            .dropdown-menu > li > a:hover:after {
-                text-decoration: underline;
-                transform: rotate(-90deg);
-            }
-
-            /* title */
-            .h1 > title-Header {
-                display: contents;
-            }
-
-            /** Diagram ***/
-            .link {
-                fill: none;
-                stroke: #555;
-                stroke-opacity: 0.2;
-                stroke-width: 2px;
-            }
-            svg {
-                border: none;
-            }
-
-            /* fil d'ariane */
-            .container .breadcrumb {
-                border: none;
-                border-radius: 0;
-                /*border-bottom: 1px solid #ccc;*/
-            }
-
-            .breadcrumb ul {
-                display: flex;
-                flex-wrap: wrap;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            .breadcrumb li:not(:last-child)::after {
-                display: inline-block;
-                margin: 0 0.25rem;
-                content: " > ";
-            }
-
-            /* so that the main body content is not hidden by the navbar */
-            body {
-                padding-top: 80px;
-            }
-
-            /* so that the anchor is not hidden by the navbar when deep-linking */
-            html {
-                scroll-padding-top: 60px;
-            }
-
-            /* background of navbar */
-            .bg-performing-arts {
-                background-color: #083658;
-            }
-
-            /* concepts number */
-            .numConcepts {
-                font-size: small;
-                font-style: italic;
-            }
-
-            /* so that URI sticks to the title */
-            .ConceptScheme-title {
-                margin-bottom:-0.06em;
-            }
-
-            /* so that URI sticks to the title */
-            .concept-title {
-                margin-bottom:-0.2em;
-            }
-
-            /* make the URI smaller */
-            .concept-URI {
-                font-size:85%;
-            }
-
-            /* so that autocompletions mark text stay black even though we use a dark theme */
-            mark {
-                color: rgb(34, 34, 34);
-            }
-
-            .footer {
-                font-size: 0.8em;
-                font-style: italic;
-                color: #B0B0B0;
-                text-align: center;
-            }
-
-            .section_garance {
-                margin-top: 50px;
-                margin-bottom: 60px;                
-            }
-
-            .section_body {
-                margin-top: 50px;
-                margin-bottom: 60px;                
-            }
-
-            .section_garance ul {
-                margin-top: 50px;
-                margin-bottom: 60px;
-            }
-
-            .botton_marging {
-                margin-bottom: 30px;
-            }        
-        </style>
+        
     </head>
     <body>
         <!-- Navbar menu -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
             <div class="container">
+                <a href="https://www.archives-nationales.culture.gouv.fr/"><img src="../../../assets/images/archives-nationales.png " style="width:200px;" /></a>
+                &nbsp;
+                &nbsp;
                 <a class="navbar-brand" href="../..">Garance</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavMenu">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                         <!-- Vocabularies -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Controlled vocabularies<a>
@@ -187,6 +61,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Places<a>
                         </li>
+
                     </ul>
                 <div>
                 <div class="menu-menu-principal-container">
@@ -415,6 +290,12 @@
                         <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89amxp--lr0xlor5wm53">accord</a>
                       </li>
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89fuos-1vonceo73v7dz">accord international</a>
+                      </li>
+                    
                     <li>
                       accord bilatéral
                     </li> 
@@ -513,6 +394,12 @@
                         <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89amxp--lr0xlor5wm53">accord</a>
                       </li>
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89fuos-1vonceo73v7dz">accord international</a>
+                      </li>
+                    
                     <li>
                       accord commercial
                     </li> 
@@ -607,6 +494,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89amxp--lr0xlor5wm53">accord</a>
+                      </li>
+                    
                     <li>
                       accord de travail
                     </li> 
@@ -624,7 +517,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Accord de branche</li><li>Accord collectif de travail</li></ul>
+                <ul><li>accord de branche</li><li>accord collectif de travail</li></ul>
               </div>
             </div>
           
@@ -713,6 +606,12 @@
                     
                       <li>
                         <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89amxp--lr0xlor5wm53">accord</a>
+                      </li>
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89fuos-1vonceo73v7dz">accord international</a>
                       </li>
                     
                     <li>
@@ -809,6 +708,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89amxp--lr0xlor5wm53">accord</a>
+                      </li>
+                    
                     <li>
                       accord international
                     </li> 
@@ -826,7 +731,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Convention internationale</li></ul>
+                <ul><li>convention internationale</li></ul>
               </div>
             </div>
           
@@ -932,7 +837,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Transaction</li><li>Concordat</li><li>Accommodement</li><li>Compromis</li></ul>
+                <ul><li>transaction</li><li>concordat</li><li>accommodement</li><li>compromis</li></ul>
               </div>
             </div>
           
@@ -1020,7 +925,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Acte de naissance</li><li>Acte de décès</li><li>Acte de mariage</li><li>Baptistaire</li><li>Acte civil public</li></ul>
+                <ul><li>acte de naissance</li><li>acte de décès</li><li>acte de mariage</li><li>baptistaire</li><li>acte civil public</li></ul>
               </div>
             </div>
           
@@ -1097,6 +1002,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8f8hn6-1cv55keqf50vh">statuts</a>
+                      </li>
+                    
                     <li>
                       acte de société
                     </li> 
@@ -1114,7 +1025,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Dissolution de société</li><li>Acte constitutif de société</li></ul>
+                <ul><li>dissolution de société</li><li>acte constitutif de société</li></ul>
               </div>
             </div>
           
@@ -1192,7 +1103,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Acte d’achat</li><li>Acquisition</li><li>Adjudication</li></ul>
+                <ul><li>acte d’achat</li><li>acquisition</li><li>adjudication</li></ul>
               </div>
             </div>
           
@@ -1285,6 +1196,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89nbho-16u3osxzn3rkw">acte notarié</a>
+                      </li>
+                    
                     <li>
                       acte imparfait
                     </li> 
@@ -1337,7 +1254,7 @@
                     <ul class="changeNote_sessions">
                     
                       <li>
-                        <div class="changeNote_date">02/05/2022 : <span>Définition modifiée le [02/05/2022]</span></div>                        
+                        <div class="changeNote_date">02/05/2022 : <span>définition modifiée le [02/05/2022]</span></div>                        
                       </li>
                     
                     </ul>
@@ -1428,7 +1345,7 @@
                     <ul class="changeNote_sessions">
                     
                       <li>
-                        <div class="changeNote_date">02/05/2022 : <span>Définition ajoutée le [02/05/2022]</span></div>                        
+                        <div class="changeNote_date">02/05/2022 : <span>définition ajoutée le [02/05/2022]</span></div>                        
                       </li>
                     
                     </ul>
@@ -1572,7 +1489,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Actes de colloque</li></ul>
+                <ul><li>actes de colloque</li></ul>
               </div>
             </div>
           
@@ -1648,6 +1565,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6">document graphique</a>
+                      </li>
                     
                     <li>
                       affiche
@@ -1791,6 +1714,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6">document graphique</a>
+                      </li>
+                    
                     <li>
                       album
                     </li> 
@@ -1877,7 +1806,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Annonce officielle et légale</li><li>Annonce judiciaire et légale</li></ul>
+                <ul><li>annonce officielle et légale</li><li>annonce judiciaire et légale</li></ul>
               </div>
             </div>
           
@@ -2259,6 +2188,12 @@
                         <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6">document graphique</a>
                       </li>
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d699mmwtm0y-1c9x716tm2v76">document cartographique</a>
+                      </li>
+                    
                     <li>
                       atlas
                     </li> 
@@ -2527,6 +2462,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8a5fk4--1m1zy9p8828mv">avant-projet</a>
+                      </li>
+                    
                     <li>
                       avant-projet d’architecture
                     </li> 
@@ -2544,7 +2485,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Avant-projet détaillé</li><li>Avant-projet sommaire</li><li>Avant-projet définitif</li></ul>
+                <ul><li>avant-projet détaillé</li><li>avant-projet sommaire</li><li>avant-projet définitif</li></ul>
               </div>
             </div>
           
@@ -2620,6 +2561,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8a5fk4--1m1zy9p8828mv">avant-projet</a>
+                      </li>
                     
                     <li>
                       avant-projet de loi
@@ -2774,7 +2721,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Avis de parents</li></ul>
+                <ul><li>avis de parents</li></ul>
               </div>
             </div>
           
@@ -2854,7 +2801,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bail à rente</li><li>Bail à loyer</li><li>Bail à ferme</li></ul>
+                <ul><li>bail à rente</li><li>bail à loyer</li><li>bail à ferme</li></ul>
               </div>
             </div>
           
@@ -3057,6 +3004,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8acrej-16r90mop9gxdk">bilan</a>
+                      </li>
+                    
                     <li>
                       bilan comptable
                     </li> 
@@ -3074,7 +3027,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bilan financier</li></ul>
+                <ul><li>bilan financier</li></ul>
               </div>
             </div>
           
@@ -3293,6 +3246,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89nbho-16u3osxzn3rkw">acte notarié</a>
+                      </li>
+                    
                     <li>
                       brevet notarié
                     </li> 
@@ -3353,7 +3312,7 @@
                     <ul class="changeNote_sessions">
                     
                       <li>
-                        <div class="changeNote_date">02/05/2022 : <span>Définition ajoutée le [02/05/2022]</span></div>                        
+                        <div class="changeNote_date">02/05/2022 : <span>définition ajoutée le [02/05/2022]</span></div>                        
                       </li>
                     
                     </ul>
@@ -3411,7 +3370,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Presse institutionnelle</li></ul>
+                <ul><li>presse institutionnelle</li></ul>
               </div>
             </div>
           
@@ -3616,7 +3575,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bulletin de paie</li></ul>
+                <ul><li>bulletin de paie</li></ul>
               </div>
             </div>
           
@@ -3925,6 +3884,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6">document graphique</a>
+                      </li>
+                    
                     <li>
                       caricature
                     </li> 
@@ -4087,6 +4052,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6">document graphique</a>
+                      </li>
+                    
                     <li>
                       carte à jouer
                     </li> 
@@ -4171,6 +4142,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8amz5b--1agydv44ah78d">carte d’identité</a>
+                      </li>
+                    
                     <li>
                       carte d’identité professionnelle
                     </li> 
@@ -4246,7 +4223,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Carte nationale d’identité</li></ul>
+                <ul><li>carte nationale d’identité</li></ul>
               </div>
             </div>
           
@@ -4488,7 +4465,7 @@
                     <ul class="changeNote_sessions">
                     
                       <li>
-                        <div class="changeNote_date">14/04/2021 : <span>Forme préférée modifiée le [14/04/2021]</span></div>                        
+                        <div class="changeNote_date">14/04/2021 : <span>forme préférée modifiée le [14/04/2021]</span></div>                        
                       </li>
                     
                     </ul>
@@ -4554,6 +4531,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6">document graphique</a>
+                      </li>
                     
                     <li>
                       carte postale
@@ -4804,7 +4787,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Caution</li><li>Engagement</li><li>Garantie</li></ul>
+                <ul><li>caution</li><li>engagement</li><li>garantie</li></ul>
               </div>
             </div>
           
@@ -5200,7 +5183,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Pelurier</li><li>Minutier chronologique</li><li>Minutier</li></ul>
+                <ul><li>pelurier</li><li>minutier chronologique</li><li>minutier</li></ul>
               </div>
             </div>
           
@@ -5268,7 +5251,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Instruction</li></ul>
+                <ul><li>instruction</li></ul>
               </div>
             </div>
           
@@ -5336,7 +5319,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Communiqué de presse</li></ul>
+                <ul><li>communiqué de presse</li></ul>
               </div>
             </div>
           
@@ -5471,6 +5454,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8b42sa-2vo6rr7qrxfh">compte</a>
+                      </li>
+                    
                     <li>
                       compte administratif
                     </li> 
@@ -5567,6 +5556,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8b42sa-2vo6rr7qrxfh">compte</a>
+                      </li>
+                    
                     <li>
                       compte d’exécution testamentaire
                     </li> 
@@ -5650,6 +5645,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8b42sa-2vo6rr7qrxfh">compte</a>
+                      </li>
                     
                     <li>
                       compte de gestion
@@ -5746,6 +5747,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8b42sa-2vo6rr7qrxfh">compte</a>
+                      </li>
+                    
                     <li>
                       compte de résultat
                     </li> 
@@ -5763,7 +5770,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Compte d’exploitation</li></ul>
+                <ul><li>compte d’exploitation</li></ul>
               </div>
             </div>
           
@@ -5852,6 +5859,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8b42sa-2vo6rr7qrxfh">compte</a>
+                      </li>
+                    
                     <li>
                       compte de tutelle
                     </li> 
@@ -5935,6 +5948,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8b42sa-2vo6rr7qrxfh">compte</a>
+                      </li>
                     
                     <li>
                       compte financier
@@ -6020,6 +6039,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8bae78-1sgv3dojeymw1">compte-rendu</a>
+                      </li>
+                    
                     <li>
                       compte-rendu de séance
                     </li> 
@@ -6104,6 +6129,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8bae78-1sgv3dojeymw1">compte-rendu</a>
+                      </li>
+                    
                     <li>
                       compte-rendu interministériel
                     </li> 
@@ -6121,7 +6152,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bleu de matignon</li></ul>
+                <ul><li>bleu de Matignon</li></ul>
               </div>
             </div>
           
@@ -6361,7 +6392,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Tontine</li></ul>
+                <ul><li>tontine</li></ul>
               </div>
             </div>
           
@@ -6437,6 +6468,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8bffx1--ohw07a50f03g">contrat</a>
+                      </li>
                     
                     <li>
                       contrat d’apprentissage
@@ -6522,6 +6559,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8bffx1--ohw07a50f03g">contrat</a>
+                      </li>
+                    
                     <li>
                       contrat de mariage
                     </li> 
@@ -6605,6 +6648,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8bffx1--ohw07a50f03g">contrat</a>
+                      </li>
                     
                     <li>
                       contrat de travail
@@ -6785,6 +6834,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8biyg8--qf7axzw7kjv1">convention</a>
+                      </li>
                     
                     <li>
                       convention collective
@@ -7120,7 +7175,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Cv</li></ul>
+                <ul><li>CV</li></ul>
               </div>
             </div>
           
@@ -7246,7 +7301,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Décision juridictionnelle</li><li>Jugement</li><li>Minute juridictionnelle</li><li>Ordonnance juridictionnelle</li><li>Sentence</li></ul>
+                <ul><li>décision juridictionnelle</li><li>jugement</li><li>minute juridictionnelle</li><li>ordonnance juridictionnelle</li><li>sentence</li></ul>
               </div>
             </div>
           
@@ -7327,6 +7382,12 @@
                         <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d90al--tpw5gwi66l5">livre comptable</a>
                       </li>
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d9t6g--15b2xaj9jrcis">pièce comptable</a>
+                      </li>
+                    
                     <li>
                       décision de paiement
                     </li> 
@@ -7344,7 +7405,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Ordonnancement</li></ul>
+                <ul><li>ordonnancement</li></ul>
               </div>
             </div>
           
@@ -7422,7 +7483,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Arbitrage</li></ul>
+                <ul><li>arbitrage</li></ul>
               </div>
             </div>
           
@@ -7511,6 +7572,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8bq6ez-1daxfsx19z37l">déclaration</a>
+                      </li>
+                    
                     <li>
                       déclaration d’utilité publique
                     </li> 
@@ -7596,7 +7663,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Reconnaissances seigneuriales</li><li>Foi et hommage</li><li>Aveu et dénombrement</li></ul>
+                <ul><li>reconnaissances seigneuriales</li><li>foi et hommage</li><li>aveu et dénombrement</li></ul>
               </div>
             </div>
           
@@ -7684,6 +7751,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8bq6ez-1daxfsx19z37l">déclaration</a>
+                      </li>
+                    
                     <li>
                       déclaration fiscale
                     </li> 
@@ -7701,7 +7774,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Déclaration de succession</li><li>Déclaration de revenus</li><li>Déclaration de douane</li></ul>
+                <ul><li>déclaration de succession</li><li>déclaration de revenus</li><li>déclaration de douane</li></ul>
               </div>
             </div>
           
@@ -7769,7 +7842,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Déposition</li><li>Soumission</li></ul>
+                <ul><li>déposition</li><li>soumission</li></ul>
               </div>
             </div>
           
@@ -7857,7 +7930,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Décret d’application</li></ul>
+                <ul><li>décret d’application</li></ul>
               </div>
             </div>
           
@@ -7935,7 +8008,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Direction</li></ul>
+                <ul><li>direction</li></ul>
               </div>
             </div>
           
@@ -8073,7 +8146,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Apport</li></ul>
+                <ul><li>apport</li></ul>
               </div>
             </div>
           
@@ -8210,6 +8283,12 @@
                     
                       <li>
                         <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d90al--tpw5gwi66l5">livre comptable</a>
+                      </li>
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d9t6g--15b2xaj9jrcis">pièce comptable</a>
                       </li>
                     
                     <li>
@@ -8472,7 +8551,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Allocution</li></ul>
+                <ul><li>allocution</li></ul>
               </div>
             </div>
           
@@ -8549,6 +8628,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6">document graphique</a>
+                      </li>
+                    
                     <li>
                       document cartographique
                     </li> 
@@ -8566,7 +8651,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Carte</li></ul>
+                <ul><li>carte</li></ul>
               </div>
             </div>
           
@@ -8650,7 +8735,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Document dessiné</li><li>Document figuré</li><li>Document peint</li><li>Estampe</li><li>Gravure</li></ul>
+                <ul><li>document dessiné</li><li>document figuré</li><li>document peint</li><li>estampe</li><li>gravure</li></ul>
               </div>
             </div>
           
@@ -8786,6 +8871,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6">document graphique</a>
+                      </li>
+                    
                     <li>
                       document photographique
                     </li> 
@@ -8803,7 +8894,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Photographie</li></ul>
+                <ul><li>photographie</li></ul>
               </div>
             </div>
           
@@ -8971,7 +9062,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Don</li></ul>
+                <ul><li>don</li></ul>
               </div>
             </div>
           
@@ -9097,7 +9188,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Livre de raison</li><li>Journal intime</li></ul>
+                <ul><li>livre de raison</li><li>journal intime</li></ul>
               </div>
             </div>
           
@@ -9244,7 +9335,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Sondage d’opinion</li><li>Sondage</li></ul>
+                <ul><li>sondage d’opinion</li><li>sondage</li></ul>
               </div>
             </div>
           
@@ -9483,7 +9574,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Interview</li></ul>
+                <ul><li>interview</li></ul>
               </div>
             </div>
           
@@ -9563,7 +9654,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Étude technique</li><li>Livre blanc</li></ul>
+                <ul><li>étude technique</li><li>livre blanc</li></ul>
               </div>
             </div>
           
@@ -9709,6 +9800,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8cun60--uh9evbx7ph8h">fiche</a>
+                      </li>
+                    
                     <li>
                       fiche nominative
                     </li> 
@@ -9726,7 +9823,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Fiche biographique</li></ul>
+                <ul><li>fiche biographique</li></ul>
               </div>
             </div>
           
@@ -10147,6 +10244,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d0dvz-9ipzdhdzysbw">inventaire</a>
+                      </li>
+                    
                     <li>
                       inventaire après décès
                     </li> 
@@ -10486,7 +10589,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Dissolution</li></ul>
+                <ul><li>dissolution</li></ul>
               </div>
             </div>
           
@@ -10574,6 +10677,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d5qds--1ik00q3toqh7h">liste</a>
+                      </li>
+                    
                     <li>
                       liste d’actes notariés
                     </li> 
@@ -10625,7 +10734,7 @@
                     <ul class="changeNote_sessions">
                     
                       <li>
-                        <div class="changeNote_date">02/05/2022 : <span>Ajouté le [02/05/2022]</span></div>                        
+                        <div class="changeNote_date">02/05/2022 : <span>ajouté le [02/05/2022]</span></div>                        
                       </li>
                     
                     </ul>
@@ -10692,6 +10801,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d5qds--1ik00q3toqh7h">liste</a>
+                      </li>
+                    
                     <li>
                       liste électorale
                     </li> 
@@ -10709,7 +10824,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Fichier électoral</li></ul>
+                <ul><li>fichier électoral</li></ul>
               </div>
             </div>
           
@@ -10796,6 +10911,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d5qds--1ik00q3toqh7h">liste</a>
+                      </li>
+                    
                     <li>
                       liste nominative
                     </li> 
@@ -10871,7 +10992,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Rôle</li><li>Nomenclature</li></ul>
+                <ul><li>rôle</li><li>nomenclature</li></ul>
               </div>
             </div>
           
@@ -10967,7 +11088,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Grand livre</li><li>Journal centralisateur</li><li>Livre journal</li></ul>
+                <ul><li>grand livre</li><li>journal centralisateur</li><li>livre journal</li></ul>
               </div>
             </div>
           
@@ -11109,7 +11230,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Missel</li><li>Bréviaire</li></ul>
+                <ul><li>missel</li><li>bréviaire</li></ul>
               </div>
             </div>
           
@@ -11370,6 +11491,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8evac2--7ly6xmca840y">registre</a>
+                      </li>
+                    
                     <li>
                       main courante
                     </li> 
@@ -11570,6 +11697,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8bffx1--ohw07a50f03g">contrat</a>
+                      </li>
+                    
                     <li>
                       marché
                     </li> 
@@ -11738,6 +11871,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8dyhxi--4gp1f9bymco5">objet</a>
+                      </li>
                     
                     <li>
                       médaille
@@ -11918,7 +12057,7 @@
                     <ul class="changeNote_sessions">
                     
                       <li>
-                        <div class="changeNote_date">02/05/2022 : <span>Ajouté le [02/05/2022]</span></div>                        
+                        <div class="changeNote_date">02/05/2022 : <span>ajouté le [02/05/2022]</span></div>                        
                       </li>
                     
                     </ul>
@@ -12043,6 +12182,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8fbxdh--bci2l9pio3m9">tarif</a>
+                      </li>
+                    
                     <li>
                       mercuriale
                     </li> 
@@ -12127,6 +12272,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89nbho-16u3osxzn3rkw">acte notarié</a>
+                      </li>
+                    
                     <li>
                       minute notariale
                     </li> 
@@ -12181,20 +12332,20 @@
                     <ul class="changeNote_sessions">
                     
                       <li>
-                        <div class="changeNote_date">02/05/2022 : <span>Définition ajoutée le [02/05/2022]</span></div>                        
+                        <div class="changeNote_date">02/05/2022 : <span>définition ajoutée le [02/05/2022]</span></div>                        
                       </li>
                     
                       <li>
-                        <div class="changeNote_date">14/03/2022 : <span>Classe modifiée (changée en documentaryformtype) le
+                        <div class="changeNote_date">14/03/2022 : <span>classe modifiée (changée en DocumentaryFormType) le
                [14/03/2022]</span></div>                        
                       </li>
                     
                       <li>
-                        <div class="changeNote_date">31/07/2024 : <span>Relation vid ajoutée le [31/07/2024]</span></div>                        
+                        <div class="changeNote_date">31/07/2024 : <span>relation VID ajoutée le [31/07/2024]</span></div>                        
                       </li>
                     
                       <li>
-                        <div class="changeNote_date">31/07/2024 : <span>Relation d'association ajoutée le [31/07/2024]</span></div>                        
+                        <div class="changeNote_date">31/07/2024 : <span>relation d'association ajoutée le [31/07/2024]</span></div>                        
                       </li>
                     
                     </ul>
@@ -12288,6 +12439,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8dpmgz--n5vhfdtyuaf6">marque de fabrique</a>
+                      </li>
                     
                     <li>
                       modèle de fabrique
@@ -12432,7 +12589,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Voeu</li></ul>
+                <ul><li>voeu</li></ul>
               </div>
             </div>
           
@@ -12569,7 +12726,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Présentation</li></ul>
+                <ul><li>présentation</li></ul>
               </div>
             </div>
           
@@ -12704,6 +12861,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8dv9j1-1wzteoks8ncyf">note</a>
+                      </li>
+                    
                     <li>
                       note de renseignement
                     </li> 
@@ -12798,6 +12961,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8dv9j1-1wzteoks8ncyf">note</a>
+                      </li>
                     
                     <li>
                       note de service
@@ -12952,7 +13121,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Certificat de vie</li><li>Certificat après décès</li></ul>
+                <ul><li>certificat de vie</li><li>certificat après décès</li></ul>
               </div>
             </div>
           
@@ -13265,6 +13434,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d3a7w-rqrq3hod8rjj">lettre de mission</a>
+                      </li>
+                    
                     <li>
                       ordre de mission
                     </li> 
@@ -13465,6 +13640,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8dyhxi--4gp1f9bymco5">objet</a>
+                      </li>
+                    
                     <li>
                       panneau d’exposition
                     </li> 
@@ -13540,7 +13721,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Succession</li></ul>
+                <ul><li>succession</li></ul>
               </div>
             </div>
           
@@ -13616,6 +13797,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8ax1i4--1i4lwg89chtsh">chanson</a>
+                      </li>
                     
                     <li>
                       partition musicale
@@ -13769,6 +13956,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8e6w58-4be3g9bj3owp">permis</a>
+                      </li>
+                    
                     <li>
                       permis de recherche
                     </li> 
@@ -13854,7 +14047,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Licence</li></ul>
+                <ul><li>licence</li></ul>
               </div>
             </div>
           
@@ -13938,7 +14131,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Adresse politique</li></ul>
+                <ul><li>adresse politique</li></ul>
               </div>
             </div>
           
@@ -14015,6 +14208,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d90al--tpw5gwi66l5">livre comptable</a>
+                      </li>
+                    
                     <li>
                       pièce comptable
                     </li> 
@@ -14032,7 +14231,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Titre de recette</li><li>Quitus</li><li>Pièce justificative de dépenses</li><li>Ordre de reversement</li><li>Ordre de recouvrement</li><li>Ordonnance de paiement</li><li>Mandat de paiement</li><li>Facture</li><li>Décompte définitif</li><li>Mémoire</li></ul>
+                <ul><li>titre de recette</li><li>quitus</li><li>pièce justificative de dépenses</li><li>ordre de reversement</li><li>ordre de recouvrement</li><li>ordonnance de paiement</li><li>mandat de paiement</li><li>facture</li><li>décompte définitif</li><li>mémoire</li></ul>
               </div>
             </div>
           
@@ -14249,6 +14448,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6">document graphique</a>
+                      </li>
+                    
                     <li>
                       plan d’architecture
                     </li> 
@@ -14324,7 +14529,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Plan d’alignement</li></ul>
+                <ul><li>plan d’alignement</li></ul>
               </div>
             </div>
           
@@ -14417,6 +14622,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8eb08g--1106d226t24ck">plan d’urbanisme</a>
+                      </li>
+                    
                     <li>
                       plan local d’urbanisme
                     </li> 
@@ -14434,7 +14645,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Plu</li><li>Pos</li><li>Plan d’occupation des sols</li></ul>
+                <ul><li>PLU</li><li>POS</li><li>plan d’occupation des sols</li></ul>
               </div>
             </div>
           
@@ -14511,6 +14722,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8ff7xk-z0gyte45gv23">terrier</a>
+                      </li>
+                    
                     <li>
                       plan terrier
                     </li> 
@@ -14528,7 +14745,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Atlas terrier</li></ul>
+                <ul><li>atlas terrier</li></ul>
               </div>
             </div>
           
@@ -14604,6 +14821,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d5b8d3ez8c-mlmlps3dtnb6">document graphique</a>
+                      </li>
                     
                     <li>
                       plan
@@ -14689,6 +14912,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8edh1n--6pmbenfru38u">procès-verbal</a>
+                      </li>
+                    
                     <li>
                       procès-verbal d’élection
                     </li> 
@@ -14773,6 +15002,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8edh1n--6pmbenfru38u">procès-verbal</a>
+                      </li>
+                    
                     <li>
                       procès-verbal de séance
                     </li> 
@@ -14790,7 +15025,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Procès-verbal de réunion</li></ul>
+                <ul><li>procès-verbal de réunion</li></ul>
               </div>
             </div>
           
@@ -14936,7 +15171,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Pouvoir</li><li>Commission</li><li>Délégation</li></ul>
+                <ul><li>pouvoir</li><li>commission</li><li>délégation</li></ul>
               </div>
             </div>
           
@@ -15129,6 +15364,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8c7kty--1jayoglt0nbys">document préparatoire</a>
+                      </li>
+                    
                     <li>
                       projet de loi
                     </li> 
@@ -15283,6 +15524,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8c7kty--1jayoglt0nbys">document préparatoire</a>
+                      </li>
+                    
                     <li>
                       proposition de loi
                     </li> 
@@ -15379,6 +15626,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89nbho-16u3osxzn3rkw">acte notarié</a>
+                      </li>
+                    
                     <li>
                       protêt
                     </li> 
@@ -15396,7 +15649,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Protestation</li><li>Protest</li></ul>
+                <ul><li>protestation</li><li>protest</li></ul>
               </div>
             </div>
           
@@ -15595,7 +15848,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Question orale</li><li>Question écrite</li></ul>
+                <ul><li>question orale</li><li>question écrite</li></ul>
               </div>
             </div>
           
@@ -15682,6 +15935,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8elosk-otgow1r6uhwc">questionnaire</a>
+                      </li>
+                    
                     <li>
                       questionnaire d’enquête
                     </li> 
@@ -15699,7 +15958,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Feuille de ménage</li><li>Document de base</li></ul>
+                <ul><li>feuille de ménage</li><li>document de base</li></ul>
               </div>
             </div>
           
@@ -15854,6 +16113,12 @@
                         <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d90al--tpw5gwi66l5">livre comptable</a>
                       </li>
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d9t6g--15b2xaj9jrcis">pièce comptable</a>
+                      </li>
+                    
                     <li>
                       quittance
                     </li> 
@@ -15938,6 +16203,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8enb7k-1qnyt9apv8kp">rapport</a>
+                      </li>
+                    
                     <li>
                       rapport d’activité
                     </li> 
@@ -15955,7 +16226,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Bilan d’activité</li></ul>
+                <ul><li>bilan d’activité</li></ul>
               </div>
             </div>
           
@@ -16031,6 +16302,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8enb7k-1qnyt9apv8kp">rapport</a>
+                      </li>
                     
                     <li>
                       rapport d’expertise
@@ -16116,6 +16393,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8enb7k-1qnyt9apv8kp">rapport</a>
+                      </li>
+                    
                     <li>
                       rapport d’inspection
                     </li> 
@@ -16200,6 +16483,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8enb7k-1qnyt9apv8kp">rapport</a>
+                      </li>
+                    
                     <li>
                       rapport de mission
                     </li> 
@@ -16283,6 +16572,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8enb7k-1qnyt9apv8kp">rapport</a>
+                      </li>
                     
                     <li>
                       rapport de préfet
@@ -16404,6 +16699,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8enb7k-1qnyt9apv8kp">rapport</a>
+                      </li>
+                    
                     <li>
                       rapport de stage
                     </li> 
@@ -16488,6 +16789,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8enb7k-1qnyt9apv8kp">rapport</a>
+                      </li>
+                    
                     <li>
                       rapport des forces de l’ordre
                     </li> 
@@ -16505,7 +16812,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Rapport de police</li><li>Rapport de gendarmerie</li></ul>
+                <ul><li>rapport de police</li><li>rapport de gendarmerie</li></ul>
               </div>
             </div>
           
@@ -16671,7 +16978,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Consentement</li></ul>
+                <ul><li>consentement</li></ul>
               </div>
             </div>
           
@@ -16877,6 +17184,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8evac2--7ly6xmca840y">registre</a>
+                      </li>
+                    
                     <li>
                       registre d’audience
                     </li> 
@@ -16894,7 +17207,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Plumitif d’audience</li></ul>
+                <ul><li>plumitif d’audience</li></ul>
               </div>
             </div>
           
@@ -16973,6 +17286,12 @@
                     
                       <li>
                         <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8evac2--7ly6xmca840y">registre</a>
+                      </li>
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8exrkr-g90l7b20gkft">registre paroissial</a>
                       </li>
                     
                     <li>
@@ -17058,6 +17377,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8evac2--7ly6xmca840y">registre</a>
+                      </li>
                     
                     <li>
                       registre paroissial
@@ -17167,6 +17492,12 @@
                         <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8evac2--7ly6xmca840y">registre</a>
                       </li>
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8exrkr-g90l7b20gkft">registre paroissial</a>
+                      </li>
+                    
                     <li>
                       registre protestant
                     </li> 
@@ -17184,7 +17515,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Registre d’état civil protestant</li></ul>
+                <ul><li>registre d’état civil protestant</li></ul>
               </div>
             </div>
           
@@ -17252,7 +17583,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Registre du courrier</li></ul>
+                <ul><li>registre du courrier</li></ul>
               </div>
             </div>
           
@@ -17518,7 +17849,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Résignation</li><li>Retrait</li><li>Désaveu</li><li>Abandon</li><li>Délaissement</li><li>Abstention</li><li>Annulation</li><li>Déguerpissement</li><li>Désistement</li></ul>
+                <ul><li>résignation</li><li>retrait</li><li>désaveu</li><li>abandon</li><li>délaissement</li><li>abstention</li><li>annulation</li><li>déguerpissement</li><li>désistement</li></ul>
               </div>
             </div>
           
@@ -17594,6 +17925,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8f2pue--m9a3gl0xq4zp">répertoire</a>
+                      </li>
                     
                     <li>
                       répertoire d’officier public ministériel
@@ -17699,6 +18036,12 @@
                         <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8f2pue--m9a3gl0xq4zp">répertoire</a>
                       </li>
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8f3jla--to36ja96m31q">répertoire d’officier public ministériel</a>
+                      </li>
+                    
                     <li>
                       répertoire de notaire
                     </li> 
@@ -17758,7 +18101,7 @@
                     <ul class="changeNote_sessions">
                     
                       <li>
-                        <div class="changeNote_date">02/05/2022 : <span>Ajouté le [02/05/2022]</span></div>                        
+                        <div class="changeNote_date">02/05/2022 : <span>ajouté le [02/05/2022]</span></div>                        
                       </li>
                     
                     </ul>
@@ -17899,6 +18242,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8d5qds--1ik00q3toqh7h">liste</a>
+                      </li>
+                    
                     <li>
                       rôle d’équipage
                     </li> 
@@ -17982,6 +18331,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8dyhxi--4gp1f9bymco5">objet</a>
+                      </li>
                     
                     <li>
                       sceau
@@ -18116,7 +18471,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Recensement</li><li>Tableau statistique</li></ul>
+                <ul><li>recensement</li><li>tableau statistique</li></ul>
               </div>
             </div>
           
@@ -18203,6 +18558,12 @@
                     
                     
 
+                    
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd8f8hn6-1cv55keqf50vh">statuts</a>
+                      </li>
                     
                     <li>
                       statuts d’association
@@ -18663,7 +19024,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Censier</li></ul>
+                <ul><li>censier</li></ul>
               </div>
             </div>
           
@@ -18747,7 +19108,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Codicille</li></ul>
+                <ul><li>codicille</li></ul>
               </div>
             </div>
           
@@ -18815,7 +19176,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Mémoire universitaire</li></ul>
+                <ul><li>mémoire universitaire</li></ul>
               </div>
             </div>
           
@@ -18883,7 +19244,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Timbre-poste</li></ul>
+                <ul><li>timbre-poste</li></ul>
               </div>
             </div>
           
@@ -18970,6 +19331,12 @@
                     
 
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89lgo1-7iazj0zqu03g">acte de vente</a>
+                      </li>
+                    
                     <li>
                       titre de propriété
                     </li> 
@@ -19045,7 +19412,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Carte de séjour</li></ul>
+                <ul><li>carte de séjour</li></ul>
               </div>
             </div>
           
@@ -19310,6 +19677,12 @@
                         <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89amxp--lr0xlor5wm53">accord</a>
                       </li>
                     
+
+                    
+                      <li>
+                        <a href="https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/FRAN_RI_001-d3nd89fuos-1vonceo73v7dz">accord international</a>
+                      </li>
+                    
                     <li>
                       traité
                     </li> 
@@ -19327,7 +19700,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Traité diplomatique</li><li>Pacte international</li></ul>
+                <ul><li>traité diplomatique</li><li>pacte international</li></ul>
               </div>
             </div>
           
@@ -19405,7 +19778,7 @@
                 <h6>Synonyms</h6>
               </div>
               <div class="col">
-                <ul><li>Cession de droits</li><li>Transfert</li><li>Transport de rente</li></ul>
+                <ul><li>cession de droits</li><li>transfert</li><li>transport de rente</li></ul>
               </div>
             </div>
           
@@ -19616,6 +19989,9 @@
         d._children = d.children;
       });
 
+
+      
+
       update(null, root);
 
       svg.node();
@@ -19634,11 +20010,33 @@
             </section>
         </div>
         <hr>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up"></i></a>
+        <!-- footer --> 
+        <footer class="footer">
+            last updated on 2/24/2025
+            <br />
+            <br />
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        
+        <!-- anchors -->
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+        <!-- d3js -->
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <script src="../../../assets/js/garance.js"></script>
+
+          <script>
+            // generate anchors on each h5 title
+            anchors.options.placement = 'left';
+            anchors.options.icon = '#';
+            anchors.add('h5');
+          </script>
     </body>
-    <!-- footer --> 
-    <footer class="footer">
-        last updated on 2/21/2025
-        <br />
-        <br />
-    </footer>
+
+
+    
 </html>
