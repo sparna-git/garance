@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy",
+    "frame": "node utils/frame.js /home/thomas/sparna/00-Clients/ArchivesNationales/15-Referentiels/Referentiels-small"
   },
   "keywords": [],
   "author": "Sparna",
