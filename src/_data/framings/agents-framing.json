@@ -15,17 +15,15 @@
     "dcterms": "http://purl.org/dc/terms/",
     "html": "http://www.w3.org/1999/xhtml",
     "an": "http://data.archives-nationales.culture.gouv.fr/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
 
-    "rico:Person": "rico:Person",
-    "rico:Agent": "rico:Agent",
-    "rico:Place": "rico:Place",
-    "rico:FamilyRelation": "rico:FamilyRelation",
-    "rico:MembershipRelation": "rico:MembershipRelation",
-    "rico:AgentToAgentRelation": "rico:AgentToAgentRelation",
-    "rico:AgentTemporalRelation": "rico:AgentTemporalRelation",
-    "rico:AgentOriginationRelation": "rico:AgentOriginationRelation",
-    "rico:AgentHierarchicalRelation": "rico:AgentHierarchicalRelation",
-    "label": {
+
+    "owl:sameAs": {
+      "@id": "owl:sameAs",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "rdfs:label": {
       "@id": "rdfs:label",
       "@container": "@set"
     },
@@ -33,9 +31,11 @@
       "@id": "rico:isOrWasDescribedBy",
       "@container": "@set"
     },
-    "rico:beginningDate": "rico:beginningDate",
-    "rico:birthDate": "rico:birthDate",
-    "rico:deathDate": "rico:deathDate",
+    "rico:isOrWasRegulatedBy": {
+      "@id": "rico:isOrWasRegulatedBy",
+      "@container": "@set",
+      "@type": "@id"
+    },
     "rico:history": {
       "@id": "rico:history",
       "@container": "@set"
@@ -52,15 +52,36 @@
       "@id": "rico:agentIsTargetOfPerformanceRelation",
       "@container": "@set"
     },
-    "prefLabel": {
+    "skos:prefLabel": {
       "@id": "skos:prefLabel",
       "@container": "@set"
     },
-    "altLabel": {
+    "skos:altLabel": {
       "@id": "skos:altLabel",
       "@container": "@set"
     },
-    "rico:AgentName": "rico:AgentName"
+
+    "label_fr": {
+      "@id": "rdfs:label",
+      "@container": "@set",
+      "@language": "fr"
+    },
+    "prefLabel_fr": {
+      "@id": "skos:prefLabel",
+      "@container": "@set",
+      "@language": "fr"
+    },
+    "usedFromDate_date": {
+      "@id": "rico:usedFromDate",
+      "@container": "@set",
+      "@type": "xsd:date"
+    },
+    "usedToDate_date": {
+      "@id": "rico:usedToDate",
+      "@container": "@set",
+      "@type": "xsd:date"
+    }
+    
   },
 
   "@explicit": true,
@@ -68,28 +89,47 @@
     "rico:Agent"
   ],
   "title": {
-    "@explicit": true
+     "@omitDefault": true 
   },
-  "label": {},
-  "rico:history": {},
-  "rico:beginningDate": {},
-  "rico:birthDate": {},
-  "rico:deathDate": {},
-  "prefLabel": {},
-  "rico:hasOrHadAgentName": {
-    "@explicit": true
+  "label_fr": { "@omitDefault": true },
+  "rico:history": { "@omitDefault": true },
+  "rico:beginningDate": { "@omitDefault": true },
+  "rico:endDate": { "@omitDefault": true },
+  "rico:birthDate": { "@omitDefault": true },
+  "rico:deathDate": { "@omitDefault": true },  
+  "rico:hasOrHadAgentName": { 
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:isOrWasRegulatedBy": { "@omitDefault": true },
+    "rico:textualValue": { "@omitDefault": true },
+    "rico:type": { "@omitDefault": true },
+    "usedFromDate_date": { "@omitDefault": true },
+    "usedToDate_date": { "@omitDefault": true }
   },
   "rico:agentIsTargetOfAgentOriginationRelation": {
+    "@omitDefault": true,
     "@explicit": true
   },
   "rico:agentIsTargetOfPerformanceRelation": {
+    "@omitDefault": true,
     "@explicit": true,
     "rico:performanceRelationHasSource": {
       "@explicit": true,
       "rico:hasActivityType": {
         "@explicit": true,
-        "skos:prefLabel": {}
+        "prefLabel_fr": {}
       }
     }
-  }
+  },
+  "rico:isOrWasMemberOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "label_fr": { "@omitDefault": true }
+  },
+  "rico:hasOrHadSubdivision": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "label_fr": { "@omitDefault": true }
+  },
+  "owl:sameAs": { "@omitDefault": true }  
 }
