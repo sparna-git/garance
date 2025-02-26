@@ -5,7 +5,8 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "frame": "node utils/frame.js /home/thomas/sparna/00-Clients/ArchivesNationales/15-Referentiels/Referentiels-small"
+    "generateJSON": "node ./utils/readJsonLdFromDirectory.js C:\\Users\\thoma\\Downloads\\Referentiels-RiC-O_1.0.2_version\\Referentiels-RiC-O_1.0.2_version_small src/_data/garance.json",
+    "frame": "node ./utils/frame.js ./src/_data/garance.json"
   },
   "keywords": [],
   "author": "Sparna",
@@ -17,7 +18,7 @@
     "eleventy-plugin-i18n": "^0.1.3",
     "jsonld": "^8.3.2",
     "nunjucks": "^3.2.4",
-    "rdf-parse": "^4.0.0",
+    "rdf-parse": "^4.0.0",  
     "rdf-serialize": "^4.0.1",
     "streamify-string": "^1.0.1"
   }
