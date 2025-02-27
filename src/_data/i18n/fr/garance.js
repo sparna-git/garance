@@ -8,10 +8,11 @@ module.exports = {
     "These concepts have all the type": "Ces concepts ont tous le type",
     agents: "Agents",
     lieux: "Places",
-    download: "Télécharger les données",
 
     // properties, classes, etc
+    "dcat:distribution": "Télécharger les données",
     "skos:altLabel": "Synonymes",
+    "rdfs:seeAlso": "Resource",
     "skos:definition": "Définitions",
     "skos:narrower": "Concepts spécifiques",
     "skos:scopeNote": "Notes",

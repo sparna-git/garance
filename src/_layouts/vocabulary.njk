@@ -11,25 +11,25 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
 {% set sortInverseInScheme = vocabulary.inverse_inScheme | jsonSort("prefLabel") %}
 
 <main class="section_body" id="vocabulary">
-  <!-- Header -->
+  {# Header #}
   <div class="row">
     <div class="col-md">
         <h1 class="ConceptScheme-title">{{ vocabulary.title | lang('fr') }}</h1>
     </div>
-    <!-- URI -->
+    {# URI #}
     <p class="concept-URI">
         <code >
             <a href="{{ jsonScheme | getURL(vocabulary.id) }}">{{ jsonScheme | getURL(vocabulary.id) }}</a>
         </code>          
     </p>
-    <!-- Description -->
-    <p>{{ vocabulary.description | lang('fr') }}</p>
+    {# Description #}
+    <p>{{ vocabulary.description }}</p>
    
-    <!-- Creator -->
+    {# Creator #}
     {% if vocabulary.creator %}
     <div class="row">
       <div class="col-2">
-        {% set title = "dcterms:creator" | i18n(locale) %}
+        {% set title = "dcterms:creator" | i18n %}
         <h6><span>{{ title }}</span></h6>
       </div>
       <div class="col-6">
@@ -48,11 +48,11 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
     </div>  
     {% endif %}
     
-    <!-- dcterms:modified -->
+    {# dcterms:modified #}
     {% if vocabulary.datemodified %}
       <div class="row">
         <div class="col-2">
-          {% set title = "dcterms:modified" | i18n(locale) %}
+          {% set title = "dcterms:modified" | i18n %}
           <h6><span>{{ title }}</span></h6>
         </div>
         <div class="col-6">
@@ -61,11 +61,11 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
       </div>
     {% endif %}
 
-    <!-- dc:coverage -->
+    {# dc:coverage #}
     {% if vocabulary.coverage %}
       <div class="row">
         <div class="col-2">
-          {% set title = "dc:coverage" | i18n(locale) %}
+          {% set title = "dc:coverage" | i18n %}
           <h6><span>{{ title }}</span></h6>
         </div>
         <div class="col-6">
@@ -74,11 +74,11 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
       </div>  
     {% endif %}
 
-    <!-- dc:rights -->
+    {# dc:rights #}
     {% if vocabulary.rights %}
       <div class="row">
         <div class="col-2">
-          {% set title = "dc:rights" | i18n(locale) %}
+          {% set title = "dc:rights" | i18n %}
           <h6><span>{{ title }}</span></h6>
         </div>
         <div class="col-10">
@@ -87,11 +87,11 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
       </div>
     {% endif %}
 
-    <!-- skos:historyNote -->
+    {# skos:historyNote #}
     {% if vocabulary.historyNote %}
       <div class="row">
         <div class="col-2">
-          {% set title = "skos:historyNote" | i18n(locale) %}
+          {% set title = "skos:historyNote" | i18n %}
           <h6><span>{{ title }}</span></h6>
         </div>
         <div class="col-10">
@@ -101,34 +101,45 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
       </div>
     {% endif %}
 
-    <!-- Resource -->
+    {# Resource #}
+    {% if vocabulary.distribution %}
     <div class="row botton_marging">
         <div class="col-2">
-          <h6><span>{{ "download" | i18n }}</span></h6>
+          <h6><span>{{ "dcat:distribution" | i18n }}</span></h6>
         </div>
         <div class="col-10">
-          <a href="https://github.com/ArchivesNationalesFR/Referentiels/tree/version_2/concepts/rdf/">
-            <img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="TTL">
+          {% for dist in vocabulary.distribution %}
+          <span>
+          <a href="{{ dist['dcat:downloadURL'].id }}">
+            {% set mediaType = dist["dcat:mediaType"].id | string %}
+            {% if mediaType == "http://www.iana.org/assignments/media-types/text/csv" %}
+            <img src="https://img.shields.io/badge/Format-CSV-blue.png" alt="CSV">
+            {% endif %}
+            {% if mediaType == "https://www.iana.org/assignments/media-types/application/rdf+xml" %}
+            <img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="RDF/XML">
+            {% endif %}
           </a>
+          </span>
+          {% endfor %}
         </div>
     </div>
+    {% endif %}
 
-    <!-- Additionnal class -->
+    {# Additionnal class #}
     {% if sortInverseInScheme %}
       {% for conceptType in sortInverseInScheme[0].type %}
         {% if conceptType != "Concept" %}
           <div class="alert alert-secondary" role="alert">
-              <em>{{ "These concepts have all the type" | i18n(locale) }} “<b>{{ conceptType | i18n(locale) }}</b>”.</em>
+              <em>{{ "These concepts have all the type" | i18n }} “<b>{{ conceptType | i18n }}</b>”.</em>
           </div>
         {% endif %}
       {% endfor %}
-    {% endif %}
-    
+    {% endif %}    
   </div>
 
   <hr>
 
-  <!-- Tree -->
+  {# Tree #}
   {% set flagPrintTree =  vocabulary.inverse_inScheme | hasBroader %}
   {% if flagPrintTree %}
   <div class="row">
@@ -138,35 +149,45 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
   </div>
   {% endif %}
   
-  <!-- Liste de concepts -->
+  {# Liste de concepts #}
   
   {% for concepts in sortInverseInScheme %}
   <div class="row"> 
       <div class="col">
         {% set conceptId = concepts | json %}
-        <!-- Title -->
+        {# Title #}
         {% if concepts.notation %}
-          <h5 class="concept-title" id="{{ concepts.notation }}"><small>{{ concepts.notation }} - </small>{{ concepts.prefLabel | lang('fr') }}</h5>
+          <h5 class="concept-title" id="{{ concepts.notation }}"><small>{{ concepts.notation }} - </small>{{ concepts.prefLabel | lang('fr') }}
+          {# if Status = iso-thes:status = "candidat" #}
+          {% if concepts.isoThesStatus %}
+            <i class="fa-solid fa-diamond-exclamation"></i>          
+          {% endif %}
+          </h5>
         {% else %}
-          <h5 class="concept-title" id="{{ concepts.id | localName }}">{{ concepts.prefLabel | lang('fr') }}</h5>
-        {% endif %}
+          <h5 class="concept-title" id="{{ concepts.id | localName }}">{{ concepts.prefLabel | lang('fr') }}
+          {# if Status = iso-thes:status = "candidat" #}
+          {% if concepts.isoThesStatus %}
+            <i class="fa-solid fa-diamond-exclamation"></i>          
+          {% endif %}
+          </h5>
+        {% endif %}        
         
-        <!-- URI -->
+        {# URI #}
         <p class="concept-URI">
           <code>
             <a href="{{ jsonScheme | getURL(concepts.id) }}">{{ jsonScheme | getURL(concepts.id) }}</a>
           </code>
           <br /> 
-          <!-- Sparql Query -->
+          {# Sparql Query #}
         </p>
 
         <div class="container">
 
-          <!-- breadcrumb -->
+          {# breadcrumb #}
           {% if concepts.broader %}
             <div class="row">
               <div class="col-1">
-                {% set title = "skos:broader" | i18n(locale) %}
+                {% set title = "skos:broader" | i18n %}
                 <h6>{{ title }}</h6>
               </div>
               <div class="col">
@@ -209,11 +230,11 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
-          <!-- Synonyms -->
+          {# Synonyms #}
           {% if concepts.altLabel %}
             <div class="row">
               <div class="col-1">
-                {% set title = "skos:altLabel" | i18n(locale) %}
+                {% set title = "skos:altLabel" | i18n %}
                 <h6>{{ title }}</h6>
               </div>
               <div class="col">
@@ -226,11 +247,11 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
-          <!-- skos:definition -->
+          {# skos:definition #}
           {% if concepts.definition %}
             <div class="row">
               <div class="col-1">
-                {% set title = "skos:definition" | i18n(locale) %}
+                {% set title = "skos:definition" | i18n %}
                 <h6>{{ title }}</h6>                
               </div>
               <div class="col">
@@ -243,7 +264,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
-          <!-- Translation -->
+          {# Translation #}
           {% if concepts.prefLabel.length >= 2 %}
             <div class="row">
               <div class="col-1">
@@ -261,16 +282,16 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
-          <!-- scopeNote -->
-          {% if concepts.scopenote.length > 0 %}
+          {# scopeNote #}
+          {% if concepts.scopeNote.length > 0 %}
             <div class="row">
               <div class="col-1">
-                {% set title = "skos:scopeNote" | i18n(locale) %}
+                {% set title = "skos:scopeNote" | i18n %}
                 <h6>{{ title }}</h6>                
               </div>
               <div class="col">
                 <ul>
-                  {%- for element in concepts.scopenote -%}
+                  {%- for element in concepts.scopeNote -%}
                     <li>{{ element["@value"] }}</li>                  
                   {%- endfor -%}
                 </ul>
@@ -278,7 +299,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
-          <!-- skos:example -->
+          {# skos:example #}
           {% if concepts.example %}
             <div class="row">
               <div class="col-1">
@@ -291,16 +312,16 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
           
-          <!-- skos:changeNote -->
+          {# skos:changeNote #}
           {% if concepts.changenote %}
             <div class="row">
               <div class="col-1">
-                {% set title = "skos:changeNote" | i18n(locale) %}
+                {% set title = "skos:changeNote" | i18n %}
                 <h6>{{ title }}</h6>                
               </div>
               <div class="col">
                 {% set cnotes = concepts.changenote | timeline("fr") %}
-                <!-- timeline -->
+                {# timeline #}
                 <div class="changeNote_container">
                   <div class="changeNote_wrapper">
                     <ul class="changeNote_sessions">
@@ -316,11 +337,11 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
-          <!-- skos:exactMatch -->
+          {# skos:exactMatch #}
           {% if concepts.exactMatch %}
             <div class="row">
               <div class="col-1">
-                {% set title = "skos:exactMatch" | i18n(locale) %}
+                {% set title = "skos:exactMatch" | i18n %}
                 <h6>{{ title }}</h6>
               </div>
               <div class="col">  
@@ -351,11 +372,11 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
-          <!-- skos:closeMatch -->
+          {# skos:closeMatch #}
           {% if concepts.closeMatch %}
             <div class="row">
               <div class="col-1">
-                {% set title = "skos:closeMatch" | i18n(locale) %}
+                {% set title = "skos:closeMatch" | i18n %}
                 <h6>{{ title }}</h6>
               </div>
               <div class="col">  
@@ -368,11 +389,28 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
-          <!-- skos:relatedMatch -->
+          {# skos:related #}
           {% if concepts.relatedMatch %}
             <div class="row">
               <div class="col-1">
-                {% set title = "skos:relatedMatch" | i18n(locale) %}
+                {% set title = "skos:relatedMatch" | i18n %}
+                <h6>{{ title }}</h6>
+              </div>    
+              <div class="col">  
+                <ul>  
+                  {% for a in concepts.relatedMatch %}
+                    <li><a href="{{ a.id }}">{{ a.id }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+          
+          {# skos:relatedMatch #}
+          {% if concepts.relatedMatch %}
+            <div class="row">
+              <div class="col-1">
+                {% set title = "skos:relatedMatch" | i18n %}
                 <h6>{{ title }}</h6>
               </div>    
               <div class="col">  
@@ -385,6 +423,38 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
+          {# skos:narrowMatch #}
+          {% if concepts.narrowMatch.length > 0 %}
+            <div class="row">
+              <div class="col-1">
+                {% set title = "skos:narrowMatch" | i18n %}
+                <h6>{{ title }}</h6>
+              </div>    
+              <div class="col">  
+                <ul>  
+                  {% for nm in concepts.narrowMatch %}
+                    <li><a href="{{ nm.id }}">{{ nm.id }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if concepts.seeAlso.length > 0 %}
+            <div class="row">
+              <div class="col-1">
+                {% set title = "rdfs:seeAlso" | i18n %}
+                <h6>{{ title }}</h6>
+              </div>    
+              <div class="col">  
+                <ul>  
+                  {% for sa in concepts.seeAlso %}
+                    <li><a href="{{ sa.id }}">{{ sa.id }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
 
         </div>  
 
@@ -394,7 +464,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
   {% endfor %}
 </main>
 
-<!-- anchor -->
+{# anchor #}
 <script>
   // generate anchors on each h5 title
   anchors.options.placement = 'left';
@@ -402,7 +472,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
   anchors.add('h5');
 </script>
 
-<!-- d3js -->
+{# d3js #}
 <script type="text/javascript">
   // recuperer tous les concepts
   const data = {{ vocabulary.inverse_inScheme | json }}
@@ -601,12 +671,12 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
   
 </script>
 
-<!-- breadcrumb -->
+{# breadcrumb #}
 <script>
   
 </script>
 
-<!-- timeline -->
+{# timeline #}
 <script type="text/javascript">
 
 </script>

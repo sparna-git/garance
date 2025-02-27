@@ -15,6 +15,8 @@
     "dcterms": "http://purl.org/dc/terms/",
     "html": "http://www.w3.org/1999/xhtml",
     "an": "http://data.archives-nationales.culture.gouv.fr/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "iso-thes":"http://purl.org/iso25964/skos-thes#",
 
     "ConceptScheme": "skos:ConceptScheme",
     "Concept": "skos:Concept",
@@ -58,6 +60,10 @@
       "@id": "skos:definition",
       "@container": "@set"
     },
+    "narrowMatch" : {
+      "@id" : "skos:narrowMatch",
+      "@container" : "@set"
+    },
     "exactMatch": {
       "@id": "skos:exactMatch",
       "@container": "@set"
@@ -66,6 +72,10 @@
       "@id": "skos:closeMatch",
       "@container": "@set"
     },
+    "skos_related" : {
+      "@id" : "skos:related",
+      "@container" : "@set"
+    },
     "relatedMatch": {
       "@id": "skos:relatedMatch",
       "@container": "@set"
@@ -73,7 +83,7 @@
     "coverage": "dc:coverage",
     "rights": "dc:rights",
     "historyNote": "skos:historyNote",
-    "scopenote": {
+    "note": {
       "@id": "skos:note",
       "@container": "@set"
     },
@@ -81,7 +91,20 @@
     "changenote": {
       "@id": "skos:changeNote",
       "@container": "@set"
-    }
+    },
+    "distribution": {
+      "@id": "dcat:distribution",
+      "@container": "@set"
+    },
+    "seeAlso": {
+      "@id": "rdfs:seeAlso",
+      "@container": "@set"
+    },
+    "scopeNote": {
+      "@id": "skos:scopeNote",
+      "@container": "@set"
+    },
+    "isoThesStatus" : "iso-thes:status"
   },
 
   "@explicit": true,
@@ -100,6 +123,7 @@
     "@omitDefault": true
   },
   "notation": {},
+  "distribution": {},
   "datemodified": {},
   "creator": {},
   "coverage": {},
@@ -109,15 +133,23 @@
     "@explicit": true,
     "prefLabel": {},
     "notation": {},
+    "isoThesStatus" : {
+      "@explicit": true
+    },
     "altLabel": {
       "@omitDefault": true
     },
     "definition": {
       "@omitDefault": true
     },
-    "scopenote": {},
+    "note": {},
+    "scopeNote": {},
+    "seeAlso": {},
     "example": {},
     "changenote": {
+      "@omitDefault": true
+    },
+    "narrowMatch" : {
       "@omitDefault": true
     },
     "exactMatch": {
