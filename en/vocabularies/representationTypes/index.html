@@ -37,6 +37,8 @@
                                 
                                 <ul class="dropdown-menu">  
                                 
+                                    <li><a class="dropdown-item" href="../languages">Liste des langues des documents et des agents</a></li>
+                                
                                     <li><a class="dropdown-item" href="../identifierTypes">Liste des types d’identifiants
                         des entités</a></li>
                                 
@@ -45,9 +47,6 @@
                                     <li><a class="dropdown-item" href="../recordStates">Thésaurus des états des documents</a></li>
                                 
                                     <li><a class="dropdown-item" href="../activityTypes">Thésaurus des fonctions des collectivités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../occupationTypes">Thésaurus des fonctions, métiers et professions
-                        des personnes</a></li>
                                 
                                     <li><a class="dropdown-item" href="../things">Thésaurus des mots-matières</a></li>
                                 
@@ -216,23 +215,19 @@
         <div class="col-10">
           
           <span>
-          <a href="https://raw.githubusercontent.com/ArchivesNationalesFR/Referentiels/refs/heads/main/concepts/rdf/FRAN_RI_002_representationTypes.rdf">
             
             
             
-            <img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="RDF/XML">
+              <a href="https://raw.githubusercontent.com/ArchivesNationalesFR/Referentiels/refs/heads/main/concepts/rdf/FRAN_RI_002_representationTypes.rdf"><img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="RDF/XML"></a>
             
-          </a>
           </span>
           
           <span>
-          <a href="https://raw.githubusercontent.com/ArchivesNationalesFR/Referentiels/refs/heads/main/concepts/csv/FRAN_RI_002_representationTypes.csv">
             
             
-            <img src="https://img.shields.io/badge/Format-CSV-blue.png" alt="CSV">
+              <a href="https://raw.githubusercontent.com/ArchivesNationalesFR/Referentiels/refs/heads/main/concepts/csv/FRAN_RI_002_representationTypes.csv"><img src="https://img.shields.io/badge/Format-CSV-blue.png" alt="CSV"></a>
             
             
-          </a>
           </span>
           
         </div>
@@ -421,14 +416,9 @@
 </main>
 
 
-<script>
-  // generate anchors on each h5 title
-  anchors.options.placement = 'left';
-  anchors.options.icon = '#';
-  anchors.add('h5');
-</script>
 
-
+<!-- d3js -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script type="text/javascript">
   // recuperer tous les concepts
   const data = [{"id":"https://rdf.archives-nationales.culture.gouv.fr/representationType/FRAN_RI_002-d3nd9xpopj-ckdrv6ljeqeg","type":["Concept","rico:RepresentationType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"document audiovisuel"}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"archives audio-visuelles"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/representationType/FRAN_RI_002-d3nd9y3c6o-iu0j3xsmoisx","type":["Concept","rico:RepresentationType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"archives informatiques"},{"@language":"fr","@value":"document numérique"}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"archives électroniques"}],"scopeNote":[]}]
