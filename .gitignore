@@ -6,3 +6,7 @@ node_modules/
 dist/
 
 src/_data/concepts/
+
+src/_data/garance.json
+
+_json/

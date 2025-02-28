@@ -5,8 +5,8 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "read": "node ./utils/read.js",
-    "frame": "node --max_old_space_size=8192 ./utils/frame.js ./src/_data/garance.json"
+    "read": "mkdir _json && node ./utils/read.js",
+    "frame": "node --max_old_space_size=8192 ./utils/frame.js"
   },
   "keywords": [],
   "author": "Sparna",

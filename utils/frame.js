@@ -25,16 +25,16 @@ let framed = async function (rawJsonLd, framingSpecPath, outputFile) {
 
 
 (async () => {
-  console.log("Reading " + process.argv[2] + " ...");
+  console.log("Reading " + "./_json/garance.json" + " ...");
   // Dataset
   
   console.log("Now framing vocabularies...");
-  await framed(process.argv[2],"src/_data/framings/vocabularies-framing.json","src/_data/vocabularies.json");
+  await framed("./_json/garance.json","src/_data/framings/vocabularies-framing.json","src/_data/vocabularies.json");
 
   console.log("Now framing index...");
-  await framed(process.argv[2],"src/_data/framings/index-framing.json","src/_data/index.json");
+  await framed("./_json/garance.json","src/_data/framings/index-framing.json","src/_data/index.json");
   /*
   console.log("Now framing agents...");
-  await framed(process.argv[2],"src/_data/framings/agents-framing.json","src/_data/agents.json");
+  await framed("./_json/garance.json","src/_data/framings/agents-framing.json","src/_data/agents.json");
   */
 })()
