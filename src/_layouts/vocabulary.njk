@@ -23,7 +23,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
         </code>          
     </p>
     {# Description #}
-    <p>{{ vocabulary.description }}</p>
+    <p>{{ vocabulary.description[0]["@value"] }}</p>
    
     {# Creator #}
     {% if vocabulary.creator %}
@@ -307,7 +307,14 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
                 <h6>{{ title }}</h6>                
               </div>
               <div class="col">
-                {{ concepts.example | json }}
+                <div>
+                {%for e in concepts.example %}
+                  <p>
+                  <i class="fa-regular fa-pencil fa-xs"></i>
+                  {{ e["rico:name"]["@value"] }}                  
+                  </p>
+                {% endfor %}
+                </div>
               </div>
             </div>
           {% endif %}
