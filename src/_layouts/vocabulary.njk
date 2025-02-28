@@ -110,15 +110,13 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
         <div class="col-10">
           {% for dist in vocabulary.distribution %}
           <span>
-          <a href="{{ dist['dcat:downloadURL'].id }}">
             {% set mediaType = dist["dcat:mediaType"].id | string %}
             {% if mediaType == "http://www.iana.org/assignments/media-types/text/csv" %}
-            <img src="https://img.shields.io/badge/Format-CSV-blue.png" alt="CSV">
+              <a href="{{ dist['dcat:downloadURL'].id }}"><img src="https://img.shields.io/badge/Format-CSV-blue.png" alt="CSV"></a>
             {% endif %}
             {% if mediaType == "https://www.iana.org/assignments/media-types/application/rdf+xml" %}
-            <img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="RDF/XML">
+              <a href="{{ dist['dcat:downloadURL'].id }}"><img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="RDF/XML"></a>
             {% endif %}
-          </a>
           </span>
           {% endfor %}
         </div>
