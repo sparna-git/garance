@@ -5,7 +5,7 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "generateJSON": "node ./utils/readJsonLdFromDirectory.js C:\\Users\\thoma\\Downloads\\Referentiels-RiC-O_1.0.2_version\\Referentiels-RiC-O_1.0.2_version_small src/_data/garance.json",
+    "read": "node ./utils/read.js",
     "frame": "node --max_old_space_size=8192 ./utils/frame.js ./src/_data/garance.json"
   },
   "keywords": [],

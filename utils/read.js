@@ -85,5 +85,5 @@ function getDirectoriesFiles(src) {
 
 (async () => {
   console.log("Reading " + process.argv[2] + "...");
-  await readJsonLDfromDirectory(process.argv[2], process.argv[3]);
+  await readJsonLDfromDirectory(process.argv[2], "src/_data/garance.json");
 })()

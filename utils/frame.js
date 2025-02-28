@@ -9,12 +9,11 @@ let framed = async function (rawJsonLd, framingSpecPath, outputFile) {
   let dataJsonLd = JSON.parse(fs.readFileSync(rawJsonLd, { ncoding: "utf8", flag: "r" }));  
   let framingSpec = fs.readFileSync(framingSpecPath, { ncoding: "utf8", flag: "r"});
 
-  console.log("Convert ........");
+  console.log("Frame...");
   const framed = await jsonld.frame(dataJsonLd, JSON.parse(framingSpec));
-  console.log("Fin de la conversion");
-  console.log("Writing to file...");
+  console.log("End framing !");
+  console.log("Writing to file : "+outputFile+" ...");
   fs.writeFile(outputFile, JSON.stringify(framed, null, 2), (err) => {
-    console.log("pour stocker les fichiers....... ")
     if (err) {
       console.log(err);
     } else {
