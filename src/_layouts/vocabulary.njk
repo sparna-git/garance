@@ -471,15 +471,10 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
   {% endfor %}
 </main>
 
-{# anchor #}
-<script>
-  // generate anchors on each h5 title
-  anchors.options.placement = 'left';
-  anchors.options.icon = '#';
-  anchors.add('h5');
-</script>
 
 {# d3js #}
+<!-- d3js -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script type="text/javascript">
   // recuperer tous les concepts
   const data = {{ vocabulary.inverse_inScheme | json }}
