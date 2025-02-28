@@ -5,8 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          path: garance
 
       - uses: actions/checkout@v3
         with:
@@ -33,7 +31,7 @@ jobs:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
 
-      - run: npm run read ../Referentiels/Concept
+      - run: npm run read Referentiels/concepts
       - run: npm run frame
       - run: npm run build
 
