@@ -23,6 +23,7 @@ module.exports = {
     "dcterms:modified": "Dernière mise à jour",
     "skos:exactMatch": "Alignements exacts",
     "skos:closeMatch": "Alignements proches",
+    "skos:related": "Alignements .....",
     "skos:relatedMatch": "Alignements renvois",
     "dc:coverage": "Couverture",
     "dc:rights": "Droits",

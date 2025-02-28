@@ -16,7 +16,7 @@
     "html": "http://www.w3.org/1999/xhtml",
     "an": "http://data.archives-nationales.culture.gouv.fr/",
     "dcat": "http://www.w3.org/ns/dcat#",
-    "iso-thes":"http://purl.org/iso25964/skos-thes#",
+    "iso-thes": "http://purl.org/iso25964/skos-thes#",
 
     "ConceptScheme": "skos:ConceptScheme",
     "Concept": "skos:Concept",
@@ -60,9 +60,9 @@
       "@id": "skos:definition",
       "@container": "@set"
     },
-    "narrowMatch" : {
-      "@id" : "skos:narrowMatch",
-      "@container" : "@set"
+    "narrowMatch": {
+      "@id": "skos:narrowMatch",
+      "@container": "@set"
     },
     "exactMatch": {
       "@id": "skos:exactMatch",
@@ -72,9 +72,9 @@
       "@id": "skos:closeMatch",
       "@container": "@set"
     },
-    "skos_related" : {
-      "@id" : "skos:related",
-      "@container" : "@set"
+    "skosRelated": {
+      "@id": "skos:related",
+      "@container": "@set"
     },
     "relatedMatch": {
       "@id": "skos:relatedMatch",
@@ -104,7 +104,7 @@
       "@id": "skos:scopeNote",
       "@container": "@set"
     },
-    "isoThesStatus" : "iso-thes:status"
+    "isoThesStatus": "iso-thes:status"
   },
 
   "@explicit": true,
@@ -133,7 +133,7 @@
     "@explicit": true,
     "prefLabel": {},
     "notation": {},
-    "isoThesStatus" : {
+    "isoThesStatus": {
       "@explicit": true
     },
     "altLabel": {
@@ -149,13 +149,17 @@
     "changenote": {
       "@omitDefault": true
     },
-    "narrowMatch" : {
+    "narrowMatch": {
       "@omitDefault": true
     },
     "exactMatch": {
       "@omitDefault": true
     },
     "closeMatch": {
+      "@omitDefault": true
+    },
+    "skosRelated": {
+      "@explicit": true,
       "@omitDefault": true
     },
     "relatedMatch": {

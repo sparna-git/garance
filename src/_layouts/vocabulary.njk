@@ -390,16 +390,16 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
           {% endif %}
 
           {# skos:related #}
-          {% if concepts.relatedMatch %}
+          {% if concepts.skosRelated %}
             <div class="row">
               <div class="col-1">
-                {% set title = "skos:relatedMatch" | i18n %}
+                {% set title = "skos:related" | i18n %}
                 <h6>{{ title }}</h6>
               </div>    
               <div class="col">  
                 <ul>  
-                  {% for a in concepts.relatedMatch %}
-                    <li><a href="{{ a.id }}">{{ a.id }}</a></li>
+                  {% for sr in concepts.skosRelated %}
+                    <li><a href="{{ sr.id }}">{{ sr.id }}</a></li>
                   {% endfor %}
                 </ul>
               </div>
