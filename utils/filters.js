@@ -61,22 +61,22 @@ module.exports = {
     * or the first item if none matches the language code
     **/
     lang: function (arr, locale) {
-        if (arr) {
+      if(arr) {
           // filter for language
-          var jsonFilter = [arr].find((f) => f["@language"] === locale);
-          if (jsonFilter === undefined) {
-            result = "";
+          if(Array.isArray(arr)) {
             for (let index = 0; index < arr.length; index++) {
               const element = arr[index];
-
               if (element["@language"] === locale) {
-                result = element["@value"];
+                return element["@value"];
               }
             }
-            const output_Label = result === "" ? arr["@value"][0] : result;
-            return output_Label;
+            return "";
           } else {
-            return jsonFilter["@value"];
+            if(arr["@language"] === locale) {
+                return arr["@value"];
+            } else {
+                return "";
+            }
           }
         }
     },
@@ -185,9 +185,37 @@ module.exports = {
 
     jsonSort: function (jsonContent, element) {
         const newJsonCode = jsonContent.sort((a, b) => {
-          const aValue = JSON.stringify(Object.values(a[element][0]));
-          const bValue = JSON.stringify(Object.values(b[element][0]));
-          return aValue.localeCompare(bValue);
+          if(a[element] && a[element].length > 0) {
+            if(b[element] && b[element].length > 0) {
+                const aValue = JSON.stringify(Object.values(a[element][0]));
+                const bValue = JSON.stringify(Object.values(b[element][0]));
+                return aValue.localeCompare(bValue);
+            } else {
+                return -1;
+            }
+          } else {
+            if(b[element] && b[element].length > 0) {
+                return 1
+            } else {
+                // default to id
+                if(a.id) {
+                    if(b.id) {
+                        return a.id.localeCompare(b.id);
+                    } else {
+                        return -1;
+                    }
+                } else {
+                    if(b.id) {
+                        return 1
+                    } else {
+                        // default to string comparison
+                        const aValue = JSON.stringify(a);
+                        const bValue = JSON.stringify(b);
+                        return aValue.localeCompare(bValue);
+                    }
+                }
+            }
+          }
         });
 
         return newJsonCode;
