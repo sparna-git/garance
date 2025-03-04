@@ -56,8 +56,9 @@ let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
   }
 
   let context = JSON.parse(fs.readFileSync("src/_data/context.json", { encoding: "utf8", flag: "r" }));
-  console.log("Compacting with context : " context);
+  console.log("Compacting with context...");
   const compactedJsonLdResult = await jsonld.compact(JSONLD_Result, context)
+  console.log("Done");
 
   fs.writeFile(filePath, JSON.stringify(compactedJsonLdResult, null, 2), (err) => {
     if (err) {
