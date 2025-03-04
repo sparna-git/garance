@@ -2,22 +2,27 @@
 /**
  * @constant {string} SKOS_PREFLABEL - The SKOS preferred label URI.
  */
+const SKOS_PREFLABEL = "http://www.w3.org/2004/02/skos/core#prefLabel";
 
 /**
  * @constant {string} RDFS_LABEL - The RDFS label URI.
  */
+const RDFS_LABEL = "http://www.w3.org/2000/01/rdf-schema#label";
 
 /**
  * @constant {string} FOAF_NAME - The FOAF name URI.
  */
+const FOAF_NAME = "http://xmlns.com/foaf/0.1/name";
 
 /**
  * @constant {string} SCHEMA_NAME - The Schema.org name URI.
  */
+const SCHEMA_NAME = "http://schema.org/name";
 
 /**
  * @constant {string} DCTERMS_TITLE - The DCTerms title URI.
  */
+const DCTERMS_TITLE = "http://purl.org/dc/terms/title";
 
 /**
  * Gets the ID of an object.
@@ -333,6 +338,7 @@ module.exports = {
   },
 
   /**
+   * /!\ currently not used as this is applied at the framing step
    * Removes type keys from sublevels of an object.
    * @param {object} obj - The object to remove type keys from.
    * @returns {object} The object with type keys removed from sublevels.

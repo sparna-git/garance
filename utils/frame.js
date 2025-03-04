@@ -3,6 +3,22 @@ const fs = require("fs");
 //npm install jsonld
 const jsonld = require("jsonld");
 
+/**
+ * Removes type keys from an object.
+ * @param {object} obj - The object to remove type keys from.
+ */
+function removeTypeKey(obj) {
+  if(obj && typeof obj === "object") {
+    if(! ("@value" in obj || "value" in obj)) {
+      delete obj.type;
+      delete obj["@type"];
+    }
+    Object.entries(obj).forEach(([key, value]) => {
+      removeTypeKey(value)
+    });
+  }
+}
+
 let framed = async function (rawJsonLd, framingSpecPath, outputFile) {
 
   // Lecture de fichiers 
@@ -11,6 +27,8 @@ let framed = async function (rawJsonLd, framingSpecPath, outputFile) {
 
   console.log("Frame...");
   const framed = await jsonld.frame(dataJsonLd, JSON.parse(framingSpec));
+  // special : remove type keys after framing
+  Object.entries(framed).forEach(([key, value]) => { removeTypeKey(value) });
   console.log("End framing !");
   console.log("Writing to file : "+outputFile+" ...");
   fs.writeFile(outputFile, JSON.stringify(framed, null, 2), (err) => {

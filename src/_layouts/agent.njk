@@ -82,4 +82,4 @@
 {% import "src/_layouts/jsonld.njk" as jsonld with context %}
 
 <h1>{{ jsonld.renderLiteralAsString(agent | displayLabel(context) | unboxArray ) }}</h1>
-{{ jsonld.render(agent | removeTypeFromSublevels) }}
+{{ jsonld.render(agent) }}
