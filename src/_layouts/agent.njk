@@ -1,0 +1,85 @@
+---js
+{
+  layout: "main.njk",
+  pagination: {
+      data: "agents.graph",
+      size: 1,
+      alias: "agent",
+      before: function(paginationData, fullData) {
+        // filter out entries without an id
+        return paginationData.filter(item => item.id);
+      }
+  },
+  permalink: "{{ locale }}/agents/{{ agent.id | localName }}/"
+}
+---
+
+<style>
+.entity {
+    margin: 5px 0;
+    position: relative;
+}
+
+.entity-row {
+    display: table-row;
+    margin-bottom: 5px;
+}
+
+.cell {
+    display: table-cell;
+    padding: 5px;
+}
+
+.predicate {
+    background-color: #f5f5f5;
+    border-left: 1px solid #ddd;
+    padding-left: 10px;
+    max-width: 380px;
+}
+
+.predicate code {
+    color: #555;
+    font-family: monospace;
+    font-size:smaller;
+}
+
+.value {
+    background-color: #fff;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.uri {
+    color: #555;
+    font-family: monospace;
+}
+
+.info-icon {
+    cursor: pointer;
+    color: #888;
+    margin-right: 2px;
+    font-size:smaller;
+}
+
+.literal {
+    color: #333;
+}
+
+.entity-row > .row, 
+.entity-row > .cell {
+    margin: 0;
+}
+
+.entity-row > .row:last-child {
+    margin-bottom: 5px;
+}
+
+
+</style>
+
+{% import "src/_layouts/jsonld.njk" as jsonld with context %}
+
+<h1>{{ jsonld.renderLiteralAsString(agent | displayLabel(context) | unboxArray ) }}</h1>
+{{ jsonld.render(agent | removeTypeFromSublevels) }}

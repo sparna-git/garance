@@ -33,8 +33,8 @@ let framed = async function (rawJsonLd, framingSpecPath, outputFile) {
 
   console.log("Now framing index...");
   await framed("./_json/garance.json","src/_data/framings/index-framing.json","src/_data/index.json");
-  /*
+
   console.log("Now framing agents...");
   await framed("./_json/garance.json","src/_data/framings/agents-framing.json","src/_data/agents.json");
-  */
+
 })()

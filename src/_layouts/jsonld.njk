@@ -1,0 +1,106 @@
+
+{# generic method to render any JSON-LD object or value. #}
+{# Tests the structure of the object/value and apply the adequate rendering function #}
+{# Unbox single values from arrays if needed, so that arrays with a single value are treated the same as the value itself. #}
+{% macro render(object) %}
+    {% set obj = object | unboxArray %}
+
+    {% if obj is null %}
+        null
+    {% elif obj | isIriPrefixed(context) %}
+        {# expands the prefixed URI and print it #}
+        {{ renderPlainUri(obj | expandUri(context)) }}
+    {% elif obj | isIriString(context) %}
+        {{ renderPlainUri(obj) }}
+    {% elif obj | isIriObjectWithOnlyType(context) %}
+        {{ renderPlainUri(obj.id) }}
+    {% elif obj | isLiteralString or obj | isLiteralObject %}
+        {{ renderLiteral(obj) }}
+    {% elif obj | isObjectWithSingleLabelProperty %}
+        {{ renderObjectWithSingleLabelProperty(obj) }}
+    {% else %}
+        {{ renderObject(obj) }}
+    {% endif %}
+{% endmacro %}
+
+{% macro renderPlainUri(uri) %}
+    <a href="{{uri}}" class="hyperlink">{{uri | shortenUri(context) }}</a>
+{% endmacro %}
+
+{% macro renderLabelledUri(uri, labelHtml) %}
+  <a href="{{uri}}" class="hyperlink">{{labelHtml}}</a>
+{% endmacro %}
+
+{% macro renderObject(object) %}
+    {% for predicate, value in object %}
+      {% if value|isArray %}
+        {% for item in value %}
+            {% if loop.first %}
+                {{ renderRow(predicate, item) }}
+            {% else %}
+                {{ renderRowWithoutPredicate(item) }}
+            {% endif %}
+        {% endfor %}
+      {% else %}
+        {{ renderRow(predicate, value) }}
+      {% endif %}
+   {% endfor %}
+{% endmacro %}
+
+{% macro renderRow(predicate, value) %}
+  <div class="entity-row">
+    <div class="cell predicate">
+      {{ renderPredicate(predicate) }}
+    </div>
+    <div class="cell value">{{ render(value) }}</div>
+  </div>
+{% endmacro %}
+
+{% macro renderRowWithoutPredicate(value) %}
+  <div class="entity-row">
+    <div class="cell predicate">&nbsp;</div>
+    <div class="cell value">{{ render(value) }}</div>
+  </div>
+{% endmacro %}
+
+{% macro renderPredicate(predicate) %}
+    {# expand and shorten so that specific keys e.g. label_fr are turned back into namespaced URI #}
+    {% set formattedPredicate = predicate | expandUri(context) | shortenUri(context) %}
+    {% set description = "" %}
+    {% set label = predicate | i18n %}
+
+    <span class="label" title="{{ description }}" data-comment="{{ description }}" data-label="{{label}}">{{label}}</span>
+    <br />
+    <span class="info-icon" title="{{description}}">ℹ️</span><code class="uri">({{formattedPredicate}})</code>
+{% endmacro %}
+
+{% macro renderLiteral(literal) %}
+    {% if literal is string %}
+        <span class="literal">{{ literal }}</span>
+    {% elif '@language' in literal or '@type' in literal or 'language' in literal or 'type' in literal %}
+        {% set value = literal['@value'] or literal['value'] %}
+        {% set langOrType = literal['@language'] or literal['@type'] or literal['language'] or literal['type'] %}
+        <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
+    {% else %}
+        {# should not happen #}
+        {{ literal | json }}
+    {% endif %}
+{% endmacro %}
+
+{% macro renderObjectWithSingleLabelProperty(object) %}
+    {% set labelProperty = object | extractFirstNonIdNonTypeProperty | unboxArray %}
+    {% set labelHtml = renderLiteral(labelProperty) %}
+    {{ renderLabelledUri(object.id | expandUri(context), labelHtml) }}
+{% endmacro %}
+
+{% macro renderLiteralAsString(literal) %}
+    {% if literal is string %}
+        {{ literal }}
+    {% elif '@language' in literal or '@type' in literal or 'language' in literal or 'type' in literal %}
+        {% set value = literal['@value'] or literal['value'] %}
+        {{ value | safe | stripHtmlPrefix }}
+    {% else %}
+        {# don't know what to do #}
+        {{ literal }}
+    {% endif %}
+{% endmacro %}

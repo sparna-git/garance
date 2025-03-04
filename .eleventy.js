@@ -5,6 +5,7 @@ const i18n = require("eleventy-plugin-i18n");
 const translations = require("./src/_data/translations.js");
 
 const filters = require('./utils/filters.js')
+const jsonldFilters = require('./utils/jsonld.js')
 
 module.exports = async function (config) {
   const { EleventyI18nPlugin } = await import("@11ty/eleventy");
@@ -36,7 +37,10 @@ module.exports = async function (config) {
   // all imported filters from utils/filters.js
   Object.keys(filters).forEach((filterName) => {
       config.addFilter(filterName, filters[filterName])
-  })
+  });
+  Object.keys(jsonldFilters).forEach((filterName) => {
+    config.addFilter(filterName, jsonldFilters[filterName])
+  });
 
   // pass-through
   config.addPassthroughCopy({ static: "/" });

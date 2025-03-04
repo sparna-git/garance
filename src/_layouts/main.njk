@@ -78,12 +78,7 @@
         </div>
         <hr>
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up"></i></a>
-        <!-- footer --> 
-        <footer class="footer">
-            {{ 'last updated on' | i18n }} {{ helpers.currentDate() }}
-            <br />
-            <br />
-        </footer>
+        <footer class="footer">{{ 'last updated on' | i18n }} {{ helpers.currentDate() }}<br /><br /></footer>
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -92,16 +87,13 @@
         
         <!-- anchors -->
         <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-        <!-- d3js -->
-        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
         <script src="{{ '/assets/js/garance.js' | relative(page) }}"></script>
 
-          <script>
-            // generate anchors on each h5 title
+        <script>
             anchors.options.placement = 'left';
             anchors.options.icon = '#';
             anchors.add('h5');
-          </script>
+        </script>
     </body>
 
 

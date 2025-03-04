@@ -59,27 +59,6 @@
     "skos:altLabel": {
       "@id": "skos:altLabel",
       "@container": "@set"
-    },
-
-    "label_fr": {
-      "@id": "rdfs:label",
-      "@container": "@set",
-      "@language": "fr"
-    },
-    "prefLabel_fr": {
-      "@id": "skos:prefLabel",
-      "@container": "@set",
-      "@language": "fr"
-    },
-    "usedFromDate_date": {
-      "@id": "rico:usedFromDate",
-      "@container": "@set",
-      "@type": "xsd:date"
-    },
-    "usedToDate_date": {
-      "@id": "rico:usedToDate",
-      "@container": "@set",
-      "@type": "xsd:date"
     }
     
   },
@@ -91,7 +70,7 @@
   "title": {
      "@omitDefault": true 
   },
-  "label_fr": { "@omitDefault": true },
+  "rdfs:label": { "@omitDefault": true },
   "rico:history": { "@omitDefault": true },
   "rico:beginningDate": { "@omitDefault": true },
   "rico:endDate": { "@omitDefault": true },
@@ -103,8 +82,8 @@
     "rico:isOrWasRegulatedBy": { "@omitDefault": true },
     "rico:textualValue": { "@omitDefault": true },
     "rico:type": { "@omitDefault": true },
-    "usedFromDate_date": { "@omitDefault": true },
-    "usedToDate_date": { "@omitDefault": true }
+    "rico:usedFromDate": { "@omitDefault": true },
+    "rico:usedtoDate": { "@omitDefault": true }
   },
   "rico:agentIsTargetOfAgentOriginationRelation": {
     "@omitDefault": true,
@@ -117,19 +96,19 @@
       "@explicit": true,
       "rico:hasActivityType": {
         "@explicit": true,
-        "prefLabel_fr": {}
+        "skos:prefLabel": {}
       }
     }
   },
   "rico:isOrWasMemberOf": {
     "@omitDefault": true,
     "@explicit": true,
-    "label_fr": { "@omitDefault": true }
+    "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasOrHadSubdivision": {
     "@omitDefault": true,
     "@explicit": true,
-    "label_fr": { "@omitDefault": true }
+    "rdfs:label": { "@omitDefault": true }
   },
   "owl:sameAs": { "@omitDefault": true }  
 }

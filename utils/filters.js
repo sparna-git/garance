@@ -48,11 +48,15 @@ module.exports = {
 
     // Return the localName of the prefixed URI in parameter
     localName: function (uri) {
-        const splitURL = uri.substring(uri.lastIndexOf("/") + 1);
-        if (splitURL === undefined) {
-          splitURL = uri.split(":")[1];
+        if(uri.includes("#")) {
+            return uri.split("#")[1];
+        } else if (uri.includes("/")) {
+            return uri.substring(uri.lastIndexOf("/") + 1);
+        } else if (uri.includes(":")) {
+            return uri.split(":")[1];
         }
-        return splitURL;
+
+        return uri;
     },
 
     /**

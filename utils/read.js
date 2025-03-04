@@ -55,8 +55,8 @@ let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
     }
   }
 
-  // const compactedJsonLdResult = await jsonld.compact(JSONLD_Result, { "skos": "http://www.w3.org/2004/02/skos/core#" })
-  let context = JSON.parse(fs.readFileSync("src/_data/framings/garance-context.json", { encoding: "utf8", flag: "r" }));
+  let context = JSON.parse(fs.readFileSync("src/_data/context.json", { encoding: "utf8", flag: "r" }));
+  console.log("Compacting with context : " context);
   const compactedJsonLdResult = await jsonld.compact(JSONLD_Result, context)
 
   fs.writeFile(filePath, JSON.stringify(compactedJsonLdResult, null, 2), (err) => {

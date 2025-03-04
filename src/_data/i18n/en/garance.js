@@ -29,5 +29,10 @@ module.exports = {
     "dc:coverage": "Coverage",
     "dc:rights": "Rights",
     "skos:historyNote": "History note",
+
+    // for agents and generic JSON-LD printing
+    "id" : "URI identifier",
+    "type" : "type",
+    "rdfs:label" : "label"
   },
 };
