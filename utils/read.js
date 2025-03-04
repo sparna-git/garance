@@ -53,11 +53,10 @@ let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
         });
         JSONLD_Result.push(doc);
       } catch (error) {
-      console.error(`Error processing file ${f}:`, error);
+        console.error(`Error processing file ${f}:`, error);
       }
     }
-    }
-  }
+  } // end for
 
   let context = JSON.parse(fs.readFileSync("src/_data/context.json", { encoding: "utf8", flag: "r" }));
   console.log("Compact...");
