@@ -17,46 +17,50 @@ let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
   // Get all files in directory root of resources
   const listFiles = await getDirectoriesFiles(PathDirectory);
   // joint in only json ld
-  console.log("Process JSON-LD");
   const JSONLD_Result = [];
   for (let index = 0; index < listFiles.length; index++) {
     const f = listFiles[index];
     if (path.extname(f) === ".rdf" || path.extname(f) === ".ttl") {
-      console.log("Fichier: " + f);
+      try {
+        console.log("Read: " + f);
 
-      // read file
-      let inputRDF = fs.readFileSync(f, { encoding: "utf8", flag: "r" });
-      const streamRDF = stringToStream(inputRDF);
+        // read file
+        let inputRDF = fs.readFileSync(f, { encoding: "utf8", flag: "r" });
+        const streamRDF = stringToStream(inputRDF);
 
-      // We convert the RDF to an N-Quads string.
-      var quadStream;
-      if (path.extname(f) === ".rdf") {
-        quadStream = rdfParser.parse(streamRDF, {
+        // We convert the RDF to an N-Quads string.
+        var quadStream;
+        if (path.extname(f) === ".rdf") {
+          quadStream = rdfParser.parse(streamRDF, {
           contentType: "application/rdf+xml",
           baseIRI: "http://example.org",
-        });
-      } else if (path.extname(f) === ".ttl") {
-        quadStream = rdfParser.parse(streamRDF, {
+          });
+        } else if (path.extname(f) === ".ttl") {
+          quadStream = rdfParser.parse(streamRDF, {
           contentType: "text/turtle",
           baseIRI: "http://example.org",
+          });
+        }
+        const textStream = rdfSerializer.serialize(quadStream, {
+          contentType: "application/n-quads",
         });
-      }
-      const textStream = rdfSerializer.serialize(quadStream, {
-        contentType: "application/n-quads",
-      });
-      // Convert string to n-quads
-      const nQuadsString = await streamToString(textStream);
+        // Convert string to n-quads
+        const nQuadsString = await streamToString(textStream);
 
-      // Convert n-quads to Json LD
-      const doc = await jsonld.fromRDF(nQuadsString, {
-        format: "application/n-quads",
-      });
-      JSONLD_Result.push(doc);
+        // Convert n-quads to Json LD
+        const doc = await jsonld.fromRDF(nQuadsString, {
+          format: "application/n-quads",
+        });
+        JSONLD_Result.push(doc);
+      } catch (error) {
+      console.error(`Error processing file ${f}:`, error);
+      }
+    }
     }
   }
 
   let context = JSON.parse(fs.readFileSync("src/_data/context.json", { encoding: "utf8", flag: "r" }));
-  console.log("Compacting with context...");
+  console.log("Compact...");
   const compactedJsonLdResult = await jsonld.compact(JSONLD_Result, context)
   console.log("Done");
 

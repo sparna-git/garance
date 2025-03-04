@@ -5,7 +5,7 @@
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
-    "read": "mkdir -p _json && node ./utils/read.js",
+    "read": "mkdir -p _json && node --max_old_space_size=8192 ./utils/read.js",
     "frame": "node --max_old_space_size=8192 ./utils/frame.js"
   },
   "keywords": [],
