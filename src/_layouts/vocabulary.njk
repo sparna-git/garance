@@ -158,14 +158,14 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
           <h5 class="concept-title" id="{{ concepts.notation }}"><small>{{ concepts.notation }} - </small>{{ concepts.prefLabel | lang('fr') }}
           {# if Status = iso-thes:status = "candidat" #}
           {% if concepts.isoThesStatus %}
-            <i class="fa-solid fa-diamond-exclamation"></i>          
+            <small><i class="fad fa-diamond-exclamation" title="Concept candidat"></i></small>          
           {% endif %}
           </h5>
         {% else %}
           <h5 class="concept-title" id="{{ concepts.id | localName }}">{{ concepts.prefLabel | lang('fr') }}
           {# if Status = iso-thes:status = "candidat" #}
           {% if concepts.isoThesStatus %}
-            <i class="fa-solid fa-diamond-exclamation"></i>          
+            <small><i class="fad fa-diamond-exclamation" title="Concept candidat"></i></small>    
           {% endif %}
           </h5>
         {% endif %}        
