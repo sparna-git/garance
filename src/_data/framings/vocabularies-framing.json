@@ -131,7 +131,10 @@
   "datemodified": {},
   "creator": {
     "@explicit": true,
-    "@omitDefault": true
+    "@omitDefault": true,
+    "foaf:homepage": { "@omitDefault": true },
+    "foaf:name": { "@omitDefault": true },
+    "foaf:mbox": { "@omitDefault": true }
   },
   "coverage": {
     "@explicit": true,
@@ -157,11 +160,14 @@
     "seeAlso": {},
     "example": {
       "@explicit": true,
-      "@omitDefault": true
+      "@omitDefault": true,
+      "rico:name": { "@omitDefault": true }
     },
     "changenote": {
       "@explicit": true,
-      "@omitDefault": true
+      "@omitDefault": true,
+      "dc:date": { "@omitDefault": true },
+      "rdf:value": { "@omitDefault": true }
     },
     "narrowMatch": {
       "@explicit": true,
