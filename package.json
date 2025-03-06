@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
-    "build": "eleventy",
+    "start": "node --max-old-space-size=8192 ./node_modules/@11ty/eleventy/cmd.cjs --serve",
+    "build": "node --max-old-space-size=8192 ./node_modules/@11ty/eleventy/cmd.cjs",
     "read": "mkdir -p _json && node --max_old_space_size=8192 ./utils/read.js",
-    "frame": "node --max_old_space_size=8192 ./utils/frame.js"
+    "frame": "ulimit -s 65500; exec node --stack-size=65500 --max_old_space_size=8192 ./utils/frame.js"
   },
   "keywords": [],
   "author": "Sparna",

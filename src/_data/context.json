@@ -13,8 +13,26 @@
   "dc": "http://purl.org/dc/elements/1.1/",
   "dcterms": "http://purl.org/dc/terms/",
   "html": "http://www.w3.org/1999/xhtml",
-  "an": "http://data.archives-nationales.culture.gouv.fr/",
   "xsd": "http://www.w3.org/2001/XMLSchema#",
+  "dcat": "http://www.w3.org/ns/dcat#",
+  "iso-thes": "http://purl.org/iso25964/skos-thes#",
+
+  "agent": "https://rdf.archives-nationales.culture.gouv.fr/agent/",
+  "place": "https://rdf.archives-nationales.culture.gouv.fr/place/",
+
+  "documentaryFormType": "https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/",    
+  "placeType": "https://rdf.archives-nationales.culture.gouv.fr/placeType/",
+  "recordSetType": "https://rdf.archives-nationales.culture.gouv.fr/recordSetType/",
+  "recordState": "https://rdf.archives-nationales.culture.gouv.fr/recordState/",
+  "carrierType": "https://rdf.archives-nationales.culture.gouv.fr/carrierType/",
+  "productionTechniqueType": "https://rdf.archives-nationales.culture.gouv.fr/productionTechniqueType/",
+  "representationType": "https://rdf.archives-nationales.culture.gouv.fr/representationType/",
+  "thing": "https://rdf.archives-nationales.culture.gouv.fr/thing/",
+  "occupationType": "https://rdf.archives-nationales.culture.gouv.fr/occupationType/",
+  "activityType": "https://rdf.archives-nationales.culture.gouv.fr/activityType/",
+  "language": "https://rdf.archives-nationales.culture.gouv.fr/language/",
+  "corporateBodyType": "https://rdf.archives-nationales.culture.gouv.fr/corporateBodyType/",
+  "identifierType": "https://rdf.archives-nationales.culture.gouv.fr/identifierType/",
 
 
   "owl:sameAs": {

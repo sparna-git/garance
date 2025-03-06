@@ -34,13 +34,18 @@
 {% macro renderObject(object) %}
     {% for predicate, value in object %}
       {% if value|isArray %}
-        {% for item in value %}
-            {% if loop.first %}
-                {{ renderRow(predicate, item) }}
-            {% else %}
-                {{ renderRowWithoutPredicate(item) }}
-            {% endif %}
-        {% endfor %}
+        {# Special : multiple type values are rendered horizontally #}
+        {% if predicate == "type" or predicate == "@type" %}
+            {{ renderRowHorizontal(predicate, value) }}
+        {% else %}
+            {% for item in value %}
+                {% if loop.first %}
+                    {{ renderRow(predicate, item) }}
+                {% else %}
+                    {{ renderRowWithoutPredicate(item) }}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
       {% else %}
         {{ renderRow(predicate, value) }}
       {% endif %}
@@ -53,6 +58,15 @@
       {{ renderPredicate(predicate) }}
     </div>
     <div class="cell value">{{ render(value) }}</div>
+  </div>
+{% endmacro %}
+
+{% macro renderRowHorizontal(predicate, valueArray) %}
+  <div class="entity-row">
+    <div class="cell predicate">
+      {{ renderPredicate(predicate) }}
+    </div>
+    <div class="cell value">{{ renderAsList(valueArray) }}</div>
   </div>
 {% endmacro %}
 
@@ -80,7 +94,12 @@
     {% elif '@language' in literal or '@type' in literal or 'language' in literal or 'type' in literal %}
         {% set value = literal['@value'] or literal['value'] %}
         {% set langOrType = literal['@language'] or literal['@type'] or literal['language'] or literal['type'] %}
-        <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
+        {# special : if we find html tags inside, don't print the datatype - because value may contain HTML rendering, typically <p>, and the <sup> would be on a new line #}
+        {% if not (langOrType == "rdf:XMLLiteral") %}
+            <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
+        {% else %}
+            <span class="literal">{{ value | safe | stripHtmlPrefix }}</span>
+        {% endif %}
     {% else %}
         {# should not happen #}
         {{ literal | json }}
@@ -103,4 +122,11 @@
         {# don't know what to do #}
         {{ literal }}
     {% endif %}
+{% endmacro %}
+
+{% macro renderAsList(valueArray) %}
+    {% for item in valueArray %}
+        {{ render(item) }}
+        {% if not loop.last %}, {% endif %}
+    {% endfor %}
 {% endmacro %}

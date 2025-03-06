@@ -23,7 +23,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
         </code>          
     </p>
     {# Description #}
-    <p>{{ vocabulary.description[0]["@value"] }}</p>
+    <p>{% if vocabulary.description and vocabulary.description[0] %}{{ vocabulary.description[0]["@value"] }}{% endif %}</p>
    
     {# Creator #}
     {% if vocabulary.creator %}

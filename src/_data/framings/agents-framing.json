@@ -14,51 +14,36 @@
     "dc": "http://purl.org/dc/elements/1.1/",
     "dcterms": "http://purl.org/dc/terms/",
     "html": "http://www.w3.org/1999/xhtml",
-    "an": "http://data.archives-nationales.culture.gouv.fr/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "iso-thes": "http://purl.org/iso25964/skos-thes#",
+
+    "agent": "https://rdf.archives-nationales.culture.gouv.fr/agent/",
+    "place": "https://rdf.archives-nationales.culture.gouv.fr/place/",
+
+    "documentaryFormType": "https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/",    
+    "placeType": "https://rdf.archives-nationales.culture.gouv.fr/placeType/",
+    "recordSetType": "https://rdf.archives-nationales.culture.gouv.fr/recordSetType/",
+    "recordState": "https://rdf.archives-nationales.culture.gouv.fr/recordState/",
+    "carrierType": "https://rdf.archives-nationales.culture.gouv.fr/carrierType/",
+    "productionTechniqueType": "https://rdf.archives-nationales.culture.gouv.fr/productionTechniqueType/",
+    "representationType": "https://rdf.archives-nationales.culture.gouv.fr/representationType/",
+    "thing": "https://rdf.archives-nationales.culture.gouv.fr/thing/",
+    "occupationType": "https://rdf.archives-nationales.culture.gouv.fr/occupationType/",
+    "activityType": "https://rdf.archives-nationales.culture.gouv.fr/activityType/",
+    "language": "https://rdf.archives-nationales.culture.gouv.fr/language/",
+    "corporateBodyType": "https://rdf.archives-nationales.culture.gouv.fr/corporateBodyType/",
+    "identifierType": "https://rdf.archives-nationales.culture.gouv.fr/identifierType/",
+    
 
 
     "owl:sameAs": {
       "@id": "owl:sameAs",
-      "@container": "@set",
       "@type": "@id"
-    },
-    "rdfs:label": {
-      "@id": "rdfs:label",
-      "@container": "@set"
-    },
-    "rico:isOrWasDescribedBy": {
-      "@id": "rico:isOrWasDescribedBy",
-      "@container": "@set"
     },
     "rico:isOrWasRegulatedBy": {
       "@id": "rico:isOrWasRegulatedBy",
-      "@container": "@set",
       "@type": "@id"
-    },
-    "rico:history": {
-      "@id": "rico:history",
-      "@container": "@set"
-    },
-    "rico:hasOrHadAgentName": {
-      "@id": "rico:hasOrHadAgentName",
-      "@container": "@set"
-    },
-    "rico:agentIsTargetOfAgentOriginationRelation": {
-      "@id": "rico:agentIsTargetOfAgentOriginationRelation",
-      "@container": "@set"
-    },
-    "rico:agentIsTargetOfPerformanceRelation": {
-      "@id": "rico:agentIsTargetOfPerformanceRelation",
-      "@container": "@set"
-    },
-    "skos:prefLabel": {
-      "@id": "skos:prefLabel",
-      "@container": "@set"
-    },
-    "skos:altLabel": {
-      "@id": "skos:altLabel",
-      "@container": "@set"
     }
     
   },
@@ -67,9 +52,6 @@
   "type": [
     "rico:Agent"
   ],
-  "title": {
-     "@omitDefault": true 
-  },
   "rdfs:label": { "@omitDefault": true },
   "rico:history": { "@omitDefault": true },
   "rico:beginningDate": { "@omitDefault": true },
@@ -83,32 +65,72 @@
     "rico:textualValue": { "@omitDefault": true },
     "rico:type": { "@omitDefault": true },
     "rico:usedFromDate": { "@omitDefault": true },
-    "rico:usedtoDate": { "@omitDefault": true }
+    "rico:usedToDate": { "@omitDefault": true }
   },
   "rico:agentIsTargetOfAgentOriginationRelation": {
     "@omitDefault": true,
     "@explicit": true
-  },
-  "rico:agentIsTargetOfPerformanceRelation": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "rico:performanceRelationHasSource": {
-      "@explicit": true,
-      "rico:hasActivityType": {
-        "@explicit": true,
-        "skos:prefLabel": {}
-      }
-    }
   },
   "rico:isOrWasMemberOf": {
     "@omitDefault": true,
     "@explicit": true,
     "rdfs:label": { "@omitDefault": true }
   },
-  "rico:hasOrHadSubdivision": {
+  "rico:hadSubdivision": {
     "@omitDefault": true,
     "@explicit": true,
     "rdfs:label": { "@omitDefault": true }
   },
-  "owl:sameAs": { "@omitDefault": true }  
+  "rico:wasSubdivisionOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "owl:sameAs": { 
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:thingIsTargetOfRelation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:beginningDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:endDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:note": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:relationHasSource": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "rdfs:label": { "@omitDefault": true }
+    }
+  },
+  "rico:thingIsSourceOfRelation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:beginningDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:endDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:note": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:relationHasTarget": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "rdfs:label": { "@omitDefault": true }
+    }
+  }
 }

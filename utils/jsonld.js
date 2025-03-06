@@ -123,7 +123,7 @@ function expandUriOnPrefixes(qname, context) {
   if(qname.includes(':') && qname.split(':').length === 2 && qname.split(':')[0] in context) {
     result = context[qname.split(':')[0]] + qname.split(':')[1];
   }
-  return qname;
+  return result;
 }
 
 /**

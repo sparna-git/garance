@@ -110,23 +110,33 @@
   "@explicit": true,
   "type": "ConceptScheme",
   "title": {
-    "@explicit": true
+    "@explicit": true,
+    "@omitDefault": true
   },
   "description": {
-    "@explicit": true
+    "@explicit": true,
+    "@omitDefault": true
   },
   "subject": {
-    "@explicit": true
+    "@explicit": true,
+    "@omitDefault": true
   },
   "prefLabel": {},
   "definition": {
+    "@explicit": true,
     "@omitDefault": true
   },
   "notation": {},
   "distribution": {},
   "datemodified": {},
-  "creator": {},
-  "coverage": {},
+  "creator": {
+    "@explicit": true,
+    "@omitDefault": true
+  },
+  "coverage": {
+    "@explicit": true,
+    "@omitDefault": true
+  },
   "rights": {},
   "historyNote": {},
   "inverse_inScheme": {
@@ -145,17 +155,24 @@
     "note": {},
     "scopeNote": {},
     "seeAlso": {},
-    "example": {},
+    "example": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
     "changenote": {
+      "@explicit": true,
       "@omitDefault": true
     },
     "narrowMatch": {
+      "@explicit": true,
       "@omitDefault": true
     },
     "exactMatch": {
+      "@explicit": true,
       "@omitDefault": true
     },
     "closeMatch": {
+      "@explicit": true,
       "@omitDefault": true
     },
     "skosRelated": {
@@ -163,37 +180,38 @@
       "@omitDefault": true
     },
     "relatedMatch": {
+      "@explicit": true,
       "@omitDefault": true
     },
     "broader": {
+      "@explicit": true,
       "@omitDefault": true,
       "@embed": "@always",
       "prefLabel": {},
-      "@explicit": true,
       "broader": {
+        "@explicit": true,
         "@omitDefault": true,
         "@embed": "@always",
-        "prefLabel": {},
-        "@explicit": true,
+        "prefLabel": {},        
         "broader": {
+          "@explicit": true,
           "@omitDefault": true,
           "@embed": "@always",
-          "prefLabel": {},
-          "@explicit": true,
+          "prefLabel": {},          
           "broader": {
+            "@explicit": true,
             "@omitDefault": true,
             "@embed": "@always",
-            "prefLabel": {},
-            "@explicit": true
+            "prefLabel": {}            
           }
         }
       }
     },
     "narrower": {
+      "@explicit": true,
       "@omitDefault": true,
       "@embed": "@always",
-      "prefLabel": {},
-      "@explicit": true
+      "prefLabel": {}      
     }
   }
 }
