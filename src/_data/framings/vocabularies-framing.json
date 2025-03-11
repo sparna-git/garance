@@ -29,6 +29,11 @@
       "@id": "dcterms:title",
       "@container": "@set"
     },
+    "created" : "dcterms:created",
+    "sources": {
+      "@id": "dc:source",
+      "@container": "@set"
+    },
     "description": {
       "@id": "dcterms:description",
       "@container": "@set"
@@ -96,6 +101,10 @@
       "@id": "dcat:distribution",
       "@container": "@set"
     },
+    "version": {
+      "@id": "dcat:version",
+      "@container": "@set"
+    },
     "seeAlso": {
       "@id": "rdfs:seeAlso",
       "@container": "@set"
@@ -110,6 +119,11 @@
   "@explicit": true,
   "type": "ConceptScheme",
   "title": {
+    "@explicit": true,
+    "@omitDefault": true
+  },
+  "created" : {},
+  "sources" : {
     "@explicit": true,
     "@omitDefault": true
   },
@@ -128,6 +142,7 @@
   },
   "notation": {},
   "distribution": {},
+  "version" : {},
   "datemodified": {},
   "creator": {
     "@explicit": true,

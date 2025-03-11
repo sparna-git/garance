@@ -48,6 +48,32 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
     </div>  
     {% endif %}
     
+    {# dc:version #}
+    {% if vocabulary.version %}
+      <div class="row">
+        <div class="col-2">
+          {% set title = "dc:version" | i18n %}
+          <h6><span>{{ title }}</span></h6>
+        </div>
+        <div class="col-6">
+          <span>{{ vocabulary.version[0]["@value"] }}</span>
+        </div>  
+      </div>
+    {% endif %}
+
+    {# dcterms:created #}
+    {% if vocabulary.created %}
+      <div class="row">
+        <div class="col-2">
+          {% set title = "dcterms:created" | i18n %}
+          <h6><span>{{ title }}</span></h6>
+        </div>
+        <div class="col-6">
+          <span>{{ vocabulary.created }}</span>
+        </div>  
+      </div>
+    {% endif %}
+
     {# dcterms:modified #}
     {% if vocabulary.datemodified %}
       <div class="row">
@@ -57,6 +83,19 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
         </div>
         <div class="col-6">
           <span>{{ vocabulary.datemodified | getMaxDate }}</span>
+        </div>  
+      </div>
+    {% endif %}
+
+    {# dc:source #}
+    {% if vocabulary.sources %}
+      <div class="row">
+        <div class="col-2">
+          {% set title = "dc:source" | i18n %}
+          <h6><span>{{ title }}</span></h6>
+        </div>
+        <div class="col-10">
+          <p><span>{{ vocabulary.sources | lang('fr') }}</span></p>
         </div>  
       </div>
     {% endif %}
@@ -128,7 +167,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
       {% for conceptType in sortInverseInScheme[0].type %}
         {% if conceptType != "Concept" %}
           <div class="alert alert-secondary" role="alert">
-              <em>{{ "These concepts have all the type" | i18n }} “<b>{{ conceptType | i18n }}</b>”.</em>
+              <em>{{ "These concepts have all the type" | i18n }} “<a href="{{ jsonScheme | getURL(conceptType) }}" target="_blank"><b>{{ conceptType | i18n }}</b></a>”.</em>
           </div>
         {% endif %}
       {% endfor %}
@@ -253,11 +292,11 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
                 <h6>{{ title }}</h6>                
               </div>
               <div class="col">
-                <ul>
-                  {%- for element in concepts.definition -%}
-                    <li>{{ element["@value"] }}</li>                  
-                  {%- endfor -%}
-                </ul>
+                <p>
+                  <span>
+                    {{ concepts.definition[0]["@value"] | json }}
+                  </span>
+                <p>
               </div>
             </div>
           {% endif %}

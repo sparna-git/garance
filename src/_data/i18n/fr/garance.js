@@ -5,7 +5,8 @@ module.exports = {
     garance: "Garance",
     "last updated on": "dernière mise à jour le",
     vocabularies: "Vocabulaires contrôlés",
-    "These concepts have all the type": "Ces concepts ont tous le type",
+    "These concepts have all the type":
+      "Ces concepts SKOS sont tous aussi des instances de la classe RiC-O:",
     agents: "Agents",
     lieux: "Places",
 
@@ -13,7 +14,7 @@ module.exports = {
     "dcat:distribution": "Télécharger les données",
     "skos:altLabel": "Synonymes",
     "rdfs:seeAlso": "Resource",
-    "skos:definition": "Définitions",
+    "skos:definition": "Définition",
     "skos:narrower": "Concepts spécifiques",
     "skos:scopeNote": "Notes",
     "skos:changeNote": "Modifications",
@@ -29,11 +30,14 @@ module.exports = {
     "dc:coverage": "Couverture",
     "dc:rights": "Droits",
     "skos:historyNote": "Note historique",
+    "dc:source": "Source",
+    "dcterms:created": "Date de création",
+    "dc:version": "Version",
 
     // for agents and generic JSON-LD printing
-    "id" : "identifiant",
-    "type" : "type",
-    "rdfs:label" : "libellé",
-    "owl:sameAs" : "identique à"
+    id: "identifiant",
+    type: "type",
+    "rdfs:label": "libellé",
+    "owl:sameAs": "identique à",
   },
 };
