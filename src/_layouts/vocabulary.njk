@@ -36,7 +36,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
         {% for c in vocabulary.creator %}
           <div class="row">
             <p>
-            <a href="{{ c["foaf:homepage"] }}">{{ c["foaf:name"]["@value"] }}</a>
+            {{ c["foaf:name"]["@value"] }}
             
             <span>
                 <a href="mailto:{{ c["foaf:mbox"] }}"><i class="fa-solid fa-envelope"></i></a>
