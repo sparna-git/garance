@@ -32,7 +32,7 @@ jobs:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
 
-      - run: rm -rf Referentiels/concepts/rdf/*placeTypes.rdf
+      #- run: rm -rf Referentiels/concepts/rdf/*placeTypes.rdf
       - run: npm run read Referentiels
       - run: npm run frame
       - run: npm run build
