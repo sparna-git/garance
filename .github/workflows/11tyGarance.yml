@@ -37,7 +37,7 @@ jobs:
       - run: npm run frame
       #- run: npm run build
       - name: Build
-          - run | 
+        run: | 
             export NODE_OPTIONS="--max-old-space-size=4096"
             npm run build
 
