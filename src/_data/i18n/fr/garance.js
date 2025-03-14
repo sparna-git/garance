@@ -3,6 +3,7 @@ module.exports = {
     title:
       "Graphe des Archives nationales pour la Recherche, l’Accès et la Navigation des Connaissances Enrichies",
     garance: "Garance",
+    referentiels : "Référentiels",
     "last updated on": "dernière mise à jour le",
     vocabularies: "Vocabulaires contrôlés",
     "These concepts have all the type":
@@ -13,10 +14,10 @@ module.exports = {
     // properties, classes, etc
     "dcat:distribution": "Télécharger les données",
     "skos:altLabel": "Synonymes",
-    "rdfs:seeAlso": "Resource",
+    "rdfs:seeAlso": "Voir la page",
     "skos:definition": "Définition",
     "skos:narrower": "Concepts spécifiques",
-    "skos:scopeNote": "Notes",
+    "skos:scopeNote": "Note d'application",
     "skos:changeNote": "Modifications",
     "skos:example": "Exemple",
     "skos:broader": "Hiérarchie",
@@ -25,7 +26,7 @@ module.exports = {
     "skos:related": "Voir aussi",
     "skos:exactMatch": "Alignements exacts",
     "skos:closeMatch": "Alignements proches",
-    "skos:relatedMatch": "Alignements renvois",
+    "skos:relatedMatch": "Alignements associatifs",
     "skos:narrowMatch": "Alignements spécifications",
     "dc:coverage": "Couverture",
     "dc:rights": "Droits",
@@ -33,6 +34,7 @@ module.exports = {
     "dc:source": "Source",
     "dcterms:created": "Date de création",
     "dc:version": "Version",
+    "skos:scoteNote" : "Scote Note",
 
     // for agents and generic JSON-LD printing
     id: "identifiant",

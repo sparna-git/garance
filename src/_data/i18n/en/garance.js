@@ -4,8 +4,10 @@ module.exports = {
       "Graphe des Archives nationales pour la Recherche, l’Accès et la Navigation des Connaissances Enrichies",
     garance: "Garance",
     "last updated on": "last updated on",
+    referentiels: "Referentiels",
     vocabularies: "Controlled vocabularies",
-    "These concepts have all the type": "These SKOS concepts are all also instances of the RiC-O class",
+    "These concepts have all the type":
+      "These SKOS concepts are all also instances of the RiC-O class",
     agents: "Agents",
     lieux: "Places",
 
@@ -13,9 +15,9 @@ module.exports = {
     "dcat:distribution": "Download data",
     "skos:altLabel": "Synonyms",
     "skos:definition": "Definition",
-    "rdfs:seeAlso": "Resource",
+    "rdfs:seeAlso": "View page",
     "skos:narrower": "Children",
-    "skos:scopeNote": "Scope note",
+    "skos:scopeNote": "Application note",
     "skos:changeNote": "Change note",
     "skos:example": "Example",
     "skos:broader": "Hierarchy",
@@ -32,6 +34,7 @@ module.exports = {
     "dc:source": "Source",
     "dcterms:created": "Created",
     "dc:version": "Version",
+    "skos:scoteNote": "Scote Note",
 
     // for agents and generic JSON-LD printing
     id: "URI identifier",

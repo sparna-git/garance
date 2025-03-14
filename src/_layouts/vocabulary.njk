@@ -74,19 +74,6 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
       </div>
     {% endif %}
 
-    {# dcterms:modified #}
-    {% if vocabulary.datemodified %}
-      <div class="row">
-        <div class="col-2">
-          {% set title = "dcterms:modified" | i18n %}
-          <h6><span>{{ title }}</span></h6>
-        </div>
-        <div class="col-6">
-          <span>{{ vocabulary.datemodified | getMaxDate }}</span>
-        </div>  
-      </div>
-    {% endif %}
-
     {# dc:source #}
     {% if vocabulary.sources %}
       <div class="row">
@@ -95,7 +82,11 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
           <h6><span>{{ title }}</span></h6>
         </div>
         <div class="col-10">
-          <p><span>{{ vocabulary.sources | lang('fr') }}</span></p>
+          <p>
+          {% for s in vocabulary.sources %}
+          <span>{{ s | lang('fr') }}</span>
+          {% endfor %}
+          </p>
         </div>  
       </div>
     {% endif %}
@@ -113,16 +104,16 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
       </div>  
     {% endif %}
 
-    {# dc:rights #}
-    {% if vocabulary.rights %}
+    {# skos:scopeNote #}
+    {% if vocabulary.scopeNote.length >= 1 %}
       <div class="row">
         <div class="col-2">
-          {% set title = "dc:rights" | i18n %}
+          {% set title = "skos:scopeNote" | i18n %}
           <h6><span>{{ title }}</span></h6>
         </div>
         <div class="col-10">
-          <p><span>{{ vocabulary.rights | lang('fr') }}</span></p>
-        </div> 
+          {{ vocabulary.scopeNote | lang('fr') }}
+        </div>
       </div>
     {% endif %}
 
@@ -154,7 +145,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
               <a href="{{ dist['dcat:downloadURL'].id }}"><img src="https://img.shields.io/badge/Format-CSV-blue.png" alt="CSV"></a>
             {% endif %}
             {% if mediaType == "https://www.iana.org/assignments/media-types/application/rdf+xml" %}
-              <a href="{{ dist['dcat:downloadURL'].id }}"><img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="RDF/XML"></a>
+              <a href="{{ dist['dcat:downloadURL'].id }}"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.png" alt="RDF/XML"></a>
             {% endif %}
           </span>
           {% endfor %}
@@ -186,8 +177,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
   </div>
   {% endif %}
   
-  {# Liste de concepts #}
-  
+  {# Liste de concepts #}  
   {% for concepts in sortInverseInScheme %}
   <div class="row"> 
       <div class="col">
@@ -443,7 +433,7 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
               <div class="col">  
                 <ul>  
                   {% for sr in concepts.skosRelated %}
-                    <li><a href="{{ sr.id }}">{{ sr.id }}</a></li>
+                    <li><a href="{{ sr.id }}">{{ sr.prefLabel | lang('fr') }}</a></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -506,6 +496,20 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
     </div>
   <hr style="margin-top: 10px;">
   {% endfor %}
+
+  {# dcterms:modified #}
+  {% if vocabulary.datemodified %}
+    <div class="row">
+      <div class="col-2">
+        {% set title = "dcterms:modified" | i18n %}
+        <h6><span>{{ title }}</span></h6>
+      </div>
+      <div class="col-6">
+        <span>{{ vocabulary.datemodified | getMaxDate }}</span>
+      </div>  
+    </div>
+  {% endif %}
+
 </main>
 
 
