@@ -1368,7 +1368,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Fonctions des collectivités"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/carrierTypes",
@@ -1732,7 +1737,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Supports des archives"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/corporateBodyTypes",
@@ -2187,7 +2197,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Catégories des collectivités"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/documentaryFormTypes",
@@ -3909,7 +3924,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Types des documents et des données"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/identifierTypes",
@@ -3951,7 +3971,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Types d’identifiants"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/languages",
@@ -4196,7 +4221,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Langues"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/occupationTypes",
@@ -4245,6 +4275,34 @@
         },
         {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/occupationType/FRAN_RI_010-d-1jcitfegi20-19rkja1mzd9x0",
+          "type": [
+            "Concept",
+            "rico:OccupationType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/occupationType/FRAN_RI_010-d-1ojuhwtqcjj--6jj5hyn0plyz",
+          "type": [
+            "Concept",
+            "rico:OccupationType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/occupationType/FRAN_RI_010-d-1ojvt8fh4z5--1xdz6cai15q5g",
+          "type": [
+            "Concept",
+            "rico:OccupationType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/occupationType/FRAN_RI_010-d-1okoah836l1--1lwud32yr5hyr",
+          "type": [
+            "Concept",
+            "rico:OccupationType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/occupationType/FRAN_RI_010-d-1oksc7uuzm1--7f7nbwh4py1f",
           "type": [
             "Concept",
             "rico:OccupationType"
@@ -7164,7 +7222,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Fonctions, métiers et professions des personnes"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/placeTypes",
@@ -7212,6 +7275,13 @@
           ]
         },
         {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/all%C3%A9e",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/am%C3%A9nagement%20ou%20construction",
           "type": [
             "Concept",
@@ -7220,6 +7290,13 @@
         },
         {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/ancienne%20commune",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/arcades",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7240,7 +7317,28 @@
           ]
         },
         {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/autoroute",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/avenue",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/baie",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/balcon",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7255,6 +7353,13 @@
         },
         {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/base%20a%C3%A9rienne",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/boulevard",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7303,6 +7408,13 @@
           ]
         },
         {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/carrefour",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/ch%C3%A2teau",
           "type": [
             "Concept",
@@ -7310,7 +7422,42 @@
           ]
         },
         {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/chauss%C3%A9e",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/chemin",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/chemin%20de%20ronde",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/chemin%20vicinal",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cimeti%C3%A8re%20militaire",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cit%C3%A9",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7338,7 +7485,21 @@
           ]
         },
         {
-          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cours%20d%27eau",
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cour",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cours",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cours%20d%E2%80%99eau",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7346,6 +7507,27 @@
         },
         {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/d%C3%A9partement",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/escalier",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/esplanade",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/fausse%20porte",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7360,6 +7542,13 @@
         },
         {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/fortification",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/galerie",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7395,6 +7584,13 @@
         },
         {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/hameau",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/impasse",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7450,6 +7646,13 @@
           ]
         },
         {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/p%C3%A9ristyle",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/parc%20industriel",
           "type": [
             "Concept",
@@ -7458,6 +7661,27 @@
         },
         {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/paroisse",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/parvis",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/passage",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/passerelle",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7479,6 +7703,13 @@
         },
         {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/pic",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/place",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7527,7 +7758,42 @@
           ]
         },
         {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/porte",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/poterne",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/pr%C3%A9au",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/prison",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/promenade",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/quai",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7548,7 +7814,49 @@
           ]
         },
         {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/rond-point",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/route",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/rue",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/ruelle",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/sanctuaire",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/sentier",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/sentier%20de%20traverse",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7569,6 +7877,13 @@
           ]
         },
         {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/square",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/station%20baln%C3%A9aire",
           "type": [
             "Concept",
@@ -7577,6 +7892,13 @@
         },
         {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/station%20de%20ski",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/terrasse",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7604,6 +7926,13 @@
           ]
         },
         {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/vicus",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/village",
           "type": [
             "Concept",
@@ -7618,7 +7947,21 @@
           ]
         },
         {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/voie",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
           "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/voie%20urbaine",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/voirie",
           "type": [
             "Concept",
             "rico:PlaceType"
@@ -7640,7 +7983,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Types de lieux"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/productionTechniqueTypes",
@@ -7668,7 +8016,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Techniques de production des archives"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/recordSetTypes",
@@ -7850,7 +8203,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Types des groupes de documents et de données"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/recordStates",
@@ -8067,7 +8425,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "États des documents et des données"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/representationTypes",
@@ -8088,7 +8451,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Types de représentation des archives"
+        }
+      ]
     },
     {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/things",
@@ -23628,7 +23996,12 @@
         }
       ],
       "type": "ConceptScheme",
-      "title": []
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Mots-matières"
+        }
+      ]
     }
   ]
 }
