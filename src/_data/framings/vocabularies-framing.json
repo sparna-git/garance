@@ -88,6 +88,10 @@
     "coverage": "dc:coverage",
     "rights": "dc:rights",
     "historyNote": "skos:historyNote",
+    "scoteNote" : {
+      "@id" : "skos:scoteNote",
+      "@container" : "@set"
+    },
     "note": {
       "@id": "skos:note",
       "@container": "@set"
@@ -157,6 +161,7 @@
   },
   "rights": {},
   "historyNote": {},
+  "scopeNote" : {},
   "inverse_inScheme": {
     "@explicit": true,
     "prefLabel": {},
@@ -198,7 +203,9 @@
     },
     "skosRelated": {
       "@explicit": true,
-      "@omitDefault": true
+      "@omitDefault": true,
+      "@embed": "@always",
+      "prefLabel": {}
     },
     "relatedMatch": {
       "@explicit": true,
