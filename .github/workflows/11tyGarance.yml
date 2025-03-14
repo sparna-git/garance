@@ -35,7 +35,11 @@ jobs:
       - run: rm -rf Referentiels/concepts/rdf/*placeTypes.rdf
       - run: npm run read Referentiels
       - run: npm run frame
-      - run: npm run build
+      #- run: npm run build
+      - name: Build
+          - run | 
+            export NODE_OPTIONS="--max-old-space-size=4096"
+            npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
