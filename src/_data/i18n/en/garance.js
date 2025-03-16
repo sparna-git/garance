@@ -4,18 +4,20 @@ module.exports = {
       "Graphe des Archives nationales pour la Recherche, l’Accès et la Navigation des Connaissances Enrichies",
     garance: "Garance",
     "last updated on": "last updated on",
+    referentiels: "Referentiels",
     vocabularies: "Controlled vocabularies",
-    "These concepts have all the type": "These concepts have all the type",
+    "These concepts have all the type":
+      "These SKOS concepts are all also instances of the RiC-O class",
     agents: "Agents",
     lieux: "Places",
 
     // properties, classes, etc
     "dcat:distribution": "Download data",
     "skos:altLabel": "Synonyms",
-    "skos:definition": "Definitions",
-    "rdfs:seeAlso": "Resource",
+    "skos:definition": "Definition",
+    "rdfs:seeAlso": "View page",
     "skos:narrower": "Children",
-    "skos:scopeNote": "Scope note",
+    "skos:scopeNote": "Application note",
     "skos:changeNote": "Change note",
     "skos:example": "Example",
     "skos:broader": "Hierarchy",
@@ -29,11 +31,15 @@ module.exports = {
     "dc:coverage": "Coverage",
     "dc:rights": "Rights",
     "skos:historyNote": "History note",
+    "dc:source": "Source",
+    "dcterms:created": "Created",
+    "dc:version": "Version",
+    "skos:scoteNote": "Scote Note",
 
     // for agents and generic JSON-LD printing
-    "id" : "URI identifier",
-    "type" : "type",
-    "rdfs:label" : "label",
-    "owl:sameAs" : "same as"
+    id: "URI identifier",
+    type: "type",
+    "rdfs:label": "label",
+    "owl:sameAs": "same as",
   },
 };

@@ -6,8 +6,8 @@
         <title>{{ 'garance' | i18n }}</title>
 
         <!-- bootstrap -->
-        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">     
-
+        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">
+        
         <!-- fontawesome -->
         <link href="{{ '/assets/fa/css/all.min.css' | relative(page) }}" rel="stylesheet"/>        
         
@@ -29,28 +29,42 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavMenu">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <!-- Vocabularies -->
+                        <!-- Referentiels -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'vocabularies' | i18n }}<a>
-                            {% if index.graph %}
-                                {% set sortVocabularies = index.graph | jsonSort("title") %}
-                                <ul class="dropdown-menu">  
-                                {% for voc in sortVocabularies %}
-                                    <li><a class="dropdown-item" href="{{ ['/', locale, '/vocabularies/', voc.id | localName ] | join | relative(page) }}">{{ voc.title | lang("fr") }}</a></li>
-                                {% endfor %}
-                                </ul>
-                            {% endif %}
+                            <a class="nav-link dropdown-toggle" id="menu_Referentiels" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'referentiels' | i18n }}<a>
+                            <ul class="dropdown-menu">
+                                <!-- Vocabularies -->
+                                <li class="dropdown-submenu">
+                                    <!-- Page Vocabulaires -->
+                                    <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="{{ ['/', locale, '/vocabularies/'] | join | relative(page) }}" role="button" aria-expanded="false">{{ 'vocabularies' | i18n }}</a>
+                                    <!-- Others concepts links -->
+                                    {% if index.graph %}
+                                        {% set sortVocabularies = index.graph | jsonSort("title") %}
+                                        <ul class="dropdown-menu">  
+                                        {% for voc in sortVocabularies %}
+                                            <li><a class="dropdown-item" href="{{ ['/', locale, '/vocabularies/', voc.id | localName ] | join | relative(page) }}">{{ voc.title | lang("fr") }}</a></li>
+                                        {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                    
+                                </li>
+                                <!-- Agents -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" id="DropdownMenuLink_2" href="#" role="button" aria-expanded="false">{{ 'agents' | i18n }}<a>
+                                </li>
+                                <!-- Lieux -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'lieux' | i18n }}<a>
+                                </li>
+                            </ul>
                         </li>
-                        <!-- Agents -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'agents' | i18n }}<a>
+                        <!-- Menus -->
+                        <li>
+                            <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'Menu 1' | i18n }}<a>
                         </li>
-                        <!-- Lieux -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'lieux' | i18n }}<a>
+                        <li>
+                            <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ 'Menu 2' | i18n }}<a>
                         </li>
-
                     </ul>
                 <div>
                 <div class="menu-menu-principal-container">

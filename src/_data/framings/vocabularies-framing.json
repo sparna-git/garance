@@ -29,6 +29,11 @@
       "@id": "dcterms:title",
       "@container": "@set"
     },
+    "created" : "dcterms:created",
+    "sources": {
+      "@id": "dc:source",
+      "@container": "@set"
+    },
     "description": {
       "@id": "dcterms:description",
       "@container": "@set"
@@ -83,6 +88,10 @@
     "coverage": "dc:coverage",
     "rights": "dc:rights",
     "historyNote": "skos:historyNote",
+    "scoteNote" : {
+      "@id" : "skos:scoteNote",
+      "@container" : "@set"
+    },
     "note": {
       "@id": "skos:note",
       "@container": "@set"
@@ -94,6 +103,10 @@
     },
     "distribution": {
       "@id": "dcat:distribution",
+      "@container": "@set"
+    },
+    "version": {
+      "@id": "dcat:version",
       "@container": "@set"
     },
     "seeAlso": {
@@ -113,6 +126,11 @@
     "@explicit": true,
     "@omitDefault": true
   },
+  "created" : {},
+  "sources" : {
+    "@explicit": true,
+    "@omitDefault": true
+  },
   "description": {
     "@explicit": true,
     "@omitDefault": true
@@ -128,6 +146,7 @@
   },
   "notation": {},
   "distribution": {},
+  "version" : {},
   "datemodified": {},
   "creator": {
     "@explicit": true,
@@ -142,6 +161,7 @@
   },
   "rights": {},
   "historyNote": {},
+  "scopeNote" : {},
   "inverse_inScheme": {
     "@explicit": true,
     "prefLabel": {},
@@ -183,7 +203,9 @@
     },
     "skosRelated": {
       "@explicit": true,
-      "@omitDefault": true
+      "@omitDefault": true,
+      "@embed": "@always",
+      "prefLabel": {}
     },
     "relatedMatch": {
       "@explicit": true,
