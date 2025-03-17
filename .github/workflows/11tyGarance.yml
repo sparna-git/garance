@@ -38,7 +38,7 @@ jobs:
       #- run: npm run build
       - name: Build
         run: | 
-            export NODE_OPTIONS="--max-old-space-size=4096"
+            export NODE_OPTIONS=--max-old-space-size=4096
             npm run build
 
       - name: Deploy
