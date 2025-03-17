@@ -6,8 +6,8 @@
         <title>Garance</title>
 
         <!-- bootstrap -->
-        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">     
-
+        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">
+        
         <!-- fontawesome -->
         <link href="../../../assets/fa/css/all.min.css" rel="stylesheet"/>        
         
@@ -29,49 +29,64 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavMenu">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <!-- Vocabularies -->
+                        <!-- Referentiels -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Vocabulaires contrôlés<a>
-                            
-                                
-                                <ul class="dropdown-menu">  
-                                
-                                    <li><a class="dropdown-item" href="../languages">Liste des langues des documents et des agents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../identifierTypes">Liste des types d’identifiants
-                        des entités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../corporateBodyTypes">Thésaurus des catégories de collectivités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../recordStates">Thésaurus des états des documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../activityTypes">Thésaurus des fonctions des collectivités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../things">Thésaurus des mots-matières</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../documentaryFormTypes">Thésaurus des types de documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../recordSetTypes">Thésaurus des types de groupes de documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="">Thésaurus des types de représentation des instanciations</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../carrierTypes">Thésaurus des types de supports des instanciations des archives</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../productionTechniqueTypes">Thésaurus des types de technique de production des instanciations</a></li>
-                                
-                                </ul>
-                            
+                            <a class="nav-link dropdown-toggle" id="menu_Referentiels" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Référentiels<a>
+                            <ul class="dropdown-menu">
+                                <!-- Vocabularies -->
+                                <li class="dropdown-submenu">
+                                    <!-- Page Vocabulaires -->
+                                    <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href=".." role="button" aria-expanded="false">Vocabulaires contrôlés</a>
+                                    <!-- Others concepts links -->
+                                    
+                                        
+                                        <ul class="dropdown-menu">  
+                                        
+                                            <li><a class="dropdown-item" href="../corporateBodyTypes">Catégories des collectivités</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../recordStates">États des documents et des données</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../activityTypes">Fonctions des collectivités</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../occupationTypes">Fonctions, métiers et professions des personnes</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../languages">Langues</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../things">Mots-matières</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../carrierTypes">Supports des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../productionTechniqueTypes">Techniques de production des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../identifierTypes">Types d’identifiants</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="">Types de représentation des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../documentaryFormTypes">Types des documents et des données</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../recordSetTypes">Types des groupes de documents et de données</a></li>
+                                        
+                                        </ul>
+                                    
+                                    
+                                </li>
+                                <!-- Agents -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" id="DropdownMenuLink_2" href="#" role="button" aria-expanded="false">Agents<a>
+                                </li>
+                                <!-- Lieux -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Places<a>
+                                </li>
+                            </ul>
                         </li>
-                        <!-- Agents -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Agents<a>
+                        <!-- Menus -->
+                        <li>
+                            <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu 1<a>
                         </li>
-                        <!-- Lieux -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Places<a>
+                        <li>
+                            <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu 2<a>
                         </li>
-
                     </ul>
                 <div>
                 <div class="menu-menu-principal-container">
@@ -97,7 +112,7 @@
   
   <div class="row">
     <div class="col-md">
-        <h1 class="ConceptScheme-title">Thésaurus des types de représentation des instanciations</h1>
+        <h1 class="ConceptScheme-title">Types de représentation des archives</h1>
     </div>
     
     <p class="concept-URI">
@@ -108,7 +123,7 @@
     
     <p>
          <html:div xml:lang="fr">
-            <html:p>Thésaurus des types de représentation des instanciations des documents. Résulte de la conversion automatique en RDF, conforme à SKOS et RiC-O 1.1, d’une partie du référentiel XML correspondant dit des supports des documents (fichier FRAN_RI_002.xml, version 1.2) dans le système d’information archivistique (SIA) des Archives nationales de France (AnF). Des enrichissements, modifications de
+            <html:p>Thésaurus des types de représentation des instanciations des archives. Résulte de la conversion automatique en RDF, conforme à SKOS et RiC-O 1.1, d’une partie du référentiel XML correspondant dit des supports des documents (fichier FRAN_RI_002.xml, version 1.2) dans le système d’information archivistique (SIA) des Archives nationales de France (AnF). Des enrichissements, modifications de
                                         structure et alignements sont prévus dans les prochains
                                         mois.</html:p>
             <html:p>Nombre de concepts : 2.</html:p>
@@ -126,7 +141,7 @@
         
           <div class="row">
             <p>
-            <a href="https://www.archives-nationales.culture.gouv.fr">Archives nationales (France). Lab</a>
+            Archives nationales (France). Lab
             
             <span>
                 <a href="mailto:le-lab.archives-nationales@culture.gouv.fr"><i class="fa-solid fa-envelope"></i></a>
@@ -143,10 +158,40 @@
       <div class="row">
         <div class="col-2">
           
-          <h6><span>Dernière mise à jour</span></h6>
+          <h6><span>Version</span></h6>
         </div>
         <div class="col-6">
-          <span>2/21/2025</span>
+          <span>2.0</span>
+        </div>  
+      </div>
+    
+
+    
+    
+      <div class="row">
+        <div class="col-2">
+          
+          <h6><span>Date de création</span></h6>
+        </div>
+        <div class="col-6">
+          <span>2021-04-16</span>
+        </div>  
+      </div>
+    
+
+    
+    
+      <div class="row">
+        <div class="col-2">
+          
+          <h6><span>Source</span></h6>
+        </div>
+        <div class="col-10">
+          <p>
+          
+          <span>Fichier FRAN_RI_002.xml, version 1.2 ; exporté du système d’information archivistique (SIA) des Archives nationales de France (AnF) le 21 janvier 2025 (date de dernière modification dans le SIA : 2023-06-29)</span>
+          
+          </p>
         </div>  
       </div>
     
@@ -166,21 +211,6 @@
 
     
     
-      <div class="row">
-        <div class="col-2">
-          
-          <h6><span>Droits</span></h6>
-        </div>
-        <div class="col-10">
-          <p><span>Ces données étant des informations publiques, l’usager dispose d’un droit non exclusif
-        et gratuit de libre « réutilisation » à des fins commerciales ou non, dans le monde entier
-        et pour une durée illimitée, de ce référentiel. Il doit accompagner chaque rediffusion des
-        informations de l’indication précise de l’origine des métadonnées : « Archives nationales de
-        France », du nom du référentiel, de son identifiant (URI), du numéro et de la date de la version
-        du référentiel.</span></p>
-        </div> 
-      </div>
-    
 
     
     
@@ -197,7 +227,7 @@
                métadonnées du vocabulaire.</li>
             <li xml:lang="fr">Mai 2024 : regénéré le fichier. Mise à jour des métadonnées.
                Suppression de notes éditoriales non pertinentes.</li>
-            <li xml:lang="fr">Février 2025 : regénéré le fichier. Cette
+            <li xml:lang="fr">Mars 2025 : regénéré le fichier. Cette
                                     version du vocabulaire ne compte pas de nouveau concept. Les
                                     métadonnées du fichier SKOS ont été enrichies.</li>
          </ul>
@@ -218,7 +248,7 @@
             
             
             
-              <a href="https://raw.githubusercontent.com/ArchivesNationalesFR/Referentiels/refs/heads/main/concepts/rdf/FRAN_RI_002_representationTypes.rdf"><img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="RDF/XML"></a>
+              <a href="https://raw.githubusercontent.com/ArchivesNationalesFR/Referentiels/refs/heads/main/concepts/rdf/FRAN_RI_002_representationTypes.rdf"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.png" alt="RDF/XML"></a>
             
           </span>
           
@@ -241,7 +271,7 @@
       
         
           <div class="alert alert-secondary" role="alert">
-              <em>Ces concepts ont tous le type “<b>Type de représentation</b>”.</em>
+              <em>Ces concepts SKOS sont tous aussi des instances de la classe RiC-O: “<a href="https://www.ica.org/standards/RiC/ontology#RepresentationType" target="_blank"><b>Type de représentation</b></a>”.</em>
           </div>
         
       
@@ -254,8 +284,7 @@
   
   
   
-  
-  
+    
   
   <div class="row"> 
       <div class="col">
@@ -413,6 +442,20 @@
     </div>
   <hr style="margin-top: 10px;">
   
+
+  
+  
+    <div class="row">
+      <div class="col-2">
+        
+        <h6><span>Dernière mise à jour</span></h6>
+      </div>
+      <div class="col-6">
+        <span>3/13/2025</span>
+      </div>  
+    </div>
+  
+
 </main>
 
 
@@ -421,9 +464,9 @@
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script type="text/javascript">
   // recuperer tous les concepts
-  const data = [{"id":"https://rdf.archives-nationales.culture.gouv.fr/representationType/FRAN_RI_002-d3nd9xpopj-ckdrv6ljeqeg","type":["Concept","rico:RepresentationType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"document audiovisuel"}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"archives audio-visuelles"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/representationType/FRAN_RI_002-d3nd9y3c6o-iu0j3xsmoisx","type":["Concept","rico:RepresentationType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"archives informatiques"},{"@language":"fr","@value":"document numérique"}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"archives électroniques"}],"scopeNote":[]}]
+  const data = [{"id":"https://rdf.archives-nationales.culture.gouv.fr/representationType/FRAN_RI_002-d3nd9xpopj-ckdrv6ljeqeg","type":["Concept","rico:RepresentationType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"document audiovisuel"}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"archives audio-visuelles"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/representationType/FRAN_RI_002-d3nd9y3c6o-iu0j3xsmoisx","type":["Concept","rico:RepresentationType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"archives informatiques"},{"@language":"fr","@value":"document numérique"}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"archives électroniques"}],"scopeNote":[]}]
   /* THOMAS : il faut ajouter dans le tableau de data un noeud qui correspond à la racine de l'arbre à dessigner */
-  const conceptScheme_Header = {"id": "https://rdf.archives-nationales.culture.gouv.fr/representationTypes","prefLabel":[{"@language":"fr","@value":"Thésaurus des types de représentation des instanciations"}]}
+  const conceptScheme_Header = {"id": "https://rdf.archives-nationales.culture.gouv.fr/representationTypes","prefLabel":[{"@language":"fr","@value":"Types de représentation des archives"}]}
   const title_conceptScheme = []
 
   
@@ -603,12 +646,7 @@
         </div>
         <hr>
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up"></i></a>
-        <!-- footer --> 
-        <footer class="footer">
-            dernière mise à jour le 2/28/2025
-            <br />
-            <br />
-        </footer>
+        <footer class="footer">dernière mise à jour le 3/17/2025<br /><br /></footer>
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -617,16 +655,13 @@
         
         <!-- anchors -->
         <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-        <!-- d3js -->
-        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
         <script src="../../../assets/js/garance.js"></script>
 
-          <script>
-            // generate anchors on each h5 title
+        <script>
             anchors.options.placement = 'left';
             anchors.options.icon = '#';
             anchors.add('h5');
-          </script>
+        </script>
     </body>
 
 

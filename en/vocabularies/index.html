@@ -6,8 +6,8 @@
         <title>Garance</title>
 
         <!-- bootstrap -->
-        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">     
-
+        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">
+        
         <!-- fontawesome -->
         <link href="../../assets/fa/css/all.min.css" rel="stylesheet"/>        
         
@@ -29,49 +29,64 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavMenu">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <!-- Vocabularies -->
+                        <!-- Referentiels -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Controlled vocabularies<a>
-                            
-                                
-                                <ul class="dropdown-menu">  
-                                
-                                    <li><a class="dropdown-item" href="languages">Liste des langues des documents et des agents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="identifierTypes">Liste des types d’identifiants
-                        des entités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="corporateBodyTypes">Thésaurus des catégories de collectivités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="recordStates">Thésaurus des états des documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="activityTypes">Thésaurus des fonctions des collectivités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="things">Thésaurus des mots-matières</a></li>
-                                
-                                    <li><a class="dropdown-item" href="documentaryFormTypes">Thésaurus des types de documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="recordSetTypes">Thésaurus des types de groupes de documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="representationTypes">Thésaurus des types de représentation des instanciations</a></li>
-                                
-                                    <li><a class="dropdown-item" href="carrierTypes">Thésaurus des types de supports des instanciations des archives</a></li>
-                                
-                                    <li><a class="dropdown-item" href="productionTechniqueTypes">Thésaurus des types de technique de production des instanciations</a></li>
-                                
-                                </ul>
-                            
+                            <a class="nav-link dropdown-toggle" id="menu_Referentiels" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Referentiels<a>
+                            <ul class="dropdown-menu">
+                                <!-- Vocabularies -->
+                                <li class="dropdown-submenu">
+                                    <!-- Page Vocabulaires -->
+                                    <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="" role="button" aria-expanded="false">Controlled vocabularies</a>
+                                    <!-- Others concepts links -->
+                                    
+                                        
+                                        <ul class="dropdown-menu">  
+                                        
+                                            <li><a class="dropdown-item" href="corporateBodyTypes">Catégories des collectivités</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="recordStates">États des documents et des données</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="activityTypes">Fonctions des collectivités</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="occupationTypes">Fonctions, métiers et professions des personnes</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="languages">Langues</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="things">Mots-matières</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="carrierTypes">Supports des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="productionTechniqueTypes">Techniques de production des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="identifierTypes">Types d’identifiants</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="representationTypes">Types de représentation des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="documentaryFormTypes">Types des documents et des données</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="recordSetTypes">Types des groupes de documents et de données</a></li>
+                                        
+                                        </ul>
+                                    
+                                    
+                                </li>
+                                <!-- Agents -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" id="DropdownMenuLink_2" href="#" role="button" aria-expanded="false">Agents<a>
+                                </li>
+                                <!-- Lieux -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Places<a>
+                                </li>
+                            </ul>
                         </li>
-                        <!-- Agents -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Agents<a>
+                        <!-- Menus -->
+                        <li>
+                            <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu 1<a>
                         </li>
-                        <!-- Lieux -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Places<a>
+                        <li>
+                            <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu 2<a>
                         </li>
-
                     </ul>
                 <div>
                 <div class="menu-menu-principal-container">
@@ -97,28 +112,29 @@
 		<div class="col-md">
 			<h1 class="title-Header">Controlled vocabularies</h1>			
 			<ul><li>
-						<a href="languages">Liste des langues des documents et des agents</a> <small class="numConcepts"> - 34 concepts</small>
+						<a href="corporateBodyTypes">Catégories des collectivités</a> <small class="numConcepts"> - 64 concepts</small>
 					</li><li>
-						<a href="identifierTypes">Liste des types d’identifiants
-                        des entités</a> <small class="numConcepts"> - 5 concepts</small>
+						<a href="recordStates">États des documents et des données</a> <small class="numConcepts"> - 30 concepts</small>
 					</li><li>
-						<a href="corporateBodyTypes">Thésaurus des catégories de collectivités</a> <small class="numConcepts"> - 64 concepts</small>
+						<a href="activityTypes">Fonctions des collectivités</a> <small class="numConcepts"> - 191 concepts</small>
 					</li><li>
-						<a href="recordStates">Thésaurus des états des documents</a> <small class="numConcepts"> - 30 concepts</small>
+						<a href="occupationTypes">Fonctions, métiers et professions des personnes</a> <small class="numConcepts"> - 427 concepts</small>
 					</li><li>
-						<a href="activityTypes">Thésaurus des fonctions des collectivités</a> <small class="numConcepts"> - 197 concepts</small>
+						<a href="languages">Langues</a> <small class="numConcepts"> - 34 concepts</small>
 					</li><li>
-						<a href="things">Thésaurus des mots-matières</a> <small class="numConcepts"> - 2219 concepts</small>
+						<a href="things">Mots-matières</a> <small class="numConcepts"> - 2219 concepts</small>
 					</li><li>
-						<a href="documentaryFormTypes">Thésaurus des types de documents</a> <small class="numConcepts"> - 245 concepts</small>
+						<a href="carrierTypes">Supports des archives</a> <small class="numConcepts"> - 51 concepts</small>
 					</li><li>
-						<a href="recordSetTypes">Thésaurus des types de groupes de documents</a> <small class="numConcepts"> - 25 concepts</small>
+						<a href="productionTechniqueTypes">Techniques de production des archives</a> <small class="numConcepts"> - 3 concepts</small>
 					</li><li>
-						<a href="representationTypes">Thésaurus des types de représentation des instanciations</a> <small class="numConcepts"> - 2 concepts</small>
+						<a href="identifierTypes">Types d’identifiants</a> <small class="numConcepts"> - 5 concepts</small>
 					</li><li>
-						<a href="carrierTypes">Thésaurus des types de supports des instanciations des archives</a> <small class="numConcepts"> - 51 concepts</small>
+						<a href="representationTypes">Types de représentation des archives</a> <small class="numConcepts"> - 2 concepts</small>
 					</li><li>
-						<a href="productionTechniqueTypes">Thésaurus des types de technique de production des instanciations</a> <small class="numConcepts"> - 3 concepts</small>
+						<a href="documentaryFormTypes">Types des documents et des données</a> <small class="numConcepts"> - 245 concepts</small>
+					</li><li>
+						<a href="recordSetTypes">Types des groupes de documents et de données</a> <small class="numConcepts"> - 25 concepts</small>
 					</li></ul>			
 		</div>
 	</div>
@@ -128,12 +144,7 @@
         </div>
         <hr>
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up"></i></a>
-        <!-- footer --> 
-        <footer class="footer">
-            last updated on 2/28/2025
-            <br />
-            <br />
-        </footer>
+        <footer class="footer">last updated on 3/17/2025<br /><br /></footer>
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -142,16 +153,13 @@
         
         <!-- anchors -->
         <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-        <!-- d3js -->
-        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
         <script src="../../assets/js/garance.js"></script>
 
-          <script>
-            // generate anchors on each h5 title
+        <script>
             anchors.options.placement = 'left';
             anchors.options.icon = '#';
             anchors.add('h5');
-          </script>
+        </script>
     </body>
 
 

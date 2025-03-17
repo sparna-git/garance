@@ -6,8 +6,8 @@
         <title>Garance</title>
 
         <!-- bootstrap -->
-        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">     
-
+        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">
+        
         <!-- fontawesome -->
         <link href="../../../assets/fa/css/all.min.css" rel="stylesheet"/>        
         
@@ -29,49 +29,64 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavMenu">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <!-- Vocabularies -->
+                        <!-- Referentiels -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Controlled vocabularies<a>
-                            
-                                
-                                <ul class="dropdown-menu">  
-                                
-                                    <li><a class="dropdown-item" href="">Liste des langues des documents et des agents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../identifierTypes">Liste des types d’identifiants
-                        des entités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../corporateBodyTypes">Thésaurus des catégories de collectivités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../recordStates">Thésaurus des états des documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../activityTypes">Thésaurus des fonctions des collectivités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../things">Thésaurus des mots-matières</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../documentaryFormTypes">Thésaurus des types de documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../recordSetTypes">Thésaurus des types de groupes de documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../representationTypes">Thésaurus des types de représentation des instanciations</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../carrierTypes">Thésaurus des types de supports des instanciations des archives</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../productionTechniqueTypes">Thésaurus des types de technique de production des instanciations</a></li>
-                                
-                                </ul>
-                            
+                            <a class="nav-link dropdown-toggle" id="menu_Referentiels" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Referentiels<a>
+                            <ul class="dropdown-menu">
+                                <!-- Vocabularies -->
+                                <li class="dropdown-submenu">
+                                    <!-- Page Vocabulaires -->
+                                    <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href=".." role="button" aria-expanded="false">Controlled vocabularies</a>
+                                    <!-- Others concepts links -->
+                                    
+                                        
+                                        <ul class="dropdown-menu">  
+                                        
+                                            <li><a class="dropdown-item" href="../corporateBodyTypes">Catégories des collectivités</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../recordStates">États des documents et des données</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../activityTypes">Fonctions des collectivités</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../occupationTypes">Fonctions, métiers et professions des personnes</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="">Langues</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../things">Mots-matières</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../carrierTypes">Supports des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../productionTechniqueTypes">Techniques de production des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../identifierTypes">Types d’identifiants</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../representationTypes">Types de représentation des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../documentaryFormTypes">Types des documents et des données</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../recordSetTypes">Types des groupes de documents et de données</a></li>
+                                        
+                                        </ul>
+                                    
+                                    
+                                </li>
+                                <!-- Agents -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" id="DropdownMenuLink_2" href="#" role="button" aria-expanded="false">Agents<a>
+                                </li>
+                                <!-- Lieux -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Places<a>
+                                </li>
+                            </ul>
                         </li>
-                        <!-- Agents -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Agents<a>
+                        <!-- Menus -->
+                        <li>
+                            <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu 1<a>
                         </li>
-                        <!-- Lieux -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Places<a>
+                        <li>
+                            <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu 2<a>
                         </li>
-
                     </ul>
                 <div>
                 <div class="menu-menu-principal-container">
@@ -97,7 +112,7 @@
   
   <div class="row">
     <div class="col-md">
-        <h1 class="ConceptScheme-title">Liste des langues des documents et des agents</h1>
+        <h1 class="ConceptScheme-title">Langues</h1>
     </div>
     
     <p class="concept-URI">
@@ -107,15 +122,13 @@
     </p>
     
     <p>
-            <html:div xml:lang="fr">
-                <html:p>Liste des langues des documents et des agentss. Résulte de la conversion en
-                    RDF, conforme à SKOS et RiC-O 1.1, du référentiel XML correspondant (fichier
-                    FRAN_RI_100.xml, version 1.1) dans le système d’information archivistique (SIA)
-                    des Archives nationales de France (AnF). Des enrichissements, modifications de
-                    structure et alignements sont prévus dans les prochains mois.</html:p>
-                <html:p>Nombre de concepts : 34.</html:p>
-            </html:div>
-        </p>
+         <html:div xml:lang="fr">
+            <html:p>Liste des langues des archives et des agents. Résulte de la conversion en RDF, conforme à SKOS et RiC-O 1.1, du référentiel XML correspondant (fichier FRAN_RI_100.xml, version 1.1) dans le système d’information archivistique (SIA) des Archives nationales de France (AnF). Des enrichissements, modifications de
+                                    structure et alignements sont prévus dans les prochains
+                                    mois.</html:p>
+            <html:p>Nombre de concepts : 34.</html:p>
+         </html:div>
+      </p>
    
     
     
@@ -128,7 +141,7 @@
         
           <div class="row">
             <p>
-            <a href="https://www.archives-nationales.culture.gouv.fr">Archives nationales (France). Lab</a>
+            Archives nationales (France). Lab
             
             <span>
                 <a href="mailto:le-lab.archives-nationales@culture.gouv.fr"><i class="fa-solid fa-envelope"></i></a>
@@ -145,10 +158,40 @@
       <div class="row">
         <div class="col-2">
           
-          <h6><span>Last updated</span></h6>
+          <h6><span>Version</span></h6>
         </div>
         <div class="col-6">
-          <span>2/26/2025</span>
+          <span>2.0</span>
+        </div>  
+      </div>
+    
+
+    
+    
+      <div class="row">
+        <div class="col-2">
+          
+          <h6><span>Created</span></h6>
+        </div>
+        <div class="col-6">
+          <span>2020</span>
+        </div>  
+      </div>
+    
+
+    
+    
+      <div class="row">
+        <div class="col-2">
+          
+          <h6><span>Source</span></h6>
+        </div>
+        <div class="col-10">
+          <p>
+          
+          <span>Fichier FRAN_RI_100.xml, version 1.1 ; exporté du système d’information archivistique (SIA) des Archives nationales de France (AnF) le 21 janvier 2025 (date de dernière modification dans le SIA : 2020-02-07)</span>
+          
+          </p>
         </div>  
       </div>
     
@@ -168,21 +211,6 @@
 
     
     
-      <div class="row">
-        <div class="col-2">
-          
-          <h6><span>Rights</span></h6>
-        </div>
-        <div class="col-10">
-          <p><span>Ces données étant des informations publiques, l’usager dispose d’un
-            droit non exclusif et gratuit de libre « réutilisation » à des fins commerciales ou non,
-            dans le monde entier et pour une durée illimitée, de ce référentiel. Il doit accompagner
-            chaque rediffusion des informations de l’indication précise de l’origine des métadonnées
-            : « Archives nationales de France », du nom du référentiel, de son identifiant (URI), du
-            numéro et de la date de la version du référentiel.</span></p>
-        </div> 
-      </div>
-    
 
     
     
@@ -194,20 +222,20 @@
         <div class="col-10">
           
           
-            <ul>
-                <li xml:lang="fr">Mars-avril 2022 : revu le fichier, pour utiliser directement
+         <ul>
+            <li xml:lang="fr">Mars-avril 2022 : revu le fichier, pour utiliser directement
                     la norme SKOS et ajouter des métadonnées à ce vocabulaire.</li>
-                <li xml:lang="fr">Juillet 2024 : ajouté à la main les 24 entrées manquantes.
-                    Ajout des relations d’équivalence avec le vocabulaire des codes ISO 639-2 pour
-                    la représentation des langues de la Library of Congress
-                    (http://id.loc.gov/vocabulary/iso639-2), et des labels en anglais. Complété par
-                    la déclaration des codes de langue à l’aide de skos:notation. Mis à jour les
-                    métadonnées.</li>
-                <li xml:lang="fr">Février 2025 : regénéré le fichier. Cette version du
-                    vocabulaire ne compte pas de nouveau concept. Les métadonnées du fichier SKOS
-                    ont été enrichies.</li>
-            </ul>
-        
+            <li xml:lang="fr">Juillet 2024 : ajouté à la main les 24 entrées manquantes. Ajout des relations d’équivalence avec le vocabulaire des codes ISO 639-2
+                     pour la représentation des langues de la Library of Congress
+                     (http://id.loc.gov/vocabulary/iso639-2), et des labels en
+                     anglais.
+                     Complété par la déclaration des codes de langue à l’aide de skos:notation. Mis à
+                    jour les métadonnées.</li>
+            <li xml:lang="fr">Mars 2025 : regénéré le fichier. Cette
+                                    version du vocabulaire ne compte pas de nouveau concept. Les
+                                    métadonnées du fichier SKOS ont été enrichies.</li>
+         </ul>
+      
         </div>
       </div>
     
@@ -224,7 +252,7 @@
             
             
             
-              <a href="https://raw.githubusercontent.com/ArchivesNationalesFR/Referentiels/refs/heads/main/concepts/rdf/FRAN_RI_100_languages.rdf"><img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="RDF/XML"></a>
+              <a href="https://raw.githubusercontent.com/ArchivesNationalesFR/Referentiels/refs/heads/main/concepts/rdf/FRAN_RI_100_languages.rdf"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.png" alt="RDF/XML"></a>
             
           </span>
           
@@ -247,7 +275,7 @@
       
         
           <div class="alert alert-secondary" role="alert">
-              <em>These concepts have all the type “<b>Language</b>”.</em>
+              <em>These SKOS concepts are all also instances of the RiC-O class “<a href="https://www.ica.org/standards/RiC/ontology#Language" target="_blank"><b>Language</b></a>”.</em>
           </div>
         
       
@@ -260,8 +288,7 @@
   
   
   
-  
-  
+    
   
   <div class="row"> 
       <div class="col">
@@ -3765,6 +3792,20 @@
     </div>
   <hr style="margin-top: 10px;">
   
+
+  
+  
+    <div class="row">
+      <div class="col-2">
+        
+        <h6><span>Last updated</span></h6>
+      </div>
+      <div class="col-6">
+        <span>3/13/2025</span>
+      </div>  
+    </div>
+  
+
 </main>
 
 
@@ -3773,9 +3814,9 @@
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script type="text/javascript">
   // recuperer tous les concepts
-  const data = [{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name5","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Allemand/ger"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ger"}],"example":null,"notation":"ger","note":[],"prefLabel":[{"@language":"fr","@value":"allemand"},{"@language":"en","@value":"German"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name6","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Anglais/eng"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/eng"}],"example":null,"notation":"eng","note":[],"prefLabel":[{"@language":"fr","@value":"anglais"},{"@language":"en","@value":"English"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6qh7b8yep--z64lmk0i2mn7","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Arabe/ara"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ara"}],"example":null,"notation":"ara","note":[],"prefLabel":[{"@language":"fr","@value":"arabe"},{"@language":"en","@value":"Arabic"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z3d22v2n--9g3z9ixlsrfs","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Azeri/aze"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/aze"}],"example":null,"notation":"aze","note":[],"prefLabel":[{"@language":"fr","@value":"azéri"},{"@language":"en","@value":"Azerbaijani"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z8bswcw5--bop1vrrfo305","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Bulgare/bul"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/bul"}],"example":null,"notation":"bul","note":[],"prefLabel":[{"@language":"fr","@value":"bulgare"},{"@language":"en","@value":"Bulgarian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6g899b3ht-jm6991yabdi","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"valencien"},{"@language":"en","@value":"Valencian"},{"@language":"fr","@value":"Catalan/cat"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/cat"}],"example":null,"notation":"cat","note":[],"prefLabel":[{"@language":"fr","@value":"catalan"},{"@language":"en","@value":"Catalan"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-27t3kwreg-1uog59frz3duy","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Chinois/chi"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/chi"}],"example":null,"notation":"chi","note":[],"prefLabel":[{"@language":"fr","@value":"chinois"},{"@language":"en","@value":"Chinese"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-9wmjrgwzs-7qd7q10efdgg","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Coréen/kor"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/kor"}],"example":null,"notation":"kor","note":[],"prefLabel":[{"@language":"fr","@value":"coréen"},{"@language":"en","@value":"Korean"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z0mrdqvo--1r4hvkea941qa","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Croate/hrv"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/hrv"}],"example":null,"notation":"hrv","note":[],"prefLabel":[{"@language":"fr","@value":"croate"},{"@language":"en","@value":"Croatian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6vjqcpn3q-legpg1oy9jog","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Danois/dan"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/dan"}],"example":null,"notation":"dan","note":[],"prefLabel":[{"@language":"fr","@value":"danois"},{"@language":"en","@value":"Danish"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name7","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"castillan"},{"@language":"en","@value":"Castilian"},{"@language":"fr","@value":"Espagnol/spa"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/spa"}],"example":null,"notation":"spa","note":[],"prefLabel":[{"@language":"fr","@value":"espagnol"},{"@language":"en","@value":"Spanish"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name4","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Français/fre"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/fre"}],"example":null,"notation":"fre","note":[],"prefLabel":[{"@language":"fr","@value":"français"},{"@language":"en","@value":"French"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6eqlgu6jp--12ojio4wuez4","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Hébreu/heb"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/heb"}],"example":null,"notation":"heb","note":[],"prefLabel":[{"@language":"fr","@value":"hébreu"},{"@language":"en","@value":"Hebrew"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-bs1vo2qq7--3z3urgeudicx","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Hongrois/hun"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/hun"}],"example":null,"notation":"hun","note":[],"prefLabel":[{"@language":"fr","@value":"hongrois"},{"@language":"en","@value":"Hungarian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-oss057ra-ggj18pxos22n","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Indéterminé/und"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/und"}],"example":null,"notation":"und","note":[],"prefLabel":[{"@language":"fr","@value":"indéterminée"},{"@language":"en","@value":"Undetermined"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1r5pt0vk2-1nbochkgb87dc","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Italien/ita"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ita"}],"example":null,"notation":"ita","note":[],"prefLabel":[{"@language":"fr","@value":"italien"},{"@language":"en","@value":"Italian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1r86elmsk--4sn2z2z095po","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Japonais/jpn"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/jpn"}],"example":null,"notation":"jpn","note":[],"prefLabel":[{"@language":"fr","@value":"japonais"},{"@language":"en","@value":"Japanese"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-5mat7mwfw--1qvprgefpak31","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Khmer/khm"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/khm"}],"example":null,"notation":"khm","note":[],"prefLabel":[{"@language":"fr","@value":"khmer central"},{"@language":"en","@value":"Central Khmer"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-24jvl4ifg-qm3enyls0r1n","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"langues berbères/ber"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ber"}],"example":null,"notation":"ber","note":[],"prefLabel":[{"@language":"fr","@value":"langues berbères"},{"@language":"en","@value":"Berber languages"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4twkixgif--23mscu52ldz1","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"langues indo-aryennes/inc"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/inc"}],"example":null,"notation":"inc","note":[],"prefLabel":[{"@language":"fr","@value":"langues indo-aryennes"},{"@language":"en","@value":"Indic languages"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name9","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Latin/lat"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/lat"}],"example":null,"notation":"lat","note":[],"prefLabel":[{"@language":"fr","@value":"latin"},{"@language":"en","@value":"Latin"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4tzanfz87-1k0iqbn7n8x8o","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"flamand"},{"@language":"en","@value":"Flemish"},{"@language":"fr","@value":"Néerlandais, flamand/dut/nld"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/dut"}],"example":null,"notation":"dut","note":[],"prefLabel":[{"@language":"fr","@value":"néerlandais"},{"@language":"en","@value":"Dutch"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-15g3k8cw6a-5hplkafjklx2","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Persan/fas"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/fas"}],"example":null,"notation":"fas","note":[],"prefLabel":[{"@language":"fr","@value":"persan"},{"@language":"en","@value":"Persian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-3tvxs9qn3qg-n9p1uew8e4c","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Polonais/pol"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/pol"}],"example":null,"notation":"pol","note":[],"prefLabel":[{"@language":"fr","@value":"polonais"},{"@language":"en","@value":"Polish"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-27r4eyoru--nr0heo55wfg1","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Portugais/por"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/por"}],"example":null,"notation":"por","note":[],"prefLabel":[{"@language":"fr","@value":"portugais"},{"@language":"en","@value":"Portuguese"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6gxlaatn3--1u5awn9rlvci0","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Roumain/rum"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/rum"}],"example":null,"notation":"rum","note":[],"prefLabel":[{"@language":"fr","@value":"roumain"},{"@language":"en","@value":"Romanian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1sjflaasd--2gtom2adgool","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Russe/rus"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/rus"}],"example":null,"notation":"rus","note":[],"prefLabel":[{"@language":"fr","@value":"russe"},{"@language":"en","@value":"Russian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z4ym2kus--yx1gl0wxj41a","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Serbe/srp"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/srp"}],"example":null,"notation":"srp","note":[],"prefLabel":[{"@language":"fr","@value":"serbe"},{"@language":"en","@value":"Serbian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-3tvuh76enzs--1jtgafq8a1fvw","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Suédois/swe"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/swe"}],"example":null,"notation":"swe","note":[],"prefLabel":[{"@language":"fr","@value":"suédois"},{"@language":"en","@value":"Swedish"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-796696222-1lamgv0pyrkcz","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Tchèque/cze"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/cze"}],"example":null,"notation":"cze","note":[],"prefLabel":[{"@language":"fr","@value":"tchèque"},{"@language":"en","@value":"Czech"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-bs3x454oq--1qhi5aucvlmxf","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Turc/tur"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/tur"}],"example":null,"notation":"tur","note":[],"prefLabel":[{"@language":"fr","@value":"turc"},{"@language":"en","@value":"Turkish"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4vsa9mk3v--1e6zs93j5v3r9","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Ukrainien/ukr"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ukr"}],"example":null,"notation":"ukr","note":[],"prefLabel":[{"@language":"fr","@value":"ukrainien"},{"@language":"en","@value":"Ukrainian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-2dc92nrgy--1tzv3kr2sefc7","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Vietnamien/vie"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/vie"}],"example":null,"notation":"vie","note":[],"prefLabel":[{"@language":"fr","@value":"vietnamien"},{"@language":"en","@value":"Vietnamese"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6esxwiu96--12luf1wb9fqf8","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Yiddish/yid"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/yid"}],"example":null,"notation":"yid","note":[],"prefLabel":[{"@language":"fr","@value":"yiddish"},{"@language":"en","@value":"Yiddish"}],"scopeNote":[]}]
+  const data = [{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name5","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Allemand/ger"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ger"}],"notation":"ger","note":[],"prefLabel":[{"@language":"fr","@value":"allemand"},{"@language":"en","@value":"German"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name6","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Anglais/eng"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/eng"}],"notation":"eng","note":[],"prefLabel":[{"@language":"fr","@value":"anglais"},{"@language":"en","@value":"English"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6qh7b8yep--z64lmk0i2mn7","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Arabe/ara"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ara"}],"notation":"ara","note":[],"prefLabel":[{"@language":"fr","@value":"arabe"},{"@language":"en","@value":"Arabic"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z3d22v2n--9g3z9ixlsrfs","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Azeri/aze"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/aze"}],"notation":"aze","note":[],"prefLabel":[{"@language":"fr","@value":"azéri"},{"@language":"en","@value":"Azerbaijani"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z8bswcw5--bop1vrrfo305","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Bulgare/bul"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/bul"}],"notation":"bul","note":[],"prefLabel":[{"@language":"fr","@value":"bulgare"},{"@language":"en","@value":"Bulgarian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6g899b3ht-jm6991yabdi","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"valencien"},{"@language":"en","@value":"Valencian"},{"@language":"fr","@value":"Catalan/cat"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/cat"}],"notation":"cat","note":[],"prefLabel":[{"@language":"fr","@value":"catalan"},{"@language":"en","@value":"Catalan"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-27t3kwreg-1uog59frz3duy","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Chinois/chi"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/chi"}],"notation":"chi","note":[],"prefLabel":[{"@language":"fr","@value":"chinois"},{"@language":"en","@value":"Chinese"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-9wmjrgwzs-7qd7q10efdgg","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Coréen/kor"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/kor"}],"notation":"kor","note":[],"prefLabel":[{"@language":"fr","@value":"coréen"},{"@language":"en","@value":"Korean"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z0mrdqvo--1r4hvkea941qa","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Croate/hrv"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/hrv"}],"notation":"hrv","note":[],"prefLabel":[{"@language":"fr","@value":"croate"},{"@language":"en","@value":"Croatian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6vjqcpn3q-legpg1oy9jog","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Danois/dan"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/dan"}],"notation":"dan","note":[],"prefLabel":[{"@language":"fr","@value":"danois"},{"@language":"en","@value":"Danish"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name7","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"castillan"},{"@language":"en","@value":"Castilian"},{"@language":"fr","@value":"Espagnol/spa"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/spa"}],"notation":"spa","note":[],"prefLabel":[{"@language":"fr","@value":"espagnol"},{"@language":"en","@value":"Spanish"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name4","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Français/fre"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/fre"}],"notation":"fre","note":[],"prefLabel":[{"@language":"fr","@value":"français"},{"@language":"en","@value":"French"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6eqlgu6jp--12ojio4wuez4","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Hébreu/heb"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/heb"}],"notation":"heb","note":[],"prefLabel":[{"@language":"fr","@value":"hébreu"},{"@language":"en","@value":"Hebrew"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-bs1vo2qq7--3z3urgeudicx","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Hongrois/hun"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/hun"}],"notation":"hun","note":[],"prefLabel":[{"@language":"fr","@value":"hongrois"},{"@language":"en","@value":"Hungarian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-oss057ra-ggj18pxos22n","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Indéterminé/und"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/und"}],"notation":"und","note":[],"prefLabel":[{"@language":"fr","@value":"indéterminée"},{"@language":"en","@value":"Undetermined"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1r5pt0vk2-1nbochkgb87dc","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Italien/ita"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ita"}],"notation":"ita","note":[],"prefLabel":[{"@language":"fr","@value":"italien"},{"@language":"en","@value":"Italian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1r86elmsk--4sn2z2z095po","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Japonais/jpn"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/jpn"}],"notation":"jpn","note":[],"prefLabel":[{"@language":"fr","@value":"japonais"},{"@language":"en","@value":"Japanese"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-5mat7mwfw--1qvprgefpak31","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Khmer/khm"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/khm"}],"notation":"khm","note":[],"prefLabel":[{"@language":"fr","@value":"khmer central"},{"@language":"en","@value":"Central Khmer"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-24jvl4ifg-qm3enyls0r1n","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"langues berbères/ber"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ber"}],"notation":"ber","note":[],"prefLabel":[{"@language":"fr","@value":"langues berbères"},{"@language":"en","@value":"Berber languages"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4twkixgif--23mscu52ldz1","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"langues indo-aryennes/inc"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/inc"}],"notation":"inc","note":[],"prefLabel":[{"@language":"fr","@value":"langues indo-aryennes"},{"@language":"en","@value":"Indic languages"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-name9","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Latin/lat"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/lat"}],"notation":"lat","note":[],"prefLabel":[{"@language":"fr","@value":"latin"},{"@language":"en","@value":"Latin"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4tzanfz87-1k0iqbn7n8x8o","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"flamand"},{"@language":"en","@value":"Flemish"},{"@language":"fr","@value":"Néerlandais, flamand/dut/nld"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/dut"}],"notation":"dut","note":[],"prefLabel":[{"@language":"fr","@value":"néerlandais"},{"@language":"en","@value":"Dutch"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-15g3k8cw6a-5hplkafjklx2","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Persan/fas"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/fas"}],"notation":"fas","note":[],"prefLabel":[{"@language":"fr","@value":"persan"},{"@language":"en","@value":"Persian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-3tvxs9qn3qg-n9p1uew8e4c","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Polonais/pol"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/pol"}],"notation":"pol","note":[],"prefLabel":[{"@language":"fr","@value":"polonais"},{"@language":"en","@value":"Polish"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-27r4eyoru--nr0heo55wfg1","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Portugais/por"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/por"}],"notation":"por","note":[],"prefLabel":[{"@language":"fr","@value":"portugais"},{"@language":"en","@value":"Portuguese"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6gxlaatn3--1u5awn9rlvci0","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Roumain/rum"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/rum"}],"notation":"rum","note":[],"prefLabel":[{"@language":"fr","@value":"roumain"},{"@language":"en","@value":"Romanian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-1sjflaasd--2gtom2adgool","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Russe/rus"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/rus"}],"notation":"rus","note":[],"prefLabel":[{"@language":"fr","@value":"russe"},{"@language":"en","@value":"Russian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4z4ym2kus--yx1gl0wxj41a","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Serbe/srp"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/srp"}],"notation":"srp","note":[],"prefLabel":[{"@language":"fr","@value":"serbe"},{"@language":"en","@value":"Serbian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-3tvuh76enzs--1jtgafq8a1fvw","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Suédois/swe"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/swe"}],"notation":"swe","note":[],"prefLabel":[{"@language":"fr","@value":"suédois"},{"@language":"en","@value":"Swedish"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-796696222-1lamgv0pyrkcz","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Tchèque/cze"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/cze"}],"notation":"cze","note":[],"prefLabel":[{"@language":"fr","@value":"tchèque"},{"@language":"en","@value":"Czech"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-bs3x454oq--1qhi5aucvlmxf","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Turc/tur"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/tur"}],"notation":"tur","note":[],"prefLabel":[{"@language":"fr","@value":"turc"},{"@language":"en","@value":"Turkish"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-4vsa9mk3v--1e6zs93j5v3r9","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Ukrainien/ukr"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/ukr"}],"notation":"ukr","note":[],"prefLabel":[{"@language":"fr","@value":"ukrainien"},{"@language":"en","@value":"Ukrainian"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-2dc92nrgy--1tzv3kr2sefc7","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Vietnamien/vie"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/vie"}],"notation":"vie","note":[],"prefLabel":[{"@language":"fr","@value":"vietnamien"},{"@language":"en","@value":"Vietnamese"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/language/FRAN_RI_100-d-6esxwiu96--12luf1wb9fqf8","type":["Concept","rico:Language"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"Yiddish/yid"}],"exactMatch":[{"id":"http://id.loc.gov/vocabulary/iso639-2/yid"}],"notation":"yid","note":[],"prefLabel":[{"@language":"fr","@value":"yiddish"},{"@language":"en","@value":"Yiddish"}],"scopeNote":[]}]
   /* THOMAS : il faut ajouter dans le tableau de data un noeud qui correspond à la racine de l'arbre à dessigner */
-  const conceptScheme_Header = {"id": "https://rdf.archives-nationales.culture.gouv.fr/languages","prefLabel":[{"@language":"fr","@value":"Liste des langues des documents et des agents"}]}
+  const conceptScheme_Header = {"id": "https://rdf.archives-nationales.culture.gouv.fr/languages","prefLabel":[{"@language":"fr","@value":"Langues"}]}
   const title_conceptScheme = []
 
   
@@ -3955,12 +3996,7 @@
         </div>
         <hr>
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up"></i></a>
-        <!-- footer --> 
-        <footer class="footer">
-            last updated on 2/28/2025
-            <br />
-            <br />
-        </footer>
+        <footer class="footer">last updated on 3/17/2025<br /><br /></footer>
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -3969,16 +4005,13 @@
         
         <!-- anchors -->
         <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-        <!-- d3js -->
-        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
         <script src="../../../assets/js/garance.js"></script>
 
-          <script>
-            // generate anchors on each h5 title
+        <script>
             anchors.options.placement = 'left';
             anchors.options.icon = '#';
             anchors.add('h5');
-          </script>
+        </script>
     </body>
 
 

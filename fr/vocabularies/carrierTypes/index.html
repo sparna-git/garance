@@ -6,8 +6,8 @@
         <title>Garance</title>
 
         <!-- bootstrap -->
-        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">     
-
+        <link href=" https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css " rel="stylesheet">
+        
         <!-- fontawesome -->
         <link href="../../../assets/fa/css/all.min.css" rel="stylesheet"/>        
         
@@ -29,49 +29,64 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavMenu">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <!-- Vocabularies -->
+                        <!-- Referentiels -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Vocabulaires contrôlés<a>
-                            
-                                
-                                <ul class="dropdown-menu">  
-                                
-                                    <li><a class="dropdown-item" href="../languages">Liste des langues des documents et des agents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../identifierTypes">Liste des types d’identifiants
-                        des entités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../corporateBodyTypes">Thésaurus des catégories de collectivités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../recordStates">Thésaurus des états des documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../activityTypes">Thésaurus des fonctions des collectivités</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../things">Thésaurus des mots-matières</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../documentaryFormTypes">Thésaurus des types de documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../recordSetTypes">Thésaurus des types de groupes de documents</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../representationTypes">Thésaurus des types de représentation des instanciations</a></li>
-                                
-                                    <li><a class="dropdown-item" href="">Thésaurus des types de supports des instanciations des archives</a></li>
-                                
-                                    <li><a class="dropdown-item" href="../productionTechniqueTypes">Thésaurus des types de technique de production des instanciations</a></li>
-                                
-                                </ul>
-                            
+                            <a class="nav-link dropdown-toggle" id="menu_Referentiels" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Référentiels<a>
+                            <ul class="dropdown-menu">
+                                <!-- Vocabularies -->
+                                <li class="dropdown-submenu">
+                                    <!-- Page Vocabulaires -->
+                                    <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href=".." role="button" aria-expanded="false">Vocabulaires contrôlés</a>
+                                    <!-- Others concepts links -->
+                                    
+                                        
+                                        <ul class="dropdown-menu">  
+                                        
+                                            <li><a class="dropdown-item" href="../corporateBodyTypes">Catégories des collectivités</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../recordStates">États des documents et des données</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../activityTypes">Fonctions des collectivités</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../occupationTypes">Fonctions, métiers et professions des personnes</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../languages">Langues</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../things">Mots-matières</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="">Supports des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../productionTechniqueTypes">Techniques de production des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../identifierTypes">Types d’identifiants</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../representationTypes">Types de représentation des archives</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../documentaryFormTypes">Types des documents et des données</a></li>
+                                        
+                                            <li><a class="dropdown-item" href="../recordSetTypes">Types des groupes de documents et de données</a></li>
+                                        
+                                        </ul>
+                                    
+                                    
+                                </li>
+                                <!-- Agents -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" id="DropdownMenuLink_2" href="#" role="button" aria-expanded="false">Agents<a>
+                                </li>
+                                <!-- Lieux -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Places<a>
+                                </li>
+                            </ul>
                         </li>
-                        <!-- Agents -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Agents<a>
+                        <!-- Menus -->
+                        <li>
+                            <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu 1<a>
                         </li>
-                        <!-- Lieux -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Places<a>
+                        <li>
+                            <a class="nav-link" id="DropdownMenuLink_3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu 2<a>
                         </li>
-
                     </ul>
                 <div>
                 <div class="menu-menu-principal-container">
@@ -97,7 +112,7 @@
   
   <div class="row">
     <div class="col-md">
-        <h1 class="ConceptScheme-title">Thésaurus des types de supports des instanciations des archives</h1>
+        <h1 class="ConceptScheme-title">Supports des archives</h1>
     </div>
     
     <p class="concept-URI">
@@ -126,7 +141,7 @@
         
           <div class="row">
             <p>
-            <a href="https://www.archives-nationales.culture.gouv.fr">Archives nationales (France). Lab</a>
+            Archives nationales (France). Lab
             
             <span>
                 <a href="mailto:le-lab.archives-nationales@culture.gouv.fr"><i class="fa-solid fa-envelope"></i></a>
@@ -143,10 +158,40 @@
       <div class="row">
         <div class="col-2">
           
-          <h6><span>Dernière mise à jour</span></h6>
+          <h6><span>Version</span></h6>
         </div>
         <div class="col-6">
-          <span>2/21/2025</span>
+          <span>2.0</span>
+        </div>  
+      </div>
+    
+
+    
+    
+      <div class="row">
+        <div class="col-2">
+          
+          <h6><span>Date de création</span></h6>
+        </div>
+        <div class="col-6">
+          <span>2021-04-16</span>
+        </div>  
+      </div>
+    
+
+    
+    
+      <div class="row">
+        <div class="col-2">
+          
+          <h6><span>Source</span></h6>
+        </div>
+        <div class="col-10">
+          <p>
+          
+          <span>Fichier FRAN_RI_002.xml, version 1.2 ; exporté du système d’information archivistique (SIA) des Archives nationales de France (AnF) le 21 janvier 2025 (date de dernière modification dans le SIA : 2023-06-29)</span>
+          
+          </p>
         </div>  
       </div>
     
@@ -166,21 +211,6 @@
 
     
     
-      <div class="row">
-        <div class="col-2">
-          
-          <h6><span>Droits</span></h6>
-        </div>
-        <div class="col-10">
-          <p><span>Ces données étant des informations publiques, l’usager dispose d’un droit non exclusif
-        et gratuit de libre « réutilisation » à des fins commerciales ou non, dans le monde entier
-        et pour une durée illimitée, de ce référentiel. Il doit accompagner chaque rediffusion des
-        informations de l’indication précise de l’origine des métadonnées : « Archives nationales de
-        France », du nom du référentiel, de son identifiant (URI), du numéro et de la date de la version
-        du référentiel.</span></p>
-        </div> 
-      </div>
-    
 
     
     
@@ -198,9 +228,9 @@
             <li xml:lang="fr">Mai 2024 : regénéré le fichier. Mise à jour des
                                 métadonnées. Suppression de notes éditoriales et historiques non pertinentes. Ajout de deux concepts : papier à en-tête ; papier
                                 timbré.</li>
-            <li xml:lang="fr">Février 2025 : regénéré le fichier. Cette
-                                version du vocabulaire ne compte pas de nouveau concept. Les
-                                métadonnées du fichier SKOS ont été enrichies.</li>
+            <li xml:lang="fr">Mars 2025 : regénéré le fichier. Cette
+                                    version du vocabulaire ne compte pas de nouveau concept. Les
+                                    métadonnées du fichier SKOS ont été enrichies.</li>
          </ul>
       
         </div>
@@ -219,7 +249,7 @@
             
             
             
-              <a href="https://raw.githubusercontent.com/ArchivesNationalesFR/Referentiels/refs/heads/main/concepts/rdf/FRAN_RI_002_carrierTypes.rdf"><img src="https://img.shields.io/badge/Format-TTL-blue.png" alt="RDF/XML"></a>
+              <a href="https://raw.githubusercontent.com/ArchivesNationalesFR/Referentiels/refs/heads/main/concepts/rdf/FRAN_RI_002_carrierTypes.rdf"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.png" alt="RDF/XML"></a>
             
           </span>
           
@@ -242,7 +272,7 @@
       
         
           <div class="alert alert-secondary" role="alert">
-              <em>Ces concepts ont tous le type “<b>Type de support</b>”.</em>
+              <em>Ces concepts SKOS sont tous aussi des instances de la classe RiC-O: “<a href="https://www.ica.org/standards/RiC/ontology#CarrierType" target="_blank"><b>Type de support</b></a>”.</em>
           </div>
         
       
@@ -261,8 +291,7 @@
   </div>
   
   
-  
-  
+    
   
   <div class="row"> 
       <div class="col">
@@ -568,7 +597,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -1008,7 +1037,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -1108,7 +1137,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -1208,7 +1237,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -1604,7 +1633,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -1704,7 +1733,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -1960,7 +1989,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -2060,7 +2089,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -2164,7 +2193,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -2268,7 +2297,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -2476,7 +2505,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -2576,7 +2605,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -2676,7 +2705,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -2802,7 +2831,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -2928,7 +2957,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -2961,10 +2990,14 @@
             <div class="row">
               <div class="col-1">
                 
-                <h6>Définitions</h6>                
+                <h6>Définition</h6>                
               </div>
               <div class="col">
-                <ul><li>Feuille de papier de correspondance sur laquelle sont imprimés le sigle, l’adresse le logo de l’expéditeur. (source : https://fr.wikipedia.org/wiki/Papier_%C3%A0_en-t%C3%AAte)</li></ul>
+                <p>
+                  <span>
+                    "Feuille de papier de correspondance sur laquelle sont imprimés le sigle, l’adresse le logo de l’expéditeur. (source : https://fr.wikipedia.org/wiki/Papier_%C3%A0_en-t%C3%AAte)"
+                  </span>
+                <p>
               </div>
             </div>
           
@@ -3024,7 +3057,7 @@
             <div class="row">
               <div class="col-1">
                 
-                <h6>Resource</h6>
+                <h6>Voir la page</h6>
               </div>    
               <div class="col">  
                 <ul>  
@@ -3074,7 +3107,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -3206,7 +3239,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -3326,7 +3359,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -3359,10 +3392,14 @@
             <div class="row">
               <div class="col-1">
                 
-                <h6>Définitions</h6>                
+                <h6>Définition</h6>                
               </div>
               <div class="col">
-                <ul><li>Papier mis en vente par l’administration de l’enregistrement, marqué d’un timbre officiel et dont l’emploi est obligatoire pour certains actes. (Source : TLFI notice "Papier")</li></ul>
+                <p>
+                  <span>
+                    "Papier mis en vente par l’administration de l’enregistrement, marqué d’un timbre officiel et dont l’emploi est obligatoire pour certains actes. (Source : TLFI notice \"Papier\")"
+                  </span>
+                <p>
               </div>
             </div>
           
@@ -3422,7 +3459,7 @@
             <div class="row">
               <div class="col-1">
                 
-                <h6>Resource</h6>
+                <h6>Voir la page</h6>
               </div>    
               <div class="col">  
                 <ul>  
@@ -3640,7 +3677,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -4006,7 +4043,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -4270,7 +4307,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -4396,7 +4433,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -4522,7 +4559,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -4648,7 +4685,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -4842,7 +4879,7 @@
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Thésaurus des types de supports des instanciations des archives</a>
+                    <a href="https://rdf.archives-nationales.culture.gouv.fr/carrierTypes">Supports des archives</a>
                   </li>                
                 
                   
@@ -4879,10 +4916,14 @@
             <div class="row">
               <div class="col-1">
                 
-                <h6>Définitions</h6>                
+                <h6>Définition</h6>                
               </div>
               <div class="col">
-                <ul><li>Peau de veau mort-né (ou d’un autre animal, comme l’agneau ou le chevreau), préparée pour l’écriture, l’illustration, l’imprimerie ou la reliure, plus lisse et plus fine que le parchemin ordinaire.</li></ul>
+                <p>
+                  <span>
+                    "Peau de veau mort-né (ou d’un autre animal, comme l’agneau ou le chevreau), préparée pour l’écriture, l’illustration, l’imprimerie ou la reliure, plus lisse et plus fine que le parchemin ordinaire."
+                  </span>
+                <p>
               </div>
             </div>
           
@@ -5086,6 +5127,20 @@
     </div>
   <hr style="margin-top: 10px;">
   
+
+  
+  
+    <div class="row">
+      <div class="col-2">
+        
+        <h6><span>Dernière mise à jour</span></h6>
+      </div>
+      <div class="col-6">
+        <span>3/13/2025</span>
+      </div>  
+    </div>
+  
+
 </main>
 
 
@@ -5094,9 +5149,9 @@
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script type="text/javascript">
   // recuperer tous les concepts
-  const data = [{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y5u2n-1xzki8sl1gotg","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"bande magnétique"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xqsl6--1i2m77rgllo7c","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"bande sonore"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ya7v2-1mbrwg1qcmax8","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"bois"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y465c-1roarykontz6f","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"carte perforée"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yhu9q--1xxwk4uknurum","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"carton"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xrmc2--1la2ksxvxfm7u","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"cassette audio"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y4zw8--1cka6o7kme4au","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"cd-rom"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yb2os-13bce7gkn2yv1","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"cire"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y6ne1--1dp9ldvaf0ypx","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"clé usb"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xsgy0-1rufo8atcgi3c","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"diapositive"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xu4nk--6jvte7hqi4co","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xtawo-1cju6vmj9nwi","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque vinyl"}]},"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disque 33 tours"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xuyeh-ixoxypjcl6r7","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xtawo-1cju6vmj9nwi","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque vinyl"}]},"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disque 45 tours"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xvrxm-83y52pb67jnj","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xtawo-1cju6vmj9nwi","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque vinyl"}]},"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disque 78 tours"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y7gx6--v1k9nk96x1pc","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disque dur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xtawo-1cju6vmj9nwi","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xu4nk--6jvte7hqi4co","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque 33 tours"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xuyeh-ixoxypjcl6r7","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque 45 tours"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xvrxm-83y52pb67jnj","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque 78 tours"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disque vinyl"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y8g22-7n8e3bh6bkj4","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disquette"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y9ag9-1e6kjoezbpmo8","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"dvd"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xz6sw--1p8r72p03p45d","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xwloi-1e8dcour7zw3a","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"film"}]},"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"film couleur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xyawe-1w15jcvccsdbo","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xwloi-1e8dcour7zw3a","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"film"}]},"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"film noir et blanc"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xwloi-1e8dcour7zw3a","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xz6sw--1p8r72p03p45d","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"film couleur"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xyawe-1w15jcvccsdbo","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"film noir et blanc"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"film"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ybwnf--jubck3g5wary","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"métal"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yg64n-o4lkrvohks94","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ycqec--roxx49bu81co","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microforme"}]},"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"microfiche"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yeif3-nnhvcbnswtv3","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ydnle-640nybt9jpv2","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ycqec--roxx49bu81co","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microforme"}]},"prefLabel":[{"@language":"fr","@value":"microfilm"}]},"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"microfilm 16 mm"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yfcdr-5rahg3nt8csk","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ydnle-640nybt9jpv2","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ycqec--roxx49bu81co","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microforme"}]},"prefLabel":[{"@language":"fr","@value":"microfilm"}]},"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"microfilm 35 mm"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ydnle-640nybt9jpv2","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ycqec--roxx49bu81co","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microforme"}]},"example":null,"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yeif3-nnhvcbnswtv3","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microfilm 16 mm"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yfcdr-5rahg3nt8csk","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microfilm 35 mm"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"microfilm"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ycqec--roxx49bu81co","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ydnle-640nybt9jpv2","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microfilm"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yg64n-o4lkrvohks94","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microfiche"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"microforme"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y1oh4-akwtq4srdkk","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xzzwi--1tei3696g4oji","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"pellicule photographique"}]},"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"négatif couleur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y0uq7-87gu63j9087y","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xzzwi--1tei3696g4oji","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"pellicule photographique"}]},"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"négatif noir et blanc"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yv45z--1olpjujdxtwkd","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"verre"}]},"prefLabel":[{"@language":"fr","@value":"plaque de verre"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"négatif verre couleur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yu6yw-1gylq6x4ots0l","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"verre"}]},"prefLabel":[{"@language":"fr","@value":"plaque de verre"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"négatif verre noir et blanc"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d-9zin931c0--1opq4i4jearv2","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[{"id":"https://fr.wikipedia.org/wiki/Papier_%C3%A0_en-t%C3%AAte"}],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"changenote":[{"dc:date":"22/06/2023","rdf:value":{"@language":"fr","@value":"concept ajouté le [22/06/2023]"}}],"definition":[{"@language":"fr","@value":"Feuille de papier de correspondance sur laquelle sont imprimés le sigle, l’adresse le logo de l’expéditeur. (source : https://fr.wikipedia.org/wiki/Papier_%C3%A0_en-t%C3%AAte)"}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papier à en-tête"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yjlfg-j0aeuv1yo4o2","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"papier-calque"}],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"forme préférée modifiée le [14/04/2021]"}}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papier calque"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ykeyl-1hz3si2gg29jw","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"example":null,"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ym28n--19infadmaqc3f","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"tirage couleur"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yl8x9-13t4wc729h1we","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"tirage noir et blanc"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papier photographique"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d-9qaz8mkdw-3vr78iepev","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[{"id":"https://fr.wikipedia.org/wiki/Papier_timbr%C3%A9_en_France"}],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"changenote":[{"dc:date":"22/06/2023","rdf:value":{"@language":"fr","@value":"concept ajouté le [22/06/2023]"}}],"definition":[{"@language":"fr","@value":"Papier mis en vente par l’administration de l’enregistrement, marqué d’un timbre officiel et dont l’emploi est obligatoire pour certains actes. (Source : TLFI notice \"Papier\")"}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papier timbré"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yhu9q--1xxwk4uknurum","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"carton"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d-9zin931c0--1opq4i4jearv2","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier à en-tête"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yjlfg-j0aeuv1yo4o2","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier calque"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ykeyl-1hz3si2gg29jw","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier photographique"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d-9qaz8mkdw-3vr78iepev","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier timbré"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papier"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ymvrs--1j9b552uq3p83","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papyrus"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yoi6s--g4lm976pg0ie","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ynpio-1os5cfwa3mwrz","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"peau d’animal"}]},"example":null,"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ypb2n--1qt8j6uavxhrp","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"velin"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"parchemin"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ynpio-1os5cfwa3mwrz","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yoi6s--g4lm976pg0ie","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"parchemin"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"peau d’animal"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xzzwi--1tei3696g4oji","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y1oh4-akwtq4srdkk","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"négatif couleur"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y0uq7-87gu63j9087y","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"négatif noir et blanc"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"pellicule photographique"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yq469-11pb6p2b6nbmn","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"calcaire"},{"@language":"fr","@value":"marbre"}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"pierre"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"verre"}]},"example":null,"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yv45z--1olpjujdxtwkd","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"négatif verre couleur"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yu6yw-1gylq6x4ots0l","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"négatif verre noir et blanc"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ywsb2-is0ux4jbqyki","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"positif verre couleur"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yvyzo-1vw3scmftdhpp","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"positif verre noir et blanc"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"plaque de verre"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d-a6whhopl4-vm3abmyfyreq","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"plastique"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yqxx5-qvkdsy4y1kkr","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"plâtre"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ywsb2-is0ux4jbqyki","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"verre"}]},"prefLabel":[{"@language":"fr","@value":"plaque de verre"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"positif verre couleur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yvyzo-1vw3scmftdhpp","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"verre"}]},"prefLabel":[{"@language":"fr","@value":"plaque de verre"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"positif verre noir et blanc"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ym28n--19infadmaqc3f","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ykeyl-1hz3si2gg29jw","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"prefLabel":[{"@language":"fr","@value":"papier photographique"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"tirage couleur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yl8x9-13t4wc729h1we","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ykeyl-1hz3si2gg29jw","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"prefLabel":[{"@language":"fr","@value":"papier photographique"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"tirage noir et blanc"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yrrvt-fmgd6rjip7cm","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"tissu"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ypb2n--1qt8j6uavxhrp","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yoi6s--g4lm976pg0ie","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ynpio-1os5cfwa3mwrz","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"peau d’animal"}]},"prefLabel":[{"@language":"fr","@value":"parchemin"}]},"definition":[{"@language":"fr","@value":"Peau de veau mort-né (ou d’un autre animal, comme l’agneau ou le chevreau), préparée pour l’écriture, l’illustration, l’imprimerie ou la reliure, plus lisse et plus fine que le parchemin ordinaire."}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"velin"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"example":null,"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"plaque de verre"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"verre"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y2ifs--9yvs0ds5wc0l","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"VHS"}],"example":null,"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"vidéocassette"}],"scopeNote":[]}]
+  const data = [{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y5u2n-1xzki8sl1gotg","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"bande magnétique"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xqsl6--1i2m77rgllo7c","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"bande sonore"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ya7v2-1mbrwg1qcmax8","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"bois"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y465c-1roarykontz6f","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"carte perforée"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yhu9q--1xxwk4uknurum","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"carton"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xrmc2--1la2ksxvxfm7u","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"cassette audio"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y4zw8--1cka6o7kme4au","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"cd-rom"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yb2os-13bce7gkn2yv1","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"cire"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y6ne1--1dp9ldvaf0ypx","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"clé usb"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xsgy0-1rufo8atcgi3c","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"diapositive"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xu4nk--6jvte7hqi4co","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xtawo-1cju6vmj9nwi","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque vinyl"}]},"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disque 33 tours"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xuyeh-ixoxypjcl6r7","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xtawo-1cju6vmj9nwi","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque vinyl"}]},"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disque 45 tours"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xvrxm-83y52pb67jnj","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xtawo-1cju6vmj9nwi","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque vinyl"}]},"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disque 78 tours"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y7gx6--v1k9nk96x1pc","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disque dur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xtawo-1cju6vmj9nwi","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xu4nk--6jvte7hqi4co","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque 33 tours"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xuyeh-ixoxypjcl6r7","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque 45 tours"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xvrxm-83y52pb67jnj","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"disque 78 tours"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disque vinyl"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y8g22-7n8e3bh6bkj4","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"disquette"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y9ag9-1e6kjoezbpmo8","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"dvd"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xz6sw--1p8r72p03p45d","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xwloi-1e8dcour7zw3a","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"film"}]},"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"film couleur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xyawe-1w15jcvccsdbo","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xwloi-1e8dcour7zw3a","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"film"}]},"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"film noir et blanc"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xwloi-1e8dcour7zw3a","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xz6sw--1p8r72p03p45d","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"film couleur"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xyawe-1w15jcvccsdbo","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"film noir et blanc"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"film"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ybwnf--jubck3g5wary","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"métal"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yg64n-o4lkrvohks94","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ycqec--roxx49bu81co","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microforme"}]},"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"microfiche"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yeif3-nnhvcbnswtv3","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ydnle-640nybt9jpv2","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ycqec--roxx49bu81co","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microforme"}]},"prefLabel":[{"@language":"fr","@value":"microfilm"}]},"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"microfilm 16 mm"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yfcdr-5rahg3nt8csk","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ydnle-640nybt9jpv2","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ycqec--roxx49bu81co","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microforme"}]},"prefLabel":[{"@language":"fr","@value":"microfilm"}]},"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"microfilm 35 mm"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ydnle-640nybt9jpv2","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ycqec--roxx49bu81co","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microforme"}]},"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yeif3-nnhvcbnswtv3","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microfilm 16 mm"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yfcdr-5rahg3nt8csk","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microfilm 35 mm"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"microfilm"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ycqec--roxx49bu81co","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ydnle-640nybt9jpv2","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microfilm"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yg64n-o4lkrvohks94","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"microfiche"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"microforme"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y1oh4-akwtq4srdkk","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xzzwi--1tei3696g4oji","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"pellicule photographique"}]},"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"négatif couleur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y0uq7-87gu63j9087y","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xzzwi--1tei3696g4oji","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"pellicule photographique"}]},"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"négatif noir et blanc"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yv45z--1olpjujdxtwkd","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"verre"}]},"prefLabel":[{"@language":"fr","@value":"plaque de verre"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"négatif verre couleur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yu6yw-1gylq6x4ots0l","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"verre"}]},"prefLabel":[{"@language":"fr","@value":"plaque de verre"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"négatif verre noir et blanc"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d-9zin931c0--1opq4i4jearv2","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[{"id":"https://fr.wikipedia.org/wiki/Papier_%C3%A0_en-t%C3%AAte"}],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"changenote":[{"dc:date":"22/06/2023","rdf:value":{"@language":"fr","@value":"concept ajouté le [22/06/2023]"}}],"definition":[{"@language":"fr","@value":"Feuille de papier de correspondance sur laquelle sont imprimés le sigle, l’adresse le logo de l’expéditeur. (source : https://fr.wikipedia.org/wiki/Papier_%C3%A0_en-t%C3%AAte)"}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papier à en-tête"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yjlfg-j0aeuv1yo4o2","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"papier-calque"}],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"forme préférée modifiée le [14/04/2021]"}}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papier calque"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ykeyl-1hz3si2gg29jw","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ym28n--19infadmaqc3f","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"tirage couleur"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yl8x9-13t4wc729h1we","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"tirage noir et blanc"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papier photographique"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d-9qaz8mkdw-3vr78iepev","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[{"id":"https://fr.wikipedia.org/wiki/Papier_timbr%C3%A9_en_France"}],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"changenote":[{"dc:date":"22/06/2023","rdf:value":{"@language":"fr","@value":"concept ajouté le [22/06/2023]"}}],"definition":[{"@language":"fr","@value":"Papier mis en vente par l’administration de l’enregistrement, marqué d’un timbre officiel et dont l’emploi est obligatoire pour certains actes. (Source : TLFI notice \"Papier\")"}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papier timbré"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yhu9q--1xxwk4uknurum","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"carton"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d-9zin931c0--1opq4i4jearv2","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier à en-tête"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yjlfg-j0aeuv1yo4o2","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier calque"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ykeyl-1hz3si2gg29jw","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier photographique"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d-9qaz8mkdw-3vr78iepev","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier timbré"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papier"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ymvrs--1j9b552uq3p83","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"papyrus"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yoi6s--g4lm976pg0ie","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ynpio-1os5cfwa3mwrz","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"peau d’animal"}]},"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ypb2n--1qt8j6uavxhrp","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"velin"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"parchemin"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ynpio-1os5cfwa3mwrz","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yoi6s--g4lm976pg0ie","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"parchemin"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"peau d’animal"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9xzzwi--1tei3696g4oji","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y1oh4-akwtq4srdkk","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"négatif couleur"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y0uq7-87gu63j9087y","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"négatif noir et blanc"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"pellicule photographique"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yq469-11pb6p2b6nbmn","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"calcaire"},{"@language":"fr","@value":"marbre"}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"pierre"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"verre"}]},"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yv45z--1olpjujdxtwkd","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"négatif verre couleur"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yu6yw-1gylq6x4ots0l","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"négatif verre noir et blanc"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ywsb2-is0ux4jbqyki","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"positif verre couleur"}]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yvyzo-1vw3scmftdhpp","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"positif verre noir et blanc"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"plaque de verre"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d-a6whhopl4-vm3abmyfyreq","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"plastique"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yqxx5-qvkdsy4y1kkr","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"plâtre"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ywsb2-is0ux4jbqyki","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"verre"}]},"prefLabel":[{"@language":"fr","@value":"plaque de verre"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"positif verre couleur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yvyzo-1vw3scmftdhpp","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"verre"}]},"prefLabel":[{"@language":"fr","@value":"plaque de verre"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"positif verre noir et blanc"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ym28n--19infadmaqc3f","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ykeyl-1hz3si2gg29jw","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"prefLabel":[{"@language":"fr","@value":"papier photographique"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"tirage couleur"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yl8x9-13t4wc729h1we","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ykeyl-1hz3si2gg29jw","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yh03b--1lx80czdt83ae","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"papier"}]},"prefLabel":[{"@language":"fr","@value":"papier photographique"}]},"changenote":[{"dc:date":"14/04/2021","rdf:value":{"@language":"fr","@value":"définition ajoutée le [14/04/2021]"}}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"tirage noir et blanc"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yrrvt-fmgd6rjip7cm","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"tissu"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ypb2n--1qt8j6uavxhrp","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yoi6s--g4lm976pg0ie","type":["Concept","rico:CarrierType"],"broader":{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ynpio-1os5cfwa3mwrz","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"peau d’animal"}]},"prefLabel":[{"@language":"fr","@value":"parchemin"}]},"definition":[{"@language":"fr","@value":"Peau de veau mort-né (ou d’un autre animal, comme l’agneau ou le chevreau), préparée pour l’écriture, l’illustration, l’imprimerie ou la reliure, plus lisse et plus fine que le parchemin ordinaire."}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"velin"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9yskro-1u09woxr0xd8n","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"narrower":[{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9ytdva-n9m6cluzchnx","type":["Concept","rico:CarrierType"],"prefLabel":[{"@language":"fr","@value":"plaque de verre"}]}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"verre"}],"scopeNote":[]},{"id":"https://rdf.archives-nationales.culture.gouv.fr/carrierType/FRAN_RI_002-d3nd9y2ifs--9yvs0ds5wc0l","type":["Concept","rico:CarrierType"],"isoThesStatus":null,"seeAlso":[],"altLabel":[{"@language":"fr","@value":"VHS"}],"notation":null,"note":[],"prefLabel":[{"@language":"fr","@value":"vidéocassette"}],"scopeNote":[]}]
   /* THOMAS : il faut ajouter dans le tableau de data un noeud qui correspond à la racine de l'arbre à dessigner */
-  const conceptScheme_Header = {"id": "https://rdf.archives-nationales.culture.gouv.fr/carrierTypes","prefLabel":[{"@language":"fr","@value":"Thésaurus des types de supports des instanciations des archives"}]}
+  const conceptScheme_Header = {"id": "https://rdf.archives-nationales.culture.gouv.fr/carrierTypes","prefLabel":[{"@language":"fr","@value":"Supports des archives"}]}
   const title_conceptScheme = []
 
   
@@ -5276,12 +5331,7 @@
         </div>
         <hr>
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up"></i></a>
-        <!-- footer --> 
-        <footer class="footer">
-            dernière mise à jour le 2/28/2025
-            <br />
-            <br />
-        </footer>
+        <footer class="footer">dernière mise à jour le 3/17/2025<br /><br /></footer>
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -5290,16 +5340,13 @@
         
         <!-- anchors -->
         <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-        <!-- d3js -->
-        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
         <script src="../../../assets/js/garance.js"></script>
 
-          <script>
-            // generate anchors on each h5 title
+        <script>
             anchors.options.placement = 'left';
             anchors.options.icon = '#';
             anchors.add('h5');
-          </script>
+        </script>
     </body>
 
 
