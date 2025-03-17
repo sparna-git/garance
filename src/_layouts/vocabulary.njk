@@ -74,6 +74,19 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
       </div>
     {% endif %}
 
+    {# dcterms:modified #}
+    {% if vocabulary.datemodified %}
+      <div class="row">
+        <div class="col-2">
+          {% set title = "dcterms:modified" | i18n %}
+          <h6><span>{{ title }}</span></h6>
+        </div>
+        <div class="col-6">
+          <span>{{ vocabulary.datemodified | getMaxDate }}</span>
+        </div>  
+      </div>
+    {% endif %}
+
     {# dc:source #}
     {% if vocabulary.sources %}
       <div class="row">
@@ -346,31 +359,6 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
           
-          {# skos:changeNote #}
-          {% if concepts.changenote %}
-            <div class="row">
-              <div class="col-1">
-                {% set title = "skos:changeNote" | i18n %}
-                <h6>{{ title }}</h6>                
-              </div>
-              <div class="col">
-                {% set cnotes = concepts.changenote | timeline("fr") %}
-                {# timeline #}
-                <div class="changeNote_container">
-                  <div class="changeNote_wrapper">
-                    <ul class="changeNote_sessions">
-                    {% for t in cnotes %}
-                      <li>
-                        <div class="changeNote_date">{{ t.date }} : <span>{{ t.description }}</span></div>                        
-                      </li>
-                    {% endfor %}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          {% endif %}
-
           {# skos:exactMatch #}
           {% if concepts.exactMatch %}
             <div class="row">
@@ -490,26 +478,36 @@ permalink: "{{ locale }}/vocabularies/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
+          {# skos:changeNote #}
+          {% if concepts.changenote %}
+            <div class="row">
+              <div class="col-1">
+                {% set title = "skos:changeNote" | i18n %}
+                <h6>{{ title }}</h6>                
+              </div>
+              <div class="col">
+                {% set cnotes = concepts.changenote | timeline("fr") %}
+                {# timeline #}
+                <div class="changeNote_container">
+                  <div class="changeNote_wrapper">
+                    <ul class="changeNote_sessions">
+                    {% for t in cnotes %}
+                      <li>
+                        <div class="changeNote_date">{{ t.date }} : <span>{{ t.description }}</span></div>                        
+                      </li>
+                    {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
         </div>  
 
       </div>
     </div>
   <hr style="margin-top: 10px;">
   {% endfor %}
-
-  {# dcterms:modified #}
-  {% if vocabulary.datemodified %}
-    <div class="row">
-      <div class="col-2">
-        {% set title = "dcterms:modified" | i18n %}
-        <h6><span>{{ title }}</span></h6>
-      </div>
-      <div class="col-6">
-        <span>{{ vocabulary.datemodified | getMaxDate }}</span>
-      </div>  
-    </div>
-  {% endif %}
-
 </main>
 
 
