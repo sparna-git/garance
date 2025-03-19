@@ -35,6 +35,7 @@ module.exports = {
     "dcterms:created": "Created",
     "dc:version": "Version",
     "skos:scoteNote": "Scote Note",
+    "skos:prefLabel": "Translations",
 
     // for agents and generic JSON-LD printing
     id: "URI identifier",

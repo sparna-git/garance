@@ -66,3 +66,52 @@
     window.addEventListener('load', toggleBacktotop)
     onscroll(document, toggleBacktotop)
   }
+
+  /**
+   * reads a URL parameter
+   **/
+  const urlParam = function(name){
+      var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
+      if(results == null) { return null; }
+      return results[1] || 0;
+  }
+
+  const getLocale = function(defaultLang, pageLang, urlLang) {
+    var locale;
+    if(pageLang != '') {
+        locale = pageLang;
+    } else if(urlLang != null) {
+        locale = urlLang;
+    } else {
+        locale = defaultLang
+    }
+
+    return locale;
+  }
+
+  const triggerI18n = function(locale, enTranslations, frTranslations) {
+    $.i18n( { locale: locale } );  
+    $.i18n().load({
+        'en': enTranslations,
+        'fr': frTranslations
+    }).done( function() { 
+        $('body').i18n();
+    }); 
+  }
+
+  const triggerAnchors = function() {
+    anchors.options.placement = 'left';
+    anchors.options.icon = '#';
+    anchors.add('h5');
+  }
+
+  const adaptPagesHrefLocale = function(locale) {
+    const aTags = document.querySelectorAll('a') 
+    // console.log("replacing locale in links "+locale)
+    // console.log("../../fr/vocabularies".replace(/(en|fr)\//g, locale+"/"))
+    aTags.forEach(aTag => {
+      if(aTag.href && aTag.id != "switchLang") {
+        aTag.href = aTag.href.replace(/\/(en|fr)\//g, "/"+locale+"/")
+      }
+    })
+  }

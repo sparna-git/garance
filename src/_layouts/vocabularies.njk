@@ -7,11 +7,11 @@ layout: main.njk
 <main class="section_garance" id="documentaryFormType">
 	<div class="row">
 		<div class="col-md">
-			<h1 class="title-Header">{{ 'vocabularies' | i18n }}</h1>			
+			<h1 class="title-Header" data-i18n="vocabularies"></h1>			
 			<ul>
 				{%- for item in sortIndex -%}
 					<li>
-						<a href="{{ item.id | localName }}">{{ item.title | lang("fr") }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} concepts</small>
+						<a href="{{ [ '/entities/vocabularies/', item.id | localName ] | join | relative(page) }}">{{ item.title | lang("fr") }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} concepts</small>
 					</li>
 				{%- endfor-%}
 			</ul>			
