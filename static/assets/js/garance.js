@@ -77,6 +77,21 @@
   }
 
   const getLocale = function(defaultLang, pageLang, urlLang) {
+    if(urlLang != null) {
+      console.log("storing cookie to "+urlLang);
+      document.cookie = "lang="+urlLang+";path=/";
+    } else {
+      // maybe we have a cookie ?
+      const langCookieValue = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("lang="))
+      ?.split("=")[1];
+      if(langCookieValue) {
+        console.log("reading cookie : "+langCookieValue)
+        urlLang = langCookieValue;
+      }
+    }
+
     var locale;
     if(pageLang != '') {
         locale = pageLang;
@@ -110,8 +125,19 @@
     // console.log("replacing locale in links "+locale)
     // console.log("../../fr/vocabularies".replace(/(en|fr)\//g, locale+"/"))
     aTags.forEach(aTag => {
-      if(aTag.href && aTag.id != "switchLang") {
+      // check for functions in href in d3 tree
+      if(aTag.href && aTag.href.replace && aTag.id != "switchLang") {
         aTag.href = aTag.href.replace(/\/(en|fr)\//g, "/"+locale+"/")
       }
-    })
+    });
+
+    // special client-side language switch
+    const switchLang = document.querySelectorAll('#switchLangClient');
+    if(switchLang[0]) {
+      if(locale == "en") {
+        // if client is in english we propose to swicth to french
+        switchLang[0].href = switchLang[0].href.replace(/=en/g, "=fr");
+        switchLang[0].firstChild.src = switchLang[0].firstChild.src.replace(/EN\.png/g, "FR.png");
+      }
+    }
   }

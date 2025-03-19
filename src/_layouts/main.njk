@@ -22,7 +22,7 @@
                 <a href="https://www.archives-nationales.culture.gouv.fr/"><img src="{{ '/assets/images/archives-nationales.png' | relative(page) }} " style="width:200px;" /></a>
                 &nbsp;
                 &nbsp;
-                <a class="navbar-brand" href="{{ ['/', locale] | join | relative(page) }}" data-i18n="garance"></a>
+                <a class="navbar-brand" href="{{ '/pages/fr/' | relative(page) }}" data-i18n="garance"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -79,6 +79,12 @@
                         <span>
                             <a href="{{ pageURLFR | relative(page) }}" id="switchLang"><img src="{{ '/assets/images/FR.png' | relative(page) }}" alt =""/></a>
                         </span>                        
+                    {% endif %}
+
+                    {% if locale === "" %}
+                        <span>
+                            <a href="{{ page.url }}?lang=en" id="switchLangClient"><img src="{{ '/assets/images/EN.png' | relative(page) }}" /></a>
+                        </span> 
                     {% endif %}
                 </div>
             </div>
