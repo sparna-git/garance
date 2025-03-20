@@ -233,7 +233,11 @@ module.exports = {
     return (
       typeof value === 'object'
       &&
-      ('id' in value || '@id' in value)
+      (
+        ('id' in value && !value["id"].startsWith("_:"))
+        ||
+        ('@id' in value && !value["@id"].startsWith("_:"))
+      )
       &&
       (
         Object.keys(value).length === 1
