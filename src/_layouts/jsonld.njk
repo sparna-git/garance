@@ -32,59 +32,49 @@
 {% endmacro %}
 
 {% macro renderObject(object) %}
-    {% for predicate, value in object %}
-      {% if value|isArray %}
-        {# Special : multiple type values are rendered horizontally #}
-        {% if predicate == "type" or predicate == "@type" %}
-            {{ renderRowHorizontal(predicate, value) }}
+    <div class="entity">
+        {% for predicate, value in object %}
+          {{ renderPredicateValues(predicate, value) }}
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+
+{% macro renderPredicateValues(predicate, values) %}
+  <div class="entity-predicate">
+    <div class="entity-predicate-predicate">
+      {{ renderPredicate(predicate) }}
+    </div>
+    <div class="entity-predicate-values">
+        {% if values|isArray %}
+            {# Special : multiple type values are rendered horizontally #}
+            {% if predicate == "type" or predicate == "@type" %}
+                <div class="entity-predicate-values-value entity-predicate-values-type">
+                    {{ renderAsList(values) }}
+                </div>
+            {% else %}
+                {% for item in values %}
+                    <div class="entity-predicate-values-value">{{ render(item) }}</div>
+                {% endfor %}
+            {% endif %}
         {% else %}
-            {% for item in value %}
-                {% if loop.first %}
-                    {{ renderRow(predicate, item) }}
-                {% else %}
-                    {{ renderRowWithoutPredicate(item) }}
-                {% endif %}
-            {% endfor %}
+            <div class="entity-predicate-values-value">{{ render(values) }}</div>
         {% endif %}
-      {% else %}
-        {{ renderRow(predicate, value) }}
-      {% endif %}
-   {% endfor %}
-{% endmacro %}
-
-{% macro renderRow(predicate, value) %}
-  <div class="entity-row">
-    <div class="cell predicate">
-      {{ renderPredicate(predicate) }}
     </div>
-    <div class="cell value">{{ render(value) }}</div>
   </div>
 {% endmacro %}
 
-{% macro renderRowHorizontal(predicate, valueArray) %}
-  <div class="entity-row">
-    <div class="cell predicate">
-      {{ renderPredicate(predicate) }}
-    </div>
-    <div class="cell value">{{ renderAsList(valueArray) }}</div>
-  </div>
-{% endmacro %}
-
-{% macro renderRowWithoutPredicate(value) %}
-  <div class="entity-row">
-    <div class="cell predicate">&nbsp;</div>
-    <div class="cell value">{{ render(value) }}</div>
-  </div>
-{% endmacro %}
 
 {% macro renderPredicate(predicate) %}
-    {# expand and shorten so that specific keys e.g. label_fr are turned back into namespaced URI #}
-    {% set formattedPredicate = predicate | expandUri(context) | shortenUri(context) %}
-    {% set description = "" %}
+    <div class="entity-predicate-predicate-title">
+        {# expand and shorten so that specific keys e.g. label_fr are turned back into namespaced URI #}
+        {% set formattedPredicate = predicate | expandUri(context) | shortenUri(context) %}
+        {% set description = "" %}
 
-    <span class="label" title="{{ description }}" data-comment="{{ description }}" data-i18n="{{predicate}}"></span>
-    <br />
-    <span class="info-icon" title="{{description}}">ℹ️</span><code class="uri">({{formattedPredicate}})</code>
+        <span class="label" title="{{ description }}" data-comment="{{ description }}" data-i18n="{{predicate}}"></span>
+        <br />
+        <span class="info-icon" title="{{description}}">ℹ️</span><code class="uri">({{formattedPredicate}})</code>
+    </div>
 {% endmacro %}
 
 {% macro renderLiteral(literal) %}

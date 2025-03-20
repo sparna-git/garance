@@ -173,32 +173,28 @@ mark {
     position: relative;
 }
 
-.entity-row {
-    display: table-row;
-    margin-bottom: 5px;
+.entity-predicate {
+    display:grid;
+    grid-template-columns: 320px auto;
 }
 
-.cell {
-    display: table-cell;
-    padding: 5px;
-}
-
-.predicate {
+.entity-predicate-predicate {
     background-color: #f5f5f5;
     border-left: 1px solid #ddd;
     padding-left: 10px;
-    max-width: 380px;
+    padding: 5px;
 }
 
-.predicate code {
-    color: #555;
-    font-family: monospace;
-    font-size:smaller;
+.entity-predicate-predicate-title {
+    position:sticky;
+    top: 78px;
 }
 
-.value {
-    background-color: #fff;
+.entity-predicate-values {
+    display: block;
+    padding: 5px;
 }
+
 
 .label {
     font-weight: bold;
@@ -218,13 +214,4 @@ mark {
 
 .literal {
     color: #333;
-}
-
-.entity-row > .row, 
-.entity-row > .cell {
-    margin: 0;
-}
-
-.entity-row > .row:last-child {
-    margin-bottom: 5px;
 }

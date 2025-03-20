@@ -180,7 +180,23 @@
   "rico:thingIsConnectedToRelation": {
     "@omitDefault": true,
     "@explicit": true,
-    "rdfs:label": { "@omitDefault": true }
+    "rico:beginningDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:endDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:note": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:relationConnects": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "rdfs:label": { "@omitDefault": true }
+    }
   },
   "rico:wasSubdivisionOf": {
     "@omitDefault": true,
