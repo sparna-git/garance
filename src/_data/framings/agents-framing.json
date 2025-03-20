@@ -21,7 +21,7 @@
     "agent": "https://rdf.archives-nationales.culture.gouv.fr/agent/",
     "place": "https://rdf.archives-nationales.culture.gouv.fr/place/",
 
-    "documentaryFormType": "https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/",    
+    "documentaryFormType": "https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/",
     "placeType": "https://rdf.archives-nationales.culture.gouv.fr/placeType/",
     "recordSetType": "https://rdf.archives-nationales.culture.gouv.fr/recordSetType/",
     "recordState": "https://rdf.archives-nationales.culture.gouv.fr/recordState/",
@@ -34,34 +34,27 @@
     "language": "https://rdf.archives-nationales.culture.gouv.fr/language/",
     "corporateBodyType": "https://rdf.archives-nationales.culture.gouv.fr/corporateBodyType/",
     "identifierType": "https://rdf.archives-nationales.culture.gouv.fr/identifierType/",
-    
-
 
     "owl:sameAs": {
       "@id": "owl:sameAs",
       "@type": "@id"
-    },
-    "rico:isOrWasRegulatedBy": {
-      "@id": "rico:isOrWasRegulatedBy",
-      "@type": "@id"
     }
-    
   },
-
   "@explicit": true,
-  "type": [
-    "rico:Agent"
-  ],
+  "type": ["rico:Agent"],
+  "skos:altLabel": { "@omitDefault": true },
+  "rico:authorizedBy": { "@omitDefault": true },
+  "rico:authorizingMandate": { "@omitDefault": true },
+  "rico:generalDescription": { "@omitDefault": true },
   "rdfs:label": { "@omitDefault": true },
   "rico:history": { "@omitDefault": true },
   "rico:beginningDate": { "@omitDefault": true },
   "rico:endDate": { "@omitDefault": true },
   "rico:birthDate": { "@omitDefault": true },
-  "rico:deathDate": { "@omitDefault": true },  
-  "rico:hasOrHadAgentName": { 
+  "rico:deathDate": { "@omitDefault": true },
+  "rico:hasOrHadAgentName": {
     "@omitDefault": true,
     "@explicit": true,
-    "rico:isOrWasRegulatedBy": { "@omitDefault": true },
     "rico:textualValue": { "@omitDefault": true },
     "rico:type": { "@omitDefault": true },
     "rico:usedFromDate": { "@omitDefault": true },
@@ -81,12 +74,120 @@
     "@explicit": true,
     "rdfs:label": { "@omitDefault": true }
   },
+  "rico:hadSubordinate": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasDirectSubdivision": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasDirectSubordinate": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasFamilyAssociationWith": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadController": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadCorporateBodyType": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadLeader": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadLocation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadMember": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadOccupationOfType": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasSuccessor": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:identifier": { "@omitDefault": true },
+  "rico:isAgentAssociatedWithAgent": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isDirectSubdivisionOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isDirectSubordinateTo": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isOrganicProvenanceOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isOrWasControllerOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isOrWasDescribedBy": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isOrWasLeaderOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isOrWasMainSubjectOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isSuccessorOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:name": { "@omitDefault": true },
+  "skos:prefLabel": { "@omitDefault": true },
+  "rico:thingIsConnectedToRelation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
   "rico:wasSubdivisionOf": {
     "@omitDefault": true,
     "@explicit": true,
     "rdfs:label": { "@omitDefault": true }
   },
-  "owl:sameAs": { 
+  "owl:sameAs": {
     "@omitDefault": true,
     "@explicit": true,
     "rdfs:label": { "@omitDefault": true }
@@ -109,7 +210,17 @@
     "rico:relationHasSource": {
       "@explicit": true,
       "@omitDefault": true,
-      "rdfs:label": { "@omitDefault": true }
+      "@embed": "@always",
+      "rico:title": { "@omitDefault": true },
+      "rdfs:seeAlso": { "@omitDefault": true },
+      "rico:thingIsSourceOfRelation": {
+        "@explicit": true,
+        "@omitDefault": true
+      },
+      "rico:hasActivityType": {
+        "@explicit": true,
+        "@omitDefault": true
+      }
     }
   },
   "rico:thingIsSourceOfRelation": {
@@ -132,5 +243,10 @@
       "@omitDefault": true,
       "rdfs:label": { "@omitDefault": true }
     }
+  },
+  "rico:wasSubordinateTo": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
   }
 }
