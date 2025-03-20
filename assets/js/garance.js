@@ -66,3 +66,78 @@
     window.addEventListener('load', toggleBacktotop)
     onscroll(document, toggleBacktotop)
   }
+
+  /**
+   * reads a URL parameter
+   **/
+  const urlParam = function(name){
+      var results = new RegExp('[\\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
+      if(results == null) { return null; }
+      return results[1] || 0;
+  }
+
+  const getLocale = function(defaultLang, pageLang, urlLang) {
+    if(urlLang != null) {
+      console.log("storing cookie to "+urlLang);
+      document.cookie = "lang="+urlLang+";path=/";
+    } else {
+      // maybe we have a cookie ?
+      const langCookieValue = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("lang="))
+      ?.split("=")[1];
+      if(langCookieValue) {
+        console.log("reading cookie : "+langCookieValue)
+        urlLang = langCookieValue;
+      }
+    }
+
+    var locale;
+    if(pageLang != '') {
+        locale = pageLang;
+    } else if(urlLang != null) {
+        locale = urlLang;
+    } else {
+        locale = defaultLang
+    }
+
+    return locale;
+  }
+
+  const triggerI18n = function(locale, enTranslations, frTranslations) {
+    $.i18n( { locale: locale } );  
+    $.i18n().load({
+        'en': enTranslations,
+        'fr': frTranslations
+    }).done( function() { 
+        $('body').i18n();
+    }); 
+  }
+
+  const triggerAnchors = function() {
+    anchors.options.placement = 'left';
+    anchors.options.icon = '#';
+    anchors.add('h5');
+  }
+
+  const adaptPagesHrefLocale = function(locale) {
+    const aTags = document.querySelectorAll('a') 
+    // console.log("replacing locale in links "+locale)
+    // console.log("../../fr/vocabularies".replace(/(en|fr)\//g, locale+"/"))
+    aTags.forEach(aTag => {
+      // check for functions in href in d3 tree
+      if(aTag.href && aTag.href.replace && aTag.id != "switchLang") {
+        aTag.href = aTag.href.replace(/\/(en|fr)\//g, "/"+locale+"/")
+      }
+    });
+
+    // special client-side language switch
+    const switchLang = document.querySelectorAll('#switchLangClient');
+    if(switchLang[0]) {
+      if(locale == "en") {
+        // if client is in english we propose to swicth to french
+        switchLang[0].href = switchLang[0].href.replace(/=en/g, "=fr");
+        switchLang[0].firstChild.src = switchLang[0].firstChild.src.replace(/EN\.png/g, "FR.png");
+      }
+    }
+  }
