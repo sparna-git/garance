@@ -38,6 +38,18 @@
     "owl:sameAs": {
       "@id": "owl:sameAs",
       "@type": "@id"
+    },
+    "rico:isOrWasRegulatedBy": {
+      "@id": "rico:isOrWasRegulatedBy",
+      "@type": "@id"
+    },
+    "thingIsTargetOfRelation_Mandate": {
+      "@reverse": "rico:thingIsTargetOfRelation",
+      "@type":"rico:MandateRelation"
+    },
+    "thingIsTargetOfRelation_Temporal": {
+      "@reverse": "rico:thingIsTargetOfRelation",
+      "@type":"rico:TemporalRelation"
     }
   },
   "@explicit": true,
@@ -51,9 +63,9 @@
   "rico:beginningDate": { "@omitDefault": true },
   "rico:endDate": { "@omitDefault": true },
   "rico:birthDate": { "@omitDefault": true },
-  "rico:deathDate": { "@omitDefault": true },
-  "rico:hasOrHadAgentName": {
-    "@omitDefault": true,
+  "rico:deathDate": { "@omitDefault": true },  
+  "rico:hasOrHadAgentName": { 
+    "@omitDefault": true, 
     "@explicit": true,
     "rico:textualValue": { "@omitDefault": true },
     "rico:type": { "@omitDefault": true },
@@ -192,7 +204,7 @@
     "@explicit": true,
     "rdfs:label": { "@omitDefault": true }
   },
-  "rico:thingIsTargetOfRelation": {
+  "thingIsTargetOfRelation_Mandate": {
     "@omitDefault": true,
     "@explicit": true,
     "rico:beginningDate": {
@@ -221,6 +233,27 @@
         "@explicit": true,
         "@omitDefault": true
       }
+    }
+  },
+  "thingIsTargetOfRelation_Temporal": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:beginningDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:endDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:note": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:relationHasSource": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "rdfs:label": { "@omitDefault": true }
     }
   },
   "rico:thingIsSourceOfRelation": {

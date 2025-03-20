@@ -83,8 +83,11 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   deleteAllOnTypeExcept(agentFramingData.graph, "rico:Place", ["rdfs:label"]);
   deleteAllOnTypeExcept(agentFramingData.graph, "skos:Concept", ["skos:prefLabel"]);
   // serialize to check
-  fs.writeFileSync("./_json/garance-for-agents.json", JSON.stringify(agentFramingData, null, 2), { encoding: "utf8" });
   await framed(agentFramingData,"src/_data/framings/agents-framing.json","src/_data/agents.json");
+
+  // parcourir le fichier JSON "src/_data/agents.json"
+  // et pour tous les objets qui ont un type = rico:AgentName ou type = rico:AgentHierarchicalRelation, ou etc...
+  // supprimer la clé "id"
 
   console.log("Now framing vocabularies...");
   await framed(dataJsonLd,"src/_data/framings/vocabularies-framing.json","src/_data/vocabularies.json");

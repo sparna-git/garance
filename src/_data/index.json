@@ -27,482 +27,6 @@
   },
   "graph": [
     {
-      "id": "an:placeTypes",
-      "inverse_inScheme": [
-        {
-          "id": "an:placeType/%C3%A9l%C3%A9ment%20d%27hydrographie",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/%C3%AEle",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/a%C3%A9rodrome",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/abbaye",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/aire%20g%C3%A9ographique%20naturelle",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/am%C3%A9nagement%20ou%20construction",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/ancienne%20commune",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/arrondissement",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/arrondissement%20municipal",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/baie",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/barrage",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/base%20a%C3%A9rienne",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/bourg",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/camp%20de%20concentration",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/camp%20militaire",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/canal",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/canton",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/cap",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/ch%C3%A2teau",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/cimeti%C3%A8re%20militaire",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/cit%C3%A9%20sanitaire",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/col",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/commune",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/cours%20d%27eau",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/d%C3%A9partement",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/for%C3%AAt",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/fortification",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/gare%20ferroviaire",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/gorge",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/grotte",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/h%C3%B4pital",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/hameau",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/lac",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/lieu-dit",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/maison%20royale%20de%20sant%C3%A9",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/manoir",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/massif",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/montagne",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/monument%20comm%C3%A9moratif",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/parc%20industriel",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/paroisse",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/pays",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/phare",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/pic",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/plage",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/plateau",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/pointe",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/pont",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/pont-canal",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/port",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/prison",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/quartier",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/r%C3%A9gion",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/sanctuaire",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/site%20nucl%C3%A9aire",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/sommet",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/station%20baln%C3%A9aire",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/station%20de%20ski",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/territoire%20ou%20ville%20%C3%A9tranger",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/vall%C3%A9e",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/viaduc",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/village",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/ville%20nouvelle",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/voie%20urbaine",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/volcan",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        },
-        {
-          "id": "an:placeType/zone%20naturelle",
-          "type": [
-            "Concept",
-            "rico:PlaceType"
-          ]
-        }
-      ],
-      "type": "ConceptScheme",
-      "title": []
-    },
-    {
       "id": "https://rdf.archives-nationales.culture.gouv.fr/activityTypes",
       "inverse_inScheme": [
         {
@@ -1847,7 +1371,7 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Thésaurus des fonctions des collectivités"
+          "@value": "Fonctions des collectivités"
         }
       ]
     },
@@ -2216,7 +1740,7 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Thésaurus des types de supports des instanciations des archives"
+          "@value": "Supports des archives"
         }
       ]
     },
@@ -2676,7 +2200,7 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Thésaurus des catégories de collectivités"
+          "@value": "Catégories des collectivités"
         }
       ]
     },
@@ -4403,7 +3927,7 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Thésaurus des types de documents"
+          "@value": "Types des documents et des données"
         }
       ]
     },
@@ -4450,7 +3974,7 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Liste des types d’identifiants\n                        des entités"
+          "@value": "Types d’identifiants"
         }
       ]
     },
@@ -4700,7 +4224,7 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Liste des langues des documents et des agents"
+          "@value": "Langues"
         }
       ]
     },
@@ -7701,7 +7225,768 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Thésaurus des fonctions, métiers et professions des\n         personnes"
+          "@value": "Fonctions, métiers et professions des personnes"
+        }
+      ]
+    },
+    {
+      "id": "https://rdf.archives-nationales.culture.gouv.fr/placeTypes",
+      "inverse_inScheme": [
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/%C3%A9l%C3%A9ment%20d%27hydrographie",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/%C3%A9l%C3%A9ment%20de%20g%C3%A9ographie%20physique",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/%C3%AEle",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/a%C3%A9rodrome",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/abbaye",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/aire%20g%C3%A9ographique%20naturelle",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/all%C3%A9e",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/am%C3%A9nagement%20ou%20construction",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/ancienne%20commune",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/arcades",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/arrondissement",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/arrondissement%20municipal",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/autoroute",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/avenue",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/baie",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/balcon",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/barrage",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/base%20a%C3%A9rienne",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/boulevard",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/bourg",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/camp%20de%20concentration",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/camp%20militaire",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/canal",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/canton",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cap",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/carrefour",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/ch%C3%A2teau",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/chauss%C3%A9e",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/chemin",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/chemin%20de%20ronde",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/chemin%20vicinal",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cimeti%C3%A8re%20militaire",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cit%C3%A9",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cit%C3%A9%20sanitaire",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/col",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/commune",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cour",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cours",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/cours%20d%E2%80%99eau",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/d%C3%A9partement",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/escalier",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/esplanade",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/fausse%20porte",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/for%C3%AAt",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/fortification",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/galerie",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/gare%20ferroviaire",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/gorge",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/grotte",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/h%C3%B4pital",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/hameau",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/impasse",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/lac",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/lieu-dit",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/maison%20royale%20de%20sant%C3%A9",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/manoir",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/massif",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/montagne",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/monument%20comm%C3%A9moratif",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/p%C3%A9ristyle",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/parc%20industriel",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/paroisse",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/parvis",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/passage",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/passerelle",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/pays",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/phare",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/pic",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/place",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/plage",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/plateau",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/pointe",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/pont",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/pont-canal",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/port",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/porte",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/poterne",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/pr%C3%A9au",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/prison",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/promenade",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/quai",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/quartier",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/r%C3%A9gion",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/rond-point",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/route",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/rue",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/ruelle",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/sanctuaire",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/sentier",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/sentier%20de%20traverse",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/site%20nucl%C3%A9aire",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/sommet",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/square",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/station%20baln%C3%A9aire",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/station%20de%20ski",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/terrasse",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/territoire%20ou%20ville%20%C3%A9tranger",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/vall%C3%A9e",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/viaduc",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/vicus",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/village",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/ville%20nouvelle",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/voie",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/voie%20urbaine",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/voirie",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/volcan",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        },
+        {
+          "id": "https://rdf.archives-nationales.culture.gouv.fr/placeType/zone%20naturelle",
+          "type": [
+            "Concept",
+            "rico:PlaceType"
+          ]
+        }
+      ],
+      "type": "ConceptScheme",
+      "title": [
+        {
+          "@language": "fr",
+          "@value": "Types de lieux"
         }
       ]
     },
@@ -7734,7 +8019,7 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Thésaurus des types de technique de production des instanciations"
+          "@value": "Techniques de production des archives"
         }
       ]
     },
@@ -7921,7 +8206,7 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Thésaurus des types de groupes de documents"
+          "@value": "Types des groupes de documents et de données"
         }
       ]
     },
@@ -8143,7 +8428,7 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Thésaurus des états des documents"
+          "@value": "États des documents et des données"
         }
       ]
     },
@@ -8169,7 +8454,7 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Thésaurus des types de représentation des instanciations"
+          "@value": "Types de représentation des archives"
         }
       ]
     },
@@ -23714,7 +23999,7 @@
       "title": [
         {
           "@language": "fr",
-          "@value": "Thésaurus des mots-matières"
+          "@value": "Mots-matières"
         }
       ]
     }
