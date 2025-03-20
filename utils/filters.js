@@ -182,11 +182,19 @@ module.exports = {
     // allows to make an absolute URL relative. Use it like this :
     // {{ '/assets/old-website/uploads/2014/09/illustration.jpg' | relative(page) }}
     relative: function (absoluteUrl, page) {
-      if (!absoluteUrl.startsWith('/')) {
-        throw new Error('URL is already relative : '+absoluteUrl)
+      if(absoluteUrl.includes("://")) {
+        // full URI, return it directly
+        return absoluteUrl;
       }
-      const relativeUrl = require("path").relative(page.url, absoluteUrl);
-      return relativeUrl;
+      // if (!absoluteUrl.startsWith('/')) {
+      //  throw new Error('URL is already relative : '+absoluteUrl)
+      // }
+      try {
+          const relativeUrl = require("path").relative(page.url, absoluteUrl);
+          return relativeUrl;
+      } catch(error) {
+        return absoluteUrl;
+      }
     },
 
     jsonSort: function (jsonContent, element) {
@@ -233,5 +241,16 @@ module.exports = {
     hasBroader: function (conceptArray) {
         const containsBroader = conceptArray.find((e) => e.broader);
         return containsBroader;
+    },
+
+    toUrl: function (uri) {
+        const NAMESPACE = "https://rdf.archives-nationales.culture.gouv.fr/";
+        var result = uri;
+        if(uri.startsWith(NAMESPACE)) {
+            let endUri = uri.substring(NAMESPACE.length);
+            result = "/entities/"+endUri;          
+        }
+
+        return result;
     }
 }

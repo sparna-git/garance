@@ -119,6 +119,7 @@ function expandUri(qname, context) {
  * @returns {string} The expanded QName.
  */
 function expandUriOnPrefixes(qname, context) {
+
   result = qname;
   if(qname.includes(':') && qname.split(':').length === 2 && qname.split(':')[0] in context) {
     result = context[qname.split(':')[0]] + qname.split(':')[1];

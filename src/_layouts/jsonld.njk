@@ -13,7 +13,7 @@
     {% elif obj | isIriString(context) %}
         {{ renderPlainUri(obj) }}
     {% elif obj | isIriObjectWithOnlyType(context) %}
-        {{ renderPlainUri(obj.id) }}
+        {{ renderPlainUri(obj.id | expandUri(context)) }}
     {% elif obj | isLiteralString or obj | isLiteralObject %}
         {{ renderLiteral(obj) }}
     {% elif obj | isObjectWithSingleLabelProperty %}
@@ -24,11 +24,11 @@
 {% endmacro %}
 
 {% macro renderPlainUri(uri) %}
-    <a href="{{uri}}" class="hyperlink">{{uri | shortenUri(context) }}</a>
+    <a href="{{ uri | toUrl | relative(page) }}" class="hyperlink">{{uri | shortenUri(context) }}</a>
 {% endmacro %}
 
 {% macro renderLabelledUri(uri, labelHtml) %}
-  <a href="{{uri}}" class="hyperlink">{{labelHtml}}</a>
+  <a href="{{ uri | toUrl | relative(page) }}" class="hyperlink">{{labelHtml}}</a>
 {% endmacro %}
 
 {% macro renderObject(object) %}

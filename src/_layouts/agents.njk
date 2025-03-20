@@ -12,7 +12,7 @@ layout: main.njk
 				{%- for item in sortIndex -%}
 					{% if item.id %}
 						<li>
-							<a href="{{ [ '/entities/agents/', item.id | localName ] | join | relative(page) }}">{{ item["rdfs:label"] | lang("fr") }}</a>
+							<a href="{{ [ '/entities/agent/', item.id | localName ] | join | relative(page) }}">{{ item["rdfs:label"] | lang("fr") }}</a>
 						</li>
 					{% endif %}
 				{%- endfor-%}

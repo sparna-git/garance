@@ -195,6 +195,7 @@
     "rico:relationConnects": {
       "@omitDefault": true,
       "@explicit": true,
+      "@embed": "@always",
       "rdfs:label": { "@omitDefault": true }
     }
   },
@@ -260,12 +261,14 @@
     "rico:relationHasTarget": {
       "@explicit": true,
       "@omitDefault": true,
+      "@embed": "@always",
       "rdfs:label": { "@omitDefault": true }
     }
   },
   "rico:wasSubordinateTo": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   }
 }
