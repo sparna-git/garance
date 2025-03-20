@@ -191,16 +191,19 @@ module.exports = {
 
     jsonSort: function (jsonContent, element) {
         const newJsonCode = jsonContent.sort((a, b) => {
-          if(a[element] && a[element].length > 0) {
-            if(b[element] && b[element].length > 0) {
-                const aValue = JSON.stringify(Object.values(a[element][0]));
-                const bValue = JSON.stringify(Object.values(b[element][0]));
-                return aValue.localeCompare(bValue);
+          if(a[element]) {
+            let aValue = (Array.isArray(a[element]) && a[element].length > 0)? a[element][0]:a[element];  
+
+            if(b[element]) {
+                let bValue = (Array.isArray(b[element]) && b[element].length > 0)? b[element][0]:b[element];  
+                const aValueString = JSON.stringify(aValue);
+                const bValueString = JSON.stringify(bValue);
+                return aValueString.localeCompare(bValueString);
             } else {
                 return -1;
             }
           } else {
-            if(b[element] && b[element].length > 0) {
+            if(b[element]) {
                 return 1
             } else {
                 // default to id

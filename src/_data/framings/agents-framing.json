@@ -213,13 +213,16 @@
       "@embed": "@always",
       "rico:title": { "@omitDefault": true },
       "rdfs:seeAlso": { "@omitDefault": true },
-      "rico:thingIsSourceOfRelation": {
-        "@explicit": true,
-        "@omitDefault": true
-      },
+      "rdfs:label": { "@omitDefault": true },
       "rico:hasActivityType": {
         "@explicit": true,
-        "@omitDefault": true
+        "@omitDefault": true,
+        "skos:prefLabel": { "@omitDefault": true }
+      },
+      "rico:hasOrHadLocation": {
+        "@explicit": true,
+        "@omitDefault": true,
+        "skos:prefLabel": { "@omitDefault": true }
       }
     }
   },
