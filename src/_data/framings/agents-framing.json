@@ -42,16 +42,9 @@
   },
   "@explicit": true,
   "type": ["rico:Agent"],
-  "skos:altLabel": { "@omitDefault": true },
-  "rico:authorizedBy": { "@omitDefault": true },
-  "rico:authorizingMandate": { "@omitDefault": true },
-  "rico:generalDescription": { "@omitDefault": true },
+  "rico:identifier": { "@omitDefault": true },
   "rdfs:label": { "@omitDefault": true },
-  "rico:history": { "@omitDefault": true },
-  "rico:beginningDate": { "@omitDefault": true },
-  "rico:endDate": { "@omitDefault": true },
-  "rico:birthDate": { "@omitDefault": true },
-  "rico:deathDate": { "@omitDefault": true },
+  "rico:name": { "@omitDefault": true },
   "rico:hasOrHadAgentName": {
     "@omitDefault": true,
     "@explicit": true,
@@ -60,123 +53,163 @@
     "rico:usedFromDate": { "@omitDefault": true },
     "rico:usedToDate": { "@omitDefault": true }
   },
-  "rico:agentIsTargetOfAgentOriginationRelation": {
+  "rico:authorizedBy": { "@omitDefault": true },
+  "rico:authorizingMandate": { "@omitDefault": true },
+  "rico:generalDescription": { "@omitDefault": true },
+  "rico:history": { "@omitDefault": true },
+  "rico:beginningDate": { "@omitDefault": true },
+  "rico:endDate": { "@omitDefault": true },
+  "rico:birthDate": { "@omitDefault": true },
+  "rico:deathDate": { "@omitDefault": true },
+  "owl:sameAs": {
     "@omitDefault": true,
-    "@explicit": true
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
   },
   "rico:isOrWasMemberOf": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hadSubdivision": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hadSubordinate": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasDirectSubdivision": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasDirectSubordinate": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasFamilyAssociationWith": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasOrHadController": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasOrHadCorporateBodyType": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasOrHadLeader": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasOrHadLocation": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasOrHadMember": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasOrHadOccupationOfType": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasSuccessor": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
-  "rico:identifier": { "@omitDefault": true },
+  "rico:wasSubdivisionOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }    
+  },
+  "rico:wasSubordinateTo": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
   "rico:isAgentAssociatedWithAgent": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:isDirectSubdivisionOf": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:isDirectSubordinateTo": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:isOrganicProvenanceOf": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:isOrWasControllerOf": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:isOrWasDescribedBy": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:isOrWasLeaderOf": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:isOrWasMainSubjectOf": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:isSuccessorOf": {
     "@omitDefault": true,
     "@explicit": true,
+    "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
-  "rico:name": { "@omitDefault": true },
-  "skos:prefLabel": { "@omitDefault": true },
   "rico:thingIsConnectedToRelation": {
     "@omitDefault": true,
     "@explicit": true,
@@ -198,16 +231,6 @@
       "@embed": "@always",
       "rdfs:label": { "@omitDefault": true }
     }
-  },
-  "rico:wasSubdivisionOf": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "rdfs:label": { "@omitDefault": true }
-  },
-  "owl:sameAs": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "rdfs:label": { "@omitDefault": true }
   },
   "rico:thingIsTargetOfRelation": {
     "@omitDefault": true,
@@ -264,11 +287,5 @@
       "@embed": "@always",
       "rdfs:label": { "@omitDefault": true }
     }
-  },
-  "rico:wasSubordinateTo": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }
   }
 }

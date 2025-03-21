@@ -53,7 +53,9 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   let framingSpec = fs.readFileSync(framingSpecPath, { ncoding: "utf8", flag: "r"});
 
   console.log("jsonld.frame ...");
-  const framed = await jsonld.frame(dataJsonLd, JSON.parse(framingSpec));
+  let framingSpecObject = JSON.parse(framingSpec);
+  // console.log(framingSpecObject);
+  const framed = await jsonld.frame(dataJsonLd, framingSpecObject);
   // special : remove type keys after framing
   // framed.graph.forEach(e => Object.entries(e).forEach(([key, value]) => { removeTypeKey(value) }));
   console.log("end jsonld.frame !");
