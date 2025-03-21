@@ -4,7 +4,7 @@ pagination:
     data: vocabularies.graph
     size: 1
     alias: vocabulary
-permalink: "entities/vocabularies/{{ vocabulary.id | localName }}/"
+permalink: "entities/{{ vocabulary.id | localName }}/"
 ---
 
 {% set jsonScheme = vocabularies["@context"] | json %}

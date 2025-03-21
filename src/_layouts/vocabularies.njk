@@ -11,7 +11,7 @@ layout: main.njk
 			<ul>
 				{%- for item in sortIndex -%}
 					<li>
-						<a href="{{ [ '/entities/vocabularies/', item.id | localName ] | join | relative(page) }}">{{ item.title | lang("fr") }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} concepts</small>
+						<a href="{{ [ '/entities/', item.id | localName ] | join | relative(page) }}">{{ item.title | lang("fr") }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} concepts</small>
 					</li>
 				{%- endfor-%}
 			</ul>			

@@ -34,7 +34,9 @@
 {% macro renderObject(object) %}
     <div class="entity">
         {% for predicate, value in object %}
-          {{ renderPredicateValues(predicate, value) }}
+          {% if predicate != "id" and predicate != "@id" %}
+            {{ renderPredicateValues(predicate, value) }}
+          {% endif %}
         {% endfor %}
     </div>
 {% endmacro %}

@@ -168,6 +168,14 @@ mark {
 # Generic JSON-LD printing
 --------------------------------------------------------------*/
 
+/* so that URI sticks to the title */
+.entity-title {
+    margin-bottom:-0.06em;
+}
+.entity-uri {
+    font-size:85%;
+}
+
 .entity {
     margin: 5px 0;
     position: relative;

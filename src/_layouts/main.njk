@@ -41,7 +41,7 @@
                                         {% set sortVocabularies = index.graph | jsonSort("title") %}
                                         <ul class="dropdown-menu">  
                                         {% for voc in sortVocabularies %}
-                                            <li><a class="dropdown-item" href="{{ [ '/entities/vocabularies/', voc.id | localName ] | join | relative(page) }}">{{ voc.title | lang("fr") }}</a></li>
+                                            <li><a class="dropdown-item" href="{{ [ '/entities/', voc.id | localName ] | join | relative(page) }}">{{ voc.title | lang("fr") }}</a></li>
                                         {% endfor %}
                                         </ul>
                                     {% endif %}

@@ -16,5 +16,10 @@
 
 {% import "src/_layouts/jsonld.njk" as jsonld with context %}
 
-<h1>{{ jsonld.renderLiteralAsString(agent | displayLabel(context) | unboxArray ) }}</h1>
+<h1 class="entity-title">{{ jsonld.renderLiteralAsString(agent | displayLabel(context) | unboxArray ) }}</h1>
+<p class="concept-URI">
+    <code >
+        <a href="{{ agent.id | expandUri(context) }}">{{ agent.id | expandUri(context) }}</a>
+    </code>
+</p>
 {{ jsonld.render(agent) }}
