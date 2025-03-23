@@ -248,7 +248,37 @@ module.exports = {
         var result = uri;
         if(uri.startsWith(NAMESPACE)) {
             let endUri = uri.substring(NAMESPACE.length);
-            result = "/entities/"+endUri;          
+            if(
+                endUri.includes("corporateBodyType")
+                ||
+                endUri.includes("recordStates")
+                ||
+                endUri.includes("activityTypes")
+                ||
+                endUri.includes("occupationTypes")
+                ||
+                endUri.includes("languages")
+                ||
+                endUri.includes("things")
+                ||
+                endUri.includes("carrierTypes")
+                ||
+                endUri.includes("productionTechniqueTypes")
+                ||
+                endUri.includes("identifierTypes")
+                ||
+                endUri.includes("placeTypes")
+                ||
+                endUri.includes("representationTypes")
+                ||
+                endUri.includes("documentaryFormTypes")
+                ||
+                endUri.includes("recordSetTypes")
+            ) {
+                result = "/entities/"+endUri.replace("/","#");       
+            } else {
+                result = "/entities/"+endUri; 
+            }
         }
 
         return result;

@@ -71,11 +71,11 @@
     <div class="entity-predicate-predicate-title">
         {# expand and shorten so that specific keys e.g. label_fr are turned back into namespaced URI #}
         {% set formattedPredicate = predicate | expandUri(context) | shortenUri(context) %}
-        {% set description = "" %}
+        {% set tooltip = ["<code>", formattedPredicate, "</code><br/>The description in <b>bold</b>"] | join %}
 
-        <span class="label" title="{{ description }}" data-comment="{{ description }}" data-i18n="{{predicate}}"></span>
-        <br />
-        <span class="info-icon" title="{{description}}">ℹ️</span><code class="uri">({{formattedPredicate}})</code>
+        <span class="label"data-i18n="{{formattedPredicate}}"></span>
+        <span class="info-icon">ℹ️</span>
+        <div class="entity-predicate-predicate-tooltip">{{ tooltip }}</div>
     </div>
 {% endmacro %}
 
