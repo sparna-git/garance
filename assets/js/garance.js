@@ -141,3 +141,15 @@
       }
     }
   }
+
+  document.querySelectorAll('.info-icon').forEach(icon => {
+      icon.addEventListener('click', function () {
+          this.classList.toggle('active');
+      });
+
+      window.addEventListener('click', function (e) {
+          if (!icon.contains(e.target) && !icon.nextElementSibling.contains(e.target)) {
+              icon.classList.remove('active');
+          }
+      });
+  });
