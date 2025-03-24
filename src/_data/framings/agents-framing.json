@@ -251,6 +251,7 @@
       "@explicit": true,
       "@omitDefault": true,
       "@embed": "@always",
+      "@id": {},
       "rico:title": { "@omitDefault": true },
       "rdfs:seeAlso": { "@omitDefault": true },
       "rdfs:label": { "@omitDefault": true },
