@@ -87,21 +87,6 @@ module.exports = {
         }
     },
 
-    // returns the full URL from a prefixed URL, by analyzing the JSON-LD context
-    getURL : function (inputContext, concept) {
-        const inputPrefix = concept.split(":")[0];
-        const inputConcept = concept.split(":")[1];
-
-        const obj = JSON.parse(inputContext);
-        const uriFound = JSON.stringify(obj, [inputPrefix]);
-
-        const objOutput = JSON.parse(uriFound);
-
-        return objOutput[inputPrefix] != undefined
-          ? objOutput[inputPrefix] + inputConcept
-          : concept;
-    },
-
     getMaxDate: function (dateArray) {
         const arrDates = [];
         dateArray.forEach((eDate) => {
@@ -249,31 +234,31 @@ module.exports = {
         if(uri.startsWith(NAMESPACE)) {
             let endUri = uri.substring(NAMESPACE.length);
             if(
-                endUri.includes("corporateBodyType")
+                endUri.includes("corporateBodyType/")
                 ||
-                endUri.includes("recordState")
+                endUri.includes("recordState/")
                 ||
-                endUri.includes("activityType")
+                endUri.includes("activityType/")
                 ||
-                endUri.includes("occupationType")
+                endUri.includes("occupationType/")
                 ||
-                endUri.includes("language")
+                endUri.includes("language/")
                 ||
-                endUri.includes("thing")
+                endUri.includes("thing/")
                 ||
-                endUri.includes("carrierType")
+                endUri.includes("carrierType/")
                 ||
-                endUri.includes("productionTechniqueType")
+                endUri.includes("productionTechniqueType/")
                 ||
-                endUri.includes("identifierType")
+                endUri.includes("identifierType/")
                 ||
-                endUri.includes("placeType")
+                endUri.includes("placeType/")
                 ||
-                endUri.includes("representationType")
+                endUri.includes("representationType/")
                 ||
-                endUri.includes("documentaryFormType")
+                endUri.includes("documentaryFormType/")
                 ||
-                endUri.includes("recordSetType")
+                endUri.includes("recordSetType/")
             ) {
                 result = "/entities/"+endUri.split("/")[0]+"s"+"#"+endUri.split("/")[1];       
             } else {

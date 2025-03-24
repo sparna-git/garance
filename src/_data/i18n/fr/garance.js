@@ -31,7 +31,7 @@ module.exports = {
     "dc:coverage": "Couverture",
     "dc:rights": "Droits",
     "skos:historyNote": "Note historique",
-    "dc:source": "Source",
+    "dc:source": "Sources",
     "dcterms:created": "Date de création",
     "dc:version": "Version",
     "skos:scoteNote" : "Scote Note",

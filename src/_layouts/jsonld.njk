@@ -23,7 +23,7 @@
         {% endif %}
     {% elif obj | isLiteralString or obj | isLiteralObject %}
         {{ renderLiteral(obj) }}
-    {% elif obj | isObjectWithSingleLabelProperty %}
+    {% elif obj | isObjectWithSingleLabelProperty(context) %}
         {{ renderObjectWithSingleLabelProperty(obj) }}
     {% else %}
         {{ renderObject(obj, mainObject) }}

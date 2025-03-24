@@ -7,7 +7,7 @@ pagination:
 permalink: "entities/{{ vocabulary.id | localName }}/"
 ---
 
-{% set jsonScheme = vocabularies["@context"] | json %}
+{% set jsonLdContext = vocabularies["@context"] | json %}
 {% set sortInverseInScheme = vocabulary.inverse_inScheme | jsonSort("prefLabel") %}
 
 <main class="section_body" id="vocabulary">
@@ -19,7 +19,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
     {# URI #}
     <p class="concept-URI">
         <code >
-            <a href="{{ jsonScheme | getURL(vocabulary.id) }}">{{ jsonScheme | getURL(vocabulary.id) }}</a>
+            <a href="{{ vocabulary.id | expandUri(jsonLdContext) }}">{{ vocabulary.id | expandUri(jsonLdContext) }}</a>
         </code>          
     </p>
     {# Description #}
@@ -163,7 +163,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
       {% for conceptType in sortInverseInScheme[0].type %}
         {% if conceptType != "Concept" %}
           <div class="alert alert-secondary" role="alert">
-              <em><span data-i18n="These concepts have all the type"></span> “<a href="{{ jsonScheme | getURL(conceptType) }}" target="_blank"><b data-i18n="{{ conceptType }}"></b></a>”.</em>
+              <em><span data-i18n="These concepts have all the type"></span> “<a href="{{ conceptType | expandUri(jsonLdContext) }}" target="_blank"><b>{{ conceptType }}</b></a>”.</em>
           </div>
         {% endif %}
       {% endfor %}
@@ -207,7 +207,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
         {# URI #}
         <p class="concept-URI">
           <code>
-            <a href="{{ jsonScheme | getURL(concepts.id) }}">{{ jsonScheme | getURL(concepts.id) }}</a>
+            <a href="{{ concepts.id | expandUri(jsonLdContext) }}">{{ concepts.id | expandUri(jsonLdContext) }}</a>
           </code>
           <br /> 
           {# Sparql Query #}
@@ -224,32 +224,32 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="{{ jsonScheme | getURL(vocabulary.id) }}">{{ vocabulary.title | lang('fr') }}</a>
+                    <a href="{{ vocabulary.id | expandUri(jsonLdContext) | toUrl }}">{{ vocabulary.title | lang('fr') }}</a>
                   </li>                
                 
                   {% if concepts.broader %}
 
                     {% if concepts.broader.broader.broader.broader %}                    
                       <li>
-                        <a href="{{ jsonScheme | getURL(concepts.broader.broader.broader.broader.id) }}">{{ concepts.broader.broader.broader.broader.prefLabel | lang('fr') }}</a>
+                        <a href="#{{ concepts.broader.broader.broader.broader.id | localName }}">{{ concepts.broader.broader.broader.broader.prefLabel | lang('fr') }}</a>
                       </li>
                     {% endif %}
                     
                     {% if concepts.broader.broader.broader %}
                       <li>
-                        <a href="{{ jsonScheme | getURL(concepts.broader.broader.broader.id) }}">{{ concepts.broader.broader.broader.prefLabel | lang('fr') }}</a>
+                        <a href="#{{ concepts.broader.broader.broader.id | localName }}">{{ concepts.broader.broader.broader.prefLabel | lang('fr') }}</a>
                       </li>
                     {% endif %}
 
                     {% if concepts.broader.broader %}
                       <li>
-                        <a href="{{ jsonScheme | getURL(concepts.broader.broader.id) }}">{{ concepts.broader.broader.prefLabel | lang('fr') }}</a>
+                        <a href="#{{ concepts.broader.broader.id | localName }}">{{ concepts.broader.broader.prefLabel | lang('fr') }}</a>
                       </li>
                     {% endif %}
 
                     {% if concepts.broader %}
                       <li>
-                        <a href="{{ jsonScheme | getURL(concepts.broader.id) }}">{{ concepts.broader.prefLabel | lang('fr') }}</a>
+                        <a href="#{{ concepts.broader.id | localName }}">{{ concepts.broader.prefLabel | lang('fr') }}</a>
                       </li>
                     {% endif %}
                     <li>
@@ -286,7 +286,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">
                 <p>
                   <span>
-                    {{ concepts.definition[0]["@value"] | json }}
+                    {{ concepts.definition[0]["@value"] }}
                   </span>
                 <p>
               </div>
@@ -335,10 +335,14 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               </div>
               <div class="col">
                 <div>
-                {%for e in concepts.example %}
+                {% for e in concepts.example %}
                   <p>
                   <i class="fa-regular fa-pencil fa-xs"></i>
-                  {{ e["rico:name"]["@value"] }}                  
+                  {% if e.id %}
+                    <a href="{{ e.id | toUrl }}">{{ e["rico:name"]["@value"] }}</a>
+                  {% else %}
+                    {{ e["rico:name"]["@value"] }}
+                  {% endif %}             
                   </p>
                 {% endfor %}
                 </div>
@@ -355,7 +359,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">  
                 <ul>  
                   {% for a in concepts.exactMatch %}
-                    <li><a href="{{ a.id }}">{{ a.id }}</a></li>
+                    <li><a href="{{ a.id | toUrl }}">{{ a.id }}</a></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -388,7 +392,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">  
                 <ul>  
                   {% for a in concepts.closeMatch %}
-                    <li><a href="{{ a.id }}">{{ a.id }}</a></li>
+                    <li><a href="{{ a.id | toUrl }}">{{ a.id }}</a></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -404,7 +408,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">  
                 <ul>  
                   {% for sr in concepts.skosRelated %}
-                    <li><a href="{{ sr.id }}">{{ sr.prefLabel | lang('fr') }}</a></li>
+                    <li><a href="{{ sr.id | toUrl }}">{{ sr.prefLabel | lang('fr') }}</a></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -420,7 +424,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">  
                 <ul>  
                   {% for a in concepts.relatedMatch %}
-                    <li><a href="{{ a.id }}">{{ a.id }}</a></li>
+                    <li><a href="{{ a.id | toUrl }}">{{ a.prefLabel | lang('fr') }}</a></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -436,7 +440,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">  
                 <ul>  
                   {% for nm in concepts.narrowMatch %}
-                    <li><a href="{{ nm.id }}">{{ nm.id }}</a></li>
+                    <li><a href="{{ nm.id | toUrl }}">{{ nm.id }}</a></li>
                   {% endfor %}
                 </ul>
               </div>

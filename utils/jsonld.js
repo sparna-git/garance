@@ -178,10 +178,13 @@ function expandUriOnPrefixes(qname, context) {
 function findPredicate(object, predicateFullIri, context) {
   const predicateKey = shortenUri(predicateFullIri, context);
   if(object[predicateFullIri]) {
+    // either the full predicate URI is used directly as a key
     return object[predicateFullIri];
   } else if(object[predicateKey]) {
+    // or (most common) the short URI is used as a key
     return object[predicateKey];
   } else {
+    // or the context specifies a new JSON key remapped to this URI
     let uriMappings = Object.entries(context).find(([prefix, mapping]) => {
       return (
         typeof mapping === "object"
@@ -215,6 +218,21 @@ function removeTypeKey(obj) {
       removeTypeKey(value)
     });
   }
+}
+
+function isLabelPredicate(predicateKey, context) {
+  var expanded = expandUri(predicateKey, context);
+  return (
+    expanded == RDFS_LABEL
+    ||
+    expanded == SKOS_PREFLABEL
+    ||
+    expanded == FOAF_NAME
+    ||
+    expanded == DCTERMS_TITLE
+    ||
+    expanded == SCHEMA_NAME
+  )
 }
 
 module.exports = {
@@ -282,7 +300,7 @@ module.exports = {
    * @param {object} obj - The object to check.
    * @returns {boolean} True if the object has a single label property, false otherwise.
    */
-  isObjectWithSingleLabelProperty: function(obj) {
+  isObjectWithSingleLabelProperty: function(obj, context) {
     if(!obj || !(typeof obj === "object")) return false;
     const keys = Object.keys(obj);
     const valueKeys =  keys.filter(k => ( k !== 'id' && k !== '@id' && k !== 'type' && k !== '@type' ));
@@ -301,6 +319,8 @@ module.exports = {
         ||
         isLiteralArrayWithSingleValue(obj[valueKeys[0]])
       )
+      &&
+      isLabelPredicate(valueKeys[0], context)
     )
   },
 

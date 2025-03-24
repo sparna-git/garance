@@ -96,7 +96,10 @@
       "@id": "skos:note",
       "@container": "@set"
     },
-    "example": "skos:example",
+    "example": {
+      "@id": "skos:example",
+      "@container": "@set"
+    },
     "changenote": {
       "@id": "skos:changeNote",
       "@container": "@set"
@@ -191,25 +194,29 @@
     },
     "narrowMatch": {
       "@explicit": true,
-      "@omitDefault": true
+      "@omitDefault": true,
+      "prefLabel": { "@omitDefault": true } 
     },
     "exactMatch": {
       "@explicit": true,
-      "@omitDefault": true
+      "@omitDefault": true,
+      "prefLabel": { "@omitDefault": true } 
     },
     "closeMatch": {
       "@explicit": true,
-      "@omitDefault": true
+      "@omitDefault": true,
+      "prefLabel": { "@omitDefault": true } 
     },
     "skosRelated": {
       "@explicit": true,
       "@omitDefault": true,
       "@embed": "@always",
-      "prefLabel": {}
+      "prefLabel": { "@omitDefault": true }
     },
     "relatedMatch": {
       "@explicit": true,
-      "@omitDefault": true
+      "@omitDefault": true,
+      "prefLabel": { "@omitDefault": true } 
     },
     "broader": {
       "@explicit": true,
