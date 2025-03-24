@@ -55,6 +55,18 @@
   },
   "rico:authorizedBy": { "@omitDefault": true },
   "rico:authorizingMandate": { "@omitDefault": true },
+  "rico:hasOrHadCorporateBodyType": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "rico:hasOrHadOccupationOfType": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "skos:prefLabel": { "@omitDefault": true }
+  },
   "rico:generalDescription": { "@omitDefault": true },
   "rico:history": { "@omitDefault": true },
   "rico:beginningDate": { "@omitDefault": true },
@@ -64,6 +76,7 @@
   "owl:sameAs": {
     "@omitDefault": true,
     "@explicit": true,
+    "@id": {},
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:isOrWasMemberOf": {
@@ -78,19 +91,43 @@
     "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
-  "rico:hadSubordinate": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }
-  },
   "rico:hasDirectSubdivision": {
     "@omitDefault": true,
     "@explicit": true,
     "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
+  "rico:wasSubdivisionOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }    
+  },
+  "rico:isDirectSubdivisionOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hadSubordinate": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
   "rico:hasDirectSubordinate": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:wasSubordinateTo": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isDirectSubordinateTo": {
     "@omitDefault": true,
     "@explicit": true,
     "@embed": "@always",
@@ -108,13 +145,19 @@
     "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
-  "rico:hasOrHadCorporateBodyType": {
+  "rico:isOrWasControllerOf": {
     "@omitDefault": true,
     "@explicit": true,
     "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasOrHadLeader": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isOrWasLeaderOf": {
     "@omitDefault": true,
     "@explicit": true,
     "@embed": "@always",
@@ -132,25 +175,13 @@
     "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
-  "rico:hasOrHadOccupationOfType": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }
-  },
   "rico:hasSuccessor": {
     "@omitDefault": true,
     "@explicit": true,
     "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
-  "rico:wasSubdivisionOf": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }    
-  },
-  "rico:wasSubordinateTo": {
+  "rico:isSuccessorOf": {
     "@omitDefault": true,
     "@explicit": true,
     "@embed": "@always",
@@ -162,49 +193,13 @@
     "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
-  "rico:isDirectSubdivisionOf": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }
-  },
-  "rico:isDirectSubordinateTo": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }
-  },
   "rico:isOrganicProvenanceOf": {
     "@omitDefault": true,
     "@explicit": true,
     "@embed": "@always",
     "rdfs:label": { "@omitDefault": true }
   },
-  "rico:isOrWasControllerOf": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }
-  },
-  "rico:isOrWasDescribedBy": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }
-  },
-  "rico:isOrWasLeaderOf": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }
-  },
   "rico:isOrWasMainSubjectOf": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }
-  },
-  "rico:isSuccessorOf": {
     "@omitDefault": true,
     "@explicit": true,
     "@embed": "@always",
@@ -288,5 +283,11 @@
       "@embed": "@always",
       "rdfs:label": { "@omitDefault": true }
     }
+  },
+  "rico:isOrWasDescribedBy": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "type":"rico:Record",
+    "rico:lastModificationDate": { "@omitDefault": true }
   }
 }
