@@ -228,6 +228,12 @@ module.exports = {
         return containsBroader;
     },
 
+    excludeObsolete: function(conceptArray) {
+        return conceptArray.filter(
+            c => (!c.isoThesStatus || (c.isoThesStatus["@value"] != "obsolète"))
+        );
+    },
+
     toUrl: function (uri) {
         const NAMESPACE = "https://rdf.archives-nationales.culture.gouv.fr/";
         var result = uri;

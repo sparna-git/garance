@@ -8,7 +8,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
 ---
 
 {% set jsonLdContext = vocabularies["@context"] | json %}
-{% set sortInverseInScheme = vocabulary.inverse_inScheme | jsonSort("prefLabel") %}
+{% set sortInverseInScheme = vocabulary.inverse_inScheme | excludeObsolete | jsonSort("prefLabel") %}
 
 <main class="section_body" id="vocabulary">
   {# Header #}
@@ -499,7 +499,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 <script type="text/javascript">
   // recuperer tous les concepts
-  const data = {{ vocabulary.inverse_inScheme | json }}
+  const data = {{ vocabulary.inverse_inScheme | excludeObsolete | json  }}
   /* THOMAS : il faut ajouter dans le tableau de data un noeud qui correspond à la racine de l'arbre à dessigner */
   const conceptScheme_Header = {"id": {{ vocabulary.id | json }},"prefLabel":{{ vocabulary.title | json }}}
   const title_conceptScheme = {{ vocabulary.prefLabel | json }}
