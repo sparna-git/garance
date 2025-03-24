@@ -2,7 +2,9 @@
 {# generic method to render any JSON-LD object or value. #}
 {# Tests the structure of the object/value and apply the adequate rendering function #}
 {# Unbox single values from arrays if needed, so that arrays with a single value are treated the same as the value itself. #}
-{% macro render(object) %}
+
+{# The main object is passed as a second argument to be able to detect URI references to self, and print non-clickable label accordingly #}
+{% macro render(object, mainObject) %}
     {% set obj = object | unboxArray %}
 
     {% if obj is null %}
@@ -12,15 +14,24 @@
         {{ renderPlainUri(obj | expandUri(context)) }}
     {% elif obj | isIriString(context) %}
         {{ renderPlainUri(obj) }}
-    {% elif obj | isIriObjectWithOnlyType(context) %}
-        {{ renderPlainUri(obj.id | expandUri(context)) }}
+    {% elif obj | isIriObjectWithOnlyOptionalType(context) %}
+        {# special : circular reference to the main entity - print a non-clickable label #}
+        {% if (obj.id | expandUri(context)) == (mainObject | getIriExpanded(context)) %}
+            {{ renderLabelOfSelf(mainObject) }}
+        {% else %}
+            {{ renderPlainUri(obj.id | expandUri(context)) }}
+        {% endif %}
     {% elif obj | isLiteralString or obj | isLiteralObject %}
         {{ renderLiteral(obj) }}
     {% elif obj | isObjectWithSingleLabelProperty %}
         {{ renderObjectWithSingleLabelProperty(obj) }}
     {% else %}
-        {{ renderObject(obj) }}
+        {{ renderObject(obj, mainObject) }}
     {% endif %}
+{% endmacro %}
+
+{% macro renderLabelOfSelf(mainObject) %}
+    {{ renderLiteralAsString(mainObject | displayLabel(context) | unboxArray ) }}
 {% endmacro %}
 
 {% macro renderPlainUri(uri) %}
@@ -31,18 +42,18 @@
   <a href="{{ uri | toUrl | relative(page) }}" class="hyperlink">{{labelHtml}}</a>
 {% endmacro %}
 
-{% macro renderObject(object) %}
+{% macro renderObject(object, mainObject) %}
     <div class="entity">
         {% for predicate, value in object %}
           {% if predicate != "id" and predicate != "@id" %}
-            {{ renderPredicateValues(predicate, value) }}
+            {{ renderPredicateValues(predicate, value, mainObject) }}
           {% endif %}
         {% endfor %}
     </div>
 {% endmacro %}
 
 
-{% macro renderPredicateValues(predicate, values) %}
+{% macro renderPredicateValues(predicate, values, mainObject) %}
   <div class="entity-predicate">
     <div class="entity-predicate-predicate">
       {{ renderPredicate(predicate) }}
@@ -52,15 +63,15 @@
             {# Special : multiple type values are rendered horizontally #}
             {% if predicate == "type" or predicate == "@type" %}
                 <div class="entity-predicate-values-value entity-predicate-values-type">
-                    {{ renderAsList(values) }}
+                    {{ renderAsList(values, mainObject) }}
                 </div>
             {% else %}
                 {% for item in values %}
-                    <div class="entity-predicate-values-value">{{ render(item) }}</div>
+                    <div class="entity-predicate-values-value">{{ render(item, mainObject) }}</div>
                 {% endfor %}
             {% endif %}
         {% else %}
-            <div class="entity-predicate-values-value">{{ render(values) }}</div>
+            <div class="entity-predicate-values-value">{{ render(values, mainObject) }}</div>
         {% endif %}
     </div>
   </div>
@@ -73,7 +84,7 @@
         {% set formattedPredicate = predicate | expandUri(context) | shortenUri(context) %}
         {% set tooltip = ["<code>", formattedPredicate, "</code><br/>The description in <b>bold</b>"] | join %}
 
-        <span class="label"data-i18n="{{formattedPredicate}}"></span>
+        <span class="label" data-i18n="{{formattedPredicate}}"></span>
         <span class="info-icon">ℹ️</span>
         <div class="entity-predicate-predicate-tooltip">{{ tooltip }}</div>
     </div>
@@ -115,9 +126,9 @@
     {% endif %}
 {% endmacro %}
 
-{% macro renderAsList(valueArray) %}
+{% macro renderAsList(valueArray, mainObject) %}
     {% for item in valueArray %}
-        {{ render(item) }}
+        {{ render(item, mainObject) }}
         {% if not loop.last %}, {% endif %}
     {% endfor %}
 {% endmacro %}

@@ -275,7 +275,7 @@ module.exports = {
                 ||
                 endUri.includes("recordSetType")
             ) {
-                result = "/entities/"+endUri.replace("/","#");       
+                result = "/entities/"+endUri.split("/")[0]+"s"+"#"+endUri.split("/")[1];       
             } else {
                 result = "/entities/"+endUri; 
             }

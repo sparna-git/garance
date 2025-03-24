@@ -34,6 +34,47 @@ function getId(obj) {
 }
 
 /**
+ * Checks if a value is an IRI string.
+ * @param {string} value - The value to check.
+ * @param {object} context - The context to use for checking the IRI.
+ * @returns {boolean} True if the value is an IRI string, false otherwise.
+ */
+function isIriString(value, context) {
+  return typeof value === 'string' && value.startsWith("http") ;
+}
+
+/**
+ * Checks if a value is an IRI prefixed string.
+ * @param {string} value - The value to check.
+ * @param {object} context - The context to use for checking the IRI prefix.
+ * @returns {boolean} True if the value is an IRI prefixed string, false otherwise.
+ */
+function isIriPrefixed(value, context) {
+  return typeof value === 'string' && Object.keys(context).some(key => (
+    typeof context[key] === "string"
+    &&
+    context[key].startsWith("http")
+    &&
+    value.startsWith(key)
+  ));
+}
+
+/**
+ * Returns the expanded IRI of the object
+ */
+function getIriExpanded(obj, context) {
+  if(typeof obj === 'object') {
+    var iri = getId(obj);
+    var expandedIri = expandUri(iri, context);
+    console.log(expandedIri);
+    console.log(expandedIri);
+    return expandedIri;
+  } else {
+    return null;
+  }
+}
+
+/**
  * Checks if an object is a literal string.
  * @param {any} obj - The object to check.
  * @returns {boolean} True if the object is a literal string, false otherwise.
@@ -89,7 +130,7 @@ function shortenUri(uri, context) {
  * Expands a QName using the provided context.
  * @param {string} qname - The QName to expand.
  * @param {object} context - The context to use for expanding the QName.
- * @returns {string} The expanded QName.
+ * @returns {string} The expanded QName, or the value itself if it cannot be expanded
  */
 function expandUri(qname, context) {
   if(qname == "id" || qname == "@id" || qname == "type" || qname == "@type") {
@@ -199,38 +240,16 @@ module.exports = {
       return array;
   },
 
-  /**
-   * Checks if a value is an IRI string.
-   * @param {string} value - The value to check.
-   * @param {object} context - The context to use for checking the IRI.
-   * @returns {boolean} True if the value is an IRI string, false otherwise.
-   */
-  isIriString: function(value, context) {
-    return typeof value === 'string' && value.startsWith("http") ;
-  },
-
-  /**
-   * Checks if a value is an IRI prefixed string.
-   * @param {string} value - The value to check.
-   * @param {object} context - The context to use for checking the IRI prefix.
-   * @returns {boolean} True if the value is an IRI prefixed string, false otherwise.
-   */
-  isIriPrefixed: function(value, context) {
-    return typeof value === 'string' && Object.keys(context).some(key => (
-      typeof context[key] === "string"
-      &&
-      context[key].startsWith("http")
-      &&
-      value.startsWith(key)
-    ));
-  },
+  isIriString: isIriString,
+  isIriPrefixed: isIriPrefixed,
+  getIriExpanded: getIriExpanded,
 
   /**
    * Checks if a value is an IRI object with only a type.
    * @param {object} value - The value to check.
-   * @returns {boolean} True if the value is an IRI object with only a type, false otherwise.
+   * @returns {boolean} True if the value is an IRI object, possibly with only a type, false otherwise.
    */
-  isIriObjectWithOnlyType: function(value) {
+  isIriObjectWithOnlyOptionalType: function(value) {
     return (
       typeof value === 'object'
       &&

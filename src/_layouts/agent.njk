@@ -22,4 +22,4 @@
         <a href="{{ agent.id | expandUri(context) }}">{{ agent.id | expandUri(context) }}</a>
     </code>
 </p>
-{{ jsonld.render(agent) }}
+{{ jsonld.render(agent, agent) }}

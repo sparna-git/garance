@@ -240,6 +240,7 @@ mark {
 /* when clicking info icon, tooltip becomes visible */
 .info-icon.active + .entity-predicate-predicate-tooltip {
     display: block;
+    z-index: 100;
 }
 
 /* tooltip is hidden by default */
