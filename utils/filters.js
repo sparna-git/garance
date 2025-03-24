@@ -251,29 +251,29 @@ module.exports = {
             if(
                 endUri.includes("corporateBodyType")
                 ||
-                endUri.includes("recordStates")
+                endUri.includes("recordState")
                 ||
-                endUri.includes("activityTypes")
+                endUri.includes("activityType")
                 ||
-                endUri.includes("occupationTypes")
+                endUri.includes("occupationType")
                 ||
-                endUri.includes("languages")
+                endUri.includes("language")
                 ||
-                endUri.includes("things")
+                endUri.includes("thing")
                 ||
-                endUri.includes("carrierTypes")
+                endUri.includes("carrierType")
                 ||
-                endUri.includes("productionTechniqueTypes")
+                endUri.includes("productionTechniqueType")
                 ||
-                endUri.includes("identifierTypes")
+                endUri.includes("identifierType")
                 ||
-                endUri.includes("placeTypes")
+                endUri.includes("placeType")
                 ||
-                endUri.includes("representationTypes")
+                endUri.includes("representationType")
                 ||
-                endUri.includes("documentaryFormTypes")
+                endUri.includes("documentaryFormType")
                 ||
-                endUri.includes("recordSetTypes")
+                endUri.includes("recordSetType")
             ) {
                 result = "/entities/"+endUri.replace("/","#");       
             } else {
