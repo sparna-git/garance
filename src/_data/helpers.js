@@ -2,8 +2,8 @@ module.exports = {
   /**
    * Renvoyer la date courante pour affichage dans le footer
    **/
-  currentDate() {
+  currentDateTime() {
     const today = new Date();
-    return today.toLocaleDateString();
+    return (today.toLocaleDateString()+" "+today.toLocaleTimeString());
   }
 };
