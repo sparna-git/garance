@@ -224,7 +224,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">
                 <ul class="breadcrumb">
                   <li>
-                    <a href="{{ vocabulary.id | expandUri(jsonLdContext) | toUrl }}">{{ vocabulary.title | lang('fr') }}</a>
+                    <a href="{{ vocabulary.id | expandUri(jsonLdContext) | toUrl  | relative(page) }}">{{ vocabulary.title | lang('fr') }}</a>
                   </li>                
                 
                   {% if concepts.broader %}
@@ -339,29 +339,13 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
                   <p>
                   <i class="fa-regular fa-pencil fa-xs"></i>
                   {% if e.id %}
-                    <a href="{{ e.id | toUrl }}">{{ e["rico:name"]["@value"] }}</a>
+                    <a href="{{ e.id | toUrl | relative(page) }}">{{ e["rico:name"]["@value"] }}</a>
                   {% else %}
                     {{ e["rico:name"]["@value"] }}
                   {% endif %}             
                   </p>
                 {% endfor %}
                 </div>
-              </div>
-            </div>
-          {% endif %}
-          
-          {# skos:exactMatch #}
-          {% if concepts.exactMatch %}
-            <div class="row">
-              <div class="col-1">
-                <h6 data-i18n="skos:exactMatch"></h6>
-              </div>
-              <div class="col">  
-                <ul>  
-                  {% for a in concepts.exactMatch %}
-                    <li><a href="{{ a.id | toUrl }}">{{ a.id }}</a></li>
-                  {% endfor %}
-                </ul>
               </div>
             </div>
           {% endif %}
@@ -383,22 +367,6 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
-          {# skos:closeMatch #}
-          {% if concepts.closeMatch %}
-            <div class="row">
-              <div class="col-1">
-                <h6 data-i18n="skos:closeMatch"></h6>
-              </div>
-              <div class="col">  
-                <ul>  
-                  {% for a in concepts.closeMatch %}
-                    <li><a href="{{ a.id | toUrl }}">{{ a.id }}</a></li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </div>
-          {% endif %}
-
           {# skos:related #}
           {% if concepts.skosRelated %}
             <div class="row">
@@ -408,7 +376,39 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">  
                 <ul>  
                   {% for sr in concepts.skosRelated %}
-                    <li><a href="{{ sr.id | toUrl }}">{{ sr.prefLabel | lang('fr') }}</a></li>
+                    <li><a href="#{{ sr.id | localName }}">{{ sr.prefLabel | lang('fr') }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+          
+          {# skos:exactMatch #}
+          {% if concepts.exactMatch %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:exactMatch"></h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  {% for a in concepts.exactMatch %}
+                    <li><a href="{{ a.id | toUrl | relative(page) }}">{{ a.id }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {# skos:closeMatch #}
+          {% if concepts.closeMatch %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:closeMatch"></h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  {% for a in concepts.closeMatch %}
+                    <li><a href="{{ a.id | toUrl | relative(page) }}">{{ a.id }}</a></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -424,7 +424,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">  
                 <ul>  
                   {% for a in concepts.relatedMatch %}
-                    <li><a href="{{ a.id | toUrl }}">{{ a.prefLabel | lang('fr') }}</a></li>
+                    <li><a href="{{ a.id | toUrl | relative(page) }}">{{ a.prefLabel | lang('fr') }}</a></li>
                   {% endfor %}
                 </ul>
               </div>
@@ -440,7 +440,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">  
                 <ul>  
                   {% for nm in concepts.narrowMatch %}
-                    <li><a href="{{ nm.id | toUrl }}">{{ nm.id }}</a></li>
+                    <li><a href="{{ nm.id | toUrl | relative(page) }}">{{ nm.id }}</a></li>
                   {% endfor %}
                 </ul>
               </div>

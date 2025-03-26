@@ -3,7 +3,7 @@ module.exports = {
     title:
       "Graphe des Archives nationales pour la Recherche, l’Accès et la Navigation des Connaissances Enrichies",
     garance: "Garance",
-    "last updated on": "last updated on",
+    "last updated on": "last publication date of the website on",
     referentiels: "Referentiels",
     vocabularies: "Controlled vocabularies",
     "These concepts have all the type":

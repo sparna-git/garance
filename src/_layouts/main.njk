@@ -84,7 +84,7 @@
                     {% if locale === "" %}
                         <span>
                             {# Note: this link is postprocessed in Javacsript to switch to FR if we are in EN #}
-                            <a href="{{ page.url.slice(0, page.url.length-1) }}?lang=en" id="switchLangClient"><img src="{{ '/assets/images/EN.png' | relative(page) }}" /></a>
+                            <a href="{{ page.url.slice(0, page.url.length-1) | relative(page) }}?lang=en" id="switchLangClient"><img src="{{ '/assets/images/EN.png' | relative(page) }}" /></a>
                         </span> 
                     {% endif %}
                 </div>

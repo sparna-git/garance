@@ -4,7 +4,7 @@ module.exports = {
       "Graphe des Archives nationales pour la Recherche, l’Accès et la Navigation des Connaissances Enrichies",
     garance: "Garance",
     referentiels : "Référentiels",
-    "last updated on": "dernière mise à jour le",
+    "last updated on": "dernière publication du site le",
     vocabularies: "Vocabulaires contrôlés",
     "These concepts have all the type":
       "Ces concepts SKOS sont tous aussi des instances de la classe RiC-O:",
