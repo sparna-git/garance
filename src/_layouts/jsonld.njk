@@ -44,7 +44,9 @@
 
 {% macro renderObject(object, mainObject) %}
     <div class="entity">
-        {% for predicate, value in object %}
+        {% set sortedKeys = object | sortPredicates(shapes,context) %}
+        {% for predicate in sortedKeys %}
+          {% set value = object[predicate] %}
           {% if predicate != "id" and predicate != "@id" %}
             {{ renderPredicateValues(predicate, value, mainObject) }}
           {% endif %}
@@ -128,7 +130,6 @@
 
 {% macro renderAsList(valueArray, mainObject) %}
     {% for item in valueArray %}
-        {{ render(item, mainObject) }}
-        {% if not loop.last %}, {% endif %}
+        {{ render(item, mainObject) }}{% if not loop.last %}, {% endif %}
     {% endfor %}
 {% endmacro %}

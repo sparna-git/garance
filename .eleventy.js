@@ -6,6 +6,8 @@ const translations = require("./src/_data/translations.js");
 
 const filters = require('./utils/filters.js')
 const jsonldFilters = require('./utils/jsonld.js')
+const shapesFilters = require('./utils/shapes.js')
+
 
 module.exports = async function (config) {
   const { EleventyI18nPlugin } = await import("@11ty/eleventy");
@@ -40,6 +42,9 @@ module.exports = async function (config) {
   });
   Object.keys(jsonldFilters).forEach((filterName) => {
     config.addFilter(filterName, jsonldFilters[filterName])
+  });
+  Object.keys(shapesFilters).forEach((filterName) => {
+    config.addFilter(filterName, shapesFilters[filterName])
   });
 
   // pass-through

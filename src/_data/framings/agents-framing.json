@@ -73,12 +73,6 @@
   "rico:endDate": { "@omitDefault": true },
   "rico:birthDate": { "@omitDefault": true },
   "rico:deathDate": { "@omitDefault": true },
-  "owl:sameAs": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "@id": {},
-    "rdfs:label": { "@omitDefault": true }
-  },
   "rico:isOrWasMemberOf": {
     "@omitDefault": true,
     "@explicit": true,
@@ -283,6 +277,12 @@
       "@embed": "@always",
       "rdfs:label": { "@omitDefault": true }
     }
+  },
+  "owl:sameAs": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@id": {},
+    "rdfs:label": { "@omitDefault": true }
   },
   "rico:isOrWasDescribedBy": {
     "@omitDefault": true,

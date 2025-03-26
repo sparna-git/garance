@@ -39,7 +39,7 @@ module.exports = {
 
     // for agents and generic JSON-LD printing
     id: "URI identifier",
-    type: "type",
+    "rdf:type": "type",
     "rdfs:label": "label",
     "owl:sameAs": "same as",
   },

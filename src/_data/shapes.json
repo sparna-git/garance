@@ -1,0 +1,174 @@
+{
+  "graph": [
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#Agent",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#identifier"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#name"
+        },      
+        {
+          "sh:order": 4,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#label"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hasOrHadAgentName"
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#authorizedBy"
+        },
+        {
+          "sh:order": 7,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#authorizingMandate"
+        },
+        {
+          "sh:order": 8,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hasOrHadCorporateBodyType"
+        },
+        {
+          "sh:order": 9,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hasOrHadOccupationOfType"
+        },
+        {
+          "sh:order": 10,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#generalDescription"
+        },
+        {
+          "sh:order": 11,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#history"
+        },
+        {
+          "sh:order": 12,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#beginningDate"
+        },
+        {
+          "sh:order": 13,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#endDate"
+        },
+        {
+          "sh:order": 14,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#birthDate"
+        },
+        {
+          "sh:order": 15,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#deathDate"
+        },
+        {
+          "sh:order": 16,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#isOrWasMemberOf"
+        },
+        {
+          "sh:order": 17,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hadSubdivision"
+        },
+        {
+          "sh:order": 18,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hasDirectSubdivision"
+        },
+        {
+          "sh:order": 19,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#wasSubdivisionOf"
+        },
+        {
+          "sh:order": 20,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#isDirectSubdivisionOf"
+        },
+        {
+          "sh:order": 21,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hadSubordinate"
+        },
+        {
+          "sh:order": 22,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hasDirectSubordinate"
+        },
+        {
+          "sh:order": 23,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#wasSubordinateTo"
+        },
+        {
+          "sh:order": 24,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#isDirectSubordinateTo"
+        },
+        {
+          "sh:order": 25,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hasFamilyAssociationWith"
+        },
+        {
+          "sh:order": 26,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hasOrHadController"
+        },
+        {
+          "sh:order": 27,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#isOrWasControllerOf"
+        },
+        {
+          "sh:order": 28,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hasOrHadLeader"
+        },
+        {
+          "sh:order": 29,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#isOrWasLeaderOf"
+        },
+        {
+          "sh:order": 30,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hasOrHadLocation"
+        },
+        {
+          "sh:order": 31,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hasOrHadMember"
+        },
+        {
+          "sh:order": 32,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#hasSuccessor"
+        },
+        {
+          "sh:order": 33,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#isSuccessorOf"
+        },
+        {
+          "sh:order": 34,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#isAgentAssociatedWithAgent"
+        },
+        {
+          "sh:order": 35,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#isOrganicProvenanceOf"
+        },
+        {
+          "sh:order": 36,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#isOrWasMainSubjectOf"
+        },
+        {
+          "sh:order": 37,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#thingIsConnectedToRelation"
+        },
+        {
+          "sh:order": 38,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#thingIsTargetOfRelation"
+        },
+        {
+          "sh:order": 39,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#thingIsSourceOfRelation"
+        },
+        {
+          "sh:order": 40,
+          "sh:path":"http://www.w3.org/2002/07/owl#sameAs"
+        },
+        {
+          "sh:order": 41,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#isOrWasDescribedBy"
+        }
+      ]  
+    }
+  ]
+}

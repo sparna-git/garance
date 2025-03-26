@@ -1,5 +1,10 @@
 
 /**
+ * @constant {string} RDF_TYPE - The rdf:type URI.
+ */
+const RDF_TYPE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
+
+/**
  * @constant {string} SKOS_PREFLABEL - The SKOS preferred label URI.
  */
 const SKOS_PREFLABEL = "http://www.w3.org/2004/02/skos/core#prefLabel";
@@ -31,6 +36,15 @@ const DCTERMS_TITLE = "http://purl.org/dc/terms/title";
  */
 function getId(obj) {
   return (obj.id?obj.id:obj["@id"]);
+}
+
+/**
+ * Gets the type of an object.
+ * @param {object} obj - The object to get the type from.
+ * @returns {string or array} The type or types of the object.
+ */
+function getTypes(obj) {
+  return (obj.type?obj.type:obj["@type"]);
 }
 
 /**
@@ -66,8 +80,6 @@ function getIriExpanded(obj, context) {
   if(typeof obj === 'object') {
     var iri = getId(obj);
     var expandedIri = expandUri(iri, context);
-    console.log(expandedIri);
-    console.log(expandedIri);
     return expandedIri;
   } else {
     return null;
@@ -133,8 +145,11 @@ function shortenUri(uri, context) {
  * @returns {string} The expanded QName, or the value itself if it cannot be expanded
  */
 function expandUri(qname, context) {
-  if(qname == "id" || qname == "@id" || qname == "type" || qname == "@type") {
+  if(qname == "id" || qname == "@id") {
     return qname;
+  }
+  if(qname == "type" || qname == "@type") {
+    return RDF_TYPE;
   }
 
   var result = qname;
@@ -237,6 +252,9 @@ function isLabelPredicate(predicateKey, context) {
 
 module.exports = {
  
+  getId: getId,
+  getTypes: getTypes,
+
   /**
    * Checks if a value is an array.
    * @param {*} value - The value to check.
