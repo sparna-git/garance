@@ -47,7 +47,7 @@ exports.sortPredicates = function(object, shapes, context) {
   // flat() ensures we always have an array
   // see https://stackoverflow.com/a/58553894
   let sortedPredicates = exports.getSortedPredicatesOfTypes([types].flat().map(t => jsonld.expandUri(t, context)), shapes);
-  
+
   // then recreate an array by looking into our map, in order
   let result = [];
   sortedPredicates.forEach(p => {
@@ -65,7 +65,9 @@ exports.sortPredicates = function(object, shapes, context) {
   });
   // sort them alphabetically
   unknownKeys.sort();
-  result.push(...unknownKeys)
+  // add type first
+  result.push(...unknownKeys.filter(t => (t == "type" || t == "@type")));
+  result.push(...unknownKeys.filter(t => (t != "type" && t != "@type")));
 
   return result;
 }

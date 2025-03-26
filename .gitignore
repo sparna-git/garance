@@ -12,3 +12,7 @@ src/_data/garance.json
 _json/
 
 dist-agents/
+
+src/_data/agents.json
+
+src/_data/vocabularies.json

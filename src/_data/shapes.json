@@ -49,7 +49,7 @@
           "sh:path":"https://www.ica.org/standards/RiC/ontology#history"
         },
         {
-          "sh:order": 0,
+          "sh:order": 12,
           "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate"
         },
         {
