@@ -68,7 +68,7 @@
                     {{ renderAsList(values, mainObject) }}
                 </div>
             {% else %}
-                {% for item in values %}
+                {% for item in (values | sortValues(shapes,context)) %}
                     <div class="entity-predicate-values-value">{{ render(item, mainObject) }}</div>
                 {% endfor %}
             {% endif %}
@@ -112,7 +112,7 @@
 
 {% macro renderObjectWithSingleLabelProperty(object) %}
     {% set labelProperty = object | extractFirstNonIdNonTypeProperty | unboxArray %}
-    {% set labelHtml = renderLiteral(labelProperty) %}
+    {% set labelHtml = renderLiteralAsString(labelProperty) %}
     {{ renderLabelledUri(object.id | expandUri(context), labelHtml) }}
 {% endmacro %}
 

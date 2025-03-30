@@ -281,7 +281,7 @@ module.exports = {
   getIriExpanded: getIriExpanded,
 
   /**
-   * Checks if a value is an IRI object with only a type.
+   * Checks if a value is an IRI object with only possibly a type.
    * @param {object} value - The value to check.
    * @returns {boolean} True if the value is an IRI object, possibly with only a type, false otherwise.
    */
@@ -358,6 +358,7 @@ module.exports = {
   shortenUri: shortenUri,
 
   expandUri: expandUri,
+  findPredicate: findPredicate,
 
   /**
    * Strips the HTML prefix from a literal.

@@ -5,6 +5,16 @@ exports.getProperties = function(nodeShape) {
   return nodeShape["sh:property"];
 }
 
+exports.getSortKeyOfShape = function(nodeShape) {
+  let props = exports.getProperties(nodeShape)
+  for (var i = 0; i < props.length; i++) {
+    if(props[i]["dash:propertyRole"] && props[i]["dash:propertyRole"] === "dash:sortKeyRole") {
+      console.log(props[i]["sh:path"])
+      return props[i]["sh:path"];
+    }
+  }
+}
+
 exports.sortByShOrder = function(propertyShapesArray) {
   return propertyShapesArray.sort((a, b) => {
     return a["sh:order"] - b["sh:order"];
@@ -70,4 +80,66 @@ exports.sortPredicates = function(object, shapes, context) {
   result.push(...unknownKeys.filter(t => (t != "type" && t != "@type")));
 
   return result;
+}
+
+
+exports.sortValues = function(array, shapes, context) {
+  return array.sort((a, b) => {
+    return exports.getSortKey(a, shapes, context).localeCompare(exports.getSortKey(b, shapes, context));
+  });
+}
+
+exports.getSortKey = function(something, shapes, context) {
+  let key = null;
+  if(jsonld.isIriPrefixed(something, context)) {
+    key = something;
+  } else if(jsonld.isIriString(something, context)) {
+    key = something;
+  } else if(jsonld.isIriObjectWithOnlyOptionalType(something, context)) {
+    key = jsonld.getId(something);
+  } else if(jsonld.isLiteralString(something, context)) {
+    key = something;
+  } else if(jsonld.isObjectWithSingleLabelProperty(something, context)) {
+    key = JSON.stringify(jsonld.extractFirstNonIdNonTypeProperty(something));
+  } else {
+    // check if a sort key is declared in the shapes for the object type
+    let types = jsonld.getTypes(something);    
+    let sortKey = exports.getSortKeyOfTypes([types].flat().map(t => jsonld.expandUri(t, context)), shapes);
+    if(sortKey) {
+      // try to read this property on the object
+      let prop = jsonld.findPredicate(something, sortKey, context);
+      console.log(prop)
+      // returns the property or the id if none exists
+      key = prop?JSON.stringify(prop):jsonld.getId(something);
+    } else {
+      // default to the id
+      key = jsonld.getId(something);
+    }
+  }
+
+  // as a very last resort, default to string value of the something to be sorted
+  // this can happen when it is an object with no id
+  if(!key) {
+    return JSON.stringify(something);
+  }
+  return key;
+}
+
+
+/**
+ * typeArray is always an array
+ **/
+exports.getSortKeyOfTypes = function(typeArray, shapes) {
+  // 1. For each type...
+  for (var i = 0; i < typeArray.length; i++) {
+    console.log(typeArray[i])
+    // 2. Read the sort key of that type, using full URI
+    var ns = exports.getNodeShape(typeArray[i], shapes);
+    if(ns) {
+      let sortKey = exports.getSortKeyOfShape(ns);
+      if(sortKey) {
+        return sortKey;
+      }
+    }
+  }
 }
