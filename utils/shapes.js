@@ -9,7 +9,6 @@ exports.getSortKeyOfShape = function(nodeShape) {
   let props = exports.getProperties(nodeShape)
   for (var i = 0; i < props.length; i++) {
     if(props[i]["dash:propertyRole"] && props[i]["dash:propertyRole"] === "dash:sortKeyRole") {
-      console.log(props[i]["sh:path"])
       return props[i]["sh:path"];
     }
   }
@@ -108,7 +107,6 @@ exports.getSortKey = function(something, shapes, context) {
     if(sortKey) {
       // try to read this property on the object
       let prop = jsonld.findPredicate(something, sortKey, context);
-      console.log(prop)
       // returns the property or the id if none exists
       key = prop?JSON.stringify(prop):jsonld.getId(something);
     } else {
@@ -132,7 +130,6 @@ exports.getSortKey = function(something, shapes, context) {
 exports.getSortKeyOfTypes = function(typeArray, shapes) {
   // 1. For each type...
   for (var i = 0; i < typeArray.length; i++) {
-    console.log(typeArray[i])
     // 2. Read the sort key of that type, using full URI
     var ns = exports.getNodeShape(typeArray[i], shapes);
     if(ns) {

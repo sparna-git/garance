@@ -218,10 +218,6 @@ mark {
     font-family: monospace;
 }
 
-.literal {
-    color: #333;
-}
-
 /* info-icon are hidden */
 .info-icon {
     display: none;

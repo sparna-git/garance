@@ -184,7 +184,10 @@
     "example": {
       "@explicit": true,
       "@omitDefault": true,
-      "rico:name": { "@omitDefault": true }
+      "rico:name": { "@omitDefault": true },
+      "rico:title": { "@omitDefault": true },
+      "rdfs:seeAlso": { "@omitDefault": true },
+      "rico:identifier": { "@omitDefault": true }
     },
     "changenote": {
       "@explicit": true,

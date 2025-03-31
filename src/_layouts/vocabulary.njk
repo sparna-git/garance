@@ -334,18 +334,23 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
                 <h6 data-i18n="skos:example"></h6>                
               </div>
               <div class="col">
-                <div>
+                <ul>
                 {% for e in concepts.example %}
-                  <p>
-                  <i class="fa-regular fa-pencil fa-xs"></i>
-                  {% if e.id %}
-                    <a href="{{ e.id | toUrl | relative(page) }}">{{ e["rico:name"]["@value"] }}</a>
-                  {% else %}
-                    {{ e["rico:name"]["@value"] }}
-                  {% endif %}             
-                  </p>
+                  <li>
+                    {% set label = (e["rico:name"]["@value"] if e["rico:name"] else e["rico:title"]["@value"]) %}
+                    {% if e.id %}
+                      {# Lien vers la Salle de Lecture Virtuelle si c'est un Record #}
+                      {% if e["rico:title"] and e["seeAlso"] and e["rico:identifier"] %}
+                        <a href="{{ e["seeAlso"][0].id }}">{{ e["rico:identifier"]["@value"] }}</a> : {{ label }}
+                      {% else %}
+                        <a href="{{ e.id | toUrl | relative(page) }}">{{ label }}</a>
+                      {% endif %}
+                    {% else %}
+                      {{ e["rico:name"]["@value"] }}
+                    {% endif %}             
+                  </li>
                 {% endfor %}
-                </div>
+                </ul>
               </div>
             </div>
           {% endif %}
