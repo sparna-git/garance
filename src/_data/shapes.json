@@ -18,7 +18,8 @@
         },      
         {
           "sh:order": 4,
-          "sh:path":"http://www.w3.org/2000/01/rdf-schema#label"
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#label",
+          "dash:propertyRole": "dash:sortKeyRole"
         },
         {
           "sh:order": 5,
@@ -169,6 +170,407 @@
           "sh:path":"https://www.ica.org/standards/RiC/ontology#isOrWasDescribedBy"
         }
       ]  
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#AgentName",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#textualValue"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#usedFromDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#usedToDate"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#AgentControlRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasSource"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasTarget"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#AgentHierarchicalRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasSource"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasTarget"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#AgentTemporalRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasSource"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasTarget"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#AgentToAgentRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationConnects"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#FamilyRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationConnects"
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#GroupSubdivisionRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasSource"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasTarget"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#LeadershipRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasSource"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasTarget"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#MandateRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasSource"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasTarget"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#MembershipRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasSource"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasTarget"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#PerformanceRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasSource"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasTarget"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#PlaceRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasSource"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasTarget"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#TypeRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasSource"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasTarget"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#WholePartRelation",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasSource"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationHasTarget"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate",
+          "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"          
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
+        }
+      ]
     }
   ]
 }

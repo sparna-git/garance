@@ -61,19 +61,21 @@
       {{ renderPredicate(predicate) }}
     </div>
     <div class="entity-predicate-values">
-        {% if values|isArray %}
-            {# Special : multiple type values are rendered horizontally #}
-            {% if predicate == "type" or predicate == "@type" %}
-                <div class="entity-predicate-values-value entity-predicate-values-type">
-                    {{ renderAsList(values, mainObject) }}
+        {# Special : multiple type values are rendered horizontally without hyperlink #}
+        {% if predicate == "type" or predicate == "@type" %}
+            <div class="entity-predicate-values-value entity-predicate-values-type">
+                {{ renderTypeList(values, mainObject) }}
+            </div>
+        {% else %}
+            {% if values|isArray %}
+                <div class="entity-predicate-values-list">
+                    {% for item in (values | sortValues(shapes,context)) %}
+                        <div class="entity-predicate-values-value{% if loop.last %} last{% endif %}{% if loop.first %} first{% endif %}">{{ render(item, mainObject) }}</div>
+                    {% endfor %}
                 </div>
             {% else %}
-                {% for item in (values | sortValues(shapes,context)) %}
-                    <div class="entity-predicate-values-value">{{ render(item, mainObject) }}</div>
-                {% endfor %}
+                <div class="entity-predicate-values-value">{{ render(values, mainObject) }}</div>
             {% endif %}
-        {% else %}
-            <div class="entity-predicate-values-value">{{ render(values, mainObject) }}</div>
         {% endif %}
     </div>
   </div>
@@ -132,4 +134,18 @@
     {% for item in valueArray %}
         {{ render(item, mainObject) }}{% if not loop.last %}, {% endif %}
     {% endfor %}
+{% endmacro %}
+
+{% macro renderTypeList(typeOrTypes, mainObject) %}
+    {% if typeOrTypes|isArray %}
+        {% for item in typeOrTypes %}
+            {{ renderType(item, mainObject) }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    {% else %}
+        {{ renderType(typeOrTypes, mainObject) }}
+    {% endif %}
+{% endmacro %}
+
+{% macro renderType(uri, mainObject) %}
+    <span data-i18n="{{uri | shortenUri(context) }}"></span>
 {% endmacro %}

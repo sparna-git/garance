@@ -34,7 +34,14 @@ exports.getSortedPredicatesOfTypes = function(typeArray, shapes) {
     // 2. Read the available properties of that type, using full URI
     var ns = exports.getNodeShape(typeArray[i], shapes);
     if(ns) {
-      allProperties.push(...exports.getProperties(ns))
+      let thisShapeProps = exports.getProperties(ns);
+      for (var i = 0; i < thisShapeProps.length; i++) {
+        // if the same property does not already exist, add it
+        // because in case of multi-typing, the same property may come from multiple shapes
+        if(!allProperties.find(item => item["sh:path"] === thisShapeProps[i]["sh:path"])) {
+          allProperties.push(thisShapeProps[i])
+        }
+      }      
     }
   }
 
