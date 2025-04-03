@@ -176,8 +176,7 @@ mark {
     font-size:85%;
 }
 
-.entity {
-    margin: 5px 0;
+.entity {   
     position: relative;
 }
 
@@ -206,7 +205,16 @@ mark {
 .entity-predicate-values {
     display: block;
     padding-left: 5px;
+    /* final margin after a list */
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
+
+/*
+.entity-predicate-values:not(.entity-predicate-values *) {
+    border-bottom: 1px solid #dbdbdb;
+}
+*/
 
 
 /* applies to values which precedes another value */
@@ -218,10 +226,19 @@ mark {
     background-size: 16px 1px;
     background-position: bottom left;
 }
+/* Overwrites the margin for the first element so that we don't have an extra space */
+.entity-predicate-values-list > .entity-predicate-values-value.first {
+    margin-top: 0px;
+}
 
 .entity-predicate-values-list > .entity-predicate-values-value.last {
     margin-top: 10px;
     padding-bottom: 10px;
+
+}
+
+.entity-predicate-values-list > .entity-predicate-values-value.last:not(.entity-predicate-values-value *) {
+    border-bottom: 1px solid #dbdbdb;
 }
 
 .label {
