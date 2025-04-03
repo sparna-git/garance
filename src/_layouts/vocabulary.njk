@@ -327,6 +327,22 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
             </div>
           {% endif %}
 
+          {# skos:note #}
+          {% if concepts.note.length > 0 %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:note"></h6>                
+              </div>
+              <div class="col">
+                <ul>
+                  {%- for element in concepts.note -%}
+                    <li>{{ element["@value"] }}</li>                  
+                  {%- endfor -%}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
           {# skos:example #}
           {% if concepts.example %}
             <div class="row">

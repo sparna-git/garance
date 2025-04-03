@@ -104,6 +104,67 @@ rico:TypeRelation,Type Relation
 rico:UnitOfMeasurement,Unit Of Measurement
 rico:WholePartRelation,Whole Part Relation
 rico:WorkRelation,Work Relation
+rico:accruals,accruals
+rico:accrualsStatus,accruals status
+rico:altimetricSystem,altimetric system
+rico:altitude,altitude
+rico:authenticityNote,authenticity note
+rico:authorizingMandate,authorizing mandate
+rico:beginningDate,beginning date
+rico:birthDate,birth date
+rico:carrierExtent,carrier extent
+rico:classification,classification
+rico:conditionsOfAccess,conditions of access
+rico:conditionsOfUse,conditions of use
+rico:creationDate,creation date
+rico:date,date
+rico:dateQualifier,date qualifier
+rico:deathDate,death date
+rico:destructionDate,destruction date
+rico:endDate,end date
+rico:expressedDate,expressed date
+rico:generalDescription,general description
+rico:geodesicSystem,geodesic system
+rico:geographicalCoordinates,geographical coordinates
+rico:height,height
+rico:history,history
+rico:identifier,identifier
+rico:instantiationExtent,Instantiation extent
+rico:instantiationStructure,Instantiation structure
+rico:integrityNote,integrity note
+rico:lastModificationDate,last modification date
+rico:latitude,latitude
+rico:length,length
+rico:location,location
+rico:longitude,longitude
+rico:measure,measure
+rico:modificationDate,modification date
+rico:name,name
+rico:normalizedDateValue,normalized date value
+rico:normalizedValue,normalized value
+rico:physicalCharacteristicsNote,physical characteristics note
+rico:physicalOrLogicalExtent,physical or logical extent
+rico:productionTechnique,production technique
+rico:publicationDate,publication date
+rico:qualityOfRepresentationNote,quality of representation note
+rico:quantity,quantity
+rico:recordResourceExtent,Record Resource Extent
+rico:recordResourceStructure,Record Resource structure
+rico:referenceSystem,reference system
+rico:relationCertainty,relation certainty
+rico:relationSource,relation source
+rico:relationState,relation state
+rico:ruleFollowed,rule followed
+rico:scopeAndContent,scope and content
+rico:structure,structure
+rico:technicalCharacteristics,technical characteristics
+rico:textualValue,textual value
+rico:title,title
+rico:type,type
+rico:unitOfMeasurement,unit of measurement
+rico:usedFromDate,used from date
+rico:usedToDate,used to date
+rico:width,width
 rico:accumulationRelation_role,has the role of the Accumulation Relation
 rico:activityDocumentationRelation_role,has the role of the Activity Documentation Relation
 rico:activityIsContextOfRelation,activity is context of relation
@@ -504,64 +565,3 @@ rico:wasUsedFromDate,was used from date
 rico:wasUsedToDate,was used to date
 rico:wholePartRelation_role,has the role of the Whole Part Relation
 rico:workRelation_role,has the role of the Work Relation
-rico:accruals,accruals
-rico:accrualsStatus,accruals status
-rico:altimetricSystem,altimetric system
-rico:altitude,altitude
-rico:authenticityNote,authenticity note
-rico:authorizingMandate,authorizing mandate
-rico:beginningDate,beginning date
-rico:birthDate,birth date
-rico:carrierExtent,carrier extent
-rico:classification,classification
-rico:conditionsOfAccess,conditions of access
-rico:conditionsOfUse,conditions of use
-rico:creationDate,creation date
-rico:date,date
-rico:dateQualifier,date qualifier
-rico:deathDate,death date
-rico:destructionDate,destruction date
-rico:endDate,end date
-rico:expressedDate,expressed date
-rico:generalDescription,general description
-rico:geodesicSystem,geodesic system
-rico:geographicalCoordinates,geographical coordinates
-rico:height,height
-rico:history,history
-rico:identifier,identifier
-rico:instantiationExtent,Instantiation extent
-rico:instantiationStructure,Instantiation structure
-rico:integrityNote,integrity note
-rico:lastModificationDate,last modification date
-rico:latitude,latitude
-rico:length,length
-rico:location,location
-rico:longitude,longitude
-rico:measure,measure
-rico:modificationDate,modification date
-rico:name,name
-rico:normalizedDateValue,normalized date value
-rico:normalizedValue,normalized value
-rico:physicalCharacteristicsNote,physical characteristics note
-rico:physicalOrLogicalExtent,physical or logical extent
-rico:productionTechnique,production technique
-rico:publicationDate,publication date
-rico:qualityOfRepresentationNote,quality of representation note
-rico:quantity,quantity
-rico:recordResourceExtent,Record Resource Extent
-rico:recordResourceStructure,Record Resource structure
-rico:referenceSystem,reference system
-rico:relationCertainty,relation certainty
-rico:relationSource,relation source
-rico:relationState,relation state
-rico:ruleFollowed,rule followed
-rico:scopeAndContent,scope and content
-rico:structure,structure
-rico:technicalCharacteristics,technical characteristics
-rico:textualValue,textual value
-rico:title,title
-rico:type,type
-rico:unitOfMeasurement,unit of measurement
-rico:usedFromDate,used from date
-rico:usedToDate,used to date
-rico:width,width

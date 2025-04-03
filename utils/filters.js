@@ -175,8 +175,9 @@ module.exports = {
       //  throw new Error('URL is already relative : '+absoluteUrl)
       // }
       try {
-          const relativeUrl = require("path").relative(page.url, absoluteUrl);
-          return relativeUrl;
+          var relativeUrl = require("path").relative(page.url, absoluteUrl)
+          const URLRelative = relativeUrl.replace(new RegExp(/\\/g),"/")          
+          return URLRelative;
       } catch(error) {
         return absoluteUrl;
       }

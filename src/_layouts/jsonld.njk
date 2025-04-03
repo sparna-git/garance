@@ -86,11 +86,30 @@
     <div class="entity-predicate-predicate-title">
         {# expand and shorten so that specific keys e.g. label_fr are turned back into namespaced URI #}
         {% set formattedPredicate = predicate | expandUri(context) | shortenUri(context) %}
-        {% set tooltip = ["<code>", formattedPredicate, "</code><br/>The description in <b>bold</b>"] | join %}
+        {% set predicate_tooltip = formattedPredicate+"_tooltip" %}
+        {% set tooltip = ["<code>", formattedPredicate, "</code><br/>The description in <b>bold</b><br/>","<span data-i18n='{{rico:hasOrHadAgentName_tooltip}}'>",predicate_tooltip,"</span>"] | join %}
+        
+        {#% set tooltip = ["<code>", predicate_tooltip, "</code><br/>The description in <b>bold</b>"] | join %#}
+        
 
         <span class="label" data-i18n="{{formattedPredicate}}"></span>
         <span class="info-icon">ℹ️</span>
+        <!--
         <div class="entity-predicate-predicate-tooltip">{{ tooltip }}</div>
+        -->
+        <div class="entity-predicate-predicate-tooltip">
+            <code>{{ formattedPredicate }}</code>
+            <br/>
+            {% set Idtooltip = "rico" %}
+            {% if "rico:" in formattedPredicate %}
+                {% set Idtooltip = formattedPredicate+"_tooltip" %}
+            {% else %}
+                {% set Idtooltip = formattedPredicate %}
+            {% endif %}
+            <b>
+                <span class="label" data-i18n="{{Idtooltip}}"></span>
+            </b>    
+        </div>
     </div>
 {% endmacro %}
 

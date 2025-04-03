@@ -1,13 +1,9 @@
 // internationalization
 const i18n = require("eleventy-plugin-i18n");
 
-// Traductions
-const translations = require("./src/_data/translations.js");
-
 const filters = require('./utils/filters.js')
 const jsonldFilters = require('./utils/jsonld.js')
 const shapesFilters = require('./utils/shapes.js')
-
 
 module.exports = async function (config) {
   const { EleventyI18nPlugin } = await import("@11ty/eleventy");
@@ -15,22 +11,6 @@ module.exports = async function (config) {
   config.setNunjucksEnvironmentOptions({
     throwOnUndefined: true,
     autoescape: false, // warning: don’t do this!
-  });
-
-  // ************** plugins **************************
-  
-  // internationalization
-  config.addPlugin(EleventyI18nPlugin, {
-    defaultLanguage: "fr", // Required
-    errorMode: "allow-fallback", // Opting out of "strict"
-  });
-
-  // translation
-  config.addPlugin(i18n, {
-    translations,
-    fallbackLocales: {
-      fr: "fr",
-    },
   });
 
   // ***************** Filters ***********************
@@ -62,5 +42,3 @@ module.exports = async function (config) {
     },
   };
 };
-
-
