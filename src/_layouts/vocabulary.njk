@@ -380,7 +380,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
                 <ul>
                   {% for narrowerConcept in concepts.narrower %}
                     <li>
-                      <a href="#{{ narrowerConcept.id | localName }}">{{ narrowerConcept.prefLabel | lang("fr") | title }}</a>
+                      <a href="#{{ narrowerConcept.id | localName }}">{{ narrowerConcept.prefLabel | lang("fr") }}</a>
                     </li>
                   {% endfor %}
                 </ul>  
