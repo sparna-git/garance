@@ -190,14 +190,12 @@
   "rico:isOrganicProvenanceOf": {
     "@omitDefault": true,
     "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }
+    "@embed": "@always"
   },
   "rico:isOrWasMainSubjectOf": {
     "@omitDefault": true,
     "@explicit": true,
-    "@embed": "@always",
-    "rdfs:label": { "@omitDefault": true }
+    "@embed": "@always"
   },
   "rico:thingIsConnectedToRelation": {
     "@omitDefault": true,
@@ -247,11 +245,13 @@
       "rico:hasActivityType": {
         "@explicit": true,
         "@omitDefault": true,
+        "@embed": "@always",
         "skos:prefLabel": { "@omitDefault": true }
       },
       "rico:hasOrHadLocation": {
         "@explicit": true,
         "@omitDefault": true,
+        "@embed": "@always",
         "skos:prefLabel": { "@omitDefault": true }
       }
     }

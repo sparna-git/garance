@@ -15,7 +15,7 @@
         {
           "sh:order": 3,
           "sh:path":"https://www.ica.org/standards/RiC/ontology#name"
-        },      
+        },
         {
           "sh:order": 4,
           "sh:path":"http://www.w3.org/2000/01/rdf-schema#label",
@@ -23,47 +23,47 @@
         },
         {
           "sh:order": 5,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadAgentName"
-        },
-        {
-          "sh:order": 6,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#authorizedBy"
-        },
-        {
-          "sh:order": 7,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#authorizingMandate"
-        },
-        {
-          "sh:order": 8,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadCorporateBodyType"
-        },
-        {
-          "sh:order": 9,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadOccupationOfType"
-        },
-        {
-          "sh:order": 10,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#generalDescription"
-        },
-        {
-          "sh:order": 11,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#history"
-        },
-        {
-          "sh:order": 12,
           "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate"
         },
         {
-          "sh:order": 13,
+          "sh:order": 6,
           "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"
         },
         {
-          "sh:order": 14,
+          "sh:order": 7,
           "sh:path":"https://www.ica.org/standards/RiC/ontology#birthDate"
         },
         {
-          "sh:order": 15,
+          "sh:order": 8,
           "sh:path":"https://www.ica.org/standards/RiC/ontology#deathDate"
+        },
+        {
+          "sh:order": 9,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadAgentName"
+        },
+        {
+          "sh:order": 10,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#authorizedBy"
+        },
+        {
+          "sh:order": 11,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#authorizingMandate"
+        },
+        {
+          "sh:order": 12,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadCorporateBodyType"
+        },
+        {
+          "sh:order": 13,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadOccupationOfType"
+        },
+        {
+          "sh:order": 14,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#generalDescription"
+        },
+        {
+          "sh:order": 15,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#history"
         },
         {
           "sh:order": 16,
