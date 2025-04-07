@@ -8,6 +8,7 @@ module.exports = {
     vocabularies: "Vocabulaires contrôlés",
     "These concepts have all the type":
       "Ces concepts SKOS sont tous aussi des instances de la classe RiC-O:",
+    "Identifier inside the vocabulary": "Identifiant dans le vocabulaire du SIA",
     agents: "Agents",
     lieux: "Places",
 
@@ -36,6 +37,7 @@ module.exports = {
     "dc:version": "Version",
     "skos:scoteNote" : "Scote Note",
     "skos:prefLabel": "Traductions",
+    "skos:note": "Note",
 
     // for agents and generic JSON-LD printing
     id: "identifiant",
