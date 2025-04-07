@@ -168,11 +168,19 @@ mark {
 # Generic JSON-LD printing
 --------------------------------------------------------------*/
 
-/* so that URI sticks to the title */
-.entity-title {
-    margin-bottom:-0.06em;
+.header {
+    background-color: rgb(229, 223, 236);
+    padding: 0 10px;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
 }
-.entity-uri {
+
+/* so that URI sticks to the title */
+.header-title {
+    margin-bottom:-0.06em;
+    padding-top: 80px;
+}
+.header-uri {
     font-size:85%;
 }
 
