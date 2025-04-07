@@ -27,7 +27,7 @@ module.exports = {
     "skos:exactMatch": "Alignements exacts",
     "skos:closeMatch": "Alignements proches",
     "skos:relatedMatch": "Alignements associatifs",
-    "skos:narrowMatch": "Alignements spécifications",
+    "skos:narrowMatch": "Alignements spécifiques",
     "dc:coverage": "Couverture",
     "dc:rights": "Droits",
     "skos:historyNote": "Note historique",
@@ -41,6 +41,6 @@ module.exports = {
     id: "identifiant",
     "rdf:type": "type",
     "rdfs:label": "libellé",
-    "owl:sameAs": "identique à",
-  },
+    "owl:sameAs": "identique à"
+  }
 };

@@ -275,7 +275,7 @@ mark {
 .entity-predicate-predicate-tooltip {
     display: none;
     position: absolute;
-    background-color: black;
+    background-color: #333;
     color:white;
     border: 1px solid #ccc;
     padding: 10px;

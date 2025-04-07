@@ -41,6 +41,6 @@ module.exports = {
     id: "URI identifier",
     "rdf:type": "type",
     "rdfs:label": "label",
-    "owl:sameAs": "same as",
-  },
+    "owl:sameAs": "same as"
+  }
 };
