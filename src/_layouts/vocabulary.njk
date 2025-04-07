@@ -210,7 +210,11 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
             <a href="{{ concepts.id | expandUri(jsonLdContext) }}">{{ concepts.id | expandUri(jsonLdContext) }}</a>
           </code>
           <br /> 
-          {# Sparql Query #}
+          <span data-i18n="Identifier inside the vocabulary"></span> :
+          <code>
+            <span>{{ concepts.id | expandUri(jsonLdContext) | replace( r/.*FRAN_RI_...-/ , "" ) }}</span>
+          </code>
+          <br /> 
         </p>
 
         <div class="container">
@@ -613,7 +617,9 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           
           nodeEnter.append("circle")
             .attr("r", 2.5)
-            .attr("fill", d => d._children ? "#555" : "#999")
+            // .attr("fill", d => d._children ? "#555" : "#999")
+            // blue circle to indicate it is clickable
+            .attr("fill", d => d._children ? "#3366cc" : "#999")
             .attr("stroke-width", 10);
 
           const nodeRef = nodeEnter.append("a")

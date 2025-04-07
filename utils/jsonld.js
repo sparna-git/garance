@@ -183,6 +183,14 @@ function expandUriOnPrefixes(qname, context) {
   return result;
 }
 
+function findById(jsonld, id) {
+  let graph = (jsonld.graph)?jsonld.graph:jsonld["@graph"];
+  if(graph) {
+    let result = graph.filter(item => (getId(item) === id));
+    if(result) return result[0];
+  }
+}
+
 /**
  * Finds a predicate in an object using the provided context.
  * @param {object} object - The object to search for the predicate.
@@ -359,6 +367,7 @@ module.exports = {
 
   expandUri: expandUri,
   findPredicate: findPredicate,
+  findById: findById,
 
   /**
    * Strips the HTML prefix from a literal.

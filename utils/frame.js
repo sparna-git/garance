@@ -87,9 +87,8 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   // serialize to check
   await framed(agentFramingData,"src/_data/framings/agents-framing.json","src/_data/agents.json");
 
-  // parcourir le fichier JSON "src/_data/agents.json"
-  // et pour tous les objets qui ont un type = rico:AgentName ou type = rico:AgentHierarchicalRelation, ou etc...
-  // supprimer la clé "id"
+  console.log("Now framing agents header...");
+  await framed(agentFramingData,"src/_data/framings/agentsHeader-framing.json","src/_data/agentsHeader.json");
 
   console.log("Now framing vocabularies...");
   await framed(dataJsonLd,"src/_data/framings/vocabularies-framing.json","src/_data/vocabularies.json");

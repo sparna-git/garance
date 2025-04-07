@@ -43,7 +43,6 @@
   "@explicit": true,
   "type": ["rico:Agent"],
   "rico:identifier": { "@omitDefault": true },
-  "rdfs:label": { "@omitDefault": true },
   "rico:name": { "@omitDefault": true },
   "rico:hasOrHadAgentName": {
     "@omitDefault": true,
@@ -283,11 +282,5 @@
     "@explicit": true,
     "@id": {},
     "rdfs:label": { "@omitDefault": true }
-  },
-  "rico:isOrWasDescribedBy": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "type":"rico:Record",
-    "rico:lastModificationDate": { "@omitDefault": true }
   }
 }

@@ -1,0 +1,13 @@
+
+{# "with context" means the imported templates will have access to all data #}
+{# see https://mozilla.github.io/nunjucks/templating.html#import #}
+{% import "src/_layouts/jsonld.njk" as jsonld with context %}
+
+{% macro header(agent) %}
+    <h1 class="header-title">{{ jsonld.renderLiteralAsString(agent | displayLabel(context) | unboxArray ) }}</h1>
+    <p class="header-uri">
+        <code >
+            <a href="{{ agent.id | expandUri(context) }}">{{ agent.id | expandUri(context) }}</a>
+        </code>
+    </p>
+{% endmacro %}
