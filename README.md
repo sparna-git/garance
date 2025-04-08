@@ -8,32 +8,23 @@ Utilise [11ty]([url](https://www.11ty.dev/)) comme outil de génération de site
 ## Structure des répertoires et des fichiers
 
 ```
-├── app
-│   ├── css
-│   │   ├── **/*.css
-│   ├── favicon.ico
-│   ├── images
-│   ├── index.html
-│   ├── js
-│   │   ├── **/*.js
-│   └── partials/template
-├── dist (or build)
-├── node_modules
-├── bower_components (if using bower)
-├── test
-├── Gruntfile.js/gulpfile.js
-├── README.md
-├── package.json
-├── bower.json (if using bower)
-└── .gitignore
-
 garance
 ├── .eleventy.js
 ├── src
 │   ├── _data
+│   |   ├── framings
+│   |   ├── i18n
+│   |   |   ├── en
+│   |   |   |   ├── translation files (CSV and JS)
+│   |   |   ├── fr
+│   |   |   |   ├── translation files (CSV and JS)
 │   ├── entities
-│
-│
+│   ├── _layouts
+│   ├── pages
+│   |   ├── en
+│   |   |   ├── *.md files (index.md)
+│   |   ├── fr
+│   |   |   ├── *.md files (index.md)
 ├── static
 ├── utils
 ```
