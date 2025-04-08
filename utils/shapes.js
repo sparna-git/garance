@@ -24,6 +24,26 @@ exports.getNodeShape = function(type, shapes) {
   return shapesWithTarget = shapes.graph.find(ns => ns["sh:targetClass"] == type);
 }
 
+exports.getPropertyShape = function(typeArray, predicateFullUri, shapes) {
+  // 1. For each type...
+  for (var i = 0; i < typeArray.length; i++) {
+    // 2. Read the available properties of that type, using full URI
+    var ns = exports.getNodeShape(typeArray[i], shapes);
+    if(ns) {
+      let thisShapeProps = exports.getProperties(ns);
+      for (var i = 0; i < thisShapeProps.length; i++) {
+        if(thisShapeProps[i]["sh:path"] === predicateFullUri) {
+          // TODO : we return the first we find, but we may have multiple ones
+          // if we have multiple NodeShapes
+          return thisShapeProps[i];
+        }
+      }      
+    }
+  }
+
+  return undefined;
+}
+
 /**
  * typeArray is always an array
  **/
@@ -145,5 +165,29 @@ exports.getSortKeyOfTypes = function(typeArray, shapes) {
         return sortKey;
       }
     }
+  }
+}
+
+/**
+ * Reads the volipi:class annotation on the property shape of the given predicate
+ * on one of the provided type
+ **/
+exports.additionnalCssClass = function(predicate, object, shapes, context) {
+  // read the type or types of the object
+  let types = jsonld.getTypes(object);
+  // read the property shape of the predicate in one of those types
+  // flat() ensures we always have an array
+  let propertyShape = exports.getPropertyShape(
+    [types].flat().map(t => jsonld.expandUri(t, context)),
+    jsonld.expandUri(predicate, context),
+    shapes
+  );
+
+  console.log(propertyShape)
+  // then see if this property shape has a volipi:class attribute
+  if(propertyShape && propertyShape["volipi:class"]) {
+    return propertyShape["volipi:class"];
+  } else {
+    return "";
   }
 }

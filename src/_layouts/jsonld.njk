@@ -48,15 +48,15 @@
         {% for predicate in sortedKeys %}
           {% set value = object[predicate] %}
           {% if predicate != "id" and predicate != "@id" %}
-            {{ renderPredicateValues(predicate, value, mainObject) }}
+            {{ renderPredicateValues(object, predicate, value, mainObject) }}
           {% endif %}
         {% endfor %}
     </div>
 {% endmacro %}
 
 
-{% macro renderPredicateValues(predicate, values, mainObject) %}
-  <div class="entity-predicate">
+{% macro renderPredicateValues(object, predicate, values, mainObject) %}
+  <div class="entity-predicate {{ predicate | additionnalCssClass(object, shapes, context) }}">
     <div class="entity-predicate-predicate">
       {{ renderPredicate(predicate) }}
     </div>

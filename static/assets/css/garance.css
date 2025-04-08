@@ -218,6 +218,14 @@ mark {
     padding-top: 5px;
 }
 
+.entity-predicate.horizontal > .entity-predicate-values > .entity-predicate-values-list {
+    display: flex;
+}
+
+.entity-predicate.horizontal > .entity-predicate-values > .entity-predicate-values-list > .entity-predicate-values-value:not(.last)::after {
+  content: ',\00a0';
+}
+
 /*
 .entity-predicate-values:not(.entity-predicate-values *) {
     border-bottom: 1px solid #dbdbdb;
@@ -226,7 +234,7 @@ mark {
 
 
 /* applies to values which precedes another value */
-.entity-predicate-values-list > .entity-predicate-values-value:not(.last) {
+.entity-predicate:not(.horizontal) > .entity-predicate-values > .entity-predicate-values-list > .entity-predicate-values-value:not(.last) {
     margin-top: 10px;
     padding-bottom: 10px;
     background-image: url(../../../assets/images/separatoreCorto.png);
@@ -235,17 +243,17 @@ mark {
     background-position: bottom left;
 }
 /* Overwrites the margin for the first element so that we don't have an extra space */
-.entity-predicate-values-list > .entity-predicate-values-value.first {
+.entity-predicate:not(.horizontal) > .entity-predicate-values > .entity-predicate-values-list > .entity-predicate-values-value.first {
     margin-top: 0px;
 }
 
-.entity-predicate-values-list > .entity-predicate-values-value.last {
+.entity-predicate:not(.horizontal) > .entity-predicate-values > .entity-predicate-values-list > .entity-predicate-values-value.last {
     margin-top: 10px;
     padding-bottom: 10px;
 
 }
 
-.entity-predicate-values-list > .entity-predicate-values-value.last:not(.entity-predicate-values-value *) {
+.entity-predicate:not(.horizontal) > .entity-predicate-values > .entity-predicate-values-list > .entity-predicate-values-value.last:not(.entity-predicate-values-value *) {
     border-bottom: 1px solid #dbdbdb;
 }
 

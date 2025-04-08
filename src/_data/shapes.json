@@ -51,11 +51,13 @@
         },
         {
           "sh:order": 12,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadCorporateBodyType"
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadCorporateBodyType",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 13,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadOccupationOfType"
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadOccupationOfType",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 14,
@@ -123,7 +125,8 @@
         },
         {
           "sh:order": 30,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadLocation"
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadLocation",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 31,
@@ -293,7 +296,8 @@
         },
         {
           "sh:order": 2,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationConnects"
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#relationConnects",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 3,
