@@ -10,28 +10,43 @@ Utilise [11ty]([url](https://www.11ty.dev/)) comme outil de génération de site
 ```
 garance
 ├── .eleventy.js
-├── [src](#src)
+├── package.json
+├── _json
+│   ├── ... Fichiers JSON après lecture mais avant framing
+├── src
 │   ├── _data
 │   |   ├── framings
+│   |   |   ├── ... Fichiers de specs du framing
 │   |   ├── i18n
 │   |   |   ├── en
-│   |   |   |   ├── translation files (CSV and JS)
+│   |   |   |   ├── ... Fichiers de traductions (CSV and JS)
 │   |   |   ├── fr
-│   |   |   |   ├── translation files (CSV and JS)
+│   |   |   |   ├── ... Fichiers de traductions (CSV and JS)
+│   |   ├── ... Fichiers JSON après framing
 │   ├── entities
 │   ├── _layouts
 │   ├── pages
 │   |   ├── en
-│   |   |   ├── *.md files (index.md)
+│   |   |   ├── ... Fichiers de contenu *.md (dont page d'accueil index.md)
 │   |   ├── fr
-│   |   |   ├── *.md files (index.md)
+│   |   |   ├── ... Fichiers de contenu *.md (dont page d'accueil index.md)
 ├── static
-│   ├── CSS, javascript, image files, etc.
+│   ├── ... CSS, javascript, images, etc.
 ├── utils
-│   ├── Javascripts that are used when building the site (but not in the site itself) : filters, and frame + read commands
+│   ├── ... Javascripts utilisés dans le processus de génération du site (mais pas dans le site lui-même) : filtres + commandes frame & read
 ```
 
+### package.json
+
+Fichier de config principal de tout le projet. Contient notamment les dépendances aux librairies Javascript, et la définition des commances `npm run read`, `npm run frame`, `npm run start` et `npm run read` utiles pour la génération du site.
+
 ### .eleventy.js
+
+Fichier de config principal d'11ty. Il charge les filtres Javascripts utiles à la génération du site et donne les chemins nécessaires à 11ty
+
+### _json
+
+Répertoire dans le lequel se retrouve le 
 
 ### src
 
