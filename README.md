@@ -10,7 +10,7 @@ Utilise [11ty]([url](https://www.11ty.dev/)) comme outil de génération de site
 ```
 garance
 ├── .eleventy.js
-├── src
+├── [src](#src)
 │   ├── _data
 │   |   ├── framings
 │   |   ├── i18n
@@ -26,7 +26,9 @@ garance
 │   |   ├── fr
 │   |   |   ├── *.md files (index.md)
 ├── static
+│   ├── CSS, javascript, image files, etc.
 ├── utils
+│   ├── Javascripts that are used when building the site (but not in the site itself) : filters, and frame + read commands
 ```
 
 ### .eleventy.js
@@ -37,6 +39,15 @@ garance
 
 #### src/_data/framings
 
+#### src/_data/i18n
+
+#### src/entities
+
+#### src/pages
+
+### static
+
+### utils
 
 ## Génération du site
 
