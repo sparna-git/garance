@@ -210,11 +210,13 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
             <a href="{{ concepts.id | expandUri(jsonLdContext) }}">{{ concepts.id | expandUri(jsonLdContext) }}</a>
           </code>
           <br /> 
-          <span data-i18n="Identifier inside the vocabulary"></span> :
-          <code>
-            <span>{{ concepts.id | expandUri(jsonLdContext) | replace( r/.*FRAN_RI_...-/ , "" ) }}</span>
-          </code>
+          {% if 'FRAN_RI_' in concepts.id %}
+            <span data-i18n="Identifier inside the vocabulary"></span> :
+            <code>
+              <span>{{ concepts.id | expandUri(jsonLdContext) | replace( r/.*FRAN_RI_...-/ , "" ) }}</span>
+            </code>
           <br /> 
+          {% endif %}
         </p>
 
         <div class="container">
@@ -273,7 +275,8 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               </div>
               <div class="col">
                 <ul>
-                  {%- for element in concepts.altLabel -%}
+                  {% set altLabel_sort = concepts.altLabel | jsonSort("altLabel") %}
+                  {%- for element in altLabel_sort -%}
                     <li>{{ element["@value"] }}</li>                  
                   {%- endfor -%}
                 </ul>
@@ -355,7 +358,8 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               </div>
               <div class="col">
                 <ul>
-                {% for e in concepts.example %}
+                {% set example_sort = concepts.example | jsonSort("rico:name") %}
+                {% for e in example_sort %}
                   <li>
                     {% set label = (e["rico:name"]["@value"] if e["rico:name"] else e["rico:title"]["@value"]) %}
                     {% if e.id %}
@@ -382,7 +386,8 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               </div>
               <div class="col">  
                 <ul>
-                  {% for narrowerConcept in concepts.narrower %}
+                  {% set narrower_sort = concepts.narrower | jsonSort("prefLabel") %}
+                  {% for narrowerConcept in narrower_sort %}
                     <li>
                       <a href="#{{ narrowerConcept.id | localName }}">{{ narrowerConcept.prefLabel | lang("fr") }}</a>
                     </li>
@@ -399,8 +404,9 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
                 <h6 data-i18n="skos:related"></h6>
               </div>    
               <div class="col">  
-                <ul>  
-                  {% for sr in concepts.skosRelated %}
+                <ul>
+                  {% set skosRelated_sort = concepts.skosRelated | jsonSort("prefLabel")  %}
+                  {% for sr in skosRelated_sort %}
                     <li><a href="#{{ sr.id | localName }}">{{ sr.prefLabel | lang('fr') }}</a></li>
                   {% endfor %}
                 </ul>
