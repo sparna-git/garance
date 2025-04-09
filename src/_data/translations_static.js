@@ -1,32 +1,16 @@
-const gStructure = require("../_includes/structure")
-
 /* Fichiers de traduction de langue */
 const data_fr = require("../_data/i18n/fr/garance");
 const data_en = require("../_data/i18n/en/garance");
 
-// Créer une estructure et returne une résultat de type objet
-/*
-* {input} le fichier de la langue
-*/ 
-const objFR = gStructure(data_fr);
-const objEN = gStructure(data_en);
+// input : { "key": "translation" }
+// output : { "key": { "en" : "translation" }}
+const objFR = Object.fromEntries(Object.entries(data_fr).map(([k, v]) => [k, { "fr": v }]))
+const objEN = Object.fromEntries(Object.entries(data_en).map(([k, v]) => [k, { "en": v }]))
 
-// Merge les objet dans une seule résultat
-const multilangue = mergeTranslations(objFR, objEN);
+// Merge les objets dans une seule résultat
+const multilangue = Object.fromEntries(Object.keys(objEN).map(key => 
+  [key, { fr: objFR[key], en: objEN[key] }]
+));
 
-// Ouptut Result
+// output result
 module.exports = multilangue;
-
-
-// fonction pour merge tous les langues a utiliser 
-function mergeTranslations(objFR, objEN) {
-  // fonction pour merge le résultat
-  const ObjTranslations = new Object();
-  for (o in objEN) {
-    const id = o;
-    //
-    const assign_values = Object.assign({}, objEN[o], objFR[o]);
-    ObjTranslations[o] = assign_values;
-  }
-  return ObjTranslations;
-};

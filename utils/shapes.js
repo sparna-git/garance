@@ -183,7 +183,6 @@ exports.additionnalCssClass = function(predicate, object, shapes, context) {
     shapes
   );
 
-  console.log(propertyShape)
   // then see if this property shape has a volipi:class attribute
   if(propertyShape && propertyShape["volipi:class"]) {
     return propertyShape["volipi:class"];

@@ -1,5 +1,4 @@
 const fs = require("fs"); //
-const gStructure = require("../_includes/structure")
 
 // appelle les fichiers csv
 const file_rico_fr = "./src/_data/i18n/fr/rico.csv";
@@ -8,36 +7,25 @@ const rico_fr = fs.readFileSync(file_rico_fr, { encoding: "utf-8", flag: "r" });
 const rico_en = fs.readFileSync(file_rico_en, { encoding: "utf-8", flag: "r" });
 
 // fonction pour lire les données d'un fichier csv et retourner une estructure de dictionaire
-const dicFR = readCSV(rico_fr, "fr");
-const dicEN = readCSV(rico_en, "en");
+const dicFR = readCSV(rico_fr);
+const dicEN = readCSV(rico_en);
 
-// Créer une estructure et returne une résultat de type objet
-/*
-* {input} le fichier de la langue
-*/ 
-const objFR = gStructure(dicFR);
-const objEN = gStructure(dicEN);
+// input : { "key": "translation" }
+// output : { "key": { "en" : "translation" }}
+const objFR = Object.fromEntries(Object.entries(dicFR).map(([k, v]) => [k, { "fr": v }]))
+const objEN = Object.fromEntries(Object.entries(dicEN).map(([k, v]) => [k, { "en": v }]))
 
-// Merge les objet dans une seule résultat
-const multilangueRicO = merge(objFR, objEN);
+
+// Merge les objets dans une seule résultat
+const multilangueRicO = Object.fromEntries(Object.keys(objEN).map(key => 
+  [key, { fr: objFR[key], en: objEN[key] }]
+));
 
 // Ouptut Result
 module.exports = multilangueRicO;
 
-// fonction pour merge tous les langues a utiliser 
-function merge(objFR, objEN) {
-  // fonction pour merge le résultat
-  const ObjTranslations = new Object();
-  for (o in objEN) {
-    const id = o;
-    //
-    const assign_values = Object.assign({}, objEN[o], objFR[o]);
-    ObjTranslations[o] = assign_values;
-  }
-  return ObjTranslations;
-};
 
-function readCSV(data, langue) {
+function readCSV(data) {
   // creer l'objetc
   const objLanguage = new Object();
   // split data csv
@@ -53,7 +41,5 @@ function readCSV(data, langue) {
     }
   });
 
-  // telecharcher les données dans l'object
-  objLanguage[langue] = Object.fromEntries(entries);
-  return objLanguage;
+  return Object.fromEntries(entries);
 }
