@@ -4,6 +4,6 @@ module.exports = {
    **/
   currentDateTime() {
     const today = new Date();
-    return (today.toLocaleDateString()+" "+today.toLocaleTimeString());
+    return (today.toLocaleDateString()+" "+today.toLocaleTimeString("fr-FR"));
   }
 };
