@@ -32,8 +32,10 @@ garance
 │   |   |   ├── ... Fichiers de contenu *.md (dont page d'accueil index.md)
 ├── static
 │   ├── ... CSS, javascript, images, etc.
+├── scripts
+│   ├── ... commandes exécutées pour traiter les données : frame et read
 ├── utils
-│   ├── ... Javascripts utilisés dans la génération du site (mais pas dans le site lui-même) : filtres + commandes frame & read
+│   ├── ... Javascripts utilisés dans la génération du site (mais pas dans le site lui-même)
 ```
 
 ### `package.json`
@@ -47,6 +49,10 @@ Fichier de config principal d'11ty. Il charge les filtres Javascripts utiles à 
 ### `_json`
 
 Répertoire dans le lequel se retrouve le gros fichier JSON-LD `garance.json`qui est la concaténation de la lecture de tous les référentiels, et sur lequel est appliqué le framing. Ce répertoire est créé par la commande `npm run read`.
+
+### `scripts`
+
+Répertoire contenant les commandes "frame" et "read" utilisées pour préparer les données avant la génération du site.
 
 ### `src`
 
@@ -76,15 +82,14 @@ Répertoire contenant les layouts qui se chargent de la génération du HTML à 
 
 Répertoire contenant les pages statiques du site (non produites à partir de fichiers de données JSON). Ces pages doivent exister en 2 variantes, anglaise et française.
 
+
 ### `static`
 
 Répertoire contenant tous les fichiers statiques du site final (images, Javascripts, CSS, etc...), qui est recopié tel quel dans la sortie.
 
 ### `utils`
 
-Répertoire contenant tous les scripts utiles pour la génération du site (mais pas dans le site lui-même):
-- filtres Nunjuck pour le traitement des données 
-- commandes "frame" et "read"
+Répertoire contenant tous les scripts utiles pour la génération du site (mais pas dans le site lui-même). Ce sont des filtres Nunjuck pour l'affichage des données des données 
 
 ## Commandes de génération du site
 
