@@ -84,6 +84,11 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   agentFramingData.graph = agentFramingData.graph.filter((obj) => !hasType(obj, "rico:Instantiation"));
   deleteAllOnTypeExcept(agentFramingData.graph, "rico:Place", ["rdfs:label"]);
   deleteAllOnTypeExcept(agentFramingData.graph, "skos:Concept", ["skos:prefLabel"]);
+  // delete relations
+  deleteAllOnTypeExcept(agentFramingData.graph, "rico:MandateRelation", ["rico:beginningDate","rico:endDate","rico:note" ]);
+  deleteAllOnTypeExcept(agentFramingData.graph, "rico:PerformanceRelation", ["rico:beginningDate","rico:endDate","rico:note"]);
+  deleteAllOnTypeExcept(agentFramingData.graph, "rico:PlaceRelation", ["rico:beginningDate","rico:endDate","rico:note" ]);
+
   // serialize to check
   await framed(agentFramingData,"src/_data/framings/agents-framing.json","src/_data/agents.json");
 
