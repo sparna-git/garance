@@ -16,3 +16,9 @@ dist-agents/
 src/_data/agents.json
 
 src/_data/vocabularies.json
+
+scripts/python/virtualenv/
+
+scripts/python/ConvertResourceToJson.log
+
+scripts/python/src/__pycache__/
