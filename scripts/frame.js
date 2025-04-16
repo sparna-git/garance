@@ -2,6 +2,7 @@
 const fs = require("fs");
 //npm install jsonld
 const jsonld = require("jsonld");
+const { json } = require("stream/consumers");
 
 /**
  * Removes type keys from an object.
@@ -29,6 +30,44 @@ function deleteAllOnTypeExcept(jsonArray, type, except) {
     }
   }
 }
+
+function deleteIfNoPropertyIsPresent(jsonArray, type, properties) {
+
+  jsonArray = jsonArray.filter((obj) => {
+    // apply the function recursively on the object
+    Object.entries(obj).forEach(([key, value]) => {
+      if (typeof value === "object") {
+        if(!toBeKeptIfNoPropertyIsPresent(value, type, properties)) {
+          delete obj[key];
+        }
+      }
+      // if the value is an array, apply the function on each element
+      deleteIfNoPropertyIsPresent(value, type, properties);
+    });
+
+    return toBeKeptIfNoPropertyIsPresent(obj, type, properties);
+  });
+
+  return jsonArray;
+}
+
+function toBeKeptIfNoPropertyIsPresent(obj, type, properties) {
+  if (hasType(obj, type)) {    
+    // for each property in properties, check if it is present as a key in the object
+    let hasProperty = false;
+    for (let property of properties) {
+      if (obj[property]) {
+        hasProperty = true;
+        break;
+      }
+    }
+    // if no property is present, delete the object
+    return hasProperty;
+  } else {
+    return true;
+  }
+}
+
 
 function hasType(obj, type) {
   let objType = getType(obj);
@@ -129,22 +168,6 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   deleteAllOnTypeExcept(agentFramingData.graph, "skos:Concept", [
     "skos:prefLabel",
   ]);
-  // delete relations
-  deleteAllOnTypeExcept(agentFramingData.graph, "rico:MandateRelation", [
-    "rico:beginningDate",
-    "rico:endDate",
-    "rico:note",
-  ]);
-  deleteAllOnTypeExcept(agentFramingData.graph, "rico:PerformanceRelation", [
-    "rico:beginningDate",
-    "rico:endDate",
-    "rico:note",
-  ]);
-  deleteAllOnTypeExcept(agentFramingData.graph, "rico:PlaceRelation", [
-    "rico:beginningDate",
-    "rico:endDate",
-    "rico:note",
-  ]);
 
   // clean agents names
   agentFramingData.graph = cleanPreferredAgentsNames(agentFramingData.graph);
@@ -155,6 +178,35 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
     "src/_data/framings/agents-framing.json",
     "src/_data/agents.json"
   );
+
+  /*
+  console.log("post-processing agents...");
+  let agentsData = JSON.parse(
+    fs.readFileSync("src/_data/agents.json", { encoding: "utf8", flag: "r" })
+  );
+
+  // delete relations
+  deleteIfNoPropertyIsPresent(agentsData.graph, "rico:MandateRelation", [
+    "rico:beginningDate",
+    "rico:endDate",
+    "rico:note",
+  ]); 
+  deleteIfNoPropertyIsPresent(agentsData.graph, "rico:PerformanceRelation", [
+    "rico:beginningDate",
+    "rico:endDate",
+    "rico:note",
+  ]);
+  deleteIfNoPropertyIsPresent(agentsData.graph, "rico:PlaceRelation", [
+    "rico:beginningDate",
+    "rico:endDate",
+    "rico:note",
+  ]);
+
+  fs.writeFileSync("src/_data/agents.json", JSON.stringify(agentsData, null, 2), {
+    encoding: "utf8",
+  });
+  console.log("Done post-processing agents");
+  */
 
   console.log("Now framing agents header...");
   await framed(
