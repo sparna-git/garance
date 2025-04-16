@@ -7,7 +7,7 @@ pagination:
 permalink: "entities/{{ vocabulary.id | localName }}/"
 ---
 
-{% set jsonLdContext = vocabularies["@context"] | json %}
+{% set jsonLdContext = vocabularies["@context"] %}
 {% set sortInverseInScheme = vocabulary.inverse_inScheme | excludeObsolete | jsonSort("prefLabel") %}
 
 <main class="section_body" id="vocabulary">
