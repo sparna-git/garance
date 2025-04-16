@@ -194,7 +194,8 @@
   "rico:isOrWasMainSubjectOf": {
     "@omitDefault": true,
     "@explicit": true,
-    "@embed": "@always"
+    "@embed": "@always",
+    "rico:title": { "@omitDefault": true }
   },
   "rico:thingIsConnectedToRelation": {
     "@omitDefault": true,
