@@ -159,7 +159,7 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   console.log("Now framing agents header...");
   await framed(
     agentFramingData,
-    "src/_data/framings/agentsHeader-framing-2.json",
+    "src/_data/framings/agentsHeader-framing.json",
     "src/_data/agentsHeader.json"
   );
 

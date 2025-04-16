@@ -198,16 +198,25 @@
     "narrowMatch": {
       "@explicit": true,
       "@omitDefault": true,
+      "id": {},
       "prefLabel": { "@omitDefault": true } 
     },
     "exactMatch": {
       "@explicit": true,
       "@omitDefault": true,
-      "prefLabel": { "@omitDefault": true } 
+      "id": {},
+      "prefLabel": { "@omitDefault": true }
     },
     "closeMatch": {
       "@explicit": true,
       "@omitDefault": true,
+      "id": {},
+      "prefLabel": { "@omitDefault": true } 
+    },
+    "relatedMatch": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "id": {},
       "prefLabel": { "@omitDefault": true } 
     },
     "skosRelated": {
@@ -215,11 +224,6 @@
       "@omitDefault": true,
       "@embed": "@always",
       "prefLabel": { "@omitDefault": true }
-    },
-    "relatedMatch": {
-      "@explicit": true,
-      "@omitDefault": true,
-      "prefLabel": { "@omitDefault": true } 
     },
     "broader": {
       "@explicit": true,
