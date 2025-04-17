@@ -194,7 +194,7 @@ function initTooltips(locale) {
     tippy(el, {
       content: temp,
       allowHTML: true,
-      placement: "bottom",
+      placement: "bottom-start",
       theme: "light",
       animation: "shift-away",
       arrow: false,
