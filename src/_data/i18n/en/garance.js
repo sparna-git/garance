@@ -10,6 +10,8 @@ module.exports = {
   "Identifier inside the vocabulary": "Identifier inside the vocabulary",
   agents: "Agents",
   lieux: "Places",
+  "Record created on": "Record created on",
+  "Record updated on": "Record last updated on",
 
   // properties, classes, etc
   "dcat:distribution": "Download data",

@@ -10,6 +10,8 @@ module.exports = {
   "Identifier inside the vocabulary": "Identifiant dans le vocabulaire du SIA",
   agents: "Agents",
   lieux: "Places",
+  "Record created on": "Notice créée le",
+  "Record updated on": "Notice créée le",
 
   // properties, classes, etc
   "dcat:distribution": "Télécharger les données",

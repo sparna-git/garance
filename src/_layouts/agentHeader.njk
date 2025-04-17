@@ -41,41 +41,26 @@
 {% if links %}
   <div class="mt-2">
     {% if links.rdfUrl %}
-      <a href="{{ links.rdfUrl }}" target="_blank">
-        <img src="https://img.shields.io/badge/Record-RDF%2FXML-blue" alt="RDF/XML" />
-      </a>
+      <a href="{{ links.rdfUrl }}" target="_blank"><img src="https://img.shields.io/badge/Record-RDF%2FXML-blue" alt="RDF/XML" /></a>
     {% endif %}
     {% if links.eacUrl %}
-      <a href="{{ links.eacUrl }}" target="_blank">
-        <img src="https://img.shields.io/badge/Record-EAC-blue" alt="EAC" />
-      </a>
+      <a href="{{ links.eacUrl }}" target="_blank"><img src="https://img.shields.io/badge/Record-EAC-blue" alt="EAC" /></a>
     {% endif %}
   </div>
 {% endif %}
 
 
-    {% set creationDate = agent | getCreationDate %}
-    {% if creationDate %}
-      <p class="header-date text-end fst-italic">
-        <strong>Date de création :</strong>
-        {{ creationDate }}
-      </p>
-    {% endif %}
-
-    
-
-
+{% set creationDate = agent | getCreationDate %}
+{% if creationDate or (agent["rico:isOrWasDescribedBy"] and agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"]) %}
+  <div class="header-date text-end fst-italic">
+    {# Date de création #}
+    {% if creationDate %}<span data-i18n="Record created on"></span> : {{ creationDate }}{% if agent["rico:isOrWasDescribedBy"] and agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"] %}, {% endif %}{% endif %}
     {# Date de dernière modification #}
-      {% if agent["rico:isOrWasDescribedBy"] and agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"] %}
-
-        <p class="header-date text-end fst-italic">
-          <strong>Date de dernière modification :</strong>
-          {{ agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"]["@value"]}}
-        </p>
-      {% endif %}
-
-
-
-
+    {% if agent["rico:isOrWasDescribedBy"] and agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"] %}
+      <span data-i18n="Record updated on"></span> : {{ agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"]["@value"]}}
+    {% endif %}
   </div>
+{% endif %}
+
+</div>
 {% endmacro %}

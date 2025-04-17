@@ -188,6 +188,10 @@ mark {
   position: relative;
 }
 
+.header-date {
+  font-size:smaller;
+}
+
 .copy-icon-btn {
   display: none;
   margin-left: 0px;

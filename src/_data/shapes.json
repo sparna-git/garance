@@ -2,6 +2,7 @@
   "graph": [
     {
       "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#Agent",
+      "volipi:class":"agent",
       "sh:property":
       [
         {
@@ -575,6 +576,17 @@
           "sh:path":"https://www.ica.org/standards/RiC/ontology#note"          
         }
       ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#Place",
+      "volipi:class":"place",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        }
+      ]  
     }
   ]
 }
