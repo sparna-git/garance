@@ -115,21 +115,48 @@
 
 
 
-<div class="header">
+
   
+
+  <div class="header agent">
     <h1 class="header-title">
+      
     
         
         Marty, André (1886-1956)
     
-</h1>
-    <p class="header-uri">
-        <code >
-            <a href="https://rdf.archives-nationales.culture.gouv.fr/agent/FRAN_RI_012-d699mu498p5--29blg4m0h9xr">https://rdf.archives-nationales.culture.gouv.fr/agent/FRAN_RI_012-d699mu498p5--29blg4m0h9xr</a>
+
+    </h1>
+
+    
+      
+      <div class="header-uri d-flex align-items-center gap-2 position-relative">
+        <code>
+          <a class="copy-link" href="https://rdf.archives-nationales.culture.gouv.fr/agent/FRAN_RI_012-d699mu498p5--29blg4m0h9xr">https://rdf.archives-nationales.culture.gouv.fr/agent/FRAN_RI_012-d699mu498p5--29blg4m0h9xr</a>
         </code>
-    </p>
+        
+        
+          <button class="border-0 copy-icon-btn" data-copy="012-d699mu498p5--29blg4m0h9xr">
+            <i class="fas fa-copy"></i>
+          </button>
+        
+      </div>
+
+    
+
+
+<div class="d-flex">
+  
+  
+
+
+  
+  
+</div>
 
 </div>
+
+
 
 
 
@@ -153,7 +180,7 @@
         </div>
         <hr>
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fa-solid fa-chevron-up"></i></a>
-        <footer class="footer"><span data-i18n="last updated on"></span> <span>4/16/2025 16:19:05</span><br /><br /></footer>
+        <footer class="footer"><span data-i18n="last updated on"></span> <span>4/17/2025 15:50:34</span><br /><br /></footer>
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -164,6 +191,10 @@
         <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
         <!-- i18n -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+
+
+
         <script src="../../../assets/vendor/jquery.i18n/jquery.i18n.js"></script>
         <script src="../../../assets/vendor/jquery.i18n/jquery.i18n.messagestore.js"></script>
         <script src="../../../assets/vendor/jquery.i18n/jquery.i18n.fallbacks.js"></script>
@@ -171,8 +202,18 @@
         <script src="../../../assets/vendor/jquery.i18n/jquery.i18n.parser.js"></script>
         <script src="../../../assets/vendor/jquery.i18n/jquery.i18n.emitter.js"></script>
 
-        <script src="../../../assets/js/garance.js"></script>
+         <!--    Tippy CSS 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6/dist/tippy.css" />-->
 
+        <!-- Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2/dist/umd/popper.min.js"></script>
+
+        <!-- Tippy.js -->
+        <script src="https://cdn.jsdelivr.net/npm/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
+
+
+
+        <script src="../../../assets/js/garance.js"></script>
         <script>
             var locale = getLocale("fr","",urlParam('lang'));
             triggerI18n(
@@ -181,10 +222,7 @@
                 "../../../assets/translations/fr.json"
             );
             adaptPagesHrefLocale(locale);
-            triggerAnchors();        
+            triggerAnchors();
         </script>
-    </body>
-
-
-    
+    </body>    
 </html>
