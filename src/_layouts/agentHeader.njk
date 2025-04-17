@@ -1,13 +1,60 @@
-
-{# "with context" means the imported templates will have access to all data #}
-{# see https://mozilla.github.io/nunjucks/templating.html#import #}
-{% import "src/_layouts/jsonld.njk" as jsonld with context %}
-
 {% macro header(agent) %}
-    <h1 class="header-title">{{ jsonld.renderLiteralAsString(agent | displayLabel(context) | unboxArray ) }}</h1>
-    <p class="header-uri">
-        <code >
-            <a href="{{ agent.id | expandUri(context) }}">{{ agent.id | expandUri(context) }}</a>
+  {% set cssClasses = agent['type'] | unboxArray | getHeaderCssClasses(shapes) %}
+
+  <div class="header {{ cssClasses }}">
+    <h1 class="header-title">
+      {{ jsonld.renderLiteralAsString(agent | displayLabel(context) | unboxArray ) }}
+    </h1>
+
+    {% if agent and agent.id %}
+      {% set fullUri = agent.id | expandUri(context) %}
+      <p class="header-uri d-flex align-items-center gap-2 position-relative">
+        <code>
+          <a class="copy-link" href="{{ fullUri }}">{{ fullUri }}</a>
         </code>
-    </p>
+        {% set suffix = fullUri.split('FRAN_RI_') | last %}
+        {% if suffix %}
+          <button class="border-0 copy-icon-btn" data-copy="{{ suffix }}">
+            <i class="fas fa-copy"></i>
+          </button>
+        {% endif %}
+      </p>
+    {% endif %}
+
+   {% if agent["rico:isOrWasDescribedBy"]
+      and agent["rico:isOrWasDescribedBy"]["rico:hasOrHadDigitalInstantiation"]
+      and agent["rico:isOrWasDescribedBy"]["rico:hasOrHadDigitalInstantiation"]["rdfs:seeAlso"] %}
+
+      {% set seeAlsoObj = agent["rico:isOrWasDescribedBy"]["rico:hasOrHadDigitalInstantiation"]["rdfs:seeAlso"] %}
+      {% set seeAlsoUrl = seeAlsoObj.id or seeAlsoObj["@id"] or seeAlsoObj %}
+
+      <div class="row botton_marging mt-3">
+        <div class="col-10">
+          <a href="{{ seeAlsoUrl }}" target="_blank">
+            <p>See also (siv)</p>
+          </a>
+        </div>
+      </div>
+    {% endif %}
+
+    {% set creationDate = agent | getCreationDate %}
+{% if creationDate %}
+  <p class="header-date text-end fst-italic">
+    <strong>Date de création :</strong>
+    {{ creationDate }}
+  </p>
+{% endif %}
+
+
+{# Date de dernière modification #}
+    {% if agent["rico:isOrWasDescribedBy"] and agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"] %}
+
+      <p class="header-date text-end fst-italic">
+        <strong>Date de dernière modification :</strong>
+        {{ agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"]["@value"]}}
+      </p>
+    {% endif %}
+
+
+  </div>
 {% endmacro %}

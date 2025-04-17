@@ -84,19 +84,20 @@
 
 {% macro renderPredicate(predicate) %}
     <div class="entity-predicate-predicate-title">
-        {# expand and shorten so that specific keys e.g. label_fr are turned back into namespaced URI #}
-        {% set formattedPredicate = predicate | expandUri(context) | shortenUri(context) %}        
+        {% set formattedPredicate = predicate | expandUri(context) | shortenUri(context) %}
+        <span class="label" data-i18n="{{ formattedPredicate }}"></span>
 
-        <span class="label" data-i18n="{{formattedPredicate}}"></span>
         <span class="info-icon">ℹ️</span>
-        <div class="entity-predicate-predicate-tooltip">
-            <code>{{ formattedPredicate }}</code>
-            <br/>
-            {% set tooltipKey = formattedPredicate+"_tooltip" %}
-            <em data-i18n="{{ tooltipKey }}"></em>   
+        <div class="tooltip-html" style="display: none;">
+            <code>{{ formattedPredicate }}</code><br/>
+            {% set tooltipKey = formattedPredicate ~ "_tooltip" %}
+            <em data-i18n="{{ tooltipKey }}"></em>
         </div>
     </div>
 {% endmacro %}
+
+
+
 
 {% macro renderLiteral(literal) %}
     {% if literal is string %}

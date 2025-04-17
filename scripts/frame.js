@@ -32,12 +32,11 @@ function deleteAllOnTypeExcept(jsonArray, type, except) {
 }
 
 function deleteIfNoPropertyIsPresent(jsonArray, type, properties) {
-
   jsonArray = jsonArray.filter((obj) => {
     // apply the function recursively on the object
     Object.entries(obj).forEach(([key, value]) => {
       if (typeof value === "object") {
-        if(!toBeKeptIfNoPropertyIsPresent(value, type, properties)) {
+        if (!toBeKeptIfNoPropertyIsPresent(value, type, properties)) {
           delete obj[key];
         }
       }
@@ -52,7 +51,7 @@ function deleteIfNoPropertyIsPresent(jsonArray, type, properties) {
 }
 
 function toBeKeptIfNoPropertyIsPresent(obj, type, properties) {
-  if (hasType(obj, type)) {    
+  if (hasType(obj, type)) {
     // for each property in properties, check if it is present as a key in the object
     let hasProperty = false;
     for (let property of properties) {
@@ -67,7 +66,6 @@ function toBeKeptIfNoPropertyIsPresent(obj, type, properties) {
     return true;
   }
 }
-
 
 function hasType(obj, type) {
   let objType = getType(obj);
@@ -161,9 +159,7 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   agentFramingData.graph = agentFramingData.graph.filter(
     (obj) => !hasType(obj, "rico:Coordinates")
   );
-  agentFramingData.graph = agentFramingData.graph.filter(
-    (obj) => !hasType(obj, "rico:Instantiation")
-  );
+
   deleteAllOnTypeExcept(agentFramingData.graph, "rico:Place", ["rdfs:label"]);
   deleteAllOnTypeExcept(agentFramingData.graph, "skos:Concept", [
     "skos:prefLabel",
@@ -211,7 +207,7 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   console.log("Now framing agents header...");
   await framed(
     agentFramingData,
-    "src/_data/framings/agentsHeader-framing.json",
+    "src/_data/framings/agentsHeader-framing-2.json",
     "src/_data/agentsHeader.json"
   );
 
@@ -229,3 +225,36 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
     "src/_data/index.json"
   );
 })();
+
+/*
+
+function cleanCreationActivities(graph) {
+  for (const obj of graph) {
+    if (!hasType(obj, 'rico:Agent')) continue;
+
+    const record = obj['rico:isOrWasDescribedBy'];
+    if (!record || typeof record !== 'object') continue;
+
+    const affected = record['rico:isOrWasAffectedBy'];
+    if (!affected) continue;
+
+    const activities = Array.isArray(affected) ? affected : [affected];
+
+    const filtered = activities.filter(act => {
+      const name = act['rico:name'];
+      const value = name?.['@value'] || '';
+      return value.startsWith('création');
+    });
+
+    if (filtered.length === 0) {
+      delete record['rico:isOrWasAffectedBy'];
+    } else {
+      record['rico:isOrWasAffectedBy'] =
+        filtered.length === 1 ? filtered[0] : filtered;
+    }
+  }
+
+  return graph;
+}
+
+*/

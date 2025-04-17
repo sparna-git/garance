@@ -209,13 +209,16 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           <code>
             <a href="{{ concepts.id | expandUri(jsonLdContext) }}">{{ concepts.id | expandUri(jsonLdContext) }}</a>
           </code>
-          <br /> 
           {% if 'FRAN_RI_' in concepts.id %}
+            <br />
             <span data-i18n="Identifier inside the vocabulary"></span> :
-            <code>
-              <span>{{ concepts.id | expandUri(jsonLdContext) | replace( r/.*FRAN_RI_...-/ , "" ) }}</span>
+            {% set suffix = concepts.id | expandUri(jsonLdContext) | replace(r/.*FRAN_RI_.*?-/, '') %}
+            <code class="position-relative d-inline-flex align-items-center gap-2">
+              <span>{{ suffix }}</span>
+              <button class="border-0 copy-icon-btn" data-copy="{{ suffix }}">
+                <i class="fas fa-copy"></i>
+              </button>
             </code>
-          <br /> 
           {% endif %}
         </p>
 

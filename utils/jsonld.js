@@ -1,4 +1,3 @@
-
 /**
  * @constant {string} RDF_TYPE - The rdf:type URI.
  */
@@ -35,7 +34,7 @@ const DCTERMS_TITLE = "http://purl.org/dc/terms/title";
  * @returns {string} The ID of the object.
  */
 function getId(obj) {
-  return (obj.id?obj.id:obj["@id"]);
+  return obj.id ? obj.id : obj["@id"];
 }
 
 /**
@@ -44,7 +43,7 @@ function getId(obj) {
  * @returns {string or array} The type or types of the object.
  */
 function getTypes(obj) {
-  return (obj.type?obj.type:obj["@type"]);
+  return obj.type ? obj.type : obj["@type"];
 }
 
 /**
@@ -54,7 +53,7 @@ function getTypes(obj) {
  * @returns {boolean} True if the value is an IRI string, false otherwise.
  */
 function isIriString(value, context) {
-  return typeof value === 'string' && value.startsWith("http") ;
+  return typeof value === "string" && value.startsWith("http");
 }
 
 /**
@@ -64,20 +63,22 @@ function isIriString(value, context) {
  * @returns {boolean} True if the value is an IRI prefixed string, false otherwise.
  */
 function isIriPrefixed(value, context) {
-  return typeof value === 'string' && Object.keys(context).some(key => (
-    typeof context[key] === "string"
-    &&
-    context[key].startsWith("http")
-    &&
-    value.startsWith(key)
-  ));
+  return (
+    typeof value === "string" &&
+    Object.keys(context).some(
+      (key) =>
+        typeof context[key] === "string" &&
+        context[key].startsWith("http") &&
+        value.startsWith(key)
+    )
+  );
 }
 
 /**
  * Returns the expanded IRI of the object
  */
 function getIriExpanded(obj, context) {
-  if(typeof obj === 'object') {
+  if (typeof obj === "object") {
     var iri = getId(obj);
     var expandedIri = expandUri(iri, context);
     return expandedIri;
@@ -92,7 +93,7 @@ function getIriExpanded(obj, context) {
  * @returns {boolean} True if the object is a literal string, false otherwise.
  */
 function isLiteralString(obj) {
-  return typeof obj  === 'string'
+  return typeof obj === "string";
 }
 
 /**
@@ -101,11 +102,7 @@ function isLiteralString(obj) {
  * @returns {boolean} True if the object is a literal object, false otherwise.
  */
 function isLiteralObject(obj) {
-  return (
-    typeof obj === 'object'
-    &&
-    ('@value' in obj || 'value' in obj)
-  )
+  return typeof obj === "object" && ("@value" in obj || "value" in obj);
 }
 
 /**
@@ -115,16 +112,10 @@ function isLiteralObject(obj) {
  */
 function isLiteralArrayWithSingleValue(obj) {
   return (
-    obj instanceof Array
-    &&
-    obj.length === 1
-    &&
-    (
-      isLiteralString(obj[0])
-      ||
-      isLiteralObject(obj[0])
-    )
-  )
+    obj instanceof Array &&
+    obj.length === 1 &&
+    (isLiteralString(obj[0]) || isLiteralObject(obj[0]))
+  );
 }
 
 /**
@@ -134,8 +125,12 @@ function isLiteralArrayWithSingleValue(obj) {
  * @returns {string} The shortened URI.
  */
 function shortenUri(uri, context) {
-  const contextEntry = Object.entries(context).find(([prefix, fullUri]) => uri.startsWith(fullUri));
-  return contextEntry ? `${contextEntry[0]}:${uri.slice(contextEntry[1].length)}` : uri;
+  const contextEntry = Object.entries(context).find(([prefix, fullUri]) =>
+    uri.startsWith(fullUri)
+  );
+  return contextEntry
+    ? `${contextEntry[0]}:${uri.slice(contextEntry[1].length)}`
+    : uri;
 }
 
 /**
@@ -145,22 +140,28 @@ function shortenUri(uri, context) {
  * @returns {string} The expanded QName, or the value itself if it cannot be expanded
  */
 function expandUri(qname, context) {
-  if(qname == "id" || qname == "@id") {
+  if (qname == "id" || qname == "@id") {
     return qname;
   }
-  if(qname == "type" || qname == "@type") {
+  if (qname == "type" || qname == "@type") {
     return RDF_TYPE;
   }
 
   var result = qname;
-  if(qname in context) {
-    if(typeof context[qname] === "string" && context[qname].startsWith('http')) {
+  if (qname in context) {
+    if (
+      typeof context[qname] === "string" &&
+      context[qname].startsWith("http")
+    ) {
       result = context[qname];
-    } else if (typeof context[qname] === "string" && expandUriOnPrefixes(context[qname], context).startsWith('http')) {
+    } else if (
+      typeof context[qname] === "string" &&
+      expandUriOnPrefixes(context[qname], context).startsWith("http")
+    ) {
       result = expandUriOnPrefixes(context[qname], context);
-    } else if(typeof context[qname] === "object" && context[qname]['@id']) {
-      result = expandUriOnPrefixes(context[qname]['@id'], context);
-    } 
+    } else if (typeof context[qname] === "object" && context[qname]["@id"]) {
+      result = expandUriOnPrefixes(context[qname]["@id"], context);
+    }
   } else {
     result = expandUriOnPrefixes(qname, context);
   }
@@ -175,19 +176,22 @@ function expandUri(qname, context) {
  * @returns {string} The expanded QName.
  */
 function expandUriOnPrefixes(qname, context) {
-
   result = qname;
-  if(qname.includes(':') && qname.split(':').length === 2 && qname.split(':')[0] in context) {
-    result = context[qname.split(':')[0]] + qname.split(':')[1];
+  if (
+    qname.includes(":") &&
+    qname.split(":").length === 2 &&
+    qname.split(":")[0] in context
+  ) {
+    result = context[qname.split(":")[0]] + qname.split(":")[1];
   }
   return result;
 }
 
 function findById(jsonld, id) {
-  let graph = (jsonld.graph)?jsonld.graph:jsonld["@graph"];
-  if(graph) {
-    let result = graph.filter(item => (getId(item) === id));
-    if(result) return result[0];
+  let graph = jsonld.graph ? jsonld.graph : jsonld["@graph"];
+  if (graph) {
+    let result = graph.filter((item) => getId(item) === id);
+    if (result) return result[0];
   }
 }
 
@@ -200,26 +204,21 @@ function findById(jsonld, id) {
  */
 function findPredicate(object, predicateFullIri, context) {
   const predicateKey = shortenUri(predicateFullIri, context);
-  if(object[predicateFullIri]) {
+  if (object[predicateFullIri]) {
     // either the full predicate URI is used directly as a key
     return object[predicateFullIri];
-  } else if(object[predicateKey]) {
+  } else if (object[predicateKey]) {
     // or (most common) the short URI is used as a key
     return object[predicateKey];
   } else {
     // or the context specifies a new JSON key remapped to this URI
     let uriMappings = Object.entries(context).find(([prefix, mapping]) => {
       return (
-        typeof mapping === "object"
-        &&
-        (
-          mapping["@id"] == predicateFullIri
-          ||
-          mapping["@id"] == predicateKey
-        )
-      )
+        typeof mapping === "object" &&
+        (mapping["@id"] == predicateFullIri || mapping["@id"] == predicateKey)
+      );
     });
-    if(uriMappings && uriMappings.length == 1) {
+    if (uriMappings && uriMappings.length == 1) {
       return object[uriMappings[0]];
     } else {
       return null;
@@ -232,13 +231,13 @@ function findPredicate(object, predicateFullIri, context) {
  * @param {object} obj - The object to remove type keys from.
  */
 function removeTypeKey(obj) {
-  if(obj && typeof obj === "object") {
-    if(! ("@value" in obj || "value" in obj)) {
+  if (obj && typeof obj === "object") {
+    if (!("@value" in obj || "value" in obj)) {
       delete obj.type;
       delete obj["@type"];
     }
     Object.entries(obj).forEach(([key, value]) => {
-      removeTypeKey(value)
+      removeTypeKey(value);
     });
   }
 }
@@ -246,29 +245,51 @@ function removeTypeKey(obj) {
 function isLabelPredicate(predicateKey, context) {
   var expanded = expandUri(predicateKey, context);
   return (
-    expanded == RDFS_LABEL
-    ||
-    expanded == SKOS_PREFLABEL
-    ||
-    expanded == FOAF_NAME
-    ||
-    expanded == DCTERMS_TITLE
-    ||
+    expanded == RDFS_LABEL ||
+    expanded == SKOS_PREFLABEL ||
+    expanded == FOAF_NAME ||
+    expanded == DCTERMS_TITLE ||
     expanded == SCHEMA_NAME
-  )
+  );
+}
+
+/**
+ * Finds the creation date from activities matching specific names.
+ * @param {object} agent - The agent object from JSON-LD.
+ * @returns {string|null} The creation date if found, otherwise null.
+ */
+function getCreationDate(agent) {
+  const activities =
+    agent?.["rico:isOrWasDescribedBy"]?.["rico:isOrWasAffectedBy"];
+
+  if (!activities) return null;
+
+  const list = Array.isArray(activities) ? activities : [activities];
+
+  for (const activity of list) {
+    const name = activity?.["rico:name"]?.["@value"];
+    if (
+      name &&
+      (name.startsWith("Dérivation") || name.startsWith("Création"))
+    ) {
+      return activity?.["rico:date"]?.["@value"] || null;
+    }
+  }
+
+  return null;
 }
 
 module.exports = {
- 
   getId: getId,
   getTypes: getTypes,
+  getCreationDate,
 
   /**
    * Checks if a value is an array.
    * @param {*} value - The value to check.
    * @returns {boolean} True if the value is an array, false otherwise.
    */
-  isArray: function(value) {
+  isArray: function (value) {
     return Array.isArray(value);
   },
 
@@ -277,11 +298,11 @@ module.exports = {
    * @param {Array} array - The array to unbox.
    * @returns {*} The unboxed value if the array contains a single value, the array otherwise.
    */
-  unboxArray: function(array) {
-      if (array && Array.isArray(array) && array.length === 1) {
-          return array[0];
-      }
-      return array;
+  unboxArray: function (array) {
+    if (array && Array.isArray(array) && array.length === 1) {
+      return array[0];
+    }
+    return array;
   },
 
   isIriString: isIriString,
@@ -293,30 +314,19 @@ module.exports = {
    * @param {object} value - The value to check.
    * @returns {boolean} True if the value is an IRI object, possibly with only a type, false otherwise.
    */
-  isIriObjectWithOnlyOptionalType: function(value) {
+  isIriObjectWithOnlyOptionalType: function (value) {
     return (
-      typeof value === 'object'
-      &&
-      (
-        ('id' in value && !value["id"].startsWith("_:"))
-        ||
-        ('@id' in value && !value["@id"].startsWith("_:"))
-      )
-      &&
-      (
-        Object.keys(value).length === 1
-        ||
-        (
-          Object.keys(value).length === 2
-          &&
-          ('type' in value || '@type' in value)
-        )
-      )
-    )
+      typeof value === "object" &&
+      (("id" in value && !value["id"].startsWith("_:")) ||
+        ("@id" in value && !value["@id"].startsWith("_:"))) &&
+      (Object.keys(value).length === 1 ||
+        (Object.keys(value).length === 2 &&
+          ("type" in value || "@type" in value)))
+    );
   },
-  
+
   isLiteralString: isLiteralString,
-  
+
   isLiteralObject: isLiteralObject,
 
   isLiteralArrayWithSingleValue: isLiteralArrayWithSingleValue,
@@ -326,28 +336,22 @@ module.exports = {
    * @param {object} obj - The object to check.
    * @returns {boolean} True if the object has a single label property, false otherwise.
    */
-  isObjectWithSingleLabelProperty: function(obj, context) {
-    if(!obj || !(typeof obj === "object")) return false;
+  isObjectWithSingleLabelProperty: function (obj, context) {
+    if (!obj || !(typeof obj === "object")) return false;
     const keys = Object.keys(obj);
-    const valueKeys =  keys.filter(k => ( k !== 'id' && k !== '@id' && k !== 'type' && k !== '@type' ));
-  
+    const valueKeys = keys.filter(
+      (k) => k !== "id" && k !== "@id" && k !== "type" && k !== "@type"
+    );
+
     return (
-      (keys.includes('id') || keys.includes('@id'))
-      &&
-      valueKeys.length === 1
-      &&
-      obj[valueKeys[0]] !== null
-      &&
-      (
-        isLiteralString(obj[valueKeys[0]])
-        ||
-        isLiteralObject(obj[valueKeys[0]])
-        ||
-        isLiteralArrayWithSingleValue(obj[valueKeys[0]])
-      )
-      &&
+      (keys.includes("id") || keys.includes("@id")) &&
+      valueKeys.length === 1 &&
+      obj[valueKeys[0]] !== null &&
+      (isLiteralString(obj[valueKeys[0]]) ||
+        isLiteralObject(obj[valueKeys[0]]) ||
+        isLiteralArrayWithSingleValue(obj[valueKeys[0]])) &&
       isLabelPredicate(valueKeys[0], context)
-    )
+    );
   },
 
   /**
@@ -355,10 +359,12 @@ module.exports = {
    * @param {object} obj - The object to extract the property from.
    * @returns {*} The value of the first non-ID, non-type property.
    */
-  extractFirstNonIdNonTypeProperty: function(obj) {
+  extractFirstNonIdNonTypeProperty: function (obj) {
     const keys = Object.keys(obj);
-    const valueKeys =  keys.filter(k => ( k !== 'id' && k !== '@id' && k !== 'type' && k !== '@type' ));
-    if(valueKeys.length > 0) {
+    const valueKeys = keys.filter(
+      (k) => k !== "id" && k !== "@id" && k !== "type" && k !== "@type"
+    );
+    if (valueKeys.length > 0) {
       return obj[valueKeys[0]];
     }
   },
@@ -375,7 +381,7 @@ module.exports = {
    * @returns {string} The literal without the HTML prefix.
    */
   stripHtmlPrefix: function (literal) {
-    return literal.replace(/<html:/g, '<').replace(/<\/html:/g, '</');
+    return literal.replace(/<html:/g, "<").replace(/<\/html:/g, "</");
   },
 
   /**
@@ -384,29 +390,29 @@ module.exports = {
    * @param {object} context - The context to use for getting the display label.
    * @returns {string} The display label of the object.
    */
-  displayLabel: function(obj, context) {
+  displayLabel: function (obj, context) {
     let dctermsTitle = findPredicate(obj, DCTERMS_TITLE, context);
-    if(dctermsTitle) {
-      return dctermsTitle
-    } 
+    if (dctermsTitle) {
+      return dctermsTitle;
+    }
     let schemaName = findPredicate(obj, SCHEMA_NAME, context);
-    if(schemaName) {
-      return schemaName
+    if (schemaName) {
+      return schemaName;
     }
     let foafName = findPredicate(obj, FOAF_NAME, context);
-    if(foafName) {
-      return foafName
-    }  
+    if (foafName) {
+      return foafName;
+    }
     let skosPrefLabel = findPredicate(obj, SKOS_PREFLABEL, context);
-    if(skosPrefLabel) {
-      return skosPrefLabel
-    } 
+    if (skosPrefLabel) {
+      return skosPrefLabel;
+    }
     let rdfsLabel = findPredicate(obj, RDFS_LABEL, context);
-    if(rdfsLabel) {
-      return rdfsLabel
-    } 
+    if (rdfsLabel) {
+      return rdfsLabel;
+    }
 
-    return shortenUri(getId(obj), context)
+    return shortenUri(getId(obj), context);
   },
 
   /**
@@ -415,11 +421,10 @@ module.exports = {
    * @param {object} obj - The object to remove type keys from.
    * @returns {object} The object with type keys removed from sublevels.
    */
-  removeTypeFromSublevels: function(obj) {
+  removeTypeFromSublevels: function (obj) {
     Object.entries(obj).forEach(([key, value]) => {
-      removeTypeKey(value)
+      removeTypeKey(value);
     });
     return obj;
-  }
-    
-}
+  },
+};

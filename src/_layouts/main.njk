@@ -109,6 +109,10 @@
         <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
         <!-- i18n -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+
+
+
         <script src="{{ '/assets/vendor/jquery.i18n/jquery.i18n.js' | relative(page) }}"></script>
         <script src="{{ '/assets/vendor/jquery.i18n/jquery.i18n.messagestore.js' | relative(page) }}"></script>
         <script src="{{ '/assets/vendor/jquery.i18n/jquery.i18n.fallbacks.js' | relative(page) }}"></script>
@@ -116,8 +120,18 @@
         <script src="{{ '/assets/vendor/jquery.i18n/jquery.i18n.parser.js' | relative(page) }}"></script>
         <script src="{{ '/assets/vendor/jquery.i18n/jquery.i18n.emitter.js' | relative(page) }}"></script>
 
-        <script src="{{ '/assets/js/garance.js' | relative(page) }}"></script>
+         <!--    Tippy CSS 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tippy.js@6/dist/tippy.css" />-->
 
+        <!-- Popper.js -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2/dist/umd/popper.min.js"></script>
+
+        <!-- Tippy.js -->
+        <script src="https://cdn.jsdelivr.net/npm/tippy.js@6/dist/tippy-bundle.umd.min.js"></script>
+
+
+
+        <script src="{{ '/assets/js/garance.js' | relative(page) }}"></script>
         <script>
             var locale = getLocale("fr","{{ locale }}",urlParam('lang'));
             triggerI18n(
@@ -126,10 +140,7 @@
                 "{{ '/assets/translations/fr.json' | relative(page) }}"
             );
             adaptPagesHrefLocale(locale);
-            triggerAnchors();        
+            triggerAnchors();
         </script>
-    </body>
-
-
-    
+    </body>    
 </html>

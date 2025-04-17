@@ -21,9 +21,8 @@
 {% import "src/_layouts/agentHeader.njk" as header with context %}
 
 {% set headerData = agentsHeader | findById(agent.id) %}
-<div class="header">
-  {{ header.header(headerData) }}
-</div>
+{{ header.header(headerData) }}
+
 
 {# first parameter is the object to print, second parameter is the main entity printed #}
 {{ jsonld.render(agent, headerData) }}
