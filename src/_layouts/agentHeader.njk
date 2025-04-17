@@ -28,32 +28,53 @@
       {% set seeAlsoObj = agent["rico:isOrWasDescribedBy"]["rico:hasOrHadDigitalInstantiation"]["rdfs:seeAlso"] %}
       {% set seeAlsoUrl = seeAlsoObj.id or seeAlsoObj["@id"] or seeAlsoObj %}
 
-      <div class="row botton_marging mt-3">
         <div class="col-10">
           <a href="{{ seeAlsoUrl }}" target="_blank">
             <p>See also (siv)</p>
           </a>
         </div>
-      </div>
     {% endif %}
 
-    {% set creationDate = agent | getCreationDate %}
-{% if creationDate %}
-  <p class="header-date text-end fst-italic">
-    <strong>Date de création :</strong>
-    {{ creationDate }}
-  </p>
+
+
+{% set links = agent | getDownloadLinks(context) %}
+{% if links %}
+  <div class="mt-2">
+    {% if links.rdfUrl %}
+      <a href="{{ links.rdfUrl }}" target="_blank">
+        <img src="https://img.shields.io/badge/Record-RDF%2FXML-blue" alt="RDF/XML" />
+      </a>
+    {% endif %}
+    {% if links.eacUrl %}
+      <a href="{{ links.eacUrl }}" target="_blank">
+        <img src="https://img.shields.io/badge/Record-EAC-blue" alt="EAC" />
+      </a>
+    {% endif %}
+  </div>
 {% endif %}
 
 
-{# Date de dernière modification #}
-    {% if agent["rico:isOrWasDescribedBy"] and agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"] %}
-
+    {% set creationDate = agent | getCreationDate %}
+    {% if creationDate %}
       <p class="header-date text-end fst-italic">
-        <strong>Date de dernière modification :</strong>
-        {{ agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"]["@value"]}}
+        <strong>Date de création :</strong>
+        {{ creationDate }}
       </p>
     {% endif %}
+
+    
+
+
+    {# Date de dernière modification #}
+      {% if agent["rico:isOrWasDescribedBy"] and agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"] %}
+
+        <p class="header-date text-end fst-italic">
+          <strong>Date de dernière modification :</strong>
+          {{ agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"]["@value"]}}
+        </p>
+      {% endif %}
+
+
 
 
   </div>

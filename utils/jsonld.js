@@ -276,10 +276,44 @@ function getCreationDate(agent) {
   return null;
 }
 
+function getDownloadLinks(agent, context) {
+  const id = getId(agent);
+  const types = Array.isArray(getTypes(agent))
+    ? getTypes(agent)
+    : [getTypes(agent)];
+  const expandedId = expandUri(id, context);
+  const fileName = expandedId.split("/").pop();
+
+  let rdfUrl = null;
+  let eacUrl = null;
+
+  const shortMatch = /^agent:(\d{6})$/.exec(id);
+  if (shortMatch) {
+    const num = shortMatch[1];
+    rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/producteurs/rdf/FRAN_Agent_${num}.rdf`;
+    eacUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/producteurs/eac-cpf/FRAN_NP_${num}.xml`;
+    return { rdfUrl, eacUrl };
+  }
+
+  if (fileName.startsWith("FRAN_Agent_RI_")) {
+    if (types.includes("rico:CorporateBody")) {
+      rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/collectivites/${fileName}.rdf`;
+      return { rdfUrl };
+    }
+    if (types.includes("rico:Person")) {
+      rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/personnesPhysiques/${fileName}.rdf`;
+      return { rdfUrl };
+    }
+  }
+
+  return null;
+}
+
 module.exports = {
   getId: getId,
   getTypes: getTypes,
   getCreationDate,
+  getDownloadLinks: getDownloadLinks,
 
   /**
    * Checks if a value is an array.
