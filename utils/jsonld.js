@@ -268,10 +268,7 @@ function getCreationDate(agent) {
 
   for (const activity of list) {
     const name = activity?.["rico:name"]?.["@value"];
-    if (
-      name &&
-      (name.startsWith("Dérivation") || name.startsWith("Création"))
-    ) {
+    if (name && name.startsWith("Création")) {
       return activity?.["rico:date"]?.["@value"] || null;
     }
   }
