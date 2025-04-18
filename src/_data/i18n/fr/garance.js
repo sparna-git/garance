@@ -2,7 +2,7 @@ module.exports = {
   title:
     "Graphe des Archives nationales pour la Recherche, l’Accès et la Navigation des Connaissances Enrichies",
   garance: "Garance",
-  referentiels : "Référentiels",
+  referentiels: "Référentiels",
   "last updated on": "dernière publication le",
   vocabularies: "Vocabulaires contrôlés",
   "These concepts have all the type":
@@ -12,6 +12,21 @@ module.exports = {
   lieux: "Places",
   "Record created on": "Notice créée le",
   "Record updated on": "Notice créée le",
+
+  // Libelles sur le Menu Vocabularies
+  "activityTypes": "Fonctions des collectivités",
+  "carrierTypes": "Supports des archives",
+  "corporateBodyTypes": "Catégories des collectivités",
+  "documentaryFormTypes": "Types des documents et des données",
+  "identifierTypes": "Types d’identifiants",
+  "languages": "Langues",
+  "occupationTypes": "Fonctions, métiers et professions des personnes",
+  "placeTypes": "Types de lieux",
+  "productionTechniqueTypes": "Techniques de production des archives",
+  "recordSetTypes": "Types des groupes de documents et de données",
+  "recordStates": "États des documents et des données",
+  "representationTypes": "Types de représentation des archives",
+  "things": "Mots-matières",
 
   // properties, classes, etc
   "dcat:distribution": "Télécharger les données",
@@ -36,7 +51,7 @@ module.exports = {
   "dc:source": "Sources",
   "dcterms:created": "Date de création",
   "dc:version": "Version",
-  "skos:scoteNote" : "Scote Note",
+  "skos:scoteNote": "Scote Note",
   "skos:prefLabel": "Traductions",
   "skos:note": "Note",
 
@@ -44,5 +59,5 @@ module.exports = {
   id: "identifiant",
   "rdf:type": "type",
   "rdfs:label": "libellé",
-  "owl:sameAs": "identique à"
+  "owl:sameAs": "identique à",
 };

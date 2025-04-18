@@ -31,44 +31,6 @@ function deleteAllOnTypeExcept(jsonArray, type, except) {
   }
 }
 
-/*
-function deleteIfNoPropertyIsPresent(jsonArray, type, properties) {
-  jsonArray = jsonArray.filter((obj) => {
-    // apply the function recursively on the object
-    Object.entries(obj).forEach(([key, value]) => {
-      if (typeof value === "object") {
-        if (!toBeKeptIfNoPropertyIsPresent(value, type, properties)) {
-          delete obj[key];
-        }
-      }
-      // if the value is an array, apply the function on each element
-      deleteIfNoPropertyIsPresent(value, type, properties);
-    });
-
-    return toBeKeptIfNoPropertyIsPresent(obj, type, properties);
-  });
-
-  return jsonArray;
-}
-*/
-/*
-function toBeKeptIfNoPropertyIsPresent(obj, type, properties) {
-  if (hasType(obj, type)) {
-    // for each property in properties, check if it is present as a key in the object
-    let hasProperty = false;
-    for (let property of properties) {
-      if (obj[property]) {
-        hasProperty = true;
-        break;
-      }
-    }
-    // if no property is present, delete the object
-    return hasProperty;
-  } else {
-    return true;
-  }
-}
-*/
 
 /**
  * Supprime les objets de type donné (ex: rico:PerformanceRelation) :
@@ -129,6 +91,34 @@ function hasType(obj, type) {
 
 function getType(obj) {
   return obj.type ? obj.type : obj["@type"];
+}
+
+function replaceURL(jsonArray, eNode, urlTransformation) {
+  const rgx = new RegExp(
+    "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-"
+  );
+  for (let obj of jsonArray) {
+    if (Object.keys(obj).includes(eNode)) {
+      if (obj[eNode].id != undefined) {
+        if (rgx.exec(obj[eNode].id)) {
+          obj[eNode].id = obj[eNode].id.replace(
+            "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-",
+            urlTransformation
+          );
+        }
+      } else {
+        obj[eNode].forEach((e) => {
+          if (rgx.exec(e.id)) {
+            e.id = e.id.replace(
+              "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-",
+              urlTransformation
+            );
+          }
+        });
+      }
+    }
+  }
+  return jsonArray;
 }
 
 /**
@@ -198,108 +188,44 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   // create deep copy of dataJsonLd
   agentFramingData = JSON.parse(JSON.stringify(dataJsonLd));
   // delete all unnecessary keys
-  agentFramingData.graph = agentFramingData.graph.filter(
-    (obj) => !hasType(obj, "rico:PhysicalLocation")
-  );
-  agentFramingData.graph = agentFramingData.graph.filter(
-    (obj) => !hasType(obj, "rico:Coordinates")
-  );
+  agentFramingData.graph = agentFramingData.graph.filter((obj) => !hasType(obj, "rico:PhysicalLocation"));
+  agentFramingData.graph = agentFramingData.graph.filter((obj) => !hasType(obj, "rico:Coordinates"));
 
   deleteAllOnTypeExcept(agentFramingData.graph, "rico:Place", ["rdfs:label"]);
-  deleteAllOnTypeExcept(agentFramingData.graph, "skos:Concept", [
-    "skos:prefLabel",
-  ]);
+  deleteAllOnTypeExcept(agentFramingData.graph, "skos:Concept", ["skos:prefLabel"]);
 
   // clean agents names
   agentFramingData.graph = cleanPreferredAgentsNames(agentFramingData.graph);
 
   // serialize to check
-  await framed(
-    agentFramingData,
-    "src/_data/framings/agents-framing.json",
-    "src/_data/agents.json"
-  );
+  await framed(agentFramingData,"src/_data/framings/agents-framing.json","src/_data/agents.json");
 
   // ------------------------
   console.log("Post-processing: delete empty relations...");
-
-  let agentsData = JSON.parse(
-    fs.readFileSync("src/_data/agents.json", { encoding: "utf8", flag: "r" })
-  );
+  let agentsData = JSON.parse(fs.readFileSync("src/_data/agents.json", { encoding: "utf8", flag: "r" }));
 
   // Supprime les relations vides
-  agentsData.graph = deleteRelationsWithoutProperties(
-    agentsData.graph,
-    "rico:MandateRelation"
-  );
-  agentsData.graph = deleteRelationsWithoutProperties(
-    agentsData.graph,
-    "rico:PerformanceRelation"
-  );
-  agentsData.graph = deleteRelationsWithoutProperties(
-    agentsData.graph,
-    "rico:PlaceRelation"
-  );
-
-  fs.writeFileSync(
-    "src/_data/agents.json",
-    JSON.stringify(agentsData, null, 2),
-    { encoding: "utf8" }
-  );
-
-  console.log("Relations sans date/note supprimées !");
-
-  // -------------------------
+  agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:MandateRelation");
+  agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PerformanceRelation");
+  agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PlaceRelation");
 
   /*
-  console.log("post-processing agents...");
-  let agentsData = JSON.parse(
-    fs.readFileSync("src/_data/agents.json", { encoding: "utf8", flag: "r" })
-  );
-
-  // delete relations
-  deleteIfNoPropertyIsPresent(agentsData.graph, "rico:MandateRelation", [
-    "rico:beginningDate",
-    "rico:endDate",
-    "rico:note",
-  ]); 
-  deleteIfNoPropertyIsPresent(agentsData.graph, "rico:PerformanceRelation", [
-    "rico:beginningDate",
-    "rico:endDate",
-    "rico:note",
-  ]);
-  deleteIfNoPropertyIsPresent(agentsData.graph, "rico:PlaceRelation", [
-    "rico:beginningDate",
-    "rico:endDate",
-    "rico:note",
-  ]);
-
-  fs.writeFileSync("src/_data/agents.json", JSON.stringify(agentsData, null, 2), {
-    encoding: "utf8",
-  });
-  console.log("Done post-processing agents");
+  * Replace les URIs
   */
+  replaceURL(agentsData.graph,"rico:isOrganicProvenanceOf","https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_");
+
+  fs.writeFileSync("src/_data/agents.json",JSON.stringify(agentsData, null, 2),{ encoding: "utf8" });
+
+  console.log("Relations sans date/note supprimées !");  
 
   console.log("Now framing agents header...");
-  await framed(
-    agentFramingData,
-    "src/_data/framings/agentsHeader-framing-2.json",
-    "src/_data/agentsHeader.json"
-  );
+  await framed(agentFramingData,"src/_data/framings/agentsHeader-framing-2.json","src/_data/agentsHeader.json");
 
   console.log("Now framing vocabularies...");
-  await framed(
-    dataJsonLd,
-    "src/_data/framings/vocabularies-framing.json",
-    "src/_data/vocabularies.json"
-  );
+  await framed(dataJsonLd,"src/_data/framings/vocabularies-framing.json","src/_data/vocabularies.json");
 
   console.log("Now framing index...");
-  await framed(
-    dataJsonLd,
-    "src/_data/framings/index-framing.json",
-    "src/_data/index.json"
-  );
+  await framed(dataJsonLd,"src/_data/framings/index-framing.json","src/_data/index.json");
 })();
 
 /*

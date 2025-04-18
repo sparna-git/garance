@@ -13,6 +13,21 @@ module.exports = {
   "Record created on": "Record created on",
   "Record updated on": "Record last updated on",
 
+  // Menu Vocabularies
+  "activityTypes": "Fonctions des collectivités (en)",
+  "carrierTypes": "Supports des archives (en)",
+  "corporateBodyTypes": "Catégories des collectivités (en)",
+  "documentaryFormTypes": "Types des documents et des données (en)",
+  "identifierTypes": "Types d’identifiants (en)",
+  "languages": "Langues (en)",
+  "occupationTypes": "Fonctions, métiers et professions des personnes (en)",
+  "placeTypes": "Types de lieux (en)",
+  "productionTechniqueTypes": "Techniques de production des archives (en)",
+  "recordSetTypes": "Types des groupes de documents et de données (en)",
+  "recordStates": "États des documents et des données (en)",
+  "representationTypes": "Types de représentation des archives (en)",
+  "things": "Mots-matières (en)",
+
   // properties, classes, etc
   "dcat:distribution": "Download data",
   "skos:altLabel": "Synonyms",
@@ -44,5 +59,5 @@ module.exports = {
   id: "URI identifier",
   "rdf:type": "type",
   "rdfs:label": "label",
-  "owl:sameAs": "same as"
+  "owl:sameAs": "same as",
 };
