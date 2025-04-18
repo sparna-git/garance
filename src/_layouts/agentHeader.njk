@@ -37,26 +37,25 @@
   {% endif %}
 
 
-  {% set creationDate = agent | getCreationDate %}
-  {% if creationDate or (agent["rico:isOrWasDescribedBy"] and agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"]) %}
-    <div class="header-date">
-      {# Date de création #}
-      {% if creationDate %}<span data-i18n="Record created on"></span> : {{ creationDate }}{% if agent["rico:isOrWasDescribedBy"] and agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"] %}, {% endif %}{% endif %}
-      {# Date de dernière modification #}
-      {% if agent["rico:isOrWasDescribedBy"] and agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"] %}
-        <span data-i18n="Record updated on"></span> : {{ agent["rico:isOrWasDescribedBy"]["rico:lastModificationDate"]["@value"]}}
-      {% endif %}
-      <br />
-            {% if agent["rico:isOrWasDescribedBy"]
-          and agent["rico:isOrWasDescribedBy"]["rico:hasOrHadDigitalInstantiation"]
-          and agent["rico:isOrWasDescribedBy"]["rico:hasOrHadDigitalInstantiation"]["rdfs:seeAlso"] %}
+{% set creationDate = agent | getCreationDate %}
+{% set lastMod = agent | getLastModificationDate %}
+{% set seeAlsoUrl = agent | getSivSeeAlsoUrl %}
 
-          {% set seeAlsoObj = agent["rico:isOrWasDescribedBy"]["rico:hasOrHadDigitalInstantiation"]["rdfs:seeAlso"] %}
-          {% set seeAlsoUrl = seeAlsoObj.id or seeAlsoObj["@id"] or seeAlsoObj %}
-          <a href="{{ seeAlsoUrl }}" target="_blank">Voir dans le SIV</a>
-        {% endif %}
-    </div>
-  {% endif %}
+{% if creationDate or lastMod or seeAlsoUrl %}
+  <div class="header-date">
+    {% if creationDate %}
+      <div><span data-i18n="Record created on"></span> : {{ creationDate }}</div>
+    {% endif %}
+    {% if lastMod %}
+      <div><span data-i18n="Record updated on"></span> : {{ lastMod }}</div>
+    {% endif %}
+    {% if seeAlsoUrl %}
+      <div><a href="{{ seeAlsoUrl }}" target="_blank">Voir dans le SIV</a></div>
+    {% endif %}
+  </div>
+{% endif %}
+
+
 </div>
 
 </div>

@@ -31,6 +31,7 @@ function deleteAllOnTypeExcept(jsonArray, type, except) {
   }
 }
 
+/*
 function deleteIfNoPropertyIsPresent(jsonArray, type, properties) {
   jsonArray = jsonArray.filter((obj) => {
     // apply the function recursively on the object
@@ -49,7 +50,8 @@ function deleteIfNoPropertyIsPresent(jsonArray, type, properties) {
 
   return jsonArray;
 }
-
+*/
+/*
 function toBeKeptIfNoPropertyIsPresent(obj, type, properties) {
   if (hasType(obj, type)) {
     // for each property in properties, check if it is present as a key in the object
@@ -65,6 +67,49 @@ function toBeKeptIfNoPropertyIsPresent(obj, type, properties) {
   } else {
     return true;
   }
+}
+*/
+
+/**
+ * Supprime les objets de type donné (ex: rico:PerformanceRelation) :
+ * - du tableau principal `graph`
+ * - ET des sous-structures comme `thingIsTargetOfRelation`
+ */
+function deleteRelationsWithoutProperties(graph, type) {
+  const PROPERTIES_TO_KEEP = [
+    "rico:beginningDate",
+    "rico:endDate",
+    "rico:note",
+  ];
+
+  const hasRequiredProperty = (obj) => {
+    return PROPERTIES_TO_KEEP.some((prop) => obj[prop]);
+  };
+
+  // Étape 1 : filtrer le tableau principal
+  const filteredGraph = graph.filter((obj) => {
+    const objType = obj.type || obj["@type"];
+    const typeList = Array.isArray(objType) ? objType : [objType];
+    if (!typeList.includes(type)) return true;
+    return hasRequiredProperty(obj);
+  });
+
+  // Étape 2 : filtrer les relations imbriquées dans chaque agent (thingIsTargetOfRelation)
+  for (const obj of filteredGraph) {
+    if (Array.isArray(obj["rico:thingIsTargetOfRelation"])) {
+      obj["rico:thingIsTargetOfRelation"] = obj[
+        "rico:thingIsTargetOfRelation"
+      ].filter((rel) => {
+        const relType = rel.type || rel["@type"];
+        const relTypeList = Array.isArray(relType) ? relType : [relType];
+
+        if (!relTypeList.includes(type)) return true;
+        return hasRequiredProperty(rel);
+      });
+    }
+  }
+
+  return filteredGraph;
 }
 
 function hasType(obj, type) {
@@ -174,6 +219,37 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
     "src/_data/framings/agents-framing.json",
     "src/_data/agents.json"
   );
+
+  // ------------------------
+  console.log("Post-processing: delete empty relations...");
+
+  let agentsData = JSON.parse(
+    fs.readFileSync("src/_data/agents.json", { encoding: "utf8", flag: "r" })
+  );
+
+  // Supprime les relations vides
+  agentsData.graph = deleteRelationsWithoutProperties(
+    agentsData.graph,
+    "rico:MandateRelation"
+  );
+  agentsData.graph = deleteRelationsWithoutProperties(
+    agentsData.graph,
+    "rico:PerformanceRelation"
+  );
+  agentsData.graph = deleteRelationsWithoutProperties(
+    agentsData.graph,
+    "rico:PlaceRelation"
+  );
+
+  fs.writeFileSync(
+    "src/_data/agents.json",
+    JSON.stringify(agentsData, null, 2),
+    { encoding: "utf8" }
+  );
+
+  console.log("Relations sans date/note supprimées !");
+
+  // -------------------------
 
   /*
   console.log("post-processing agents...");
