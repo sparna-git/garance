@@ -31,6 +31,105 @@ function deleteAllOnTypeExcept(jsonArray, type, except) {
   }
 }
 
+function hasType(obj, type) {
+  let objType = getType(obj);
+  if (objType && Array.isArray(objType)) {
+    for (let t of objType) {
+      if (t === type) {
+        return true;
+      }
+    }
+  } else {
+    return objType === type;
+  }
+
+  return false;
+}
+
+function getType(obj) {
+  return obj.type ? obj.type : obj["@type"];
+}
+
+
+/*
+* Post Processing
+*/
+function replaceURL(jsonArray, eNode, urlTransformation) {
+  const rgx = new RegExp(
+    "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-"
+  );
+  for (let obj of jsonArray) {
+    if (Object.keys(obj).includes(eNode)) {
+      if (obj[eNode].id != undefined) {
+        if (rgx.exec(obj[eNode].id)) {
+          obj[eNode].id = obj[eNode].id.replace(
+            "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-",
+            urlTransformation
+          );
+        }
+      } else {
+        obj[eNode].forEach((e) => {
+          if (rgx.exec(e.id)) {
+            e.id = e.id.replace(
+              "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-",
+              urlTransformation
+            );
+          }
+        });
+      }
+    }
+  }
+  return jsonArray;
+}
+
+function deleteOrganicProvenanceRelation(inputJson, type) {
+  // Read array JSON
+  for (let obj of inputJson) {
+    Object.entries(obj).forEach(([k, v]) => {
+      //
+      if (Array.isArray(v)) {
+        // Add filter
+        const newObject = v.filter((item) => item.type !== type);
+        obj[k] = newObject;
+      } else {
+        if (v.type === type) {
+          delete obj[k];
+        }
+      }
+    });
+  }
+}
+
+function findItem(inputjson,properties) {
+  result = false;
+  const obj = Object.keys(inputjson);
+  properties.forEach((p) => {
+    if (obj.includes(p)) {
+      result = true
+    }
+  });
+  return result;
+}
+
+function deleteRelationsWithoutProperties2(inputJson,type,properties) {
+  for (let objRP of inputJson) {
+    Object.entries(objRP).forEach(([k, v]) => {
+      if (Array.isArray(v)) {
+        // filter
+        const newValue = v.filter(
+          (item) => (item.type !== type) || (item.type === type && findItem(item, properties))
+        );
+        objRP[k] = newValue;        
+      } else {
+        if (v.type === type) {
+          if (!findItem(v, properties)) {
+            delete objRP[k];
+          }
+        }
+      }
+    });
+  }
+}
 
 /**
  * Supprime les objets de type donné (ex: rico:PerformanceRelation) :
@@ -74,52 +173,7 @@ function deleteRelationsWithoutProperties(graph, type) {
   return filteredGraph;
 }
 
-function hasType(obj, type) {
-  let objType = getType(obj);
-  if (objType && Array.isArray(objType)) {
-    for (let t of objType) {
-      if (t === type) {
-        return true;
-      }
-    }
-  } else {
-    return objType === type;
-  }
 
-  return false;
-}
-
-function getType(obj) {
-  return obj.type ? obj.type : obj["@type"];
-}
-
-function replaceURL(jsonArray, eNode, urlTransformation) {
-  const rgx = new RegExp(
-    "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-"
-  );
-  for (let obj of jsonArray) {
-    if (Object.keys(obj).includes(eNode)) {
-      if (obj[eNode].id != undefined) {
-        if (rgx.exec(obj[eNode].id)) {
-          obj[eNode].id = obj[eNode].id.replace(
-            "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-",
-            urlTransformation
-          );
-        }
-      } else {
-        obj[eNode].forEach((e) => {
-          if (rgx.exec(e.id)) {
-            e.id = e.id.replace(
-              "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-",
-              urlTransformation
-            );
-          }
-        });
-      }
-    }
-  }
-  return jsonArray;
-}
 
 /**
  *
@@ -170,18 +224,15 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   console.log("end jsonld.frame !");
 
   console.log("Writing to file : " + outputFile + " ...");
-  fs.writeFileSync(outputFile, JSON.stringify(framed, null, 2), {
-    encoding: "utf8",
-  });
+  fs.writeFileSync(outputFile, JSON.stringify(framed, null, 2), { encoding: "utf8" });
   console.log("Done writing to " + outputFile);
 };
 
 (async () => {
   // Lecture de fichiers
+  
   console.log("Reading " + "./_json/garance.json" + " ...");
-  let dataJsonLd = JSON.parse(
-    fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" })
-  );
+  let dataJsonLd = JSON.parse(fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" }));
   console.log("Done");
 
   console.log("Now framing agents...");
@@ -204,18 +255,24 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   console.log("Post-processing: delete empty relations...");
   let agentsData = JSON.parse(fs.readFileSync("src/_data/agents.json", { encoding: "utf8", flag: "r" }));
 
-  // Supprime les relations vides
-  agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:MandateRelation");
-  agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PerformanceRelation");
-  agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PlaceRelation");
-
   /*
-  * Replace les URIs
-  */
+   * Replace les URIs
+   */
   replaceURL(agentsData.graph,"rico:isOrganicProvenanceOf","https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_");
 
-  fs.writeFileSync("src/_data/agents.json",JSON.stringify(agentsData, null, 2),{ encoding: "utf8" });
+  // Supprime les relations vides
+  deleteRelationsWithoutProperties2(agentsData.graph, "rico:MandateRelation", ["rico:beginningDate", "rico:endDate","rico:note"]);
+  deleteRelationsWithoutProperties2(agentsData.graph, "rico:PlaceRelation", ["rico:beginningDate","rico:endDate","rico:note"]);
+  deleteRelationsWithoutProperties2(agentsData.graph, "rico:PerformanceRelation", ["rico:beginningDate", "rico:endDate", "rico:note"]);
+  //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:MandateRelation");
+  //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PerformanceRelation");
+  //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PlaceRelation");
 
+  // Supprimer les relations de OrganicProvenanceRelation
+  deleteOrganicProvenanceRelation(agentsData.graph,"rico:OrganicProvenanceRelation");
+
+  fs.writeFileSync( "src/_data/agents.json",JSON.stringify(agentsData, null, 2),{ encoding: "utf8" });
+  
   console.log("Relations sans date/note supprimées !");  
 
   console.log("Now framing agents header...");
@@ -226,37 +283,5 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
 
   console.log("Now framing index...");
   await framed(dataJsonLd,"src/_data/framings/index-framing.json","src/_data/index.json");
+  
 })();
-
-/*
-
-function cleanCreationActivities(graph) {
-  for (const obj of graph) {
-    if (!hasType(obj, 'rico:Agent')) continue;
-
-    const record = obj['rico:isOrWasDescribedBy'];
-    if (!record || typeof record !== 'object') continue;
-
-    const affected = record['rico:isOrWasAffectedBy'];
-    if (!affected) continue;
-
-    const activities = Array.isArray(affected) ? affected : [affected];
-
-    const filtered = activities.filter(act => {
-      const name = act['rico:name'];
-      const value = name?.['@value'] || '';
-      return value.startsWith('création');
-    });
-
-    if (filtered.length === 0) {
-      delete record['rico:isOrWasAffectedBy'];
-    } else {
-      record['rico:isOrWasAffectedBy'] =
-        filtered.length === 1 ? filtered[0] : filtered;
-    }
-  }
-
-  return graph;
-}
-
-*/
