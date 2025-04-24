@@ -25,8 +25,6 @@ def readFile(inputResource) -> list:
 
 def localResources(input) -> str:
 
-    print(f"Resource: {input}")
-    
     if os.path.isfile(input):
         name,extends = os.path.split(input)
         return "file",[input]
