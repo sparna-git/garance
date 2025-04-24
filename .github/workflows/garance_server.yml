@@ -1,4 +1,4 @@
-name: Eleventy_garance
+name: garance
 on: workflow_dispatch
 jobs:
   deploy:
