@@ -1,4 +1,5 @@
 import argparse
+import sys
 from src.rdfToJson import convertRDFtoJson
 from src.jsonToJsonld import asJLd
 
@@ -16,7 +17,7 @@ if __name__ == "__main__":
 	arg = parser.parse_args()
 	# Generate resources
 	if 'READ' in arg.generate:
-		print(f"Quoi ça: { arg.input }")
+		print(f"Quoi ça: { sys.path.apend(arg.input) }")
 		read = convertRDFtoJson(arg.input,arg.output,arg.context)
 		read.convert_data_json()
 
