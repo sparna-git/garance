@@ -34,7 +34,9 @@ def localResources(input) -> str:
 
 # Graph RDFLib
 def toJson(inputResource:str,outputFile:str,context:str):
-    
+
+    print(f"Directory: {Path(inputResource).absolute()}")
+    print(f"Directory?: {os.path.isdir(inputResource)}")
     # Input type resource
     typeResource,r= localResources(Path(inputResource).absolute())
 
