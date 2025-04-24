@@ -4,7 +4,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       # Get all resources
       - uses: actions/checkout@v3
         with:
@@ -24,4 +23,4 @@ jobs:
       - run: pip install -r scripts/python/requirements.txt
 
       - name: Convert to JSON
-        run: python scripts/python/convertToJson.py --generate READ --input Referentiels --context src/_data/context.json --output garancePython.json
+        run: python scripts/python/convertToJson.py --generate READ --input /home/runner/work/ArchivesNationalesFR/Referentiels/version_2 --context src/_data/context.json --output garancePython.json
