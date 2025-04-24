@@ -13,14 +13,17 @@ jobs:
 
       - name: test
         run: ls -l Referentiels
-          
-      # Step 1 - convert to JSON
+      
+      # Python
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.13'
-          cache: 'pip' # caching pip dependencies
-      - run: pip install -r scripts/python/requirements.txt
-
-      - name: Convert to JSON
-        run: python scripts/python/convertToJson.py --generate READ --input /home/runner/work/ArchivesNationalesFR/Referentiels/version_2 --context src/_data/context.json --output garancePython.json
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/python/requirements.txt
+      - name: Convert
+        run: |
+          python scripts/python/convertToJson.py --generate=READ --input=Referentiels --context=src/_data/context.json --output=src/_data/garance_python.json
