@@ -55,6 +55,8 @@ def toJson(inputResource:str,outputFile:str,context:str):
     for f in list_of_files:
         iFiles = os.path.join(inputResource,f)
         r.append(iFiles)
+
+    print(f"List files: {r}")
     loadGraph = np.vectorize(asJRdfLib.load,otypes=[list])(r)
     for g in loadGraph:
         graph += g
