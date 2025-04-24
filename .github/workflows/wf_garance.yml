@@ -1,0 +1,23 @@
+name: garance referentiel
+on: [workflow_dispatch]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Get all resources
+      - uses: actions/checkout@v3
+        with:
+          repository: ArchivesNationalesFR/Referentiels
+          path: Referentiels
+          ref: version_2
+      # Step 1 - convert to JSON
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip' # caching pip dependencies
+      - run: pip install -r scripts/python/requirements.txt
+
+      - name: Convert to JSON
+        run: python scripts/python/convertToJson.py --input Referentiels --context src/_data/context.json --output garanceJson/garance.json
