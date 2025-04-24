@@ -11,6 +11,9 @@ jobs:
           repository: ArchivesNationalesFR/Referentiels
           path: Referentiels
           ref: version_2
+
+      - name: print
+        run: Referentiels
       # Step 1 - convert to JSON
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
