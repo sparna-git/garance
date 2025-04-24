@@ -20,4 +20,4 @@ jobs:
       - run: pip install -r scripts/python/requirements.txt
 
       - name: Convert to JSON
-        run: python scripts/python/convertToJson.py --input Referentiels --context src/_data/context.json --output garanceJson/garance.json
+        run: python scripts/python/convertToJson.py --generate READ --input Referentiels --context src/_data/context.json --output garanceJson/garance.json
