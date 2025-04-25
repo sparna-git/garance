@@ -28,4 +28,4 @@ jobs:
           pip install -r scripts/python/requirements.txt
       - name: Convert
         run: |
-          python scripts/python/convertToJson.py --generate READ --input /home/runner/work/garance/garance/Referentiels --context src/_data/context.json --output src/_data/garance_python.json
+          python scripts/python/convertToJson.py --generate READ --input refs/remotes/origin/version_2 --context src/_data/context.json --output src/_data/garance_python.json
