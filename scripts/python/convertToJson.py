@@ -17,7 +17,11 @@ if __name__ == "__main__":
 	arg = parser.parse_args()
 	# Generate resources
 	if 'READ' in arg.generate:
-		read = convertRDFtoJson(arg.input,arg.output,arg.context)
+		import os
+		dirname = os.path.dirname(__file__)
+		files = os.path.join(dirname,arg.input)
+		print(f"Directory input: {files}")
+		read = convertRDFtoJson(files,arg.output,arg.context)
 		read.convert_data_json()
 
 	if 'FRAME' in arg.generate:
