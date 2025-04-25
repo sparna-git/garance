@@ -34,9 +34,11 @@ def localResources(input) -> str:
 
 # Graph RDFLib
 def toJson(inputResource:str,outputFile:str,context:str):
-    
+
+    print(f"Directory: {Path(inputResource).absolute()}")
+    print(f"Directory?: {os.path.isdir(inputResource)}")
     # Input type resource
-    typeResource,r= localResources(Path(inputResource).absolute())
+    #typeResource,r= localResources(Path(inputResource).absolute())
 
     # Create Directory
     if outputFile != "":
@@ -46,11 +48,18 @@ def toJson(inputResource:str,outputFile:str,context:str):
     graph = asJRdfLib.createGraph()
 
     #Load in Graph
-    if typeResource == "file" or typeResource == "dir":
-        # Load in Graph
-        loadGraph = np.vectorize(asJRdfLib.load,otypes=[list])(r)
-        for g in loadGraph:
-            graph += g
+    #if typeResource == "file" or typeResource == "dir":
+    # Load in Graph
+    r = []
+    list_of_files = glob.glob("**/*.rdf",root_dir=inputResource,recursive=True)
+    for f in list_of_files:
+        iFiles = os.path.join(inputResource,f)
+        r.append(iFiles)
+
+    print(f"List files: {r}")
+    loadGraph = np.vectorize(asJRdfLib.load,otypes=[list])(r)
+    for g in loadGraph:
+        graph += g
     logger.info(f"Taille Graph: {len(graph)} ")    
     
     # Serializetion

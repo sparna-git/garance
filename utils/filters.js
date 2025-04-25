@@ -235,6 +235,15 @@ module.exports = {
         );
     },
 
+    removeURL: function (uri) {
+      const NAMESPACE = "https://rdf.archives-nationales.culture.gouv.fr/";
+      var result = "";
+      if(uri.startsWith(NAMESPACE)) {
+        result = uri.replace(NAMESPACE,"")
+      } 
+      return result
+    },
+
     toUrl: function (uri) {
         const NAMESPACE = "https://rdf.archives-nationales.culture.gouv.fr/";
         var result = uri;

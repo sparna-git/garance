@@ -195,7 +195,6 @@ function initTooltips(locale) {
       content: temp,
       allowHTML: true,
       placement: "bottom-start",
-      theme: "light",
       animation: "shift-away",
       arrow: false,
       delay: [100, 100],

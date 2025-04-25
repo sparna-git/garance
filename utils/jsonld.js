@@ -309,11 +309,41 @@ function getDownloadLinks(agent, context) {
   return null;
 }
 
+/**
+ * Returns the last modification date of an agent.
+ * @param {object} agent - The agent object.
+ * @returns {string|null} The modification date or null.
+ */
+function getLastModificationDate(agent) {
+  return (
+    agent?.["rico:isOrWasDescribedBy"]?.["rico:lastModificationDate"]?.[
+      "@value"
+    ] || null
+  );
+}
+
+/**
+ * Returns the SIV URL (rdfs:seeAlso) if available on digital instantiation.
+ * @param {object} agent - The agent object.
+ * @returns {string|null} The SIV URL or null.
+ */
+function getSivSeeAlsoUrl(agent) {
+  const seeAlso =
+    agent?.["rico:isOrWasDescribedBy"]?.["rico:hasOrHadDigitalInstantiation"]?.[
+      "rdfs:seeAlso"
+    ];
+  return typeof seeAlso === "object"
+    ? seeAlso?.id || seeAlso?.["@id"]
+    : seeAlso || null;
+}
+
 module.exports = {
   getId: getId,
   getTypes: getTypes,
   getCreationDate,
   getDownloadLinks: getDownloadLinks,
+  getLastModificationDate: getLastModificationDate,
+  getSivSeeAlsoUrl: getSivSeeAlsoUrl,
 
   /**
    * Checks if a value is an array.

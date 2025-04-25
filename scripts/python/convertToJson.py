@@ -1,4 +1,5 @@
 import argparse
+import sys
 from src.rdfToJson import convertRDFtoJson
 from src.jsonToJsonld import asJLd
 
