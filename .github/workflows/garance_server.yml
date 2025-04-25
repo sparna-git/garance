@@ -50,4 +50,5 @@ jobs:
           key: ${{ secrets.AUTHENTICATION }}
           source: dist
           target: ${{ secrets.REMOTE_PATH }}
+          rm: true
           strip_components: 1
