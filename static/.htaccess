@@ -1,66 +1,6 @@
-# Directive to ensure *.rdf files served as appropriate content type,
-# if not present in main apache config
-AddType application/rdf+xml .rdf
-AddType application/rdf+xml .owl
-AddType text/turtle .ttl
-AddType application/n-triples .nt
-AddType application/ld+json .jsonld
-
 RewriteEngine on
 
 # Les pattern d'URL ne doivent PAS commencer par un /
 
 # Redirection de la base URL vers la page d'accueil en français /pages/fr
-RewriteRule ^$ /pages/fr/ [L,R=302]
-
-# Redirection pour les URI des Agents
-# URL de test en http: https//rdf.archives-nationales.culture.gouv.fr/agent/FRAN_RI_012-d-dv4qvesjj-13idlf9jnvxde
-RewriteRule ^agent/(.+)$ "/entities/agent/$1" [L,R=301]
-
-# Redirection pour les URI des Lieux
-RewriteRule ^place/(.+)$ "/entities/place/$1" [L,R=301]
-
-# Redirection pour les URI des vocabulaires contrôlés
-# NE : NoEscape pour conserver le #
-RewriteRule ^(corporateBodyTypes)$ "/entities/$1" [L,R=302]
-RewriteRule ^(corporateBodyType)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(recordStates)$ "/entities/$1" [L,R=302]
-RewriteRule ^(recordState)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(activityTypes)$ "/entities/$1" [L,R=302]
-RewriteRule ^(activityType)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(occupationTypes)$ "/entities/$1" [L,R=302]
-RewriteRule ^(occupationType)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(languages)$ "/entities/$1" [L,R=302]
-RewriteRule ^(language)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(things)$ "/entities/$1" [L,R=302]
-RewriteRule ^(thing)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(carrierTypes)$ "/entities/$1" [L,R=302]
-RewriteRule ^(carrierType)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(productionTechniqueTypes)$ "/entities/$1" [L,R=302]
-RewriteRule ^(productionTechniqueType)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(identifierTypes)$ "/entities/$1" [L,R=302]
-RewriteRule ^(identifierType)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(placeTypes)$ "/entities/$1" [L,R=302]
-RewriteRule ^(placeType)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(representationTypes)$ "/entities/$1" [L,R=302]
-RewriteRule ^(representationType)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(documentaryFormTypes)$ "/entities/$1" [L,R=302]
-RewriteRule ^(documentaryFormType)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-RewriteRule ^(recordSetTypes)$ "/entities/$1" [L,R=302]
-RewriteRule ^(recordSetType)/(.+)$ "/entities/$1s#$2" [NE,L,R=302]
-
-
-# Rewrite rules for aco
-# RewriteCond %{HTTP_ACCEPT} !application/rdf\+xml.*(text/html|application/xhtml\+xml|text/\*|\*/\*)
-# RewriteCond %{HTTP_ACCEPT} text/html [OR]
-# RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml [OR]
-# RewriteCond %{HTTP_ACCEPT} text/\* [OR]
-# RewriteCond %{HTTP_ACCEPT} \*/\* [OR]
-# RewriteCond %{HTTP_USER_AGENT} ^Mozilla/.*
-# RewriteRule ^aco$ http://www.audiocommons.org/ac-ontology/aco.html  [R=301,NE,L]
-# RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
-# RewriteRule ^aco$ http://www.audiocommons.org/ac-ontology/aco.owl [R=301,NE,L]
-# RewriteCond %{HTTP_ACCEPT} ^.*text/turtle.*
-# RewriteRule ^aco$ http://www.audiocommons.org/ac-ontology/aco.ttl [R=301,NE,L]
-#default response: owl
-# RewriteRule ^aco$ http://www.audiocommons.org/ac-ontology/aco.owl [R=301,NE,L]
+RewriteRule ^$ /garance/pages/fr/ [L,R=302]
