@@ -208,6 +208,46 @@ document.addEventListener("DOMContentLoaded", function () {
     btn.addEventListener("click", function () {
       const textToCopy = this.getAttribute("data-copy");
 
+      // Créer un élément textarea temporaire
+      const textarea = document.createElement("textarea");
+      textarea.value = textToCopy;
+      textarea.style.position = "fixed"; // éviter le scroll
+      textarea.style.left = "-9999px";
+      document.body.appendChild(textarea);
+
+      // Copier le texte
+      textarea.select();
+      try {
+        const success = document.execCommand("copy");
+        if (success) {
+          const original = this.innerHTML;
+          this.innerHTML = '<i class="fas fa-check text-success"></i>';
+          setTimeout(() => {
+            this.innerHTML = original;
+          }, 1500);
+        } else {
+          console.error("La copie a échoué");
+        }
+      } catch (err) {
+        console.error("Erreur de copie :", err);
+      }
+
+      // Nettoyer
+      document.body.removeChild(textarea);
+    });
+  });
+});
+
+/*
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".copy-icon-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const textToCopy = this.getAttribute("data-copy");
+      // check if navigator.clipboard is available
+      if (!navigator.clipboard) {
+        console.error("Clipboard API not supported");
+        return;
+      }
       navigator.clipboard
         .writeText(textToCopy)
         .then(() => {
@@ -223,3 +263,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+*/
