@@ -131,6 +131,16 @@ function deleteRelationsWithoutProperties2(inputJson,type,properties) {
   }
 }
 
+/*
+* Filter all element of place only
+*
+*/
+function removeElementnotPlace(jsonArray) {
+  const regexPlace = new RegExp("an:place/FRAN_RI_");
+  const newfilter = jsonArray.filter((f) => regexPlace.exec(f.id));
+  return newfilter;
+}
+
 /**
  * Supprime les objets de type donné (ex: rico:PerformanceRelation) :
  * - du tableau principal `graph`
@@ -283,5 +293,15 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
 
   console.log("Now framing index...");
   await framed(dataJsonLd,"src/_data/framings/index-framing.json","src/_data/index.json");
+
+  console.log("Now framing Place...");
+  await framed(dataJsonLd,"src/_data/framings/place-framing.json","src/_data/place.json");
+  console.log("Post-processing: place ...");
+  let placeData = JSON.parse(fs.readFileSync("src/_data/place.json", { encoding: "utf8", flag: "r" }));
+  //
+  // remove element with place to agent
+  placesData.graph = removeElementnotPlace(placesData.graph); 
+  // write in place file
+  fs.writeFileSync("src/_data/places.json",JSON.stringify(placesData, null, 2),{ encoding: "utf8" });
   
 })();
