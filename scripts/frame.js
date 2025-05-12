@@ -219,6 +219,22 @@ function cleanPreferredAgentsNames(graph) {
   return graph.filter((obj) => !toRemoveIds.has(obj.id));
 }
 
+// filter
+function filterShow(jsonData) {
+  const data = []
+  let nIndex = 0
+  for (const obj of jsonData) {
+    const nKeys = Object.keys(obj).length;
+    if (nKeys > 7) {
+      if (nIndex < 11) {
+        data.push(obj);
+        nIndex++;
+      }
+    }
+  }
+  return data;  
+};
+
 let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   let framingSpec = fs.readFileSync(framingSpecPath, {
     ncoding: "utf8",
@@ -240,11 +256,13 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
 
 (async () => {
   // Lecture de fichiers
-  
-  console.log("Reading " + "./_json/garance.json" + " ...");
-  let dataJsonLd = JSON.parse(fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" }));
-  console.log("Done");
 
+  console.log("Reading " + "./_json/garance.json" + " ...");
+  let dataJsonLd = JSON.parse(
+    fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" })
+  );
+  console.log("Done");
+  
   console.log("Now framing agents...");
   // create deep copy of dataJsonLd
   agentFramingData = JSON.parse(JSON.stringify(dataJsonLd));
@@ -295,13 +313,13 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   await framed(dataJsonLd,"src/_data/framings/index-framing.json","src/_data/index.json");
 
   console.log("Now framing Place...");
-  await framed(dataJsonLd,"src/_data/framings/place-framing.json","src/_data/place.json");
+  await framed(dataJsonLd,"src/_data/framings/place-framing.json","src/_data/places.json");
   console.log("Post-processing: place ...");
-  let placeData = JSON.parse(fs.readFileSync("src/_data/place.json", { encoding: "utf8", flag: "r" }));
-  //
+  let placesData = JSON.parse(fs.readFileSync("src/_data/places.json", { encoding: "utf8", flag: "r" })); //
   // remove element with place to agent
-  placesData.graph = removeElementnotPlace(placesData.graph); 
+  placesData.graph = removeElementnotPlace(placesData.graph);
+  // getting 10 Element only for show deploy
+  placesData.graph = filterShow(placesData.graph);
   // write in place file
   fs.writeFileSync("src/_data/places.json",JSON.stringify(placesData, null, 2),{ encoding: "utf8" });
-  
 })();

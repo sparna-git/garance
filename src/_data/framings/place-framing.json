@@ -24,15 +24,14 @@
   "@explicit": true,
   "type": "rico:Place",
   "rdfs:label": { "@omitDefault": true },
-  "skos:prefLabel": { "@omitDefault": true },
-  "skos:altLabel": { "@omitDefault": true },
   "rico:beginningDate": { "@omitDefault": true },
   "rico:endDate": { "@omitDefault": true },
   "rico:type": { "@omitDefault": true },
   "rico:history": { "@omitDefault": true },
   "rico:hasOrHadPlaceType": {
     "@omitDefault": true,
-    "@explicit": true
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasOrHadLocation": {
     "@omitDefault": true,
@@ -43,7 +42,6 @@
   "owl:sameAs": {
     "@omitDefault": true,
     "@explicit": true,
-    "@id": {},
     "rdfs:label": { "@omitDefault": true }
   },
   "rdfs:seeAlso": {
@@ -54,34 +52,21 @@
   "insee-geo:codeCommune": { "@omitDefault": true, "@explicit": true },
   "insee-geo:chefLieu": { "@omitDefault": true, "@explicit": true },
   "insee-geo:codeRegion": { "@omitDefault": true, "@explicit": true },
-  "rico:descriptiveNote": {
-    "@omitDefault": true,
-    "@explicit": true
-  },
-  "skos:changeNote": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "dc:date": { "@omitDefault": true },
-    "rdf:value": { "@omitDefault": true }
-  },
   "geofla:dpt": { "@omitDefault": true, "@explicit": true },
   "geofla:codeReg": { "@omitDefault": true, "@explicit": true },
   "rico:isOrWasContainedBy": {
     "@omitDefault": true,
     "@explicit": true,
-    "@id": {},
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:isOrWasAdjacentTo": {
     "@omitDefault": true,
     "@explicit": true,
-    "@id": {},
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:isOrWasPartOf": {
     "@omitDefault": true,
     "@explicit": true,
-    "@id": {},
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:hasOrHadPhysicalLocation": {
@@ -102,10 +87,6 @@
       "rico:isOrWasCoordinatesOf": { "@omitDefault": true },
       "rico:measure": { "@omitDefault": true, "@explicit": true },
       "rico:geodesicSystem": { "@omitDefault": true, "@explicit": true }
-    },
-    "rico:isOrWasCoordinatesOf": {
-      "@omitDefault": true,
-      "@explicit": true
     }
   },
   "rico:thingIsTargetOfWholePartRelation": {
@@ -126,19 +107,16 @@
   "rico:precedesInTime": {
     "@omitDefault": true,
     "@explicit": true,
-    "@id": {},
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:followsInTime": {
     "@omitDefault": true,
     "@explicit": true,
-    "@id": {},
     "rdfs:label": { "@omitDefault": true }
   },
   "rico:containsOrContained": {
     "@omitDefault": true,
     "@explicit": true,
-    "@id": {},
     "rdfs:label": { "@omitDefault": true }
   }
 }
