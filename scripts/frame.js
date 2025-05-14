@@ -223,12 +223,51 @@ function cleanPreferredAgentsNames(graph) {
 function filterShow(jsonData) {
   const data = []
   let nIndex = 0
+  let nDep = 0;
+  let nCommun = 0;
   for (const obj of jsonData) {
     const nKeys = Object.keys(obj).length;
-    if (nKeys > 7) {
-      if (nIndex < 11) {
-        data.push(obj);
-        nIndex++;
+    if (nKeys > 5) {
+      
+      if (Array.isArray(obj.type)) {
+        if (obj.type.includes("geofla:Departement") || obj.type.includes("insee-geo:Departement")) {
+          if (nDep < 11) {
+            if (Array.isArray(obj["rdfs:label"])) {
+              if (obj["rdfs:label"].length < 2) {
+                data.push(obj);
+                nDep++;
+              }
+            } else {
+              data.push(obj);
+              nDep++;
+            }
+          }        
+        }
+        if (obj.type.includes("geofla:Commune") || obj.type.includes("insee-geo:Commune")) {
+          if (nCommun < 11) {
+            if (Array.isArray(obj["rdfs:label"])) {
+              if (obj["rdfs:label"].length < 2) {
+                data.push(obj);
+                nCommun++;
+              }
+            } else {
+              data.push(obj);
+              nCommun++;
+            }
+          }
+        }        
+      } else {
+        if (nIndex < 11) {
+          if (Array.isArray(obj["rdfs:label"])) {
+            if (obj["rdfs:label"].length < 2) {
+              data.push(obj);
+              nIndex++;
+            }
+          } else {
+            data.push(obj);
+            nIndex++;
+          }
+        }
       }
     }
   }
@@ -258,9 +297,7 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   // Lecture de fichiers
 
   console.log("Reading " + "./_json/garance.json" + " ...");
-  let dataJsonLd = JSON.parse(
-    fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" })
-  );
+  let dataJsonLd = JSON.parse(fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" }));
   console.log("Done");
   
   console.log("Now framing agents...");
@@ -282,10 +319,8 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   // ------------------------
   console.log("Post-processing: delete empty relations...");
   let agentsData = JSON.parse(fs.readFileSync("src/_data/agents.json", { encoding: "utf8", flag: "r" }));
-
-  /*
-   * Replace les URIs
-   */
+  
+  // Replace les URIs
   replaceURL(agentsData.graph,"rico:isOrganicProvenanceOf","https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_");
 
   // Supprime les relations vides
@@ -311,7 +346,7 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
 
   console.log("Now framing index...");
   await framed(dataJsonLd,"src/_data/framings/index-framing.json","src/_data/index.json");
-
+  
   console.log("Now framing Place...");
   await framed(dataJsonLd,"src/_data/framings/place-framing.json","src/_data/places.json");
   console.log("Post-processing: place ...");

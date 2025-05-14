@@ -54,16 +54,6 @@
   "insee-geo:codeRegion": { "@omitDefault": true, "@explicit": true },
   "geofla:dpt": { "@omitDefault": true, "@explicit": true },
   "geofla:codeReg": { "@omitDefault": true, "@explicit": true },
-  "rico:isOrWasContainedBy": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "rdfs:label": { "@omitDefault": true }
-  },
-  "rico:isOrWasAdjacentTo": {
-    "@omitDefault": true,
-    "@explicit": true,
-    "rdfs:label": { "@omitDefault": true }
-  },
   "rico:isOrWasPartOf": {
     "@omitDefault": true,
     "@explicit": true,
