@@ -53,6 +53,7 @@ Répertoire dans le lequel se retrouve le gros fichier JSON-LD `garance.json`qui
 ### `scripts`
 
 Répertoire contenant les commandes "frame" et "read" utilisées pour préparer les données avant la génération du site.
+En plus, une répertoire avec script python.
 
 ### `src`
 
@@ -117,40 +118,55 @@ Cette commande applique les specs de framing du dossier `src/_data/framings` sur
 `npm run start` pour le serveur local, ou `npm run build` pour la génération du site final.
 Le résultat finale est dans le répertoire `dist`
 
-
-
 ## /!\ Instable / Non testé - Utilisation de Python pour le framing JSON-LD et les CVS RiC-O
 
-Le script a deux options pour generer un resource:
+## Prérequis
 
-  - JSONLD
-  - RICO
+* [Python 3.12](https://www.python.org/ftp/python/3.13.3/python-3.13.3-amd64.exe)
 
-Option [JSONLD] - Generate un fichier JSON-LD à partir des fichiers RDF.
+1. Installation  pip
+```sh
+sudo apt install python3-pip
+```
+## Aller au répertoire scripts\python
+2. Création d'environnement Virtuel
 
-* ces importante de renomer le nombre de chaque fichier framing: 
-Exemple:
-vocabularies-framing.json -> vocabularies.json
-agents-framing.json -> agents.json
-index-framing.json -> index.json
+```sh
+python -m venv envgarance
+```
+3. Activer l'environnement
+```sh
+Windows : envgarance/Scripts/activate.bat
+Linux : source envgarance/
+```
+4. Installation de paquets
+```sh 
+pip install -r requirements.txt
+```
+
+Dans le répértoire script/python, on a 2 fichiers `label.py` et `convertToJson.py`:
+
+### Script `label.py` 
+
+Créer fichiers de traductions RiC-0 dans Français et Anglais. Les résultats se stocke dans les fichiers `rico.csv` et `definition.csv`.
+
+### Lancer le script Python
+```sh
+python label.py --input <Répertoire des fichiers de traductions RIC-O>
+```
+>Exemple
+>``` python label.py --input ../../rico```
 
 
-Liste des fichiers qui doit generer le script:
-vocabularies.json
-index.json
-agents.json
+### Script `convertToJson.py`
 
-Utilisation:
-  python garance_resources.py --generate JSONLD --input <répertoire de fichiers RDFs>  --context <fichier de context> --frame <répertoire de fichiers framings> --output <Répertoire output>
+Convertir des fichiers RDF en un fichier JSON-LD.
 
-Exemple:
- python garance_resources.py --generate JSONLD --input Referentiels-version_2 --context context.json --frame framings --output data
+*Utilisation du Script:*
+```sh
+    python convertToJson.py --generate READ --input <Répertoire de fichiers RDF> --context <Fichier de context> --output <>
+    [--context] : 
+```
 
- 
-Option [RICO]
-
-Utilisation:
-  python .\garance_resources.py --generate RICO --input <Répertoire de resources RICO (csv)>
-
-Exemple:
-  python .\garance_resources.py --generate RICO --input C:\tmp\convertRDFtoJson\rico
+>Exemple
+>``` python convertToJson.py --generate READ --input .../Referentiels --context ../context.json --output garance.json   ```

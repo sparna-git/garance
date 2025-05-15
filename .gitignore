@@ -22,3 +22,7 @@ scripts/python/virtualenv/
 scripts/python/ConvertResourceToJson.log
 
 scripts/python/src/__pycache__/
+/scripts/python/envgarance
+/vGarance
+/scripts/python/vGarance
+ConvertResourceToJson.log
