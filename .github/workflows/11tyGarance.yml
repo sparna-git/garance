@@ -39,10 +39,8 @@ jobs:
         run: | 
             export NODE_OPTIONS=--max-old-space-size=4096
             npm run build
-
+      
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          publish_dir: dist
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          #publish_branch: gh-pages
+         folder: build # The folder the action should deploy.
