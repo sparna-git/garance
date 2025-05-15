@@ -1,0 +1,156 @@
+
+{# generic method to render any JSON-LD object or value. #}
+{# Tests the structure of the object/value and apply the adequate rendering function #}
+{# Unbox single values from arrays if needed, so that arrays with a single value are treated the same as the value itself. #}
+
+{# The main object is passed as a second argument to be able to detect URI references to self, and print non-clickable label accordingly #}
+{% macro render(object, mainObject) %}
+    {% set obj = object | unboxArray %}
+
+    {% if obj is null %}
+        null
+    {% elif obj | isIriPrefixed(context) %}
+        {# expands the prefixed URI and print it #}
+        {{ renderPlainUri(obj | expandUri(context)) }}
+    {% elif obj | isIriString(context) %}
+        {{ renderPlainUri(obj) }}
+    {% elif obj | isIriObjectWithOnlyOptionalType(context) %}
+        {# special : circular reference to the main entity - print a non-clickable label #}
+        {% if (obj.id | expandUri(context)) == (mainObject | getIriExpanded(context)) %}
+            {{ renderLabelOfSelf(mainObject) }}
+        {% else %}
+            {{ renderPlainUri(obj.id | expandUri(context)) }}
+        {% endif %}
+    {% elif obj | isLiteralString or obj | isLiteralObject %}
+        {{ renderLiteral(obj) }}
+    {% elif obj | isObjectWithSingleLabelProperty(context) %}
+        {{ renderObjectWithSingleLabelProperty(obj) }}
+    {% else %}
+        {{ renderObject(obj, mainObject) }}
+    {% endif %}
+{% endmacro %}
+
+{% macro renderLabelOfSelf(mainObject) %}
+    {{ renderLiteralAsString(mainObject | displayLabel(context) | unboxArray ) }}
+{% endmacro %}
+
+{% macro renderPlainUri(uri) %}
+    <a href="{{ uri | toUrl | relative(page) }}" class="hyperlink">{{uri | shortenUri(context) }}</a>
+{% endmacro %}
+
+{% macro renderLabelledUri(uri, labelHtml) %}
+  <a href="{{ uri | toUrl | relative(page) }}" class="hyperlink">{{labelHtml}}</a>
+{% endmacro %}
+
+{% macro renderObject(object, mainObject) %}
+    <div class="entity">
+        {% set sortedKeys = object | sortPredicates(shapes,context) %}
+        {% for predicate in sortedKeys %}
+          {% set value = object[predicate] %}
+          {% if predicate != "id" and predicate != "@id" %}
+            {{ renderPredicateValues(object, predicate, value, mainObject) }}
+          {% endif %}
+        {% endfor %}
+    </div>
+{% endmacro %}
+
+
+{% macro renderPredicateValues(object, predicate, values, mainObject) %}
+  <div class="entity-predicate {{ predicate | additionnalCssClass(object, shapes, context) }}">
+    <div class="entity-predicate-predicate">
+      {{ renderPredicate(predicate) }}
+    </div>
+    <div class="entity-predicate-values">
+        {# Special : multiple type values are rendered horizontally without hyperlink #}
+        {% if predicate == "type" or predicate == "@type" %}
+            <div class="entity-predicate-values-value entity-predicate-values-type">
+                {{ renderTypeList(values, mainObject) }}
+            </div>
+        {% else %}
+            {% if values|isArray %}
+                <div class="entity-predicate-values-list">
+                    {% for item in (values | sortValues(shapes,context)) %}
+                        <div class="entity-predicate-values-value{% if loop.last %} last{% endif %}{% if loop.first %} first{% endif %}">{{ render(item, mainObject) }}</div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="entity-predicate-values-value">{{ render(values, mainObject) }}</div>
+            {% endif %}
+        {% endif %}
+    </div>
+  </div>
+{% endmacro %}
+
+
+{% macro renderPredicate(predicate) %}
+    <div class="entity-predicate-predicate-title">
+        {% set formattedPredicate = predicate | expandUri(context) | shortenUri(context) %}
+        <span class="label" data-i18n="{{ formattedPredicate }}"></span>
+
+        <span class="info-icon">ℹ️</span>
+        <div class="tooltip-html" style="display: none;">
+            <code>{{ formattedPredicate }}</code><br/>
+            {% set tooltipKey = formattedPredicate ~ "_tooltip" %}
+            <em data-i18n="{{ tooltipKey }}"></em>
+        </div>
+    </div>
+{% endmacro %}
+
+
+
+
+{% macro renderLiteral(literal) %}
+    {% if literal is string %}
+        <span class="literal">{{ literal }}</span>
+    {% elif '@language' in literal or '@type' in literal or 'language' in literal or 'type' in literal %}
+        {% set value = literal['@value'] or literal['value'] %}
+        {% set langOrType = literal['@language'] or literal['@type'] or literal['language'] or literal['type'] %}
+        {# special : if we find html tags inside, don't print the datatype - because value may contain HTML rendering, typically <p>, and the <sup> would be on a new line #}
+        {% if not (langOrType == "rdf:XMLLiteral") %}
+            <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
+        {% else %}
+            <span class="literal">{{ value | safe | stripHtmlPrefix }}</span>
+        {% endif %}
+    {% else %}
+        {# should not happen #}
+        {{ literal | json }}
+    {% endif %}
+{% endmacro %}
+
+{% macro renderObjectWithSingleLabelProperty(object) %}
+    {% set labelProperty = object | extractFirstNonIdNonTypeProperty | unboxArray %}
+    {% set labelHtml = renderLiteralAsString(labelProperty) %}
+    {{ renderLabelledUri(object.id | expandUri(context), labelHtml) }}
+{% endmacro %}
+
+{% macro renderLiteralAsString(literal) %}
+    {% if literal is string %}
+        {{ literal }}
+    {% elif '@language' in literal or '@type' in literal or 'language' in literal or 'type' in literal %}
+        {% set value = literal['@value'] or literal['value'] %}
+        {{ value | safe | stripHtmlPrefix }}
+    {% else %}
+        {# don't know what to do #}
+        {{ literal }}
+    {% endif %}
+{% endmacro %}
+
+{% macro renderAsList(valueArray, mainObject) %}
+    {% for item in valueArray %}
+        {{ render(item, mainObject) }}{% if not loop.last %}, {% endif %}
+    {% endfor %}
+{% endmacro %}
+
+{% macro renderTypeList(typeOrTypes, mainObject) %}
+    {% if typeOrTypes|isArray %}
+        {% for item in typeOrTypes %}
+            {{ renderType(item, mainObject) }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    {% else %}
+        {{ renderType(typeOrTypes, mainObject) }}
+    {% endif %}
+{% endmacro %}
+
+{% macro renderType(uri, mainObject) %}
+    <span data-i18n="{{uri | shortenUri(context) }}"></span>
+{% endmacro %}

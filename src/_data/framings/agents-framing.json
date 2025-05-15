@@ -1,0 +1,287 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "included": "@included",
+
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rico": "https://www.ica.org/standards/RiC/ontology#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "html": "http://www.w3.org/1999/xhtml",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "iso-thes": "http://purl.org/iso25964/skos-thes#",
+
+    "agent": "https://rdf.archives-nationales.culture.gouv.fr/agent/",
+    "place": "https://rdf.archives-nationales.culture.gouv.fr/place/",
+
+    "documentaryFormType": "https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/",
+    "placeType": "https://rdf.archives-nationales.culture.gouv.fr/placeType/",
+    "recordSetType": "https://rdf.archives-nationales.culture.gouv.fr/recordSetType/",
+    "recordState": "https://rdf.archives-nationales.culture.gouv.fr/recordState/",
+    "carrierType": "https://rdf.archives-nationales.culture.gouv.fr/carrierType/",
+    "productionTechniqueType": "https://rdf.archives-nationales.culture.gouv.fr/productionTechniqueType/",
+    "representationType": "https://rdf.archives-nationales.culture.gouv.fr/representationType/",
+    "thing": "https://rdf.archives-nationales.culture.gouv.fr/thing/",
+    "occupationType": "https://rdf.archives-nationales.culture.gouv.fr/occupationType/",
+    "activityType": "https://rdf.archives-nationales.culture.gouv.fr/activityType/",
+    "language": "https://rdf.archives-nationales.culture.gouv.fr/language/",
+    "corporateBodyType": "https://rdf.archives-nationales.culture.gouv.fr/corporateBodyType/",
+    "identifierType": "https://rdf.archives-nationales.culture.gouv.fr/identifierType/",
+
+    "owl:sameAs": {
+      "@id": "owl:sameAs",
+      "@type": "@id"
+    }
+  },
+  "@explicit": true,
+  "type": ["rico:Agent"],
+  "rico:identifier": { "@omitDefault": true },
+  "rico:name": { "@omitDefault": true },
+  "rico:hasOrHadAgentName": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:textualValue": { "@omitDefault": true },
+    "rico:type": { "@omitDefault": true },
+    "rico:usedFromDate": { "@omitDefault": true },
+    "rico:usedToDate": { "@omitDefault": true }
+  },
+  "rico:authorizedBy": { "@omitDefault": true },
+  "rico:authorizingMandate": { "@omitDefault": true },
+  "rico:hasOrHadCorporateBodyType": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "rico:hasOrHadOccupationOfType": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "rico:generalDescription": { "@omitDefault": true },
+  "rico:history": { "@omitDefault": true },
+  "rico:beginningDate": { "@omitDefault": true },
+  "rico:endDate": { "@omitDefault": true },
+  "rico:birthDate": { "@omitDefault": true },
+  "rico:deathDate": { "@omitDefault": true },
+  "rico:isOrWasMemberOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hadSubdivision": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasDirectSubdivision": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:wasSubdivisionOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }    
+  },
+  "rico:isDirectSubdivisionOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hadSubordinate": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasDirectSubordinate": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:wasSubordinateTo": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isDirectSubordinateTo": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasFamilyAssociationWith": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadController": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isOrWasControllerOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadLeader": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isOrWasLeaderOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadLocation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadMember": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasSuccessor": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isSuccessorOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isAgentAssociatedWithAgent": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isOrganicProvenanceOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always"
+  },
+  "rico:isOrWasMainSubjectOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@embed": "@always",
+    "rico:title": { "@omitDefault": true }
+  },
+  "rico:thingIsConnectedToRelation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:beginningDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:endDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:note": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:relationConnects": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "@embed": "@always",
+      "rdfs:label": { "@omitDefault": true }
+    }
+  },
+  "rico:thingIsTargetOfRelation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:beginningDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:endDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:note": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:relationHasSource": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "@embed": "@always",
+      "@id": {},
+      "rico:title": { "@omitDefault": true },
+      "rdfs:seeAlso": { "@omitDefault": true },
+      "rdfs:label": { "@omitDefault": true },
+      "rico:hasActivityType": {
+        "@explicit": true,
+        "@omitDefault": true,
+        "@embed": "@always",
+        "skos:prefLabel": { "@omitDefault": true }
+      },
+      "rico:hasOrHadLocation": {
+        "@explicit": true,
+        "@omitDefault": true,
+        "@embed": "@always",
+        "skos:prefLabel": { "@omitDefault": true }
+      }
+    }
+  },
+  "rico:thingIsSourceOfRelation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:beginningDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:endDate": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:note": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "rico:relationHasTarget": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "@embed": "@always",
+      "rdfs:label": { "@omitDefault": true }
+    }
+  },
+  "owl:sameAs": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "@id": {},
+    "rdfs:label": { "@omitDefault": true }
+  }
+}

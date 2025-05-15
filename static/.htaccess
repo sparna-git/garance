@@ -1,0 +1,6 @@
+RewriteEngine on
+
+# Les pattern d'URL ne doivent PAS commencer par un /
+
+# Redirection de la base URL vers la page d'accueil en français /pages/fr
+RewriteRule ^$ /garance/pages/fr/ [L,R=302]

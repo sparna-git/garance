@@ -1,0 +1,567 @@
+ricoId,definition
+rico:AccumulationRelation,"Connects at least one Record Resource or Instantiation to at least one Agent, when the Record Resource or Instantiation is or was accumulated by the Agent, be it intentionally (collecting it) or not (receiving it in the course of its activities). The Record Resource(s) or Instantiation(s) is the source of the Relation, and the Agent(s) is the target."
+rico:Activity,The doing of something for some human purpose.
+rico:ActivityDocumentationRelation,"Connects at least one Record Resource or Instantiation to at least one Activity, when the Record Resource or Instantiation results from the Activity. The Record Resource(s) or Instantiation(s) is the source of the Relation, and the Activity(-ies) is the target."
+rico:ActivityType,Categorization of an Activity.
+rico:Agent,"A Person, or Group, or an entity created by a Person or Group (Mechanism), or a Position, that acts in the world."
+rico:AgentControlRelation,"Connects at least one Agent, to at least another Agent, when the first one(s) control(s) or controlled in a way the activities of the second one(s). The Relation is oriented from the controlling agent to the controlled one: the controlling Agent(s) is the source of the Relation, and the controlled Agent(s) is the target."
+rico:AgentHierarchicalRelation,"Connects at least one Agent to at least another Agent, when the first one is or was hierarchically superior to the second one. The Relation is oriented towards the 'bottom' of the hierarchical tree: the superior Agent(s) is the source of the Relation, and the inferior Agent(s) is the target."
+rico:AgentName,"A label, title or term designating an Agent in order to make it distinguishable from other similar entities."
+rico:AgentTemporalRelation,"Connects at least one Agent to at least another Agent that succeeds it chronologically for, for instance, fullfilling some functions or performing some activities. The Relation is oriented chronologically, from the predecessor to the successor: the predecessor Agent(s) is the source of the Relation, and the successor Agent(s) is the target."
+rico:AgentToAgentRelation,"Connects at least two Agents. This Relation is a generic, not oriented one."
+rico:Appellation,A concept of any kind that is used for designating an Entity and referring to it.
+rico:AppellationRelation,Connects an Appellation and at least one Thing that the Appellation designates or designated. The Appellation is the source of the Relation and the Thing(s) is the target.
+rico:AuthorityRelation,"Connects at least one Agent and at least one Thing over which the Agent has or had some authority. The Agent(s) is the source of the relation, and the Thing(s) is the target."
+rico:AuthorshipRelation,"Connects at least one Record to at least one Person, Group or Position that is or was responsible for conceiving and formulating the information contained in the Record. The Record is the source of the Relation and the Person(s), Group(s) or Position(s) is the target."
+rico:CarrierExtent,Number of physical units and/or physical dimensions of the carrier of an Instantiation.
+rico:CarrierType,Categorization of physical material on which information is represented.
+rico:ChildRelation,"Connects at least one Person to at least another Person, when the first has(ave) child(s) the second one(s). The Relation is oriented from the parent to the child: the parent is the source of the relation, and the child(ren) is the target."
+rico:Concept,"An idea, unit of thought, abstract cultural object or category"
+rico:ContentType,The fundamental form of communication in which a Record or Record Part is expressed.
+rico:Coordinates,Longitudinal and latitudinal information about a Place.
+rico:CorporateBody,"An organized group of persons that act together as an Agent, and that has a recognized legal or social status."
+rico:CorporateBodyType,Categorization of a Corporate Body.
+rico:CorrespondenceRelation,"Connects at least two Persons, when they correspond or corresponded to each other. This Relation is not oriented."
+rico:CreationRelation,"Connects at least one Record Resource or Instantiation to at least one Agent, when the Agent is either responsible for all or some of the content of the Record Resource, or is a contributor to the genesis or production of the Instantiation. The Record Resource or Instantiation is the source of the Relation, and the Agent(s) is the target."
+rico:Date,Chronological information associated with an entity that contributes to its identification and contextualization.
+rico:DateType,Categorization of a Date.
+rico:DemographicGroup,Categorization of a Person or Group based on shared characteristics.
+rico:DerivationRelation,"Connects an Instantiation to at least one Instantiation that is derived from it, whether it exists or has been lost or destroyed. The Relation is oriented chronologically, from the first Instantiation in time to the derived Instantiation: the first Instantiation is the source of the Relation, and the derived Instantiation(s) is the target."
+rico:DescendanceRelation,"Connects at least one Person to at least another Person, when the first has/have descendant the second one(s). The Relation is oriented from the ascendant to the descendant: the ascendant Person(s) is the source of the Relation, and the descendant Person(s) is the target."
+rico:DocumentaryFormType,"Categorization of a Record or Record Part with respect to its extrinsic and intrinsic elements that together communicate its content, administrative and documentary context, and authority."
+rico:Event,Something that happens or occurs in time and space.
+rico:EventRelation,"Connects at least one Event to at least one Thing, when the first is associated with the existence and lifecycle of the second one. The Event(s) is the source of the Relation, and the Thing(s) is the target."
+rico:EventType,Categorization of an Event.
+rico:Extent,Countable characteristics of the content of an entity expressed as a quantity.
+rico:ExtentType,Categorization of the extent that is being measured.
+rico:Family,"Two or more persons related by birth, or through marriage, adoption, civil union, or other social conventions that bind them together as a socially recognized familial group."
+rico:FamilyRelation,"Connects at least two Persons, when they have some family link, i.e. belong to the same family. This Relation is a generic, not oriented one."
+rico:FamilyType,Categorization of a Family.
+rico:FunctionalEquivalenceRelation,Connects at least two Instantiations which may be considered as equivalent. This Relation is not oriented.
+rico:Group,Two or more Agents that act together as an Agent.
+rico:GroupSubdivisionRelation,"Connects a Group and at least another Group, when the first one has or had the second one(s) among its subdivisions. The Relation is oriented from the Group to its subdivision(s): the parent Group is the source and the subdivision Group(s) is the target."
+rico:Identifier,"A word, number, letter, symbol, or any combination of these used to uniquely identify or reference an individual instance of an entity within a specific information domain."
+rico:IdentifierType,Categorization of an Identifier.
+rico:Instantiation,"The inscription of information made by an Agent on a physical carrier in any persistent, recoverable form as a means of communicating information through time and space."
+rico:InstantiationExtent,Countable characteristics of an Instantiation expressed as a quantity.
+rico:InstantiationToInstantiationRelation,"Connects at least two instantiations. This Relation is a generic, not oriented one."
+rico:IntellectualPropertyRightsRelation,Connects at least one Agent and one Record Resource or Instantiation on which the Agent has or had some intellectual property rights. The Agent(s) is the source of the Relation and the Record Resource(s) or Instantiation(s) is the target.
+rico:KnowingOfRelation,"Connects at least one Person to at least another one, when the first one has some knowledge of the second one through time or space. The first Person is the source of the Relation, and the second one is the target."
+rico:KnowingRelation,Connects at least two Persons who directly know each other during their existence. This Relation is not oriented.
+rico:Language,A spoken or written human language represented in a Record Resource or used by an Agent.
+rico:LeadershipRelation,"Connects at least one Person and at least one Group, when the first one(s) lead(s) or led the second one(s). The Relation is oriented from the leading Person to the Group: the leading Person(s) is the source of the Relation, and the Group(s) is the target."
+rico:LegalStatus,A status defined by law.
+rico:ManagementRelation,"Connects at least one Agent and at least one Record Resource or Instantiation that the Agent manages or managed. The Agent(s) is the source of the Relation, and the Record Resource(s) or Instantiation(s) is the target."
+rico:Mandate,Delegation of responsibility or authority by an Agent to another Agent to perform an Activity.
+rico:MandateRelation,"Connects at least one Mandate and at least one Agent, when the first gives or gave the second one the authority or competencies to act. May also involve one to many Activities that the Mandate(s) assign(s) or assigned to the Agent(s). The Mandate(s) is the source of the Relation and the Agent(s) is the target."
+rico:MandateType,Categorization of a Mandate.
+rico:Mechanism,A process or system created by a Person or Group that performs an Activity.
+rico:MembershipRelation,"Connects a Group and at least one Person, when the first one has or had the second one(s) among its members. The Relation is oriented from the Group to its members: the Group(s) is the source of the Relation, and the Person(s) is the target."
+rico:MigrationRelation,"Connects an Instantiation and at least another Instantiation it has been migrated into. The Relation is oriented chronologically, from the first Instantiation in time (the migrated one) to the one which results from its migration: the first Instantiation in time is the source of the Relation, and the resulting Instantiation is the target."
+rico:Name,"A label, title or term designating an entity in order to make it distinguishable from other similar entities."
+rico:OccupationType,"Categorization of a profession, trade, or craft pursued by a Person in fulfilment of an Activity."
+rico:OrganicOrFunctionalProvenanceRelation,"Connects at least one Record Resource or Instantiation to at least one Agent or Activity, when the Agent or Activity is the provenance of the Record Resource or Instantiation (i.e. when the Agent created, accumulated or maintained the Record Resource or Instantiation, or when the Activity resulted into them). The Record Resource(s) or Instantiation(s) is the source of the Relation, and the Agent(s) or Activity(-ies) is the target."
+rico:OrganicProvenanceRelation,"Connects at least one Record Resource or an Instantiation to at least one Agent that creates or accumulates the Record Resource, receives it, or sends it. The Record Resource(s) or Instantiation(s) is the source of the Relation, and the Agent(s) is the target."
+rico:OwnershipRelation,"Connects at least one Group, Person or Position and at least a Thing that these Agent(s) own(s) or owned. The Group(s), Person(s) or Position(s) is the source of the Relation, and the Agent(s) is the target."
+rico:PerformanceRelation,Connects at least one Activity to at least one Agent that performs or performed the activity. The Activity(-ies) is the source of the Relation and the Agent(s) is the target.
+rico:Person,An individual human being.
+rico:PhysicalLocation,A delimitation of the physical territory of a Place.
+rico:Place,"Bounded, named geographic area or region."
+rico:PlaceName,"A label, title or term designating a Place in order to make it distinguishable from other similar entities."
+rico:PlaceRelation,Connects a Place and at least one Thing when the first is associated with the existence and lifecycle of the second one. The Place is the source of the Relation and the Thing(s) is the target.
+rico:PlaceType,Categorization of a Place.
+rico:Position,The functional role of a Person within a Group.
+rico:PositionHoldingRelation,Connects at least one Person and at least one Position that the Person(s) occupies or occupied. The Person is the source of the Relation and the Position is the target.
+rico:PositionToGroupRelation,"Connects at least one Position and a Group in which the position(s) exist(s) or existed, or that is (are) defined by that group's organizational structure. The Position(s) is the source of the Relation and the Group is the target."
+rico:ProductionTechniqueType,The method used in the representation of information on an instantiation.
+rico:Proxy,A Proxy represents (stands for) a Record Resource as it exists in a specific Record Set.
+rico:Record,"Discrete information content formed and inscribed, at least once, by any method on any carrier in any persistent, recoverable form by an Agent in the course of life or work activity."
+rico:RecordPart,Component of a Record with independent information content that contributes to the intellectual completeness of the Record.
+rico:RecordResource,Information produced or acquired and retained by an Agent in the course of life or work activity.
+rico:RecordResourceExtent,"The quantity of information content, as human experienced, contained in a Record Resource."
+rico:RecordResourceGeneticRelation,"Connects two or more record resources when there is a genetic link between them. Genetic in this sense is as defined by diplomatics, i.e., the process by which a record resource is developed. This Relation is a generic, not oriented one."
+rico:RecordResourceHoldingRelation,Connects at least one Agent and one or more Record Resource or Instantiation that the Agent(s) hold(s) or held. The Agent(s) is the source of the Relation and the Record Resource(s) or Instantiation is the target.
+rico:RecordResourceToInstantiationRelation,"Connects a Record Resource to one or more Instantiations that instantiate it, and which either may exist or may have been lost or destroyed. The Record Resource is the source of the Relation and the Instantiation(s) is the target."
+rico:RecordResourceToRecordResourceRelation,"Connects at least two Record Resources. This Relation is a generic, not oriented one."
+rico:RecordSet,One or more records that are grouped together by an Agent based on the records sharing one or more attributes or relations.
+rico:RecordSetType,A broad categorization of the type of Record Set.
+rico:RecordState,Description of the production or reproduction status of a Record or Record Part.
+rico:Relation,"The top level relation class. It connects at least two Things. An instance of a Relation may have some datatype and object properties: a general description (datatype property) like any Thing; a certainty (for 'certain', 'quite probable', 'uncertain','unknown'); a date (use either the date datatype property or the Date class and isAssociatedWithDate object property); a state (relationState); a location (use the Place class and isAssociatedWithPlace object property); a source of information that can be used as an evidence for it (use either source datatype property or hasSource object property). This Relation is the most generic one; it is not oriented."
+rico:RepresentationType,Method of recording the content type of an Instantiation
+rico:RoleType,"The role an Agent plays in some context (usually in some creation relation). Not to be confused with a Position (position of an agent in some group). For example, a Person who is the head of some Corporate Body may play the role of annotator (of a record) in a creation relation."
+rico:Rule,"Conditions that govern the existence, responsibility, or authority of an Agent; or the performance of an Activity by an Agent; or that contribute to the distinct characteristics of things created or managed by an Agent."
+rico:RuleRelation,"Connects at least one Rule to at least one Thing when it is associated with existence and lifecycle of the Thing. The Rule(s) is the source of the Relation, and the Thing(s) is the target."
+rico:RuleType,Categorization of a Rule.
+rico:SequentialRelation,"Connects at least one Thing to at least one other Thing that follows or followed it in some sequence. The Relation is oriented from the first Thing(s) in the sequence to the following one(s): the first Thing(s) is the source, and the following Thing(s) is the target."
+rico:SiblingRelation,"Connects at least two Persons, when they are siblings. This Relation is not oriented."
+rico:SpouseRelation,"Connects at least two Persons, when they are spouses. This Relation is not oriented."
+rico:TeachingRelation,"Connects at least one Person to at least another Person who is or was their student. The Relation is oriented from the teacher(s) to the student(s): the teacher Person(s) is the source of the Relation, and the student Person(s) is the target."
+rico:TemporalRelation,"Connects at least one Thing to at least one other Thing that follows it in chronological order. The Relation is oriented chronologically: the preceding Thing(s) is the source of the Relation, the following Thing(s) is the target."
+rico:Thing,"Any idea, material thing, or event within the realm of human experience."
+rico:Title,A name that is used for a Record Resource or a Rule
+rico:Type,A superclass for any category of some thing. A type characterizes an entity.
+rico:TypeRelation,"Connects a category (a Type) and at least one Thing that belongs to this category. The Type(s) is the source of the Relation, and the Thing(s) is the target."
+rico:UnitOfMeasurement,"A definite magnitude of a quantity, defined and adopted by convention or by law, that is used as a standard for measurement of the same kind of quantity. Can be spacial units (cm, m), weight (g, kg), time (s, h), storage (MB, TB) or more informal units used in the archival context like number of boxes, pages or words."
+rico:WholePartRelation,"Connects a Thing to at least one other Thing that is or was a portion or division of the whole Thing. The Relation is oriented from the Thing to its part(s): the Thing is the source of the Relation, and the part Thing(s) is the target."
+rico:WorkRelation,Connects at least two Agents that have or had some type of work relation in the course of their activities. This Relation is not oriented.
+rico:accruals,Information on the anticipated accession(s) to the Record Set.
+rico:accrualsStatus,Information on the status of possible accruals
+rico:altimetricSystem,Reference system used for altitude
+rico:altitude,"The height of a Place above a reference level, especially above sea level."
+rico:authenticityNote,"Description of the evidence that a Record Resource or Instantiation is what it purports to be, was created or sent by the said Agent at the said time, and has not been tampered with, corrupted, or forged."
+rico:authorizingMandate,Information on a Mandate that authorizes an Agent to perform an Activity.
+rico:beginningDate,Date at which something began.
+rico:birthDate,Date at which a Person was born.
+rico:carrierExtent,"Number of physical units and/or physical dimensions of the carrier of an Instantiation. In order to manage an Instantiation of a record resource it is necessary to note the extent of the carrier as well as that of the Instantiation itself. Whether it is necessary to note dimensions, the number of relevant units, or both, depends on the nature of the carrier and particular business needs."
+rico:classification,"A term, number or alphanumeric string that is usually taken from an external classification vocabulary or scheme that qualifies a Record Resource."
+rico:conditionsOfAccess,Terms and circumstances affecting the availability of a Record Resource or an Instantiation for consultation.
+rico:conditionsOfUse,Terms and circumstances affecting the use of a Record Resource or an Instantiation after access has been provided. Includes conditions governing reproduction of the Record Resource under applicable copyright (intellectual property) and/or property legislation or due to conservation status.
+rico:creationDate,Date at which an entity was created.
+rico:date,Chronological information associated with an entity that contributes to its identification and contextualization.
+rico:dateQualifier,A human readable qualification of a Date to indicate the level of precision or certainty.
+rico:deathDate,Date at which a Person died.
+rico:destructionDate,Date at which an entity was deleted.
+rico:endDate,Date at which something ended.
+rico:expressedDate,"Natural language expression of a date. This property is a specialization of the name property. In order that the precise meaning of the date can be understood, information such as the calendar used or other specific context should be included."
+rico:generalDescription,"General information about an entity. General description may be used to describe any entity. There are different appropriate uses for general description. First, while it is recommended that more specific properties be used in describing an entity, it may be desirable, for economic or other reasons, to describe two or more specific properties together. Second, general description may be used to describe one or more characteristics that are not otherwise accommodated in RiC-O. Third, it may be used to provide a succinct summary or abstract description in addition to more detailed specific description."
+rico:geodesicSystem,Reference system used for geographical coordinates.
+rico:geographicalCoordinates,Longitudinal and latitudinal information about a Place.
+rico:height,Vertical dimension of an entity.
+rico:history,Summary of the development of an entity throughout its existence.
+rico:identifier,"A word, number, letter, symbol, or any combination of these used to uniquely identify or reference an individual instance of an entity within a specific information domain. Can include Global Persistent Identifiers (globally unique and persistently resolvable identifier for the entity) and/or Local Identifiers. Both the domain within which the identifier is unique, and the rules used in forming the identifier value should be provided with the identifier value."
+rico:instantiationExtent,Countable characteristics of an Instantiation expressed as a quantity.
+rico:instantiationStructure,Information about the physical arrangement and composition of an Instantiation.
+rico:integrityNote,Information about the known intellectual completeness of a Record Resource.
+rico:lastModificationDate,Date at which an entity was last updated.
+rico:latitude,Distance in degrees north or south of the equator.
+rico:length,Length of an entity.
+rico:location,"A delimitation of the physical territory of a Place. Used to describe basic human-readable text such as an address, a cadastral reference, or less precise information found in a Record."
+rico:longitude,Distance in degrees east or west of a prime meridian.
+rico:measure,"The extent, quantity, amount, or degree of an entity, as determined by measurement or calculation."
+rico:modificationDate,Date of the modification of an entity.
+rico:name,"A label, title or term designating an entity in order to make it distinguishable from other similar entities."
+rico:normalizedDateValue,Machine readable representation of the date based on a public technical standard.
+rico:normalizedValue,"Value representation based on a standard, preferably machine-readable."
+rico:physicalCharacteristicsNote,"Information about the physical features, completeness, or conservation status of an Instantiation. Includes information about the physical nature and condition such as conservation status or the deterioration of an Instantiation (for example its carrier) affecting the ability to recover information."
+rico:physicalOrLogicalExtent,Countable characteristics of the content of an entity expressed as a quantity.
+rico:productionTechnique,The method used in the representation of information on an Instantiation.
+rico:publicationDate,Date of the publication of a Record Resource.
+rico:qualityOfRepresentationNote,Characteristics of an Instantiation that affect the ability to recover the intellectual content. Such characteristics may be related to the methods used in creating the Instantiation or introduced subsequent to the creation through accident.
+rico:quantity,Machine-readable quantity.
+rico:recordResourceExtent,"The quantity of information content, as human experienced, contained in a Record Resource. The method and precision of expressing the quantity of information represented in a Record Resource will vary according to the kind of Record Resource being described, processing economy constraints, etc. For record sets, quantity may be expressed as number of records, or, for analogue records in particular, by the physical storage dimensions of the members of the Record Set. For individual records or record parts, quantity may be expressed in more precise terms."
+rico:recordResourceStructure,"Information about the intellectual arrangement and composition of a Record Resource. For Record and Record Part, it encompasses information about the intellectual composition of the record, the presence of record parts and their functions. For Record Set, it encompasses information about the methodology or criteria used for arranging the Record Set members or Record members within the containing Record Set"
+rico:referenceSystem,Framework or standard used to represent an information.
+rico:relationCertainty,Qualifies the level of certitude of the accuracy of a Relation.
+rico:relationSource,A source of information used for identifying and describing a Relation.
+rico:relationState,"Used to qualify the state of a Relation (e. g. present, past, ongoing, unknown)."
+rico:ruleFollowed,The rule or conditions that govern the existence or lifecycle of a Thing.
+rico:scopeAndContent,"Summary of the scope (such as time periods, geography) and content (such as subject matter, administrative processes) of a Record Resource. Provides a more complete summary of the informational content of the Record Resource highlighting the information conveyed in the Record Resource, why it was created, received, and/or maintained, and the agents connected to it. It may include description of relations with agents, activities, dates and places, or with other record resources."
+rico:structure,"Information about the intellectual arrangement and composition of a Record Resource or the physical arrangement and composition of an Instantiation. For Record and Record Part, it encompasses information about the intellectual composition of the record, the presence of record parts and their functions. For Record Set, it encompasses information about the methodology or criteria used for arranging the Record Set members or Record members within the containing Record Set. For Instantiation, it may comprise information about the composition of the physical elements of the instantiation"
+rico:technicalCharacteristics,Describes any relevant physical or software feature of any device involved in the creation or management of a Record Resource.
+rico:textualValue,A textual expression of an Appellation or Date.
+rico:title,"An identifying name of a Record Resource, Instantiation or Rule."
+rico:type,A term used to characterize an entity.
+rico:unitOfMeasurement,"A definite magnitude of a quantity, defined and adopted by convention or by law, that is used as a standard for measurement of the same kind of quantity. Can be spacial units (cm, m), weight (g, kg), time (s, h), storage (MB, TB) or more informal units used in the archival context like number of boxes, pages or words."
+rico:usedFromDate,Date at which an Appellation was first used.
+rico:usedToDate,Date until an Appellation was used.
+rico:width,Horizontal dimension of an entity.
+rico:accumulationRelation_role,"Connects an AccumulationRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:activityDocumentationRelation_role,"Connects an ActivityDocumentationRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:activityIsContextOfRelation,Connects an Activity to an Agent Temporal Relation (when the Activity is transferred from an Agent to another one) or a Mandate Relation (the Mandate assigns the Activity to the Agent or defines it).
+rico:affectsOrAffected,Connects an Event to a Thing on which the Event has or had some significant impact.
+rico:agentControlRelation_role,"Connects an AgentControlRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:agentHasOrHadLocation,Inverse of 'is or was location of agent' object property.
+rico:agentHierarchicalRelation_role,"Connects an AgentHierarchicalRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:agentTemporalRelation_role,"Connects an AgentTemporalRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:agentToAgentRelation_role,"Connects an AgentToAgentRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:appellationRelation_role,"Connects an AppellationRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:asConcernsActivity,"Connects an Agent Temporal Relation or Mandate Relation, to an Activity that is, either transferred from an Agent to another one, or assigned by a Mandate to an Agent."
+rico:authorityRelation_role,"Connects an AuthorityRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:authorizedBy,Inverse of 'authorizes' object property
+rico:authorizes,Connects a Mandate to the Agent that the Mandate gives the authority or competencies to act.
+rico:authorizingAgent,Connects a Mandate Relation to an Agent that assigns the Mandate.
+rico:authorshipRelation_role,"Connects an AuthorshipRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:childRelation_role,"Connects a ChildRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:contained,Connects a Place to a Place that it contained in the past.
+rico:containsOrContained,Connects a Place to a region that is or was within it.
+rico:containsTransitive,
+rico:correspondenceRelation_role,"Connects a CorrespondenceRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:creationRelation_role,"Connects a CreationRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:creationWithRole,Connects a Creation Relation to the Role Type that the creator Agent(s) has in the creation process
+rico:derivationRelation_role,"Connects a DerivationRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:descendanceRelation_role,"Connects a DescendanceRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:describesOrDescribed,Connects a Record Resource to a Thing that it describes or described.
+rico:directlyContains,
+rico:directlyFollowsInSequence,Connects a Thing to a Thing that it follows directly in some non chronological sequence.
+rico:directlyIncludes,Connects a Record Set to a Record or Record Set which it includes directly.
+rico:directlyPrecedesInSequence,Connects a Thing to a Thing that it precedes directly in some non chronological sequence.
+rico:documentedBy,Inverse of 'documents' object property.
+rico:documents,Connects a Record Resource or an Instantiation to the Activity that generates the Record Resource or Instantiation.
+rico:eventRelation_role,"Connects an EventRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:evidences,"Connects a Record Resource to a Relation, when the first is used for proving the existence of the second one, or for describing it."
+rico:existsOrExistedIn,"Connects a Position to a Group in which that Position exists or existed, or that is defined by that Group's organizational structure."
+rico:expressesOrExpressed,Inverse of 'is or was expressed by' object property.
+rico:familyRelation_role,"Connects a FamilyRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:followedInSequence,Connects a Thing to a Thing that it followed in some non chronological sequence in the past.
+rico:followsInSequenceTransitive,Connects a Thing to a Thing that it directly or indirectly follows in some non chronological sequence.
+rico:followsInTime,Inverse of 'precedes in time' object property. This is a transitive relation.
+rico:followsOrFollowed,Inverse of 'precedesOrPreceded' object property.
+rico:functionalEquivalenceRelation_role,"Connects a FunctionalEquivalenceRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:groupSubdivisionRelation_role,"Connects a GroupSubdivisionRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:hadComponent,Connects an Instantiation to another Instantiation that was its component in the past.
+rico:hadConstituent,Connects a Record or Record Part to another Record or Record Part that was its constituent in the past.
+rico:hadPart,Connects a Thing to a Thing that was a constitutive or component part of that Thing in the past.
+rico:hadSubdivision,Connects a Group to one of its past subdivisions.
+rico:hadSubevent,"Connects a past Event to one of a series of past Events that constituted that original, broader, past Event."
+rico:hadSubordinate,Connects an Agent to an Agent that was hierarchically inferior in the past.
+rico:hasAccumulator,"Connects a Record Resource or an Instantiation to the Agent that accumulates it, be it intentionally (collecting) or not (receiving in the course of its activities)."
+rico:hasActivityType,Connects an Activity to an Activity Type that categorizes it.
+rico:hasAddressee,Connects a Record Resource or an Instantiation to the Agent that it is addressed to.
+rico:hasAncestor,Inverse of 'has descendant' object property. This is a transitive relation.
+rico:hasAuthor,"Connects a Record to the Group, Person or Position that is responsible for conceiving and formulating the information contained in the Record."
+rico:hasBeginningDate,Inverse of 'is beginning date of' object property
+rico:hasBirthDate,Inverse of 'is birth date of' object property
+rico:hasBirthPlace,Inverse of 'is birth place of' object property
+rico:hasCarrierType,Connects an Instantiation to a Carrier Type which categorizes its carrier.
+rico:hasChild,Connects a Person to one of their children.
+rico:hasCollector,"Connects a Record Resource or an Instantiation to the Agent that collects it intentionally, i.e., the Agent is a collector."
+rico:hasComponentTransitive,"Connects an Instantiation to another Instantiation that is, directly or indirectly, a component of that Instantiation. This is a transitive relation."
+rico:hasConstituentTransitive,"Connects a Record or Record Part to another Record or Record Part that is its constituent, directly or indirectly. This is a transitive relation."
+rico:hasContentOfType,Connects a Record or a Record Part to a Content Type which categorizes its content.
+rico:hasCopy,Connects a Record Resource to a copy of that Record Resource.
+rico:hasCreationDate,Inverse of 'is creation date of' object property
+rico:hasCreator,Connects a Record Resource or an Instantiation to an Agent that is either responsible for all or some of the content of the Record Resource or is a contributor to the genesis or production of an Instantiation.
+rico:hasDateType,Connects a Date to its Date Type.
+rico:hasDeathDate,Inverse of 'is death date of' object property
+rico:hasDeathPlace,Inverse of 'is death place of' object property
+rico:hasDescendant,Connects a Person to one of their descendants. This is a transitive relation.
+rico:hasDestructionDate,Inverse of 'is destruction date of' object property.
+rico:hasDirectComponent,Connects an Instantiation to another Instantiation that is its direct component.
+rico:hasDirectConstituent,Connects a Record to another Record or Record Part that is its direct constituent.
+rico:hasDirectPart,Connects a Thing to a Thing that is a direct constitutive or component part of that Thing.
+rico:hasDirectSubdivision,Connects a Group to one of its direct subdivisions.
+rico:hasDirectSubevent,"Connects an ongoing Event to one of a series of Events that directly constitute that broader, ongoing Event."
+rico:hasDirectSubordinate,Connects an Agent to an Agent that is its direct subordinate.
+rico:hasDocumentaryFormType,Connects a Record or Record Part to its Documentary Form Type.
+rico:hasDraft,Inverse of 'is draft of' object property.
+rico:hasEndDate,Inverse of 'is end date of' object property.
+rico:hasEventType,Connects an Event to an Event Type which categorizes it.
+rico:hasExtent,Connects a Record Resource or Instantiation to an Extent
+rico:hasExtentType,Connects an Extent to an Extent Type that categorizes what is being measured.
+rico:hasFamilyAssociationWith,"Connects two Persons that have some type of family link, i.e. belong to the same family. This relation is symmetric."
+rico:hasFamilyType,Connects a Family to a Family Type that categorizes it.
+rico:hasGeneticLinkToRecordResource,"Connects two Record Resources when there is a genetic link between them. Genetic in this sense is as defined by diplomatics, i.e. the process by which a Record Resource is developed. This relation is symmetric."
+rico:hasIdentifierType,Connects an Identifier and an Identifier Type that categorizes it.
+rico:hasModificationDate,Inverse of 'is modification date of' object property.
+rico:hasOrHadAgentName,Connects an Agent and (one of) its present or past Agent Name.
+rico:hasOrHadAllMembersWithCategory,Connects a Record Set and a Category (Type) to which all the Records or Record Parts that are or were included in the Record Set belong.
+rico:hasOrHadAllMembersWithContentType,Connects a Record Set and a Content Type that categorizes all the Records or Record Parts that are or were included in the Record Set.
+rico:hasOrHadAllMembersWithCreationDate,Inverse of 'is or was creation date of all members of' object property
+rico:hasOrHadAllMembersWithDocumentaryFormType,Connects a Record Set and a Documentary Form Type that categorizes all the Records or Record Parts that are or were included in the Record Set.
+rico:hasOrHadAllMembersWithLanguage,Connects a Record Set and a Language used by all the Records or Record Parts that are or were included in the Record Set.
+rico:hasOrHadAllMembersWithLegalStatus,Connects a Record Set and a Legal Status that categorizes all the Records or Record Parts that are or were included in the Record Set.
+rico:hasOrHadAllMembersWithRecordState,Connects a Record Set and a Record State that categorizes all the Records or Record Parts that are or were included in the Record Set.
+rico:hasOrHadAnalogueInstantiation,"Connects a record resource to one of its analogue instantiations, whether it exists or has been lost or destroyed."
+rico:hasOrHadAppellation,Connects a Thing to an Appellation that is or was used for designating it.
+rico:hasOrHadAuthorityOver,Connects an Agent to a Thing over which the Agent has or had some kind of authority.
+rico:hasOrHadCategory,Connects a Thing to a Type that categorizes or categorized it.
+rico:hasOrHadComponent,Connects an Instantiation to one of its present or past component instantiations.
+rico:hasOrHadConstituent,Connects a Record or Record Part to a Record or Record part that is or was a constituent of that Record or Record Part.
+rico:hasOrHadController,Inverse of 'is or was controller of' object property.
+rico:hasOrHadCoordinates,Connects a Physical Location to its past or present coordinates in a reference system.
+rico:hasOrHadCorporateBodyType,Connects a Corporate Body to a Corporate Body Type which categorizes or categorized it.
+rico:hasOrHadCorrespondent,Connects two Persons that correspond or have corresponded with each other. This relation is symmetric.
+rico:hasOrHadDemographicGroup,Connects a Person or a Group to a Demographic Group to which it belongs or belonged.
+rico:hasOrHadDerivedInstantiation,"Connects an instantiation to an instantiation that is derived from it, whether it exists or has been lost or destroyed."
+rico:hasOrHadDigitalInstantiation,"Connects a record resource to one of its digital instantiations, whether it exists or has been lost or destroyed."
+rico:hasOrHadEmployer,Inverse of 'is or was employer of' object property.
+rico:hasOrHadHolder,Inverse of 'is or was holder of' object property.
+rico:hasOrHadIdentifier,Connects a Thing to one of its past or present Identifiers.
+rico:hasOrHadInstantiation,"Connects a Record Resource to an Instantiation, which either may exist or may have been lost or destroyed."
+rico:hasOrHadIntellectualPropertyRightsHolder,Inverse of 'is or was holder of intellectual property rights of' object property.
+rico:hasOrHadJurisdiction,Inverse of 'is or was jurisdiction of' object property.
+rico:hasOrHadLanguage,"Connects an Agent, Record or Record Part to a Language that uses or used it."
+rico:hasOrHadLeader,Inverse of 'is or was leader of' object property.
+rico:hasOrHadLegalStatus,Connects an Agent or Record Resource to a Legal Status which categorized or categorizes it.
+rico:hasOrHadLocation,Inverse of 'is or was location of' object property.
+rico:hasOrHadMainSubject,Connects a Record Resource to a Thing that is or was its main subject.
+rico:hasOrHadManager,Inverse of 'is or was manager of' object property.
+rico:hasOrHadMandateType,Connects a Mandate to a Mandate Type that categorized or categorizes it.
+rico:hasOrHadMember,Connects a Group to a Person that is or was a member of that Group.
+rico:hasOrHadMostMembersWithCreationDate,Inverse of 'is or was creation date of most members of' object property
+rico:hasOrHadName,Connects a Thing to one of its past or present Names.
+rico:hasOrHadOccupationOfType,"Connects a Person to an Occupation Type that categorized or categorizes his/her occupation (profession, trade or craft)."
+rico:hasOrHadOwner,Inverse of 'is or was owner of' object property.
+rico:hasOrHadPart,Connects a Thing to a constitutive or component part of that Thing.
+rico:hasOrHadParticipant,Connects an Event to a Thing that is or was actively or passively involved in it.
+rico:hasOrHadPhysicalLocation,Connects a Place to one of its past or present Physical Location.
+rico:hasOrHadPlaceName,Connects a Place to one of its past or present names.
+rico:hasOrHadPlaceType,Connects a Place to a Place Type that categorized or categorizes it.
+rico:hasOrHadPosition,Inverse of 'exists or existed in' object property.
+rico:hasOrHadRuleType,Connects a Rule to a Rule Type that categorized or categorizes it.
+rico:hasOrHadSomeMembersWithCategory,Connects a Record Set and a Category (Type) to which some of the Records or Record Parts that are or were included in the Record Set belong.
+rico:hasOrHadSomeMembersWithContentType,Connects a Record Set and a Content Type that categorizes some of the Records or Record Parts that are or were included in the Record Set.
+rico:hasOrHadSomeMembersWithCreationDate,Inverse of 'is or was creation date of some members of' object property
+rico:hasOrHadSomeMembersWithDocumentaryFormType,Connects a Record Set and a Documentary Form Type that categorizes some of the Records or Record Parts that are or were included in the Record Set.
+rico:hasOrHadSomeMembersWithLanguage,Connects a Record Set and a Language used by some of the Records or Record Parts that are or were included in the Record Set.
+rico:hasOrHadSomeMembersWithLegalStatus,Connects a Record Set and a Legal Status that categorizes some of the Records or Record Parts that are or were included in the Record Set.
+rico:hasOrHadSomeMembersWithRecordState,Connects a Record Set and a Record State that categorizes some of the Records or Record Parts that are or were included in the Record Set.
+rico:hasOrHadSpouse,Connects two Persons who are or were married. This relation is symmetric.
+rico:hasOrHadStudent,Inverse of 'has or had teacher' object property.
+rico:hasOrHadSubdivision,Connects a Group to one of its present or past subdivisions.
+rico:hasOrHadSubevent,"Connects an Event to one of a series of Events that constitute the original, broader, past or ongoing Event."
+rico:hasOrHadSubject,Connects a Record Resource to a Thing that is or was its subject.
+rico:hasOrHadSubordinate,Connects an Agent to an Agent that is hierarchically inferior.
+rico:hasOrHadTeacher,Connects a Person to another Person who is or was their teacher.
+rico:hasOrHadTitle,"Connects a Record Resource, Instantiation or Rule to a title that is or was used for designating it."
+rico:hasOrHadWorkRelationWith,Connects two Agents that have or had some type of work relation in the course of their activities. This relation is symmetric.
+rico:hasOrganicOrFunctionalProvenance,"Connects a Record Resource or an Instantiation to an Agent that creates or accumulates it, receives it, or sends it, or to an Activity that generates it."
+rico:hasOrganicProvenance,"Connects a Record Resource or an Instantiation to an Agent that creates or accumulates the Record Resource, receives it, or sends it."
+rico:hasOriginal,Inverse of 'is original of' object property.
+rico:hasPartTransitive,"Connects a Thing to a Thing that is, directly or indirectly, a constitutive or component part of that Thing. This is a transitive relation."
+rico:hasProductionTechniqueType,Connects an Instantiation to a Production Technique Type that categorizes its production technique.
+rico:hasPublicationDate,Inverse of 'is publication date of' object property
+rico:hasPublisher,Connects a Record resource to an Agent who published it.
+rico:hasReceiver,Connects a Record Resource or an Instantiation to the Agent that receives it in the course of the Agent's activities.
+rico:hasRecordSetType,Connects a Record Set to a Record Set Type that categorizes it.
+rico:hasRecordState,Connects a Record or Record Part to a Record State that categorizes its state.
+rico:hasReply,"Connects a Record Resource to a reply, usually in the form of correspondence."
+rico:hasRepresentationType,Connects an Instantiation to a Representation Type that categorizes its representation type.
+rico:hasSender,Connects a Record Resource or an Instantiation to the Agent that sends it
+rico:hasSibling,Connects two Persons who are siblings. This relation is symmetric.
+rico:hasSubdivisionTransitive,Connects a Group to another Group that is one of its direct or indirect subdivisions. This is a transitive relation.
+rico:hasSubeventTransitive,"Connects an ongoing Event to one of a series of Events that directly or indirectly constitute that broader, ongoing Event. This is a transitive relation."
+rico:hasSubordinateTransitive,Connects an Agent to an Agent that is directly or indirectly hierarchically inferior. This is a transitive relation.
+rico:hasSuccessor,Connects an Agent to another Agent that succeeds it chronologically.
+rico:hasUnitOfMeasurement,Connects an Extent to a Unit Of Measurement
+rico:hasWithin,Inverse of 'is within' object property
+rico:included,Connects a Record Set to a Record or Record Set which it included in the past.
+rico:includesOrIncluded,"Connects a Record Set to a Record or Record Set it aggregates, or aggregated in the past."
+rico:includesTransitive,Connects a Record Set to a Record or Record Set which it includes directly or indirectly. This is a transitive relation.
+rico:instantiationToInstantiationRelation_role,"Connects an InstantiationToInstantiationRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:intellectualPropertyRightsRelation_role,"Connects an IntellectualPropertyRightsRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:intersects,Connects two Dates that overlap. This relation is symmetric.
+rico:isAccumulatorOf,Inverse of 'has accumulator' object property.
+rico:isActivityTypeOf,Connects an Activity Type to an Activity that it categorizes.
+rico:isAddresseeOf,Inverse of 'has addressee' object property.
+rico:isAgentAssociatedWithAgent,Connects two Agents. This object property is symmetric.
+rico:isAgentAssociatedWithPlace,Inverse of 'is place associated with agent' object property.
+rico:isAssociatedWithDate,Inverse of 'is date associated with' object property.
+rico:isAssociatedWithEvent,Inverse of 'is event associated with' object property.
+rico:isAssociatedWithPlace,Inverse of 'is place associated with' object property.
+rico:isAssociatedWithRule,Inverse of 'is rule associated with' object property.
+rico:isAuthorOf,Inverse of 'has author' object property.
+rico:isAuthorizingAgentInMandateRelation,"Connects an Agent that assigns the Mandate, to a Mandate Relation."
+rico:isBeginningDateOf,Connects a Date to a Thing that came into existence on that Date.
+rico:isBirthDateOf,Connects a Date to a Person that was born on that Date.
+rico:isBirthPlaceOf,Connects a Place to a Person who was born in that Place.
+rico:isCarrierTypeOf,Connects a Carrier Type to an Instantiation whose carrier it categorizes.
+rico:isChildOf,Inverse of 'has child' object property.
+rico:isCollectorOf,Inverse of 'has collector' object property.
+rico:isComponentOfTransitive,"Connects an Instantiation to another Instantiation of which it is, directly or indirectly, a component. This is a transitive relation."
+rico:isConstituentOfTransitive,"Connects a Record or Record Part to another Record or Record Part of which it is a constituent, directly or indirectly. This is a transitive relation."
+rico:isContainedByTransitive,"Connects a Place to a Place that is, directly or indirectly, contained by it. This is a transitive relation."
+rico:isContentTypeOf,Connects a Content Type to a Record or Record Part whose content it categorizes.
+rico:isCopyOf,Inverse of 'has copy' object property.
+rico:isCreationDateOf,Connects a Date to a Record Resource or Instantiation that was created at this Date.
+rico:isCreatorOf,Inverse of 'has creator' object property.
+rico:isDateAssociatedWith,Connects a Date to a Thing with whose existence and lifecycle the Date is associated.
+rico:isDateOfOccurrenceOf,"Connects a Date to an Event that occurred at this Date. An event or activity can be recurrent, which implies that one single event can be related to several dates."
+rico:isDateTypeOf,Connects a Date Type to a Date that it categorizes.
+rico:isDeathDateOf,Connects a Date to a Person who died on that Date.
+rico:isDeathPlaceOf,Connects a Place to a Person who died in that Place.
+rico:isDestructionDateOf,Connects a Date to a Thing that was destructed at that Date.
+rico:isDirectComponentOf,Connects an Instantiation to another Instantiation of which it is a direct component.
+rico:isDirectConstituentOf,Connects a Record or Record Part to another Record or Record Part of which it is a direct constituent.
+rico:isDirectPartOf,Connects a Thing to a Thing of which it is direct constitutive or component part.
+rico:isDirectSubdivisionOf,Connects a Group to the Group it is a direct subdivision of.
+rico:isDirectSubeventOf,Connects an ongoing Event to the Event it is a direct part of.
+rico:isDirectSubordinateTo,Connects an Agent to an Agent that is directly hierarchically superior.
+rico:isDirectlyContainedBy,Connects a Place to a Place that directly contains it.
+rico:isDirectlyIncludedIn,Connects a Record to a Record or Record Set in which it is directly included.
+rico:isDocumentaryFormTypeOf,Connects a Documentary Form Type to a Record or Record Part that it categorizes.
+rico:isDraftOf,Connects a draft to the final version of a Record.
+rico:isEndDateOf,Connects a Date to a Thing whose existence ended on that Date.
+rico:isEquivalentTo,Connects two Things that are considered equivalent.
+rico:isEventAssociatedWith,Connects an Event to a Thing that is associated with the existence and lifecycle of the Event.
+rico:isEventTypeOf,Connects an Event Type to an Event that it categorizes.
+rico:isEvidencedBy,Connects a Relation to a Record Resource that is used for proving is existence or describing it.
+rico:isExtentOf,Connects an Extent to a Thing
+rico:isExtentTypeOf,Connects an Extent Type to an Extent that it categorizes.
+rico:isFamilyTypeOf,Connects a Family Type to a Family that it categorizes.
+rico:isFromUseDateOf,"Connects a Date to an Appellation, when it is the date at which the Appellation was first used."
+rico:isFunctionallyEquivalentTo,Connects two Instantiations which may be considered as equivalent. This relation is symmetric.
+rico:isIdentifierTypeOf,Connects an Identifier Type and an Identifier that it categorizes.
+rico:isIncludedInTransitive,Connects a Record to a Record or Record Set in which it is directly or indirectly included. This is a transitive relation.
+rico:isInstantiationAssociatedWithInstantiation,Connects two Instantiations. This relation is symmetric.
+rico:isLastUpdateDateOf,Connects a Date and a Thing that was last modified at this Date.
+rico:isModificationDateOf,Connects a Date to a Thing that was modified on that Date.
+rico:isOrWasAdjacentTo,Connects two Places that are or were geographically adjacent. This relation is symmetric.
+rico:isOrWasAffectedBy,Inverse of 'affects or affected' object property.
+rico:isOrWasAgentNameOf,Connects an Agent Name to an Agent it designates or designated.
+rico:isOrWasAnalogueInstantiationOf,Inverse of 'has or had analogue instantiation' object property.
+rico:isOrWasAppellationOf,Connects an Appellation to a Thing that it designates or designated.
+rico:isOrWasCategoryOf,Connects a Type (a category) to a Thing that it categorizes or categorized.
+rico:isOrWasCategoryOfAllMembersOf,Connects a Category (Type) and a Record Set whose all present or past Record or Record Part members belong to that Category.
+rico:isOrWasCategoryOfSomeMembersOf,Connects a Category (Type) and a Record Set whose some present or past Record or Record Part members belong to that Category.
+rico:isOrWasComponentOf,Inverse of 'has or had component' object property.
+rico:isOrWasConstituentOf,Inverse of 'has or had constituent' object property.
+rico:isOrWasContainedBy,Inverse of 'contains or contained' object property.
+rico:isOrWasContentTypeOfAllMembersOf,Connects a Content Type and a Record Set whose all past or present Record or Record Part members have that Content Type.
+rico:isOrWasContentTypeOfSomeMembersOf,Connects a Content Type and a Record Set whose some past or present Record or Record Part members have that Content Type.
+rico:isOrWasControllerOf,Connects an Agent to another Agent it controls or controlled.
+rico:isOrWasCoordinatesOf,"Connects an instance of Coordinates to a Physical Location it locates or located on earth, according to some reference system."
+rico:isOrWasCorporateBodyTypeOf,Connects a Corporate Body Type to a Corporate Body that it categorizes or categorized.
+rico:isOrWasCreationDateOfAllMembersOf,Connects a Date to a Record Set all of whose present or past members were created at this Date.
+rico:isOrWasCreationDateOfMostMembersOf,Connects a Date to a Record Set most of whose present or past members were created at this Date.
+rico:isOrWasCreationDateOfSomeMembersOf,Connects a Date to a Record Set some of whose present or past members were created at this Date.
+rico:isOrWasDemographicGroupOf,Connects a Demographic Group to a Person or Group which belongs or belonged to it.
+rico:isOrWasDerivedFromInstantiation,Inverse of 'has or had derived instantiation' object property.
+rico:isOrWasDescribedBy,Inverse of 'describes or described' object property.
+rico:isOrWasDigitalInstantiationOf,Inverse of 'has or had digital instantiation' object property.
+rico:isOrWasDocumentaryFormTypeOfAllMembersOf,Connects a Documentary Form Type and a Record Set whose all past or present Record or Record Part members have that Documentary Form Type.
+rico:isOrWasDocumentaryFormTypeOfSomeMembersOf,Connects a Documentary Form Type and a Record Set whose some past or present Record or Record Part members have that Documentary Form Type.
+rico:isOrWasEmployerOf,Connects a Corporate Body or a Person to a Person who is or was their employee.
+rico:isOrWasEnforcedBy,Connects a Rule to an Agent that enforces or enforced the Rule.
+rico:isOrWasExpressedBy,Connects a Rule to a Record Resource that expresses or expressed the Rule.
+rico:isOrWasHolderOf,Connects an Agent to a Record Resource or Instantiation that the Agent holds or held.
+rico:isOrWasHolderOfIntellectualPropertyRightsOf,Connects an Agent to a Record Resource or Instantiation on which the Agent has or had some intellectual property rights.
+rico:isOrWasIdentifierOf,Connects an Identifier to a Thing that it identified or identifies.
+rico:isOrWasIncludedIn,Inverse of 'includes or included' object property.
+rico:isOrWasInstantiationOf,Inverse of 'has or had instantiation' object property.
+rico:isOrWasJurisdictionOf,Connects a Place to an Agent that has or had jurisdiction over the Place.
+rico:isOrWasLanguageOf,"Connects a Language to an Agent, Record or Record Part that uses or used it."
+rico:isOrWasLanguageOfAllMembersOf,Connects a Language and a Record Set whose all present or past Record or Record Part members use that Language.
+rico:isOrWasLanguageOfSomeMembersOf,Connects a Language and a Record Set whose some present or past Record or Record Part members use that Language.
+rico:isOrWasLeaderOf,Connects a Person to the Group that Person leads or led in the past.
+rico:isOrWasLegalStatusOf,Connects a Legal Status to an Agent or Record Resource that it categorizes.
+rico:isOrWasLegalStatusOfAllMembersOf,Connects a Legal Status and a Record Set whose all past or present Record or Record Part members have that Legal Status.
+rico:isOrWasLegalStatusOfSomeMembersOf,Connects a Legal Status and a Record Set whose some past or present Record or Record Part members have that Legal Status.
+rico:isOrWasLocationOf,Connects a Place to a Thing that is or was located in the Place.
+rico:isOrWasLocationOfAgent,Connects a Place to an Agent that is or was located in this Place.
+rico:isOrWasMainSubjectOf,Inverse of 'has or had main subject' object property.
+rico:isOrWasManagerOf,Connects an Agent to a Record Resource or Instantiation that the Agent managed or manages.
+rico:isOrWasMandateTypeOf,Connects a Mandate Type to a Mandate that it categorized or categorizes.
+rico:isOrWasMemberOf,Inverse of 'has or had member' object property.
+rico:isOrWasNameOf,Connects a Name to a Thing that it designated or designates.
+rico:isOrWasOccupationTypeOf,Connects an Occupation Type to a Person whose occupation is or was categorized by it.
+rico:isOrWasOccupiedBy,Inverse of 'occupies or occupied' object property.
+rico:isOrWasOwnerOf,"Connects a Group, Person or Position to a Thing that this Agent owns or owned."
+rico:isOrWasPartOf,Inverse of 'has or had part' relation.
+rico:isOrWasParticipantIn,Inverse of 'has or had participant' object property.
+rico:isOrWasPerformedBy,Connects an Activity to an Agent that performed or performs the Activity.
+rico:isOrWasPhysicalLocationOf,"Connects a Physical Location to a Place, when it is or was its location."
+rico:isOrWasPlaceNameOf,Connects a Place Name to a Place that was or is designated by it.
+rico:isOrWasPlaceTypeOf,Connects a Place Type to a Place that is or was categorized by it.
+rico:isOrWasRecordStateOfAllMembersOf,Connects a Record State and a Record Set whose all past or present Record or Record Part members have that Record State.
+rico:isOrWasRecordStateOfSomeMembersOf,Connects a Record State and a Record Set whose some past or present Record or Record Part members have that Record State.
+rico:isOrWasRegulatedBy,Inverse of the 'regulates or regulated' object property.
+rico:isOrWasResponsibleForEnforcing,Inverse of 'is or was enforced by' object property.
+rico:isOrWasRuleTypeOf,Connects a Rule Type to a Rule that it categorized or categorizes.
+rico:isOrWasSubdivisionOf,Inverse of 'has or had subdivision' object property.
+rico:isOrWasSubeventOf,Inverse of 'has or had subevent' object property.
+rico:isOrWasSubjectOf,Inverse of 'has or had subject' object property.
+rico:isOrWasSubordinateTo,Inverse of 'has or had subordinate' object property.
+rico:isOrWasTitleOf,"Connects a Title to a Record Resource, Instantiation or Rule that it designated or designates."
+rico:isOrWasUnderAuthorityOf,Inverse of 'has or had authority over' object property.
+rico:isOrganicOrFunctionalProvenanceOf,Inverse of 'has organic or functional provenance' object property.
+rico:isOrganicProvenanceOf,Inverse of 'has organic provenance' object property.
+rico:isOriginalOf,Connects the original version of a Record to a copy or a later version.
+rico:isPartOfTransitive,"Connects a Thing to a Thing of which it is a a constitutive or component part, directly or indirectly. This is a transitive relation."
+rico:isPlaceAssociatedWith,Connects a Place to a Thing with whose existence and lifecycle the Place is associated.
+rico:isPlaceAssociatedWithAgent,Connects a Place to an Agent which is related to that Place.
+rico:isProductionTechniqueTypeOf,Connects a Production Technique Type to an Instantiation whose production technique is categorized by it.
+rico:isPublicationDateOf,Connects a Date to a Record Resource that was made public at this Date.
+rico:isPublisherOf,Connects an Agent to a Record Resource that it published.
+rico:isReceiverOf,Inverse of 'received by' object property.
+rico:isRecordResourceAssociatedWithRecordResource,Connects two Record Resources. This relation is symmetric.
+rico:isRecordSetTypeOf,Connects a Record Set Type to a Record Set that it categorizes.
+rico:isRecordStateOf,Connects a Record State to a Record or Record Part whose state it categorizes.
+rico:isRelatedTo,"The most generic relation, is related to, connects any Thing to any other Thing. This relation is symmetric."
+rico:isReplyTo,Inverse of 'has reply' object property.
+rico:isRepresentationTypeOf,Connects a Representation Type to an Instantiation that it categorizes.
+rico:isResponsibleForIssuing,Inverse of 'issued by' object property.
+rico:isRuleAssociatedWith,Connects a Rule to a Thing that is associated with the Rule.
+rico:isSenderOf,Inverse of 'has sender' object property.
+rico:isSubdivisionOfTransitive,Connects a Group to the Group it is a direct or indirect subdivision of. This is a transitive relation.
+rico:isSubeventOfTransitive,Connects an ongoing Event to an Event of which it is a direct or indirect part. This is a transitive relation.
+rico:isSubordinateToTransitive,Connects an Agent to an Agent that is directly or indirectly hierarchically superior. This is a transitive relation.
+rico:isSuccessorOf,Inverse of 'has successor' object property.
+rico:isToUseDateOf,"Connects a Date to an Appellation, when it is the date till which the Appellation was used."
+rico:isUnitOfMeasurementOf,Inverse of 'has unit of measurement' object property
+rico:isWithin,Connects a Date to a Date in which it is contained.
+rico:issuedBy,Connects a Rule to the Agent that issued or published the Rule.
+rico:knowingOfRelation_role,"Connects a KnowingOfRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:knowingRelation_role,"Connects a KnowingRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:knownBy,Inverse of 'knows of' object property.
+rico:knows,Connects two Persons that directly know each other during their existence. This relation is symmetric.
+rico:knowsOf,Connects a Person to another Person they have some knowledge of through time or space.
+rico:leadershipRelation_role,"Connects a LeadershipRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:leadershipWithPosition,Connects a Leadership Relation to the Position occupied by the leading Person.
+rico:managementRelation_role,"Connects a ManagementRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:mandateRelation_role,"Connects a MandateRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:membershipRelation_role,"Connects a MembershipRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:membershipWithPosition,Connects a Membership Relation to the Position occupied by the member Person(s).
+rico:migratedFrom,Inverse of 'migrated into' object property.
+rico:migratedInto,Connects an Instantiation to a version it has been migrated into.
+rico:migrationRelation_role,"Connects a MigrationRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:occupiesOrOccupied,Connects a Person to a Position they occupy or occupied.
+rico:occurredAtDate,Inverse of 'is date of occurrence of' object property
+rico:organicOrFunctionalProvenanceRelation_role,"Connects an OrganicOrFunctionalProvenanceRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:organicProvenanceRelation_role,"Connects an OrganicProvenanceRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:overlapsOrOverlapped,Connects two Places that geographically overlap or overlapped. This relation is symmetric.
+rico:ownershipRelation_role,"Connects an OwnershipRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:performanceRelation_role,"Connects a PerformanceRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:performsOrPerformed,Inverse of 'is or was performed by' object property.
+rico:placeRelation_role,"Connects a PlaceRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:positionHoldingRelation_role,"Connects a PositionHoldingRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:positionIsContextOfLeadershipRelation,Connects a Position to a Leadership Relation (the leading Person occupies that Position).
+rico:positionIsContextOfMembershipRelation,Connects a Position to a Membership Relation (the member Person occupies that Position).
+rico:positionToGroupRelation_role,"Connects a PositionToGroupRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:precededInSequence,Connects a Thing to a Thing that followed it in some non chronological sequence in the past.
+rico:precedesInSequenceTransitive,Connects a Thing to a Thing that follows it directly or indirectly in some non chronological sequence. This is a transitive relation.
+rico:precedesInTime,Connects a Thing to a Thing that follows it in chronological order. This is a transitive relation.
+rico:precedesOrPreceded,Connects a Thing to a Thing that follows or followed it in some sequence.
+rico:proxyFor,Connects a Proxy to the Record Resource it stands for in the specific context of a Record Set.
+rico:proxyIn,Connects a Proxy to the Record Set in which it stands for (represents) another Record Resource.
+rico:recordResourceGeneticRelation_role,"Connects a RecordResourceGeneticRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:recordResourceHoldingRelation_role,"Connects a RecordResourceHoldingRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:recordResourceToInstantiationRelation_role,"Connects a RecordResourceToInstantiationRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:recordResourceToRecordResourceRelation_role,"Connects a RecordResourceToRecordResourceRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:regulatesOrRegulated,Connects a Rule to a Thing that it regulates or regulated.
+rico:relationConnects,Connects an n-ary Relation to any of the Things involved.
+rico:relationHasContext,"Connects an n-ary Relation to a Thing that is a secondary, contextual entity during the existence of the Relation."
+rico:relationHasSource,Connects an n-ary Relation to a Thing that is its source.
+rico:relationHasTarget,Connects an n-ary Relation to a Thing that is its target.
+rico:relation_role,"Connects a Relation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:resultedFromTheMergerOf,Inverse of 'was merged into' object property.
+rico:resultedFromTheSplitOf,Inverse of 'was split into' object property.
+rico:resultsOrResultedFrom,Inverse of 'results or resulted in' object property.
+rico:resultsOrResultedIn,Connects an Event to a Thing that results or resulted from the Event.
+rico:roleIsContextOfCreationRelation,Connects a Role Type to a Creation Relation (this Role Type being the specific role played by the creating Person in the context of this Relation).
+rico:ruleRelation_role,"Connects a RuleRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:sequentialRelation_role,"Connects a SequentialRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:siblingRelation_role,"Connects a SiblingRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:spouseRelation_role,"Connects a SpouseRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:teachingRelation_role,"Connects a TeachingRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:temporalRelation_role,"Connects a TemporalRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:thingIsConnectedToRelation,Connects a Thing to a n-ary Relation.
+rico:thingIsContextOfRelation,"Connects a Thing (that is a secondary, contextual entity during the existence of the Relation) to a n-ary Relation."
+rico:thingIsSourceOfRelation,Connects a Thing (that is the source of a Relation) to a Relation.
+rico:thingIsTargetOfRelation,Connects a Thing (that is the target of a Relation) to a n-ary Relation.
+rico:typeRelation_role,"Connects a TypeRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:wasComponentOf,Connects an Instantiation to another Instantiation of which it was a component in the past.
+rico:wasConstituentOf,Connects a Record or Record Part to another Record or Record Part of which it was a constituent in the past.
+rico:wasContainedBy,Connects a Place to a Place within which it was contained.
+rico:wasIncludedIn,Connects a Record to a Record or Record Set in which it was included in the past.
+rico:wasLastUpdatedAtDate,Connects a Thing to the Date when it was last modified.
+rico:wasMergedInto,Connects a Corporate Body to another Corporate Body that is the result of a merger of the previous one with one to many other corporate bodies.
+rico:wasPartOf,Connects a Thing to a Thing of which it was a constitutive or component part in the past.
+rico:wasSplitInto,Connects a Corporate Body to one of the Corporate Bodies that results from the split of the previous one into two to many corporate bodies.
+rico:wasSubdivisionOf,Connects a subdivision to the Group it was a part of in the past.
+rico:wasSubeventOf,Connects a past Event to the broader Event of which it was a part.
+rico:wasSubordinateTo,Connects an Agent to an Agent that was hierarchically superior in the past.
+rico:wasUsedFromDate,Connects an Appellation to the Date from which it was used.
+rico:wasUsedToDate,Connects an Appellation to the Date till when it was used.
+rico:wholePartRelation_role,"Connects a WholePartRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."
+rico:workRelation_role,"Connects a WorkRelation to itself. It is a property that can stand for an instance of the class when necessary, e.g. when you explore a knowledge graph."

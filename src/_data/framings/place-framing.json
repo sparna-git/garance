@@ -1,0 +1,112 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "included": "@included",
+
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rico": "https://www.ica.org/standards/RiC/ontology#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "html": "http://www.w3.org/1999/xhtml",
+    "an": "http://data.archives-nationales.culture.gouv.fr/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "iso-thes": "http://purl.org/iso25964/skos-thes#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "insee-geo": "http://rdf.insee.fr/def/geo#",
+    "geofla": "http://data.ign.fr/def/geofla#"
+  },
+  "@explicit": true,
+  "type": "rico:Place",
+  "rdfs:label": { "@omitDefault": true },
+  "rico:beginningDate": { "@omitDefault": true },
+  "rico:endDate": { "@omitDefault": true },
+  "rico:type": { "@omitDefault": true },
+  "rico:history": { "@omitDefault": true },
+  "rico:hasOrHadPlaceType": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadLocation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:identifier": { "@omitDefault": true },
+  "owl:sameAs": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rdfs:seeAlso": {
+    "@omitDefault": true,
+    "@explicit": true
+  },
+  "insee-geo:codeDepartement": { "@omitDefault": true, "@explicit": true },
+  "insee-geo:codeCommune": { "@omitDefault": true, "@explicit": true },
+  "insee-geo:chefLieu": { "@omitDefault": true, "@explicit": true },
+  "insee-geo:codeRegion": { "@omitDefault": true, "@explicit": true },
+  "geofla:dpt": { "@omitDefault": true, "@explicit": true },
+  "geofla:codeReg": { "@omitDefault": true, "@explicit": true },
+  "rico:isOrWasPartOf": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:hasOrHadPhysicalLocation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:PhysicalLocation": {
+      "@omitDefault": true,
+      "@explicit": true
+    },
+    "rico:isOrWasPhysicalLocationOf": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "rdfs:label": { "@omitDefault": true }
+    },
+    "rico:hasOrHadCoordinates": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "rico:isOrWasCoordinatesOf": { "@omitDefault": true },
+      "rico:measure": { "@omitDefault": true, "@explicit": true },
+      "rico:geodesicSystem": { "@omitDefault": true, "@explicit": true }
+    }
+  },
+  "rico:thingIsTargetOfWholePartRelation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:wholePartRelationHasTarget": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "rdfs:label": { "@omitDefault": true }
+    },
+    "rico:wholePartRelationHasSource": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "rdfs:label": { "@omitDefault": true }
+    },
+    "rico:beginningDate": { "@omitDefault": true }
+  },
+  "rico:precedesInTime": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:followsInTime": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:containsOrContained": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  }
+}

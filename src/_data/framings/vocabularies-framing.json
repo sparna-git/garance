@@ -1,0 +1,259 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "included": "@included",
+
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rico": "https://www.ica.org/standards/RiC/ontology#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "html": "http://www.w3.org/1999/xhtml",
+    "an": "http://data.archives-nationales.culture.gouv.fr/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "iso-thes": "http://purl.org/iso25964/skos-thes#",
+
+    "ConceptScheme": "skos:ConceptScheme",
+    "Concept": "skos:Concept",
+
+    "inverse_inScheme": {
+      "@reverse": "skos:inScheme",
+      "@container": "@set"
+    },
+    "title": {
+      "@id": "dcterms:title",
+      "@container": "@set"
+    },
+    "created" : "dcterms:created",
+    "sources": {
+      "@id": "dc:source",
+      "@container": "@set"
+    },
+    "description": {
+      "@id": "dcterms:description",
+      "@container": "@set"
+    },
+    "creator": {
+      "@id": "dcterms:creator",
+      "@container": "@set"
+    },
+    "datemodified": {
+      "@id": "dcterms:modified",
+      "@container": "@set"
+    },
+    "prefLabel": {
+      "@id": "skos:prefLabel",
+      "@container": "@set"
+    },
+    "altLabel": {
+      "@id": "skos:altLabel",
+      "@container": "@set"
+    },
+    "narrower": {
+      "@id": "skos:narrower",
+      "@container": "@set"
+    },
+    "subject": "dct:subject",
+    "notation": "skos:notation",
+    "broader": "skos:broader",
+    "definition": {
+      "@id": "skos:definition",
+      "@container": "@set"
+    },
+    "narrowMatch": {
+      "@id": "skos:narrowMatch",
+      "@container": "@set"
+    },
+    "exactMatch": {
+      "@id": "skos:exactMatch",
+      "@container": "@set"
+    },
+    "closeMatch": {
+      "@id": "skos:closeMatch",
+      "@container": "@set"
+    },
+    "skosRelated": {
+      "@id": "skos:related",
+      "@container": "@set"
+    },
+    "relatedMatch": {
+      "@id": "skos:relatedMatch",
+      "@container": "@set"
+    },
+    "coverage": "dc:coverage",
+    "rights": "dc:rights",
+    "historyNote": "skos:historyNote",
+    "scoteNote" : {
+      "@id" : "skos:scoteNote",
+      "@container" : "@set"
+    },
+    "note": {
+      "@id": "skos:note",
+      "@container": "@set"
+    },
+    "example": {
+      "@id": "skos:example",
+      "@container": "@set"
+    },
+    "changenote": {
+      "@id": "skos:changeNote",
+      "@container": "@set"
+    },
+    "distribution": {
+      "@id": "dcat:distribution",
+      "@container": "@set"
+    },
+    "version": {
+      "@id": "dcat:version",
+      "@container": "@set"
+    },
+    "seeAlso": {
+      "@id": "rdfs:seeAlso",
+      "@container": "@set"
+    },
+    "scopeNote": {
+      "@id": "skos:scopeNote",
+      "@container": "@set"
+    },
+    "isoThesStatus": "iso-thes:status"
+  },
+
+  "@explicit": true,
+  "type": "ConceptScheme",
+  "title": {
+    "@explicit": true,
+    "@omitDefault": true
+  },
+  "created" : {},
+  "sources" : {
+    "@explicit": true,
+    "@omitDefault": true
+  },
+  "description": {
+    "@explicit": true,
+    "@omitDefault": true
+  },
+  "subject": {
+    "@explicit": true,
+    "@omitDefault": true
+  },
+  "prefLabel": {},
+  "definition": {
+    "@explicit": true,
+    "@omitDefault": true
+  },
+  "notation": {},
+  "distribution": {},
+  "version" : {},
+  "datemodified": {},
+  "creator": {
+    "@explicit": true,
+    "@omitDefault": true,
+    "foaf:homepage": { "@omitDefault": true },
+    "foaf:name": { "@omitDefault": true },
+    "foaf:mbox": { "@omitDefault": true }
+  },
+  "coverage": {
+    "@explicit": true,
+    "@omitDefault": true
+  },
+  "rights": {},
+  "historyNote": {},
+  "scopeNote" : {},
+  "inverse_inScheme": {
+    "@explicit": true,
+    "prefLabel": {},
+    "notation": {},
+    "isoThesStatus": {
+      "@explicit": true
+    },
+    "altLabel": {
+      "@omitDefault": true
+    },
+    "definition": {
+      "@omitDefault": true
+    },
+    "note": {},
+    "scopeNote": {},
+    "seeAlso": {},
+    "example": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "rico:name": { "@omitDefault": true },
+      "rico:title": { "@omitDefault": true },
+      "rdfs:seeAlso": { "@omitDefault": true },
+      "rico:identifier": { "@omitDefault": true }
+    },
+    "changenote": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "dc:date": { "@omitDefault": true },
+      "rdf:value": { "@omitDefault": true }
+    },
+    "narrowMatch": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "id": {},
+      "prefLabel": { "@omitDefault": true } 
+    },
+    "exactMatch": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "id": {},
+      "prefLabel": { "@omitDefault": true }
+    },
+    "closeMatch": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "id": {},
+      "prefLabel": { "@omitDefault": true } 
+    },
+    "relatedMatch": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "id": {},
+      "prefLabel": { "@omitDefault": true } 
+    },
+    "skosRelated": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "@embed": "@always",
+      "prefLabel": { "@omitDefault": true }
+    },
+    "broader": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "@embed": "@always",
+      "prefLabel": {},
+      "broader": {
+        "@explicit": true,
+        "@omitDefault": true,
+        "@embed": "@always",
+        "prefLabel": {},        
+        "broader": {
+          "@explicit": true,
+          "@omitDefault": true,
+          "@embed": "@always",
+          "prefLabel": {},          
+          "broader": {
+            "@explicit": true,
+            "@omitDefault": true,
+            "@embed": "@always",
+            "prefLabel": {}            
+          }
+        }
+      }
+    },
+    "narrower": {
+      "@explicit": true,
+      "@omitDefault": true,
+      "@embed": "@always",
+      "prefLabel": {}      
+    }
+  }
+}

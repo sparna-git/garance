@@ -1,0 +1,20 @@
+---
+layout: main.njk
+---
+
+{% set sortIndex = index.graph | jsonSort("title") %}
+
+<main class="section_garance">
+	<div class="row">
+		<div class="col-md">
+			<h1 class="title-Header" data-i18n="vocabularies"></h1>			
+			<ul>
+				{%- for item in sortIndex -%}
+					<li>
+						<a href="{{ [ '/entities/', item.id | localName ] | join | relative(page) }}">{{ item.title | lang("fr") }}</a> <small class="numConcepts"> - {{ item.inverse_inScheme.length }} concepts</small>
+					</li>
+				{%- endfor-%}
+			</ul>			
+		</div>
+	</div>
+</main>

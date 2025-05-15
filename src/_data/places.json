@@ -1,0 +1,1316 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "included": "@included",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rico": "https://www.ica.org/standards/RiC/ontology#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "html": "http://www.w3.org/1999/xhtml",
+    "an": "http://data.archives-nationales.culture.gouv.fr/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "iso-thes": "http://purl.org/iso25964/skos-thes#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "insee-geo": "http://rdf.insee.fr/def/geo#",
+    "geofla": "http://data.ign.fr/def/geofla#"
+  },
+  "graph": [
+    {
+      "id": "an:place/FRAN_RI_005-d-13p814kqj--yf15boemr1ys",
+      "type": "rico:Place",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Guétin, pont-canal du (Cher ; pont-canal)"
+      },
+      "rdfs:seeAlso": {
+        "id": "https://fr.wikipedia.org/wiki/Pont-canal_du_Gu%C3%A9tin"
+      },
+      "rico:hasOrHadLocation": {
+        "id": "an:place/FRAN_RI_005-d3ntb7g2gw--4rv27gfdzgqg",
+        "type": [
+          "rico:Place",
+          "geofla:Departement",
+          "insee-geo:Departement"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Cher (Centre, département)"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d-13p814kqj--yf15boemr1ys"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-1efxamddk-knz2g3vi9j37",
+      "type": "rico:Place",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Pompadour, château de (Arnac-Pompadour ; château)"
+      },
+      "rdfs:seeAlso": {
+        "id": "https://fr.wikipedia.org/wiki/Ch%C3%A2teau_de_Pompadour"
+      },
+      "rico:hasOrHadLocation": {
+        "id": "an:place/FRAN_RI_005-d3ntewdqod--17wf1bpe7vm2j",
+        "type": [
+          "rico:Place",
+          "geofla:Commune",
+          "insee-geo:Commune"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Arnac-Pompadour (Corrèze)"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d-1efxamddk-knz2g3vi9j37"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-1gtuyrhgb-pam7ci9xv7ei",
+      "type": "rico:Place",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Busseau, viaduc de (Creuse ; viaduc)"
+      },
+      "rdfs:seeAlso": {
+        "id": "https://fr.wikipedia.org/wiki/Viaduc_de_Busseau"
+      },
+      "rico:hasOrHadLocation": {
+        "id": "an:place/FRAN_RI_005-d3ntb7il7x--1vk7pyy7wolw8",
+        "type": [
+          "rico:Place",
+          "geofla:Departement",
+          "insee-geo:Departement"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Creuse (Limousin, département)"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d-1gtuyrhgb-pam7ci9xv7ei"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-1jgsto7q5--orvif4idxqtr",
+      "type": "rico:Place",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Busseau-sur-Creuse, gare de (Ahun ; gare)"
+      },
+      "rdfs:seeAlso": {
+        "id": "https://fr.wikipedia.org/wiki/Gare_de_Busseau-sur-Creuse"
+      },
+      "rico:hasOrHadLocation": {
+        "id": "an:place/FRAN_RI_005-d3ntfvs0r9-1bc4nhxx371ev",
+        "type": [
+          "rico:Place",
+          "geofla:Commune",
+          "insee-geo:Commune"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Ahun (Creuse)"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d-1jgsto7q5--orvif4idxqtr"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-1kxw5wk6q--1h43baiuw75wt",
+      "type": [
+        "rico:Place",
+        "insee-geo:Departement"
+      ],
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Corse (France ; département ; 1811-1976)"
+      },
+      "rico:beginningDate": {
+        "type": "xsd:gYear",
+        "@value": "1811"
+      },
+      "rico:endDate": {
+        "type": "xsd:gYear",
+        "@value": "1976"
+      },
+      "rico:history": {
+        "@language": "fr",
+        "@value": "Le département de Corse est un ancien département français, dont\n         le chef-lieu était Ajaccio. En 1793, la Corse est séparée en deux départements : le Liamone\n         et le Golo. La Corse redevient monodépartementale de 1811 à 1976. D'abord rattachée à la\n         région Provence-Côte d'Azur-Corse lors de la création des circonscriptions régionales en\n         1960, elle en est détachée en 1970 pour former une région à elle seule. Le 1er janvier\n         1976, en application de la loi du 15 mai 1975, elle est scindée de nouveau en deux\n         départements : la Haute-Corse et la Corse-du-Sud qui retrouvent respectivement les limites\n         approximatives du Golo et du Liamone. (Source :\n         https://fr.wikipedia.org/wiki/Corse_(d%C3%A9partement))"
+      },
+      "rico:identifier": {
+        "@language": "fr",
+        "@value": "Ancien identifiant SIA :\n         FRAN_RI_005.xml#d-1kxw5wk6q--1h43baiuw75wt"
+      },
+      "rico:precedesInTime": [
+        {
+          "id": "an:place/FRAN_RI_005-d3ntb7tpii-1p2n1v4tubx8y",
+          "type": [
+            "rico:Place",
+            "geofla:Departement",
+            "insee-geo:Departement"
+          ],
+          "rdfs:label": {
+            "@language": "fr",
+            "@value": "Haute-Corse (Corse, département)"
+          }
+        },
+        {
+          "id": "an:place/FRAN_RI_005-d3ntb7h3jn-16it3tcjqcvnn",
+          "type": [
+            "rico:Place",
+            "geofla:Departement",
+            "insee-geo:Departement"
+          ],
+          "rdfs:label": {
+            "@language": "fr",
+            "@value": "Corse-du-Sud (Corse, département)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-1xspc1r54--x16ag8a6jp1d",
+      "type": "rico:Place",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Valbonne, camp militaire de la (Ain ; camp militaire)"
+      },
+      "rdfs:seeAlso": {
+        "id": "https://fr.wikipedia.org/wiki/Camp_de_La_Valbonne"
+      },
+      "rico:hasOrHadLocation": {
+        "id": "an:place/FRAN_RI_005-d3ntb70dhk-1lf59tn8rsvbw",
+        "type": [
+          "rico:Place",
+          "geofla:Departement",
+          "insee-geo:Departement"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Ain (Rhône-Alpes, département)"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d-1xspc1r54--x16ag8a6jp1d"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-22dgzndfj--1tmspgr6dbzx6",
+      "type": "rico:Place",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "La Foux d'Allos (Allos ; station de ski)"
+      },
+      "rdfs:seeAlso": {
+        "id": "https://fr.wikipedia.org/wiki/La_Foux_d%27Allos"
+      },
+      "rico:hasOrHadLocation": {
+        "id": "an:place/FRAN_RI_005-d3ntd7l2py--12xexlgbk9q1t",
+        "type": [
+          "rico:Place",
+          "geofla:Commune",
+          "insee-geo:Commune"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Allos (Alpes-de-Haute-Provence)"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d-22dgzndfj--1tmspgr6dbzx6"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-25ku9zpdz-1l7trp7qtr5iq",
+      "type": [
+        "rico:Place",
+        "insee-geo:Departement"
+      ],
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Corse (France ; département ; 1790-1793)"
+      },
+      "rico:beginningDate": {
+        "type": "xsd:gYear",
+        "@value": "1790"
+      },
+      "rico:endDate": {
+        "type": "xsd:gYear",
+        "@value": "1793"
+      },
+      "rico:history": {
+        "@language": "fr",
+        "@value": "Le département de Corse est un ancien département français. Il est\n         créé à la Révolution française, le 4 mars 1790, en application de la loi du 22 décembre\n         1789. En 1793, la Corse est séparée en deux départements : le Liamone et le Golo. (Source :\n         https://fr.wikipedia.org/wiki/Corse_(d%C3%A9partement))"
+      },
+      "rico:identifier": {
+        "@language": "fr",
+        "@value": "Ancien identifiant SIA :\n         FRAN_RI_005.xml#d-25ku9zpdz-1l7trp7qtr5iq"
+      },
+      "rico:precedesInTime": [
+        {
+          "id": "an:place/FRAN_RI_005-d3ntb836j2-wtxpg52oak16",
+          "type": [
+            "rico:Place",
+            "insee-geo:Departement"
+          ],
+          "rdfs:label": {
+            "@language": "fr",
+            "@value": "Liamone (France, département, 1793-1811)"
+          }
+        },
+        {
+          "id": "an:place/FRAN_RI_005-d3ntb7s9kb-1krpzb1kobwu8",
+          "type": [
+            "rico:Place",
+            "insee-geo:Departement"
+          ],
+          "rdfs:label": {
+            "@language": "fr",
+            "@value": "Golo (France, département, 1793-1811)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-29tscal9a--2tu4e164h9zt",
+      "type": [
+        "rico:Place",
+        "insee-geo:Departement"
+      ],
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Constantine (Algérie ; département ; 1848-1962)"
+      },
+      "rico:beginningDate": {
+        "type": "xsd:gYear",
+        "@value": "1848"
+      },
+      "rico:endDate": {
+        "type": "xsd:gYear",
+        "@value": "1962"
+      },
+      "rico:history": {
+        "@language": "fr",
+        "@value": "Le département de Constantine est un des départements français\n         d'Algérie, qui a existé entre 1848 et 1962. Considérée comme une province française,\n         l'Algérie est départementalisée le 9 décembre 1848. Les départements créés à cette date\n         étaient la zone civile des trois provinces correspondant aux trois beyliks de l'État\n         d'Alger récemment conquis. Par conséquent, la ville de Constantine est faite préfecture du\n         département portant son nom, couvrant alors tout l'est de l'Algérie. Les autres\n         départements étaient le département d'Alger au centre du pays et le département d'Oran à\n         l'ouest. (Source : https://fr.wikipedia.org/wiki/D%C3%A9partement_de_Constantine\n         )"
+      },
+      "rico:identifier": {
+        "@language": "fr",
+        "@value": "Ancien identifiant SIA :\n         FRAN_RI_005.xml#d-29tscal9a--2tu4e164h9zt"
+      }
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-2h5ye4ik4-1txqsbxx002yl",
+      "type": [
+        "rico:Place",
+        "insee-geo:Departement"
+      ],
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Oran (Algérie ; département ; 1848-1962)"
+      },
+      "rico:beginningDate": {
+        "type": "xsd:gYear",
+        "@value": "1848"
+      },
+      "rico:endDate": {
+        "type": "xsd:gYear",
+        "@value": "1962"
+      },
+      "rico:history": {
+        "@language": "fr",
+        "@value": "Le département d'Oran est un département français d'Algérie, qui a\n         existé entre 1848 et 1962. Considérée comme une province française, l'Algérie fut\n         départementalisée le 9 décembre 1848. Les départements créés à cette date étaient la zone\n         civile des trois provinces correspondant aux beyliks de l'État d'Alger récemment conquis.\n         Par conséquent, la ville d'Oran est faite préfecture du département portant son nom,\n         couvrant alors l'ouest de l'Algérie, laissant à l'est le département d'Alger, à l'ouest de\n         celui de Constantine. (Source : https://fr.wikipedia.org/wiki/D%C3%A9partement_d%27Oran\n         )"
+      },
+      "rico:identifier": {
+        "@language": "fr",
+        "@value": "Ancien identifiant SIA :\n         FRAN_RI_005.xml#d-2h5ye4ik4-1txqsbxx002yl"
+      }
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-2mj43c6f3--1txndr69h93g9",
+      "type": [
+        "rico:Place",
+        "insee-geo:Departement"
+      ],
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Alger (Algérie ; département ; 1848-1962)"
+      },
+      "rico:beginningDate": {
+        "type": "xsd:gYear",
+        "@value": "1848"
+      },
+      "rico:endDate": {
+        "type": "xsd:gYear",
+        "@value": "1962"
+      },
+      "rico:history": {
+        "@language": "fr",
+        "@value": "Le département d'Alger est une ancienne subdivision territoriale\n         de l'Algérie. Créé par la France en 1848, il est réorganisé en 1957. Il a été maintenu\n         après l'indépendance de l'Algérie en 1962, jusqu'en 1968, date à laquelle la wilaya d'Alger\n         lui a succédé. Son chef-lieu était Alger. Considérée comme une province française,\n         l'Algérie fut départementalisée le 9 décembre 1848. Les départements créés à cette date\n         étaient la zone civile des trois provinces correspondant aux beyliks de la régence d'Alger\n         récemment conquis. Par conséquent, la ville d'Alger est faite préfecture du département\n         portant son nom, couvrant alors le centre de l'Algérie, laissant à l'est le département de\n         Constantine et à l'ouest le département d'Oran. (Source :\n         https://fr.wikipedia.org/wiki/D%C3%A9partement_d%27Alger )"
+      },
+      "rico:identifier": {
+        "@language": "fr",
+        "@value": "Ancien identifiant SIA :\n         FRAN_RI_005.xml#d-2mj43c6f3--1txndr69h93g9"
+      }
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-378xf9ini-5i0cbwkmj3u",
+      "type": "rico:Place",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Roanne à Digoin, canal de (France ; canal)"
+      },
+      "rdfs:seeAlso": {
+        "id": "https://fr.wikipedia.org/wiki/Canal_lat%C3%A9ral_de_Roanne_%C3%A0_Digoin"
+      },
+      "rico:hasOrHadLocation": {
+        "id": "an:place/FRAN_RI_005-d3ntxkl6yf-1f01iiij7xnld",
+        "type": "rico:Place",
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "France"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d-378xf9ini-5i0cbwkmj3u"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-3mrijhaqu--1co5m1ogqvl6d",
+      "type": "rico:Place",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Château-Arnoux-Saint-Auban, aérodrome de (Château-Arnoux-Saint-Auban)"
+      },
+      "rdfs:seeAlso": {
+        "id": "https://fr.wikipedia.org/wiki/A%C3%A9rodrome_de_Ch%C3%A2teau-Arnoux-Saint-Auban"
+      },
+      "rico:hasOrHadLocation": {
+        "id": "an:place/FRAN_RI_005-d3ntd7xcei--aylvul1mhi66",
+        "type": [
+          "rico:Place",
+          "geofla:Commune",
+          "insee-geo:Commune"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Château-Arnoux-Saint-Auban (Alpes-de-Haute-Provence)"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d-3mrijhaqu--1co5m1ogqvl6d"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-3t6fggwcl-g25lmpg47yt7",
+      "type": "rico:Place",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Fort Queyras (Château-Ville-Vieille ; château)"
+      },
+      "rdfs:seeAlso": {
+        "id": "https://fr.wikipedia.org/wiki/Fort_Queyras"
+      },
+      "rico:hasOrHadLocation": {
+        "id": "an:place/FRAN_RI_005-d3ntda2ho6-igqmjmckmjjy",
+        "type": [
+          "rico:Place",
+          "geofla:Commune",
+          "insee-geo:Commune"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Château-Ville-Vieille (Hautes-Alpes)"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d-3t6fggwcl-g25lmpg47yt7"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-50vs8o4q4--btrwa9zxu6bg",
+      "type": "rico:Place",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Notre-Dame de Bon-Repos, abbaye (Saint-Gelven ; abbaye)"
+      },
+      "rdfs:seeAlso": {
+        "id": "https://fr.wikipedia.org/wiki/Abbaye_Notre-Dame_de_Bon-Repos"
+      },
+      "rico:hasOrHadLocation": {
+        "id": "an:place/FRAN_RI_005-d3ntfufmtj--k6nmzqlv6uli",
+        "type": [
+          "rico:Place",
+          "geofla:Commune",
+          "insee-geo:Commune"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Saint-Gelven (Côtes-d'Armor)"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d-50vs8o4q4--btrwa9zxu6bg"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d-5c65mswy8--tixfw2zaudau",
+      "type": "rico:Place",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Notre-Dame de Boquen, abbaye (Plénée-Jugon ; abbaye)"
+      },
+      "rdfs:seeAlso": {
+        "id": "https://fr.wikipedia.org/wiki/Abbaye_Notre-Dame_de_Boquen"
+      },
+      "rico:hasOrHadLocation": {
+        "id": "an:place/FRAN_RI_005-d3ntft9rue--q8worvbakw5d",
+        "type": [
+          "rico:Place",
+          "geofla:Commune",
+          "insee-geo:Commune"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Plénée-Jugon (Côtes-d'Armor)"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d-5c65mswy8--tixfw2zaudau"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntb70dhk-1lf59tn8rsvbw",
+      "type": [
+        "rico:Place",
+        "geofla:Departement",
+        "insee-geo:Departement"
+      ],
+      "insee-geo:chefLieu": [
+        {
+          "id": "http://id.insee.fr/geo/commune/01053"
+        },
+        {
+          "id": "an:place/FRAN_RI_005-d3ntcnyy7x--ztjvkgdizq45",
+          "type": [
+            "rico:Place",
+            "geofla:Commune",
+            "insee-geo:Commune"
+          ]
+        }
+      ],
+      "insee-geo:codeDepartement": "01",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Ain (Rhône-Alpes, département)"
+      },
+      "rico:beginningDate": {
+        "type": "xsd:gYear",
+        "@value": "1790"
+      },
+      "rico:identifier": "Ancien identifiant SIA :\n         FRAN_RI_005.xml#d3ntb70dhk-1lf59tn8rsvbw",
+      "rico:isOrWasPartOf": [
+        {
+          "id": "an:place/FRAN_RI_005-d-5f0vj727s--1abiwfn04l9rn",
+          "type": [
+            "rico:Place",
+            "geofla:Region",
+            "insee-geo:Region"
+          ],
+          "rdfs:label": {
+            "@language": "fr",
+            "@value": "Auvergne-Rhône-Alpes (2016-.... ; région\n                  administrative)"
+          }
+        },
+        {
+          "id": "an:place/FRAN_RI_005-d3ntb6zkth-auq4chs5b3rr",
+          "type": [
+            "rico:Place",
+            "geofla:Region",
+            "insee-geo:Region"
+          ],
+          "rdfs:label": {
+            "@language": "fr",
+            "@value": "Rhône-Alpes (1982-2015 ; région administrative)"
+          }
+        }
+      ],
+      "rico:thingIsTargetOfWholePartRelation": [
+        {
+          "type": "rico:WholePartRelation",
+          "rico:beginningDate": {
+            "type": "xsd:gYear",
+            "@value": "2016"
+          },
+          "rico:wholePartRelationHasSource": {
+            "id": "an:place/FRAN_RI_005-d-5f0vj727s--1abiwfn04l9rn"
+          },
+          "rico:wholePartRelationHasTarget": {
+            "id": "an:place/FRAN_RI_005-d3ntb70dhk-1lf59tn8rsvbw"
+          }
+        },
+        {
+          "type": "rico:WholePartRelation",
+          "rico:beginningDate": {
+            "type": "xsd:gYear",
+            "@value": "1982"
+          },
+          "rico:wholePartRelationHasSource": {
+            "id": "an:place/FRAN_RI_005-d3ntb6zkth-auq4chs5b3rr"
+          },
+          "rico:wholePartRelationHasTarget": {
+            "id": "an:place/FRAN_RI_005-d3ntb70dhk-1lf59tn8rsvbw"
+          }
+        }
+      ]
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntb70r2g--1uw0k9ewfsj4r",
+      "type": [
+        "rico:Place",
+        "geofla:Departement",
+        "insee-geo:Departement"
+      ],
+      "insee-geo:chefLieu": [
+        {
+          "id": "http://id.insee.fr/geo/commune/02408"
+        },
+        {
+          "id": "an:place/FRAN_RI_005-d3ntcwbbrg--1zv85px7xf3r",
+          "type": [
+            "rico:Place",
+            "geofla:Commune",
+            "insee-geo:Commune"
+          ]
+        }
+      ],
+      "insee-geo:codeDepartement": "02",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Aisne (Picardie, département)"
+      },
+      "rico:beginningDate": {
+        "type": "xsd:gYear",
+        "@value": "1790"
+      },
+      "rico:identifier": "Ancien identifiant SIA :\n         FRAN_RI_005.xml#d3ntb70r2g--1uw0k9ewfsj4r",
+      "rico:isOrWasPartOf": [
+        {
+          "id": "an:place/FRAN_RI_005-d-43iu15qv1-1k199wk94zszp",
+          "type": [
+            "rico:Place",
+            "geofla:Region",
+            "insee-geo:Region"
+          ],
+          "rdfs:label": {
+            "@language": "fr",
+            "@value": "Hauts-de-France (2016-.... ; région\n                  administrative)"
+          }
+        },
+        {
+          "id": "an:place/FRAN_RI_005-d3ntb6yes9--1x9ljqkt7ybbt",
+          "type": [
+            "rico:Place",
+            "geofla:Region",
+            "insee-geo:Region"
+          ],
+          "rdfs:label": {
+            "@language": "fr",
+            "@value": "Picardie (1982-2015 ; région administrative)"
+          }
+        }
+      ],
+      "rico:thingIsTargetOfWholePartRelation": [
+        {
+          "type": "rico:WholePartRelation",
+          "rico:beginningDate": {
+            "type": "xsd:gYear",
+            "@value": "2016"
+          },
+          "rico:wholePartRelationHasSource": {
+            "id": "an:place/FRAN_RI_005-d-43iu15qv1-1k199wk94zszp"
+          },
+          "rico:wholePartRelationHasTarget": {
+            "id": "an:place/FRAN_RI_005-d3ntb70r2g--1uw0k9ewfsj4r"
+          }
+        },
+        {
+          "type": "rico:WholePartRelation",
+          "rico:beginningDate": {
+            "type": "xsd:gYear",
+            "@value": "1982"
+          },
+          "rico:wholePartRelationHasSource": {
+            "id": "an:place/FRAN_RI_005-d3ntb6yes9--1x9ljqkt7ybbt"
+          },
+          "rico:wholePartRelationHasTarget": {
+            "id": "an:place/FRAN_RI_005-d3ntb70r2g--1uw0k9ewfsj4r"
+          }
+        }
+      ]
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntb713cs-uv28hws58a4c",
+      "type": [
+        "rico:Place",
+        "geofla:Departement",
+        "insee-geo:Departement"
+      ],
+      "insee-geo:chefLieu": [
+        {
+          "id": "http://id.insee.fr/geo/commune/03190"
+        },
+        {
+          "id": "an:place/FRAN_RI_005-d3ntd3htgs-1b3yqa9olqavj",
+          "type": [
+            "rico:Place",
+            "geofla:Commune",
+            "insee-geo:Commune"
+          ]
+        }
+      ],
+      "insee-geo:codeDepartement": "03",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Allier (Auvergne, département)"
+      },
+      "rico:beginningDate": {
+        "type": "xsd:gYear",
+        "@value": "1790"
+      },
+      "rico:identifier": "Ancien identifiant SIA :\n         FRAN_RI_005.xml#d3ntb713cs-uv28hws58a4c",
+      "rico:isOrWasPartOf": [
+        {
+          "id": "an:place/FRAN_RI_005-d-5f0vj727s--1abiwfn04l9rn",
+          "type": [
+            "rico:Place",
+            "geofla:Region",
+            "insee-geo:Region"
+          ],
+          "rdfs:label": {
+            "@language": "fr",
+            "@value": "Auvergne-Rhône-Alpes (2016-.... ; région\n                  administrative)"
+          }
+        },
+        {
+          "id": "an:place/FRAN_RI_005-d3ntb5nsnj--jrkyz6vwvi4f",
+          "type": [
+            "rico:Place",
+            "geofla:Region",
+            "insee-geo:Region"
+          ],
+          "rdfs:label": {
+            "@language": "fr",
+            "@value": "Auvergne (1982-2015 ; région administrative)"
+          }
+        }
+      ],
+      "rico:thingIsTargetOfWholePartRelation": [
+        {
+          "type": "rico:WholePartRelation",
+          "rico:beginningDate": {
+            "type": "xsd:gYear",
+            "@value": "2016"
+          },
+          "rico:wholePartRelationHasSource": {
+            "id": "an:place/FRAN_RI_005-d-5f0vj727s--1abiwfn04l9rn"
+          },
+          "rico:wholePartRelationHasTarget": {
+            "id": "an:place/FRAN_RI_005-d3ntb713cs-uv28hws58a4c"
+          }
+        },
+        {
+          "type": "rico:WholePartRelation",
+          "rico:beginningDate": {
+            "type": "xsd:gYear",
+            "@value": "1982"
+          },
+          "rico:wholePartRelationHasSource": {
+            "id": "an:place/FRAN_RI_005-d3ntb5nsnj--jrkyz6vwvi4f"
+          },
+          "rico:wholePartRelationHasTarget": {
+            "id": "an:place/FRAN_RI_005-d3ntb713cs-uv28hws58a4c"
+          }
+        }
+      ]
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntb71ye9-13lxy96a9y8yw",
+      "type": [
+        "rico:Place",
+        "geofla:Departement",
+        "insee-geo:Departement"
+      ],
+      "insee-geo:chefLieu": [
+        {
+          "id": "http://id.insee.fr/geo/commune/04070"
+        },
+        {
+          "id": "an:place/FRAN_RI_005-d3ntd85d1b--1xvjali36rr2w",
+          "type": [
+            "rico:Place",
+            "geofla:Commune",
+            "insee-geo:Commune"
+          ]
+        }
+      ],
+      "insee-geo:codeDepartement": "04",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Alpes-de-Haute-Provence (Provence-Alpes-Côte-d'Azur,\n         département)"
+      },
+      "rico:beginningDate": {
+        "type": "xsd:gYear",
+        "@value": "1790"
+      },
+      "rico:history": {
+        "type": "rdf:XMLLiteral",
+        "@value": "\n         <html:div xml:lang=\"fr\">\n            <html:p>13 avril 1970 : Le département des Basses-Alpes est renommé département des\n               Alpes-de-Haute-Provence.</html:p>\n         </html:div>\n      "
+      },
+      "rico:identifier": "Ancien identifiant SIA :\n         FRAN_RI_005.xml#d3ntb71ye9-13lxy96a9y8yw",
+      "rico:isOrWasPartOf": {
+        "id": "an:place/FRAN_RI_005-d3ntb6z7gc--1n390pvx9c09r",
+        "type": [
+          "rico:Place",
+          "geofla:Region",
+          "insee-geo:Region"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Provence-Alpes-Côte-d'Azur (1982-.... ; région\n                  administrative)"
+        }
+      },
+      "rico:thingIsTargetOfWholePartRelation": {
+        "type": "rico:WholePartRelation",
+        "rico:beginningDate": {
+          "type": "xsd:gYear",
+          "@value": "1982"
+        },
+        "rico:wholePartRelationHasSource": {
+          "id": "an:place/FRAN_RI_005-d3ntb6z7gc--1n390pvx9c09r"
+        },
+        "rico:wholePartRelationHasTarget": {
+          "id": "an:place/FRAN_RI_005-d3ntb71ye9-13lxy96a9y8yw"
+        }
+      }
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntb72c6w--1c18qe82chlnk",
+      "type": [
+        "rico:Place",
+        "geofla:Departement",
+        "insee-geo:Departement"
+      ],
+      "insee-geo:chefLieu": [
+        {
+          "id": "http://id.insee.fr/geo/commune/06088"
+        },
+        {
+          "id": "an:place/FRAN_RI_005-d3ntdcke2y--1vqnorbkqynkh",
+          "type": [
+            "rico:Place",
+            "geofla:Commune",
+            "insee-geo:Commune"
+          ]
+        }
+      ],
+      "insee-geo:codeDepartement": "06",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Alpes-Maritimes (Provence-Alpes-Côte-d'Azur,\n         département)"
+      },
+      "rico:beginningDate": {
+        "type": "xsd:gYear",
+        "@value": "1790"
+      },
+      "rico:identifier": "Ancien identifiant SIA :\n         FRAN_RI_005.xml#d3ntb72c6w--1c18qe82chlnk",
+      "rico:isOrWasPartOf": {
+        "id": "an:place/FRAN_RI_005-d3ntb6z7gc--1n390pvx9c09r",
+        "type": [
+          "rico:Place",
+          "geofla:Region",
+          "insee-geo:Region"
+        ],
+        "rdfs:label": {
+          "@language": "fr",
+          "@value": "Provence-Alpes-Côte-d'Azur (1982-.... ; région\n                  administrative)"
+        }
+      },
+      "rico:thingIsTargetOfWholePartRelation": {
+        "type": "rico:WholePartRelation",
+        "rico:beginningDate": {
+          "type": "xsd:gYear",
+          "@value": "1982"
+        },
+        "rico:wholePartRelationHasSource": {
+          "id": "an:place/FRAN_RI_005-d3ntb6z7gc--1n390pvx9c09r"
+        },
+        "rico:wholePartRelationHasTarget": {
+          "id": "an:place/FRAN_RI_005-d3ntb72c6w--1c18qe82chlnk"
+        }
+      }
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntb736db-ig095rbsjf1h",
+      "type": [
+        "rico:Place",
+        "insee-geo:Departement"
+      ],
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Appenins (France, département, 1805-1814)"
+      },
+      "rico:beginningDate": {
+        "type": "xsd:gYear",
+        "@value": "1805"
+      },
+      "rico:endDate": {
+        "type": "xsd:gYear",
+        "@value": "1814"
+      },
+      "rico:identifier": "Ancien identifiant SIA :\n         FRAN_RI_005.xml#d3ntb736db-ig095rbsjf1h"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntcnfgcw--pvic5jinawzd",
+      "type": [
+        "rico:Place",
+        "geofla:Commune",
+        "insee-geo:Commune"
+      ],
+      "geofla:dpt": [
+        {
+          "id": "http://data.alegoria-project.fr/id/ign/unitesadministratives/departement/01"
+        },
+        {
+          "id": "http://data.ign.fr/id/geofla/departement/01"
+        },
+        {
+          "id": "http://id.insee.fr/geo/departement/01"
+        }
+      ],
+      "insee-geo:codeCommune": "01001",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "L'Abergement-Clémenciat (Ain)"
+      },
+      "rico:hasOrHadPhysicalLocation": {
+        "id": "an:physicalLocation/FRAN_RI_005-d3ntcnfgcw--pvic5jinawzd-2018pts",
+        "type": "rico:PhysicalLocation",
+        "rico:hasOrHadCoordinates": {
+          "id": "an:coordinates/FRAN_RI_005-d3ntcnfgcw--pvic5jinawzd-2018pts-RFG93",
+          "type": "rico:Coordinates",
+          "rico:geodesicSystem": "RGF93 (projection Lambert 93) [http://data.ign.fr/id/ignf/crs/RGF93LAMB93]",
+          "rico:isOrWasCoordinatesOf": {
+            "id": "an:physicalLocation/FRAN_RI_005-d3ntcnfgcw--pvic5jinawzd-2018pts"
+          },
+          "rico:measure": "POINT(848200 6563000)"
+        },
+        "rico:isOrWasPhysicalLocationOf": {
+          "id": "an:place/FRAN_RI_005-d3ntcnfgcw--pvic5jinawzd"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d3ntcnfgcw--pvic5jinawzd"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntcnfsv0-1ltdkgqbjy45m",
+      "type": [
+        "rico:Place",
+        "geofla:Commune",
+        "insee-geo:Commune"
+      ],
+      "geofla:dpt": [
+        {
+          "id": "http://data.alegoria-project.fr/id/ign/unitesadministratives/departement/01"
+        },
+        {
+          "id": "http://data.ign.fr/id/geofla/departement/01"
+        },
+        {
+          "id": "http://id.insee.fr/geo/departement/01"
+        }
+      ],
+      "insee-geo:codeCommune": "01002",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "L'Abergement-de-Varey (Ain)"
+      },
+      "rico:hasOrHadPhysicalLocation": {
+        "id": "an:physicalLocation/FRAN_RI_005-d3ntcnfsv0-1ltdkgqbjy45m-2018pts",
+        "type": "rico:PhysicalLocation",
+        "rico:hasOrHadCoordinates": {
+          "id": "an:coordinates/FRAN_RI_005-d3ntcnfsv0-1ltdkgqbjy45m-2018pts-RFG93",
+          "type": "rico:Coordinates",
+          "rico:geodesicSystem": "RGF93 (projection Lambert 93) [http://data.ign.fr/id/ignf/crs/RGF93LAMB93]",
+          "rico:isOrWasCoordinatesOf": {
+            "id": "an:physicalLocation/FRAN_RI_005-d3ntcnfsv0-1ltdkgqbjy45m-2018pts"
+          },
+          "rico:measure": "POINT(887500 6548100)"
+        },
+        "rico:isOrWasPhysicalLocationOf": {
+          "id": "an:place/FRAN_RI_005-d3ntcnfsv0-1ltdkgqbjy45m"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d3ntcnfsv0-1ltdkgqbjy45m"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntcng4pt-4zy1hiiamp21",
+      "type": [
+        "rico:Place",
+        "geofla:Commune",
+        "insee-geo:Commune"
+      ],
+      "geofla:dpt": [
+        {
+          "id": "http://data.alegoria-project.fr/id/ign/unitesadministratives/departement/01"
+        },
+        {
+          "id": "http://data.ign.fr/id/geofla/departement/01"
+        },
+        {
+          "id": "http://id.insee.fr/geo/departement/01"
+        }
+      ],
+      "insee-geo:codeCommune": "01004",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Ambérieu-en-Bugey (Ain)"
+      },
+      "rico:hasOrHadPhysicalLocation": {
+        "id": "an:physicalLocation/FRAN_RI_005-d3ntcng4pt-4zy1hiiamp21-2018pts",
+        "type": "rico:PhysicalLocation",
+        "rico:hasOrHadCoordinates": {
+          "id": "an:coordinates/FRAN_RI_005-d3ntcng4pt-4zy1hiiamp21-2018pts-RFG93",
+          "type": "rico:Coordinates",
+          "rico:geodesicSystem": "RGF93 (projection Lambert 93) [http://data.ign.fr/id/ignf/crs/RGF93LAMB93]",
+          "rico:isOrWasCoordinatesOf": {
+            "id": "an:physicalLocation/FRAN_RI_005-d3ntcng4pt-4zy1hiiamp21-2018pts"
+          },
+          "rico:measure": "POINT(882500 6542500)"
+        },
+        "rico:isOrWasPhysicalLocationOf": {
+          "id": "an:place/FRAN_RI_005-d3ntcng4pt-4zy1hiiamp21"
+        }
+      },
+      "rico:history": {
+        "type": "rdf:XMLLiteral",
+        "@value": "\n         <html:div xml:lang=\"fr\">\n            <html:p>31 mars 1955 : Ambérieu devient Ambérieu-en-Bugey.</html:p>\n         </html:div>\n      "
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d3ntcng4pt-4zy1hiiamp21"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntcnghfn-zgpbme3jri6v",
+      "type": [
+        "rico:Place",
+        "geofla:Commune",
+        "insee-geo:Commune"
+      ],
+      "geofla:dpt": [
+        {
+          "id": "http://data.alegoria-project.fr/id/ign/unitesadministratives/departement/01"
+        },
+        {
+          "id": "http://data.ign.fr/id/geofla/departement/01"
+        },
+        {
+          "id": "http://id.insee.fr/geo/departement/01"
+        }
+      ],
+      "insee-geo:codeCommune": "01005",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Ambérieux-en-Dombes (Ain)"
+      },
+      "rico:hasOrHadPhysicalLocation": {
+        "id": "an:physicalLocation/FRAN_RI_005-d3ntcnghfn-zgpbme3jri6v-2018pts",
+        "type": "rico:PhysicalLocation",
+        "rico:hasOrHadCoordinates": {
+          "id": "an:coordinates/FRAN_RI_005-d3ntcnghfn-zgpbme3jri6v-2018pts-RFG93",
+          "type": "rico:Coordinates",
+          "rico:geodesicSystem": "RGF93 (projection Lambert 93) [http://data.ign.fr/id/ignf/crs/RGF93LAMB93]",
+          "rico:isOrWasCoordinatesOf": {
+            "id": "an:physicalLocation/FRAN_RI_005-d3ntcnghfn-zgpbme3jri6v-2018pts"
+          },
+          "rico:measure": "POINT(847200 6546000)"
+        },
+        "rico:isOrWasPhysicalLocationOf": {
+          "id": "an:place/FRAN_RI_005-d3ntcnghfn-zgpbme3jri6v"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d3ntcnghfn-zgpbme3jri6v"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntcnh42h--j6oh64gn9kvg",
+      "type": [
+        "rico:Place",
+        "geofla:Commune",
+        "insee-geo:Commune"
+      ],
+      "geofla:dpt": [
+        {
+          "id": "http://data.alegoria-project.fr/id/ign/unitesadministratives/departement/01"
+        },
+        {
+          "id": "http://data.ign.fr/id/geofla/departement/01"
+        },
+        {
+          "id": "http://id.insee.fr/geo/departement/01"
+        }
+      ],
+      "insee-geo:codeCommune": "01006",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Ambléon (Ain)"
+      },
+      "rico:hasOrHadPhysicalLocation": {
+        "id": "an:physicalLocation/FRAN_RI_005-d3ntcnh42h--j6oh64gn9kvg-2018pts",
+        "type": "rico:PhysicalLocation",
+        "rico:hasOrHadCoordinates": {
+          "id": "an:coordinates/FRAN_RI_005-d3ntcnh42h--j6oh64gn9kvg-2018pts-RFG93",
+          "type": "rico:Coordinates",
+          "rico:geodesicSystem": "RGF93 (projection Lambert 93) [http://data.ign.fr/id/ignf/crs/RGF93LAMB93]",
+          "rico:isOrWasCoordinatesOf": {
+            "id": "an:physicalLocation/FRAN_RI_005-d3ntcnh42h--j6oh64gn9kvg-2018pts"
+          },
+          "rico:measure": "POINT(902200 6519900)"
+        },
+        "rico:isOrWasPhysicalLocationOf": {
+          "id": "an:place/FRAN_RI_005-d3ntcnh42h--j6oh64gn9kvg"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d3ntcnh42h--j6oh64gn9kvg"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntcnhj5o--ihsx7zsutoog",
+      "type": [
+        "rico:Place",
+        "geofla:Commune",
+        "insee-geo:Commune"
+      ],
+      "geofla:dpt": [
+        {
+          "id": "http://data.alegoria-project.fr/id/ign/unitesadministratives/departement/01"
+        },
+        {
+          "id": "http://data.ign.fr/id/geofla/departement/01"
+        },
+        {
+          "id": "http://id.insee.fr/geo/departement/01"
+        }
+      ],
+      "insee-geo:codeCommune": "01007",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Ambronay (Ain)"
+      },
+      "rico:hasOrHadPhysicalLocation": {
+        "id": "an:physicalLocation/FRAN_RI_005-d3ntcnhj5o--ihsx7zsutoog-2018pts",
+        "type": "rico:PhysicalLocation",
+        "rico:hasOrHadCoordinates": {
+          "id": "an:coordinates/FRAN_RI_005-d3ntcnhj5o--ihsx7zsutoog-2018pts-RFG93",
+          "type": "rico:Coordinates",
+          "rico:geodesicSystem": "RGF93 (projection Lambert 93) [http://data.ign.fr/id/ignf/crs/RGF93LAMB93]",
+          "rico:isOrWasCoordinatesOf": {
+            "id": "an:physicalLocation/FRAN_RI_005-d3ntcnhj5o--ihsx7zsutoog-2018pts"
+          },
+          "rico:measure": "POINT(882600 6547800)"
+        },
+        "rico:isOrWasPhysicalLocationOf": {
+          "id": "an:place/FRAN_RI_005-d3ntcnhj5o--ihsx7zsutoog"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d3ntcnhj5o--ihsx7zsutoog"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntcni98n-1lf5e1o3ay10w",
+      "type": [
+        "rico:Place",
+        "geofla:Commune",
+        "insee-geo:Commune"
+      ],
+      "geofla:dpt": [
+        {
+          "id": "http://data.alegoria-project.fr/id/ign/unitesadministratives/departement/01"
+        },
+        {
+          "id": "http://data.ign.fr/id/geofla/departement/01"
+        },
+        {
+          "id": "http://id.insee.fr/geo/departement/01"
+        }
+      ],
+      "insee-geo:codeCommune": "01008",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Ambutrix (Ain)"
+      },
+      "rico:hasOrHadPhysicalLocation": {
+        "id": "an:physicalLocation/FRAN_RI_005-d3ntcni98n-1lf5e1o3ay10w-2018pts",
+        "type": "rico:PhysicalLocation",
+        "rico:hasOrHadCoordinates": {
+          "id": "an:coordinates/FRAN_RI_005-d3ntcni98n-1lf5e1o3ay10w-2018pts-RFG93",
+          "type": "rico:Coordinates",
+          "rico:geodesicSystem": "RGF93 (projection Lambert 93) [http://data.ign.fr/id/ignf/crs/RGF93LAMB93]",
+          "rico:isOrWasCoordinatesOf": {
+            "id": "an:physicalLocation/FRAN_RI_005-d3ntcni98n-1lf5e1o3ay10w-2018pts"
+          },
+          "rico:measure": "POINT(881100 6540400)"
+        },
+        "rico:isOrWasPhysicalLocationOf": {
+          "id": "an:place/FRAN_RI_005-d3ntcni98n-1lf5e1o3ay10w"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d3ntcni98n-1lf5e1o3ay10w"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntcniobv-aj1s7sat8i36",
+      "type": [
+        "rico:Place",
+        "geofla:Commune",
+        "insee-geo:Commune"
+      ],
+      "geofla:dpt": [
+        {
+          "id": "http://data.alegoria-project.fr/id/ign/unitesadministratives/departement/01"
+        },
+        {
+          "id": "http://data.ign.fr/id/geofla/departement/01"
+        },
+        {
+          "id": "http://id.insee.fr/geo/departement/01"
+        }
+      ],
+      "insee-geo:codeCommune": "01009",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Andert-et-Condon (Ain)"
+      },
+      "rico:hasOrHadPhysicalLocation": {
+        "id": "an:physicalLocation/FRAN_RI_005-d3ntcniobv-aj1s7sat8i36-2018pts",
+        "type": "rico:PhysicalLocation",
+        "rico:hasOrHadCoordinates": {
+          "id": "an:coordinates/FRAN_RI_005-d3ntcniobv-aj1s7sat8i36-2018pts-RFG93",
+          "type": "rico:Coordinates",
+          "rico:geodesicSystem": "RGF93 (projection Lambert 93) [http://data.ign.fr/id/ignf/crs/RGF93LAMB93]",
+          "rico:isOrWasCoordinatesOf": {
+            "id": "an:physicalLocation/FRAN_RI_005-d3ntcniobv-aj1s7sat8i36-2018pts"
+          },
+          "rico:measure": "POINT(906200 6525100)"
+        },
+        "rico:isOrWasPhysicalLocationOf": {
+          "id": "an:place/FRAN_RI_005-d3ntcniobv-aj1s7sat8i36"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d3ntcniobv-aj1s7sat8i36"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntcnjayo--dzdq3qaztepu",
+      "type": [
+        "rico:Place",
+        "geofla:Commune",
+        "insee-geo:Commune"
+      ],
+      "geofla:dpt": [
+        {
+          "id": "http://data.alegoria-project.fr/id/ign/unitesadministratives/departement/01"
+        },
+        {
+          "id": "http://data.ign.fr/id/geofla/departement/01"
+        },
+        {
+          "id": "http://id.insee.fr/geo/departement/01"
+        }
+      ],
+      "insee-geo:codeCommune": "01010",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Anglefort (Ain)"
+      },
+      "rico:hasOrHadPhysicalLocation": {
+        "id": "an:physicalLocation/FRAN_RI_005-d3ntcnjayo--dzdq3qaztepu-2018pts",
+        "type": "rico:PhysicalLocation",
+        "rico:hasOrHadCoordinates": {
+          "id": "an:coordinates/FRAN_RI_005-d3ntcnjayo--dzdq3qaztepu-2018pts-RFG93",
+          "type": "rico:Coordinates",
+          "rico:geodesicSystem": "RGF93 (projection Lambert 93) [http://data.ign.fr/id/ignf/crs/RGF93LAMB93]",
+          "rico:isOrWasCoordinatesOf": {
+            "id": "an:physicalLocation/FRAN_RI_005-d3ntcnjayo--dzdq3qaztepu-2018pts"
+          },
+          "rico:measure": "POINT(917600 6538500)"
+        },
+        "rico:isOrWasPhysicalLocationOf": {
+          "id": "an:place/FRAN_RI_005-d3ntcnjayo--dzdq3qaztepu"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d3ntcnjayo--dzdq3qaztepu"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntcnjobt-1t5w2ln2eq1yr",
+      "type": [
+        "rico:Place",
+        "geofla:Commune",
+        "insee-geo:Commune"
+      ],
+      "geofla:dpt": [
+        {
+          "id": "http://data.alegoria-project.fr/id/ign/unitesadministratives/departement/01"
+        },
+        {
+          "id": "http://data.ign.fr/id/geofla/departement/01"
+        },
+        {
+          "id": "http://id.insee.fr/geo/departement/01"
+        }
+      ],
+      "insee-geo:codeCommune": "01011",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Apremont (Ain)"
+      },
+      "rico:hasOrHadPhysicalLocation": {
+        "id": "an:physicalLocation/FRAN_RI_005-d3ntcnjobt-1t5w2ln2eq1yr-2018pts",
+        "type": "rico:PhysicalLocation",
+        "rico:hasOrHadCoordinates": {
+          "id": "an:coordinates/FRAN_RI_005-d3ntcnjobt-1t5w2ln2eq1yr-2018pts-RFG93",
+          "type": "rico:Coordinates",
+          "rico:geodesicSystem": "RGF93 (projection Lambert 93) [http://data.ign.fr/id/ignf/crs/RGF93LAMB93]",
+          "rico:isOrWasCoordinatesOf": {
+            "id": "an:physicalLocation/FRAN_RI_005-d3ntcnjobt-1t5w2ln2eq1yr-2018pts"
+          },
+          "rico:measure": "POINT(904700 6570900)"
+        },
+        "rico:isOrWasPhysicalLocationOf": {
+          "id": "an:place/FRAN_RI_005-d3ntcnjobt-1t5w2ln2eq1yr"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d3ntcnjobt-1t5w2ln2eq1yr"
+    },
+    {
+      "id": "an:place/FRAN_RI_005-d3ntcnk0ed-2ehwc9l221pd",
+      "type": [
+        "rico:Place",
+        "geofla:Commune",
+        "insee-geo:Commune"
+      ],
+      "geofla:dpt": [
+        {
+          "id": "http://data.alegoria-project.fr/id/ign/unitesadministratives/departement/01"
+        },
+        {
+          "id": "http://data.ign.fr/id/geofla/departement/01"
+        },
+        {
+          "id": "http://id.insee.fr/geo/departement/01"
+        }
+      ],
+      "insee-geo:codeCommune": "01012",
+      "rdfs:label": {
+        "@language": "fr",
+        "@value": "Aranc (Ain)"
+      },
+      "rico:hasOrHadPhysicalLocation": {
+        "id": "an:physicalLocation/FRAN_RI_005-d3ntcnk0ed-2ehwc9l221pd-2018pts",
+        "type": "rico:PhysicalLocation",
+        "rico:hasOrHadCoordinates": {
+          "id": "an:coordinates/FRAN_RI_005-d3ntcnk0ed-2ehwc9l221pd-2018pts-RFG93",
+          "type": "rico:Coordinates",
+          "rico:geodesicSystem": "RGF93 (projection Lambert 93) [http://data.ign.fr/id/ignf/crs/RGF93LAMB93]",
+          "rico:isOrWasCoordinatesOf": {
+            "id": "an:physicalLocation/FRAN_RI_005-d3ntcnk0ed-2ehwc9l221pd-2018pts"
+          },
+          "rico:measure": "POINT(894100 6548000)"
+        },
+        "rico:isOrWasPhysicalLocationOf": {
+          "id": "an:place/FRAN_RI_005-d3ntcnk0ed-2ehwc9l221pd"
+        }
+      },
+      "rico:identifier": "Ancien identifiant SIA : FRAN_RI_005.xml#d3ntcnk0ed-2ehwc9l221pd"
+    }
+  ]
+}

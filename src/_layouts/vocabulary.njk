@@ -1,0 +1,742 @@
+---
+layout: main.njk
+pagination:
+    data: vocabularies.graph
+    size: 1
+    alias: vocabulary
+permalink: "entities/{{ vocabulary.id | localName }}/"
+---
+
+{% set jsonLdContext = vocabularies["@context"] %}
+{% set sortInverseInScheme = vocabulary.inverse_inScheme | excludeObsolete | jsonSort("prefLabel") %}
+
+<main class="section_body" id="vocabulary">
+  {# Header #}
+  <div class="row">
+    <div class="col-md">
+        <h1 class="ConceptScheme-title">{{ vocabulary.title | lang('fr') }}</h1>
+    </div>
+    {# URI #}
+    <p class="concept-URI">
+        <code >
+            <a href="{{ vocabulary.id | expandUri(jsonLdContext) }}">{{ vocabulary.id | expandUri(jsonLdContext) }}</a>
+        </code>          
+    </p>
+    {# Description #}
+    <p>{% if vocabulary.description and vocabulary.description[0] %}{{ vocabulary.description[0]["@value"] }}{% endif %}</p>
+   
+    {# Creator #}
+    {% if vocabulary.creator %}
+    <div class="row">
+      <div class="col-2">
+        <h6><span data-i18n="dcterms:creator"></span></h6>
+      </div>
+      <div class="col-6">
+        {% for c in vocabulary.creator %}
+          <div class="row">
+            <p>
+            {{ c["foaf:name"]["@value"] }}
+            
+            <span>
+                <a href="mailto:{{ c["foaf:mbox"] }}"><i class="fa-solid fa-envelope"></i></a>
+            </span>
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>  
+    {% endif %}
+    
+    {# dc:version #}
+    {% if vocabulary.version %}
+      <div class="row">
+        <div class="col-2">
+          <h6><span data-i18n="dc:version"></span></h6>
+        </div>
+        <div class="col-6">
+          <span>{{ vocabulary.version[0]["@value"] }}</span>
+        </div>  
+      </div>
+    {% endif %}
+
+    {# dcterms:created #}
+    {% if vocabulary.created %}
+      <div class="row">
+        <div class="col-2">
+          <h6><span data-i18n="dcterms:created"></span></h6>
+        </div>
+        <div class="col-6">
+          <span>{{ vocabulary.created }}</span>
+        </div>  
+      </div>
+    {% endif %}
+
+    {# dcterms:modified #}
+    {% if vocabulary.datemodified %}
+      <div class="row">
+        <div class="col-2">
+          <h6><span data-i18n="dcterms:modified"></span></h6>
+        </div>
+        <div class="col-6">
+          <span>{{ vocabulary.datemodified | getMaxDate }}</span>
+        </div>  
+      </div>
+    {% endif %}
+
+    {# dc:source #}
+    {% if vocabulary.sources %}
+      <div class="row">
+        <div class="col-2">
+          <h6><span data-i18n="dc:source"></span></h6>
+        </div>
+        <div class="col-10">
+          <p>
+          {% for s in vocabulary.sources %}
+          <span>{{ s | lang('fr') }}</span>
+          {% endfor %}
+          </p>
+        </div>  
+      </div>
+    {% endif %}
+
+    {# dc:coverage #}
+    {% if vocabulary.coverage %}
+      <div class="row">
+        <div class="col-2">
+          <h6><span data-i18n="dc:coverage"></span></h6>
+        </div>
+        <div class="col-6">
+          <span>{{ vocabulary.coverage | lang('fr') }}</span>
+        </div>  
+      </div>  
+    {% endif %}
+
+    {# skos:scopeNote #}
+    {% if vocabulary.scopeNote.length >= 1 %}
+      <div class="row">
+        <div class="col-2">
+          <h6><span data-i18n="skos:scopeNote"></span></h6>
+        </div>
+        <div class="col-10">
+          {{ vocabulary.scopeNote | lang('fr') }}
+        </div>
+      </div>
+    {% endif %}
+
+    {# skos:historyNote #}
+    {% if vocabulary.historyNote %}
+      <div class="row">
+        <div class="col-2">
+          <h6><span data-i18n="skos:historyNote"></span></h6>
+        </div>
+        <div class="col-10">
+          {% set hn = vocabulary.historyNote["@value"] | replace("html:","") %}
+          {{ hn }}
+        </div>
+      </div>
+    {% endif %}
+
+    {# Resource #}
+    {% if vocabulary.distribution %}
+    <div class="row botton_marging">
+        <div class="col-2">
+          <h6><span data-i18n="dcat:distribution"></span></h6>
+        </div>
+        <div class="col-10">
+          {% for dist in vocabulary.distribution %}
+          <span>
+            {% set mediaType = dist["dcat:mediaType"].id | string %}
+            {% if mediaType == "http://www.iana.org/assignments/media-types/text/csv" %}
+              <a href="{{ dist['dcat:downloadURL'].id }}"><img src="https://img.shields.io/badge/Format-CSV-blue.png" alt="CSV"></a>
+            {% endif %}
+            {% if mediaType == "https://www.iana.org/assignments/media-types/application/rdf+xml" %}
+              <a href="{{ dist['dcat:downloadURL'].id }}"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.png" alt="RDF/XML"></a>
+            {% endif %}
+          </span>
+          {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    {# Additionnal class #}
+    {% if sortInverseInScheme %}
+      {% for conceptType in sortInverseInScheme[0].type %}
+        {% if conceptType != "Concept" %}
+          <div class="alert alert-secondary" role="alert">
+              <em><span data-i18n="These concepts have all the type"></span> “<a href="{{ conceptType | expandUri(jsonLdContext) }}" target="_blank"><b>{{ conceptType }}</b></a>”.</em>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}    
+  </div>
+
+  <hr>
+
+  {# Tree #}
+  {% set flagPrintTree =  vocabulary.inverse_inScheme | hasBroader %}
+  {% if flagPrintTree %}
+  <div class="row">
+    <div class='col'>
+      <svg width="1200" height="1400" even></svg>
+    </div>
+  </div>
+  {% endif %}
+  
+  {# Liste de concepts #}  
+  {% for concepts in sortInverseInScheme %}
+  <div class="row"> 
+      <div class="col">
+        {% set conceptId = concepts | json %}
+        {# Title #}
+        {% if concepts.notation %}
+          <h5 class="concept-title" id="{{ concepts.notation }}"><small>{{ concepts.notation }} - </small>{{ concepts.prefLabel | lang('fr') }}
+          {# if Status = iso-thes:status = "candidat" #}
+          {% if concepts.isoThesStatus %}
+            <small><i class="fad fa-diamond-exclamation" title="Concept candidat"></i></small>          
+          {% endif %}
+          </h5>
+        {% else %}
+          <h5 class="concept-title" id="{{ concepts.id | localName }}">{{ concepts.prefLabel | lang('fr') }}
+          {# if Status = iso-thes:status = "candidat" #}
+          {% if concepts.isoThesStatus %}
+            <small><i class="fad fa-diamond-exclamation" title="Concept candidat"></i></small>    
+          {% endif %}
+          </h5>
+        {% endif %}        
+        
+        {# URI #}
+        <p class="concept-URI">
+          <code>
+            <a href="{{ concepts.id | expandUri(jsonLdContext) }}">{{ concepts.id | expandUri(jsonLdContext) }}</a>
+          </code>
+          {% if 'FRAN_RI_' in concepts.id %}
+            <br />
+            <span data-i18n="Identifier inside the vocabulary"></span> :
+            {% set suffix = concepts.id | expandUri(jsonLdContext) | replace(r/.*FRAN_RI_.*?-/, '') %}
+            <code class="position-relative d-inline-flex align-items-center gap-2">
+              <span>{{ suffix }}</span>
+              <button class="border-0 copy-icon-btn" data-copy="{{ suffix }}">
+                <i class="fas fa-copy"></i>
+              </button>
+            </code>
+          {% endif %}
+        </p>
+
+        <div class="container">
+
+          {# breadcrumb #}
+          {% if concepts.broader %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:broader"></h6>
+              </div>
+              <div class="col">
+                <ul class="breadcrumb">
+                  <li>
+                    <a href="{{ vocabulary.id | expandUri(jsonLdContext) | toUrl  | relative(page) }}">{{ vocabulary.title | lang('fr') }}</a>
+                  </li>                
+                
+                  {% if concepts.broader %}
+
+                    {% if concepts.broader.broader.broader.broader %}                    
+                      <li>
+                        <a href="#{{ concepts.broader.broader.broader.broader.id | localName }}">{{ concepts.broader.broader.broader.broader.prefLabel | lang('fr') }}</a>
+                      </li>
+                    {% endif %}
+                    
+                    {% if concepts.broader.broader.broader %}
+                      <li>
+                        <a href="#{{ concepts.broader.broader.broader.id | localName }}">{{ concepts.broader.broader.broader.prefLabel | lang('fr') }}</a>
+                      </li>
+                    {% endif %}
+
+                    {% if concepts.broader.broader %}
+                      <li>
+                        <a href="#{{ concepts.broader.broader.id | localName }}">{{ concepts.broader.broader.prefLabel | lang('fr') }}</a>
+                      </li>
+                    {% endif %}
+
+                    {% if concepts.broader %}
+                      <li>
+                        <a href="#{{ concepts.broader.id | localName }}">{{ concepts.broader.prefLabel | lang('fr') }}</a>
+                      </li>
+                    {% endif %}
+                    <li>
+                      {{ concepts.prefLabel | lang('fr') }}
+                    </li> 
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {# Synonyms #}
+          {% if concepts.altLabel %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:altLabel"></h6>
+              </div>
+              <div class="col">
+                <ul>
+                  {% set altLabel_sort = concepts.altLabel | jsonSort("altLabel") %}
+                  {%- for element in altLabel_sort -%}
+                    <li>{{ element["@value"] }}</li>                  
+                  {%- endfor -%}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {# skos:definition #}
+          {% if concepts.definition %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:definition"></h6>                
+              </div>
+              <div class="col">
+                <p>
+                  <span>
+                    {{ concepts.definition[0]["@value"] }}
+                  </span>
+                <p>
+              </div>
+            </div>
+          {% endif %}
+
+          {# Translation #}
+          {% if concepts.prefLabel.length >= 2 %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:prefLabel"></h6>
+              </div>
+              <div class="col">
+                <ul>
+                {%- for element in concepts.prefLabel -%}
+                  {% if element["@language"] != "fr" %}
+                    <li>{{ element["@language"] }} : {{ element["@value"] }}</li>                  
+                  {% endif %}  
+                {%- endfor -%}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {# scopeNote #}
+          {% if concepts.scopeNote.length > 0 %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:scopeNote"></h6>                
+              </div>
+              <div class="col">
+                <ul>
+                  {%- for element in concepts.scopeNote -%}
+                    <li>{{ element["@value"] }}</li>                  
+                  {%- endfor -%}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {# skos:note #}
+          {% if concepts.note.length > 0 %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:note"></h6>                
+              </div>
+              <div class="col">
+                <ul>
+                  {%- for element in concepts.note -%}
+                    <li>{{ element["@value"] }}</li>                  
+                  {%- endfor -%}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {# skos:example #}
+          {% if concepts.example %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:example"></h6>                
+              </div>
+              <div class="col">
+                <ul>
+                {% set example_sort = concepts.example | jsonSort("rico:name") %}
+                {% for e in example_sort %}
+                  <li>
+                    {% set label = (e["rico:name"]["@value"] if e["rico:name"] else e["rico:title"]["@value"]) %}
+                    {% if e.id %}
+                      {# Lien vers la Salle de Lecture Virtuelle si c'est un Record #}
+                      {% if e["rico:title"] and e["seeAlso"] and e["rico:identifier"] %}
+                        <a href="{{ e["seeAlso"][0].id }}">{{ e["rico:identifier"]["@value"] }}</a> : {{ label }}
+                      {% else %}
+                        <a href="{{ e.id | toUrl | relative(page) }}">{{ label }}</a>
+                      {% endif %}
+                    {% else %}
+                      {{ e["rico:name"]["@value"] }}
+                    {% endif %}             
+                  </li>
+                {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if concepts.narrower %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:narrower"></h6>
+              </div>
+              <div class="col">  
+                <ul>
+                  {% set narrower_sort = concepts.narrower | jsonSort("prefLabel") %}
+                  {% for narrowerConcept in narrower_sort %}
+                    <li>
+                      <a href="#{{ narrowerConcept.id | localName }}">{{ narrowerConcept.prefLabel | lang("fr") }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>  
+              </div>
+            </div>
+          {% endif %}
+
+          {# skos:related #}
+          {% if concepts.skosRelated %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:related"></h6>
+              </div>    
+              <div class="col">  
+                <ul>
+                  {% set skosRelated_sort = concepts.skosRelated | jsonSort("prefLabel")  %}
+                  {% for sr in skosRelated_sort %}
+                    <li><a href="#{{ sr.id | localName }}">{{ sr.prefLabel | lang('fr') }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+          
+          {# skos:exactMatch #}
+          {% if concepts.exactMatch %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:exactMatch"></h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  {% for a in concepts.exactMatch %}
+                    <li><a href="{{ a.id | toUrl | relative(page) }}">{{ a.id }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {# skos:closeMatch #}
+          {% if concepts.closeMatch %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:closeMatch"></h6>
+              </div>
+              <div class="col">  
+                <ul>  
+                  {% for a in concepts.closeMatch %}
+                    <li><a href="{{ a.id | toUrl | relative(page) }}">{{ a.id }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+          
+          {# skos:relatedMatch #}
+          {% if concepts.relatedMatch %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:relatedMatch"></h6>
+              </div>    
+              <div class="col">  
+                <ul>  
+                  {% for a in concepts.relatedMatch %}
+                    <li><a href="{{ a.id | toUrl | relative(page) }}">{{ a.prefLabel | lang('fr') }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {# skos:narrowMatch #}
+          {% if concepts.narrowMatch.length > 0 %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:narrowMatch"></h6>
+              </div>    
+              <div class="col">  
+                <ul>  
+                  {% for nm in concepts.narrowMatch %}
+                    <li><a href="{{ nm.id | toUrl | relative(page) }}">{{ nm.id }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if concepts.seeAlso.length > 0 %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="rdfs:seeAlso"></h6>
+              </div>    
+              <div class="col">  
+                <ul>  
+                  {% for sa in concepts.seeAlso %}
+                    <li><a href="{{ sa.id }}">{{ sa.id }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          {% endif %}
+
+          {# skos:changeNote #}
+          {% if concepts.changenote %}
+            <div class="row">
+              <div class="col-1">
+                <h6 data-i18n="skos:changeNote"></h6>                
+              </div>
+              <div class="col">
+                {% set cnotes = concepts.changenote | timeline("fr") %}
+                {# timeline #}
+                <div class="changeNote_container">
+                  <div class="changeNote_wrapper">
+                    <ul class="changeNote_sessions">
+                    {% for t in cnotes %}
+                      <li>
+                        <div class="changeNote_date">{{ t.date }} : <span>{{ t.description }}</span></div>                        
+                      </li>
+                    {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </div>  
+
+      </div>
+    </div>
+  <hr style="margin-top: 10px;">
+  {% endfor %}
+</main>
+
+
+{# d3js #}
+<!-- d3js -->
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script type="text/javascript">
+  // recuperer tous les concepts
+  const data = {{ vocabulary.inverse_inScheme | excludeObsolete | json  }}
+  /* THOMAS : il faut ajouter dans le tableau de data un noeud qui correspond à la racine de l'arbre à dessigner */
+  const conceptScheme_Header = {"id": {{ vocabulary.id | json }},"prefLabel":{{ vocabulary.title | json }}}
+  const title_conceptScheme = {{ vocabulary.prefLabel | json }}
+
+  
+    data.push(conceptScheme_Header);
+
+      // Specify the charts’ dimensions. The height is variable, depending on the layout.
+      const width = 928;
+      const marginTop = 10;
+      const marginRight = 20;
+      const marginBottom = 10;
+      const marginLeft = 40;
+
+      const root = d3.stratify()
+        .id((d) => d.id)
+        .parentId((d) => {
+          if(d.broader) {
+            return d.broader.id
+          } else { 
+            if(d.type && d.type.includes("Concept")) return data.at(-1).id;
+            else return null; 
+          }
+        })
+      (data);
+
+      const dx = 14;
+      const dy = (width - marginRight - marginLeft) / (1 + root.height);
+
+      // Define the tree layout and the shape for links.
+      const tree = d3.tree().nodeSize([dx, dy]);
+      const diagonal = d3.linkHorizontal().x(d => d.y).y(d => d.x);
+
+      // Create the SVG container, a layer for the links and a layer for the nodes.
+      const svg = d3.select("svg")
+        //.attr("width", width)
+        .attr("width", "100%")
+        //.attr("height", dx)
+        .attr("height", "80%")
+        .attr("viewBox", [-marginLeft, -marginTop, width, dx])
+        //.attr("style", "max-width: 100%; height: auto; font: 12px sans-serif;");
+        .attr("style", "max-width: 100%; font: 12px sans-serif;");
+
+      const gLink = svg.append("g")
+          .attr("fill", "none")
+          .attr("stroke", "#555")
+          .attr("stroke-opacity", 0.4)
+          .attr("stroke-width", 1.5);
+
+      const gNode = svg.append("g")
+          .attr("cursor", "pointer")
+          .attr("pointer-events", "all");
+    
+      function update(event,source) {
+          const duration = event?.altKey ? 2500 : 250; // hold the alt key to slow down the transition
+          const nodes = root.descendants().reverse();
+          const links = root.links();
+
+          // Compute the new tree layout.
+          tree(root);
+
+          let left = root;
+          let right = root;
+          root.eachBefore(node => {
+            if (node.x < left.x) left = node;
+            if (node.x > right.x) right = node;
+          });
+
+          const height = right.x - left.x + marginTop + marginBottom;
+          const transition = svg.transition()
+              .duration(duration)
+              //.attr("height", height)
+              .attr("height", "80%")
+              .attr("viewBox", [-marginLeft, left.x - marginTop, width, height])
+              .tween("resize", window.ResizeObserver ? null : () => () => svg.dispatch("toggle"));
+          
+          // Update the nodes…
+          const node = gNode.selectAll("g")
+            .data(nodes, d => d.data.id);
+
+          // Enter any new nodes at the parent's previous position.
+          const nodeEnter = node.enter().append("g")
+              .attr("transform", d => `translate(${source.y0},${source.x0})`)
+              .attr("fill-opacity", 0)
+              .attr("stroke-opacity", 0)
+              .on("click", (event, d) => {
+                d.children = d.children ? null : d._children;
+                update(event, d);
+              });
+          
+          nodeEnter.append("circle")
+            .attr("r", 2.5)
+            // .attr("fill", d => d._children ? "#555" : "#999")
+            // blue circle to indicate it is clickable
+            .attr("fill", d => d._children ? "#3366cc" : "#999")
+            .attr("stroke-width", 10);
+
+          const nodeRef = nodeEnter.append("a")
+            .attr("href", d => "#"+d.data.id.substring(d.data.id.lastIndexOf("/") + 1))
+
+          nodeRef.append("text")
+              .attr("dy", "0.40em")
+              //.attr("x", d => d._children ? -6 : 6)
+              .attr("x", d => d._children ? -6 : 6)
+              .attr("text-anchor", d => d._children ? "end" : "start")
+              // .attr("text-anchor", d => d.data.prefLabel ? "end" : "start")
+              .text(d => d.data.prefLabel.filter(i => i["@language"] == "fr")[0]["@value"])
+              .attr("stroke-linejoin", "round")
+              .attr("stroke-width", 3)
+              .attr("stroke", "white")
+              .attr("paint-order", "stroke");
+          
+          // Transition nodes to their new position.
+          const nodeUpdate = node.merge(nodeEnter).transition(transition)
+              .attr("transform", d => `translate(${d.y},${d.x})`)
+              .attr("fill-opacity", 1)
+              .attr("stroke-opacity", 1);
+
+          // Transition exiting nodes to the parent's new position.
+          const nodeExit = node.exit().transition(transition).remove()
+              .attr("transform", d => `translate(${source.y},${source.x})`)
+              .attr("fill-opacity", 0)
+              .attr("stroke-opacity", 0);
+
+          // Update the links…
+          const link = gLink.selectAll("path")
+            //.data(links, d => d.target.id);
+            .data(links, d => d.target.data.id.split(":")[1])
+
+          // Enter any new links at the parent's previous position.
+          const linkEnter = link.enter().append("path")
+              .attr("d", d => {
+                const o = {x: source.x0, y: source.y0};
+                return diagonal({source: o, target: o});
+              });
+          
+          // Transition links to their new position.
+          link.merge(linkEnter).transition(transition)
+              .attr("d", diagonal);
+
+          // Transition exiting nodes to the parent's new position.
+          link.exit().transition(transition).remove()
+              .attr("d", d => {
+                const o = {x: source.x, y: source.y};
+                return diagonal({source: o, target: o});
+              });
+
+          // Stash the old positions for transition.
+          root.eachBefore(d => {
+            d.x0 = d.x;
+            d.y0 = d.y;
+          });
+        }
+      
+      root.x0 = dy / 2;
+      root.y0 = 0;
+      root.descendants().forEach((d, i) => {
+        d.id = i;
+        d._children = d.children;
+      });
+
+
+      {% if vocabulary.inverse_inScheme | length > 1000 %}
+
+        function toggleL1(d) {
+          d.children.forEach(toggleAll);
+        }
+
+        function toggleAll(d) {
+          if (d.children) {
+            d.children.forEach(toggleAll);
+            toggle(d);
+          }
+        }
+
+        // Toggle children.
+        function toggle(d) {
+          if (d.children) {
+            d._children = d.children;
+            d.children = null;
+          } else {
+            d.children = d._children;
+            d._children = null;
+          }
+        }
+
+        // Initialize the display to show only the first level
+        root.children.forEach(toggleL1);
+
+      {% endif %}
+
+      update(null, root);
+
+      svg.node();
+  
+</script>
+
+{# breadcrumb #}
+<script>
+  
+</script>
+
+{# timeline #}
+<script type="text/javascript">
+
+</script>
