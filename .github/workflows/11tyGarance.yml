@@ -41,6 +41,8 @@ jobs:
             npm run build
       
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
-         folder: build # The folder the action should deploy.
+          publish_dir: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
