@@ -6,12 +6,12 @@ module.exports = {
   "last updated on": "dernière publication le",
   vocabularies: "Vocabulaires contrôlés",
   "These concepts have all the type":
-    "Ces concepts SKOS sont tous aussi des instances de la classe RiC-O:",
+    "Ces concepts SKOS sont tous aussi des instances de la classe RiC-O :",
   "Identifier inside the vocabulary": "Identifiant dans le vocabulaire du SIA",
   agents: "Agents",
-  lieux: "Places",
+  lieux: "Lieux",
   "Record created on": "Notice créée le",
-  "Record updated on": "Notice créée le",
+  "Record updated on": "Notice mise à jour pour la dernière fois le",
 
   // Libelles sur le Menu Vocabularies
   "activityTypes": "Fonctions des collectivités",
@@ -34,7 +34,7 @@ module.exports = {
   "rdfs:seeAlso": "Voir la page",
   "skos:definition": "Définition",
   "skos:narrower": "Concepts spécifiques",
-  "skos:scopeNote": "Note d'application",
+  "skos:scopeNote": "Note d’application",
   "skos:changeNote": "Modifications",
   "skos:example": "Exemple",
   "skos:broader": "Hiérarchie",
