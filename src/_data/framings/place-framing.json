@@ -66,15 +66,9 @@
       "@omitDefault": true,
       "@explicit": true
     },
-    "rico:isOrWasPhysicalLocationOf": {
-      "@omitDefault": true,
-      "@explicit": true,
-      "rdfs:label": { "@omitDefault": true }
-    },
     "rico:hasOrHadCoordinates": {
       "@omitDefault": true,
       "@explicit": true,
-      "rico:isOrWasCoordinatesOf": { "@omitDefault": true },
       "rico:measure": { "@omitDefault": true, "@explicit": true },
       "rico:geodesicSystem": { "@omitDefault": true, "@explicit": true }
     }
