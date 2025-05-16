@@ -13,25 +13,17 @@ concurrency:
 jobs:
   Install_dependencies: 
     runs-on: ubuntu-latest
-    steps:
+    steps:      
       - uses: actions/setup-node@v3
       - name: Setup Node
+        id: package_nd
+        uses: actions/setup-node@v3
         with:
           node-version: "18"
       - name: Install dependencies & build
         run: |
           npm ci
-          
-  generate_resource:
-    needs:  [Install_dependencies]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          repository: ArchivesNationalesFR/Referentiels
-          path: Referentiels
-          ref: version_2
-  
+   
   Persist_Cache:
     runs-on: ubuntu-latest
     steps:
@@ -47,15 +39,21 @@ jobs:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
 
-  Frame_Garance:
-    needs: [Install_dependencies,Persist_Cache, generate_resource]
+  Resource_ANF:
+    needs: [Install_dependencies,Persist_Cache]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: ArchivesNationalesFR/Referentiels
+          path: Referentiels
+          ref: version_2
+    
       - run: npm run read Referentiels
       - run: npm run frame
 
   build:
-    needs: [Frame_Garance]
+    needs: [Resource_ANF]
     runs-on: ubuntu-latest
     steps:
       #- run: npm run build
