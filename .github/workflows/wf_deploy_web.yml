@@ -21,9 +21,6 @@ jobs:
           path: Referentiels
           ref: version_2
             
-  Install_dependencies: 
-    runs-on: ubuntu-latest
-    steps:      
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
