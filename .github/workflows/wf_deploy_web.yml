@@ -10,21 +10,8 @@ permissions:
 concurrency:
   group: "pages"
   cancel-in-progress: false
-jobs:
-  Install_dependencies: 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-      - name: Install dependencies & build
-        run: |
-          npm ci
-          
+jobs:          
   generate_resource:
-    needs:  [Install_dependencies]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -50,9 +37,19 @@ jobs:
           key: ${{ runner.os }}-eleventy-fetch-cache
           
   Frame_Garance:
-    needs: [Install_dependencies,Persist_Cache, generate_resource]
+    needs: [Persist_Cache, generate_resource]
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          
+      - name: Install dependencies & build
+        run: |
+          npm ci
+          
       - name: Convert to Json
         id: Referentiels
         run: npm run read Referentiels
