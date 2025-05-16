@@ -51,8 +51,6 @@ module.exports = {
   "dc:source": "Sources",
   "dcterms:created": "Created",
   "dc:version": "Version",
-  "skos:scoteNote": "Scote Note",
-  "skos:prefLabel": "Translations",
   "skos:note": "Note",
 
   // for agents and generic JSON-LD printing

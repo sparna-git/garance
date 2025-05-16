@@ -356,7 +356,7 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   // Supprime les relations vides
   deleteRelationsWithoutProperties2(agentsData.graph, "rico:MandateRelation", ["rico:beginningDate", "rico:endDate","rico:note"]);
   deleteRelationsWithoutProperties2(agentsData.graph, "rico:PlaceRelation", ["rico:beginningDate","rico:endDate","rico:note"]);
-  deleteRelationsWithoutProperties2(agentsData.graph, "rico:PerformanceRelation", ["rico:beginningDate", "rico:endDate", "rico:note"]);
+  // deleteRelationsWithoutProperties2(agentsData.graph, "rico:PerformanceRelation", ["rico:beginningDate", "rico:endDate", "rico:note"]);
   //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:MandateRelation");
   //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PerformanceRelation");
   //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PlaceRelation");

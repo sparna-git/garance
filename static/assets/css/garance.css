@@ -252,7 +252,7 @@ mark {
   > .entity-predicate-values
   > .entity-predicate-values-list
   > .entity-predicate-values-value:not(.last)::after {
-  content: ",\00a0";
+  content: ";\00a0";
 }
 
 /*
