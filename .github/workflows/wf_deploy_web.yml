@@ -11,16 +11,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 jobs:
-  Load_resources:
+  Install_dependencies: 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
-        with:
-          repository: ArchivesNationalesFR/Referentiels
-          path: Referentiels
-          ref: version_2
-            
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -28,7 +22,18 @@ jobs:
       - name: Install dependencies & build
         run: |
           npm ci
-   
+          
+  generate_resource:
+    needs:  [Install_dependencies]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        id: Referentiels
+        with:
+          repository: ArchivesNationalesFR/Referentiels
+          path: Referentiels
+          ref: version_2
+  
   Persist_Cache:
     runs-on: ubuntu-latest
     steps:
@@ -43,16 +48,18 @@ jobs:
         with:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
-
-  script_npm:
-    needs: [Load_resources,Install_dependencies,Persist_Cache]
+          
+  Frame_Garance:
+    needs: [Install_dependencies,Persist_Cache, generate_resource]
     runs-on: ubuntu-latest
     steps:
-      - run: npm run read Referentiels
+      - name: Convert to Json
+        id: Referentiels
+        run: npm run read Referentiels
       - run: npm run frame
-
+  
   build:
-    needs: [script_npm]
+    needs: [Frame_Garance]
     runs-on: ubuntu-latest
     steps:
       #- run: npm run build
