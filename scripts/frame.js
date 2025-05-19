@@ -325,14 +325,16 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   // Lecture de fichiers
 
   console.log("Reading " + "./_json/garance.json" + " ...");
-  let dataJsonLd = JSON.parse(
-    fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" })
-  );
+  let dataJsonLd = JSON.parse(fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" }));
   console.log("Done");
 
   console.log("Now framing agents...");
   // create deep copy of dataJsonLd
   agentFramingData = JSON.parse(JSON.stringify(dataJsonLd));
+
+  // Size
+  console.log(Buffer.from(JSON.stringify(agentFramingData)).length)
+  
   // delete all unnecessary keys
   agentFramingData.graph = agentFramingData.graph.filter((obj) => !hasType(obj, "rico:PhysicalLocation"));
   agentFramingData.graph = agentFramingData.graph.filter((obj) => !hasType(obj, "rico:Coordinates"));
