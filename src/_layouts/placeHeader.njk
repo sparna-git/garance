@@ -11,14 +11,10 @@
       <div class="header-uri d-flex align-items-center gap-2 position-relative">
         <code>
           <a class="copy-link" href="{{ fullUri }}">{{ fullUri }}</a>
-        </code>
-        
-        {% set suffix = fullUri.split('FRAN_RI_') | last %}
-        {% if suffix %}
-          <button class="border-0 copy-icon-btn" data-copy="{{ suffix }}">
-            <i class="fas fa-copy"></i>
-          </button>
-        {% endif %}
+        </code>        
+        <button class="border-0 copy-icon-btn" data-copy="{{ fullUri }}">
+          <i class="fas fa-copy"></i>
+        </button>
         
       </div>
     {% endif %}

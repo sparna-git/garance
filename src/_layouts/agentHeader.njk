@@ -12,12 +12,9 @@
         <code>
           <a class="copy-link" href="{{ fullUri }}">{{ fullUri }}</a>
         </code>
-        {% set suffix = fullUri.split('FRAN_RI_') | last %}
-        {% if suffix %}
-          <button class="border-0 copy-icon-btn" data-copy="{{ suffix }}">
-            <i class="fas fa-copy"></i>
-          </button>
-        {% endif %}
+        <button class="border-0 copy-icon-btn" data-copy="{{ fullUri }}">
+          <i class="fas fa-copy"></i>
+        </button>
       </div>
 
     {% endif %}
@@ -28,10 +25,10 @@
   {% if links %}
     <div class="mt-2 header-download flex-grow-1">
       {% if links.rdfUrl %}
-        <a href="{{ links.rdfUrl }}" target="_blank"><img src="https://img.shields.io/badge/Record-RDF%2FXML-blue" alt="RDF/XML" /></a>
+        <a href="{{ links.rdfUrl }}" target="_blank"><img src="https://img.shields.io/badge/format-RDF%2FXML-blue" alt="RDF/XML" /></a>
       {% endif %}
       {% if links.eacUrl %}
-        <a href="{{ links.eacUrl }}" target="_blank"><img src="https://img.shields.io/badge/Record-EAC-blue" alt="EAC" /></a>
+        <a href="{{ links.eacUrl }}" target="_blank"><img src="https://img.shields.io/badge/format-EAC-blue" alt="EAC" /></a>
       {% endif %}
     </div>
   {% endif %}
