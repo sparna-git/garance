@@ -95,10 +95,12 @@ rico:RuleType,Rule Type
 rico:SequentialRelation,Sequential Relation
 rico:SiblingRelation,Sibling Relation
 rico:SpouseRelation,Spouse Relation
+rico:StudyAtRelation,Study At Relation
 rico:TeachingRelation,Teaching Relation
 rico:TemporalRelation,Temporal Relation
 rico:Thing,Thing
 rico:Title,Title
+rico:TitleType,Title Type
 rico:Type,Type
 rico:TypeRelation,Type Relation
 rico:UnitOfMeasurement,Unit Of Measurement
@@ -106,6 +108,9 @@ rico:WholePartRelation,Whole Part Relation
 rico:WorkRelation,Work Relation
 rico:accruals,accruals
 rico:accrualsStatus,accruals status
+rico:accumulationDate,accumulation date
+rico:allMembersWithAccumulationDate,all members with accumulation date
+rico:allMembersWithCreationDate,all members with creation date
 rico:altimetricSystem,altimetric system
 rico:altitude,altitude
 rico:authenticityNote,authenticity note
@@ -120,6 +125,7 @@ rico:creationDate,creation date
 rico:date,date
 rico:dateQualifier,date qualifier
 rico:deathDate,death date
+rico:derivationDate,derivation date
 rico:destructionDate,destruction date
 rico:endDate,end date
 rico:expressedDate,expressed date
@@ -138,17 +144,24 @@ rico:length,length
 rico:location,location
 rico:longitude,longitude
 rico:measure,measure
+rico:migrationDate,migration date
 rico:modificationDate,modification date
+rico:mostMembersWithAccumulationDate,most members with accumulation date
+rico:mostMembersWithCreationDate,most members with creation date
 rico:name,name
 rico:normalizedDateValue,normalized date value
 rico:normalizedValue,normalized value
+rico:note,note
 rico:physicalCharacteristicsNote,physical characteristics note
 rico:physicalOrLogicalExtent,physical or logical extent
 rico:productionTechnique,production technique
 rico:publicationDate,publication date
 rico:qualityOfRepresentationNote,quality of representation note
 rico:quantity,quantity
+rico:rankInHierarchy,rank in hierarchy
+rico:rankInSequence,rank in sequence
 rico:recordResourceExtent,Record Resource Extent
+rico:recordResourceSourceOfInformation,Record Resource source of information
 rico:recordResourceStructure,Record Resource structure
 rico:referenceSystem,reference system
 rico:relationCertainty,relation certainty
@@ -156,6 +169,9 @@ rico:relationSource,relation source
 rico:relationState,relation state
 rico:ruleFollowed,rule followed
 rico:scopeAndContent,scope and content
+rico:sentimentOrEmotionExpressed,sentiment or emotion expressed
+rico:someMembersWithAccumulationDate,some members with accumulation date
+rico:someMembersWithCreationDate,some members with creation date
 rico:structure,structure
 rico:technicalCharacteristics,technical characteristics
 rico:textualValue,textual value
@@ -193,8 +209,11 @@ rico:descendanceRelation_role,has the role of the Descendance Relation
 rico:describesOrDescribed,describes or described
 rico:directlyContains,contains directly
 rico:directlyFollowsInSequence,directly follows in sequence
+rico:directlyFollowsProxyInSequence,directly follows proxy in sequence
 rico:directlyIncludes,directly includes
+rico:directlyIncludesProxy,directly includes proxy
 rico:directlyPrecedesInSequence,directly precedes in sequence
+rico:directlyPrecedesProxyInSequence,directly precedes proxy in sequence
 rico:documentedBy,documented by
 rico:documents,documents
 rico:eventRelation_role,has the role of the Event Relation
@@ -206,6 +225,7 @@ rico:followedInSequence,followed in sequence
 rico:followsInSequenceTransitive,follows in sequence transitive
 rico:followsInTime,follows in time
 rico:followsOrFollowed,follows or followed
+rico:followsProxyInSequence,follows proxy in sequence
 rico:functionalEquivalenceRelation_role,has the role of the Functional Equivalence Relation
 rico:groupSubdivisionRelation_role,has the role of the Group Subdivision Relation
 rico:hadComponent,had component
@@ -214,6 +234,7 @@ rico:hadPart,had part
 rico:hadSubdivision,had subdivision
 rico:hadSubevent,had subevent
 rico:hadSubordinate,had subordinate
+rico:hasAccumulationDate,has accumulation date
 rico:hasAccumulator,has accumulator
 rico:hasActivityType,has activity type
 rico:hasAddressee,has addressee
@@ -226,18 +247,23 @@ rico:hasCarrierType,has carrier type
 rico:hasChild,has child
 rico:hasCollector,has collector
 rico:hasComponentTransitive,has component transitive
+rico:hasConstituentProxy,has constituent proxy
 rico:hasConstituentTransitive,has constituent transitive
 rico:hasContentOfType,has content of type
+rico:hasContentWhichMainlyRepresents,has content which mainly represents
+rico:hasContentWhichRepresents,has content which represents
 rico:hasCopy,has copy
 rico:hasCreationDate,has creation date
 rico:hasCreator,has creator
 rico:hasDateType,has date type
 rico:hasDeathDate,has death date
 rico:hasDeathPlace,has death place
+rico:hasDerivationDate,has derivation date
 rico:hasDescendant,has descendant
 rico:hasDestructionDate,has destruction date
 rico:hasDirectComponent,has direct component
 rico:hasDirectConstituent,has direct constituent
+rico:hasDirectConstituentProxy,has direct constituent proxy
 rico:hasDirectPart,has direct part
 rico:hasDirectSubdivision,has direct subdivision
 rico:hasDirectSubevent,has direct subevent
@@ -252,19 +278,22 @@ rico:hasFamilyAssociationWith,has family association with
 rico:hasFamilyType,has family type
 rico:hasGeneticLinkToRecordResource,has genetic link to record resource
 rico:hasIdentifierType,has identifier type
+rico:hasMigrationDate,has migration date
 rico:hasModificationDate,has modification date
 rico:hasOrHadAgentName,has or had agent name
-rico:hasOrHadAllMembersWithCategory,has or had all members with category
+rico:hasOrHadAllMembersWithAccumulationDate,has or had all members with accumulation date
 rico:hasOrHadAllMembersWithContentType,has or had all members with content type
 rico:hasOrHadAllMembersWithCreationDate,has or had all members with creation date
 rico:hasOrHadAllMembersWithDocumentaryFormType,has or had all members with documentary form type
 rico:hasOrHadAllMembersWithLanguage,has or had all members with language
 rico:hasOrHadAllMembersWithLegalStatus,has or had all members with legal status
+rico:hasOrHadAllMembersWithMainSubject,has or had all members with main subject
 rico:hasOrHadAllMembersWithRecordState,has or had all members with record state
+rico:hasOrHadAllMembersWithSubject,has or had all members with subject
+rico:hasOrHadAllMembersWithType,has or had all members with type
 rico:hasOrHadAnalogueInstantiation,has or had analogue instantiation
 rico:hasOrHadAppellation,has or had appellation
 rico:hasOrHadAuthorityOver,has or had authority over
-rico:hasOrHadCategory,has or had category
 rico:hasOrHadComponent,has or had component
 rico:hasOrHadConstituent,has or had constituent
 rico:hasOrHadController,has or had controller
@@ -288,6 +317,7 @@ rico:hasOrHadMainSubject,has or had main subject
 rico:hasOrHadManager,has or had manager
 rico:hasOrHadMandateType,has or had mandate type
 rico:hasOrHadMember,has or had member
+rico:hasOrHadMostMembersWithAccumulationDate,has or had most members with accumulation date
 rico:hasOrHadMostMembersWithCreationDate,has or had most members with creation date
 rico:hasOrHadName,has or had name
 rico:hasOrHadOccupationOfType,has or had occupation of type
@@ -299,13 +329,18 @@ rico:hasOrHadPlaceName,has or had place name
 rico:hasOrHadPlaceType,has or had place type
 rico:hasOrHadPosition,has or had position
 rico:hasOrHadRuleType,has or had rule type
-rico:hasOrHadSomeMembersWithCategory,has or had some members with category
+rico:hasOrHadSomeMembersWhoseContentMainlyRepresents,has or had some members whose content mainly represents
+rico:hasOrHadSomeMembersWhoseContentRepresents,has or had some members whose content represents
+rico:hasOrHadSomeMembersWithAccumulationDate,has or had some members with accumulation date
 rico:hasOrHadSomeMembersWithContentType,has or had some members with content type
 rico:hasOrHadSomeMembersWithCreationDate,has or had some members with creation date
 rico:hasOrHadSomeMembersWithDocumentaryFormType,has or had some members with documentary form type
 rico:hasOrHadSomeMembersWithLanguage,has or had some members with language
 rico:hasOrHadSomeMembersWithLegalStatus,has or had some members with legal status
+rico:hasOrHadSomeMembersWithMainSubject,has or had some members with main subject
 rico:hasOrHadSomeMembersWithRecordState,has or had some members with record state
+rico:hasOrHadSomeMembersWithSubject,has or had some members with subject
+rico:hasOrHadSomeMembersWithType,has or had some members with type
 rico:hasOrHadSpouse,has or had spouse
 rico:hasOrHadStudent,has or had student
 rico:hasOrHadSubdivision,has or had subdivision
@@ -314,12 +349,15 @@ rico:hasOrHadSubject,has or had subject
 rico:hasOrHadSubordinate,has or had subordinate
 rico:hasOrHadTeacher,has or had teacher
 rico:hasOrHadTitle,has or had title
+rico:hasOrHadType,has or had type
 rico:hasOrHadWorkRelationWith,has or had work relation with
 rico:hasOrganicOrFunctionalProvenance,has organic or functional provenance
 rico:hasOrganicProvenance,has organic provenance
+rico:hasOrganicProvenanceDate,has organic provenance date
 rico:hasOriginal,has original
 rico:hasPartTransitive,has part transitive
 rico:hasProductionTechniqueType,has production technique type
+rico:hasProxy,has proxy
 rico:hasPublicationDate,has publication date
 rico:hasPublisher,has publisher
 rico:hasReceiver,has receiver
@@ -333,14 +371,17 @@ rico:hasSubdivisionTransitive,has subdivision transitive
 rico:hasSubeventTransitive,has subevent transitive
 rico:hasSubordinateTransitive,has subordinate transitive
 rico:hasSuccessor,has successor
+rico:hasTitleType,has title type
 rico:hasUnitOfMeasurement,has unit of measurement
 rico:hasWithin,has within
 rico:included,included
 rico:includesOrIncluded,includes or included
+rico:includesProxy,includes proxy
 rico:includesTransitive,includes transitive
 rico:instantiationToInstantiationRelation_role,has the role of the Instantiation to Instantiation Relation
 rico:intellectualPropertyRightsRelation_role,has the role of the Intellectual Property Rights Relation
 rico:intersects,intersects
+rico:isAccumulationDateOf,is accumulation date of
 rico:isAccumulatorOf,is accumulator of
 rico:isActivityTypeOf,is activity type of
 rico:isAddresseeOf,is addressee of
@@ -359,6 +400,7 @@ rico:isCarrierTypeOf,is carrier type of
 rico:isChildOf,is child of
 rico:isCollectorOf,is collector of
 rico:isComponentOfTransitive,is component of transitive
+rico:isConstituentOfProxy,is constituent of proxy
 rico:isConstituentOfTransitive,is constituent of transitive
 rico:isContainedByTransitive,is contained by transitive
 rico:isContentTypeOf,is content type of
@@ -366,19 +408,23 @@ rico:isCopyOf,is copy of
 rico:isCreationDateOf,is creation date of
 rico:isCreatorOf,is creator of
 rico:isDateAssociatedWith,is date associated with
+rico:isDateAssociatedWithRelation,is date associated with Relation
 rico:isDateOfOccurrenceOf,is date of occurrence of
 rico:isDateTypeOf,is date type of
 rico:isDeathDateOf,is death date of
 rico:isDeathPlaceOf,is death place of
+rico:isDerivationDateOf,is derivation date of
 rico:isDestructionDateOf,is destruction date of
 rico:isDirectComponentOf,is direct component of
 rico:isDirectConstituentOf,is direct constituent of
+rico:isDirectConstituentOfProxy,is direct constituent of proxy
 rico:isDirectPartOf,is direct part of
 rico:isDirectSubdivisionOf,is direct subdivision of
 rico:isDirectSubeventOf,is direct subevent of
 rico:isDirectSubordinateTo,is direct subordinate to
 rico:isDirectlyContainedBy,is directly contained by
 rico:isDirectlyIncludedIn,is directly included in
+rico:isDirectlyIncludedInProxy,is directly included in proxy
 rico:isDocumentaryFormTypeOf,is documentary form type of
 rico:isDraftOf,is draft of
 rico:isEndDateOf,is end date of
@@ -392,18 +438,24 @@ rico:isFamilyTypeOf,is family type of
 rico:isFromUseDateOf,is from use date of
 rico:isFunctionallyEquivalentTo,is functionally equivalent to
 rico:isIdentifierTypeOf,is identifier type of
+rico:isIncludedInProxy,is included in proxy
 rico:isIncludedInTransitive,is included in transitive
 rico:isInstantiationAssociatedWithInstantiation,is instantiation associated with instantiation
 rico:isLastUpdateDateOf,is last update date of
+rico:isMainThingRepresentedByContentOf,is main thing represented by content of
+rico:isMigrationDateOf,is migration date of
 rico:isModificationDateOf,is modification date of
+rico:isOrWasAccumulationDateOfAllMembersOf,is or was accumulation date of all members of
+rico:isOrWasAccumulationDateOfMostMembersOf,is or was accumulation date of most members of
+rico:isOrWasAccumulationDateOfSomeMembersOf,is or was accumulation date of some members of
+rico:isOrWasActiveAtDate,is or was active at date
+rico:isOrWasActivityDateOf,is or was date of activity of
 rico:isOrWasAdjacentTo,is or was adjacent to
 rico:isOrWasAffectedBy,is or was affected by
 rico:isOrWasAgentNameOf,is or was agent name of
 rico:isOrWasAnalogueInstantiationOf,is or was analogue instantiation of
 rico:isOrWasAppellationOf,is or was appellation of
-rico:isOrWasCategoryOf,is or was category of
-rico:isOrWasCategoryOfAllMembersOf,is or was category of all members of
-rico:isOrWasCategoryOfSomeMembersOf,is or was category of some members of
+rico:isOrWasAttendedByStudent,is or was attended by student
 rico:isOrWasComponentOf,is or was component of
 rico:isOrWasConstituentOf,is or was constituent of
 rico:isOrWasContainedBy,is or was contained by
@@ -440,6 +492,9 @@ rico:isOrWasLegalStatusOfSomeMembersOf,is or was legal status of some members of
 rico:isOrWasLocationOf,is or was location of
 rico:isOrWasLocationOfAgent,is or was location of agent
 rico:isOrWasMainSubjectOf,is or was main subject of
+rico:isOrWasMainSubjectOfAllMembersOf,is or was main subject of all members of
+rico:isOrWasMainSubjectOfSomeMembersOf,is or was main subject of some members of
+rico:isOrWasMainThingRepresentedByContentOfSomeMembersOf,is or was main thing represented by content of some members of
 rico:isOrWasManagerOf,is or was manager of
 rico:isOrWasMandateTypeOf,is or was mandate type of
 rico:isOrWasMemberOf,is or was member of
@@ -456,15 +511,22 @@ rico:isOrWasPlaceTypeOf,is or was place type of
 rico:isOrWasRecordStateOfAllMembersOf,is or was record state of all members of
 rico:isOrWasRecordStateOfSomeMembersOf,is or was record state of some members of
 rico:isOrWasRegulatedBy,is or was regulated by
+rico:isOrWasRepresentedByContentOfSomeMembersOf,is or was represented by content of some members of
 rico:isOrWasResponsibleForEnforcing,is or was responsible for enforcing
 rico:isOrWasRuleTypeOf,is or was rule type of
 rico:isOrWasSubdivisionOf,is or was subdivision of
 rico:isOrWasSubeventOf,is or was subevent of
 rico:isOrWasSubjectOf,is or was subject of
+rico:isOrWasSubjectOfAllMembersOf,is or was subject of all members of
+rico:isOrWasSubjectOfSomeMembersOf,is or was subject of some members of
 rico:isOrWasSubordinateTo,is or was subordinate to
 rico:isOrWasTitleOf,is or was title of
+rico:isOrWasTypeOf,is or was type of
+rico:isOrWasTypeOfAllMembersOf,is or was type of all members of
+rico:isOrWasTypeOfSomeMembersOf,is or was type of some members of
 rico:isOrWasUnderAuthorityOf,is or was under authority of
 rico:isOrganicOrFunctionalProvenanceOf,is organic or functional provenance of
+rico:isOrganicProvenanceDateOf,is organic provenance date of
 rico:isOrganicProvenanceOf,is organic provenance of
 rico:isOriginalOf,is original of
 rico:isPartOfTransitive,is part of transitive
@@ -480,13 +542,16 @@ rico:isRecordStateOf,is record state of
 rico:isRelatedTo,is related to
 rico:isReplyTo,is reply to
 rico:isRepresentationTypeOf,is representation type of
+rico:isRepresentedByContentOf,is represented by content of
 rico:isResponsibleForIssuing,is responsible for issuing
 rico:isRuleAssociatedWith,is rule associated with
 rico:isSenderOf,is sender of
+rico:isSourceOfInformationOfRecordResource,is source of information of Record Resource
 rico:isSubdivisionOfTransitive,is subdivision of transitive
 rico:isSubeventOfTransitive,is subevent of transitive
 rico:isSubordinateToTransitive,is subordinate to transitive
 rico:isSuccessorOf,is successor of
+rico:isTitleTypeOf,is title type of
 rico:isToUseDateOf,is to use date of
 rico:isUnitOfMeasurementOf,is unit of measurement of
 rico:isWithin,is within
@@ -522,15 +587,44 @@ rico:precededInSequence,preceded in sequence
 rico:precedesInSequenceTransitive,precedes in sequence transitive
 rico:precedesInTime,precedes in time
 rico:precedesOrPreceded,precedes or preceded
+rico:precedesProxyInSequence,precedes proxy in sequence
+rico:proxyDirectlyFollowsInSequence,proxy directly follows in sequence
+rico:proxyDirectlyFollowsProxyInSequence,proxy directly follows proxy in sequence
+rico:proxyDirectlyIncludes,proxy directly includes
+rico:proxyDirectlyIncludesProxy,proxy directly includes proxy
+rico:proxyDirectlyPrecedesInSequence,proxy directly precedes in sequence
+rico:proxyDirectlyPrecedesProxyInSequence,proxy directly precedes proxy in sequence
+rico:proxyFollowsInSequence,proxy follows in sequence
+rico:proxyFollowsProxyInSequenceTransitive,proxy follows proxy in sequence transitive
 rico:proxyFor,proxy for
+rico:proxyHasConstituent,proxy has constituent
+rico:proxyHasConstituentProxyTransitive,proxy has constituent proxy transitive
+rico:proxyHasDirectConstituent,proxy has direct constituent
+rico:proxyHasDirectConstituentProxy,proxy has direct constituent proxy
 rico:proxyIn,proxy in
+rico:proxyInRecord,proxy in record
+rico:proxyInRecordSet,proxy in record set
+rico:proxyIncludes,proxy includes
+rico:proxyIncludesProxyTransitive,proxy includes proxy transitive
+rico:proxyIsConstituentOf,proxy is constituent of
+rico:proxyIsConstituentOfProxyTransitive,proxy is constituent of proxy transitive
+rico:proxyIsDirectConstituentOf,proxy is direct constituent of
+rico:proxyIsDirectConstituentOfProxy,proxy is direct constituent of proxy
+rico:proxyIsDirectlyIncludedIn,proxy is directly included in
+rico:proxyIsDirectlyIncludedInProxy,proxy is directly included in proxy
+rico:proxyIsIncludedIn,proxy is included in
+rico:proxyIsIncludedInProxyTransitive,proxy is included in proxy transitive
+rico:proxyPrecedesInSequence,proxy precedes in sequence
+rico:proxyPrecedesProxyInSequenceTransitive,proxy precedes proxy in sequence transitive
 rico:recordResourceGeneticRelation_role,has the role of the Record Resource Genetic Relation
+rico:recordResourceHasSourceOfInformation,Record Resource has source of information
 rico:recordResourceHoldingRelation_role,has the role of the Record Resource Holding Relation
 rico:recordResourceToInstantiationRelation_role,has the role of the Record Resource to Instantiation Relation
 rico:recordResourceToRecordResourceRelation_role,has the role of the Record Resource to Record Resource Relation
 rico:regulatesOrRegulated,regulates or regulated
 rico:relationConnects,relation connects
 rico:relationHasContext,relation has context
+rico:relationHasDate,relation has date
 rico:relationHasSource,relation has source
 rico:relationHasTarget,relation has target
 rico:relation_role,has the role of the Relation
@@ -543,6 +637,8 @@ rico:ruleRelation_role,has the role of the Rule Relation
 rico:sequentialRelation_role,has the role of the Sequential Relation
 rico:siblingRelation_role,has the role of the Sibling Relation
 rico:spouseRelation_role,has the role of the Spouse Relation
+rico:studiesOrStudiedAt,studies or studied at
+rico:studyAtRelation_role,has the role of the Study At Relation
 rico:teachingRelation_role,has the role of the Teaching Relation
 rico:temporalRelation_role,has the role of the Temporal Relation
 rico:thingIsConnectedToRelation,thing is connected to relation
