@@ -12,6 +12,7 @@ module.exports = {
   lieux: "Places",
   "Record created on": "Record created on",
   "Record updated on": "Record last updated on",
+  "Voir dans le SIV": "See also in the Virtual reading room of the AnF",
 
   // Menu Vocabularies
   "activityTypes": "Function Types of Corporate Bodies (en)",
