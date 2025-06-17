@@ -385,8 +385,8 @@ rico:isAccumulationDateOf,est la date d'accumulation de
 rico:isAccumulatorOf,accumule
 rico:isActivityTypeOf,est le type d’activité de
 rico:isAddresseeOf,est le destinataire de
-rico:isAgentAssociatedWithAgent,est associé à l’agent
-rico:isAgentAssociatedWithPlace,est associé au lieu
+rico:isAgentAssociatedWithAgent,est un agent associé à l’agent
+rico:isAgentAssociatedWithPlace,est un agent associé au lieu
 rico:isAssociatedWithDate,est associé à la date
 rico:isAssociatedWithEvent,est associé à l’événement
 rico:isAssociatedWithPlace,est associé au lieu
@@ -527,7 +527,7 @@ rico:isOrWasTypeOfSomeMembersOf,est ou a été le type de certains membres de
 rico:isOrWasUnderAuthorityOf,est ou a été sous l’autorité de
 rico:isOrganicOrFunctionalProvenanceOf,est la provenance organique ou fonctionnelle de
 rico:isOrganicProvenanceDateOf,est la date de provenance organique de
-rico:isOrganicProvenanceOf,est le producteur de
+rico:isOrganicProvenanceOf,est la provenance organique de
 rico:isOriginalOf,est l’original de
 rico:isPartOfTransitive,est une partie de transitif
 rico:isPlaceAssociatedWith,est un lieu associé à
@@ -622,11 +622,11 @@ rico:recordResourceHoldingRelation_role,a le rôle de la Relation entre agents e
 rico:recordResourceToInstantiationRelation_role,a le rôle de la Relation d’instanciation
 rico:recordResourceToRecordResourceRelation_role,a le rôle de la Relation entre ressources archivistiques
 rico:regulatesOrRegulated,régule ou a régulé
-rico:relationConnects,relation avec
+rico:relationConnects,relation connecte
 rico:relationHasContext,relation a pour contexte
 rico:relationHasDate,relation a pour date
-rico:relationHasSource,source
-rico:relationHasTarget,cible
+rico:relationHasSource,relation a pour source
+rico:relationHasTarget,relation a pour cible
 rico:relation_role,a le rôle de la Relation
 rico:resultedFromTheMergerOf,résulte de la fusion de
 rico:resultedFromTheSplitOf,résulte de la séparation de
@@ -641,10 +641,10 @@ rico:studiesOrStudiedAt,étudie ou a étudié à
 rico:studyAtRelation_role,a le rôle de la Relation entre institution d’enseignement et étudiants
 rico:teachingRelation_role,a le rôle de la Relation entre enseignants et étudiants
 rico:temporalRelation_role,a le rôle de la Relation temporelle
-rico:thingIsConnectedToRelation,est connecté à la relation
+rico:thingIsConnectedToRelation,chose est connectée à la relation
 rico:thingIsContextOfRelation,chose est le contexte de la relation
-rico:thingIsSourceOfRelation,est la source de la relation
-rico:thingIsTargetOfRelation,est la cible de la relation
+rico:thingIsSourceOfRelation,chose est la source de la relation
+rico:thingIsTargetOfRelation,chose est la cible de la relation
 rico:typeRelation_role,a le rôle de la Relation de catégorisation
 rico:wasComponentOf,a été le composant de
 rico:wasConstituentOf,a été un constituant de

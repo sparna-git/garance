@@ -385,8 +385,8 @@ rico:isAccumulationDateOf,is accumulation date of
 rico:isAccumulatorOf,is accumulator of
 rico:isActivityTypeOf,is activity type of
 rico:isAddresseeOf,is addressee of
-rico:isAgentAssociatedWithAgent,is associated with agent
-rico:isAgentAssociatedWithPlace,is associated with place
+rico:isAgentAssociatedWithAgent,is agent associated with agent
+rico:isAgentAssociatedWithPlace,is agent associated with place
 rico:isAssociatedWithDate,is associated with date
 rico:isAssociatedWithEvent,is associated with event
 rico:isAssociatedWithPlace,is associated with place
@@ -622,11 +622,11 @@ rico:recordResourceHoldingRelation_role,has the role of the Record Resource Hold
 rico:recordResourceToInstantiationRelation_role,has the role of the Record Resource to Instantiation Relation
 rico:recordResourceToRecordResourceRelation_role,has the role of the Record Resource to Record Resource Relation
 rico:regulatesOrRegulated,regulates or regulated
-rico:relationConnects,relation with
+rico:relationConnects,relation connects
 rico:relationHasContext,relation has context
 rico:relationHasDate,relation has date
-rico:relationHasSource,source
-rico:relationHasTarget,target
+rico:relationHasSource,relation has source
+rico:relationHasTarget,relation has target
 rico:relation_role,has the role of the Relation
 rico:resultedFromTheMergerOf,resulted from the merger of
 rico:resultedFromTheSplitOf,resulted from the split of
@@ -641,10 +641,10 @@ rico:studiesOrStudiedAt,studies or studied at
 rico:studyAtRelation_role,has the role of the Study At Relation
 rico:teachingRelation_role,has the role of the Teaching Relation
 rico:temporalRelation_role,has the role of the Temporal Relation
-rico:thingIsConnectedToRelation,is connected to relation
+rico:thingIsConnectedToRelation,thing is connected to relation
 rico:thingIsContextOfRelation,thing is context of relation
-rico:thingIsSourceOfRelation,is source of relation
-rico:thingIsTargetOfRelation,is target of relation
+rico:thingIsSourceOfRelation,thing is source of relation
+rico:thingIsTargetOfRelation,thing is target of relation
 rico:typeRelation_role,has the role of the Type Relation
 rico:wasComponentOf,was component of
 rico:wasConstituentOf,was constituent of
