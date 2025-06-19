@@ -287,15 +287,13 @@ function getDownloadLinks(agent, context) {
   let rdfUrl = null;
   let eacUrl = null;
 
-  const shortMatch = /^agent:(\d{6})$/.exec(id);
+  const shortMatch = /^(\d{6})$/.exec(fileName);
   if (shortMatch) {
     const num = shortMatch[1];
     rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/producteurs/rdf/FRAN_Agent_${num}.rdf`;
     eacUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/producteurs/eac-cpf/FRAN_NP_${num}.xml`;
     return { rdfUrl, eacUrl };
-  }
-
-  if (fileName.startsWith("FRAN_Agent_RI_")) {
+  } else {
     if (types.includes("rico:CorporateBody")) {
       rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/collectivites/${fileName}.rdf`;
       return { rdfUrl };
