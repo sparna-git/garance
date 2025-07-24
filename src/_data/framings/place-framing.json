@@ -41,8 +41,7 @@
   "rico:identifier": { "@omitDefault": true },
   "owl:sameAs": {
     "@omitDefault": true,
-    "@explicit": true,
-    "rdfs:label": { "@omitDefault": true }
+    "@explicit": true
   },
   "rdfs:seeAlso": {
     "@omitDefault": true,
@@ -102,5 +101,21 @@
     "@omitDefault": true,
     "@explicit": true,
     "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isOrWasAdjacentTo": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isPlaceAssociatedWith": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rdfs:label": { "@omitDefault": true }
+  },
+  "skos:altLabel": { "@omitDefault": true },
+  "rico:descriptiveNote": { "@omitDefault": true },
+  "rico:isOrWasContainedBy": {
+    "@omitDefault": true,
+    "@explicit": true
   }
 }

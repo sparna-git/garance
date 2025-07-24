@@ -55,6 +55,11 @@ function getType(obj) {
 * Post Processing
 */
 function replaceURL(jsonArray, eNode, urlTransformation) {
+
+  // uris
+  //const  = "https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_";
+  //const otherURI = "https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_Agent_IR_";
+
   const rgx = new RegExp(
     "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-"
   );
@@ -325,7 +330,9 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   // Lecture de fichiers
 
   console.log("Reading " + "./_json/garance.json" + " ...");
-  let dataJsonLd = JSON.parse(fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" }));
+  let dataJsonLd = JSON.parse(
+    fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" })
+  );
   console.log("Done");
 
   console.log("Now framing agents...");
@@ -333,7 +340,7 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   agentFramingData = JSON.parse(JSON.stringify(dataJsonLd));
 
   // Size
-  console.log(Buffer.from(JSON.stringify(agentFramingData)).length)
+  console.log(Buffer.from(JSON.stringify(agentFramingData)).length);
   
   // delete all unnecessary keys
   agentFramingData.graph = agentFramingData.graph.filter((obj) => !hasType(obj, "rico:PhysicalLocation"));
@@ -354,7 +361,7 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   
   // Replace les URIs
   replaceURL(agentsData.graph,"rico:isOrganicProvenanceOf","https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_");
-
+  
   // Supprime les relations vides
   deleteRelationsWithoutProperties2(agentsData.graph, "rico:MandateRelation", ["rico:beginningDate", "rico:endDate","rico:note"]);
   deleteRelationsWithoutProperties2(agentsData.graph, "rico:PlaceRelation", ["rico:beginningDate","rico:endDate","rico:note"]);
@@ -379,23 +386,26 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   console.log("Now framing index...");
   await framed(dataJsonLd,"src/_data/framings/index-framing.json","src/_data/index.json");
   
-
   console.log("Now framing Place...");
   await framed(dataJsonLd,"src/_data/framings/place-framing.json","src/_data/places.json");
+
   console.log("Post-processing: place ...");
   let placesData = JSON.parse(fs.readFileSync("src/_data/places.json", { encoding: "utf8", flag: "r" })); //
+
   //
   placesData.graph = getOnlyTitleisOne(placesData.graph); // Test
   placesData.graph = removeElementnotPlace(placesData.graph); // Test
   getOnlyDoublecas(placesData.graph);
 
   // Remove relation
-  
-
   // remove element with place to agent
   //placesData.graph = removeElementnotPlace(placesData.graph);
   // getting 10 Element only for show deploy
+
   //placesData.graph = filterShow(placesData.graph);
+
   // write in place file
   fs.writeFileSync("src/_data/places.json",JSON.stringify(placesData, null, 2),{ encoding: "utf8" });
+  console.log("Now framing place header...");
+  await framed(dataJsonLd,"src/_data/framings/placeHeader-framing.json","src/_data/placesHeader.json");
 })();

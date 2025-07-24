@@ -4,25 +4,24 @@
   pagination: {
       data: "places.graph",
       size: 1,
-      alias: "place",
+      alias: "placeDB",
       before: function(paginationData, fullData) {
         // filter out entries without an id
         return paginationData.filter(item => item.id);
       }
   },
-  permalink: "entities/place/{{ place.id | localName | slugify }}/"
+  permalink: "entities/place/{{ placeDB.id | localName }}/"
 }
 ---
 
 {# "with context" means the imported templates will have access to all data #}
 {# see https://mozilla.github.io/nunjucks/templating.html#import #}
 {% import "src/_layouts/jsonld.njk" as jsonld with context %}
-
 {% import "src/_layouts/placeHeader.njk" as header with context %}
 
-{% set headerData = places | findById(place.id) %}
+{% set headerData = placesHeader | findById(placeDB.id) %}
 {{ header.header(headerData) }}
 
 
 {# first parameter is the object to print, second parameter is the main entity printed #}
-{{ jsonld.render(place, headerData) }}
+{{ jsonld.render(placeDB,headerData) }}

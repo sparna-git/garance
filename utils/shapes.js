@@ -139,6 +139,8 @@ exports.getSortKey = function (something, shapes, context) {
     key = something;
   } else if (jsonld.isObjectWithSingleLabelProperty(something, context)) {
     key = JSON.stringify(jsonld.extractFirstNonIdNonTypeProperty(something));
+  } else if (jsonld.isLiteralObject(something)) {  // check if the object is literal and sort string 
+    key = something.value;
   } else {
     // check if a sort key is declared in the shapes for the object type
     let types = jsonld.getTypes(something);
