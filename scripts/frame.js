@@ -366,6 +366,7 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   console.log("Post-processing: places ...");
   let placesData = JSON.parse(fs.readFileSync("src/_data/places.json", { encoding: "utf8", flag: "r" })); //
   placesData.graph = filterPlacesWithUri(placesData.graph);
+
   //
   // placesData.graph = getOnlyTitleisOne(placesData.graph); // Test
   // placesData.graph = removeElementnotPlace(placesData.graph); // Test
@@ -380,6 +381,15 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
 
   // write in place file
   fs.writeFileSync("src/_data/places.json",JSON.stringify(placesData, null, 2),{ encoding: "utf8" });
+  
   console.log("Now framing place header...");
   await framed(dataJsonLd,"src/_data/framings/placeHeader-framing.json","src/_data/placesHeader.json");
+  console.log("Post-processing: places header ...");
+  let placesHeaderData = JSON.parse(fs.readFileSync("src/_data/placesHeader.json", { encoding: "utf8", flag: "r" })); //
+  placesHeaderData.graph = filterPlacesWithUri(placesHeaderData.graph);
+  // write in place file
+  fs.writeFileSync("src/_data/placesHeader.json",JSON.stringify(placesHeaderData, null, 2),{ encoding: "utf8" });
+  
+
+
 })();
