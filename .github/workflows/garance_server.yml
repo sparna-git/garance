@@ -10,7 +10,7 @@ jobs:
         with:
           repository: ArchivesNationalesFR/Referentiels
           path: Referentiels
-          ref: version_2
+          ref: main
 
       - name: Setup Node
         uses: actions/setup-node@v3
