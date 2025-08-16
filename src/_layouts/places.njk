@@ -12,7 +12,7 @@ layout: main.njk
 		<ul>
 			{% set placesWithType = places.graph | findWithPropertyId("rico:hasOrHadPlaceType", type["id"]) %}
 			{%- for aPlace in placesWithType -%}
-				<li><a href="{{ [ '/entities/place/', aPlace.id | localName | slugify ] | join | relative(page) }}">{{ aPlace["skos:prefLabel"] | lang("fr") }}</a></li>
+				<li><a href="{{ [ '/entities/place/', aPlace.id | localName ] | join | relative(page) }}">{{ aPlace["skos:prefLabel"] | lang("fr") }}</a></li>
 			{%- endfor-%}
 		</ul>
 	{%- endfor-%}
@@ -21,7 +21,7 @@ layout: main.njk
 	<ul>
 		{% set placesWithoutType = places.graph | findWithoutProperty("rico:hasOrHadPlaceType") %}
 		{%- for aPlace in placesWithoutType -%}
-			<li><a href="{{ [ '/entities/place/', aPlace.id | localName | slugify ] | join | relative(page) }}">{{ aPlace["skos:prefLabel"] | lang("fr") }}</a></li>
+			<li><a href="{{ [ '/entities/place/', aPlace.id | localName ] | join | relative(page) }}">{{ aPlace["skos:prefLabel"] | lang("fr") }}</a></li>
 		{%- endfor-%}
 	</ul>
 </main>
