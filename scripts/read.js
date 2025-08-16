@@ -58,8 +58,8 @@ let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
     }
   } // end for
 
+  console.log("Compact with context : src/_data/context.json ...");
   let context = JSON.parse(fs.readFileSync("src/_data/context.json", { encoding: "utf8", flag: "r" }));
-  console.log("Compact...");
   const compactedJsonLdResult = await jsonld.compact(JSONLD_Result, context)
   console.log("Done");
 

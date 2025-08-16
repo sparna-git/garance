@@ -13,6 +13,21 @@ function isValidateYear(yearString) {
     return yearString.match(regex) !== null;
 };
 
+// Helper: stable stringify with sorted keys
+function stableStringify(obj) {
+  if (obj === null || typeof obj !== "object") {
+    return JSON.stringify(obj);
+  }
+
+  if (Array.isArray(obj)) {
+    return "[" + obj.map(stableStringify).join(",") + "]";
+  }
+
+  // Sort keys for consistent ordering
+  const keys = Object.keys(obj).sort();
+  return "{" + keys.map(k => JSON.stringify(k) + ":" + stableStringify(obj[k])).join(",") + "}";
+};
+
 
 module.exports = {
     readableDate: function (date, format, locale = "fr") {
@@ -181,6 +196,41 @@ module.exports = {
       } catch(error) {
         return absoluteUrl;
       }
+    },
+
+    /**
+     * Returns unique values of a property from an array of objects having this property
+     **/
+    unique: function(array, property) {
+        const seen = new Set();
+        const result = [];
+
+        for (const item of array) {
+            const value = item[property];
+            // exclude undefined value
+            if(value) {
+                const key = stableStringify(value); // serialize object
+                if (!seen.has(key)) {
+                  seen.add(key);
+                  result.push(value);
+                }
+            }
+        }
+        return result;
+    },
+
+    findWithPropertyId: function(array, property, id) {
+        return array.filter(item => 
+            item[property]
+            &&
+            ( (item[property]["id"] == id) || (item[property]["@id"] == id) )
+        )
+    },
+
+    findWithoutProperty: function(array, property) {
+        return array.filter(item => 
+            item[property] == undefined
+        )
     },
 
     jsonSort: function (jsonContent, element) {

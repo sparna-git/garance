@@ -137,6 +137,9 @@ exports.getSortKey = function (something, shapes, context) {
     key = jsonld.getId(something);
   } else if (jsonld.isLiteralString(something, context)) {
     key = something;
+  } else if (jsonld.isLiteralObject(something, context)) {
+    // return '@value' if not null/undefined, otherwise returns 'value'
+    key = something["@value"] ?? something["value"];
   } else if (jsonld.isObjectWithSingleLabelProperty(something, context)) {
     key = JSON.stringify(jsonld.extractFirstNonIdNonTypeProperty(something));
   } else {

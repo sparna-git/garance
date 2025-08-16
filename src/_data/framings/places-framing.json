@@ -1,0 +1,234 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "included": "@included",
+
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rico": "https://www.ica.org/standards/RiC/ontology#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "html": "http://www.w3.org/1999/xhtml",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "iso-thes": "http://purl.org/iso25964/skos-thes#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "insee-geo": "http://rdf.insee.fr/def/geo#",
+    "geofla": "http://data.ign.fr/def/geofla#",
+    "anf-onto": "https://rdf.archives-nationales.culture.gouv.fr/ontology#",
+
+    "agent": "https://rdf.archives-nationales.culture.gouv.fr/agent/",
+    "place": "https://rdf.archives-nationales.culture.gouv.fr/place/",
+
+    "documentaryFormType": "https://rdf.archives-nationales.culture.gouv.fr/documentaryFormType/",
+    "placeType": "https://rdf.archives-nationales.culture.gouv.fr/placeType/",
+    "recordSetType": "https://rdf.archives-nationales.culture.gouv.fr/recordSetType/",
+    "recordState": "https://rdf.archives-nationales.culture.gouv.fr/recordState/",
+    "carrierType": "https://rdf.archives-nationales.culture.gouv.fr/carrierType/",
+    "productionTechniqueType": "https://rdf.archives-nationales.culture.gouv.fr/productionTechniqueType/",
+    "representationType": "https://rdf.archives-nationales.culture.gouv.fr/representationType/",
+    "thing": "https://rdf.archives-nationales.culture.gouv.fr/thing/",
+    "occupationType": "https://rdf.archives-nationales.culture.gouv.fr/occupationType/",
+    "activityType": "https://rdf.archives-nationales.culture.gouv.fr/activityType/",
+    "language": "https://rdf.archives-nationales.culture.gouv.fr/language/",
+    "corporateBodyType": "https://rdf.archives-nationales.culture.gouv.fr/corporateBodyType/",
+    "identifierType": "https://rdf.archives-nationales.culture.gouv.fr/identifierType/",
+
+    "owl:sameAs": {
+      "@id": "owl:sameAs",
+      "@type": "@id"
+    }
+  },
+  "@explicit": true,
+  "type": "rico:Place",
+  "skos:altLabel": { "@omitDefault": true },
+  "rico:beginningDate": { "@omitDefault": true },
+  "insee-geo:chefLieu": { "@omitDefault": true },
+  "insee-geo:codeINSEE": { "@omitDefault": true },
+  "geofla:codeReg": { "@omitDefault": true },
+  "rico:containsOrContained": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "anf-onto:crossesOrCrossed": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "rico:endDate": { "@omitDefault": true },
+  "anf-onto:endingAtPoint": { "@omitDefault": true },
+  "anf-onto:endingOnStreet": { "@omitDefault": true },
+  "rico:followsInTime": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "skos:prefLabel": { "@omitDefault": true }
+  },
+  "rico:generalDescription": { "@omitDefault": true },
+  "rico:hasExtent": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:quantity": { "@omitDefault": true },
+    "rico:unitOfMeasurement": { "@omitDefault": true }
+  },
+  "rico:hasOrHadIdentifier": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:textualValue": { "@omitDefault": true },
+    "rico:type": { "@omitDefault": true }
+  },
+  "rico:hasOrHadLocation": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "skos:prefLabel": { "@omitDefault": true }
+  },
+  "rico:hasOrHadPhysicalLocation": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "rico:hasOrHadCoordinates": {
+        "@omitDefault": true,
+        "@explicit": true,
+        "rico:note": { "@omitDefault": true },
+        "__comment": "removed rico:measure",
+        "rico:geodesicSystem": { "@omitDefault": true }
+      }
+  },
+  "rico:hasOrHadPlaceName": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:history": { "@omitDefault": true },
+    "rico:textualValue": { "@omitDefault": true },
+    "rico:resultsOrResultedFrom": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "rico:date": { "@omitDefault": true },
+      "rico:generalDescription": { "@omitDefault": true },
+      "rico:hasActivityType": {
+        "@omitDefault": true,
+        "@explicit": true,
+        "skos:prefLabel": { "@omitDefault": true }
+      },
+      "rico:occuredAtDate": { "@omitDefault": true }
+    }
+  },
+  "rico:hasOrHadPlaceType": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "skos:hiddenLabel": { "@omitDefault": true },
+  "rico:history": { "@omitDefault": true },
+  "rico:isDirectlyContainedBy": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "rico:isOrWasAdjacentTo": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "rico:isOrWasAffectedBy": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:date": { "@omitDefault": true },
+    "rico:generalDescription": { "@omitDefault": true },
+    "rico:hasActivityType": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "skos:prefLabel": { "@omitDefault": true }
+    },
+    "rico:occuredAtDate": { "@omitDefault": true }
+  },
+  "rico:isOrWasContainedBy": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "anf-onto:isOrWasLocatedOnStreet": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "rdfs:label": { "@omitDefault": true },
+  "rico:name": { "@omitDefault": true },
+  "rico:note": { "@omitDefault": true },
+  "rico:precedesInTime": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "skos:prefLabel": { "@omitDefault": true },
+  "owl:sameAs": { "@omitDefault": true },
+  "rdfs:seeAlso": { "@omitDefault": true },
+  "anf-onto:startingAtPoint": { "@omitDefault": true },
+  "anf-onto:startingOnStreet": { "@omitDefault": true },
+  "anf-onto:streetEndsOrEndedAtPoint": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:name": { "@omitDefault": true },
+    "anf-onto:isOrWasLocatedOnStreet": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "skos:prefLabel": { "@omitDefault": true }
+    }
+  },
+  "anf-onto:streetEndsOrEndedOnStreet": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "anf-onto:streetStartsOrStartedAtPoint": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:name": { "@omitDefault": true },
+    "anf-onto:isOrWasLocatedOnStreet": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "skos:prefLabel": { "@omitDefault": true }
+    }
+  },
+  "anf-onto:streetStartsOrStartedOnStreet": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "anf-onto:streetStatus": { "@omitDefault": true },
+  "rico:thingIsTargetOfRelation": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:beginningDate": { "@omitDefault": true },
+    "rico:endDate": { "@omitDefault": true },
+    "rico:relationHasSource": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "skos:prefLabel": { "@omitDefault": true }
+    },
+    "rico:relationHasTarget": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "skos:prefLabel": { "@omitDefault": true }
+    }
+  },
+  "rico:type": { "@omitDefault": true },
+  "anf-onto:wasAbsorbedBy": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
+  "rico:wasContainedBy": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },  
+  "anf-onto:wasPartiallyAbsorbedBy": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  }
+  
+}

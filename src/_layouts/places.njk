@@ -2,63 +2,26 @@
 layout: main.njk
 ---
 
-{% set sortIndex = places.graph | jsonSort("rdfs:label") %}
-
 <main class="section_places">
-	<div class="row">
-		<h1 class="title-Header" data-i18n="places"></h1>		
-		{# Departement #}
-		<div class="col">				
-			<ul>
-				{% set n = 0 %}
-				{%- for item in sortIndex -%}
-					{% if item.id  %}
-						{% if ("geofla:Departement" in item.type or "insee-geo:Departement" in item.type) %}
-							{% if n < 101 %}
-								<li>
-									<a href="{{ [ '/entities/place/', item.id | localName | slugify ] | join | relative(page) }}">{{ item["rdfs:label"] | lang("fr") }}</a>
-								</li>
-								{% set n = n + 1%}
-							{% endif %}	
-						{% endif %}
-					{% endif %}
-				{%- endfor-%}				
-			</ul>
-		</div>
 
-		{# Commun #}
-		<div class="col">				
-			<ul>
-				{% set nCommune = 0 %}
-				{%- for item in sortIndex -%}
-					{% if item.id  %}
-						{% if ("geofla:Commune" in item.type or "insee-geo:Commune" in item.type) %}
-							{% if nCommune < 101 %}
-								<li>
-									<a href="{{ [ '/entities/place/', item.id | localName | slugify ] | join | relative(page) }}">{{ item["rdfs:label"] | lang("fr") }}</a>
-								</li>
-								{% set nCommune = nCommune + 1%}
-							{% endif %}
-						{% endif %}						
-					{% endif %}
-				{%- endfor-%}				
-			</ul>
-		</div>
-		{# Place #}
-		<div class="col">				
-			<ul>
-				{% set nLieux = 0 %}
-				{%- for item in sortIndex -%}
-					{% if item.id and item.type == "rico:Place" %}
-						{% if nLieux < 101 %}				
-							<li>
-								<a href="{{ [ '/entities/place/', item.id | localName | slugify ] | join | relative(page) }}">{{ item["rdfs:label"] | lang("fr") }}</a>
-							</li>
-							{% set nLieux = nLieux + 1%}
-						{% endif %}						
-					{% endif %}
-				{%- endfor-%}				
-			</ul>
-		</div>		
-	</div>
+	<h1 class="title-Header" data-i18n="places"></h1>
+
+	{% set uniquePlaceTypes = places.graph | unique("rico:hasOrHadPlaceType") %}
+	{%- for type in uniquePlaceTypes -%}
+		<h2>{{ type["skos:prefLabel"] | lang("fr") }}</h2>
+		<ul>
+			{% set placesWithType = places.graph | findWithPropertyId("rico:hasOrHadPlaceType", type["id"]) %}
+			{%- for aPlace in placesWithType -%}
+				<li><a href="{{ [ '/entities/place/', aPlace.id | localName | slugify ] | join | relative(page) }}">{{ aPlace["skos:prefLabel"] | lang("fr") }}</a></li>
+			{%- endfor-%}
+		</ul>
+	{%- endfor-%}
+	<!-- add undefined place type -->
+	<h2>Others...</h2>
+	<ul>
+		{% set placesWithoutType = places.graph | findWithoutProperty("rico:hasOrHadPlaceType") %}
+		{%- for aPlace in placesWithoutType -%}
+			<li><a href="{{ [ '/entities/place/', aPlace.id | localName | slugify ] | join | relative(page) }}">{{ aPlace["skos:prefLabel"] | lang("fr") }}</a></li>
+		{%- endfor-%}
+	</ul>
 </main>

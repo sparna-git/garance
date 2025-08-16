@@ -131,15 +131,6 @@ function deleteRelationsWithoutProperties2(inputJson,type,properties) {
   }
 }
 
-/*
-* Filter all element of place only
-*
-*/
-function removeElementnotPlace(jsonArray) {
-  const regexPlace = new RegExp("an:place/FRAN_RI_");
-  const newfilter = jsonArray.filter((f) => regexPlace.exec(f.id));
-  return newfilter;
-}
 
 /**
  * Supprime les objets de type donné (ex: rico:PerformanceRelation) :
@@ -219,32 +210,6 @@ function cleanPreferredAgentsNames(graph) {
   return graph.filter((obj) => !toRemoveIds.has(obj.id));
 }
 
-function getOnlyTitleisOne(jsonData) {
-
-  const data = [];
-  for (let obj of jsonData) {
-    if (Array.isArray(obj["rdfs:label"])) {
-      if (obj["rdfs:label"].length < 2) {
-        data.push(obj);
-      }
-    } else {
-      data.push(obj);
-    }
-  }
-  return data;
-}
-
-function getOnlyDoublecas(jsonData) {
-
-  for (let obj of jsonData) {
-    if (obj["rico:isOrWasPartOf"]) {
-      if (Array.isArray(obj["rico:isOrWasPartOf"]["rdfs:label"])) {
-        obj["rico:isOrWasPartOf"]["rdfs:label"] = obj["rico:isOrWasPartOf"]["rdfs:label"][0]
-      }
-    }
-  }  
-}
-
 
 
 // filter
@@ -302,6 +267,15 @@ function filterShow(jsonData) {
   return data;  
 };
 
+
+function filterPlacesWithUri(jsonArray) {
+  const regexPlace = new RegExp("place:FRAN_RI_");
+  const newfilter = jsonArray.filter((f) => regexPlace.exec(f.id));
+  return newfilter;
+}
+
+
+
 let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   let framingSpec = fs.readFileSync(framingSpecPath, {
     ncoding: "utf8",
@@ -333,7 +307,7 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   agentFramingData = JSON.parse(JSON.stringify(dataJsonLd));
 
   // Size
-  console.log(Buffer.from(JSON.stringify(agentFramingData)).length)
+  console.log("Length of framed data :"+Buffer.from(JSON.stringify(agentFramingData)).length);
   
   // delete all unnecessary keys
   agentFramingData.graph = agentFramingData.graph.filter((obj) => !hasType(obj, "rico:PhysicalLocation"));
@@ -345,7 +319,7 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   // clean agents names
   agentFramingData.graph = cleanPreferredAgentsNames(agentFramingData.graph);
 
-  // serialize to check
+  // frame the preprocessed data
   await framed(agentFramingData,"src/_data/framings/agents-framing.json","src/_data/agents.json");
 
   // ------------------------
@@ -380,14 +354,16 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   await framed(dataJsonLd,"src/_data/framings/index-framing.json","src/_data/index.json");
   
 
-  console.log("Now framing Place...");
-  await framed(dataJsonLd,"src/_data/framings/place-framing.json","src/_data/places.json");
-  console.log("Post-processing: place ...");
+  console.log("Now framing places...");
+  await framed(dataJsonLd,"src/_data/framings/places-framing.json","src/_data/places.json");
+  console.log("Post-processing: places ...");
   let placesData = JSON.parse(fs.readFileSync("src/_data/places.json", { encoding: "utf8", flag: "r" })); //
+  placesData.graph = filterPlacesWithUri(placesData.graph);
+
   //
-  placesData.graph = getOnlyTitleisOne(placesData.graph); // Test
-  placesData.graph = removeElementnotPlace(placesData.graph); // Test
-  getOnlyDoublecas(placesData.graph);
+  // placesData.graph = getOnlyTitleisOne(placesData.graph); // Test
+  // placesData.graph = removeElementnotPlace(placesData.graph); // Test
+  // getOnlyDoublecas(placesData.graph);
 
   // Remove relation
   
