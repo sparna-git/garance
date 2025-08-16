@@ -4,7 +4,7 @@ layout: main.njk
 
 <main class="section_places">
 
-	<h1 class="title-Header" data-i18n="places"></h1>
+	<h1 class="title-Header" data-i18n="lieux"></h1>
 
 	{% set uniquePlaceTypes = places.graph | unique("rico:hasOrHadPlaceType") %}
 	{%- for type in uniquePlaceTypes -%}
