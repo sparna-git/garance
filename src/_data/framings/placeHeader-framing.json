@@ -45,5 +45,6 @@
   },
   "@explicit": true,
   "type": "rico:Place",
-  "rdfs:label": { "@omitDefault": true }
+  "rdfs:label": { "@omitDefault": true },
+  "skos:prefLabel": { "@omitDefault": true }
 }
