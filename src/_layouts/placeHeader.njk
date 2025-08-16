@@ -6,7 +6,7 @@
       {{ jsonld.renderLiteralAsString(place | displayLabel(context) | unboxArray ) }}
     </h1>
 
-    {% if place and place.id %}
+    {% if place and placeHeader.id %}
       {% set fullUri = place.id | expandUri(context) %}
       <div class="header-uri d-flex align-items-center gap-2 position-relative">
         <code>
