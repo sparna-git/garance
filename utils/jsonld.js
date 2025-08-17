@@ -296,7 +296,6 @@ function getDownloadLinks(agent, context) {
   } else {
     // removes the "FRAN_" from the beginning of the filename
     const match = /^FRAN_(.*)/.exec(fileName);
-    console.log("match", match);
     if (match) {
       // insert "_Agent_" after "FRAN_"
       // e.g. FRAN_123456 becomes FRAN_Agent_123456

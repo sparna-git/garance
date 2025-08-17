@@ -3,8 +3,13 @@
 {# Tests the structure of the object/value and apply the adequate rendering function #}
 {# Unbox single values from arrays if needed, so that arrays with a single value are treated the same as the value itself. #}
 
-{# The main object is passed as a second argument to be able to detect URI references to self, and print non-clickable label accordingly #}
+
 {% macro render(object, mainObject) %}
+    {{ doRender(object, 1, mainObject) }}
+{% endmacro %}
+
+{# The main object is passed as a second argument to be able to detect URI references to self, and print non-clickable label accordingly #}
+{% macro doRender(object, depth, mainObject) %}
     {% set obj = object | unboxArray %}
 
     {% if obj is null %}
@@ -17,7 +22,12 @@
     {% elif obj | isIriObjectWithOnlyOptionalType(context) %}
         {# special : circular reference to the main entity - print a non-clickable label #}
         {% if (obj.id | expandUri(context)) == (mainObject | getIriExpanded(context)) %}
-            {{ renderLabelOfSelf(mainObject) }}
+            {% if depth > 1 %}
+                {{ renderLabelOfSelf(mainObject) }}
+            {% else %}
+                {# special x 2 : first level, the mainObject has only a label, print it normally #}
+                {{ renderObject(obj, depth, mainObject) }}
+            {% endif %}
         {% else %}
             {{ renderPlainUri(obj.id | expandUri(context)) }}
         {% endif %}
@@ -26,7 +36,7 @@
     {% elif obj | isObjectWithSingleLabelProperty(context) %}
         {{ renderObjectWithSingleLabelProperty(obj) }}
     {% else %}
-        {{ renderObject(obj, mainObject) }}
+        {{ renderObject(obj, depth, mainObject) }}
     {% endif %}
 {% endmacro %}
 
@@ -42,20 +52,20 @@
   <a href="{{ uri | toUrl | relative(page) }}" class="hyperlink">{{labelHtml}}</a>
 {% endmacro %}
 
-{% macro renderObject(object, mainObject) %}
+{% macro renderObject(object, depth, mainObject) %}
     <div class="entity">
         {% set sortedKeys = object | sortPredicates(shapes,context) %}
         {% for predicate in sortedKeys %}
           {% set value = object[predicate] %}
           {% if predicate != "id" and predicate != "@id" %}
-            {{ renderPredicateValues(object, predicate, value, mainObject) }}
+            {{ renderPredicateValues(object, predicate, value, depth, mainObject) }}
           {% endif %}
         {% endfor %}
     </div>
 {% endmacro %}
 
 
-{% macro renderPredicateValues(object, predicate, values, mainObject) %}
+{% macro renderPredicateValues(object, predicate, values, depth, mainObject) %}
   <div class="entity-predicate {{ predicate | additionnalCssClass(object, shapes, context) }}">
     <div class="entity-predicate-predicate">
       {{ renderPredicate(predicate) }}
@@ -70,11 +80,11 @@
             {% if values|isArray %}
                 <div class="entity-predicate-values-list">
                     {% for item in (values | sortValues(shapes,context)) %}
-                        <div class="entity-predicate-values-value{% if loop.last %} last{% endif %}{% if loop.first %} first{% endif %}">{{ render(item, mainObject) }}</div>
+                        <div class="entity-predicate-values-value{% if loop.last %} last{% endif %}{% if loop.first %} first{% endif %}">{{ doRender(item, depth+1, mainObject) }}</div>
                     {% endfor %}
                 </div>
             {% else %}
-                <div class="entity-predicate-values-value">{{ render(values, mainObject) }}</div>
+                <div class="entity-predicate-values-value">{{ doRender(values,depth+1,  mainObject) }}</div>
             {% endif %}
         {% endif %}
     </div>
@@ -135,9 +145,9 @@
     {% endif %}
 {% endmacro %}
 
-{% macro renderAsList(valueArray, mainObject) %}
+{% macro renderAsList(valueArray, depth, mainObject) %}
     {% for item in valueArray %}
-        {{ render(item, mainObject) }}{% if not loop.last %}, {% endif %}
+        {{ doRender(item, depth+1, mainObject) }}{% if not loop.last %}, {% endif %}
     {% endfor %}
 {% endmacro %}
 
