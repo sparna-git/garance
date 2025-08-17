@@ -204,8 +204,8 @@ mark {
   background-color: transparent;
 }
 
-.header-uri:hover .copy-icon-btn,
-.concept-URI:hover .copy-icon-btn {
+/* display the copy icon when wrapper is hovered */
+.copy-icon-btn-wrapper:hover .copy-icon-btn {
   display: flex;
 }
 

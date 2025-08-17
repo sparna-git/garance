@@ -8,7 +8,7 @@
 
     {% if agent and agent.id %}
       {% set fullUri = agent.id | expandUri(context) %}
-      <div class="header-uri d-flex align-items-center gap-2 position-relative">
+      <div class="copy-icon-btn-wrapper header-uri d-flex align-items-center gap-2 position-relative">
         <code>
           <a class="copy-link" href="{{ fullUri }}">{{ fullUri }}</a>
         </code>
@@ -19,7 +19,7 @@
 
       {% if 'agent:FRAN_RI_' in agent.id %}
         {% set getIdentifiant = agent.id | expandUri(context) | replace(r/.*FRAN_RI_.*?-/, '') %}
-        <code class="position-relative d-inline-flex align-items-center gap-2">
+        <code class="copy-icon-btn-wrapper position-relative d-inline-flex align-items-center gap-2">
           <span>{{ getIdentifiant }}</span>
           <button class="border-0 copy-icon-btn" data-copy="{{ getIdentifiant }}">
             <i class="fas fa-copy"></i>
@@ -30,7 +30,7 @@
         {% set getNumberId = getIdAgent | replace('/','') %}
         {% set rgxId = r/^\d{6}/ %}
         {% if rgxId.test(getNumberId) %}
-          <code class="position-relative d-inline-flex align-items-center gap-2">
+          <code class="copy-icon-btn-wrapper position-relative d-inline-flex align-items-center gap-2">
             <span>FRAN_NP_{{ getNumberId }}</span>
             <button class="border-0 copy-icon-btn" data-copy="FRAN_NP_{{ getNumberId }}">
               <i class="fas fa-copy"></i>
