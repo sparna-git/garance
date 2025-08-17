@@ -282,7 +282,7 @@ function getDownloadLinks(agent, context) {
     ? getTypes(agent)
     : [getTypes(agent)];
   const expandedId = expandUri(id, context);
-  const fileName = expandedId.split("/").pop();
+  let fileName = expandedId.split("/").pop();
 
   let rdfUrl = null;
   let eacUrl = null;
@@ -294,6 +294,17 @@ function getDownloadLinks(agent, context) {
     eacUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/producteurs/eac-cpf/FRAN_NP_${num}.xml`;
     return { rdfUrl, eacUrl };
   } else {
+    // removes the "FRAN_" from the beginning of the filename
+    const match = /^FRAN_(.*)/.exec(fileName);
+    console.log("match", match);
+    if (match) {
+      // insert "_Agent_" after "FRAN_"
+      // e.g. FRAN_123456 becomes FRAN_Agent_123456
+      fileName = match[1];
+      fileName = `FRAN_Agent_${fileName}`;
+      console.log(fileName);
+    }
+
     if (types.includes("rico:CorporateBody")) {
       rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/collectivites/${fileName}.rdf`;
       return { rdfUrl };
