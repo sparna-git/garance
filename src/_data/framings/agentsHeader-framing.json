@@ -42,6 +42,7 @@
   },
   "@explicit": true,
   "type": ["rico:Agent"],
+  "rico:identifier": { "@omitDefault": true },
   "rdfs:label": { "@omitDefault": true },
   "rico:isOrWasDescribedBy": {
     "@omitDefault": true,
