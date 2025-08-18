@@ -10,7 +10,7 @@ layout: main.njk
 	{%- for type in uniquePlaceTypes -%}
 		<h2>{{ type["skos:prefLabel"] | lang("fr") }}</h2>
 		<ul>
-			{% set placesWithType = places.graph | findWithPropertyId("rico:hasOrHadPlaceType", type["id"]) %}
+			{% set placesWithType = places.graph | findWithPropertyId("rico:hasOrHadPlaceType", type["id"]) | jsonSort("skos:prefLabel") %}
 			{%- for aPlace in placesWithType -%}
 				<li><a href="{{ [ '/entities/place/', aPlace.id | localName ] | join | relative(page) }}">{{ aPlace["skos:prefLabel"] | lang("fr") }}</a></li>
 			{%- endfor-%}
@@ -19,7 +19,7 @@ layout: main.njk
 	<!-- add undefined place type -->
 	<h2>Others...</h2>
 	<ul>
-		{% set placesWithoutType = places.graph | findWithoutProperty("rico:hasOrHadPlaceType") %}
+		{% set placesWithoutType = places.graph | findWithoutProperty("rico:hasOrHadPlaceType") | jsonSort("skos:prefLabel") %}
 		{%- for aPlace in placesWithoutType -%}
 			<li><a href="{{ [ '/entities/place/', aPlace.id | localName ] | join | relative(page) }}">{{ aPlace["skos:prefLabel"] | lang("fr") }}</a></li>
 		{%- endfor-%}

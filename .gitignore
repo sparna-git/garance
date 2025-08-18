@@ -26,3 +26,11 @@ scripts/python/src/__pycache__/
 /vGarance
 /scripts/python/vGarance
 ConvertResourceToJson.log
+
+src/_data/agentsHeader.json
+
+src/_data/index.json
+
+src/_data/places.json
+
+src/_data/placesHeader.json
