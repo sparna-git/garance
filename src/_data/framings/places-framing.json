@@ -103,6 +103,8 @@
     "rico:history": { "@omitDefault": true },
     "rico:textualValue": { "@omitDefault": true },
     "rico:resultsOrResultedFrom": {
+      "__comment": "note the @embed @always because the same event is also included below the Place itself",
+      "@embed": "@always",
       "@omitDefault": true,
       "@explicit": true,
       "rico:date": { "@omitDefault": true },
@@ -133,6 +135,8 @@
     "skos:prefLabel": { "@omitDefault": true }
   },
   "rico:isOrWasAffectedBy": {
+    "__comment": "note the @embed @always because the same event is also included below the Place itself",
+    "@embed": "@always",
     "@omitDefault": true,
     "@explicit": true,
     "rico:date": { "@omitDefault": true },
