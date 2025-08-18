@@ -1,5 +1,5 @@
 {% macro header(agent) %}
-  {% set cssClasses = agent['type'] | unboxArray | getHeaderCssClasses(shapes) %}
+  {% set cssClasses = agent['type'] | unboxArray | getHeaderCssClasses(shapes, context) %}
 
   <div class="header {{ cssClasses }}">
     <h1 class="header-title">

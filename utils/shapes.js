@@ -1,9 +1,19 @@
 const jsonld = require("./jsonld.js");
 
+/**
+ * 
+ * @param {*} nodeShape 
+ * @returns the property shapes of the provided node shape
+ */
 exports.getProperties = function (nodeShape) {
   return nodeShape["sh:property"];
 };
 
+/**
+ * 
+ * @param {*} nodeShape 
+ * @returns the predicate of the property shape marked with dash:sortKeyRole inside the provided node shape
+ */
 exports.getSortKeyOfShape = function (nodeShape) {
   let props = exports.getProperties(nodeShape);
   for (var i = 0; i < props.length; i++) {
@@ -16,18 +26,36 @@ exports.getSortKeyOfShape = function (nodeShape) {
   }
 };
 
+/**
+ * 
+ * @param {*} propertyShapesArray 
+ * @returns The sorted property shapes array by the sh:order property
+ */
 exports.sortByShOrder = function (propertyShapesArray) {
   return propertyShapesArray.sort((a, b) => {
     return a["sh:order"] - b["sh:order"];
   });
 };
 
+/**
+ * 
+ * @param {*} type 
+ * @param {*} shapes 
+ * @returns the node shape targeting the provided type with sh:targetClass
+ */
 exports.getNodeShape = function (type, shapes) {
   return (shapesWithTarget = shapes.graph.find(
     (ns) => ns["sh:targetClass"] == type
   ));
 };
 
+/**
+ * 
+ * @param {*} typeArray 
+ * @param {*} predicateFullUri 
+ * @param {*} shapes 
+ * @returns The property shape describing the provided predicate in any of the provided types
+ */
 exports.getPropertyShape = function (typeArray, predicateFullUri, shapes) {
   // 1. For each type...
   for (var i = 0; i < typeArray.length; i++) {
@@ -210,15 +238,10 @@ exports.additionnalCssClass = function (predicate, object, shapes, context) {
   }
 };
 
-const context = {
-  rico: "https://www.ica.org/standards/RiC/ontology#",
-  foaf: "http://xmlns.com/foaf/0.1/",
-};
-
 exports.getCssClassesFromTypes = function (types, shapes, context) {
   const expandedTypes = [types].flat().map((t) => {
-    const expanded = expandManually(t, context); // forcé ici
-    return expanded || t;
+    // const expanded = expandManually(t, context); // forcé ici
+    return expanded = jsonld.expandUri(t, context);
   });
 
   const cssClasses = [];
@@ -233,13 +256,7 @@ exports.getCssClassesFromTypes = function (types, shapes, context) {
   return cssClasses.join(" ");
 };
 
-function expandManually(term, context) {
-  if (!term.includes(":")) return term;
-  const [prefix, local] = term.split(":");
-  return context[prefix] ? `${context[prefix]}${local}` : term;
-}
-
-exports.getHeaderCssClasses = function (types, shapes) {
+exports.getHeaderCssClasses = function (types, shapes, context) {
   const classes = exports.getCssClassesFromTypes(types, shapes, context);
   return classes;
 };
