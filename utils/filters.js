@@ -3,16 +3,6 @@ const nunjucks = require("nunjucks");
 
 const { DateTime } = require('luxon')
 
-function isValidateDateFormate(dateString) {
-    let regex = /^\d{4}-\d{2}-\d{2}$/;
-    return dateString.match(regex) !== null;
-};
-
-function isValidateYear(yearString) {
-    let regex = /^\d{4}-\d{2}-\d{2}$/;
-    return yearString.match(regex) !== null;
-};
-
 // Helper: stable stringify with sorted keys
 function stableStringify(obj) {
   if (obj === null || typeof obj !== "object") {
@@ -113,52 +103,6 @@ module.exports = {
         return dateOutput.toLocaleDateString();
     },
 
-    timeline: function (jsonChangeNote, locale) {
-        const tData = [];
-        let JsonObj = JSON.stringify(jsonChangeNote);
-        JsonObj = JSON.parse(JsonObj);
-        for (let index = 0; index < JsonObj.length; index++) {
-          const element = JsonObj[index];
-
-          let dateNote = element["dc:date"];
-          if (!isValidateDateFormate(element["dc:date"])) {
-            if (isValidateYear(element["dc:date"])) {
-              dateNote = new Date(element["dc:date"], "01", "01");
-            }
-          } else {
-            dateNote = new Date(dateNote);
-          }
-
-          if (element["rdf:value"]["@language"] === locale) {
-            const t = {
-              dateOper: dateNote,
-              date: element["dc:date"],
-              description: element["rdf:value"]["@value"],
-            };
-            tData.push(t);
-          }
-        }
-
-        if (tData.length > 1) {
-          let jsonObj = JSON.stringify(tData);
-          jsonObj = JSON.parse(jsonObj);
-          const newJsonCode = jsonObj.sort((a, b) => {
-            const aValue = a.dateOper;
-            const bValue = b.dateOper;
-            if (aValue < bValue) {
-              return -1;
-            }
-            if (aValue > bValue) {
-              return 1;
-            }
-            return 0;
-          });
-          return newJsonCode;
-        } else {
-          return tData;
-        }
-    },
-
     /**
     * https://stackoverflow.com/questions/46426306/how-to-safely-render-json-into-an-inline-script-using-nunjucks
     * Returns a JSON stringified version of the value, safe for inclusion in an
@@ -202,23 +146,30 @@ module.exports = {
      * Returns unique values of a property from an array of objects having this property
      **/
     unique: function(array, property) {
-        const seen = new Set();
-        const result = [];
+      const seen = new Set();
+      const result = [];
 
-        for (const item of array) {
-            const value = item[property];
-            // exclude undefined value
-            if(value) {
-                const key = stableStringify(value); // serialize object
-                if (!seen.has(key)) {
-                  seen.add(key);
-                  result.push(value);
-                }
-            }
-        }
-        return result;
+      for (const item of array) {
+          const value = item[property];
+          // exclude undefined value
+          if(value) {
+              const key = stableStringify(value); // serialize object
+              if (!seen.has(key)) {
+                seen.add(key);
+                result.push(value);
+              }
+          }
+      }
+      return result;
     },
 
+    /**
+     * 
+     * @param {*} array 
+     * @param {*} property 
+     * @param {*} id 
+     * @returns the items in the array where the provided property has the provided id or @id
+     */
     findWithPropertyId: function(array, property, id) {
         return array.filter(item => 
             item[property]
@@ -227,19 +178,25 @@ module.exports = {
         )
     },
 
+    /**
+     * 
+     * @param {*} array 
+     * @param {*} property 
+     * @returns the items in the array not having the provided property
+     */
     findWithoutProperty: function(array, property) {
         return array.filter(item => 
             item[property] == undefined
         )
     },
 
-    jsonSort: function (jsonContent, element) {
+    jsonSort: function (jsonContent, key) {
         const newJsonCode = jsonContent.sort((a, b) => {
-          if(a[element]) {
-            let aValue = (Array.isArray(a[element]) && a[element].length > 0)? a[element][0]:a[element];  
+          if(a[key]) {
+            let aValue = (Array.isArray(a[key]) && a[key].length > 0)? a[key][0]:a[key];  
 
-            if(b[element]) {
-                let bValue = (Array.isArray(b[element]) && b[element].length > 0)? b[element][0]:b[element];  
+            if(b[key]) {
+                let bValue = (Array.isArray(b[key]) && b[key].length > 0)? b[key][0]:b[key];  
                 const aValueString = JSON.stringify(aValue);
                 const bValueString = JSON.stringify(bValue);
                 return aValueString.localeCompare(bValueString);
@@ -247,7 +204,7 @@ module.exports = {
                 return -1;
             }
           } else {
-            if(b[element]) {
+            if(b[key]) {
                 return 1
             } else {
                 // default to id
@@ -277,61 +234,5 @@ module.exports = {
     hasBroader: function (conceptArray) {
         const containsBroader = conceptArray.find((e) => e.broader);
         return containsBroader;
-    },
-
-    excludeObsolete: function(conceptArray) {
-        return conceptArray.filter(
-            c => (!c.isoThesStatus || (c.isoThesStatus["@value"] != "obsolète"))
-        );
-    },
-
-    removeURL: function (uri) {
-      const NAMESPACE = "https://rdf.archives-nationales.culture.gouv.fr/";
-      var result = "";
-      if(uri.startsWith(NAMESPACE)) {
-        result = uri.replace(NAMESPACE,"")
-      } 
-      return result
-    },
-
-    toUrl: function (uri) {
-        const NAMESPACE = "https://rdf.archives-nationales.culture.gouv.fr/";
-        var result = uri;
-        if(uri.startsWith(NAMESPACE)) {
-            let endUri = uri.substring(NAMESPACE.length);
-            if(
-                endUri.includes("corporateBodyType/")
-                ||
-                endUri.includes("recordState/")
-                ||
-                endUri.includes("activityType/")
-                ||
-                endUri.includes("occupationType/")
-                ||
-                endUri.includes("language/")
-                ||
-                endUri.includes("thing/")
-                ||
-                endUri.includes("carrierType/")
-                ||
-                endUri.includes("productionTechniqueType/")
-                ||
-                endUri.includes("identifierType/")
-                ||
-                endUri.includes("placeType/")
-                ||
-                endUri.includes("representationType/")
-                ||
-                endUri.includes("documentaryFormType/")
-                ||
-                endUri.includes("recordSetType/")
-            ) {
-                result = "/entities/"+endUri.split("/")[0]+"s"+"#"+endUri.split("/")[1];       
-            } else {
-                result = "/entities/"+endUri; 
-            }
-        }
-
-        return result;
     }
 }

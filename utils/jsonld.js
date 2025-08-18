@@ -187,6 +187,12 @@ function expandUriOnPrefixes(qname, context) {
   return result;
 }
 
+/**
+ * Finds an object with the provided id in the jsonld graph.
+ * @param {*} jsonld 
+ * @param {*} id 
+ * @returns the object inside the graph/@graph section of the jsonld having the provided id
+ */
 function findById(jsonld, id) {
   let graph = jsonld.graph ? jsonld.graph : jsonld["@graph"];
   if (graph) {
@@ -227,7 +233,7 @@ function findPredicate(object, predicateFullIri, context) {
 }
 
 /**
- * Removes type keys from an object.
+ * Recursively removes type keys from an object, but not in case the type indicates a datatype
  * @param {object} obj - The object to remove type keys from.
  */
 function removeTypeKey(obj) {
@@ -242,6 +248,12 @@ function removeTypeKey(obj) {
   }
 }
 
+/**
+ * 
+ * @param {*} predicateKey the expanded or shortened predicate
+ * @param {*} context 
+ * @returns true if the provided predicate is a well-known labelling predicate
+ */
 function isLabelPredicate(predicateKey, context) {
   var expanded = expandUri(predicateKey, context);
   return (
@@ -253,105 +265,9 @@ function isLabelPredicate(predicateKey, context) {
   );
 }
 
-/**
- * Finds the creation date from activities matching specific names.
- * @param {object} agent - The agent object from JSON-LD.
- * @returns {string|null} The creation date if found, otherwise null.
- */
-function getCreationDate(agent) {
-  const activities =
-    agent?.["rico:isOrWasDescribedBy"]?.["rico:isOrWasAffectedBy"];
-
-  if (!activities) return null;
-
-  const list = Array.isArray(activities) ? activities : [activities];
-
-  for (const activity of list) {
-    const name = activity?.["rico:name"]?.["@value"];
-    if (name && name.startsWith("Création")) {
-      return activity?.["rico:date"]?.["@value"] || null;
-    }
-  }
-
-  return null;
-}
-
-function getDownloadLinks(agent, context) {
-  const id = getId(agent);
-  const types = Array.isArray(getTypes(agent))
-    ? getTypes(agent)
-    : [getTypes(agent)];
-  const expandedId = expandUri(id, context);
-  let fileName = expandedId.split("/").pop();
-
-  let rdfUrl = null;
-  let eacUrl = null;
-
-  const shortMatch = /^(\d{6})$/.exec(fileName);
-  if (shortMatch) {
-    const num = shortMatch[1];
-    rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/producteurs/rdf/FRAN_Agent_${num}.rdf`;
-    eacUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/producteurs/eac-cpf/FRAN_NP_${num}.xml`;
-    return { rdfUrl, eacUrl };
-  } else {
-    // removes the "FRAN_" from the beginning of the filename
-    const match = /^FRAN_(.*)/.exec(fileName);
-    if (match) {
-      // insert "_Agent_" after "FRAN_"
-      // e.g. FRAN_123456 becomes FRAN_Agent_123456
-      fileName = match[1];
-      fileName = `FRAN_Agent_${fileName}`;
-      console.log(fileName);
-    }
-
-    if (types.includes("rico:CorporateBody")) {
-      rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/collectivites/${fileName}.rdf`;
-      return { rdfUrl };
-    }
-    if (types.includes("rico:Person")) {
-      rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/personnesPhysiques/${fileName}.rdf`;
-      return { rdfUrl };
-    }
-  }
-
-  return null;
-}
-
-/**
- * Returns the last modification date of an agent.
- * @param {object} agent - The agent object.
- * @returns {string|null} The modification date or null.
- */
-function getLastModificationDate(agent) {
-  return (
-    agent?.["rico:isOrWasDescribedBy"]?.["rico:lastModificationDate"]?.[
-      "@value"
-    ] || null
-  );
-}
-
-/**
- * Returns the SIV URL (rdfs:seeAlso) if available on digital instantiation.
- * @param {object} agent - The agent object.
- * @returns {string|null} The SIV URL or null.
- */
-function getSivSeeAlsoUrl(agent) {
-  const seeAlso =
-    agent?.["rico:isOrWasDescribedBy"]?.["rico:hasOrHadDigitalInstantiation"]?.[
-      "rdfs:seeAlso"
-    ];
-  return typeof seeAlso === "object"
-    ? seeAlso?.id || seeAlso?.["@id"]
-    : seeAlso || null;
-}
-
 module.exports = {
   getId: getId,
   getTypes: getTypes,
-  getCreationDate,
-  getDownloadLinks: getDownloadLinks,
-  getLastModificationDate: getLastModificationDate,
-  getSivSeeAlsoUrl: getSivSeeAlsoUrl,
 
   /**
    * Checks if a value is an array.
