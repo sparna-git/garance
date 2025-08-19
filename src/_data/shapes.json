@@ -585,6 +585,166 @@
         {
           "sh:order": 1,
           "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"http://www.w3.org/2004/02/skos/core#altLabel"
+        },
+        {
+          "sh:order": 4,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadPlaceName"
+        },
+        {
+          "sh:order": 5,
+          "sh:path":"http://rdf.insee.fr/def/geo#codeINSEE"
+        },
+        {
+          "sh:order": 6,
+          "sh:path":"http://data.ign.fr/def/geofla#codeReg"
+        },
+        {
+          "sh:order": 7,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadPlaceType"
+        },
+        {
+          "sh:order": 8,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#type"
+        },
+        {
+          "sh:order": 9,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#status"
+        },
+        {
+          "sh:order": 10,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#beginningDate"
+        },
+        {
+          "sh:order": 11,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#endDate"
+        },
+        {
+          "sh:order": 12,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#generalDescription"
+        },
+        {
+          "sh:order": 13,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#history"
+        },
+        {
+          "sh:order": 14,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#isOrWasAffectedBy"
+        },
+        {
+          "sh:order": 15,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#precedesInTime"
+        },
+        {
+          "sh:order": 16,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#followsInTime"
+        },
+        {
+          "sh:order": 17,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#wasAbsorbedBy"
+        },
+        {
+          "sh:order": 18,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#wasPartiallyAbsorbedBy"
+        },
+        {
+          "sh:order": 19,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadLocation"
+        },
+        {
+          "sh:order": 20,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasOrHadPhysicalLocation"
+        },
+        {
+          "sh:order": 21,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#note"
+        },
+        {
+          "sh:order": 22,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#wasContainedBy"
+        },
+        {
+          "sh:order": 23,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#isOrWasContainedBy"
+        },
+        {
+          "sh:order": 24,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#isDirectlyContainedBy"
+        },
+        {
+          "sh:order": 25,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#thingIsTargetOfRelation"
+        },
+        {
+          "sh:order": 26,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#crossesOrCrossed"
+        },
+        {
+          "sh:order": 27,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#containsOrContained"
+        },
+        {
+          "sh:order": 28,
+          "sh:path":"http://rdf.insee.fr/def/geo#chefLieu"
+        },
+        {
+          "sh:order": 29,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#isOrWasAdjacentTo"
+        },
+        {
+          "sh:order": 30,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#hasExtent"
+        },
+        {
+          "sh:order": 31,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#streetStartsOrStartedAtPoint"
+        },
+        {
+          "sh:order": 32,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#streetStartsOrStartedOnStreet"
+        },
+        {
+          "sh:order": 33,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#startingAtPoint"
+        },
+        {
+          "sh:order": 34,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#startingOnStreet"
+        },
+        {
+          "sh:order": 35,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#streetEndsOrEndedAtPoint"
+        },
+        {
+          "sh:order": 36,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#streetEndsOrEndedOnStreet"
+        },
+        {
+          "sh:order": 37,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#endingAtPoint"
+        },
+        {
+          "sh:order": 38,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#endingOnStreet"
+        },
+        {
+          "sh:order": 39,
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#isOrWasLocatedOnStreet"
+        },
+        {
+          "sh:order": 40,
+          "sh:path":"http://www.w3.org/2002/07/owl#sameAs"
+        },
+        {
+          "sh:order": 41,
+          "sh:path":"http://www.w3.org/2000/01/rdf-schema#seeAlso"
         }
       ]  
     }
