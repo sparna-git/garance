@@ -1,23 +1,23 @@
-anf-onto_id,label
-anf-onto:absorbed,absorbed
-anf-onto:crossesOrCrossed,crosses or crossed
-anf-onto:isOrWasCrossedBy,is or was crossed by
-anf-onto:isOrWasLocatedOnStreet,is or was located on the thoroughfare
-anf-onto:isPointWhereStreetEndsOrEnded,is the point where ends or ended
-anf-onto:isPointWhereStreetStartsOrStarted,is the point where starts or started
-anf-onto:isStreetOnWhichIsOrWasLocated,is the thoroughfare where is or was located
-anf-onto:isStreetWhereStreetEndsOrEnded,is the thoroughfare where ends or ended
-anf-onto:isStreetWhereStreetStartsOrStarted,is the thoroughfare where starts or started
-anf-onto:partiallyAbsorbed,partially absorbed
-anf-onto:streetEndsOrEndedAtPoint,ends or ended at point
-anf-onto:streetEndsOrEndedOnStreet,ends or ended on the thoroughfare
-anf-onto:streetStartsOrStartedAtPoint,starts or started at point
-anf-onto:streetStartsOrStartedOnStreet,starts or started on the thoroughfare
-anf-onto:wasAbsorbedBy,was absorbed by
-anf-onto:wasPartiallyAbsorbedBy,was partially absorbed by
-anf-onto:endingAtPoint,ending at point
-anf-onto:endingOnStreet,ending on thoroughfare
-anf-onto:someSubactivitiesWithDate,has subactivities with date
-anf-onto:startingAtPoint,starting at point
-anf-onto:startingOnStreet,starting on thoroughfare
-anf-onto:streetStatus,thoroughfare status
+anf-ontoId,label
+anf-onto:absorbed,Absorbed
+anf-onto:crossesOrCrossed,Crosses or crossed
+anf-onto:isOrWasCrossedBy,Is or was crossed by
+anf-onto:isOrWasLocatedOnStreet,Is or was located on the thoroughfare
+anf-onto:isPointWhereStreetEndsOrEnded,Is the point where ends or ended
+anf-onto:isPointWhereStreetStartsOrStarted,Is the point where starts or started
+anf-onto:isStreetOnWhichIsOrWasLocated,Is the thoroughfare where is or was located
+anf-onto:isStreetWhereStreetEndsOrEnded,Is the thoroughfare where ends or ended
+anf-onto:isStreetWhereStreetStartsOrStarted,Is the thoroughfare where starts or started
+anf-onto:partiallyAbsorbed,Partially absorbed
+anf-onto:streetEndsOrEndedAtPoint,Ends or ended at point
+anf-onto:streetEndsOrEndedOnStreet,Ends or ended on the thoroughfare
+anf-onto:streetStartsOrStartedAtPoint,Starts or started at point
+anf-onto:streetStartsOrStartedOnStreet,Starts or started on the thoroughfare
+anf-onto:wasAbsorbedBy,Was absorbed by
+anf-onto:wasPartiallyAbsorbedBy,Was partially absorbed by
+anf-onto:endingAtPoint,Ending at point
+anf-onto:endingOnStreet,Ending on thoroughfare
+anf-onto:someSubactivitiesWithDate,Has subactivities with date
+anf-onto:startingAtPoint,Starting at point
+anf-onto:startingOnStreet,Starting on thoroughfare
+anf-onto:streetStatus,Thoroughfare status
