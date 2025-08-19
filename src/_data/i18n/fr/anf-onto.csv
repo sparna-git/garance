@@ -1,0 +1,23 @@
+anf-onto_id,label
+anf-onto:absorbed,a absorbé
+anf-onto:crossesOrCrossed,traverse ou traversait
+anf-onto:isOrWasCrossedBy,est ou était traversé par
+anf-onto:isOrWasLocatedOnStreet,est ou était situé sur la voie
+anf-onto:isPointWhereStreetEndsOrEnded,est le point où se termine ou se terminait la voie
+anf-onto:isPointWhereStreetStartsOrStarted,est le point où commence ou commençait la voie
+anf-onto:isStreetOnWhichIsOrWasLocated,est la voie où est ou était situé
+anf-onto:isStreetWhereStreetEndsOrEnded,est la voie où se termine ou se terminait la voie
+anf-onto:isStreetWhereStreetStartsOrStarted,est la voie où commence ou commençait la voie
+anf-onto:partiallyAbsorbed,a partiellement absorbé
+anf-onto:streetEndsOrEndedAtPoint,se termine ou se terminait au point
+anf-onto:streetEndsOrEndedOnStreet,se termine ou se terminait sur la voie
+anf-onto:streetStartsOrStartedAtPoint,commence ou commençait au point
+anf-onto:streetStartsOrStartedOnStreet,commence ou commençait sur la voie
+anf-onto:wasAbsorbedBy,a été absorbé par
+anf-onto:wasPartiallyAbsorbedBy,a été partiellement absorbé par
+anf-onto:endingAtPoint,point d'arrivée
+anf-onto:endingOnStreet,voie d'arrivée
+anf-onto:someSubactivitiesWithDate,a des sous-activités ayant pour date
+anf-onto:startingAtPoint,point de départ
+anf-onto:startingOnStreet,voie de départ
+anf-onto:streetStatus,statut de la voie
