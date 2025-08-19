@@ -1,0 +1,7 @@
+Id,label
+skos:prefLabel,Preferred label
+skos:altLabel,Alternative label
+owl:sameAs,Same as
+rdf:type,Type
+rdfs:label,Label
+rdfs:seeAlso,See also
