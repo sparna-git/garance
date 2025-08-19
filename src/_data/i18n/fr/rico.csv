@@ -1,4 +1,4 @@
-ricoId,label
+ricoId,Label
 rico:AccumulationRelation,Relation d’accumulation
 rico:Activity,Activité
 rico:ActivityDocumentationRelation,Relation entre activités et ressources archivistiques
@@ -32,7 +32,7 @@ rico:DocumentaryFormType,Type de document
 rico:Event,Événement
 rico:EventRelation,Relation impliquant un événement
 rico:EventType,Type d’événement
-rico:Extent,Mesure
+rico:Extent,Dimension
 rico:ExtentType,Type de mesure
 rico:Family,Famille
 rico:FamilyRelation,Relation familiale
@@ -106,558 +106,558 @@ rico:TypeRelation,Relation de catégorisation
 rico:UnitOfMeasurement,Unité de mesure
 rico:WholePartRelation,Relation partitive
 rico:WorkRelation,Relation de travail
-rico:accruals,accroissements
-rico:accrualsStatus,statut des accroissements
-rico:accumulationDate,date d’accumulation
-rico:allMembersWithAccumulationDate,des membres ayant tous pour date d’accumulation
-rico:allMembersWithCreationDate,des membres ayant tous pour date de création
-rico:altimetricSystem,système altimétrique
-rico:altitude,altitude
-rico:authenticityNote,note sur l’authenticité
-rico:authorizingMandate,mandat
-rico:beginningDate,date de début
-rico:birthDate,date de naissance
-rico:carrierExtent,mesure du support
-rico:classification,classification
-rico:conditionsOfAccess,conditions d’accès
-rico:conditionsOfUse,conditions d’utilisation
-rico:creationDate,date de création
-rico:date,date
-rico:dateQualifier,qualificatif de la date
-rico:deathDate,date de décès
-rico:derivationDate,date de dérivation
-rico:destructionDate,date de destruction
-rico:endDate,date de fin
-rico:expressedDate,date en langage naturel
-rico:generalDescription,description générale
-rico:geodesicSystem,système géodésique
-rico:geographicalCoordinates,coordonnées géographiques
-rico:height,hauteur
-rico:history,histoire
-rico:identifier,identifiant
-rico:instantiationExtent,mesure de l’instanciation
-rico:instantiationStructure,structure de l’instanciation
-rico:integrityNote,note sur l'intégrité
-rico:lastModificationDate,date de dernière modification
-rico:latitude,latitude
-rico:length,longueur
-rico:location,localisation
-rico:longitude,longitude
-rico:measure,mesure
-rico:migrationDate,date de migration
-rico:modificationDate,date de modification
-rico:mostMembersWithAccumulationDate,des membres dont la plupart ont pour date d’accumulation
-rico:mostMembersWithCreationDate,des membres dont la plupart ont pour date de création
-rico:name,nom
-rico:normalizedDateValue,valeur normalisée de la date
-rico:normalizedValue,valeur normalisée
-rico:note,note
-rico:physicalCharacteristicsNote,note sur les caractéristiques physiques
-rico:physicalOrLogicalExtent,importance physique ou logique
-rico:productionTechnique,technique de production
-rico:publicationDate,date de publication
-rico:qualityOfRepresentationNote,note sur la qualité de la représentation
-rico:quantity,quantité
-rico:rankInHierarchy,rang dans la hiérarchie
-rico:rankInSequence,rang dans la séquence
-rico:recordResourceExtent,mesure de la ressource archivistique
-rico:recordResourceSourceOfInformation,source d’information de la ressource archivistique
-rico:recordResourceStructure,structure de la ressource archivistique
-rico:referenceSystem,système de référence
-rico:relationCertainty,degré de certitude de la relation
-rico:relationSource,source de la relation
-rico:relationState,statut de la relation
-rico:ruleFollowed,règle suivie
-rico:scopeAndContent,portée et contenu
-rico:sentimentOrEmotionExpressed,sentiment ou émotion exprimés
-rico:someMembersWithAccumulationDate,des membres ayant pour date d’accumulation
-rico:someMembersWithCreationDate,des membres ayant pour date de création
-rico:structure,structure
-rico:technicalCharacteristics,caractéristiques techniques
-rico:textualValue,valeur textuelle
-rico:title,intitulé
-rico:type,type
-rico:unitOfMeasurement,unité de mesure
-rico:usedFromDate,utilisé à partir de
-rico:usedToDate,utilisé jusqu’à
-rico:width,largeur
-rico:accumulationRelation_role,a le rôle de la Relation d’accumulation
-rico:activityDocumentationRelation_role,a le rôle de la Relation entre activités et ressources archivistiques
-rico:activityIsContextOfRelation,activité est le contexte de la relation
-rico:affectsOrAffected,affecte ou a affecté
-rico:agentControlRelation_role,a le rôle de la Relation de contrôle entre agents
-rico:agentHasOrHadLocation,agent a ou a eu pour localisation
-rico:agentHierarchicalRelation_role,a le rôle de la Relation hiérarchique entre agents
-rico:agentTemporalRelation_role,a le rôle de la Relation temporelle entre agents
-rico:agentToAgentRelation_role,a le rôle de la Relation entre agents
-rico:appellationRelation_role,a le rôle de la Relation d’appellation
-rico:asConcernsActivity,en ce qui concerne l’activité
-rico:authorityRelation_role,a le rôle de la Relation d’autorité
-rico:authorizedBy,autorisé par
-rico:authorizes,autorise
-rico:authorizingAgent,autorisation donnée par l’agent
-rico:authorshipRelation_role,a le rôle de la Relation de responsabilité intellectuelle
-rico:childRelation_role,a le rôle de la Relation de filiation
-rico:contained,a contenu
-rico:containsOrContained,contient ou a contenu
-rico:containsTransitive,contient transitif
-rico:correspondenceRelation_role,a le rôle de la Relation épistolaire
-rico:creationRelation_role,a le rôle de la Relation de création
-rico:creationWithRole,création avec pour rôle
-rico:derivationRelation_role,a le rôle de la Relation de dérivation
-rico:descendanceRelation_role,a le rôle de la Relation de descendance
-rico:describesOrDescribed,décrit ou a décrit
-rico:directlyContains,contient directement
-rico:directlyFollowsInSequence,suit directement dans la séquence
-rico:directlyFollowsProxyInSequence,suit directement le proxy dans la séquence
-rico:directlyIncludes,inclut directement
-rico:directlyIncludesProxy,inclut directement le proxy
-rico:directlyPrecedesInSequence,précède directement dans la séquence
-rico:directlyPrecedesProxyInSequence,précède directement le proxy dans la séquence
-rico:documentedBy,est documenté par
-rico:documents,documente
-rico:eventRelation_role,a le rôle de la Relation impliquant un événement
-rico:evidences,atteste de
-rico:existsOrExistedIn,existe ou a existé dans
-rico:expressesOrExpressed,exprime ou a exprimé
-rico:familyRelation_role,a le rôle de la Relation familiale
-rico:followedInSequence,a suivi dans la séquence
-rico:followsInSequenceTransitive,suit dans la séquence transitif
-rico:followsInTime,suit dans le temps
-rico:followsOrFollowed,suit ou a suivi
-rico:followsProxyInSequence,suit le proxy dans la séquence
-rico:functionalEquivalenceRelation_role,a le rôle de la Relation d’équivalence fonctionnelle
-rico:groupSubdivisionRelation_role,a le rôle de la Relation de subdivision entre groupes d’agents
-rico:hadComponent,a eu pour composant
-rico:hadConstituent,a eu pour constituant
-rico:hadPart,a eu pour partie
-rico:hadSubdivision,a eu pour subdivision
-rico:hadSubevent,a été constitué de l’événement
-rico:hadSubordinate,a eu pour subalterne
-rico:hasAccumulationDate,a pour date d'accumulation
-rico:hasAccumulator,est accumulé par
-rico:hasActivityType,a pour type d’activité
-rico:hasAddressee,a pour destinataire
-rico:hasAncestor,a pour ancêtre
-rico:hasAuthor,a pour responsable intellectuel
-rico:hasBeginningDate,a pour date de début
-rico:hasBirthDate,a pour date de naissance
-rico:hasBirthPlace,a pour lieu de naissance
-rico:hasCarrierType,a pour type de support
-rico:hasChild,a pour enfant
-rico:hasCollector,est collecté par
-rico:hasComponentTransitive,a pour composant transitif
-rico:hasConstituentProxy,a pour constituant le proxy
-rico:hasConstituentTransitive,a pour constituant transitif
-rico:hasContentOfType,a pour type de contenu
-rico:hasContentWhichMainlyRepresents,a un contenu qui représente principalement
-rico:hasContentWhichRepresents,a un contenu qui représente
-rico:hasCopy,a pour copie
-rico:hasCreationDate,a pour date de création
-rico:hasCreator,a pour créateur
-rico:hasDateType,a pour type de date
-rico:hasDeathDate,a pour date de décès
-rico:hasDeathPlace,a pour lieu de décès
-rico:hasDerivationDate,a pour date de dérivation
-rico:hasDescendant,a pour descendant
-rico:hasDestructionDate,a pour date de destruction
-rico:hasDirectComponent,a directement pour composant
-rico:hasDirectConstituent,a directement pour constituant
-rico:hasDirectConstituentProxy,a pour constituant direct le proxy
-rico:hasDirectPart,a directement pour partie
-rico:hasDirectSubdivision,a directement pour subdivision
-rico:hasDirectSubevent,est directement constitué de l’événement
-rico:hasDirectSubordinate,a directement pour subalterne
-rico:hasDocumentaryFormType,a pour type d’objet informationnel
-rico:hasDraft,a pour ébauche
-rico:hasEndDate,a pour date de fin
-rico:hasEventType,a pour type d’événement
-rico:hasExtent,a pour mesure
-rico:hasExtentType,a pour type de mesure
-rico:hasFamilyAssociationWith,a une relation familiale avec
-rico:hasFamilyType,a pour type de famille
-rico:hasGeneticLinkToRecordResource,a une relation génétique avec la ressource archivistique
-rico:hasIdentifierType,a pour type d’identifiant
-rico:hasMigrationDate,a pour date de migration
-rico:hasModificationDate,a pour date de modification
-rico:hasOrHadAgentName,a ou a eu pour nom d’agent
-rico:hasOrHadAllMembersWithAccumulationDate,inclut ou a inclus des membres ayant tous pour date d'accumulation
-rico:hasOrHadAllMembersWithContentType,inclut ou a inclus des membres ayant tous pour type de contenu
-rico:hasOrHadAllMembersWithCreationDate,inclut ou a inclus des membres ayant tous pour date de création
-rico:hasOrHadAllMembersWithDocumentaryFormType,inclut ou a inclus des membres ayant tous pour type
-rico:hasOrHadAllMembersWithLanguage,inclut ou a inclus des membres ayant tous pour langue
-rico:hasOrHadAllMembersWithLegalStatus,inclut ou a inclus des membres ayant tous pour statut légal
-rico:hasOrHadAllMembersWithMainSubject,inclut ou a inclus des membres ayant tous pour principal sujet
-rico:hasOrHadAllMembersWithRecordState,inclut ou a inclus des membres ayant tous pour état
-rico:hasOrHadAllMembersWithSubject,inclut ou a inclus des membres ayant tous pour sujet
-rico:hasOrHadAllMembersWithType,inclut ou a inclus des membres ayant tous pour type
-rico:hasOrHadAnalogueInstantiation,a ou a eu pour instanciation analogique
-rico:hasOrHadAppellation,a ou a eu pour appellation
-rico:hasOrHadAuthorityOver,a ou a eu autorité sur
-rico:hasOrHadComponent,a ou a eu pour composant
-rico:hasOrHadConstituent,a ou a eu pour constituant
-rico:hasOrHadController,est ou a été contrôlé par
-rico:hasOrHadCoordinates,a ou a eu pour coordonnées
-rico:hasOrHadCorporateBodyType,a ou a eu pour type de collectivité
-rico:hasOrHadCorrespondent,a ou a eu pour correspondant
-rico:hasOrHadDemographicGroup,a ou a eu pour groupe démographique
-rico:hasOrHadDerivedInstantiation,a ou a eu pour instanciation dérivée
-rico:hasOrHadDigitalInstantiation,a ou a eu pour instanciation numérique
-rico:hasOrHadEmployer,a ou a eu pour employeur
-rico:hasOrHadHolder,est ou a été détenu par
-rico:hasOrHadIdentifier,a ou a eu pour identifiant
-rico:hasOrHadInstantiation,a ou a eu pour instanciation
-rico:hasOrHadIntellectualPropertyRightsHolder,a ou a eu comme détenteur des droits de propriété intellectuelle
-rico:hasOrHadJurisdiction,a ou a eu pour ressort
-rico:hasOrHadLanguage,a ou a eu pour langue
-rico:hasOrHadLeader,a ou a eu pour dirigeant
-rico:hasOrHadLegalStatus,a ou a eu pour statut légal
-rico:hasOrHadLocation,a ou a eu pour localisation
-rico:hasOrHadMainSubject,a ou a eu pour sujet principal
-rico:hasOrHadManager,a ou a eu pour gestionnaire
-rico:hasOrHadMandateType,a ou a eu pour type de mandat
-rico:hasOrHadMember,a ou a eu pour membre
-rico:hasOrHadMostMembersWithAccumulationDate,inclut ou a inclus des membres dont la plupart ont pour date d'accumulation
-rico:hasOrHadMostMembersWithCreationDate,inclut ou a inclus des membres dont la plupart ont pour date de création
-rico:hasOrHadName,a ou a eu pour nom
-rico:hasOrHadOccupationOfType,a ou a eu pour type d’occupation
-rico:hasOrHadOwner,a ou a eu pour propriétaire
-rico:hasOrHadPart,a ou a eu pour partie
-rico:hasOrHadParticipant,a ou a eu pour participant
-rico:hasOrHadPhysicalLocation,a ou a eu pour localisation physique
-rico:hasOrHadPlaceName,a ou a eu pour nom de lieu
-rico:hasOrHadPlaceType,a ou a eu pour type de lieu
-rico:hasOrHadPosition,occupe ou a occupé le poste
-rico:hasOrHadRuleType,a ou a eu pour type de règle
-rico:hasOrHadSomeMembersWhoseContentMainlyRepresents,inclut ou a inclus des membres dont le contenu représente principalement
-rico:hasOrHadSomeMembersWhoseContentRepresents,inclut ou a inclus des membres dont le contenu représente
-rico:hasOrHadSomeMembersWithAccumulationDate,inclut ou a inclus des membres ayant pour date d'accumulation
-rico:hasOrHadSomeMembersWithContentType,inclut ou a inclus des membres ayant pour type de contenu
-rico:hasOrHadSomeMembersWithCreationDate,inclut ou a inclus des membres ayant pour date de création
-rico:hasOrHadSomeMembersWithDocumentaryFormType,inclut ou a inclus des membres ayant pour type de document
-rico:hasOrHadSomeMembersWithLanguage,inclut ou a inclus des membres ayant pour langue
-rico:hasOrHadSomeMembersWithLegalStatus,inclut ou a inclus des membres ayant pour statut légal
-rico:hasOrHadSomeMembersWithMainSubject,inclut ou a inclus des membres ayant pour sujet principal
-rico:hasOrHadSomeMembersWithRecordState,inclut ou a inclus des membres ayant pour état
-rico:hasOrHadSomeMembersWithSubject,inclut ou a inclus des membres ayant pour sujet
-rico:hasOrHadSomeMembersWithType,inclut ou a inclus des membres ayant pour type
-rico:hasOrHadSpouse,a ou a eu pour conjoint
-rico:hasOrHadStudent,a ou a eu pour étudiant
-rico:hasOrHadSubdivision,a ou a eu pour subdivision
-rico:hasOrHadSubevent,est ou a été constitué de l’événement
-rico:hasOrHadSubject,a ou a eu pour sujet
-rico:hasOrHadSubordinate,a ou a eu pour subalterne
-rico:hasOrHadTeacher,a ou a eu pour enseignant
-rico:hasOrHadTitle,a ou a eu pour intitulé
-rico:hasOrHadType,a ou a eu pour type
-rico:hasOrHadWorkRelationWith,a ou a eu une relation professionnelle avec
-rico:hasOrganicOrFunctionalProvenance,a pour provenance organique ou fonctionnelle
-rico:hasOrganicProvenance,a pour provenance organique
-rico:hasOrganicProvenanceDate,a pour date de provenance organique
-rico:hasOriginal,a pour original
-rico:hasPartTransitive,a pour partie transitif
-rico:hasProductionTechniqueType,a pour type de technique de production
-rico:hasProxy,a pour proxy
-rico:hasPublicationDate,a pour date de publication
-rico:hasPublisher,a pour éditeur
-rico:hasReceiver,est reçu par
-rico:hasRecordSetType,a pour type d’ensemble d’objets informationnels
-rico:hasRecordState,a pour état
-rico:hasReply,a pour réponse
-rico:hasRepresentationType,a pour type de représentation
-rico:hasSender,a pour expéditeur
-rico:hasSibling,a pour frère ou sœur
-rico:hasSubdivisionTransitive,a pour subdivision transitif
-rico:hasSubeventTransitive,est constitué de l’événement transitif
-rico:hasSubordinateTransitive,a pour subalterne transitif
-rico:hasSuccessor,a pour successeur
-rico:hasTitleType,a pour type de titre
-rico:hasUnitOfMeasurement,a pour unité de mesure
-rico:hasWithin,contient
-rico:included,a inclus
-rico:includesOrIncluded,inclut ou a inclus
-rico:includesProxy,inclut le proxy
-rico:includesTransitive,inclut transitif
-rico:instantiationToInstantiationRelation_role,a le rôle de la Relation entre instanciations
-rico:intellectualPropertyRightsRelation_role,a le rôle de la Relation de propriété intellectuelle
-rico:intersects,intersecte
-rico:isAccumulationDateOf,est la date d'accumulation de
-rico:isAccumulatorOf,accumule
-rico:isActivityTypeOf,est le type d’activité de
-rico:isAddresseeOf,est le destinataire de
-rico:isAgentAssociatedWithAgent,est associé à l’agent
-rico:isAgentAssociatedWithPlace,est associé au lieu
-rico:isAssociatedWithDate,est associé à la date
-rico:isAssociatedWithEvent,est associé à l’événement
-rico:isAssociatedWithPlace,est associé au lieu
-rico:isAssociatedWithRule,est associé à la règle
-rico:isAuthorOf,est le responsable intellectuel de
-rico:isAuthorizingAgentInMandateRelation,est l’agent donnant l’autorisation dans la relation impliquant un mandat
-rico:isBeginningDateOf,est la date de début de
-rico:isBirthDateOf,est la date de naissance de
-rico:isBirthPlaceOf,est le lieu de naissance de
-rico:isCarrierTypeOf,est le type de support de
-rico:isChildOf,est l’enfant de
-rico:isCollectorOf,collecte
-rico:isComponentOfTransitive,est un composant de transitif
-rico:isConstituentOfProxy,est le constituant du proxy
-rico:isConstituentOfTransitive,est le constituant de transitif
-rico:isContainedByTransitive,est contenu par transitif
-rico:isContentTypeOf,est le type de contenu de
-rico:isCopyOf,est la copie de
-rico:isCreationDateOf,est la date de création de
-rico:isCreatorOf,est le créateur de
-rico:isDateAssociatedWith,est une date associée a
-rico:isDateAssociatedWithRelation,est une date associée à la relation
-rico:isDateOfOccurrenceOf,est la date d'occurrence de
-rico:isDateTypeOf,est le type de date de
-rico:isDeathDateOf,est la date de décès de
-rico:isDeathPlaceOf,est le lieu de décès de
-rico:isDerivationDateOf,est la date de dérivation de
-rico:isDestructionDateOf,est la date de destruction de
-rico:isDirectComponentOf,est le composant direct de
-rico:isDirectConstituentOf,est un constituant direct de
-rico:isDirectConstituentOfProxy,est un constituant direct du proxy
-rico:isDirectPartOf,fait directement partie de
-rico:isDirectSubdivisionOf,est la subdivision directe de
-rico:isDirectSubeventOf,est un événement constituant directement l’événement
-rico:isDirectSubordinateTo,est directement subalterne de
-rico:isDirectlyContainedBy,est directement contenu par
-rico:isDirectlyIncludedIn,est directement inclus dans
-rico:isDirectlyIncludedInProxy,est directement inclus dans le proxy
-rico:isDocumentaryFormTypeOf,est le type de document de
-rico:isDraftOf,est l’ébauche de
-rico:isEndDateOf,est la date de fin de
-rico:isEquivalentTo,est l’équivalent de
-rico:isEventAssociatedWith,est un événement associé a
-rico:isEventTypeOf,est le type d’événement de
-rico:isEvidencedBy,est attestée par
-rico:isExtentOf,est la mesure de
-rico:isExtentTypeOf,est le type de mesure de
-rico:isFamilyTypeOf,est le type de famille de
-rico:isFromUseDateOf,est la date à partir de laquelle est utilisé
-rico:isFunctionallyEquivalentTo,est fonctionnellement équivalente à
-rico:isIdentifierTypeOf,est le type d’identifiant de
-rico:isIncludedInProxy,est inclus dans le proxy
-rico:isIncludedInTransitive,est inclus dans transitif
-rico:isInstantiationAssociatedWithInstantiation,est associée à l’instanciation
-rico:isLastUpdateDateOf,est la date de dernière mise à jour de
-rico:isMainThingRepresentedByContentOf,est la chose principale représentée par le contenu de
-rico:isMigrationDateOf,est la date de migration de
-rico:isModificationDateOf,est une date de modification de
-rico:isOrWasAccumulationDateOfAllMembersOf,est ou a été la date de accumulation de tous les membres de
-rico:isOrWasAccumulationDateOfMostMembersOf,est ou a été la date d'accumulation de la plupart des membres de
-rico:isOrWasAccumulationDateOfSomeMembersOf,est ou a été la date d'accumulation de certains membres de
-rico:isOrWasActiveAtDate,est ou a été actif à la date
-rico:isOrWasActivityDateOf,est ou a été la date d’activité de
-rico:isOrWasAdjacentTo,est ou a été adjacent à
-rico:isOrWasAffectedBy,est ou a été affecté par
-rico:isOrWasAgentNameOf,est ou a été le nom de
-rico:isOrWasAnalogueInstantiationOf,est ou a été une instanciation analogique de
-rico:isOrWasAppellationOf,est ou a été l’appellation de
-rico:isOrWasAttendedByStudent,est ou a été fréquenté par l’étudiant
-rico:isOrWasComponentOf,est ou a été un composant de
-rico:isOrWasConstituentOf,est ou a été un constituant de
-rico:isOrWasContainedBy,est ou a été contenu par
-rico:isOrWasContentTypeOfAllMembersOf,est ou a été le type de contenu de tous les membres de
-rico:isOrWasContentTypeOfSomeMembersOf,est ou a été le type de contenu de certains membres de
-rico:isOrWasControllerOf,contrôle ou a contrôlé
-rico:isOrWasCoordinatesOf,ont ou ont été les coordonnées de
-rico:isOrWasCorporateBodyTypeOf,est ou a été le type de collectivité de
-rico:isOrWasCreationDateOfAllMembersOf,est ou a été la date de création de tous les membres de
-rico:isOrWasCreationDateOfMostMembersOf,est ou a été la date de création de la plupart des membres de
-rico:isOrWasCreationDateOfSomeMembersOf,est ou a été la date de création de certains membres de
-rico:isOrWasDemographicGroupOf,est ou a été le groupe démographique de
-rico:isOrWasDerivedFromInstantiation,est ou a été une instanciation dérivée de
-rico:isOrWasDescribedBy,est ou a été décrit par
-rico:isOrWasDigitalInstantiationOf,est ou a été une instanciation numérique de
-rico:isOrWasDocumentaryFormTypeOfAllMembersOf,est ou a été le type de document de tous les membres de
-rico:isOrWasDocumentaryFormTypeOfSomeMembersOf,est ou a été le type de document de certains membres de
-rico:isOrWasEmployerOf,a ou a été l'employeur de
-rico:isOrWasEnforcedBy,est ou a été imposé par
-rico:isOrWasExpressedBy,est ou a été exprimé par
-rico:isOrWasHolderOf,détient ou a détenu
-rico:isOrWasHolderOfIntellectualPropertyRightsOf,détient ou a détenu les droits de propriété intellectuelle sur
-rico:isOrWasIdentifierOf,est ou a été l’identifiant de
-rico:isOrWasIncludedIn,est ou a été inclus dans
-rico:isOrWasInstantiationOf,est ou a été une instanciation de
-rico:isOrWasJurisdictionOf,est ou a été le ressort de
-rico:isOrWasLanguageOf,est ou a été la langue de
-rico:isOrWasLanguageOfAllMembersOf,est ou a été la langue de tous les membres de
-rico:isOrWasLanguageOfSomeMembersOf,est ou a été la langue de certains membres de
-rico:isOrWasLeaderOf,est ou a été le dirigeant de
-rico:isOrWasLegalStatusOf,est ou a été le statut légal de
-rico:isOrWasLegalStatusOfAllMembersOf,est ou a été le statut légal de tous les membres de
-rico:isOrWasLegalStatusOfSomeMembersOf,est ou a été le statut légal de certains membres de
-rico:isOrWasLocationOf,est ou a été la localisation de
-rico:isOrWasLocationOfAgent,est ou a été la localisation de l'agent
-rico:isOrWasMainSubjectOf,est ou a été le sujet principal de
-rico:isOrWasMainSubjectOfAllMembersOf,est ou a été le sujet principal de tous les membres de
-rico:isOrWasMainSubjectOfSomeMembersOf,est ou a été le sujet principal de certains membres de
-rico:isOrWasMainThingRepresentedByContentOfSomeMembersOf,est ou a été la chose principale représentée par le contenu de certains membres de
-rico:isOrWasManagerOf,est ou a été le gestionnaire de
-rico:isOrWasMandateTypeOf,est ou a été le type de mandat de
-rico:isOrWasMemberOf,est ou a été membre de
-rico:isOrWasNameOf,est ou a été le nom de
-rico:isOrWasOccupationTypeOf,est ou a été le type d’occupation de
-rico:isOrWasOccupiedBy,est ou a été occupé par
-rico:isOrWasOwnerOf,est ou a été propriétaire de
-rico:isOrWasPartOf,est ou a été une partie de
-rico:isOrWasParticipantIn,participe ou a participé à
-rico:isOrWasPerformedBy,est ou a été réalisée par
-rico:isOrWasPhysicalLocationOf,a ou a été la localisation physique de
-rico:isOrWasPlaceNameOf,a ou a été le nom de lieu de
-rico:isOrWasPlaceTypeOf,a ou a été le type de lieu de
-rico:isOrWasRecordStateOfAllMembersOf,a ou a été l’état de tous les membres de
-rico:isOrWasRecordStateOfSomeMembersOf,a ou a été l’état de certains membres de
-rico:isOrWasRegulatedBy,est ou a été régulé par
-rico:isOrWasRepresentedByContentOfSomeMembersOf,est ou a été représenté par le contenu de certains membres de
-rico:isOrWasResponsibleForEnforcing,impose ou a imposé
-rico:isOrWasRuleTypeOf,est ou a été le type de règle de
-rico:isOrWasSubdivisionOf,est ou a été une subdivision de
-rico:isOrWasSubeventOf,est ou a été un événement constituant de
-rico:isOrWasSubjectOf,est ou a été le sujet de
-rico:isOrWasSubjectOfAllMembersOf,est ou a été le sujet de tous les membres de
-rico:isOrWasSubjectOfSomeMembersOf,est ou a été le sujet de certains membres de
-rico:isOrWasSubordinateTo,est ou a été le subalterne de
-rico:isOrWasTitleOf,est ou a été l’intitulé de
-rico:isOrWasTypeOf,est ou a été le type de
-rico:isOrWasTypeOfAllMembersOf,est ou a été le type de tous les membres de
-rico:isOrWasTypeOfSomeMembersOf,est ou a été le type de certains membres de
-rico:isOrWasUnderAuthorityOf,est ou a été sous l’autorité de
-rico:isOrganicOrFunctionalProvenanceOf,est la provenance organique ou fonctionnelle de
-rico:isOrganicProvenanceDateOf,est la date de provenance organique de
-rico:isOrganicProvenanceOf,est le producteur de
-rico:isOriginalOf,est l’original de
-rico:isPartOfTransitive,est une partie de transitif
-rico:isPlaceAssociatedWith,est un lieu associé à
-rico:isPlaceAssociatedWithAgent,est un lieu associé à l'agent
-rico:isProductionTechniqueTypeOf,est le type de technique de production de
-rico:isPublicationDateOf,est la date de publication de
-rico:isPublisherOf,est l’éditeur de
-rico:isReceiverOf,reçoit
-rico:isRecordResourceAssociatedWithRecordResource,est une ressource archivistique associée avec la ressource archivistique
-rico:isRecordSetTypeOf,est le type d’ensemble d’objets informationnels de
-rico:isRecordStateOf,est l’état de
-rico:isRelatedTo,est relié à
-rico:isReplyTo,est une réponse à
-rico:isRepresentationTypeOf,est le type de représentation de
-rico:isRepresentedByContentOf,est représenté par le contenu de
-rico:isResponsibleForIssuing,est chargé de rendre publique
-rico:isRuleAssociatedWith,est une règle associée à
-rico:isSenderOf,est l’expéditeur de
-rico:isSourceOfInformationOfRecordResource,est une source d’information de la ressource archivistique
-rico:isSubdivisionOfTransitive,est une subdivision de transitif
-rico:isSubeventOfTransitive,est un événement constituant de transitif
-rico:isSubordinateToTransitive,est subalterne de transitif
-rico:isSuccessorOf,est le successeur de
-rico:isTitleTypeOf,est le type de titre de
-rico:isToUseDateOf,est la date jusqu’à laquelle est utilisé
-rico:isUnitOfMeasurementOf,est l’unité de mesure de
-rico:isWithin,est contenu dans
-rico:issuedBy,rendue publique par
-rico:knowingOfRelation_role,a le rôle de la Relation de connaissance à propos d’une personne
-rico:knowingRelation_role,a le rôle de la Relation de connaissance entre personnes
-rico:knownBy,est connue par
-rico:knows,connaît
-rico:knowsOf,a connaissance de la personne
-rico:leadershipRelation_role,a le rôle de la Relation de direction
-rico:leadershipWithPosition,relation de direction dans le cadre du poste
-rico:managementRelation_role,a le rôle de la Relation de gestion
-rico:mandateRelation_role,a le rôle de la Relation impliquant un mandat
-rico:membershipRelation_role,a le rôle de la Relation d’appartenance
-rico:membershipWithPosition,relation d’appartenance dans le cadre du poste
-rico:migratedFrom,a été produite par migration de
-rico:migratedInto,a été migrée vers
-rico:migrationRelation_role,a le rôle de la Relation de migration
-rico:occupiesOrOccupied,occupe ou a occupé
-rico:occurredAtDate,a pour date d'occurrence
-rico:organicOrFunctionalProvenanceRelation_role,a le rôle de la Relation de provenance organique ou fonctionnelle
-rico:organicProvenanceRelation_role,a le rôle de la Relation de provenance organique
-rico:overlapsOrOverlapped,chevauche ou a chevauché
-rico:ownershipRelation_role,a le rôle de la Relation de propriété
-rico:performanceRelation_role,a le rôle de la Relation entre activités et agents
-rico:performsOrPerformed,exerce ou a exercé
-rico:placeRelation_role,a le rôle de la Relation impliquant un lieu
-rico:positionHoldingRelation_role,a le rôle de la Relation entre une personne et un poste
-rico:positionIsContextOfLeadershipRelation,poste est le contexte de la relation de direction
-rico:positionIsContextOfMembershipRelation,poste est le contexte de la relation d'appartenance
-rico:positionToGroupRelation_role,a le rôle de la Relation entre un poste et un groupe
-rico:precededInSequence,a précédé dans la séquence
-rico:precedesInSequenceTransitive,précède dans la séquence transitif
-rico:precedesInTime,précède dans le temps
-rico:precedesOrPreceded,précède ou a précédé
-rico:precedesProxyInSequence,précède le proxy dans la séquence
-rico:proxyDirectlyFollowsInSequence,proxy suit directement dans la séquence
-rico:proxyDirectlyFollowsProxyInSequence,proxy suit directement le proxy dans la séquence
-rico:proxyDirectlyIncludes,proxy inclut directement
-rico:proxyDirectlyIncludesProxy,proxy inclut directement le proxy
-rico:proxyDirectlyPrecedesInSequence,proxy précède directement dans la séquence
-rico:proxyDirectlyPrecedesProxyInSequence,proxy précède directement le proxy dans la séquence
-rico:proxyFollowsInSequence,proxy suit dans la séquence
-rico:proxyFollowsProxyInSequenceTransitive,proxy suit le proxy dans la séquence transitif
-rico:proxyFor,proxy pour
-rico:proxyHasConstituent,proxy a pour constituant
-rico:proxyHasConstituentProxyTransitive,proxy a pour constituant le proxy (transitif)
-rico:proxyHasDirectConstituent,proxy a pour constituant direct
-rico:proxyHasDirectConstituentProxy,proxy a pour constituant direct le proxy
-rico:proxyIn,proxy dans
-rico:proxyInRecord,proxy dans l’objet informationnel
-rico:proxyInRecordSet,proxy dans l’ensemble d’objets informationnels
-rico:proxyIncludes,proxy inclut
-rico:proxyIncludesProxyTransitive,proxy inclut le proxy (transitif)
-rico:proxyIsConstituentOf,proxy est un constituant de
-rico:proxyIsConstituentOfProxyTransitive,proxy est un constituant du proxy (transitif)
-rico:proxyIsDirectConstituentOf,proxy est un constituant direct de
-rico:proxyIsDirectConstituentOfProxy,proxy est un constituant direct du proxy
-rico:proxyIsDirectlyIncludedIn,proxy est directement inclus dans
-rico:proxyIsDirectlyIncludedInProxy,proxy est directement inclus dans le proxy
-rico:proxyIsIncludedIn,proxy est inclus dans
-rico:proxyIsIncludedInProxyTransitive,proxy est inclus dans le proxy (transitif)
-rico:proxyPrecedesInSequence,proxy précède dans la séquence
-rico:proxyPrecedesProxyInSequenceTransitive,proxy précède le proxy dans la séquence (transitif)
-rico:recordResourceGeneticRelation_role,a le rôle de la Relation génétique entre des ressources archivistiques
-rico:recordResourceHasSourceOfInformation,est une ressource archivistique qui a pour source d’information
-rico:recordResourceHoldingRelation_role,a le rôle de la Relation entre agents et ressources archivistiques ou instanciations conservées
-rico:recordResourceToInstantiationRelation_role,a le rôle de la Relation d’instanciation
-rico:recordResourceToRecordResourceRelation_role,a le rôle de la Relation entre ressources archivistiques
-rico:regulatesOrRegulated,régule ou a régulé
-rico:relationConnects,relation avec
-rico:relationHasContext,relation a pour contexte
-rico:relationHasDate,relation a pour date
-rico:relationHasSource,source
-rico:relationHasTarget,cible
-rico:relation_role,a le rôle de la Relation
-rico:resultedFromTheMergerOf,résulte de la fusion de
-rico:resultedFromTheSplitOf,résulte de la séparation de
-rico:resultsOrResultedFrom,résulte ou a résulté de
-rico:resultsOrResultedIn,a ou a eu pour résultat
-rico:roleIsContextOfCreationRelation,rôle est le contexte de la relation de création
-rico:ruleRelation_role,a le rôle de la Relation impliquant une règle
-rico:sequentialRelation_role,a le rôle de la Relation séquentielle
-rico:siblingRelation_role,a le rôle de la Relation de fratrie
-rico:spouseRelation_role,a le rôle de la Relation matrimoniale
-rico:studiesOrStudiedAt,étudie ou a étudié à
-rico:studyAtRelation_role,a le rôle de la Relation entre institution d’enseignement et étudiants
-rico:teachingRelation_role,a le rôle de la Relation entre enseignants et étudiants
-rico:temporalRelation_role,a le rôle de la Relation temporelle
-rico:thingIsConnectedToRelation,est connecté à la relation
-rico:thingIsContextOfRelation,chose est le contexte de la relation
-rico:thingIsSourceOfRelation,est la source de la relation
-rico:thingIsTargetOfRelation,est la cible de la relation
-rico:typeRelation_role,a le rôle de la Relation de catégorisation
-rico:wasComponentOf,a été le composant de
-rico:wasConstituentOf,a été un constituant de
-rico:wasContainedBy,a été contenu par
-rico:wasIncludedIn,a été inclus dans
-rico:wasLastUpdatedAtDate,a pour date de dernière mise à jour
-rico:wasMergedInto,a été fusionné dans
-rico:wasPartOf,a fait partie de
-rico:wasSplitInto,a été séparé en
-rico:wasSubdivisionOf,a été une subdivision de
-rico:wasSubeventOf,a été un événement constitutif de l'événement
-rico:wasSubordinateTo,a été subalterne de
-rico:wasUsedFromDate,a été utilisé à partir de la date
-rico:wasUsedToDate,a été utilisé jusqu’à la date
-rico:wholePartRelation_role,a le rôle de la Relation partitive
-rico:workRelation_role,a le rôle de la Relation de travail
+rico:accruals,Accroissements
+rico:accrualsStatus,Statut des accroissements
+rico:accumulationDate,Date d’accumulation
+rico:allMembersWithAccumulationDate,Des membres ayant tous pour date d’accumulation
+rico:allMembersWithCreationDate,Des membres ayant tous pour date de création
+rico:altimetricSystem,Système altimétrique
+rico:altitude,Altitude
+rico:authenticityNote,Note sur l’authenticité
+rico:authorizingMandate,Mandat
+rico:beginningDate,Date de début
+rico:birthDate,Date de naissance
+rico:carrierExtent,Mesure du support
+rico:classification,Classification
+rico:conditionsOfAccess,Conditions d’accès
+rico:conditionsOfUse,Conditions d’utilisation
+rico:creationDate,Date de création
+rico:date,Date
+rico:dateQualifier,Qualificatif de la date
+rico:deathDate,Date de décès
+rico:derivationDate,Date de dérivation
+rico:destructionDate,Date de destruction
+rico:endDate,Date de fin
+rico:expressedDate,Date en langage naturel
+rico:generalDescription,Description
+rico:geodesicSystem,Système géodésique
+rico:geographicalCoordinates,Coordonnées géographiques
+rico:height,Hauteur
+rico:history,Historique
+rico:identifier,Identifiant
+rico:instantiationExtent,Mesure de l’instanciation
+rico:instantiationStructure,Structure de l’instanciation
+rico:integrityNote,Note sur l'intégrité
+rico:lastModificationDate,Date de dernière modification
+rico:latitude,Latitude
+rico:length,Longueur
+rico:location,Localisation
+rico:longitude,Longitude
+rico:measure,Mesure
+rico:migrationDate,Date de migration
+rico:modificationDate,Date de modification
+rico:mostMembersWithAccumulationDate,Des membres dont la plupart ont pour date d’accumulation
+rico:mostMembersWithCreationDate,Des membres dont la plupart ont pour date de création
+rico:name,Nom
+rico:normalizedDateValue,Valeur normalisée de la date
+rico:normalizedValue,Valeur normalisée
+rico:note,Note
+rico:physicalCharacteristicsNote,Note sur les caractéristiques physiques
+rico:physicalOrLogicalExtent,Importance physique ou logique
+rico:productionTechnique,Technique de production
+rico:publicationDate,Date de publication
+rico:qualityOfRepresentationNote,Note sur la qualité de la représentation
+rico:quantity,Quantité
+rico:rankInHierarchy,Rang dans la hiérarchie
+rico:rankInSequence,Rang dans la séquence
+rico:recordResourceExtent,Mesure de la ressource archivistique
+rico:recordResourceSourceOfInformation,Source(s) utilisée(s)
+rico:recordResourceStructure,Structure de la ressource archivistique
+rico:referenceSystem,Système de référence
+rico:relationCertainty,Degré de certitude de la relation
+rico:relationSource,Source de la relation
+rico:relationState,Statut de la relation
+rico:ruleFollowed,Règle suivie
+rico:scopeAndContent,Portée et contenu
+rico:sentimentOrEmotionExpressed,Sentiment ou émotion exprimés
+rico:someMembersWithAccumulationDate,Des membres ayant pour date d’accumulation
+rico:someMembersWithCreationDate,Des membres ayant pour date de création
+rico:structure,Structure
+rico:technicalCharacteristics,Caractéristiques techniques
+rico:textualValue,Valeur textuelle
+rico:title,Intitulé
+rico:type,Type
+rico:unitOfMeasurement,Unité de mesure
+rico:usedFromDate,Utilisé à partir de
+rico:usedToDate,Utilisé jusqu’à
+rico:width,Largeur
+rico:accumulationRelation_role,A le rôle de la Relation d’accumulation
+rico:activityDocumentationRelation_role,A le rôle de la Relation entre activités et ressources archivistiques
+rico:activityIsContextOfRelation,Activité est le contexte de la relation
+rico:affectsOrAffected,Affecte ou a affecté
+rico:agentControlRelation_role,A le rôle de la Relation de contrôle entre agents
+rico:agentHasOrHadLocation,Agent a ou a eu pour localisation
+rico:agentHierarchicalRelation_role,A le rôle de la Relation hiérarchique entre agents
+rico:agentTemporalRelation_role,A le rôle de la Relation temporelle entre agents
+rico:agentToAgentRelation_role,A le rôle de la Relation entre agents
+rico:appellationRelation_role,A le rôle de la Relation d’appellation
+rico:asConcernsActivity,En ce qui concerne l’activité
+rico:authorityRelation_role,A le rôle de la Relation d’autorité
+rico:authorizedBy,Autorisé par
+rico:authorizes,Autorise
+rico:authorizingAgent,Autorisation donnée par l’agent
+rico:authorshipRelation_role,A le rôle de la Relation de responsabilité intellectuelle
+rico:childRelation_role,A le rôle de la Relation de filiation
+rico:contained,Avait pour subdivision
+rico:containsOrContained,A ou avait pour subdivision
+rico:containsTransitive,A pour subdivision (transitif)
+rico:correspondenceRelation_role,A le rôle de la Relation épistolaire
+rico:creationRelation_role,A le rôle de la Relation de création
+rico:creationWithRole,Création avec pour rôle
+rico:derivationRelation_role,A le rôle de la Relation de dérivation
+rico:descendanceRelation_role,A le rôle de la Relation de descendance
+rico:describesOrDescribed,Décrit ou décrivait
+rico:directlyContains,A pour subdivision directe
+rico:directlyFollowsInSequence,Suit directement dans la séquence
+rico:directlyFollowsProxyInSequence,Suit directement le proxy dans la séquence
+rico:directlyIncludes,Inclut directement
+rico:directlyIncludesProxy,Inclut directement le proxy
+rico:directlyPrecedesInSequence,Précède directement dans la séquence
+rico:directlyPrecedesProxyInSequence,Précède directement le proxy dans la séquence
+rico:documentedBy,Est documenté par
+rico:documents,Documente
+rico:eventRelation_role,A le rôle de la Relation impliquant un événement
+rico:evidences,Atteste de
+rico:existsOrExistedIn,Existe ou a existé dans
+rico:expressesOrExpressed,Exprime ou a exprimé
+rico:familyRelation_role,A le rôle de la Relation familiale
+rico:followedInSequence,A suivi dans la séquence
+rico:followsInSequenceTransitive,Suit dans la séquence transitif
+rico:followsInTime,Suit dans le temps
+rico:followsOrFollowed,Suit ou a suivi
+rico:followsProxyInSequence,Suit le proxy dans la séquence
+rico:functionalEquivalenceRelation_role,A le rôle de la Relation d’équivalence fonctionnelle
+rico:groupSubdivisionRelation_role,A le rôle de la Relation de subdivision entre groupes d’agents
+rico:hadComponent,A eu pour composant
+rico:hadConstituent,A eu pour constituant
+rico:hadPart,A eu pour partie
+rico:hadSubdivision,A eu pour subdivision
+rico:hadSubevent,A été constitué de l’événement
+rico:hadSubordinate,A eu pour subalterne
+rico:hasAccumulationDate,A pour date d'accumulation
+rico:hasAccumulator,Est accumulé par
+rico:hasActivityType,A pour type d’activité
+rico:hasAddressee,A pour destinataire
+rico:hasAncestor,A pour ancêtre
+rico:hasAuthor,A pour responsable intellectuel
+rico:hasBeginningDate,A pour date de début
+rico:hasBirthDate,A pour date de naissance
+rico:hasBirthPlace,A pour lieu de naissance
+rico:hasCarrierType,A pour type de support
+rico:hasChild,A pour enfant
+rico:hasCollector,Est collecté par
+rico:hasComponentTransitive,A pour composant transitif
+rico:hasConstituentProxy,A pour constituant le proxy
+rico:hasConstituentTransitive,A pour constituant transitif
+rico:hasContentOfType,A pour type de contenu
+rico:hasContentWhichMainlyRepresents,A un contenu qui représente principalement
+rico:hasContentWhichRepresents,A un contenu qui représente
+rico:hasCopy,A pour copie
+rico:hasCreationDate,A pour date de création
+rico:hasCreator,A pour créateur
+rico:hasDateType,A pour type de date
+rico:hasDeathDate,A pour date de décès
+rico:hasDeathPlace,A pour lieu de décès
+rico:hasDerivationDate,A pour date de dérivation
+rico:hasDescendant,A pour descendant
+rico:hasDestructionDate,A pour date de destruction
+rico:hasDirectComponent,A directement pour composant
+rico:hasDirectConstituent,A directement pour constituant
+rico:hasDirectConstituentProxy,A pour constituant direct le proxy
+rico:hasDirectPart,A directement pour partie
+rico:hasDirectSubdivision,A directement pour subdivision
+rico:hasDirectSubevent,Est directement constitué de l’événement
+rico:hasDirectSubordinate,A directement pour subalterne
+rico:hasDocumentaryFormType,A pour type d’objet informationnel
+rico:hasDraft,A pour ébauche
+rico:hasEndDate,A pour date de fin
+rico:hasEventType,A pour type d’événement
+rico:hasExtent,A pour dimension
+rico:hasExtentType,A pour type de mesure
+rico:hasFamilyAssociationWith,A une relation familiale avec
+rico:hasFamilyType,A pour type de famille
+rico:hasGeneticLinkToRecordResource,A une relation génétique avec la ressource archivistique
+rico:hasIdentifierType,A pour type d’identifiant
+rico:hasMigrationDate,A pour date de migration
+rico:hasModificationDate,A pour date de modification
+rico:hasOrHadAgentName,A ou a eu pour nom
+rico:hasOrHadAllMembersWithAccumulationDate,Inclut ou a inclus des membres ayant tous pour date d'accumulation
+rico:hasOrHadAllMembersWithContentType,Inclut ou a inclus des membres ayant tous pour type de contenu
+rico:hasOrHadAllMembersWithCreationDate,Inclut ou a inclus des membres ayant tous pour date de création
+rico:hasOrHadAllMembersWithDocumentaryFormType,Inclut ou a inclus des membres ayant tous pour type
+rico:hasOrHadAllMembersWithLanguage,Inclut ou a inclus des membres ayant tous pour langue
+rico:hasOrHadAllMembersWithLegalStatus,Inclut ou a inclus des membres ayant tous pour statut légal
+rico:hasOrHadAllMembersWithMainSubject,Inclut ou a inclus des membres ayant tous pour principal sujet
+rico:hasOrHadAllMembersWithRecordState,Inclut ou a inclus des membres ayant tous pour état
+rico:hasOrHadAllMembersWithSubject,Inclut ou a inclus des membres ayant tous pour sujet
+rico:hasOrHadAllMembersWithType,Inclut ou a inclus des membres ayant tous pour type
+rico:hasOrHadAnalogueInstantiation,A ou a eu pour instanciation analogique
+rico:hasOrHadAppellation,A ou a eu pour appellation
+rico:hasOrHadAuthorityOver,A ou a eu autorité sur
+rico:hasOrHadComponent,A ou a eu pour composant
+rico:hasOrHadConstituent,A ou a eu pour constituant
+rico:hasOrHadController,Est ou a été contrôlé par
+rico:hasOrHadCoordinates,A ou a eu pour coordonnées
+rico:hasOrHadCorporateBodyType,A ou a eu pour type de collectivité
+rico:hasOrHadCorrespondent,A ou a eu pour correspondant
+rico:hasOrHadDemographicGroup,A ou a eu pour groupe démographique
+rico:hasOrHadDerivedInstantiation,A ou a eu pour instanciation dérivée
+rico:hasOrHadDigitalInstantiation,A ou a eu pour instanciation numérique
+rico:hasOrHadEmployer,A ou a eu pour employeur
+rico:hasOrHadHolder,Est ou a été détenu par
+rico:hasOrHadIdentifier,Identifiant
+rico:hasOrHadInstantiation,A ou a eu pour instanciation
+rico:hasOrHadIntellectualPropertyRightsHolder,A ou a eu comme détenteur des droits de propriété intellectuelle
+rico:hasOrHadJurisdiction,A ou a eu pour ressort
+rico:hasOrHadLanguage,Langue
+rico:hasOrHadLeader,A ou a eu pour dirigeant
+rico:hasOrHadLegalStatus,A ou a eu pour statut légal
+rico:hasOrHadLocation,A ou avait pour localisation
+rico:hasOrHadMainSubject,A ou a eu pour sujet principal
+rico:hasOrHadManager,A ou a eu pour gestionnaire
+rico:hasOrHadMandateType,A ou a eu pour type de mandat
+rico:hasOrHadMember,A ou a eu pour membre
+rico:hasOrHadMostMembersWithAccumulationDate,Inclut ou a inclus des membres dont la plupart ont pour date d'accumulation
+rico:hasOrHadMostMembersWithCreationDate,Inclut ou a inclus des membres dont la plupart ont pour date de création
+rico:hasOrHadName,A ou a eu pour nom
+rico:hasOrHadOccupationOfType,A ou a eu pour type d’occupation
+rico:hasOrHadOwner,A ou a eu pour propriétaire
+rico:hasOrHadPart,A ou a eu pour partie
+rico:hasOrHadParticipant,A ou a eu pour participant
+rico:hasOrHadPhysicalLocation,A ou avait pour localisation physique
+rico:hasOrHadPlaceName,A ou avait pour nom
+rico:hasOrHadPlaceType,Type de lieu
+rico:hasOrHadPosition,Occupe ou a occupé le poste
+rico:hasOrHadRuleType,A ou a eu pour type de règle
+rico:hasOrHadSomeMembersWhoseContentMainlyRepresents,Inclut ou a inclus des membres dont le contenu représente principalement
+rico:hasOrHadSomeMembersWhoseContentRepresents,Inclut ou a inclus des membres dont le contenu représente
+rico:hasOrHadSomeMembersWithAccumulationDate,Inclut ou a inclus des membres ayant pour date d'accumulation
+rico:hasOrHadSomeMembersWithContentType,Inclut ou a inclus des membres ayant pour type de contenu
+rico:hasOrHadSomeMembersWithCreationDate,Inclut ou a inclus des membres ayant pour date de création
+rico:hasOrHadSomeMembersWithDocumentaryFormType,Inclut ou a inclus des membres ayant pour type de document
+rico:hasOrHadSomeMembersWithLanguage,Inclut ou a inclus des membres ayant pour langue
+rico:hasOrHadSomeMembersWithLegalStatus,Inclut ou a inclus des membres ayant pour statut légal
+rico:hasOrHadSomeMembersWithMainSubject,Inclut ou a inclus des membres ayant pour sujet principal
+rico:hasOrHadSomeMembersWithRecordState,Inclut ou a inclus des membres ayant pour état
+rico:hasOrHadSomeMembersWithSubject,Inclut ou a inclus des membres ayant pour sujet
+rico:hasOrHadSomeMembersWithType,Inclut ou a inclus des membres ayant pour type
+rico:hasOrHadSpouse,A ou a eu pour conjoint
+rico:hasOrHadStudent,A ou a eu pour étudiant
+rico:hasOrHadSubdivision,A ou a eu pour subdivision
+rico:hasOrHadSubevent,Est ou a été constitué de l’événement
+rico:hasOrHadSubject,A ou a eu pour sujet
+rico:hasOrHadSubordinate,A ou a eu pour subalterne
+rico:hasOrHadTeacher,A ou a eu pour enseignant
+rico:hasOrHadTitle,A ou a eu pour intitulé
+rico:hasOrHadType,A ou a eu pour type
+rico:hasOrHadWorkRelationWith,A ou a eu une relation professionnelle avec
+rico:hasOrganicOrFunctionalProvenance,A pour provenance organique ou fonctionnelle
+rico:hasOrganicProvenance,A pour provenance organique
+rico:hasOrganicProvenanceDate,A pour date de provenance organique
+rico:hasOriginal,A pour original
+rico:hasPartTransitive,A pour partie transitif
+rico:hasProductionTechniqueType,A pour type de technique de production
+rico:hasProxy,A pour proxy
+rico:hasPublicationDate,A pour date de publication
+rico:hasPublisher,A pour éditeur
+rico:hasReceiver,Est reçu par
+rico:hasRecordSetType,A pour type d’ensemble d’objets informationnels
+rico:hasRecordState,A pour état
+rico:hasReply,A pour réponse
+rico:hasRepresentationType,A pour type de représentation
+rico:hasSender,A pour expéditeur
+rico:hasSibling,A pour frère ou sœur
+rico:hasSubdivisionTransitive,A pour subdivision transitif
+rico:hasSubeventTransitive,Est constitué de l’événement transitif
+rico:hasSubordinateTransitive,A pour subalterne transitif
+rico:hasSuccessor,A pour successeur
+rico:hasTitleType,A pour type de titre
+rico:hasUnitOfMeasurement,A pour unité de mesure
+rico:hasWithin,Contient
+rico:included,A inclus
+rico:includesOrIncluded,Inclut ou a inclus
+rico:includesProxy,Inclut le proxy
+rico:includesTransitive,Inclut transitif
+rico:instantiationToInstantiationRelation_role,A le rôle de la Relation entre instanciations
+rico:intellectualPropertyRightsRelation_role,A le rôle de la Relation de propriété intellectuelle
+rico:intersects,Intersecte
+rico:isAccumulationDateOf,Est la date d'accumulation de
+rico:isAccumulatorOf,Accumule
+rico:isActivityTypeOf,Est le type d’activité de
+rico:isAddresseeOf,Est le destinataire de
+rico:isAgentAssociatedWithAgent,Est associé à l’agent
+rico:isAgentAssociatedWithPlace,Est associé au lieu
+rico:isAssociatedWithDate,Est associé à la date
+rico:isAssociatedWithEvent,Est associé à l’événement
+rico:isAssociatedWithPlace,Est associé au lieu
+rico:isAssociatedWithRule,Est associé à la règle
+rico:isAuthorOf,Est le responsable intellectuel de
+rico:isAuthorizingAgentInMandateRelation,Est l’agent donnant l’autorisation dans la relation impliquant un mandat
+rico:isBeginningDateOf,Est la date de début de
+rico:isBirthDateOf,Est la date de naissance de
+rico:isBirthPlaceOf,Est le lieu de naissance de
+rico:isCarrierTypeOf,Est le type de support de
+rico:isChildOf,Est l’enfant de
+rico:isCollectorOf,Collecte
+rico:isComponentOfTransitive,Est un composant de transitif
+rico:isConstituentOfProxy,Est le constituant du proxy
+rico:isConstituentOfTransitive,Est le constituant de transitif
+rico:isContainedByTransitive,Est contenu par transitif
+rico:isContentTypeOf,Est le type de contenu de
+rico:isCopyOf,Est la copie de
+rico:isCreationDateOf,Est la date de création de
+rico:isCreatorOf,Est le créateur de
+rico:isDateAssociatedWith,Est une date associée a
+rico:isDateAssociatedWithRelation,Est une date associée à la relation
+rico:isDateOfOccurrenceOf,Est la date d'occurrence de
+rico:isDateTypeOf,Est le type de date de
+rico:isDeathDateOf,Est la date de décès de
+rico:isDeathPlaceOf,Est le lieu de décès de
+rico:isDerivationDateOf,Est la date de dérivation de
+rico:isDestructionDateOf,Est la date de destruction de
+rico:isDirectComponentOf,Est le composant direct de
+rico:isDirectConstituentOf,Est un constituant direct de
+rico:isDirectConstituentOfProxy,Est un constituant direct du proxy
+rico:isDirectPartOf,Fait directement partie de
+rico:isDirectSubdivisionOf,Est la subdivision directe de
+rico:isDirectSubeventOf,Est un événement constituant directement l’événement
+rico:isDirectSubordinateTo,Est directement subalterne de
+rico:isDirectlyContainedBy,Est directement inclus dans
+rico:isDirectlyIncludedIn,Est directement inclus dans
+rico:isDirectlyIncludedInProxy,Est directement inclus dans le proxy
+rico:isDocumentaryFormTypeOf,Est le type de document de
+rico:isDraftOf,Est l’ébauche de
+rico:isEndDateOf,Est la date de fin de
+rico:isEquivalentTo,Est l’équivalent de
+rico:isEventAssociatedWith,Est un événement associé a
+rico:isEventTypeOf,Est le type d’événement de
+rico:isEvidencedBy,Est attestée par
+rico:isExtentOf,Est une dimension de
+rico:isExtentTypeOf,Est le type de mesure de
+rico:isFamilyTypeOf,Est le type de famille de
+rico:isFromUseDateOf,Est la date à partir de laquelle est utilisé
+rico:isFunctionallyEquivalentTo,Est fonctionnellement équivalente à
+rico:isIdentifierTypeOf,Est le type d’identifiant de
+rico:isIncludedInProxy,Est inclus dans le proxy
+rico:isIncludedInTransitive,Est inclus dans transitif
+rico:isInstantiationAssociatedWithInstantiation,Est associée à l’instanciation
+rico:isLastUpdateDateOf,Est la date de dernière mise à jour de
+rico:isMainThingRepresentedByContentOf,Est la chose principale représentée par le contenu de
+rico:isMigrationDateOf,Est la date de migration de
+rico:isModificationDateOf,Est une date de modification de
+rico:isOrWasAccumulationDateOfAllMembersOf,Est ou a été la date de accumulation de tous les membres de
+rico:isOrWasAccumulationDateOfMostMembersOf,Est ou a été la date d'accumulation de la plupart des membres de
+rico:isOrWasAccumulationDateOfSomeMembersOf,Est ou a été la date d'accumulation de certains membres de
+rico:isOrWasActiveAtDate,Est ou a été actif à la date
+rico:isOrWasActivityDateOf,Est ou a été la date d’activité de
+rico:isOrWasAdjacentTo,Est ou était limitrophe de
+rico:isOrWasAffectedBy,Est ou a été affecté par
+rico:isOrWasAgentNameOf,Est ou a été le nom de
+rico:isOrWasAnalogueInstantiationOf,Est ou a été une instanciation analogique de
+rico:isOrWasAppellationOf,Est ou a été l’appellation de
+rico:isOrWasAttendedByStudent,Est ou a été fréquenté par l’étudiant
+rico:isOrWasComponentOf,Est ou a été un composant de
+rico:isOrWasConstituentOf,Est ou a été un constituant de
+rico:isOrWasContainedBy,Est ou était une subdivision de
+rico:isOrWasContentTypeOfAllMembersOf,Est ou a été le type de contenu de tous les membres de
+rico:isOrWasContentTypeOfSomeMembersOf,Est ou a été le type de contenu de certains membres de
+rico:isOrWasControllerOf,Contrôle ou a contrôlé
+rico:isOrWasCoordinatesOf,Ont ou ont été les coordonnées de
+rico:isOrWasCorporateBodyTypeOf,Est ou a été le type de collectivité de
+rico:isOrWasCreationDateOfAllMembersOf,Est ou a été la date de création de tous les membres de
+rico:isOrWasCreationDateOfMostMembersOf,Est ou a été la date de création de la plupart des membres de
+rico:isOrWasCreationDateOfSomeMembersOf,Est ou a été la date de création de certains membres de
+rico:isOrWasDemographicGroupOf,Est ou a été le groupe démographique de
+rico:isOrWasDerivedFromInstantiation,Est ou a été une instanciation dérivée de
+rico:isOrWasDescribedBy,Est ou a été décrit par
+rico:isOrWasDigitalInstantiationOf,Est ou a été une instanciation numérique de
+rico:isOrWasDocumentaryFormTypeOfAllMembersOf,Est ou a été le type de document de tous les membres de
+rico:isOrWasDocumentaryFormTypeOfSomeMembersOf,Est ou a été le type de document de certains membres de
+rico:isOrWasEmployerOf,A ou a été l'employeur de
+rico:isOrWasEnforcedBy,Est ou a été imposé par
+rico:isOrWasExpressedBy,Est ou a été exprimé par
+rico:isOrWasHolderOf,Détient ou a détenu
+rico:isOrWasHolderOfIntellectualPropertyRightsOf,Détient ou a détenu les droits de propriété intellectuelle sur
+rico:isOrWasIdentifierOf,Est ou a été l’identifiant de
+rico:isOrWasIncludedIn,Est ou a été inclus dans
+rico:isOrWasInstantiationOf,Est ou a été une instanciation de
+rico:isOrWasJurisdictionOf,Est ou a été le ressort de
+rico:isOrWasLanguageOf,Est ou a été la langue de
+rico:isOrWasLanguageOfAllMembersOf,Est ou a été la langue de tous les membres de
+rico:isOrWasLanguageOfSomeMembersOf,Est ou a été la langue de certains membres de
+rico:isOrWasLeaderOf,Est ou a été le dirigeant de
+rico:isOrWasLegalStatusOf,Est ou a été le statut légal de
+rico:isOrWasLegalStatusOfAllMembersOf,Est ou a été le statut légal de tous les membres de
+rico:isOrWasLegalStatusOfSomeMembersOf,Est ou a été le statut légal de certains membres de
+rico:isOrWasLocationOf,Est ou a été la localisation de
+rico:isOrWasLocationOfAgent,Est ou a été la localisation de l'agent
+rico:isOrWasMainSubjectOf,Est ou a été le sujet principal de
+rico:isOrWasMainSubjectOfAllMembersOf,Est ou a été le sujet principal de tous les membres de
+rico:isOrWasMainSubjectOfSomeMembersOf,Est ou a été le sujet principal de certains membres de
+rico:isOrWasMainThingRepresentedByContentOfSomeMembersOf,Est ou a été la chose principale représentée par le contenu de certains membres de
+rico:isOrWasManagerOf,Est ou a été le gestionnaire de
+rico:isOrWasMandateTypeOf,Est ou a été le type de mandat de
+rico:isOrWasMemberOf,Est ou a été membre de
+rico:isOrWasNameOf,Est ou a été le nom de
+rico:isOrWasOccupationTypeOf,Est ou a été le type d’occupation de
+rico:isOrWasOccupiedBy,Est ou a été occupé par
+rico:isOrWasOwnerOf,Est ou a été propriétaire de
+rico:isOrWasPartOf,Est ou a été une partie de
+rico:isOrWasParticipantIn,Participe ou a participé à
+rico:isOrWasPerformedBy,Est ou a été réalisée par
+rico:isOrWasPhysicalLocationOf,A ou a été la localisation physique de
+rico:isOrWasPlaceNameOf,A ou a été le nom de lieu de
+rico:isOrWasPlaceTypeOf,A ou a été le type de lieu de
+rico:isOrWasRecordStateOfAllMembersOf,A ou a été l’état de tous les membres de
+rico:isOrWasRecordStateOfSomeMembersOf,A ou a été l’état de certains membres de
+rico:isOrWasRegulatedBy,Est ou a été régulé par
+rico:isOrWasRepresentedByContentOfSomeMembersOf,Est ou a été représenté par le contenu de certains membres de
+rico:isOrWasResponsibleForEnforcing,Impose ou a imposé
+rico:isOrWasRuleTypeOf,Est ou a été le type de règle de
+rico:isOrWasSubdivisionOf,Est ou a été une subdivision de
+rico:isOrWasSubeventOf,Est ou a été un événement constituant de
+rico:isOrWasSubjectOf,Est ou a été le sujet de
+rico:isOrWasSubjectOfAllMembersOf,Est ou a été le sujet de tous les membres de
+rico:isOrWasSubjectOfSomeMembersOf,Est ou a été le sujet de certains membres de
+rico:isOrWasSubordinateTo,Est ou a été le subalterne de
+rico:isOrWasTitleOf,Est ou a été l’intitulé de
+rico:isOrWasTypeOf,Est ou a été le type de
+rico:isOrWasTypeOfAllMembersOf,Est ou a été le type de tous les membres de
+rico:isOrWasTypeOfSomeMembersOf,Est ou a été le type de certains membres de
+rico:isOrWasUnderAuthorityOf,Est ou a été sous l’autorité de
+rico:isOrganicOrFunctionalProvenanceOf,Est la provenance organique ou fonctionnelle de
+rico:isOrganicProvenanceDateOf,Est la date de provenance organique de
+rico:isOrganicProvenanceOf,Est le producteur de
+rico:isOriginalOf,Est l’original de
+rico:isPartOfTransitive,Est une partie de transitif
+rico:isPlaceAssociatedWith,Est un lieu associé à
+rico:isPlaceAssociatedWithAgent,Est un lieu associé à l'agent
+rico:isProductionTechniqueTypeOf,Est le type de technique de production de
+rico:isPublicationDateOf,Est la date de publication de
+rico:isPublisherOf,Est l’éditeur de
+rico:isReceiverOf,Reçoit
+rico:isRecordResourceAssociatedWithRecordResource,Est une ressource archivistique associée avec la ressource archivistique
+rico:isRecordSetTypeOf,Est le type d’ensemble d’objets informationnels de
+rico:isRecordStateOf,Est l’état de
+rico:isRelatedTo,Est relié à
+rico:isReplyTo,Est une réponse à
+rico:isRepresentationTypeOf,Est le type de représentation de
+rico:isRepresentedByContentOf,Est représenté par le contenu de
+rico:isResponsibleForIssuing,Est chargé de rendre publique
+rico:isRuleAssociatedWith,Est une règle associée à
+rico:isSenderOf,Est l’expéditeur de
+rico:isSourceOfInformationOfRecordResource,Est une source d’information de la ressource archivistique
+rico:isSubdivisionOfTransitive,Est une subdivision de transitif
+rico:isSubeventOfTransitive,Est un événement constituant de transitif
+rico:isSubordinateToTransitive,Est subalterne de transitif
+rico:isSuccessorOf,Est le successeur de
+rico:isTitleTypeOf,Est le type de titre de
+rico:isToUseDateOf,Est la date jusqu’à laquelle est utilisé
+rico:isUnitOfMeasurementOf,Est l’unité de mesure de
+rico:isWithin,Est contenu dans
+rico:issuedBy,Rendue publique par
+rico:knowingOfRelation_role,A le rôle de la Relation de connaissance à propos d’une personne
+rico:knowingRelation_role,A le rôle de la Relation de connaissance entre personnes
+rico:knownBy,Est connue par
+rico:knows,Connaît
+rico:knowsOf,A connaissance de la personne
+rico:leadershipRelation_role,A le rôle de la Relation de direction
+rico:leadershipWithPosition,Relation de direction dans le cadre du poste
+rico:managementRelation_role,A le rôle de la Relation de gestion
+rico:mandateRelation_role,A le rôle de la Relation impliquant un mandat
+rico:membershipRelation_role,A le rôle de la Relation d’appartenance
+rico:membershipWithPosition,Relation d’appartenance dans le cadre du poste
+rico:migratedFrom,A été produite par migration de
+rico:migratedInto,A été migrée vers
+rico:migrationRelation_role,A le rôle de la Relation de migration
+rico:occupiesOrOccupied,Occupe ou a occupé
+rico:occurredAtDate,A pour date d'occurrence
+rico:organicOrFunctionalProvenanceRelation_role,A le rôle de la Relation de provenance organique ou fonctionnelle
+rico:organicProvenanceRelation_role,A le rôle de la Relation de provenance organique
+rico:overlapsOrOverlapped,Chevauche ou a chevauché
+rico:ownershipRelation_role,A le rôle de la Relation de propriété
+rico:performanceRelation_role,A le rôle de la Relation entre activités et agents
+rico:performsOrPerformed,Exerce ou a exercé
+rico:placeRelation_role,A le rôle de la Relation impliquant un lieu
+rico:positionHoldingRelation_role,A le rôle de la Relation entre une personne et un poste
+rico:positionIsContextOfLeadershipRelation,Poste est le contexte de la relation de direction
+rico:positionIsContextOfMembershipRelation,Poste est le contexte de la relation d'appartenance
+rico:positionToGroupRelation_role,A le rôle de la Relation entre un poste et un groupe
+rico:precededInSequence,A précédé dans la séquence
+rico:precedesInSequenceTransitive,Précède dans la séquence transitif
+rico:precedesInTime,Précède dans le temps
+rico:precedesOrPreceded,Précède ou a précédé
+rico:precedesProxyInSequence,Précède le proxy dans la séquence
+rico:proxyDirectlyFollowsInSequence,Proxy suit directement dans la séquence
+rico:proxyDirectlyFollowsProxyInSequence,Proxy suit directement le proxy dans la séquence
+rico:proxyDirectlyIncludes,Proxy inclut directement
+rico:proxyDirectlyIncludesProxy,Proxy inclut directement le proxy
+rico:proxyDirectlyPrecedesInSequence,Proxy précède directement dans la séquence
+rico:proxyDirectlyPrecedesProxyInSequence,Proxy précède directement le proxy dans la séquence
+rico:proxyFollowsInSequence,Proxy suit dans la séquence
+rico:proxyFollowsProxyInSequenceTransitive,Proxy suit le proxy dans la séquence transitif
+rico:proxyFor,Proxy pour
+rico:proxyHasConstituent,Proxy a pour constituant
+rico:proxyHasConstituentProxyTransitive,Proxy a pour constituant le proxy (transitif)
+rico:proxyHasDirectConstituent,Proxy a pour constituant direct
+rico:proxyHasDirectConstituentProxy,Proxy a pour constituant direct le proxy
+rico:proxyIn,Proxy dans
+rico:proxyInRecord,Proxy dans l’objet informationnel
+rico:proxyInRecordSet,Proxy dans l’ensemble d’objets informationnels
+rico:proxyIncludes,Proxy inclut
+rico:proxyIncludesProxyTransitive,Proxy inclut le proxy (transitif)
+rico:proxyIsConstituentOf,Proxy est un constituant de
+rico:proxyIsConstituentOfProxyTransitive,Proxy est un constituant du proxy (transitif)
+rico:proxyIsDirectConstituentOf,Proxy est un constituant direct de
+rico:proxyIsDirectConstituentOfProxy,Proxy est un constituant direct du proxy
+rico:proxyIsDirectlyIncludedIn,Proxy est directement inclus dans
+rico:proxyIsDirectlyIncludedInProxy,Proxy est directement inclus dans le proxy
+rico:proxyIsIncludedIn,Proxy est inclus dans
+rico:proxyIsIncludedInProxyTransitive,Proxy est inclus dans le proxy (transitif)
+rico:proxyPrecedesInSequence,Proxy précède dans la séquence
+rico:proxyPrecedesProxyInSequenceTransitive,Proxy précède le proxy dans la séquence (transitif)
+rico:recordResourceGeneticRelation_role,A le rôle de la Relation génétique entre des ressources archivistiques
+rico:recordResourceHasSourceOfInformation,Ressource(s) utilisée(s) pour élaborer la notice
+rico:recordResourceHoldingRelation_role,A le rôle de la Relation entre agents et ressources archivistiques ou instanciations conservées
+rico:recordResourceToInstantiationRelation_role,A le rôle de la Relation d’instanciation
+rico:recordResourceToRecordResourceRelation_role,A le rôle de la Relation entre ressources archivistiques
+rico:regulatesOrRegulated,Régule ou a régulé
+rico:relationConnects,Relation avec
+rico:relationHasContext,Relation a pour contexte
+rico:relationHasDate,Relation a pour date
+rico:relationHasSource,Source
+rico:relationHasTarget,Cible
+rico:relation_role,A le rôle de la Relation
+rico:resultedFromTheMergerOf,Résulte de la fusion de
+rico:resultedFromTheSplitOf,Résulte de la séparation de
+rico:resultsOrResultedFrom,Résulte ou a résulté de
+rico:resultsOrResultedIn,A ou a eu pour résultat
+rico:roleIsContextOfCreationRelation,Rôle est le contexte de la relation de création
+rico:ruleRelation_role,A le rôle de la Relation impliquant une règle
+rico:sequentialRelation_role,A le rôle de la Relation séquentielle
+rico:siblingRelation_role,A le rôle de la Relation de fratrie
+rico:spouseRelation_role,A le rôle de la Relation matrimoniale
+rico:studiesOrStudiedAt,Étudie ou a étudié à
+rico:studyAtRelation_role,A le rôle de la Relation entre institution d’enseignement et étudiants
+rico:teachingRelation_role,A le rôle de la Relation entre enseignants et étudiants
+rico:temporalRelation_role,A le rôle de la Relation temporelle
+rico:thingIsConnectedToRelation,Est connecté à la relation
+rico:thingIsContextOfRelation,Chose est le contexte de la relation
+rico:thingIsSourceOfRelation,Est la source de la relation
+rico:thingIsTargetOfRelation,Est la cible de la relation
+rico:typeRelation_role,A le rôle de la Relation de catégorisation
+rico:wasComponentOf,A été le composant de
+rico:wasConstituentOf,A été un constituant de
+rico:wasContainedBy,Était une subdivision de
+rico:wasIncludedIn,A été inclus dans
+rico:wasLastUpdatedAtDate,A pour date de dernière mise à jour
+rico:wasMergedInto,A été fusionné dans
+rico:wasPartOf,A fait partie de
+rico:wasSplitInto,A été séparé en
+rico:wasSubdivisionOf,A été une subdivision de
+rico:wasSubeventOf,A été un événement constitutif de l'événement
+rico:wasSubordinateTo,A été subalterne de
+rico:wasUsedFromDate,A été utilisé à partir de la date
+rico:wasUsedToDate,A été utilisé jusqu’à la date
+rico:wholePartRelation_role,A le rôle de la Relation partitive
+rico:workRelation_role,A le rôle de la Relation de travail

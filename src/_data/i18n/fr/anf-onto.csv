@@ -15,8 +15,8 @@ anf-onto:streetStartsOrStartedAtPoint,Commence ou commençait au point
 anf-onto:streetStartsOrStartedOnStreet,Commence ou commençait sur la voie
 anf-onto:wasAbsorbedBy,A été absorbé par
 anf-onto:wasPartiallyAbsorbedBy,A été partiellement absorbé par
-anf-onto:endingAtPoint,Point d'arrivée
-anf-onto:endingOnStreet,Voie d'arrivée
+anf-onto:endingAtPoint,Point d’arrivée
+anf-onto:endingOnStreet,Voie d’arrivée
 anf-onto:someSubactivitiesWithDate,A des sous-activités ayant pour date
 anf-onto:startingAtPoint,Point de départ
 anf-onto:startingOnStreet,Voie de départ
