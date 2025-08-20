@@ -7,6 +7,7 @@ module.exports = {
   vocabularies: "Vocabulaires contrôlés",
   agents: "Agents",
   lieux: "Lieux",
+  recherche: "Recherche",
   "Download data": "Télécharger les données",
   "Record created on": "Notice créée le",
   "Record updated on": "Notice mise à jour pour la dernière fois le",
