@@ -40,6 +40,9 @@ jobs:
             export NODE_OPTIONS=--max-old-space-size=4096
             npm run build
 
+      - name: Pagefind
+        run: npx pagefind
+
       # SCP transfer project to server ANS
       - name: copy file via ssh key
         uses: appleboy/scp-action@v0.1.7
