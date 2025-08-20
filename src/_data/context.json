@@ -16,6 +16,9 @@
   "xsd": "http://www.w3.org/2001/XMLSchema#",
   "dcat": "http://www.w3.org/ns/dcat#",
   "iso-thes": "http://purl.org/iso25964/skos-thes#",
+  "insee-geo": "http://rdf.insee.fr/def/geo#",
+  "geofla": "http://data.ign.fr/def/geofla#",
+  "anf-onto": "https://rdf.archives-nationales.culture.gouv.fr/ontology#",
 
   "agent": "https://rdf.archives-nationales.culture.gouv.fr/agent/",
   "place": "https://rdf.archives-nationales.culture.gouv.fr/place/",

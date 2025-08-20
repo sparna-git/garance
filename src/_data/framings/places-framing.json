@@ -122,7 +122,6 @@
     "@explicit": true,
     "skos:prefLabel": { "@omitDefault": true }
   },
-  "skos:hiddenLabel": { "@omitDefault": true },
   "rico:history": { "@omitDefault": true },
   "rico:isDirectlyContainedBy": {
     "@omitDefault": true,
@@ -158,8 +157,6 @@
     "@explicit": true,
     "skos:prefLabel": { "@omitDefault": true }
   },
-  "rdfs:label": { "@omitDefault": true },
-  "rico:name": { "@omitDefault": true },
   "rico:note": { "@omitDefault": true },
   "rico:precedesInTime": {
     "@omitDefault": true,

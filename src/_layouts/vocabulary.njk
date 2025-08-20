@@ -29,7 +29,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
     {% if vocabulary.creator %}
     <div class="row">
       <div class="col-2">
-        <h6><span data-i18n="dcterms:creator"></span></h6>
+        <h6><span data-i18n="vocabulary.header.creator"></span></h6>
       </div>
       <div class="col-6">
         {% for c in vocabulary.creator %}
@@ -51,7 +51,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
     {% if vocabulary.version %}
       <div class="row">
         <div class="col-2">
-          <h6><span data-i18n="dc:version"></span></h6>
+          <h6><span data-i18n="vocabulary.header.version"></span></h6>
         </div>
         <div class="col-6">
           <span>{{ vocabulary.version[0]["@value"] }}</span>
@@ -63,7 +63,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
     {% if vocabulary.created %}
       <div class="row">
         <div class="col-2">
-          <h6><span data-i18n="dcterms:created"></span></h6>
+          <h6><span data-i18n="vocabulary.header.created"></span></h6>
         </div>
         <div class="col-6">
           <span>{{ vocabulary.created }}</span>
@@ -75,7 +75,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
     {% if vocabulary.datemodified %}
       <div class="row">
         <div class="col-2">
-          <h6><span data-i18n="dcterms:modified"></span></h6>
+          <h6><span data-i18n="vocabulary.header.modified"></span></h6>
         </div>
         <div class="col-6">
           <span>{{ vocabulary.datemodified | getMaxDate }}</span>
@@ -87,7 +87,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
     {% if vocabulary.sources %}
       <div class="row">
         <div class="col-2">
-          <h6><span data-i18n="dc:source"></span></h6>
+          <h6><span data-i18n="vocabulary.header.source"></span></h6>
         </div>
         <div class="col-10">
           <p>
@@ -103,7 +103,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
     {% if vocabulary.coverage %}
       <div class="row">
         <div class="col-2">
-          <h6><span data-i18n="dc:coverage"></span></h6>
+          <h6><span data-i18n="vocabulary.header.coverage"></span></h6>
         </div>
         <div class="col-6">
           <span>{{ vocabulary.coverage | lang('fr') }}</span>
@@ -115,7 +115,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
     {% if vocabulary.scopeNote.length >= 1 %}
       <div class="row">
         <div class="col-2">
-          <h6><span data-i18n="skos:scopeNote"></span></h6>
+          <h6><span data-i18n="vocabulary.header.scopeNote"></span></h6>
         </div>
         <div class="col-10">
           {{ vocabulary.scopeNote | lang('fr') }}
@@ -127,7 +127,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
     {% if vocabulary.historyNote %}
       <div class="row">
         <div class="col-2">
-          <h6><span data-i18n="skos:historyNote"></span></h6>
+          <h6><span data-i18n="vocabulary.header.historyNote"></span></h6>
         </div>
         <div class="col-10">
           {% set hn = vocabulary.historyNote["@value"] | replace("html:","") %}
@@ -140,7 +140,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
     {% if vocabulary.distribution %}
     <div class="row botton_marging">
         <div class="col-2">
-          <h6><span data-i18n="dcat:distribution"></span></h6>
+          <h6><span data-i18n="vocabulary.header.distribution"></span></h6>
         </div>
         <div class="col-10">
           {% for dist in vocabulary.distribution %}
@@ -163,7 +163,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
       {% for conceptType in sortInverseInScheme[0].type %}
         {% if conceptType != "Concept" %}
           <div class="alert alert-secondary" role="alert">
-              <em><span data-i18n="These concepts have all the type"></span> “<a href="{{ conceptType | expandUri(jsonLdContext) }}" target="_blank"><b>{{ conceptType }}</b></a>”.</em>
+              <em><span data-i18n="vocabulary.header.These concepts have all the type"></span> “<a href="{{ conceptType | expandUri(jsonLdContext) }}" target="_blank"><b>{{ conceptType }}</b></a>”.</em>
           </div>
         {% endif %}
       {% endfor %}
@@ -211,7 +211,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           </code>
           {% if 'FRAN_RI_' in concepts.id %}
             <br />
-            <span data-i18n="Identifier inside the vocabulary"></span> :
+            <span data-i18n="vocabulary.concept.Identifier inside the vocabulary"></span> :
             {% set suffix = concepts.id | expandUri(jsonLdContext) | replace(r/.*FRAN_RI_.*?-/, '') %}
             <code class="copy-icon-btn-wrapper position-relative d-inline-flex align-items-center gap-2">
               <span>{{ suffix }}</span>
@@ -228,7 +228,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.broader %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:broader"></h6>
+                <h6 data-i18n="vocabulary.concept.broader"></h6>
               </div>
               <div class="col">
                 <ul class="breadcrumb">
@@ -274,7 +274,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.altLabel %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:altLabel"></h6>
+                <h6 data-i18n="vocabulary.concept.altLabel"></h6>
               </div>
               <div class="col">
                 <ul>
@@ -291,7 +291,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.definition %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:definition"></h6>                
+                <h6 data-i18n="vocabulary.concept.definition"></h6>                
               </div>
               <div class="col">
                 <p>
@@ -307,7 +307,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.prefLabel.length >= 2 %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:prefLabel"></h6>
+                <h6 data-i18n="vocabulary.concept.prefLabel"></h6>
               </div>
               <div class="col">
                 <ul>
@@ -325,7 +325,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.scopeNote.length > 0 %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:scopeNote"></h6>                
+                <h6 data-i18n="vocabulary.concept.scopeNote"></h6>                
               </div>
               <div class="col">
                 <ul>
@@ -341,7 +341,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.note.length > 0 %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:note"></h6>                
+                <h6 data-i18n="vocabulary.concept.note"></h6>                
               </div>
               <div class="col">
                 <ul>
@@ -357,7 +357,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.example %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:example"></h6>                
+                <h6 data-i18n="vocabulary.concept.example"></h6>                
               </div>
               <div class="col">
                 <ul>
@@ -385,7 +385,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.narrower %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:narrower"></h6>
+                <h6 data-i18n="vocabulary.concept.narrower"></h6>
               </div>
               <div class="col">  
                 <ul>
@@ -404,7 +404,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.skosRelated %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:related"></h6>
+                <h6 data-i18n="vocabulary.concept.related"></h6>
               </div>    
               <div class="col">  
                 <ul>
@@ -421,7 +421,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.exactMatch %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:exactMatch"></h6>
+                <h6 data-i18n="vocabulary.concept.exactMatch"></h6>
               </div>
               <div class="col">  
                 <ul>  
@@ -437,7 +437,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.closeMatch %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:closeMatch"></h6>
+                <h6 data-i18n="vocabulary.concept.closeMatch"></h6>
               </div>
               <div class="col">  
                 <ul>  
@@ -453,7 +453,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.relatedMatch %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:relatedMatch"></h6>
+                <h6 data-i18n="vocabulary.concept.relatedMatch"></h6>
               </div>    
               <div class="col">  
                 <ul>  
@@ -469,7 +469,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.narrowMatch.length > 0 %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:narrowMatch"></h6>
+                <h6 data-i18n="vocabulary.concept.narrowMatch"></h6>
               </div>    
               <div class="col">  
                 <ul>  
@@ -485,7 +485,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.seeAlso.length > 0 %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="rdfs:seeAlso"></h6>
+                <h6 data-i18n="vocabulary.concept.seeAlso"></h6>
               </div>    
               <div class="col">  
                 <ul>  
@@ -501,7 +501,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% if concepts.changenote %}
             <div class="row">
               <div class="col-1">
-                <h6 data-i18n="skos:changeNote"></h6>                
+                <h6 data-i18n="vocabulary.concept.changeNote"></h6>                
               </div>
               <div class="col">
                 {% set cnotes = concepts.changenote | timeline("fr") %}
