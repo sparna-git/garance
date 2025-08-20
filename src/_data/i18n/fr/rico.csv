@@ -198,16 +198,16 @@ rico:authorizes,Autorise
 rico:authorizingAgent,Autorisation donnée par l’agent
 rico:authorshipRelation_role,A le rôle de la Relation de responsabilité intellectuelle
 rico:childRelation_role,A le rôle de la Relation de filiation
-rico:contained,Avait pour subdivision
-rico:containsOrContained,A ou avait pour subdivision
-rico:containsTransitive,A pour subdivision (transitif)
+rico:contained,Incluait
+rico:containsOrContained,Inclut ou incluait
+rico:containsTransitive,Inclut (transitif)
 rico:correspondenceRelation_role,A le rôle de la Relation épistolaire
 rico:creationRelation_role,A le rôle de la Relation de création
 rico:creationWithRole,Création avec pour rôle
 rico:derivationRelation_role,A le rôle de la Relation de dérivation
 rico:descendanceRelation_role,A le rôle de la Relation de descendance
 rico:describesOrDescribed,Décrit ou décrivait
-rico:directlyContains,A pour subdivision directe
+rico:directlyContains,Inclut directement
 rico:directlyFollowsInSequence,Suit directement dans la séquence
 rico:directlyFollowsProxyInSequence,Suit directement le proxy dans la séquence
 rico:directlyIncludes,Inclut directement
@@ -402,7 +402,7 @@ rico:isCollectorOf,Collecte
 rico:isComponentOfTransitive,Est un composant de transitif
 rico:isConstituentOfProxy,Est le constituant du proxy
 rico:isConstituentOfTransitive,Est le constituant de transitif
-rico:isContainedByTransitive,Est contenu par transitif
+rico:isContainedByTransitive,Est inclus dans (transitif)
 rico:isContentTypeOf,Est le type de contenu de
 rico:isCopyOf,Est la copie de
 rico:isCreationDateOf,Est la date de création de
@@ -458,11 +458,11 @@ rico:isOrWasAppellationOf,Est ou a été l’appellation de
 rico:isOrWasAttendedByStudent,Est ou a été fréquenté par l’étudiant
 rico:isOrWasComponentOf,Est ou a été un composant de
 rico:isOrWasConstituentOf,Est ou a été un constituant de
-rico:isOrWasContainedBy,Est ou était une subdivision de
+rico:isOrWasContainedBy,Est ou était inclus dans
 rico:isOrWasContentTypeOfAllMembersOf,Est ou a été le type de contenu de tous les membres de
 rico:isOrWasContentTypeOfSomeMembersOf,Est ou a été le type de contenu de certains membres de
 rico:isOrWasControllerOf,Contrôle ou a contrôlé
-rico:isOrWasCoordinatesOf,Ont ou ont été les coordonnées de
+rico:isOrWasCoordinatesOf,Sont ou ont été les coordonnées de
 rico:isOrWasCorporateBodyTypeOf,Est ou a été le type de collectivité de
 rico:isOrWasCreationDateOfAllMembersOf,Est ou a été la date de création de tous les membres de
 rico:isOrWasCreationDateOfMostMembersOf,Est ou a été la date de création de la plupart des membres de
@@ -473,7 +473,7 @@ rico:isOrWasDescribedBy,Est ou a été décrit par
 rico:isOrWasDigitalInstantiationOf,Est ou a été une instanciation numérique de
 rico:isOrWasDocumentaryFormTypeOfAllMembersOf,Est ou a été le type de document de tous les membres de
 rico:isOrWasDocumentaryFormTypeOfSomeMembersOf,Est ou a été le type de document de certains membres de
-rico:isOrWasEmployerOf,A ou a été l'employeur de
+rico:isOrWasEmployerOf,Est ou a été l'employeur de
 rico:isOrWasEnforcedBy,Est ou a été imposé par
 rico:isOrWasExpressedBy,Est ou a été exprimé par
 rico:isOrWasHolderOf,Détient ou a détenu
@@ -505,11 +505,11 @@ rico:isOrWasOwnerOf,Est ou a été propriétaire de
 rico:isOrWasPartOf,Est ou a été une partie de
 rico:isOrWasParticipantIn,Participe ou a participé à
 rico:isOrWasPerformedBy,Est ou a été réalisée par
-rico:isOrWasPhysicalLocationOf,A ou a été la localisation physique de
-rico:isOrWasPlaceNameOf,A ou a été le nom de lieu de
-rico:isOrWasPlaceTypeOf,A ou a été le type de lieu de
-rico:isOrWasRecordStateOfAllMembersOf,A ou a été l’état de tous les membres de
-rico:isOrWasRecordStateOfSomeMembersOf,A ou a été l’état de certains membres de
+rico:isOrWasPhysicalLocationOf,Est ou a été la localisation physique de
+rico:isOrWasPlaceNameOf,Est ou a été le nom de lieu de
+rico:isOrWasPlaceTypeOf,Est ou a été le type de lieu de
+rico:isOrWasRecordStateOfAllMembersOf,Est ou a été l’état de tous les membres de
+rico:isOrWasRecordStateOfSomeMembersOf,Est ou a été l’état de certains membres de
 rico:isOrWasRegulatedBy,Est ou a été régulé par
 rico:isOrWasRepresentedByContentOfSomeMembersOf,Est ou a été représenté par le contenu de certains membres de
 rico:isOrWasResponsibleForEnforcing,Impose ou a imposé
@@ -648,7 +648,7 @@ rico:thingIsTargetOfRelation,Est la cible de la relation
 rico:typeRelation_role,A le rôle de la Relation de catégorisation
 rico:wasComponentOf,A été le composant de
 rico:wasConstituentOf,A été un constituant de
-rico:wasContainedBy,Était une subdivision de
+rico:wasContainedBy,Était contenu dans
 rico:wasIncludedIn,A été inclus dans
 rico:wasLastUpdatedAtDate,A pour date de dernière mise à jour
 rico:wasMergedInto,A été fusionné dans
