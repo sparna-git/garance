@@ -1,0 +1,9 @@
+site: dist
+
+exclude_selectors:
+  - ".entity-predicate-predicate"
+  - ".header-uri"
+  - ".header-id"
+  - ".header-download"
+  - "sup"
+  - ".header-date"

@@ -44,8 +44,7 @@
                                             <li><a class="dropdown-item" href="{{ [ '/entities/', voc.id | localName ] | join | relative(page) }}"><span data-i18n="{{ voc.id | removeURL }}"/></a></li>
                                         {% endfor %}
                                         </ul>
-                                    {% endif %}
-                                    
+                                    {% endif %}                                    
                                 </li>
                                 <!-- Agents -->
                                 <li class="nav-item dropdown">
@@ -56,6 +55,9 @@
                                     <a class="nav-link" id="DropdownMenuLink_3" href="{{ '/pages/fr/places' | relative(page) }}" role="button" aria-expanded="false" data-i18n="lieux"></a>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{ '/pages/fr/search' | relative(page) }}" role="button" aria-expanded="false" data-i18n="recherche"></a>
                         </li>
                         
                         <!-- Menus 
