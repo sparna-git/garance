@@ -6,8 +6,8 @@
     "start": "node --max-old-space-size=10192 ./node_modules/@11ty/eleventy/cmd.cjs --serve",
     "start-ignore-initial": "node --max-old-space-size=10192 ./node_modules/@11ty/eleventy/cmd.cjs --serve --incremental --ignore-initial",
     "build": "node --max-old-space-size=10192 ./node_modules/@11ty/eleventy/cmd.cjs",
-    "read": "mkdir -p _json && node --max_old_space_size=8192 ./scripts/read.js",
-    "frame": "node --stack-size=65500 --max_old_space_size=8192 ./scripts/frame.js"
+    "read": "mkdir -p _json && node --stack-size=65500 --max_old_space_size=10192 ./scripts/read.js",
+    "frame": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/frame.js"
   },
   "keywords": [],
   "author": "Sparna",

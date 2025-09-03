@@ -22,7 +22,10 @@ let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
     const f = listFiles[index];
     if (path.extname(f) === ".rdf" || path.extname(f) === ".ttl") {
       try {
-        console.log("Read: " + f);
+        if((index+1 % 100) == 0) {
+          console.log("Read " + index + "files...");
+        }
+        
 
         // read file
         let inputRDF = fs.readFileSync(f, { encoding: "utf8", flag: "r" });
@@ -57,12 +60,14 @@ let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
       }
     }
   } // end for
+  console.log("Read a total of " + listFiles.length + "files");
 
   console.log("Compact with context : src/_data/context.json ...");
   let context = JSON.parse(fs.readFileSync("src/_data/context.json", { encoding: "utf8", flag: "r" }));
   const compactedJsonLdResult = await jsonld.compact(JSONLD_Result, context)
   console.log("Done");
 
+  console.log("Writing compacted file to : "+filePath);
   fs.writeFile(filePath, JSON.stringify(compactedJsonLdResult, null, 2), (err) => {
     if (err) {
       console.log(err);
