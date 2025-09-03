@@ -22,7 +22,7 @@ let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
     const f = listFiles[index];
     if (path.extname(f) === ".rdf" || path.extname(f) === ".ttl") {
       try {
-        if((index+1 % 100) == 0) {
+        if(((index+1) % 100) == 0) {
           console.log("Read " + index + "files...");
         }
         
