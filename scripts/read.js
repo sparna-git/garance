@@ -1,5 +1,5 @@
 // Directories
-const fs = require("fs");
+const fs = require('fs');
 // npm i glob
 const { glob } = require("glob");
 const stringToStream = require("streamify-string");
@@ -15,59 +15,68 @@ const path = require("path");
 
 let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
   // Get all files in directory root of resources
-  const listFiles = await getDirectoriesFiles(PathDirectory);
+  const originalListOfFiles = await getDirectoriesFiles(PathDirectory);
+
+  const listFiles = originalListOfFiles.filter(f => {
+    const ext = path.extname(f);
+    return ext === ".rdf" || ext === ".ttl";
+  });
+
   // joint in only json ld
   const JSONLD_Result = [];
+  
+  const startTime = Date.now();
   for (let index = 0; index < listFiles.length; index++) {
     const f = listFiles[index];
-    if (path.extname(f) === ".rdf" || path.extname(f) === ".ttl") {
-      try {
-        if(((index+1) % 100) == 0) {
-          console.log("Read " + index + "files...");
-        }
-        
-
-        // read file
-        let inputRDF = fs.readFileSync(f, { encoding: "utf8", flag: "r" });
-        const streamRDF = stringToStream(inputRDF);
-
-        // We convert the RDF to an N-Quads string.
-        var quadStream;
-        if (path.extname(f) === ".rdf") {
-          quadStream = rdfParser.parse(streamRDF, {
-          contentType: "application/rdf+xml",
-          baseIRI: "http://example.org",
-          });
-        } else if (path.extname(f) === ".ttl") {
-          quadStream = rdfParser.parse(streamRDF, {
-          contentType: "text/turtle",
-          baseIRI: "http://example.org",
-          });
-        }
-        const textStream = rdfSerializer.serialize(quadStream, {
-          contentType: "application/n-quads",
-        });
-        // Convert string to n-quads
-        const nQuadsString = await streamToString(textStream);
-
-        // Convert n-quads to Json LD
-        const doc = await jsonld.fromRDF(nQuadsString, {
-          format: "application/n-quads",
-        });
-        JSONLD_Result.push(doc);
-      } catch (error) {
-        console.error(`Error processing file ${f}:`, error);
+    try {
+      if(((index) % 100) == 0) {
+        let elapsedTime = (Date.now() - startTime) / 1000;
+        console.log(index + "/" + listFiles.length + " files. Elapsed time : " + elapsedTime + "s");
       }
+
+      // read file
+      let inputRDF = fs.readFileSync(f, { encoding: "utf8", flag: "r" });
+      const streamRDF = stringToStream(inputRDF);
+
+      // We convert the RDF to an N-Quads string.
+      var quadStream;
+      if (path.extname(f) === ".rdf") {
+        quadStream = rdfParser.parse(streamRDF, {
+        contentType: "application/rdf+xml",
+        baseIRI: "http://example.org",
+        });
+      } else if (path.extname(f) === ".ttl") {
+        quadStream = rdfParser.parse(streamRDF, {
+        contentType: "text/turtle",
+        baseIRI: "http://example.org",
+        });
+      }
+      const textStream = rdfSerializer.serialize(quadStream, {
+        contentType: "application/n-quads",
+      });
+      // Convert string to n-quads
+      const nQuadsString = await streamToString(textStream);
+
+      // Convert n-quads to Json LD
+      const doc = await jsonld.fromRDF(nQuadsString, {
+        format: "application/n-quads",
+      });
+      JSONLD_Result.push(doc);
+    } catch (error) {
+      console.error(`Error processing file ${f}:`, error);
     }
   } // end for
-  console.log("Read a total of " + listFiles.length + "files");
+  let elapsedTime = (Date.now() - startTime) / 1000;
+  console.log("Read a total of " + listFiles.length + " files in " + elapsedTime + "s");
 
+  const startTimeCompact = Date.now();
   console.log("Compact with context : src/_data/context.json ...");
   let context = JSON.parse(fs.readFileSync("src/_data/context.json", { encoding: "utf8", flag: "r" }));
   const compactedJsonLdResult = await jsonld.compact(JSONLD_Result, context)
-  console.log("Done");
+  console.log("Done compact in "+((Date.now() - startTimeCompact) / 1000)+"s");
 
   console.log("Writing compacted file to : "+filePath);
+  /*
   fs.writeFile(filePath, JSON.stringify(compactedJsonLdResult, null, 2), (err) => {
     if (err) {
       console.log(err);
@@ -75,6 +84,8 @@ let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
       console.log("ok");
     }
   });
+  */
+  writeLargeJsonFile(filePath, compactedJsonLdResult);
 };
 
 /**
@@ -95,6 +106,41 @@ async function streamToString(stream) {
 function getDirectoriesFiles(src) {
   return glob.sync(src + "/**/*");
 }
+
+// Custom function to write large JSON objects with chunked arrays
+function writeLargeJsonFile(filePath, jsonObject) {
+  const stream = fs.createWriteStream(filePath, { encoding: "utf8" });
+  stream.write('{\n');
+  const keys = Object.keys(jsonObject);
+  keys.forEach((key, idx) => {
+    stream.write(`"${key}": `);
+    const value = jsonObject[key];
+    if (Array.isArray(value)) {
+      stream.write('[');
+      for (let i = 0; i < value.length; i += 1000) {
+        const chunk = value.slice(i, i + 1000);
+        console.log(`Writing chunk ${i / 1000 + 1} for property "${key}" (${chunk.length} items)`);
+        stream.write(JSON.stringify(chunk, null, 2).slice(1, -1)); // remove [ and ]
+        if (i + 1000 < value.length) stream.write(',');
+      }
+      stream.write(']');
+    } else if (typeof value === 'object' && value !== null) {
+      stream.write(JSON.stringify(value, null, 2));
+    } else {
+      stream.write(JSON.stringify(value));
+    }
+    if (idx < keys.length - 1) stream.write(',\n');
+  });
+  stream.write('\n}');
+  stream.end();
+  stream.on('finish', () => {
+    console.log('Done writing !');
+  });
+  stream.on('error', (err) => {
+    console.error(err);
+  });
+}
+
 
 (async () => {
   console.log("Reading " + process.argv[2] + "...");
