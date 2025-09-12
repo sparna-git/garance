@@ -2,7 +2,8 @@
 const fs = require("fs");
 //npm install jsonld
 const jsonld = require("jsonld");
-const { json } = require("stream/consumers");
+const path = require('path');
+const json = require('big-json');
 
 /**
  * Removes type keys from an object.
@@ -300,96 +301,103 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   console.log("Done writing to " + outputFile);
 };
 
+
 (async () => {
   // Lecture de fichiers
 
   console.log("Reading " + "./_json/garance.json" + " ...");
-  let dataJsonLd = JSON.parse(
-    fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" })
-  );
-  console.log("Done");
-
-  console.log("Now framing agents...");
-  // create deep copy of dataJsonLd
-  agentFramingData = JSON.parse(JSON.stringify(dataJsonLd));
-
-  // Size
-  console.log("Length of framed data :"+Buffer.from(JSON.stringify(agentFramingData)).length);
+  // let dataJsonLd = JSON.parse(
+  //  fs.readFileSync("./_json/garance.json", { encoding: "utf8", flag: "r" })
+  // );
+  const readStream = fs.createReadStream("./_json/garance.json");
+  const parseStream = json.createParseStream();
   
-  // delete all unnecessary keys
-  agentFramingData.graph = agentFramingData.graph.filter((obj) => !hasType(obj, "rico:PhysicalLocation"));
-  agentFramingData.graph = agentFramingData.graph.filter((obj) => !hasType(obj, "rico:Coordinates"));
+  parseStream.on('data', async function(dataJsonLd) {
+      // => receive reconstructed POJO
+      console.log("Done");
 
-  deleteAllOnTypeExcept(agentFramingData.graph, "rico:Place", ["rdfs:label"]);
-  deleteAllOnTypeExcept(agentFramingData.graph, "skos:Concept", ["skos:prefLabel"]);
+      console.log("Keys of dataJsonLd:", Object.keys(dataJsonLd));
 
-  // clean agents names
-  agentFramingData.graph = cleanPreferredAgentsNames(agentFramingData.graph);
+      console.log("Now framing agents...");
+      // create deep copy of dataJsonLd
+      // agentFramingData = JSON.parse(JSON.stringify(dataJsonLd));
 
-  // frame the preprocessed data
-  await framed(agentFramingData,"src/_data/framings/agents-framing.json","src/_data/agents.json");
+      // delete all unnecessary keys
+      dataJsonLd.graph = dataJsonLd.graph.filter((obj) => !hasType(obj, "rico:PhysicalLocation"));
+      dataJsonLd.graph = dataJsonLd.graph.filter((obj) => !hasType(obj, "rico:Coordinates"));
 
-  // ------------------------
-  console.log("Post-processing: delete empty relations...");
-  let agentsData = JSON.parse(fs.readFileSync("src/_data/agents.json", { encoding: "utf8", flag: "r" }));
-  
-  // Replace les URIs
-  replaceURL(agentsData.graph,"rico:isOrganicProvenanceOf","https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_");
-  
-  // Supprime les relations vides
-  deleteRelationsWithoutProperties2(agentsData.graph, "rico:MandateRelation", ["rico:beginningDate", "rico:endDate","rico:note"]);
-  deleteRelationsWithoutProperties2(agentsData.graph, "rico:PlaceRelation", ["rico:beginningDate","rico:endDate","rico:note"]);
-  // deleteRelationsWithoutProperties2(agentsData.graph, "rico:PerformanceRelation", ["rico:beginningDate", "rico:endDate", "rico:note"]);
-  //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:MandateRelation");
-  //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PerformanceRelation");
-  //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PlaceRelation");
+      deleteAllOnTypeExcept(dataJsonLd.graph, "rico:Place", ["rdfs:label"]);
+      deleteAllOnTypeExcept(dataJsonLd.graph, "skos:Concept", ["skos:prefLabel"]);
 
-  // Supprimer les relations de OrganicProvenanceRelation
-  deleteOrganicProvenanceRelation(agentsData.graph,"rico:OrganicProvenanceRelation");
+      // clean agents names
+      dataJsonLd.graph = cleanPreferredAgentsNames(dataJsonLd.graph);
 
-  fs.writeFileSync( "src/_data/agents.json",JSON.stringify(agentsData, null, 2),{ encoding: "utf8" });
-  
-  console.log("Relations sans date/note supprimées !");  
+      // frame the preprocessed data
+      await framed(dataJsonLd,"src/_data/framings/agents-framing.json","src/_data/agents.json");
 
-  console.log("Now framing agents header...");
-  await framed(agentFramingData,"src/_data/framings/agentsHeader-framing-2.json","src/_data/agentsHeader.json");
+      // ------------------------
+      console.log("Post-processing: delete empty relations...");
+      let agentsData = JSON.parse(fs.readFileSync("src/_data/agents.json", { encoding: "utf8", flag: "r" }));
+      
+      // Replace les URIs
+      replaceURL(agentsData.graph,"rico:isOrganicProvenanceOf","https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_");
+      
+      // Supprime les relations vides
+      deleteRelationsWithoutProperties2(agentsData.graph, "rico:MandateRelation", ["rico:beginningDate", "rico:endDate","rico:note"]);
+      deleteRelationsWithoutProperties2(agentsData.graph, "rico:PlaceRelation", ["rico:beginningDate","rico:endDate","rico:note"]);
+      // deleteRelationsWithoutProperties2(agentsData.graph, "rico:PerformanceRelation", ["rico:beginningDate", "rico:endDate", "rico:note"]);
+      //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:MandateRelation");
+      //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PerformanceRelation");
+      //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PlaceRelation");
 
-  console.log("Now framing vocabularies...");
-  await framed(dataJsonLd,"src/_data/framings/vocabularies-framing.json","src/_data/vocabularies.json");
+      // Supprimer les relations de OrganicProvenanceRelation
+      deleteOrganicProvenanceRelation(agentsData.graph,"rico:OrganicProvenanceRelation");
 
-  console.log("Now framing index...");
-  await framed(dataJsonLd,"src/_data/framings/index-framing.json","src/_data/index.json");
-  
+      fs.writeFileSync( "src/_data/agents.json",JSON.stringify(agentsData, null, 2),{ encoding: "utf8" });
+      
+      console.log("Relations sans date/note supprimées !");  
 
-  console.log("Now framing places...");
-  await framed(dataJsonLd,"src/_data/framings/places-framing.json","src/_data/places.json");
-  console.log("Post-processing: places ...");
-  let placesData = JSON.parse(fs.readFileSync("src/_data/places.json", { encoding: "utf8", flag: "r" })); //
-  placesData.graph = filterPlacesWithUri(placesData.graph);
+      console.log("Now framing agents header...");
+      await framed(dataJsonLd,"src/_data/framings/agentsHeader-framing-2.json","src/_data/agentsHeader.json");
 
-  //
-  // placesData.graph = getOnlyTitleisOne(placesData.graph); // Test
-  // placesData.graph = removeElementnotPlace(placesData.graph); // Test
-  // getOnlyDoublecas(placesData.graph);
+      console.log("Now framing vocabularies...");
+      await framed(dataJsonLd,"src/_data/framings/vocabularies-framing.json","src/_data/vocabularies.json");
 
-  // Remove relation
-  // remove element with place to agent
-  //placesData.graph = removeElementnotPlace(placesData.graph);
-  // getting 10 Element only for show deploy
+      console.log("Now framing index...");
+      await framed(dataJsonLd,"src/_data/framings/index-framing.json","src/_data/index.json");
+      
 
-  //placesData.graph = filterShow(placesData.graph);
+      console.log("Now framing places...");
+      await framed(dataJsonLd,"src/_data/framings/places-framing.json","src/_data/places.json");
+      console.log("Post-processing: places ...");
+      let placesData = JSON.parse(fs.readFileSync("src/_data/places.json", { encoding: "utf8", flag: "r" })); //
+      placesData.graph = filterPlacesWithUri(placesData.graph);
 
-  // write in place file
-  fs.writeFileSync("src/_data/places.json",JSON.stringify(placesData, null, 2),{ encoding: "utf8" });
-  
-  console.log("Now framing place header...");
-  await framed(dataJsonLd,"src/_data/framings/placeHeader-framing.json","src/_data/placesHeader.json");
-  console.log("Post-processing: places header ...");
-  let placesHeaderData = JSON.parse(fs.readFileSync("src/_data/placesHeader.json", { encoding: "utf8", flag: "r" })); //
-  placesHeaderData.graph = filterPlacesWithUri(placesHeaderData.graph);
-  // write in place file
-  fs.writeFileSync("src/_data/placesHeader.json",JSON.stringify(placesHeaderData, null, 2),{ encoding: "utf8" });
-  
+      //
+      // placesData.graph = getOnlyTitleisOne(placesData.graph); // Test
+      // placesData.graph = removeElementnotPlace(placesData.graph); // Test
+      // getOnlyDoublecas(placesData.graph);
 
+      // Remove relation
+      // remove element with place to agent
+      //placesData.graph = removeElementnotPlace(placesData.graph);
+      // getting 10 Element only for show deploy
+
+      //placesData.graph = filterShow(placesData.graph);
+
+      // write in place file
+      fs.writeFileSync("src/_data/places.json",JSON.stringify(placesData, null, 2),{ encoding: "utf8" });
+      
+      console.log("Now framing place header...");
+      await framed(dataJsonLd,"src/_data/framings/placeHeader-framing.json","src/_data/placesHeader.json");
+      console.log("Post-processing: places header ...");
+      let placesHeaderData = JSON.parse(fs.readFileSync("src/_data/placesHeader.json", { encoding: "utf8", flag: "r" })); //
+      placesHeaderData.graph = filterPlacesWithUri(placesHeaderData.graph);
+      // write in place file
+      fs.writeFileSync("src/_data/placesHeader.json",JSON.stringify(placesHeaderData, null, 2),{ encoding: "utf8" });
+      
+  });
+
+  readStream.pipe(parseStream);
 
 })();
