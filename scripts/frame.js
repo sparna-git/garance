@@ -326,8 +326,8 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
       dataJsonLd.graph = dataJsonLd.graph.filter((obj) => !hasType(obj, "rico:PhysicalLocation"));
       dataJsonLd.graph = dataJsonLd.graph.filter((obj) => !hasType(obj, "rico:Coordinates"));
 
-      deleteAllOnTypeExcept(dataJsonLd.graph, "rico:Place", ["rdfs:label"]);
-      deleteAllOnTypeExcept(dataJsonLd.graph, "skos:Concept", ["skos:prefLabel"]);
+      // deleteAllOnTypeExcept(dataJsonLd.graph, "rico:Place", ["rdfs:label"]);
+      // deleteAllOnTypeExcept(dataJsonLd.graph, "skos:Concept", ["skos:prefLabel"]);
 
       // clean agents names
       dataJsonLd.graph = cleanPreferredAgentsNames(dataJsonLd.graph);
