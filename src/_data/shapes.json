@@ -672,7 +672,8 @@
         },
         {
           "sh:order": 23,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#isOrWasContainedBy"
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#isOrWasContainedBy",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 24,
@@ -684,7 +685,8 @@
         },
         {
           "sh:order": 26,
-          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#crossesOrCrossed"
+          "sh:path":"https://rdf.archives-nationales.culture.gouv.fr/ontology#crossesOrCrossed",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 27,
@@ -696,7 +698,8 @@
         },
         {
           "sh:order": 29,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#isOrWasAdjacentTo"
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#isOrWasAdjacentTo",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 30,
@@ -747,6 +750,35 @@
           "sh:path":"http://www.w3.org/2000/01/rdf-schema#seeAlso"
         }
       ]  
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#Activity",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#date",
+          "dash:propertyRole": "dash:sortKeyRole"
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#Extent",
+      "sh:property":
+      [
+        {
+          "sh:order": 1,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#quantity"
+        },
+        {
+          "sh:order": 2,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#type"
+        },
+        {
+          "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#unitOfMeasurement"
+        }
+      ]
     }
   ]
 }
