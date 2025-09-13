@@ -47,7 +47,11 @@
   "type": "rico:Place",
   "skos:altLabel": { "@omitDefault": true },
   "rico:beginningDate": { "@omitDefault": true },
-  "insee-geo:chefLieu": { "@omitDefault": true },
+  "insee-geo:chefLieu": { 
+    "@omitDefault": true,
+    "@explicit": true,
+    "skos:prefLabel": { "@omitDefault": true }
+  },
   "insee-geo:codeINSEE": { "@omitDefault": true },
   "geofla:codeReg": { "@omitDefault": true },
   "rico:containsOrContained": {
@@ -164,7 +168,11 @@
     "skos:prefLabel": { "@omitDefault": true }
   },
   "skos:prefLabel": { "@omitDefault": true },
-  "owl:sameAs": { "@omitDefault": true },
+  "owl:sameAs": { 
+    "@omitDefault": true,
+    "@explicit": true,
+    "@id": {}
+  },
   "rdfs:seeAlso": { "@omitDefault": true },
   "anf-onto:startingAtPoint": { "@omitDefault": true },
   "anf-onto:startingOnStreet": { "@omitDefault": true },
