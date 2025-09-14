@@ -246,6 +246,7 @@ mark {
   > .entity-predicate-values
   > .entity-predicate-values-list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .entity-predicate.horizontal

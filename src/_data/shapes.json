@@ -757,6 +757,10 @@
       [
         {
           "sh:order": 1,
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
           "sh:path":"https://www.ica.org/standards/RiC/ontology#date",
           "dash:propertyRole": "dash:sortKeyRole"
         }
@@ -768,14 +772,18 @@
       [
         {
           "sh:order": 1,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#quantity"
+          "sh:path":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
         },
         {
           "sh:order": 2,
-          "sh:path":"https://www.ica.org/standards/RiC/ontology#type"
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#quantity"
         },
         {
           "sh:order": 3,
+          "sh:path":"https://www.ica.org/standards/RiC/ontology#type"
+        },
+        {
+          "sh:order": 4,
           "sh:path":"https://www.ica.org/standards/RiC/ontology#unitOfMeasurement"
         }
       ]
