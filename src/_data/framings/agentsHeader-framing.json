@@ -41,21 +41,12 @@
     }
   },
   "@explicit": true,
-  "type": ["rico:Agent"],
-  "rico:identifier": { "@omitDefault": true },
+  "type": ["rico:Agent", "rico:Record"],
   "rdfs:label": { "@omitDefault": true },
   "rico:isOrWasDescribedBy": {
     "@omitDefault": true,
     "@explicit": true,
-    "type": "rico:Record",
     "rico:lastModificationDate": { "@omitDefault": true },
-    "rico:isOrWasAffectedBy": {
-      "@omitDefault": true,
-      "@explicit": true,
-      "rico:date": { "@omitDefault": true },
-      "rico:name": { "@omitDefault": true },
-      "rico:generalDescription": { "@omitDefault": true }
-    },
     "rico:hasOrHadDigitalInstantiation": {
       "@omitDefault": true,
       "@explicit": true,
@@ -64,6 +55,14 @@
         "@omitDefault": true,
         "@explicit": true
       }
+    },
+    "rico:isOrWasAffectedBy": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "type": "rico:Activity",
+      "rico:date": { "@omitDefault": true },
+      "rico:name": { "@omitDefault": true },
+      "rico:generalDescription": { "@omitDefault": true }
     }
   }
 }

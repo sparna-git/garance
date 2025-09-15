@@ -62,6 +62,7 @@ function deleteEntitiesWithPredicateToType(jsonArray, entityType, predicate, ref
     const refs = Array.isArray(ref) ? ref : [ref];
     for (const r of refs) {
       const refId = getId(r);
+      if(refId == "place:FRAN_RI_005-d-104xmvek7--gl69gh2bcz1b") { console.log("Found ref to check: " + refId); }
       if (!refId) continue;
       const referredObj = idMap.get(refId);
       if (referredObj && hasType(referredObj, referredType)) {
@@ -392,8 +393,7 @@ async function readJsonStream(filePath) {
   console.log("Graph size step 3: " + dataJsonLdPlaces.graph.length);
   deleteAllOnTypeExcept(dataJsonLdPlaces.graph, "rico:Agent", ["rdfs:label"]);
   deleteAllOnTypeExcept(dataJsonLdPlaces.graph, "skos:Concept", ["skos:prefLabel"]);
-  deleteAllOnTypeExcept(dataJsonLdPlaces.graph, "rico:Record", ["rico:hasOrHadDigitalInstantiation"]);
-  deleteAllOnTypeExcept(dataJsonLdPlaces.graph, "rico:Instantiation", ["dcat:downloadUrl","rico:identifier", "dc:format"]);
+  deleteAllOnTypeExcept(dataJsonLdPlaces.graph, "rico:Instantiation", ["dcat:downloadURL","rico:identifier", "dc:format"]);
   dataJsonLdPlaces.graph = dataJsonLdPlaces.graph.filter((obj) => { return (
     !hasType(obj, "rico:Agent") 
   )});
@@ -478,7 +478,7 @@ async function readJsonStream(filePath) {
     "src/_data/agents.json",
     postProcessAgents
   );
-  await doFrame(dataJsonLdAgents, "src/_data/framings/agentsHeader-framing-2.json", "src/_data/agentsHeader.json");
+  await doFrame(dataJsonLdAgents, "src/_data/framings/agentsHeader-framing.json", "src/_data/agentsHeader.json");
   await doFrame(dataJsonLdAgents, "src/_data/framings/vocabularies-framing.json", "src/_data/vocabularies.json");
   await doFrame(dataJsonLdAgents, "src/_data/framings/index-framing.json", "src/_data/index.json");
   console.log('Finished processing agents, vocabularies, and index.');

@@ -45,6 +45,25 @@
   },
   "@explicit": true,
   "type": "rico:Place",
-  "rdfs:label": { "@omitDefault": true },
-  "skos:prefLabel": { "@omitDefault": true }
+  "skos:prefLabel": { "@omitDefault": true },
+  "rico:identifier": { "@omitDefault": true },
+  "rico:isOrWasDescribedBy": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "type": "rico:Record",
+    "rico:lastModificationDate": { "@omitDefault": true },
+    "rico:hasOrHadDigitalInstantiation": {
+      "@omitDefault": true,
+      "@explicit": true,
+      "type": "rico:Instantiation",
+      "dc:format": { "@omitDefault": true },
+      "dcat:downloadURL": { "@omitDefault": true }
+    }
+  },
+  "rico:hasOrHadIdentifier": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:textualValue": { "@omitDefault": true },
+    "rico:type": { "@omitDefault": true }
+  }
 }
