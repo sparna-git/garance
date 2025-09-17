@@ -64,6 +64,50 @@ function getDownloadLinks(agent, context) {
   return null;
 }
 
+function place_identifier(place) {
+
+  const Ids = place?.["rico:hasOrHadIdentifier"];
+  const identifier = [];
+  if (Ids) {
+    if (jsonld.isArray(Ids)) {    
+      for (const e of Ids) {
+        identifier.push(e["rico:textualValue"]["@value"]);
+      }
+    } else {
+      identifier.push(Ids["rico:textualValue"]["@value"]);
+    }
+    return identifier;
+  }
+  return null;
+}
+
+function place_getDownloadLink(place) {
+
+  const digitalInstance = place?.["rico:isOrWasDescribedBy"]?.["rico:hasOrHadDigitalInstantiation"];  
+  if (jsonld.isArray(digitalInstance)) {
+    for (const item of digitalInstance) {
+      const urlResource = item?.["dcat:downloadURL"];
+      const format = item?.["dc:format"]["@value"];
+      const rdfURL = [];
+      if (urlResource) {
+        if (!jsonld.isArray(urlResource)) {
+          rdfURL.push(item?.["dcat:downloadURL"]?.["id"]);
+          return { rdfURL };
+        } else {
+          if (jsonld.isArray(urlResource)) {
+            for (const e in urlResource) {
+              console.log(e);
+              rdfURL.push(e);
+            }
+            return { rdfURL };
+          }
+        }
+      }
+    }
+  }
+  return null;
+}
+
 /**
  * Returns the last modification date of an agent.
  * @param {object} agent - The agent object.
@@ -212,5 +256,7 @@ module.exports = {
   timeline,
   excludeObsolete,
   removeURL,
-  toUrl
+  toUrl,
+  place_getDownloadLink,
+  place_identifier,
 };

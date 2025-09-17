@@ -141,15 +141,14 @@ function getId(obj) {
 /*
 * Post Processing
 */
+
 function replaceURL(jsonArray, eNode, urlTransformation) {
 
   // uris
   //const  = "https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_";
   //const otherURI = "https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_Agent_IR_";
 
-  const rgx = new RegExp(
-    "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-"
-  );
+  const rgx = new RegExp("https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-");
   for (let obj of jsonArray) {
     if (Object.keys(obj).includes(eNode)) {
       if (obj[eNode].id != undefined) {
@@ -158,6 +157,13 @@ function replaceURL(jsonArray, eNode, urlTransformation) {
             "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-",
             urlTransformation
           );
+        } else {
+          // If url not contain /top- then get last index 
+          const getId = JSON.stringify(obj[eNode].id);
+          const url_without_top = replaceURL_without_top(getId);
+          if (url_without_top != null) {
+            obj[eNode].id = url_without_top;
+          }
         }
       } else {
         obj[eNode].forEach((e) => {
@@ -166,12 +172,36 @@ function replaceURL(jsonArray, eNode, urlTransformation) {
               "https://rdf.archives-nationales.culture.gouv.fr/recordResource/top-",
               urlTransformation
             );
+          } else {
+            const getId = JSON.stringify(e.id);
+            const url_without_top = replaceURL_without_top(getId);
+            if (url_without_top != null) {
+              e.id = url_without_top;
+            }
           }
         });
       }
     }
   }
   return jsonArray;
+}
+
+function replaceURL_without_top (url) {
+  const rgx_code = new RegExp("([0-9]+)-(.+)$");
+  
+  const id = url.split("/");
+  // get last element
+  const codeId = id[id.length - 1].replace('"', "");
+  // match regex
+  if (rgx_code.exec(codeId)) {
+    const match = rgx_code.exec(codeId);
+    const id = match[1];
+    const serie = match[2];
+    const url_to_replace = "https://www.siv.archives-nationales.culture.gouv.fr/siv/UD/FRAN_IR_" + id + "/" + serie;
+    return url_to_replace;
+  }
+  return null;
+
 }
 
 function deleteOrganicProvenanceRelation(inputJson, type) {
@@ -356,7 +386,6 @@ async function readJsonStream(filePath) {
 (async () => {
   // Lecture de fichiers
 
-
   // --- PLACES PROCESSING ---
   console.log("Reading " + "./_json/garance.json" + " for places...");
   let dataJsonLdPlaces = await readJsonStream("./_json/garance.json");
@@ -424,7 +453,6 @@ async function readJsonStream(filePath) {
     }
   );
   console.log("Done framing places and places header");
-
 
   // --- AGENTS PROCESSING ---
   console.log("Reading " + "./_json/garance.json" + " for agents...");

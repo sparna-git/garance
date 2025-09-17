@@ -18,5 +18,36 @@
       </div>
     {% endif %}
 
+    {# Identifier #}
+    {% set identifier = place | place_identifier %}
+    {% if identifier %}
+      {% for getIdentifiant in identifier %}
+        <code class="copy-icon-btn-wrapper header-id position-relative d-inline-flex align-items-center gap-2">
+          <span>{{ getIdentifiant }}</span>
+          <button class="border-0 copy-icon-btn" data-copy="{{ getIdentifiant }}">
+            <i class="fas fa-copy"></i>
+          </button>
+        </code>
+        <br/>        
+      {% endfor %}
+    {% endif %}
+
+    {# Download resource #}
+    {% set link = place | place_getDownloadLink %}
+    {% if link %}
+      <div class="d-flex">
+        <div class="mt-2 header-download flex-grow-1">
+          <div class="col-9">
+            <h6><span data-i18n="Download data"></span></h6>
+          </div>
+          <div class="col-10">
+            {% for urlDownload in link.rdfURL %}
+              <a href="{{ urlDownload }}" target="_blank"><img src="https://img.shields.io/badge/format-RDF%2FXML-blue" alt="RDF/XML" /></a>
+            {% endfor %}            
+          </div>
+        </div>  
+      </div>  
+    {% endif %}
+    
 </div>
 {% endmacro %}
