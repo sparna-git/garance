@@ -41,7 +41,7 @@
             <h6><span data-i18n="Download data"></span></h6>
           </div>
           <div class="col-10">
-            {% for urlDownload in link.rdfURL %}
+            {% for urlDownload in link %}
               <a href="{{ urlDownload }}" target="_blank"><img src="https://img.shields.io/badge/format-RDF%2FXML-blue" alt="RDF/XML" /></a>
             {% endfor %}            
           </div>

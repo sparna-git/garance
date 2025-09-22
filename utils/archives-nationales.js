@@ -71,10 +71,10 @@ function place_identifier(place) {
   if (Ids) {
     if (jsonld.isArray(Ids)) {    
       for (const e of Ids) {
-        identifier.push(e["rico:textualValue"]["@value"]);
+        identifier.push(e["rico:textualValue"]);
       }
     } else {
-      identifier.push(Ids["rico:textualValue"]["@value"]);
+      identifier.push(Ids["rico:textualValue"]);
     }
     return identifier;
   }
@@ -85,24 +85,26 @@ function place_getDownloadLink(place) {
 
   const digitalInstance = place?.["rico:isOrWasDescribedBy"]?.["rico:hasOrHadDigitalInstantiation"];  
   if (jsonld.isArray(digitalInstance)) {
-    for (const item of digitalInstance) {
-      const urlResource = item?.["dcat:downloadURL"];
-      const format = item?.["dc:format"]["@value"];
-      const rdfURL = [];
-      if (urlResource) {
-        if (!jsonld.isArray(urlResource)) {
-          rdfURL.push(item?.["dcat:downloadURL"]?.["id"]);
-          return { rdfURL };
-        } else {
-          if (jsonld.isArray(urlResource)) {
-            for (const e in urlResource) {
-              console.log(e);
-              rdfURL.push(e);
+    for (const item of digitalInstance) {      
+      const format = item?.["dc:format"];
+      if(format == "application/rdf+xml") {
+        const urlResource = item?.["dcat:downloadURL"];
+        const rdfURL = [];
+        if (urlResource) {
+          if (!jsonld.isArray(urlResource)) {
+            rdfURL.push(item?.["dcat:downloadURL"]?.["id"]);
+            return rdfURL;
+          } else {
+            if (jsonld.isArray(urlResource)) {
+              for (const e in urlResource) {
+                rdfURL.push(e);
+              }
+              return rdfURL;
             }
-            return { rdfURL };
           }
         }
       }
+
     }
   }
   return null;
