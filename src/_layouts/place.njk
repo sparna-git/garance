@@ -22,8 +22,9 @@
 {% set headerData = placesHeader | findById(placeDB.id) %}
 {{ header.header(headerData) }}
 
-{# disable pagefind image #}
+{# disable pagefind image 
 <span data-pagefind-meta="image:" />
+#}
 
 {# first parameter is the object to print, second parameter is the main entity printed #}
 {{ jsonld.render(placeDB,headerData) }}
