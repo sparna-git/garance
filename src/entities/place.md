@@ -1,3 +1,3 @@
 ---
-#layout: place.njk
+layout: place.njk
 ---
