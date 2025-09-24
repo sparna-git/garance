@@ -5,7 +5,7 @@ layout: agents.njk
 # Agents
 
 
-Pour l’instant, cette page affiche la liste complète des agents décrits dans Garance, classée par ordre alphabétique.
+Pour l’instant, cette page affiche la liste complète des agents décrits dans Garance, classés par ordre alphabétique de la forme préférée de leur nom.
 
 Elle sera bientôt remplacée par plusieurs listes, chacune correspondant à une lettre de l’alphabet.
 

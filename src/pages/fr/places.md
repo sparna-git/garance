@@ -5,7 +5,7 @@ layout: places.njk
 # Lieux
 
 
-Pour l’instant, cette page affiche la liste complète des lieux décrits dans Garance.
+Pour l’instant, cette page affiche la liste complète des lieux décrits dans Garance, organisés par "type" de lieu.
 
 Elle sera bientôt remplacée par plusieurs listes, chacune correspondant à une lettre de l’alphabet.
 
