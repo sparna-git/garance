@@ -2,7 +2,7 @@
 layout: places.njk
 ---
 
-# Agents
+# Lieux
 
 
 Pour l’instant, cette page affiche la liste complète des lieux décrits dans Garance.
