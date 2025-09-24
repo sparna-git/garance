@@ -7,10 +7,10 @@ layout: main.njk
 <main class="section_garance">
 	<div class="row">
 		<div class="col-md">
+			<h1 class="title-Header" data-i18n="agents"></h1>
 
-			Contenu éditorial
-
-			<h1 class="title-Header" data-i18n="agents"></h1>			
+			{{ content | safe }}
+					
 			<ul>
 				{%- for item in sortIndex -%}
 					{% if item.id %}
