@@ -24,47 +24,7 @@ function getCreationDate(agent) {
   return null;
 }
 
-function getDownloadLinks(agent, context) {
-  const id = jsonld.getId(agent);
-  const types = Array.isArray(jsonld.getTypes(agent))
-    ? jsonld.getTypes(agent)
-    : [jsonld.getTypes(agent)];
-  const expandedId = jsonld.expandUri(id, context);
-  let fileName = expandedId.split("/").pop();
-
-  let rdfUrl = null;
-  let eacUrl = null;
-
-  const shortMatch = /^(\d{6})$/.exec(fileName);
-  if (shortMatch) {
-    const num = shortMatch[1];
-    rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/producteurs/rdf/FRAN_Agent_${num}.rdf`;
-    eacUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/producteurs/eac-cpf/FRAN_NP_${num}.xml`;
-    return { rdfUrl, eacUrl };
-  } else {
-    // removes the "FRAN_" from the beginning of the filename
-    const match = /^FRAN_(.*)/.exec(fileName);
-    if (match) {
-      // insert "_Agent_" after "FRAN_"
-      // e.g. FRAN_123456 becomes FRAN_Agent_123456
-      fileName = match[1];
-      fileName = `FRAN_Agent_${fileName}`;
-    }
-
-    if (types.includes("rico:CorporateBody")) {
-      rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/collectivites/${fileName}.rdf`;
-      return { rdfUrl };
-    }
-    if (types.includes("rico:Person")) {
-      rdfUrl = `https://github.com/ArchivesNationalesFR/Referentiels/blob/main/agents/personnesPhysiques/${fileName}.rdf`;
-      return { rdfUrl };
-    }
-  }
-
-  return null;
-}
-
-function place_identifier(place) {
+function getIdentifier(place) {
 
   const Ids = place?.["rico:hasOrHadIdentifier"];
   const identifier = [];
@@ -81,7 +41,10 @@ function place_identifier(place) {
   return null;
 }
 
-function place_getDownloadLink(place) {
+function getDownloadLinks(place) {
+
+  let rdfUrl = null;
+  let eacUrl = null;
 
   const digitalInstance = place?.["rico:isOrWasDescribedBy"]?.["rico:hasOrHadDigitalInstantiation"];  
   if (jsonld.isArray(digitalInstance)) {
@@ -89,25 +52,29 @@ function place_getDownloadLink(place) {
       const format = item?.["dc:format"];
       if(format == "application/rdf+xml") {
         const urlResource = item?.["dcat:downloadURL"];
-        const rdfURL = [];
         if (urlResource) {
           if (!jsonld.isArray(urlResource)) {
-            rdfURL.push(item?.["dcat:downloadURL"]?.["id"]);
-            return rdfURL;
+            rdfUrl = item?.["dcat:downloadURL"]["id"];
           } else {
-            if (jsonld.isArray(urlResource)) {
-              for (const e in urlResource) {
-                rdfURL.push(e);
-              }
-              return rdfURL;
-            }
+            rdfUrl = item?.["dcat:downloadURL"][0]["id"];
+          }
+        }
+      }
+
+      if(format == "text/xml") {
+        const urlResource = item?.["dcat:downloadURL"];
+        if (urlResource) {
+          if (!jsonld.isArray(urlResource)) {
+            eacUrl = item?.["dcat:downloadURL"]["id"];
+          } else {
+            eacUrl = item?.["dcat:downloadURL"][0]["id"];
           }
         }
       }
 
     }
   }
-  return null;
+  return { rdfUrl, eacUrl };
 }
 
 /**
@@ -259,6 +226,5 @@ module.exports = {
   excludeObsolete,
   removeURL,
   toUrl,
-  place_getDownloadLink,
-  place_identifier,
+  getIdentifier,
 };

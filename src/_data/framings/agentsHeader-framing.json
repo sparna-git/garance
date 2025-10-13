@@ -41,20 +41,20 @@
     }
   },
   "@explicit": true,
-  "type": ["rico:Agent", "rico:Record"],
+  "type": ["rico:Agent"],
+  "skos:prefLabel": { "@omitDefault": true },
   "rdfs:label": { "@omitDefault": true },
   "rico:isOrWasDescribedBy": {
     "@omitDefault": true,
     "@explicit": true,
+    "type": "rico:Record",
     "rico:lastModificationDate": { "@omitDefault": true },
     "rico:hasOrHadDigitalInstantiation": {
       "@omitDefault": true,
       "@explicit": true,
       "type": "rico:Instantiation",
-      "rdfs:seeAlso": {
-        "@omitDefault": true,
-        "@explicit": true
-      }
+      "dc:format": { "@omitDefault": true },
+      "dcat:downloadURL": { "@omitDefault": true }
     },
     "rico:isOrWasAffectedBy": {
       "@omitDefault": true,
@@ -64,5 +64,11 @@
       "rico:name": { "@omitDefault": true },
       "rico:generalDescription": { "@omitDefault": true }
     }
+  },
+  "rico:hasOrHadIdentifier": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:textualValue": { "@omitDefault": true },
+    "rico:type": { "@omitDefault": true }
   }
 }
