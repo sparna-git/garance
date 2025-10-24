@@ -115,8 +115,25 @@ Cette commande applique les specs de framing du dossier `src/_data/framings` sur
 
 ### 4. Lancer la génération du site
 
-`npm run start` pour le serveur local, ou `npm run build` pour la génération du site final.
+#### 4.1 Génération initiale du site
+
+`npm run build` pour la génération du site final.
 Le résultat finale est dans le répertoire `dist`
+
+### 4.2 Lancer le serveur sans regénérer le site
+
+`npm run start-ignore-initial` pour lancer le serveur sans regénération complète initiale du site. Le site sera toutefois regénéré de façon incrémentale si un fichier source est modifié.
+
+### 5. Construire l'index Pagefind
+
+`npx pagefind` pour construire l'index pagefind.
+
+### 5. Développement sur une machine locale
+
+1. `npm run start` pour lancer le serveur local avec génération initiale du site
+2. Arrêter le serveur (CTRL+C) une fois le site généré
+3. `npx pagefind` pour générer l'index pagefind
+4. `npm run start-ignore-initial` pour relancer le serveur sans régénération initiale, mais qui prendra en compte l'index pagefind
 
 ## /!\ Instable / Non testé - Utilisation de Python pour le framing JSON-LD et les CVS RiC-O
 
