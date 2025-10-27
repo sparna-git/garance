@@ -1,0 +1,70 @@
+---
+layout: main.njk
+---
+
+{% set currentLetter = letter if letter else page.fileSlug %}
+{% set currentLang = page.url | langFromUrl %}
+{% set agentsByLetter = [] %}
+{% for item in agentsHeader.graph %}
+    {% if item.id %}
+        {% set firstLetter = item["rdfs:label"] | lang(currentLang) | firstLetter %}
+        {% if firstLetter === currentLetter %}
+            {% set agentsByLetter = (agentsByLetter.push(item), agentsByLetter) %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+{% set sortedAgents = agentsByLetter | sortLabels %}
+
+<main class="section_garance">
+    <div class="row">
+        <div class="col-md">
+            <h1 class="title-Header" data-i18n="agents"></h1>
+            
+            <div class="alphabet-index mb-4">
+                {% for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+                    <a href="{{ ['/pages/', currentLang, '/agents/', letter] | join | relative(page) }}" 
+                       class="btn {% if letter === currentLetter %}btn-primary{% else %}btn-outline-primary{% endif %} m-1">{{ letter }}</a>
+                {% endfor %}
+            </div>
+            
+            <h2>{{ currentLetter }}</h2>
+            
+            {% if sortedAgents.length > 0 %}
+                <div class="agent-list">
+                    <ul>
+                    {% for item in sortedAgents %}
+                        <li>
+                            <a href="{{ [ '/entities/agent/', item.id | localName ] | join | relative(page) }}">{{ item["rdfs:label"] | lang(currentLang) }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% else %}
+                <p class="text-muted" data-i18n="no-agents-found-for-letter"></p>
+            {% endif %}
+        </div>
+    </div>
+</main>
+
+<style>
+.agent-list ul {
+    column-count: 3;
+    column-gap: 2rem;
+    padding-left: 2.5rem; /* Espace pour les puces */
+    list-style-type: disc; /* Forcer l'affichage des puces rondes */
+}
+
+.agent-list ul li {
+    break-inside: avoid-column;
+    page-break-inside: avoid; /* Pour compatibilité */
+    -webkit-column-break-inside: avoid; /* Pour Safari */
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .agent-list ul {
+        column-count: 1;
+    }
+}
+</style>

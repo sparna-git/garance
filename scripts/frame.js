@@ -50,12 +50,10 @@ function getType(obj) {
   return obj.type ? obj.type : obj["@type"];
 }
 
-
 /*
-* Post Processing
-*/
+ * Post Processing
+ */
 function replaceURL(jsonArray, eNode, urlTransformation) {
-
   // uris
   //const  = "https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_";
   //const otherURI = "https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_Agent_IR_";
@@ -105,26 +103,28 @@ function deleteOrganicProvenanceRelation(inputJson, type) {
   }
 }
 
-function findItem(inputjson,properties) {
+function findItem(inputjson, properties) {
   result = false;
   const obj = Object.keys(inputjson);
   properties.forEach((p) => {
     if (obj.includes(p)) {
-      result = true
+      result = true;
     }
   });
   return result;
 }
 
-function deleteRelationsWithoutProperties2(inputJson,type,properties) {
+function deleteRelationsWithoutProperties2(inputJson, type, properties) {
   for (let objRP of inputJson) {
     Object.entries(objRP).forEach(([k, v]) => {
       if (Array.isArray(v)) {
         // filter
         const newValue = v.filter(
-          (item) => (item.type !== type) || (item.type === type && findItem(item, properties))
+          (item) =>
+            item.type !== type ||
+            (item.type === type && findItem(item, properties))
         );
-        objRP[k] = newValue;        
+        objRP[k] = newValue;
       } else {
         if (v.type === type) {
           if (!findItem(v, properties)) {
@@ -135,7 +135,6 @@ function deleteRelationsWithoutProperties2(inputJson,type,properties) {
     });
   }
 }
-
 
 /**
  * Supprime les objets de type donné (ex: rico:PerformanceRelation) :
@@ -179,8 +178,6 @@ function deleteRelationsWithoutProperties(graph, type) {
   return filteredGraph;
 }
 
-
-
 /**
  *
  * Supprime les AgentName inutiles dans le graphe selon la regle
@@ -215,20 +212,20 @@ function cleanPreferredAgentsNames(graph) {
   return graph.filter((obj) => !toRemoveIds.has(obj.id));
 }
 
-
-
 // filter
 function filterShow(jsonData) {
-  const data = []
-  let nIndex = 0
+  const data = [];
+  let nIndex = 0;
   let nDep = 0;
   let nCommun = 0;
   for (const obj of jsonData) {
     const nKeys = Object.keys(obj).length;
     if (nKeys > 5) {
-      
       if (Array.isArray(obj.type)) {
-        if (obj.type.includes("geofla:Departement") || obj.type.includes("insee-geo:Departement")) {
+        if (
+          obj.type.includes("geofla:Departement") ||
+          obj.type.includes("insee-geo:Departement")
+        ) {
           if (nDep < 11) {
             if (Array.isArray(obj["rdfs:label"])) {
               if (obj["rdfs:label"].length < 2) {
@@ -239,9 +236,12 @@ function filterShow(jsonData) {
               data.push(obj);
               nDep++;
             }
-          }        
+          }
         }
-        if (obj.type.includes("geofla:Commune") || obj.type.includes("insee-geo:Commune")) {
+        if (
+          obj.type.includes("geofla:Commune") ||
+          obj.type.includes("insee-geo:Commune")
+        ) {
           if (nCommun < 11) {
             if (Array.isArray(obj["rdfs:label"])) {
               if (obj["rdfs:label"].length < 2) {
@@ -253,7 +253,7 @@ function filterShow(jsonData) {
               nCommun++;
             }
           }
-        }        
+        }
       } else {
         if (nIndex < 11) {
           if (Array.isArray(obj["rdfs:label"])) {
@@ -269,17 +269,14 @@ function filterShow(jsonData) {
       }
     }
   }
-  return data;  
-};
-
+  return data;
+}
 
 function filterPlacesWithUri(jsonArray) {
   const regexPlace = new RegExp("place:FRAN_RI_");
   const newfilter = jsonArray.filter((f) => regexPlace.exec(f.id));
   return newfilter;
 }
-
-
 
 let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   let framingSpec = fs.readFileSync(framingSpecPath, {
@@ -296,10 +293,119 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   console.log("end jsonld.frame !");
 
   console.log("Writing to file : " + outputFile + " ...");
-  fs.writeFileSync(outputFile, JSON.stringify(framed, null, 2), { encoding: "utf8" });
+  fs.writeFileSync(outputFile, JSON.stringify(framed, null, 2), {
+    encoding: "utf8",
+  });
   console.log("Done writing to " + outputFile);
 };
 
+function createSearchIndex(framedData) {
+  const index = [];
+  const seen = new Set(); // To avoid duplicates
+
+  if (!framedData.graph || !Array.isArray(framedData.graph)) {
+    console.error("Invalid framed data structure");
+    return index;
+  }
+
+  framedData.graph.forEach((entity) => {
+    // Skip if no ID
+    if (!entity.id) return;
+
+    // Determine entity type
+    let type = null;
+    let value = null;
+    const entityType = entity.type || entity["@type"];
+
+    if (Array.isArray(entityType)) {
+      if (entityType.includes("rico:Agent")) {
+        type = "A";
+        value = entity.id.split("/").pop();
+      } else if (entityType.includes("rico:Place")) {
+        type = "P";
+        value = entity.id.split("/").pop();
+      } else if (entityType.includes("skos:Concept")) {
+        type = "C";
+        // For concepts, use the full ID path after removing the base URI
+        value = entity.id.replace(
+          "https://rdf.archives-nationales.culture.gouv.fr/",
+          ""
+        );
+      }
+    } else if (typeof entityType === "string") {
+      if (entityType === "rico:Agent") {
+        type = "A";
+        value = entity.id.split("/").pop();
+      } else if (entityType === "rico:Place") {
+        type = "P";
+        value = entity.id.split("/").pop();
+      } else if (entityType === "skos:Concept") {
+        type = "C";
+        value = entity.id.replace(
+          "https://rdf.archives-nationales.culture.gouv.fr/",
+          ""
+        );
+      }
+    }
+
+    // If we couldn't determine the type, skip
+    if (!type || !value) return;
+
+    // Process labels
+    const processLabels = (labels, entityId, entityType, entityValue) => {
+      if (!labels) return;
+
+      // Handle both single label and array of labels
+      const labelArray = Array.isArray(labels) ? labels : [labels];
+
+      labelArray.forEach((labelObj) => {
+        let labelText = labelObj;
+        if (labelObj && typeof labelObj === "object") {
+          labelText =
+            labelObj["@value"] ||
+            labelObj.value ||
+            labelObj["rdfs:label"] ||
+            labelObj["skos:prefLabel"];
+        }
+
+        if (typeof labelText === "string" && labelText.trim()) {
+          const key = `${labelText}|${entityId}`;
+          // Avoid duplicates
+          if (!seen.has(key)) {
+            seen.add(key);
+            index.push({
+              l: labelText,
+              v: entityValue,
+              t: entityType,
+            });
+          }
+        }
+      });
+    };
+
+    // Process rdfs:label
+    processLabels(entity.l, entity.id, type, value);
+
+    // Process skos:prefLabel
+    processLabels(entity.lp, entity.id, type, value);
+
+    // Process agent names for agents
+    if (type === "A" && entity.agentName) {
+      const agentNames = Array.isArray(entity.agentName)
+        ? entity.agentName
+        : [entity.agentName];
+      agentNames.forEach((agentName) => {
+        if (agentName && agentName.l) {
+          processLabels(agentName.l, entity.id, type, value);
+        }
+      });
+    }
+  });
+
+  return index;
+}
+
+// Update the main function to include the search index creation
 (async () => {
   // Lecture de fichiers
 
@@ -314,57 +420,108 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   agentFramingData = JSON.parse(JSON.stringify(dataJsonLd));
 
   // Size
-  console.log("Length of framed data :"+Buffer.from(JSON.stringify(agentFramingData)).length);
-  
+  console.log(
+    "Length of framed data :" +
+      Buffer.from(JSON.stringify(agentFramingData)).length
+  );
+
   // delete all unnecessary keys
-  agentFramingData.graph = agentFramingData.graph.filter((obj) => !hasType(obj, "rico:PhysicalLocation"));
-  agentFramingData.graph = agentFramingData.graph.filter((obj) => !hasType(obj, "rico:Coordinates"));
+  agentFramingData.graph = agentFramingData.graph.filter(
+    (obj) => !hasType(obj, "rico:PhysicalLocation")
+  );
+  agentFramingData.graph = agentFramingData.graph.filter(
+    (obj) => !hasType(obj, "rico:Coordinates")
+  );
 
   deleteAllOnTypeExcept(agentFramingData.graph, "rico:Place", ["rdfs:label"]);
-  deleteAllOnTypeExcept(agentFramingData.graph, "skos:Concept", ["skos:prefLabel"]);
+  deleteAllOnTypeExcept(agentFramingData.graph, "skos:Concept", [
+    "skos:prefLabel",
+  ]);
 
   // clean agents names
   agentFramingData.graph = cleanPreferredAgentsNames(agentFramingData.graph);
 
   // frame the preprocessed data
-  await framed(agentFramingData,"src/_data/framings/agents-framing.json","src/_data/agents.json");
+  await framed(
+    agentFramingData,
+    "src/_data/framings/agents-framing.json",
+    "src/_data/agents.json"
+  );
 
   // ------------------------
   console.log("Post-processing: delete empty relations...");
-  let agentsData = JSON.parse(fs.readFileSync("src/_data/agents.json", { encoding: "utf8", flag: "r" }));
-  
+  let agentsData = JSON.parse(
+    fs.readFileSync("src/_data/agents.json", { encoding: "utf8", flag: "r" })
+  );
+
   // Replace les URIs
-  replaceURL(agentsData.graph,"rico:isOrganicProvenanceOf","https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_");
-  
+  replaceURL(
+    agentsData.graph,
+    "rico:isOrganicProvenanceOf",
+    "https://www.siv.archives-nationales.culture.gouv.fr/siv/IR/FRAN_IR_"
+  );
+
   // Supprime les relations vides
-  deleteRelationsWithoutProperties2(agentsData.graph, "rico:MandateRelation", ["rico:beginningDate", "rico:endDate","rico:note"]);
-  deleteRelationsWithoutProperties2(agentsData.graph, "rico:PlaceRelation", ["rico:beginningDate","rico:endDate","rico:note"]);
+  deleteRelationsWithoutProperties2(agentsData.graph, "rico:MandateRelation", [
+    "rico:beginningDate",
+    "rico:endDate",
+    "rico:note",
+  ]);
+  deleteRelationsWithoutProperties2(agentsData.graph, "rico:PlaceRelation", [
+    "rico:beginningDate",
+    "rico:endDate",
+    "rico:note",
+  ]);
   // deleteRelationsWithoutProperties2(agentsData.graph, "rico:PerformanceRelation", ["rico:beginningDate", "rico:endDate", "rico:note"]);
   //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:MandateRelation");
   //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PerformanceRelation");
   //agentsData.graph = deleteRelationsWithoutProperties(agentsData.graph,"rico:PlaceRelation");
 
   // Supprimer les relations de OrganicProvenanceRelation
-  deleteOrganicProvenanceRelation(agentsData.graph,"rico:OrganicProvenanceRelation");
+  deleteOrganicProvenanceRelation(
+    agentsData.graph,
+    "rico:OrganicProvenanceRelation"
+  );
 
-  fs.writeFileSync( "src/_data/agents.json",JSON.stringify(agentsData, null, 2),{ encoding: "utf8" });
-  
-  console.log("Relations sans date/note supprimées !");  
+  fs.writeFileSync(
+    "src/_data/agents.json",
+    JSON.stringify(agentsData, null, 2),
+    { encoding: "utf8" }
+  );
+
+  console.log("Relations sans date/note supprimées !");
 
   console.log("Now framing agents header...");
-  await framed(agentFramingData,"src/_data/framings/agentsHeader-framing-2.json","src/_data/agentsHeader.json");
+  await framed(
+    agentFramingData,
+    "src/_data/framings/agentsHeader-framing-2.json",
+    "src/_data/agentsHeader.json"
+  );
 
   console.log("Now framing vocabularies...");
-  await framed(dataJsonLd,"src/_data/framings/vocabularies-framing.json","src/_data/vocabularies.json");
+  await framed(
+    dataJsonLd,
+    "src/_data/framings/vocabularies-framing.json",
+    "src/_data/vocabularies.json"
+  );
 
   console.log("Now framing index...");
-  await framed(dataJsonLd,"src/_data/framings/index-framing.json","src/_data/index.json");
-  
+  await framed(
+    dataJsonLd,
+    "src/_data/framings/index-framing.json",
+    "src/_data/index.json"
+  );
 
   console.log("Now framing places...");
-  await framed(dataJsonLd,"src/_data/framings/places-framing.json","src/_data/places.json");
+  await framed(
+    dataJsonLd,
+    "src/_data/framings/places-framing.json",
+    "src/_data/places.json"
+  );
   console.log("Post-processing: places ...");
-  let placesData = JSON.parse(fs.readFileSync("src/_data/places.json", { encoding: "utf8", flag: "r" })); //
+  let placesData = JSON.parse(
+    fs.readFileSync("src/_data/places.json", { encoding: "utf8", flag: "r" })
+  ); //
   placesData.graph = filterPlacesWithUri(placesData.graph);
 
   //
@@ -380,16 +537,67 @@ let framed = async function (dataJsonLd, framingSpecPath, outputFile) {
   //placesData.graph = filterShow(placesData.graph);
 
   // write in place file
-  fs.writeFileSync("src/_data/places.json",JSON.stringify(placesData, null, 2),{ encoding: "utf8" });
-  
+  fs.writeFileSync(
+    "src/_data/places.json",
+    JSON.stringify(placesData, null, 2),
+    { encoding: "utf8" }
+  );
+
   console.log("Now framing place header...");
-  await framed(dataJsonLd,"src/_data/framings/placeHeader-framing.json","src/_data/placesHeader.json");
+  await framed(
+    dataJsonLd,
+    "src/_data/framings/placeHeader-framing.json",
+    "src/_data/placesHeader.json"
+  );
   console.log("Post-processing: places header ...");
-  let placesHeaderData = JSON.parse(fs.readFileSync("src/_data/placesHeader.json", { encoding: "utf8", flag: "r" })); //
+  let placesHeaderData = JSON.parse(
+    fs.readFileSync("src/_data/placesHeader.json", {
+      encoding: "utf8",
+      flag: "r",
+    })
+  ); //
   placesHeaderData.graph = filterPlacesWithUri(placesHeaderData.graph);
   // write in place file
-  fs.writeFileSync("src/_data/placesHeader.json",JSON.stringify(placesHeaderData, null, 2),{ encoding: "utf8" });
-  
+  fs.writeFileSync(
+    "src/_data/placesHeader.json",
+    JSON.stringify(placesHeaderData, null, 2),
+    { encoding: "utf8" }
+  );
 
+  console.log("Now framing search index...");
+  await framed(
+    dataJsonLd,
+    "src/_data/framings/index_de_recherche-framing.json",
+    "src/_data/index_framed.json"
+  );
 
+  // Process the framed data into compact search index
+  console.log("Creating search index...");
+  let indexFramedData = JSON.parse(
+    fs.readFileSync("src/_data/index_framed.json", {
+      encoding: "utf8",
+      flag: "r",
+    })
+  );
+  const searchIndex = createSearchIndex(indexFramedData);
+
+  // Write compact search index
+  fs.writeFileSync("src/_data/index_search.json", JSON.stringify(searchIndex), {
+    encoding: "utf8",
+  });
+
+  // Ensure directory exists before writing
+  const staticDir = "static/assets/data";
+  if (!fs.existsSync(staticDir)) {
+    fs.mkdirSync(staticDir, { recursive: true });
+    console.log(`Created directory: ${staticDir}`);
+  }
+
+  fs.writeFileSync(
+    "static/assets/data/index_search.json",
+    JSON.stringify(searchIndex),
+    { encoding: "utf8" }
+  );
+
+  console.log("Search index created with " + searchIndex.length + " entries");
 })();

@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "rico": "https://www.ica.org/standards/RiC/ontology#",
+    "l": "rdfs:label",
+    "lp": "skos:prefLabel",
+    "agentName": "rico:hasOrHadAgentName"
+  },
+  "@explicit": true,
+  "@type": ["rico:Agent", "rico:Place", "skos:Concept", "rico:AgentName"],
+  "@requireAll": false,
+  "l": {},
+  "lp": {},
+  "agentName": {
+    "@embed": "@always",
+    "l": {}
+  }
+}

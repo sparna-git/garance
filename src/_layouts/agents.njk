@@ -2,24 +2,16 @@
 layout: main.njk
 ---
 
-{% set sortIndex = agentsHeader.graph | jsonSort("rdfs:label") %}
-
 <main class="section_garance">
-	<div class="row">
-		<div class="col-md">
-
-			Contenu éditorial
-
-			<h1 class="title-Header" data-i18n="agents"></h1>			
-			<ul>
-				{%- for item in sortIndex -%}
-					{% if item.id %}
-						<li>
-							<a href="{{ [ '/entities/agent/', item.id | localName ] | join | relative(page) }}">{{ item["rdfs:label"] | lang("fr") }}</a>
-						</li>
-					{% endif %}
-				{%- endfor-%}
-			</ul>			
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-md">
+            <h1 class="title-Header" data-i18n="agents"></h1>
+            
+            <div class="alphabet-index mb-4">
+                {% for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+                    <a href="{{ ['/pages/fr/agents/', letter] | join | relative(page) }}" class="btn btn-outline-primary m-1">{{ letter }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </main>

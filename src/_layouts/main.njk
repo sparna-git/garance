@@ -13,6 +13,7 @@
         <!-- css -->
         <link rel='stylesheet' href="{{ '/assets/css/garance.css' | relative(page) }}" type='text/css' />
         <link rel='stylesheet' href="{{ '/assets/css/timeline.css' | relative(page) }}" type='text/css' />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.css" />
         
     </head>
     <body>
@@ -67,6 +68,11 @@
                         </li>
                         -->
                     </ul>
+                    <form class="d-flex position-relative" role="search">
+  <input id="searchInput" class="form-control me-2" type="search" placeholder="Rechercher..." aria-label="Search" autocomplete="off">
+</form>
+<div id="searchResults" class="dropdown-menu" style="max-height: 300px; overflow-y: auto; position: absolute; top:100%; left:0; right:0;"></div>
+
                 <div>
                 <div class="menu-menu-principal-container">
                     {% if locale === "fr" %}
@@ -143,6 +149,57 @@
             );
             adaptPagesHrefLocale(locale);
             triggerAnchors();
+        </script>
+        <!-- Awesomplete -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.min.js"></script>
+
+
+        <script>
+            fetch('{{ "/assets/data/index_search.json" | relative(page) }}')
+  .then(r => r.json())
+  .then(data => {
+    // Prépare la liste pour Awesomplete avec label et value
+    var list = data.map(function(i) {
+      let icon = '';
+      if(i.t === 'A') icon = '<i class="fa-solid fa-user"></i> ';
+      else if(i.t === 'P') icon = '<i class="fa-solid fa-location-dot"></i> ';
+      else if(i.t === 'C') icon = '<i class="fa-solid fa-tags"></i> ';
+      return {
+        label: icon + i.l,
+        value: i
+      };
+    });
+
+    var input = document.getElementById("searchInput");
+    new Awesomplete(input, {
+      list: list,
+      minChars: 2,
+      autoFirst: true,
+      replace: function(suggestion) {
+        // Affiche le label sans l'icône dans l'input
+        this.input.value = suggestion.value.l;
+      }
+    });
+
+    input.addEventListener('awesomplete-selectcomplete', function(event){
+      const item = event.text.value;
+      let ref = "#";
+      if(item.t === "A") {
+        ref = "/entities/agent/" + item.v;
+      } else if(item.t === "P") {
+        ref = "/entities/place/" + item.v;
+      } else if(item.t === "C") {
+        const parts = item.v.split('/');
+        if(parts.length >= 2) {
+          ref = "/entities/" + parts[0] + "s/#" + parts.slice(1).join('/');
+        } else {
+          ref = "/entities/" + item.v;
+        }
+      }
+      window.location.href = ref;
+    });
+  });
         </script>
     </body>    
 </html>
