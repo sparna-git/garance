@@ -1,0 +1,40 @@
+---
+layout: main.njk
+---
+
+{% set currentLetter = letter if letter else page.fileSlug %}
+{% set labelLang = "fr" %}
+{% set sortedAgents = agentsHeader.graph | getEntities(currentLetter, "agents") %}
+
+<main class="section_garance">
+  <div class="row gx-0">
+    <div class="col-md">
+      <h1 class="title-Header" data-i18n="entities.agents.title"></h1>
+
+      <div class="alphabet-index mb-4">
+        {% for L in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+          <a href="{{ ['/entities/agents/', L] | join | relative(page) }}"
+             class="btn {% if L === currentLetter %}btn-primary{% else %}btn-outline-primary{% endif %} m-0 mx-1 alphabet-btn">
+            {{ L }}
+          </a>
+        {% endfor %}
+      </div>
+
+      {% if sortedAgents.length %}
+        <div class="agent-list">
+          <ul>
+            {% for item in sortedAgents %}
+              <li>
+                <a href="{{ ['/entities/agent/', item.id | localName] | join | relative(page) }}">
+                  {{ item["rdfs:label"] | extractLabel() }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% else %}
+        <p class="text-muted" data-i18n="entities.agents.no-agents-found"></p>
+      {% endif %}
+    </div>
+  </div>
+</main>

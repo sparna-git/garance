@@ -4,7 +4,6 @@ layout: agents.njk
 
 # Agents
 
-
 Pour l’instant, cette page affiche la liste complète des agents décrits dans Garance, classés par ordre alphabétique de la forme préférée de leur nom.
 
 Elle sera bientôt remplacée par plusieurs listes, chacune correspondant à une lettre de l’alphabet.
@@ -39,4 +38,3 @@ Si vous voulez juste découvrir la structure des notices d’agents, voici une s
 - [Bonaparte (famille)](https://rdf.archives-nationales.culture.gouv.fr/agent/050805)
 - [Seydoux (famille ; 1801-2000)](https://rdf.archives-nationales.culture.gouv.fr/agent/052053)
 - [Voyer de Paulmy d’Argenson (famille de ; XIVe-XXe siècles)](https://rdf.archives-nationales.culture.gouv.fr/agent/052533)
-

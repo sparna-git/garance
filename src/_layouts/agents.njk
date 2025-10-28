@@ -10,17 +10,6 @@ layout: main.njk
 
 			{{ content | safe }}
 
-			<hr />
-
-			<ul>
-				{%- for item in sortIndex -%}
-					{% if item.id %}
-						<li>
-							<a href="{{ [ '/entities/agent/', item.id | localName ] | join | relative(page) }}">{{ item["rdfs:label"] | lang("fr") }}</a>
-						</li>
-					{% endif %}
-				{%- endfor-%}
-			</ul>			
 		</div>
 	</div>
 </main>

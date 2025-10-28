@@ -47,12 +47,34 @@
                                     {% endif %}                                    
                                 </li>
                                 <!-- Agents -->
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" id="DropdownMenuLink_2" href="{{ '/pages/fr/agents' | relative(page) }}" role="button" aria-expanded="false" data-i18n="agents"></a>
+                                <li class="dropdown-submenu">
+                                    <a class="nav-link dropdown-toggle" 
+                                    id="DropdownMenuLink_2" 
+                                    href="{{ '/pages/fr/agents' | relative(page) }}" 
+                                    role="button" 
+                                    aria-expanded="false" 
+                                    data-i18n="agents">
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="DropdownMenuLink_2">
+                                        <li>
+                                            <a class="dropdown-item" href="{{ '/entities/agents/A' | relative(page) }}" data-i18n="index">Index</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <!-- Lieux -->
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" id="DropdownMenuLink_3" href="{{ '/pages/fr/places' | relative(page) }}" role="button" aria-expanded="false" data-i18n="lieux"></a>
+                                <li class="dropdown-submenu">
+                                    <a class="nav-link dropdown-toggle" 
+                                    id="DropdownMenuLink_3" 
+                                    href="{{ '/pages/fr/places' | relative(page) }}" 
+                                    role="button" 
+                                    aria-expanded="false" 
+                                    data-i18n="lieux">
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="DropdownMenuLink_3">
+                                        <li>
+                                            <a class="dropdown-item" href="{{ '/entities/places/A' | relative(page) }}" data-i18n="index">Index</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>

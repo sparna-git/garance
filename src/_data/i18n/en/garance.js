@@ -13,21 +13,21 @@ module.exports = {
   "Voir dans le SIV": "See also in the Virtual reading room of the AnF",
 
   // Menu Vocabularies
-  "activityTypes": "Function Types of Corporate Bodies (en)",
-  "carrierTypes": "Carrier Types (en)",
-  "corporateBodyTypes": "Corporate Body Types (en)",
-  "documentaryFormTypes": "Documentary Form Types (en)",
-  "identifierTypes": "Identifier Types (en)",
-  "languages": "Languages (en)",
-  "occupationTypes": "Activity Types of Persons (en)",
-  "placeTypes": "Place Types (en)",
-  "productionTechniqueTypes": "Production Technique Types of Records (en)",
-  "recordSetTypes": "Record Set Types (en)",
-  "recordStates": "Record States (en)",
-  "representationTypes": "Representation Types of Records (en)",
-  "things": "Subjects of Records (en)",
+  activityTypes: "Function Types of Corporate Bodies (en)",
+  carrierTypes: "Carrier Types (en)",
+  corporateBodyTypes: "Corporate Body Types (en)",
+  documentaryFormTypes: "Documentary Form Types (en)",
+  identifierTypes: "Identifier Types (en)",
+  languages: "Languages (en)",
+  occupationTypes: "Activity Types of Persons (en)",
+  placeTypes: "Place Types (en)",
+  productionTechniqueTypes: "Production Technique Types of Records (en)",
+  recordSetTypes: "Record Set Types (en)",
+  recordStates: "Record States (en)",
+  representationTypes: "Representation Types of Records (en)",
+  things: "Subjects of Records (en)",
 
-  // vocabulary layout  
+  // vocabulary layout
   "vocabulary.header.creator": "Creator",
   "vocabulary.header.version": "Version",
   "vocabulary.header.created": "Created",
@@ -40,7 +40,8 @@ module.exports = {
   "vocabulary.header.These concepts have all the type":
     "All these SKOS concepts are also instances of the RiC-O class:",
 
-  "vocabulary.concept.Identifier inside the vocabulary": "Identifier inside the vocabulary",
+  "vocabulary.concept.Identifier inside the vocabulary":
+    "Identifier inside the vocabulary",
   "vocabulary.concept.broader": "Hierarchy",
   "vocabulary.concept.altLabel": "Synonyms",
   "vocabulary.concept.definition": "Definition",
@@ -58,5 +59,9 @@ module.exports = {
   "vocabulary.concept.changeNote": "Modifications",
 
   // for agents and generic JSON-LD printing
-  id: "URI identifier"
+  id: "URI identifier",
+  "entities.places.title": "Places",
+  "entities.agents.title": "Agents",
+  "entities.places.no-places-found": "No places found",
+  "entities.agents.no-agents-found": "No agents found",
 };

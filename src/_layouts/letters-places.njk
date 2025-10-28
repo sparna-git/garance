@@ -1,0 +1,40 @@
+---
+layout: main.njk
+---
+
+{% set currentLetter = letter if letter else page.fileSlug %}
+{% set labelLang = "fr" %}
+{% set sortedPlaces = places.graph | getEntities(currentLetter, "places") %}
+
+<main class="section_garance">
+  <div class="row gx-0">
+    <div class="col-md">
+      <h1 class="title-Header" data-i18n="entities.places.title"></h1>
+
+      <div class="alphabet-index mb-4">
+        {% for L in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+          <a href="{{ ['/entities/places/', L] | join | relative(page) }}"
+             class="btn {% if L === currentLetter %}btn-primary{% else %}btn-outline-primary{% endif %} m-0 mx-1 alphabet-btn">
+            {{ L }}
+          </a>
+        {% endfor %}
+      </div>
+
+      {% if sortedPlaces.length %}
+        <div class="entity-list">
+          <ul>
+            {% for item in sortedPlaces %}
+              <li>
+                <a href="{{ ['/entities/place/', item.id | localName] | join | relative(page) }}">
+                  {{ item["skos:prefLabel"] | extractLabel() }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% else %}
+        <p class="text-muted" data-i18n="entities.places.no-places-found"></p>
+      {% endif %}
+    </div>
+  </div>
+</main>
