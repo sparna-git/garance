@@ -22,7 +22,7 @@
                 <a href="https://www.archives-nationales.culture.gouv.fr/"><img src="{{ '/assets/images/archives-nationales.png' | relative(page) }} " style="width:200px;" /></a>
                 &nbsp;
                 &nbsp;
-                <a class="navbar-brand" href="{{ '/pages/fr/' | relative(page) }}" data-i18n="garance"></a>
+                <a class="navbar-brand" href="{{ '/pages/fr/' | relative(page) }}" data-i18n="nav.title"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,34 +30,56 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <!-- Referentiels -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="menu_Referentiels" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="referentiels"></a>
+                            <a class="nav-link dropdown-toggle" id="menu_Referentiels" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.menu.referentiels"></a>
                             <ul class="dropdown-menu">
                                 <!-- Vocabularies -->
                                 <li class="dropdown-submenu">
                                     <!-- Page Vocabulaires -->
-                                    <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="{{ '/pages/fr/vocabularies' | relative(page) }}" role="button" aria-expanded="false" data-i18n="vocabularies"></a>
+                                    <a class="nav-link dropdown-toggle" id="DropdownMenuLink_1" href="{{ '/pages/fr/vocabularies' | relative(page) }}" role="button" aria-expanded="false" data-i18n="nav.menu.vocabularies"></a>
                                     <!-- Others concepts links -->
                                     {% if index.graph %}
                                         {% set sortVocabularies = index.graph | jsonSort("title") %}
                                         <ul class="dropdown-menu">  
                                         {% for voc in sortVocabularies %}
-                                            <li><a class="dropdown-item" href="{{ [ '/entities/', voc.id | localName ] | join | relative(page) }}"><span data-i18n="{{ voc.id | removeURL }}"/></a></li>
+                                            <li><a class="dropdown-item" href="{{ [ '/entities/', voc.id | localName ] | join | relative(page) }}"><span data-i18n="nav.menu.vocabularies.{{ voc.id | removeURL }}"/></a></li>
                                         {% endfor %}
                                         </ul>
                                     {% endif %}                                    
                                 </li>
                                 <!-- Agents -->
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" id="DropdownMenuLink_2" href="{{ '/pages/fr/agents' | relative(page) }}" role="button" aria-expanded="false" data-i18n="agents"></a>
+                                <li class="dropdown-submenu">
+                                    <a class="nav-link dropdown-toggle" 
+                                    id="DropdownMenuLink_2" 
+                                    href="{{ '/pages/fr/agents' | relative(page) }}" 
+                                    role="button" 
+                                    aria-expanded="false" 
+                                    data-i18n="nav.menu.agents">
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="DropdownMenuLink_2">
+                                        <li>
+                                            <a class="dropdown-item" href="{{ '/entities/agents/A' | relative(page) }}" data-i18n="nav.menu.agents.index">Index</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <!-- Lieux -->
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" id="DropdownMenuLink_3" href="{{ '/pages/fr/places' | relative(page) }}" role="button" aria-expanded="false" data-i18n="lieux"></a>
+                                <li class="dropdown-submenu">
+                                    <a class="nav-link dropdown-toggle" 
+                                    id="DropdownMenuLink_3" 
+                                    href="{{ '/pages/fr/places' | relative(page) }}" 
+                                    role="button" 
+                                    aria-expanded="false" 
+                                    data-i18n="nav.menu.lieux">
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="DropdownMenuLink_3">
+                                        <li>
+                                            <a class="dropdown-item" href="{{ '/entities/places/A' | relative(page) }}" data-i18n="nav.menu.lieux.index">Index</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a class="nav-link" href="{{ '/pages/fr/search' | relative(page) }}" role="button" aria-expanded="false" data-i18n="recherche"></a>
+                            <a class="nav-link" href="{{ '/pages/fr/search' | relative(page) }}" role="button" aria-expanded="false" data-i18n="nav.menu.search"></a>
                         </li>
                         
                         <!-- Menus 

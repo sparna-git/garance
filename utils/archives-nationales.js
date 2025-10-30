@@ -1,5 +1,5 @@
 const jsonld = require("./jsonld.js");
-
+const filters = require("./filters.js");
 
 /**
  * Finds the creation date from activities matching specific names.
@@ -25,11 +25,10 @@ function getCreationDate(agent) {
 }
 
 function getIdentifier(place) {
-
   const Ids = place?.["rico:hasOrHadIdentifier"];
   const identifier = [];
   if (Ids) {
-    if (jsonld.isArray(Ids)) {    
+    if (jsonld.isArray(Ids)) {
       for (const e of Ids) {
         identifier.push(e["rico:textualValue"]);
       }
@@ -42,15 +41,15 @@ function getIdentifier(place) {
 }
 
 function getDownloadLinks(place) {
-
   let rdfUrl = null;
   let eacUrl = null;
 
-  const digitalInstance = place?.["rico:isOrWasDescribedBy"]?.["rico:hasOrHadDigitalInstantiation"];  
+  const digitalInstance =
+    place?.["rico:isOrWasDescribedBy"]?.["rico:hasOrHadDigitalInstantiation"];
   if (jsonld.isArray(digitalInstance)) {
-    for (const item of digitalInstance) {      
+    for (const item of digitalInstance) {
       const format = item?.["dc:format"];
-      if(format == "application/rdf+xml") {
+      if (format == "application/rdf+xml") {
         const urlResource = item?.["dcat:downloadURL"];
         if (urlResource) {
           if (!jsonld.isArray(urlResource)) {
@@ -61,7 +60,7 @@ function getDownloadLinks(place) {
         }
       }
 
-      if(format == "text/xml") {
+      if (format == "text/xml") {
         const urlResource = item?.["dcat:downloadURL"];
         if (urlResource) {
           if (!jsonld.isArray(urlResource)) {
@@ -71,7 +70,6 @@ function getDownloadLinks(place) {
           }
         }
       }
-
     }
   }
   return { rdfUrl, eacUrl };
@@ -106,16 +104,16 @@ function getSivSeeAlsoUrl(agent) {
 }
 
 function isValidDateFormat(dateString) {
-    let regex = /^\d{4}-\d{2}-\d{2}$/;
-    return dateString.match(regex) !== null;
+  let regex = /^\d{4}-\d{2}-\d{2}$/;
+  return dateString.match(regex) !== null;
 }
 
 function isValidYearFormat(yearString) {
-    let regex = /^\d{4}-\d{2}-\d{2}$/;
-    return yearString.match(regex) !== null;
+  let regex = /^\d{4}-\d{2}-\d{2}$/;
+  return yearString.match(regex) !== null;
 }
 
-function timeline (jsonChangeNote, locale) {
+function timeline(jsonChangeNote, locale) {
   const tData = [];
   let JsonObj = JSON.stringify(jsonChangeNote);
   JsonObj = JSON.parse(JsonObj);
@@ -162,62 +160,81 @@ function timeline (jsonChangeNote, locale) {
 }
 
 function excludeObsolete(conceptArray) {
-    return conceptArray.filter(
-        c => (!c.isoThesStatus || (c.isoThesStatus["@value"] != "obsolète"))
-    );
+  return conceptArray.filter(
+    (c) => !c.isoThesStatus || c.isoThesStatus["@value"] != "obsolète"
+  );
 }
 
 function removeURL(uri) {
   const NAMESPACE = "https://rdf.archives-nationales.culture.gouv.fr/";
   var result = "";
-  if(uri.startsWith(NAMESPACE)) {
-    result = uri.replace(NAMESPACE,"")
-  } 
-  return result
+  if (uri.startsWith(NAMESPACE)) {
+    result = uri.replace(NAMESPACE, "");
+  }
+  return result;
 }
 
 function toUrl(uri) {
-    const NAMESPACE = "https://rdf.archives-nationales.culture.gouv.fr/";
-    var result = uri;
-    if(uri.startsWith(NAMESPACE)) {
-        let endUri = uri.substring(NAMESPACE.length);
-        if(
-            endUri.includes("corporateBodyType/")
-            ||
-            endUri.includes("recordState/")
-            ||
-            endUri.includes("activityType/")
-            ||
-            endUri.includes("occupationType/")
-            ||
-            endUri.includes("language/")
-            ||
-            endUri.includes("thing/")
-            ||
-            endUri.includes("carrierType/")
-            ||
-            endUri.includes("productionTechniqueType/")
-            ||
-            endUri.includes("identifierType/")
-            ||
-            endUri.includes("placeType/")
-            ||
-            endUri.includes("representationType/")
-            ||
-            endUri.includes("documentaryFormType/")
-            ||
-            endUri.includes("recordSetType/")
-        ) {
-            result = "/entities/"+endUri.split("/")[0]+"s"+"#"+endUri.split("/")[1];       
-        } else {
-            result = "/entities/"+endUri; 
-        }
+  const NAMESPACE = "https://rdf.archives-nationales.culture.gouv.fr/";
+  var result = uri;
+  if (uri.startsWith(NAMESPACE)) {
+    let endUri = uri.substring(NAMESPACE.length);
+    if (
+      endUri.includes("corporateBodyType/") ||
+      endUri.includes("recordState/") ||
+      endUri.includes("activityType/") ||
+      endUri.includes("occupationType/") ||
+      endUri.includes("language/") ||
+      endUri.includes("thing/") ||
+      endUri.includes("carrierType/") ||
+      endUri.includes("productionTechniqueType/") ||
+      endUri.includes("identifierType/") ||
+      endUri.includes("placeType/") ||
+      endUri.includes("representationType/") ||
+      endUri.includes("documentaryFormType/") ||
+      endUri.includes("recordSetType/")
+    ) {
+      result =
+        "/entities/" + endUri.split("/")[0] + "s" + "#" + endUri.split("/")[1];
+    } else {
+      result = "/entities/" + endUri;
+    }
+  }
+
+  return result;
+}
+
+/**
+ * Filtre Eleventy pour extraire les entités (agents ou places)
+ */
+function getEntities(graph, currentLetter, type = "agents") {
+  if (!Array.isArray(graph)) {
+    return [];
+  }
+  const labelKey = type === "places" ? "skos:prefLabel" : "rdfs:label";
+
+  let entitiesByLetter = graph.filter((item) => {
+    if (!item?.id || !item[labelKey]) return false;
+
+    const labelObj = item[labelKey];
+    let label = "";
+
+    if (typeof labelObj === "object" && labelObj["@value"]) {
+      label = labelObj["@value"];
     }
 
-    return result;
+    if (!label) return false;
+
+    const firstLetter = filters.firstLetter(label);
+    return firstLetter === currentLetter;
+  });
+
+  entitiesByLetter = filters.sortLabels(entitiesByLetter);
+  return entitiesByLetter;
 }
 
 module.exports = {
+  getEntities,
   getCreationDate,
   getDownloadLinks,
   getLastModificationDate,

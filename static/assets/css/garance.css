@@ -189,13 +189,12 @@ mark {
 }
 
 .header-download {
-  
 }
 
 .header-date {
-  font-size:smaller;
-  font-style:italic;
-  float:right;
+  font-size: smaller;
+  font-style: italic;
+  float: right;
 }
 
 .copy-icon-btn {
@@ -339,4 +338,70 @@ mark {
   top: 100%;
   left: 0;
   width: 320px;
+}
+
+/*--------------------------------------------------------------
+# Places and Agents pages css
+--------------------------------------------------------------*/
+.alphabet-index .alphabet-btn {
+  font-size: 1.3rem;
+  padding: 0.25rem 0.6rem;
+  line-height: 1.2;
+  border-radius: 6px;
+}
+
+.alphabet-index {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 0.25rem 0;
+  padding: 0 0.75rem;
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .alphabet-index {
+    flex-wrap: wrap;
+  }
+  .alphabet-index .alphabet-btn {
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Liste en colonnes */
+.agent-list ul {
+  column-count: 3;
+  column-gap: 2rem;
+  padding-left: 2.5rem;
+}
+.agent-list ul li {
+  break-inside: avoid-column;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .agent-list ul {
+    column-count: 1;
+  }
+}
+
+.entity-list ul {
+  column-count: 3;
+  column-gap: 2rem;
+  padding-left: 2.5rem;
+}
+.entity-list ul li {
+  break-inside: avoid-column;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .entity-list ul {
+    column-count: 1;
+  }
+  .alphabet-index {
+    flex-wrap: wrap;
+  }
+  .alphabet-index .alphabet-btn {
+    margin-bottom: 0.25rem;
+  }
 }
