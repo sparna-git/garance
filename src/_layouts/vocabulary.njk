@@ -205,9 +205,9 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
         {% endif %}        
         
         {# URI #}
-        <p class="concept-URI">
+        <p class="concept-URI" data-pagefind-ignore>
           <code>
-            <a href="{{ concepts.id | expandUri(jsonLdContext) }}" data-pagefind-ignore>{{ concepts.id | expandUri(jsonLdContext) }}</a>
+            <a href="{{ concepts.id | expandUri(jsonLdContext) }}">{{ concepts.id | expandUri(jsonLdContext) }}</a>
           </code>
           {% if 'FRAN_RI_' in concepts.id %}
             <br />
@@ -226,7 +226,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
 
           {# breadcrumb #}
           {% if concepts.broader %}
-            <div class="row">
+            <div class="row" data-pagefind-ignore>
               <div class="col-1">
                 <h6 data-i18n="vocabulary.concept.broader"></h6>
               </div>
