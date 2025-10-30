@@ -25,7 +25,8 @@ layout: main.njk
           <ul>
             {% for item in sortedPlaces %}
               <li>
-                <a href="{{ ['/entities/place/', item.id | localName] | join | relative(page) }}">
+                 {% set expanded = item.id | expandUri(context) %}
+                <a href="{{ expanded | toUrl | relative(page) }}">
                   {{ item["skos:prefLabel"] | extractLabel() }}
                 </a>
               </li>

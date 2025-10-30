@@ -207,7 +207,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
         {# URI #}
         <p class="concept-URI">
           <code>
-            <a href="{{ concepts.id | expandUri(jsonLdContext) }}">{{ concepts.id | expandUri(jsonLdContext) }}</a>
+            <a href="{{ concepts.id | expandUri(jsonLdContext) }}" data-pagefind-ignore>{{ concepts.id | expandUri(jsonLdContext) }}</a>
           </code>
           {% if 'FRAN_RI_' in concepts.id %}
             <br />

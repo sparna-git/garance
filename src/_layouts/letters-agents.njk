@@ -25,7 +25,8 @@ layout: main.njk
           <ul>
             {% for item in sortedAgents %}
               <li>
-                <a href="{{ ['/entities/agent/', item.id | localName] | join | relative(page) }}">
+                {% set expanded = item.id | expandUri(context) %}
+                <a href="{{ expanded | toUrl | relative(page) }}">
                   {{ item["rdfs:label"] | extractLabel() }}
                 </a>
               </li>
