@@ -64,29 +64,72 @@
     </div>
 {% endmacro %}
 
-
 {% macro renderPredicateValues(object, predicate, values, depth, mainObject) %}
+  {% set predExpanded = predicate | expandUri(context) %}
+    {% set attrs = object | findShapeAttributes(predExpanded, shapes, context) %}
+    {% set weight = attrs.weight %}
+    {% set metaKeys = attrs.metaKeys %}
+    {% set filter = attrs.filter %}
+    {% set exclude = attrs.exclude %}
+
+
   <div class="entity-predicate {{ predicate | additionnalCssClass(object, shapes, context) }}">
     <div class="entity-predicate-predicate" data-pagefind-ignore>
       {{ renderPredicate(predicate) }}
     </div>
-    <div class="entity-predicate-values">
-        {# Special : multiple type values are rendered horizontally without hyperlink #}
-        {% if predicate == "type" or predicate == "@type" %}
-            <div class="entity-predicate-values-value entity-predicate-values-type">
-                {{ renderTypeList(values, mainObject, depth) }}
-            </div>
+
+    {# Filtres & métadonnées Pagefind #}
+    {% if metaKeys and metaKeys|length %}
+      <span hidden
+        data-pagefind-meta="{% for k in metaKeys %}{{ k|safe }}{% if not loop.last %}, {% endif %}{% endfor %}">
+      </span>
+    {% endif %}
+
+    <div class="entity-predicate-values"
+         {% if weight %}data-pagefind-weight="{{ weight }}"{% endif %}
+         {% if metaKeys and metaKeys|length %}
+           data-pagefind-meta="{% for k in metaKeys %}{{ k|safe }}{% if not loop.last %}, {% endif %}{% endfor %}"
+         {% endif %}
+         {% if exclude %}data-pagefind-ignore{% endif %}
+    >
+      {# Cas particulier : type affiché horizontalement sans lien #}
+      {% if predicate == "type" or predicate == "@type" %}
+        <div class="entity-predicate-values-value entity-predicate-values-type">
+          {{ renderTypeList(values, mainObject, depth) }}
+        </div>
+      {% else %}
+        {% if values|isArray %}
+          <div class="entity-predicate-values-list">
+            {% for item in (values | sortValues(shapes, context)) %}
+              <div class="entity-predicate-values-value
+                          {% if loop.first %} first{% endif %}
+                          {% if loop.last %} last{% endif %}"
+                  {% if filter and filter|length %}
+                    data-pagefind-filter="
+                      {% for f in filter %}
+                        {{ f|e }}{% if not loop.last %}, {% endif %}
+                      {% endfor %}
+                    "
+                  {% endif %}
+              >
+                {{ doRender(item, depth + 1, mainObject) }}
+              </div>
+            {% endfor %}
+          </div>
         {% else %}
-            {% if values|isArray %}
-                <div class="entity-predicate-values-list">
-                    {% for item in (values | sortValues(shapes,context)) %}
-                        <div class="entity-predicate-values-value{% if loop.last %} last{% endif %}{% if loop.first %} first{% endif %}">{{ doRender(item, depth+1, mainObject) }}</div>
-                    {% endfor %}
-                </div>
-            {% else %}
-                <div class="entity-predicate-values-value">{{ doRender(values,depth+1,  mainObject) }}</div>
-            {% endif %}
+          <div class="entity-predicate-values-value"
+               {% if filter and filter|length %}
+                 data-pagefind-filter="
+                   {% for f in filter %}
+                     {{ f|e }}{% if not loop.last %}, {% endif %}
+                   {% endfor %}
+                 "
+               {% endif %}
+          >
+            {{ doRender(values, depth + 1, mainObject) }}
+          </div>
         {% endif %}
+      {% endif %}
     </div>
   </div>
 {% endmacro %}

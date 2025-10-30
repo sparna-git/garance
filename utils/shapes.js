@@ -1,8 +1,8 @@
 const jsonld = require("./jsonld.js");
 
 /**
- * 
- * @param {*} nodeShape 
+ *
+ * @param {*} nodeShape
  * @returns the property shapes of the provided node shape
  */
 exports.getProperties = function (nodeShape) {
@@ -10,8 +10,8 @@ exports.getProperties = function (nodeShape) {
 };
 
 /**
- * 
- * @param {*} nodeShape 
+ *
+ * @param {*} nodeShape
  * @returns the predicate of the property shape marked with dash:sortKeyRole inside the provided node shape
  */
 exports.getSortKeyOfShape = function (nodeShape) {
@@ -27,8 +27,8 @@ exports.getSortKeyOfShape = function (nodeShape) {
 };
 
 /**
- * 
- * @param {*} propertyShapesArray 
+ *
+ * @param {*} propertyShapesArray
  * @returns The sorted property shapes array by the sh:order property
  */
 exports.sortByShOrder = function (propertyShapesArray) {
@@ -38,9 +38,9 @@ exports.sortByShOrder = function (propertyShapesArray) {
 };
 
 /**
- * 
- * @param {*} type 
- * @param {*} shapes 
+ *
+ * @param {*} type
+ * @param {*} shapes
  * @returns the node shape targeting the provided type with sh:targetClass
  */
 exports.getNodeShape = function (type, shapes) {
@@ -50,10 +50,10 @@ exports.getNodeShape = function (type, shapes) {
 };
 
 /**
- * 
- * @param {*} typeArray 
- * @param {*} predicateFullUri 
- * @param {*} shapes 
+ *
+ * @param {*} typeArray
+ * @param {*} predicateFullUri
+ * @param {*} shapes
  * @returns The property shape describing the provided predicate in any of the provided types
  */
 exports.getPropertyShape = function (typeArray, predicateFullUri, shapes) {
@@ -170,7 +170,8 @@ exports.getSortKey = function (something, shapes, context) {
     key = something["@value"] ?? something["value"];
   } else if (jsonld.isObjectWithSingleLabelProperty(something, context)) {
     key = JSON.stringify(jsonld.extractFirstNonIdNonTypeProperty(something));
-  } else if (jsonld.isLiteralObject(something)) {  // check if the object is literal and sort string 
+  } else if (jsonld.isLiteralObject(something)) {
+    // check if the object is literal and sort string
     key = something.value;
   } else {
     // check if a sort key is declared in the shapes for the object type
@@ -241,7 +242,7 @@ exports.additionnalCssClass = function (predicate, object, shapes, context) {
 exports.getCssClassesFromTypes = function (types, shapes, context) {
   const expandedTypes = [types].flat().map((t) => {
     // const expanded = expandManually(t, context); // forcé ici
-    return expanded = jsonld.expandUri(t, context);
+    return (expanded = jsonld.expandUri(t, context));
   });
 
   const cssClasses = [];
@@ -259,4 +260,66 @@ exports.getCssClassesFromTypes = function (types, shapes, context) {
 exports.getHeaderCssClasses = function (types, shapes, context) {
   const classes = exports.getCssClassesFromTypes(types, shapes, context);
   return classes;
+};
+
+/**
+ * Récupère les attributs weight, meta, filter, exclude pour un prédicat donné,
+ * en se basant sur le type du noeud (via jsonld.getTypes) et en cherchant
+ * le PropertyShape correspondant (via getPropertyShape).
+ *
+ * @param {Object} object - L'objet RDF à analyser (pour lire son type)
+ * @param {String} predicateUri - L'URI expandie du prédicat à chercher
+ * @param {Object} shapes - L'ensemble des shapes (avec .graph)
+ * @param {Object} context - Le contexte JSON-LD
+ * @returns {Object} { weight, metaKeys, filter, exclude }
+ */
+exports.findShapeAttributes = function (object, predicateUri, shapes, context) {
+  const expandUri = (uri) => jsonld.expandUri(uri, context);
+
+  let weight = null;
+  let metaKeys = [];
+  let filter = [];
+  let exclude = false;
+
+  if (!shapes || !Array.isArray(shapes.graph)) {
+    return { weight, metaKeys, filter, exclude };
+  }
+
+  // trouver le ou les types de l'objet
+  const types = jsonld.getTypes(object);
+  const expandedTypes = [types].flat().map((t) => expandUri(t));
+
+  // trouver le PropertyShape correspondant au prédicat pour un des types
+  const propertyShape = exports.getPropertyShape(
+    expandedTypes,
+    predicateUri,
+    shapes
+  );
+
+  if (propertyShape) {
+    // extraire les attributs souhaités
+    if ("weight" in propertyShape) {
+      weight = propertyShape.weight;
+    }
+
+    if ("meta" in propertyShape) {
+      const metaValues = Array.isArray(propertyShape.meta)
+        ? propertyShape.meta
+        : [propertyShape.meta];
+      metaKeys.push(...metaValues);
+    }
+
+    if ("filter" in propertyShape) {
+      const filterValues = Array.isArray(propertyShape.filter)
+        ? propertyShape.filter
+        : [propertyShape.filter];
+      filter.push(...filterValues);
+    }
+
+    if ("exclude" in propertyShape) {
+      exclude = propertyShape.exclude;
+    }
+  }
+
+  return { weight, metaKeys, filter, exclude };
 };
