@@ -54,7 +54,8 @@
       "@explicit": true,
       "type": "rico:Instantiation",
       "dc:format": { "@omitDefault": true },
-      "dcat:downloadURL": { "@omitDefault": true }
+      "dcat:downloadURL": { "@omitDefault": true },
+      "rdfs:seeAlso": { "@omitDefault": true, "@explicit": true }
     },
     "rico:isOrWasAffectedBy": {
       "@omitDefault": true,
