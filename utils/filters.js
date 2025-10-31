@@ -56,20 +56,6 @@ module.exports = {
     return "";
   },
 
-  /**
-   * Trie un tableau d’agents (ou d’objets avec rdfs:label.fr)
-   * avec Collator français (accents insensibles)
-   */
-  sortLabels: function (arr) {
-    if (!Array.isArray(arr)) return arr;
-    const collator = new Intl.Collator("fr", { sensitivity: "base" });
-    return arr.sort((a, b) => {
-      const aLabel = a["rdfs:label"]?.fr || "";
-      const bLabel = b["rdfs:label"]?.fr || "";
-      return collator.compare(aLabel, bLabel);
-    });
-  },
-
   // Ajouter cette fonction dans votre fichier filters.js
   langFromUrl: function (url) {
     // Détecte la langue à partir de l'URL (/pages/fr/ ou /pages/en/)

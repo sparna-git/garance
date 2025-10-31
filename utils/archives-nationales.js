@@ -208,20 +208,20 @@ function toUrl(uri) {
  * Filtre Eleventy pour extraire les entités (agents ou places)
  */
 function getEntities(graph, currentLetter, type = "agents") {
-  if (!Array.isArray(graph)) {
-    return [];
-  }
+  if (!Array.isArray(graph)) return [];
+
   const labelKey = type === "places" ? "skos:prefLabel" : "rdfs:label";
 
   let entitiesByLetter = graph.filter((item) => {
     if (!item?.id || !item[labelKey]) return false;
 
+    // récupération du label (français ou @value)
     const labelObj = item[labelKey];
-    let label = "";
-
-    if (typeof labelObj === "object" && labelObj["@value"]) {
-      label = labelObj["@value"];
-    }
+    const label =
+      labelObj?.fr ||
+      labelObj?.["@value"] ||
+      (typeof labelObj === "string" ? labelObj : "") ||
+      "";
 
     if (!label) return false;
 
@@ -229,8 +229,40 @@ function getEntities(graph, currentLetter, type = "agents") {
     return firstLetter === currentLetter;
   });
 
-  entitiesByLetter = filters.sortLabels(entitiesByLetter);
+  // tri cohérent sur le même type de label
+  entitiesByLetter = sortLabels(entitiesByLetter);
   return entitiesByLetter;
+}
+
+/**
+ * Trie un tableau d’entités agents ou places
+ * trie avec collatpr
+ */
+function sortLabels(arr) {
+  if (!Array.isArray(arr)) return arr;
+  const collator = new Intl.Collator("fr", {
+    sensitivity: "base",
+    ignorePunctuation: true,
+    numeric: true,
+  });
+
+  return arr.sort((a, b) => {
+    const aLabel =
+      a["rdfs:label"]?.fr ||
+      a["rdfs:label"]?.["@value"] ||
+      a["skos:prefLabel"]?.fr ||
+      a["skos:prefLabel"]?.["@value"] ||
+      "";
+
+    const bLabel =
+      b["rdfs:label"]?.fr ||
+      b["rdfs:label"]?.["@value"] ||
+      b["skos:prefLabel"]?.fr ||
+      b["skos:prefLabel"]?.["@value"] ||
+      "";
+
+    return collator.compare(aLabel, bLabel);
+  });
 }
 
 module.exports = {

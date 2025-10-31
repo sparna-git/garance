@@ -153,7 +153,8 @@
         },
         {
           "sh:order": 34,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent",
+          "exclude": true
         },
         {
           "sh:order": 35,
@@ -200,7 +201,7 @@
         {
           "sh:order": 2,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#textualValue",
-          "weight": 7.0
+          "weight": 6.0
         },
         {
           "sh:order": 3,
@@ -594,7 +595,7 @@
         {
           "sh:order": 3,
           "sh:path": "http://www.w3.org/2004/02/skos/core#altLabel",
-          "weight": 7.0
+          "weight": 6.0
         },
         {
           "sh:order": 4,
@@ -708,7 +709,8 @@
         {
           "sh:order": 29,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasAdjacentTo",
-          "volipi:class": "horizontal"
+          "volipi:class": "horizontal",
+          "exclude": true
         },
         {
           "sh:order": 30,
@@ -752,7 +754,8 @@
         },
         {
           "sh:order": 40,
-          "sh:path": "http://www.w3.org/2002/07/owl#sameAs"
+          "sh:path": "http://www.w3.org/2002/07/owl#sameAs",
+          "exclude": true
         },
         {
           "sh:order": 41,

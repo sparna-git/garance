@@ -15,7 +15,10 @@ layout: main.njk
                 	showImages: false,
                 	pageSize: 10,
                 	autofocus: true,
-                    showEmptyFilters: false 
+                    showEmptyFilters: false,
+                    ranking: {
+                            termSimilarity: 2.0
+                    }
                 });
             });
         </script>
