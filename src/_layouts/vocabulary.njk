@@ -280,7 +280,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
                 <ul>
                   {% set altLabel_sort = concepts.altLabel | jsonSort("altLabel") %}
                   {%- for element in altLabel_sort -%}
-                    <li>{{ element["@value"] }}</li>                  
+                    <li data-pagefind-weight="6">{{ element["@value"] }}</li>                  
                   {%- endfor -%}
                 </ul>
               </div>
@@ -295,7 +295,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               </div>
               <div class="col">
                 <p>
-                  <span>
+                  <span data-pagefind-weight="3">
                     {{ concepts.definition[0]["@value"] }}
                   </span>
                 <p>
@@ -313,7 +313,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
                 <ul>
                 {%- for element in concepts.prefLabel -%}
                   {% if element["@language"] != "fr" %}
-                    <li>{{ element["@language"] }} : {{ element["@value"] }}</li>                  
+                    <li>{{ element["@language"] }} : <span data-pagefind-weight="6">{{ element["@value"] }}</span></li>                  
                   {% endif %}  
                 {%- endfor -%}
                 </ul>
@@ -383,7 +383,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% endif %}
 
           {% if concepts.narrower %}
-            <div class="row">
+            <div class="row" data-pagefind-ignore>
               <div class="col-1">
                 <h6 data-i18n="vocabulary.concept.narrower"></h6>
               </div>
@@ -402,7 +402,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
 
           {# skos:related #}
           {% if concepts.skosRelated %}
-            <div class="row">
+            <div class="row" data-pagefind-ignore>
               <div class="col-1">
                 <h6 data-i18n="vocabulary.concept.related"></h6>
               </div>    
@@ -419,7 +419,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           
           {# skos:exactMatch #}
           {% if concepts.exactMatch %}
-            <div class="row">
+            <div class="row" data-pagefind-ignore>
               <div class="col-1">
                 <h6 data-i18n="vocabulary.concept.exactMatch"></h6>
               </div>
@@ -435,7 +435,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
 
           {# skos:closeMatch #}
           {% if concepts.closeMatch %}
-            <div class="row">
+            <div class="row" data-pagefind-ignore>
               <div class="col-1">
                 <h6 data-i18n="vocabulary.concept.closeMatch"></h6>
               </div>
@@ -451,7 +451,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           
           {# skos:relatedMatch #}
           {% if concepts.relatedMatch %}
-            <div class="row">
+            <div class="row" data-pagefind-ignore>
               <div class="col-1">
                 <h6 data-i18n="vocabulary.concept.relatedMatch"></h6>
               </div>    
@@ -467,7 +467,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
 
           {# skos:narrowMatch #}
           {% if concepts.narrowMatch.length > 0 %}
-            <div class="row">
+            <div class="row" data-pagefind-ignore>
               <div class="col-1">
                 <h6 data-i18n="vocabulary.concept.narrowMatch"></h6>
               </div>    
@@ -483,7 +483,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
 
           {# rdfs:seeAlso #}
           {% if concepts.seeAlso.length > 0 %}
-            <div class="row">
+            <div class="row" data-pagefind-ignore>
               <div class="col-1">
                 <h6 data-i18n="vocabulary.concept.seeAlso"></h6>
               </div>    
@@ -499,7 +499,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
 
           {# skos:changeNote #}
           {% if concepts.changenote %}
-            <div class="row">
+            <div class="row" data-pagefind-ignore>
               <div class="col-1">
                 <h6 data-i18n="vocabulary.concept.changeNote"></h6>                
               </div>
