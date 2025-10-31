@@ -10,6 +10,8 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
 {% set jsonLdContext = vocabularies["@context"] %}
 {% set sortInverseInScheme = vocabulary.inverse_inScheme | excludeObsolete | jsonSort("prefLabel") %}
 
+<meta name="rdf:type" content="skos:Concept" data-pagefind-filter="type[content]" />
+
 <main class="section_body" id="vocabulary">
   {# Header #}
   <div class="row">
