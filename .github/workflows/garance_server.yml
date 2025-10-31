@@ -41,7 +41,7 @@ jobs:
             npm run build
 
       - name: Pagefind
-        run: npx pagefind
+        run: npx pagefind --write-playground
 
       # SCP transfer project to server ANS
       - name: copy file via ssh key
