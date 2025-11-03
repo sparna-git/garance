@@ -198,7 +198,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% endif %}
           </h5>
         {% else %}
-          <h5 class="concept-title" id="{{ concepts.id | localName }}">{{ concepts.prefLabel | lang('fr') }}
+          <h5 class="concept-title" id="{{ concepts.id | localName }}" data-pagefind-weight="7">{{ concepts.prefLabel | lang('fr') }}
           {# if Status = iso-thes:status = "candidat" #}
           {% if concepts.isoThesStatus %}
             <small><i class="fad fa-diamond-exclamation" title="Concept candidat"></i></small>    
