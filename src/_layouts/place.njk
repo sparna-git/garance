@@ -28,3 +28,43 @@
 
 {# first parameter is the object to print, second parameter is the main entity printed #}
 {{ jsonld.render(placeDB,headerData) }}
+
+
+
+<!-- Leaflet -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-- Terraformer WKT Parser -->
+<script src="https://unpkg.com/@terraformer/wkt"></script>
+
+<script>
+  let collectsData = document.querySelectorAll("div #map")
+  // Get the Element
+  for(let mapId of collectsData) {
+    // Get attribute data
+    let dataValue = mapId.getAttribute("data");
+    // Your WKT MULTIPOLYGON string
+    let wkt = dataValue 
+    // Parse WKT → GeoJSON
+    let geojson = Terraformer.wktToGeoJSON(wkt);
+    // Initialize Leaflet map
+    let map = L.map(mapId).setView([0, 0], 2);
+      
+    // Add OSM basemap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Leaflet expects [lat, lng], but GeoJSON gives [lng, lat]
+    let layer = L.geoJSON(geojson, {
+      coordsToLatLng: function (coords) {
+        return L.latLng(coords[1], coords[0]);
+      },
+      style: { color: 'red', weight: 2 }
+    }).addTo(map);
+
+    // Zoom to polygon
+    map.fitBounds(layer.getBounds());
+  
+  }  
+</script>
