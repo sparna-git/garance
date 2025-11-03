@@ -297,27 +297,27 @@ exports.findShapeAttributes = function (object, predicateUri, shapes, context) {
   );
 
   if (propertyShape) {
-    // extraire les attributs souhaités
-    if ("weight" in propertyShape) {
-      weight = propertyShape.weight;
+    // extraire les attributs souhaités (avec préfixe pagefind:)
+    if ("pagefind:weight" in propertyShape) {
+      weight = propertyShape["pagefind:weight"];
     }
 
-    if ("meta" in propertyShape) {
-      const metaValues = Array.isArray(propertyShape.meta)
-        ? propertyShape.meta
-        : [propertyShape.meta];
+    if ("pagefind:meta" in propertyShape) {
+      const metaValues = Array.isArray(propertyShape["pagefind:meta"])
+        ? propertyShape["pagefind:meta"]
+        : [propertyShape["pagefind:meta"]];
       metaKeys.push(...metaValues);
     }
 
-    if ("filter" in propertyShape) {
-      const filterValues = Array.isArray(propertyShape.filter)
-        ? propertyShape.filter
-        : [propertyShape.filter];
+    if ("pagefind:filter" in propertyShape) {
+      const filterValues = Array.isArray(propertyShape["pagefind:filter"])
+        ? propertyShape["pagefind:filter"]
+        : [propertyShape["pagefind:filter"]];
       filter.push(...filterValues);
     }
 
-    if ("exclude" in propertyShape) {
-      exclude = propertyShape.exclude;
+    if ("pagefind:ignore" in propertyShape) {
+      exclude = propertyShape["pagefind:ignore"];
     }
   }
 
