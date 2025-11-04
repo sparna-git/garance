@@ -1,5 +1,10 @@
 <!DOCTYPE html>
+{% set currentUrl = page.url %}
+{% if currentUrl and currentUrl.indexOf('/search') != -1 %}
+<html lang="fr" dir="ltr">
+{% else %}
 <html lang="{{ lang }}" dir="{{ dir }}">
+{% endif %}
     <head>
         <meta charset="UTF-8">
         <meta name="viewpoint" content="width=device-witdth">
