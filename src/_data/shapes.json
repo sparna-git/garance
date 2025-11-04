@@ -24,22 +24,22 @@
         {
           "sh:order": 5,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#beginningDate",
-          "meta": ["Date de début"]
+          "pagefind:meta": ["Date de début"]
         },
         {
           "sh:order": 6,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#endDate",
-          "meta": ["Date de fin"]
+          "pagefind:meta": ["Date de fin"]
         },
         {
           "sh:order": 7,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#birthDate",
-          "meta": ["Date de naissance"]
+          "pagefind:meta": ["Date de naissance"]
         },
         {
           "sh:order": 8,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#deathDate",
-          "meta": ["Date de décès"]
+          "pagefind:meta": ["Date de décès"]
         },
         {
           "sh:order": 9,
@@ -57,25 +57,25 @@
           "sh:order": 12,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadCorporateBodyType",
           "volipi:class": "horizontal",
-          "meta": ["Type de collectivité"],
-          "filter": ["Type de collectivité"]
+          "pagefind:meta": ["Type de collectivité"],
+          "pagefind:filter": ["Type de collectivité"]
         },
         {
           "sh:order": 13,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadOccupationOfType",
           "volipi:class": "horizontal",
-          "filter": ["Type d'occupation"],
-          "meta": ["Type d'occupation"]
+          "pagefind:filter": ["Type d'occupation"],
+          "pagefind:meta": ["Type d'occupation"]
         },
         {
           "sh:order": 14,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#generalDescription",
-          "weight": 3.0
+          "pagefind:weight": 3.0
         },
         {
           "sh:order": 15,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#history",
-          "weight": 3.0
+          "pagefind:weight": 3.0
         },
         {
           "sh:order": 16,
@@ -112,7 +112,7 @@
         {
           "sh:order": 24,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#isDirectSubordinateTo",
-          "meta": ["Est subordonné à"]
+          "pagefind:meta": ["Est subordonné à"]
         },
         {
           "sh:order": 25,
@@ -154,12 +154,12 @@
         {
           "sh:order": 34,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent",
-          "exclude": true
+          "pagefind:ignore": true
         },
         {
           "sh:order": 35,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrganicProvenanceOf",
-          "exclude": true
+          "pagefind:ignore": true
         },
         {
           "sh:order": 36,
@@ -168,22 +168,22 @@
         {
           "sh:order": 37,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#thingIsConnectedToRelation",
-          "exclude": true
+          "pagefind:ignore": true
         },
         {
           "sh:order": 38,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#thingIsTargetOfRelation",
-          "exclude": true
+          "pagefind:ignore": true
         },
         {
           "sh:order": 39,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#thingIsSourceOfRelation",
-          "exclude": true
+          "pagefind:ignore": true
         },
         {
           "sh:order": 40,
           "sh:path": "http://www.w3.org/2002/07/owl#sameAs",
-          "exclude": true
+          "pagefind:ignore": true
         },
         {
           "sh:order": 41,
@@ -201,7 +201,7 @@
         {
           "sh:order": 2,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#textualValue",
-          "weight": 6.0
+          "pagefind:weight": 6.0
         },
         {
           "sh:order": 3,
@@ -595,7 +595,7 @@
         {
           "sh:order": 3,
           "sh:path": "http://www.w3.org/2004/02/skos/core#altLabel",
-          "weight": 6.0
+          "pagefind:weight": 6.0
         },
         {
           "sh:order": 4,
@@ -604,7 +604,7 @@
         {
           "sh:order": 5,
           "sh:path": "http://rdf.insee.fr/def/geo#codeINSEE",
-          "meta": ["Code INSEE"]
+          "pagefind:meta": ["Code INSEE"]
         },
         {
           "sh:order": 6,
@@ -613,18 +613,18 @@
         {
           "sh:order": 7,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadPlaceType",
-          "filter": ["Type de Lieu"],
-          "meta": ["Type de Lieu"]
+          "pagefind:filter": ["Type de Lieu"],
+          "pagefind:meta": ["Type de Lieu"]
         },
         {
           "sh:order": 8,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#type",
-          "meta": ["Type"]
+          "pagefind:meta": ["Type"]
         },
         {
           "sh:order": 9,
           "sh:path": "https://rdf.archives-nationales.culture.gouv.fr/ontology#status",
-          "meta": ["Statut"]
+          "pagefind:meta": ["Statut"]
         },
         {
           "sh:order": 10,
@@ -636,11 +636,13 @@
         },
         {
           "sh:order": 12,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#generalDescription"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#generalDescription",
+          "pagefind:weight": 3.0
         },
         {
           "sh:order": 13,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#history"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#history",
+          "pagefind:weight": 3.0
         },
         {
           "sh:order": 14,
@@ -664,12 +666,13 @@
         },
         {
           "sh:order": 19,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadLocation"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadLocation",
+          "pagefind:ignore": true
         },
         {
           "sh:order": 20,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadPhysicalLocation",
-          "exclude": true
+          "pagefind:ignore": true
         },
         {
           "sh:order": 21,
@@ -682,7 +685,8 @@
         {
           "sh:order": 23,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasContainedBy",
-          "volipi:class": "horizontal"
+          "volipi:class": "horizontal",
+          "pagefind:ignore": true
         },
         {
           "sh:order": 24,
@@ -704,13 +708,13 @@
         {
           "sh:order": 28,
           "sh:path": "http://rdf.insee.fr/def/geo#chefLieu",
-          "meta": ["Chef de lieu"]
+          "pagefind:meta": ["Chef de lieu"]
         },
         {
           "sh:order": 29,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasAdjacentTo",
           "volipi:class": "horizontal",
-          "exclude": true
+          "pagefind:ignore": true
         },
         {
           "sh:order": 30,
@@ -755,7 +759,7 @@
         {
           "sh:order": 40,
           "sh:path": "http://www.w3.org/2002/07/owl#sameAs",
-          "exclude": true
+          "pagefind:ignore": true
         },
         {
           "sh:order": 41,
@@ -812,7 +816,7 @@
         {
           "sh:order": 3,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#type",
-          "exclude": true
+          "pagefind:ignore": true
         }
       ]
     }

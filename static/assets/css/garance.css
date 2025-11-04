@@ -400,3 +400,10 @@ mark {
     margin-bottom: 0.25rem;
   }
 }
+
+#map {
+  height: 200px;
+  width: 100%;
+  border: 1px solid #ccc;
+  z-index: 1;
+}

@@ -160,7 +160,11 @@
         {% set langOrType = literal['@language'] or literal['@type'] or literal['language'] or literal['type'] %}
         {# special : if we find html tags inside, don't print the datatype - because value may contain HTML rendering, typically <p>, and the <sup> would be on a new line #}
         {% if not (langOrType == "rdf:XMLLiteral") %}
-            <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
+            {% if (langOrType == "http://www.opengis.net/ont/geosparql#wktLiteral") %}
+                <div id="map" data="{{ value | safe | stripHtmlPrefix }}"></div>
+            {% else %}
+                <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
+            {% endif %}
         {% else %}
             <span class="literal">{{ value | safe | stripHtmlPrefix }}</span>
         {% endif %}

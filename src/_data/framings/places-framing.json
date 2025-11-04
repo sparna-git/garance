@@ -98,8 +98,8 @@
         "@omitDefault": true,
         "@explicit": true,
         "rico:note": { "@omitDefault": true },
-        "__comment": "removed rico:measure",
-        "rico:geodesicSystem": { "@omitDefault": true }
+        "rico:geodesicSystem": { "@omitDefault": true },
+        "rico:measure": { "@omitDefault": true }
       }
   },
   "rico:hasOrHadPlaceName": {
