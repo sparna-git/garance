@@ -265,6 +265,24 @@ function isLabelPredicate(predicateKey, context) {
   );
 }
 
+/**
+ * 
+ * @param {*} literal 
+ * @param {*} context 
+ * @returns the full IRI of the datatype of the literal value, or null if none
+ */
+function getDatatype(literal, context) {
+  if (isLiteralObject(literal)) {
+    let datatype = literal["@type"] || literal.type;
+    if (datatype) {
+      return expandUri(datatype, context);
+    }
+  } else if (isLiteralString(literal)) {
+    // TODO look in the context for a default datatype
+  }
+  return null;
+}
+
 module.exports = {
   getId: getId,
   getTypes: getTypes,
@@ -359,6 +377,8 @@ module.exports = {
   expandUri: expandUri,
   findPredicate: findPredicate,
   findById: findById,
+
+  getDatatype: getDatatype,
 
   /**
    * Strips the HTML prefix from a literal.

@@ -5,6 +5,7 @@ const filters = require('./utils/filters.js')
 const jsonldFilters = require('./utils/jsonld.js')
 const shapesFilters = require('./utils/shapes.js')
 const anFilters = require('./utils/archives-nationales.js')
+const jsonLdPluginsRegistry = require('./utils/jsonld-plugins-registry.js')
 
 module.exports = async function (config) {
   const { EleventyI18nPlugin } = await import("@11ty/eleventy");
@@ -26,6 +27,9 @@ module.exports = async function (config) {
   });
   Object.keys(shapesFilters).forEach((filterName) => {
     config.addFilter(filterName, shapesFilters[filterName])
+  });
+  Object.keys(jsonLdPluginsRegistry).forEach((filterName) => {
+    config.addFilter(filterName, jsonLdPluginsRegistry[filterName])
   });
   Object.keys(anFilters).forEach((filterName) => {
     config.addFilter(filterName, anFilters[filterName])

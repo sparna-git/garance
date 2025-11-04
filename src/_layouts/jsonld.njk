@@ -12,8 +12,14 @@
 {% macro doRender(object, depth, mainObject) %}
     {% set obj = object | unboxArray %}
 
+    {# The rendering plugin foudn from the registry#}
+    {% set renderingPlugin = obj | getRenderingPlugin(context) %}
+
     {% if obj is null %}
         null
+    {% elif renderingPlugin %}
+       {# temporary : call the plugin found from the registry #}
+       {{ renderingPlugin }}
     {% elif obj | isIriPrefixed(context) %}
         {# expands the prefixed URI and print it #}
         {{ renderPlainUri(obj | expandUri(context)) }}
