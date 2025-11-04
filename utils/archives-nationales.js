@@ -89,18 +89,27 @@ function getLastModificationDate(agent) {
 }
 
 /**
- * Returns the SIV URL (rdfs:seeAlso) if available on digital instantiation.
+ * Returns the SIV URL (rdfs:seeAlso) if available on digital instantiation of format text/xml
  * @param {object} agent - The agent object.
  * @returns {string|null} The SIV URL or null.
  */
-function getSivSeeAlsoUrl(agent) {
-  const seeAlso =
-    agent?.["rico:isOrWasDescribedBy"]?.["rico:hasOrHadDigitalInstantiation"]?.[
-      "rdfs:seeAlso"
-    ];
-  return typeof seeAlso === "object"
-    ? seeAlso?.id || seeAlso?.["@id"]
-    : seeAlso || null;
+function getSivSeeAlsoUrl(item) {
+  const digitalInstances =
+    item?.["rico:isOrWasDescribedBy"]?.["rico:hasOrHadDigitalInstantiation"];
+  // normalize to array
+  let instantiations = [digitalInstances].flat();
+  
+  for (const instantiation of instantiations) {
+    const format = instantiation?.["dc:format"];
+    if (format == "text/xml") {
+      let seeAlso = instantiation["rdfs:seeAlso"];
+      if(seeAlso) {
+        return typeof seeAlso === "object"
+          ? seeAlso?.id || seeAlso?.["@id"]
+          : seeAlso || null;
+      }
+    }
+  }
 }
 
 function isValidDateFormat(dateString) {
