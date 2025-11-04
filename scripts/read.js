@@ -9,9 +9,8 @@ const { rdfParser } = require("rdf-parse");
 const { rdfSerializer } = require("rdf-serialize");
 //npm install jsonld
 const jsonld = require("jsonld");
-
-const { resolve } = require("path");
 const path = require("path");
+const writeLargeJsonFile = require('./writeLargeJsonFile');
 
 let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
   // Get all files in directory root of resources
@@ -106,41 +105,6 @@ async function streamToString(stream) {
 function getDirectoriesFiles(src) {
   return glob.sync(src + "/**/*");
 }
-
-// Custom function to write large JSON objects with chunked arrays
-function writeLargeJsonFile(filePath, jsonObject) {
-  const stream = fs.createWriteStream(filePath, { encoding: "utf8" });
-  stream.write('{\n');
-  const keys = Object.keys(jsonObject);
-  keys.forEach((key, idx) => {
-    stream.write(`"${key}": `);
-    const value = jsonObject[key];
-    if (Array.isArray(value)) {
-      stream.write('[');
-      for (let i = 0; i < value.length; i += 1000) {
-        const chunk = value.slice(i, i + 1000);
-        console.log(`Writing chunk ${i / 1000 + 1} for property "${key}" (${chunk.length} items)`);
-        stream.write(JSON.stringify(chunk, null, 2).slice(1, -1)); // remove [ and ]
-        if (i + 1000 < value.length) stream.write(',');
-      }
-      stream.write(']');
-    } else if (typeof value === 'object' && value !== null) {
-      stream.write(JSON.stringify(value, null, 2));
-    } else {
-      stream.write(JSON.stringify(value));
-    }
-    if (idx < keys.length - 1) stream.write(',\n');
-  });
-  stream.write('\n}');
-  stream.end();
-  stream.on('finish', () => {
-    console.log('Done writing !');
-  });
-  stream.on('error', (err) => {
-    console.error(err);
-  });
-}
-
 
 (async () => {
   console.log("Reading " + process.argv[2] + "...");

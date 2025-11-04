@@ -3,6 +3,7 @@ const fs = require("fs");
 //npm install jsonld
 const jsonld = require("jsonld");
 const json = require('big-json');
+const writeLargeJsonFile = require('./writeLargeJsonFile');
 
 /**
  * Removes type keys from an object.
@@ -366,7 +367,8 @@ let doFrame = async function (dataJsonLd, framingSpecPath, outputFile, postProce
   let processed = postProcessFn ? postProcessFn(framed) : framed;
 
   console.log("Writing to file : " + outputFile + " ...");
-  fs.writeFileSync(outputFile, JSON.stringify(processed, null, 2), { encoding: "utf8" });
+  // fs.writeFileSync(outputFile, JSON.stringify(processed, null, 2), { encoding: "utf8" });
+  writeLargeJsonFile(outputFile, processed);
 };
 
 
