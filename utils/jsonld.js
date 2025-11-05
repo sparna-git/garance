@@ -432,4 +432,8 @@ module.exports = {
     });
     return obj;
   },
+
+  findMEasure: function(obj) {
+    return obj.includes("rico:measure");
+  }
 };

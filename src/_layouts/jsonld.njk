@@ -61,13 +61,29 @@
 {% macro renderObject(object, depth, mainObject) %}
     <div class="entity">
         {% set sortedKeys = object | sortPredicates(shapes,context) %}
-        {% for predicate in sortedKeys %}
-          {% set value = object[predicate] %}
-          {% if predicate != "id" and predicate != "@id" %}
-            {{ renderPredicateValues(object, predicate, value, depth, mainObject) }}
+        
+        {% set langOrType = object['@language'] or object['@type'] or object['language'] or object['type'] %}
+        {% if (langOrType == "rico:Coordinates") %}
+          {% set bMeasure = sortedKeys | findMEasure %}
+          {% if (bMeasure) %}
+            {% set CoordinatesValue = object["rico:measure"]["@value"] %}
+            <div id="map" data="{{ CoordinatesValue | safe | stripHtmlPrefix }}"></div>
+          {% else %}
+            {{ renderObjectValue(sortedKeys,object,depth, mainObject) }}
           {% endif %}
-        {% endfor %}
+        {% else %}
+          {{ renderObjectValue(sortedKeys,object,depth, mainObject) }}
+        {% endif %}
     </div>
+{% endmacro %}
+
+{% macro renderObjectValue(sortedKeys,object,depth, mainObject) %}
+  {% for predicate in sortedKeys %}
+    {% set value = object[predicate] %}
+    {% if predicate != "id" and predicate != "@id" %}
+      {{ renderPredicateValues(object, predicate, value, depth, mainObject) }}
+    {% endif %}
+  {% endfor %}
 {% endmacro %}
 
 {% macro renderPredicateValues(object, predicate, values, depth, mainObject) %}
@@ -140,7 +156,6 @@
   </div>
 {% endmacro %}
 
-
 {% macro renderPredicate(predicate) %}
     <div class="entity-predicate-predicate-title">
         {% set formattedPredicate = predicate | expandUri(context) | shortenUri(context) %}
@@ -155,9 +170,6 @@
     </div>
 {% endmacro %}
 
-
-
-
 {% macro renderLiteral(literal) %}
     {% if literal is string %}
         <span class="literal">{{ literal }}</span>
@@ -166,11 +178,7 @@
         {% set langOrType = literal['@language'] or literal['@type'] or literal['language'] or literal['type'] %}
         {# special : if we find html tags inside, don't print the datatype - because value may contain HTML rendering, typically <p>, and the <sup> would be on a new line #}
         {% if not (langOrType == "rdf:XMLLiteral") %}
-            {% if (langOrType == "http://www.opengis.net/ont/geosparql#wktLiteral") %}
-                <div id="map" data="{{ value | safe | stripHtmlPrefix }}"></div>
-            {% else %}
-                <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
-            {% endif %}
+            <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
         {% else %}
             <span class="literal">{{ value | safe | stripHtmlPrefix }}</span>
         {% endif %}
@@ -199,7 +207,7 @@
 {% endmacro %}
 
 {% macro renderAsList(valueArray, depth, mainObject) %}
-    {% for item in valueArray %}
+    {% for item in valueArray %}        
         {{ doRender(item, depth+1, mainObject) }}{% if not loop.last %}, {% endif %}
     {% endfor %}
 {% endmacro %}
