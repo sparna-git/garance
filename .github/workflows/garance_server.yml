@@ -40,8 +40,10 @@ jobs:
             export NODE_OPTIONS=--max-old-space-size=4096
             npm run build
 
-      - run: ls -l Referentiels
-      - run: ls -l dist
+      - run: ls -l Referentiels/agents
+      - run: ls -l Referentiels/lieux
+      - run: ls -l dist/entities/agent
+      - run: ls -l dist/entities/place
       
       - name: Copy the referentiel rdf file to dist\agents or dist\places
         run: npm run copyFiles
