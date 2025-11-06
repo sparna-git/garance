@@ -106,7 +106,8 @@ function resourcesAgents(
     });
     if (getResult) {
       // build the full path of the file
-      const filePath = path.join(directoryAgentReferentiels, getResult[0].rdfpath);
+      //path.join(directoryAgentReferentiels, 
+      const filePath = getResult[0].rdfpath;
       pathAgentsFiles.push({ name: agentId, rdfpath: filePath });
     } else {
       pathAgentsFiles.push({ name: agentId, rdfpath: "" });
