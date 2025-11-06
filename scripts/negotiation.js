@@ -33,14 +33,14 @@ function getIdentifiers(jsonResource, eNode) {
 function getAllListFilesResources(directoryResource) {
   //
   const allResources = glob.sync(directoryResource + "/**/*.rdf"); //globSync("**/*.rdf", { cwd: directoryResource }); 
-  console.log("directory Referentiels")
-  console.log(allResources)
   //
   const objResource = []
   allResources.forEach((element) => {
     const e = element.split("\\");
     objResource.push({ name: e[e.length - 1], rdfpath: element });
 });
+  console.log("directory Referentiels")
+  console.log(objResource)
   return objResource;
 }
 
@@ -61,7 +61,6 @@ function copyResourceAgents(dirDist,pathResource) {
       // path target
       const dirTarget = dirDist + "/" + name_of_dist + "/";
       // Copy File
-      console.log(pathResource + " ==> " + dirTarget);
       fs.copyFile(pathResource, dirTarget+'data.rdf', (err) => {
         if (err) throw err;
         console.log("The file was copied...");
