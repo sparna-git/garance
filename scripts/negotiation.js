@@ -75,13 +75,13 @@ function copyResource(dirDist, pathResource) {
   for (let agent of pathResource) {
     const name = agent["name"];
     let name_of_dist = name.replace("_Place_", "_").replace(".rdf", "");    
-    const pathResource = agent["rdfpath"];
+    const pathAgentResource = agent["rdfpath"];
 
     if (distWeb.includes(name_of_dist)) {
       // path target
       const dirTarget = dirDist + "/" + name_of_dist + "/";
       // Copy File
-      fs.copyFile(pathResource, dirTarget + "data.rdf", (err) => {
+      fs.copyFile(pathAgentResource, dirTarget + "data.rdf", (err) => {
         if (err) throw err;
         console.log("The file was copied...");
       });
