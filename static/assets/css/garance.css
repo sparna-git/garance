@@ -342,6 +342,19 @@ mark {
 }
 
 /*--------------------------------------------------------------
+# Custom macros styles
+--------------------------------------------------------------*/
+
+.identifierTextualValue {
+  font-family: monospace;
+}
+
+.identifierType {
+  font-size: small;
+  font-style: italic;
+}
+
+/*--------------------------------------------------------------
 # Places and Agents pages css
 --------------------------------------------------------------*/
 .alphabet-index .alphabet-btn {

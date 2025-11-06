@@ -16,6 +16,15 @@
     <div class="ricoExtent">
         {% if type %}<span class="extentType">{{ type }}</span> : {% endif %}
         {% if quantity %}<span class="extentQuantity">{{ quantity }}</span>{% endif %}
-        {% if unit %}<span class="extentUnit">{{ unit }}</span>{% endif %}
+        {% if unit %}<span class="extentUnit">{{ unit }}s</span>{% endif %}
+    </div>
+{% endmacro %}
+
+{% macro renderRicoIdentifier(obj, depth, mainObject) %}
+    {% set type = obj | getPredicateFirstValue("rico:type", context) %}
+    {% set textualValue = obj | getPredicateFirstValue("rico:textualValue", context) %}
+    <div class="ricoIdentifier">
+        {% if textualValue %}<span class="identifierTextualValue">{{ textualValue }}</span> {% endif %}
+        {% if type %}<span class="identifierType">({{ type }})</span> {% endif %}
     </div>
 {% endmacro %}

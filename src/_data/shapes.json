@@ -806,6 +806,7 @@
     },
     {
       "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#Identifier",
+      "volipi:template": "renderRicoIdentifier",
       "sh:property": [
         {
           "sh:order": 1,
