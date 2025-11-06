@@ -37,7 +37,7 @@ function getAllListFilesResources(directoryResource) {
   const objResource = []
   allResources.forEach((element) => {
     const e = element.split("\\");
-    objResource.push({ name: e[e.length - 1], path: element });
+    objResource.push({ name: e[e.length - 1], rdfpath: element });
 });
   return objResource;
 }
@@ -54,13 +54,11 @@ function copyResourceAgents(dirDist,pathResource) {
       name_of_dist = name.replace("_Agent_", "_").replace(".rdf", "");
     }
 
-    const pathResource = agent["path"];
+    const pathResource = agent["rdfpath"];
     console.log(name_of_dist);
     if (distWeb.includes(name_of_dist)) {
-      console.log("Agent Id: " + name_of_dist + " Path: " + path);
       // path target
       const dirTarget = dirDist + "/" + name_of_dist + "/";
-      console.log(dirTarget);
       // Copy File
       fs.copyFile(pathResource, dirTarget+'data.rdf', (err) => {
         if (err) throw err;
@@ -76,10 +74,9 @@ function copyResource(dirDist, pathResource) {
   for (let agent of pathResource) {
     const name = agent["name"];
     let name_of_dist = name.replace("_Place_", "_").replace(".rdf", "");    
-    const pathResource = agent["path"];
+    const pathResource = agent["rdfpath"];
 
     if (distWeb.includes(name_of_dist)) {
-      console.log("Agent Id: " + name_of_dist + " Path: " + pathResource);
       // path target
       const dirTarget = dirDist + "/" + name_of_dist + "/";
       // Copy File
@@ -140,9 +137,9 @@ function resourcesPlaces(
         directoryPlacesReferentiels,
         getResult[0].path
       );
-      pathPlacesFiles.push({ name: placeId, path: filePath });
+      pathPlacesFiles.push({ name: placeId, rdfpath: filePath });
     } else {
-      pathPlacesFiles.push({ name: placeId, path: "" });
+      pathPlacesFiles.push({ name: placeId, rdfpath: "" });
     }
   });
   // Copy all files Agents in the dist directory
@@ -153,7 +150,7 @@ function resourcesPlaces(
   
   // --- Agents  ---
   const directoryAgentReferentiels = "Referentiels/agents";
-  const distAgents = "./dist/entities/agent";
+  const distAgents = "dist/entities/agent";
   console.log("Reading " + "src/_data/agentsHeader.json" + " for Agents...");
   let dataJsonAgents = fs.readFileSync("src/_data/agentsHeader.json");
   // Get list of file name
@@ -162,7 +159,7 @@ function resourcesPlaces(
   
   // Places
   const directoryPlaceReferentiels = "Referentiels/lieux";
-  const distPlace = "./dist/entities/place";
+  const distPlace = "dist/entities/place";
   console.log("Reading " + "src/_data/placesHeader.json" + " for places...");
   let dataJsonPlaces = fs.readFileSync("src/_data/placesHeader.json");
   // Get list of file name
