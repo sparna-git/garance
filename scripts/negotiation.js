@@ -152,7 +152,7 @@ function resourcesPlaces(
 (async () => {
   
   // --- Agents  ---
-  const directoryAgentReferentiels = "./Referentiels/agents";
+  const directoryAgentReferentiels = "Referentiels/agents";
   const distAgents = "./dist/entities/agent";
   console.log("Reading " + "src/_data/agentsHeader.json" + " for Agents...");
   let dataJsonAgents = fs.readFileSync("src/_data/agentsHeader.json");
@@ -161,7 +161,7 @@ function resourcesPlaces(
   resourcesAgents(listOfIdAgents, directoryAgentReferentiels, distAgents);
   
   // Places
-  const directoryPlaceReferentiels = "./Referentiels/lieux";
+  const directoryPlaceReferentiels = "Referentiels/lieux";
   const distPlace = "./dist/entities/place";
   console.log("Reading " + "src/_data/placesHeader.json" + " for places...");
   let dataJsonPlaces = fs.readFileSync("src/_data/placesHeader.json");
