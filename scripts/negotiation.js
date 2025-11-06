@@ -32,7 +32,7 @@ function getIdentifiers(jsonResource, eNode) {
 
 function getAllListFilesResources(directoryResource) {
   //
-  const allResources = globSync("**/*.rdf", { cwd: directoryResource }); 
+  const allResources = glob.sync(src + "/**/*.rdf"); //globSync("**/*.rdf", { cwd: directoryResource }); 
   console.log("directory Referentiels")
   console.log(allResources)
   //
