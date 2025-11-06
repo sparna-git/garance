@@ -139,12 +139,14 @@
     "skos:prefLabel": { "@omitDefault": true }
   },
   "rico:isOrWasAffectedBy": {
-    "@embed": "@once",
+    "__comment": "note the @embed @always",
+    "@embed": "@always",
     "@omitDefault": true,
     "@explicit": true,
     "rico:date": { "@omitDefault": true },
     "rico:generalDescription": { "@omitDefault": true },
     "rico:hasActivityType": {
+      "@embed": "@always",
       "@omitDefault": true,
       "@explicit": true,
       "skos:prefLabel": { "@omitDefault": true }
