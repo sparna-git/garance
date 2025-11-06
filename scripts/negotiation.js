@@ -36,7 +36,7 @@ function getAllListFilesResources(directoryResource) {
   //
   const objResource = []
   allResources.forEach((element) => {
-    const e = element.split("\\");
+    const e = element.split("/");
     objResource.push({ name: e[e.length - 1], rdfpath: element });
 });
   console.log("directory Referentiels")
