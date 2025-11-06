@@ -150,9 +150,10 @@ function resourcesPlaces(
 (async () => {
   
   // --- Agents  ---
-  const directoryAgentReferentiels = "Referentiels/agents";
-  const distAgents = "dist/entities/agent";
-  
+  const directoryAgentReferentiels = process.argv[2] //"Referentiels/agents";
+  console.log(directoryAgentReferentiels)
+  const distAgents = process.argv[3] //"dist/entities/agent";
+  console.log(distAgents)
   console.log("Reading " + "src/_data/agentsHeader.json" + " for Agents...");
   let dataJsonAgents = fs.readFileSync("src/_data/agentsHeader.json");
   
@@ -162,8 +163,10 @@ function resourcesPlaces(
   resourcesAgents(listOfIdAgents, directoryAgentReferentiels, distAgents);
   
   // Places
-  const directoryPlaceReferentiels = "Referentiels/lieux";
-  const distPlace = "./dist/entities/place";
+  const directoryPlaceReferentiels = process.argv[4] //"Referentiels/lieux";
+  console.log(directoryPlaceReferentiels)
+  const distPlace = process.argv[5] //"./dist/entities/place";
+  console.log(distPlace)
   
   console.log("Reading " + "src/_data/placesHeader.json" + " for places...");
   let dataJsonPlaces = fs.readFileSync("src/_data/placesHeader.json");
