@@ -183,9 +183,6 @@ mark {
   position: relative;
 }
 
-.header-download {
-}
-
 .header-date {
   font-size: smaller;
   font-style: italic;
@@ -236,20 +233,6 @@ mark {
   padding-top: 5px;
 }
 
-.entity-predicate.horizontal
-  > .entity-predicate-values
-  > .entity-predicate-values-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.entity-predicate.horizontal
-  > .entity-predicate-values
-  > .entity-predicate-values-list
-  > .entity-predicate-values-value:not(.last)::after {
-  content: ";\00a0";
-}
-
 /*
 .entity-predicate-values:not(.entity-predicate-values *) {
     border-bottom: 1px solid #dbdbdb;
@@ -289,6 +272,29 @@ mark {
   > .entity-predicate-values-list
   > .entity-predicate-values-value.last:not(.entity-predicate-values-value *) {
   border-bottom: 1px solid #dbdbdb;
+}
+
+
+.entity-predicate.horizontal
+  > .entity-predicate-values
+  > .entity-predicate-values-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.entity-predicate.horizontal
+  > .entity-predicate-values
+  > .entity-predicate-values-list
+  > .entity-predicate-values-value:not(.last)::after {
+  content: ";\00a0";
+}
+
+.entity-predicate.horizontal
+  > .entity-predicate-values
+  > .entity-predicate-values-list
+  > .entity-predicate-values-value 
+  > .entity{
+  display: inline-block;
 }
 
 .label {

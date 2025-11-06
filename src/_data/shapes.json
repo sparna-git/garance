@@ -718,7 +718,8 @@
         },
         {
           "sh:order": 30,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasExtent"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasExtent",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 31,
@@ -783,6 +784,7 @@
     },
     {
       "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#Extent",
+      "volipi:template": "renderRicoExtent",
       "sh:property": [
         {
           "sh:order": 1,
@@ -817,6 +819,28 @@
           "sh:order": 3,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#type",
           "pagefind:ignore": true
+        }
+      ]
+    },
+    {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#Coordinates",
+      "volipi:template": "renderRicoCoordinates",
+      "sh:property": [
+        {
+          "sh:order": 1,
+          "sh:path": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#geodesicSystem"
+        },
+        {
+          "sh:order": 3,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#note"
+        },
+        {
+          "sh:order": 4,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#measure"
         }
       ]
     }

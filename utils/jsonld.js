@@ -28,23 +28,11 @@ const SCHEMA_NAME = "http://schema.org/name";
  */
 const DCTERMS_TITLE = "http://purl.org/dc/terms/title";
 
-/**
- * Gets the ID of an object.
- * @param {object} obj - The object to get the ID from.
- * @returns {string} The ID of the object.
- */
-function getId(obj) {
-  return obj.id ? obj.id : obj["@id"];
-}
 
-/**
- * Gets the type of an object.
- * @param {object} obj - The object to get the type from.
- * @returns {string or array} The type or types of the object.
- */
-function getTypes(obj) {
-  return obj.type ? obj.type : obj["@type"];
-}
+/*****************************
+ * isXXXXXX functions
+ * Utility functions to identify the nature of JSON-LD items.
+ *****************************/
 
 /**
  * Checks if a value is an IRI string.
@@ -74,18 +62,6 @@ function isIriPrefixed(value, context) {
   );
 }
 
-/**
- * Returns the expanded IRI of the object
- */
-function getIriExpanded(obj, context) {
-  if (typeof obj === "object") {
-    var iri = getId(obj);
-    var expandedIri = expandUri(iri, context);
-    return expandedIri;
-  } else {
-    return null;
-  }
-}
 
 /**
  * Checks if an object is a literal string.
@@ -116,6 +92,219 @@ function isLiteralArrayWithSingleValue(obj) {
     obj.length === 1 &&
     (isLiteralString(obj[0]) || isLiteralObject(obj[0]))
   );
+}
+
+/**
+ * Checks if a value is an array.
+ * @param {*} value - The value to check.
+ * @returns {boolean} True if the value is an array, false otherwise.
+ */
+function isArray(value) {
+    return Array.isArray(value);
+}
+
+/**
+ * Checks if a value is an IRI object with only possibly a type.
+ * @param {object} value - The value to check.
+ * @returns {boolean} True if the value is an IRI object, possibly with only a type, false otherwise.
+ */
+function isIriObjectWithOnlyOptionalType(value) {
+  return (
+    typeof value === "object" &&
+    (("id" in value && !value["id"].startsWith("_:")) ||
+      ("@id" in value && !value["@id"].startsWith("_:"))) &&
+    (Object.keys(value).length === 1 ||
+      (Object.keys(value).length === 2 &&
+        ("type" in value || "@type" in value)))
+  );
+}
+
+/**
+ * Checks if an object has a single label property.
+ * @param {object} obj - The object to check.
+ * @returns {boolean} True if the object has a single label property, false otherwise.
+ */
+function isObjectWithSingleLabelProperty(obj, context) {
+  if (!obj || !(typeof obj === "object")) return false;
+  const keys = Object.keys(obj);
+  const valueKeys = keys.filter(
+    (k) => k !== "id" && k !== "@id" && k !== "type" && k !== "@type"
+  );
+
+  return (
+    (keys.includes("id") || keys.includes("@id")) &&
+    valueKeys.length === 1 &&
+    obj[valueKeys[0]] !== null &&
+    (isLiteralString(obj[valueKeys[0]]) ||
+      isLiteralObject(obj[valueKeys[0]]) ||
+      isLiteralArrayWithSingleValue(obj[valueKeys[0]])) &&
+    isLabelPredicate(valueKeys[0], context)
+  );
+}
+
+/**
+ * 
+ * @param {*} predicateKey the expanded or shortened predicate
+ * @param {*} context 
+ * @returns true if the provided predicate is a well-known labelling predicate
+ */
+function isLabelPredicate(predicateKey, context) {
+  var expanded = expandUri(predicateKey, context);
+  return (
+    expanded == RDFS_LABEL ||
+    expanded == SKOS_PREFLABEL ||
+    expanded == FOAF_NAME ||
+    expanded == DCTERMS_TITLE ||
+    expanded == SCHEMA_NAME
+  );
+}
+
+/*****************************
+ * end isXXXXXX functions
+ *****************************/
+
+
+
+/*****************************
+ * getXXXXXX functions
+ *****************************/
+
+
+
+/**
+ * Gets the ID of an object.
+ * @param {object} obj - The object to get the ID from.
+ * @returns {string} The ID of the object.
+ */
+function getId(obj) {
+  return obj.id ? obj.id : obj["@id"];
+}
+
+/**
+ * Gets the type of an object.
+ * @param {object} obj - The object to get the type from.
+ * @returns {string or array} The type or types of the object.
+ */
+function getTypes(obj) {
+  return obj.type ? obj.type : obj["@type"];
+}
+
+
+/**
+ * Returns the expanded IRI of the object
+ */
+function getIriExpanded(obj, context) {
+  if (typeof obj === "object") {
+    var iri = getId(obj);
+    var expandedIri = expandUri(iri, context);
+    return expandedIri;
+  } else {
+    return null;
+  }
+}
+
+
+/**
+ * Gets a predicate in an object using the provided context.
+ * @param {object} object - The object to search for the predicate.
+ * @param {string} predicateFullIri - The full IRI of the predicate to find.
+ * @param {object} context - The context to use for finding the predicate.
+ * @returns {any} The value of the predicate if found, null otherwise.
+ */
+function getPredicate(object, predicateFullIri, context) {
+  const predicateKey = shortenUri(predicateFullIri, context);
+  if (object[predicateFullIri]) {
+    // either the full predicate URI is used directly as a key
+    return object[predicateFullIri];
+  } else if (object[predicateKey]) {
+    // or (most common) the short URI is used as a key
+    return object[predicateKey];
+  } else {
+    // or the context specifies a new JSON key remapped to this URI
+    let uriMappings = Object.entries(context).find(([prefix, mapping]) => {
+      return (
+        typeof mapping === "object" &&
+        (mapping["@id"] == predicateFullIri || mapping["@id"] == predicateKey)
+      );
+    });
+    if (uriMappings && uriMappings.length == 1) {
+      return object[uriMappings[0]];
+    } else {
+      return null;
+    }
+  }
+}
+
+function getPredicateFirstValue(object, predicateFullIri, context) {
+  let predicateValue = getPredicate(object, predicateFullIri, context);
+  if (predicateValue) {
+    // take only the first value if an array
+    if(isArray(predicateValue)) {
+      predicateValue = predicateValue[0];
+    }
+    
+    if (isLiteralObject(predicateValue)) {
+      return predicateValue["@value"] || predicateValue["value"];
+    } else if (isLiteralString(predicateValue)) {
+      return predicateValue;
+    }
+  }
+}
+
+/**
+ * 
+ * @param {*} literal 
+ * @param {*} context 
+ * @returns the full IRI of the datatype of the literal value, or null if none
+ */
+function getDatatype(literal, context) {
+  if (isLiteralObject(literal)) {
+    let datatype = literal["@type"] || literal.type;
+    if (datatype) {
+      return expandUri(datatype, context);
+    }
+  } else if (isLiteralString(literal)) {
+    // TODO look in the context for a default datatype
+  }
+  return null;
+}
+
+/**
+ * Extracts the first non-ID, non-type property from an object.
+ * @param {object} obj - The object to extract the property from.
+ * @returns {*} The value of the first non-ID, non-type property.
+ */
+function getFirstNonIdNonTypeProperty(obj) {
+  const keys = Object.keys(obj);
+  const valueKeys = keys.filter(
+    (k) => k !== "id" && k !== "@id" && k !== "type" && k !== "@type"
+  );
+  if (valueKeys.length > 0) {
+    return obj[valueKeys[0]];
+  }
+}
+
+/*****************************
+ * end getXXXXXX functions
+ *****************************/
+
+/**
+ * @returns true if the provided object has the specified type
+ */
+function hasType(obj, typeIri, context) {
+  let types = getTypes(obj);
+  if (types) {
+    return ensureArray(types)
+        .map((t) => expandUri(t, context))
+        .includes(expandUri(typeIri, context));
+  }
+}
+
+/**
+ * @returns  true if the provided object has the specified predicate
+ */
+function hasPredicate(obj, predicateIri, context) {
+  return getPredicate(obj, predicateIri, context) !== null;
 }
 
 /**
@@ -201,239 +390,96 @@ function findById(jsonld, id) {
   }
 }
 
+
 /**
- * Finds a predicate in an object using the provided context.
- * @param {object} object - The object to search for the predicate.
- * @param {string} predicateFullIri - The full IRI of the predicate to find.
- * @param {object} context - The context to use for finding the predicate.
- * @returns {any} The value of the predicate if found, null otherwise.
+ * Unboxes an array if it contains a single value.
+ * @param {Array} array - The array to unbox.
+ * @returns {*} The unboxed value if the array contains a single value, the array otherwise.
  */
-function findPredicate(object, predicateFullIri, context) {
-  const predicateKey = shortenUri(predicateFullIri, context);
-  if (object[predicateFullIri]) {
-    // either the full predicate URI is used directly as a key
-    return object[predicateFullIri];
-  } else if (object[predicateKey]) {
-    // or (most common) the short URI is used as a key
-    return object[predicateKey];
+function unboxArray(item) {
+  if (item && Array.isArray(item) && item.length === 1) {
+    return item[0];
+  }
+  return item;
+}
+
+/**
+ * @returns an array: if the item is already an array, it is returned as is;
+ *          if it is not an array, a new array containing the item is returned.
+ */
+function ensureArray(item) {
+  if(isArray(item)) {
+    return item;
   } else {
-    // or the context specifies a new JSON key remapped to this URI
-    let uriMappings = Object.entries(context).find(([prefix, mapping]) => {
-      return (
-        typeof mapping === "object" &&
-        (mapping["@id"] == predicateFullIri || mapping["@id"] == predicateKey)
-      );
-    });
-    if (uriMappings && uriMappings.length == 1) {
-      return object[uriMappings[0]];
-    } else {
-      return null;
-    }
+    return [ item ];
   }
 }
+
 
 /**
- * Recursively removes type keys from an object, but not in case the type indicates a datatype
- * @param {object} obj - The object to remove type keys from.
+ * Strips the HTML prefix from a literal.
+ * @param {string} literal - The literal to strip the HTML prefix from.
+ * @returns {string} The literal without the HTML prefix.
  */
-function removeTypeKey(obj) {
-  if (obj && typeof obj === "object") {
-    if (!("@value" in obj || "value" in obj)) {
-      delete obj.type;
-      delete obj["@type"];
-    }
-    Object.entries(obj).forEach(([key, value]) => {
-      removeTypeKey(value);
-    });
-  }
+function stripHtmlPrefix(literal) {
+  return literal.replace(/<html:/g, "<").replace(/<\/html:/g, "</");
 }
+
 
 /**
- * 
- * @param {*} predicateKey the expanded or shortened predicate
- * @param {*} context 
- * @returns true if the provided predicate is a well-known labelling predicate
+ * Gets the display label of an object using the provided context.
+ * @param {object} obj - The object to get the display label from.
+ * @param {object} context - The context to use for getting the display label.
+ * @returns {string} The display label of the object.
  */
-function isLabelPredicate(predicateKey, context) {
-  var expanded = expandUri(predicateKey, context);
-  return (
-    expanded == RDFS_LABEL ||
-    expanded == SKOS_PREFLABEL ||
-    expanded == FOAF_NAME ||
-    expanded == DCTERMS_TITLE ||
-    expanded == SCHEMA_NAME
-  );
+function displayLabel(obj, context) {
+  let dctermsTitle = getPredicate(obj, DCTERMS_TITLE, context);
+  if (dctermsTitle) {
+    return dctermsTitle;
+  }
+  let schemaName = getPredicate(obj, SCHEMA_NAME, context);
+  if (schemaName) {
+    return schemaName;
+  }
+  let foafName = getPredicate(obj, FOAF_NAME, context);
+  if (foafName) {
+    return foafName;
+  }
+  let skosPrefLabel = getPredicate(obj, SKOS_PREFLABEL, context);
+  if (skosPrefLabel) {
+    return skosPrefLabel;
+  }
+  let rdfsLabel = getPredicate(obj, RDFS_LABEL, context);
+  if (rdfsLabel) {
+    return rdfsLabel;
+  }
+
+  return shortenUri(getId(obj), context);
 }
 
-/**
- * 
- * @param {*} literal 
- * @param {*} context 
- * @returns the full IRI of the datatype of the literal value, or null if none
- */
-function getDatatype(literal, context) {
-  if (isLiteralObject(literal)) {
-    let datatype = literal["@type"] || literal.type;
-    if (datatype) {
-      return expandUri(datatype, context);
-    }
-  } else if (isLiteralString(literal)) {
-    // TODO look in the context for a default datatype
-  }
-  return null;
-}
+module.exports = Object.assign(module.exports || {}, {
+  isArray,
+  unboxArray,
+  isIriString,
+  isIriPrefixed,
+  isIriObjectWithOnlyOptionalType,
+  isLiteralString,
+  isLiteralObject,
+  isLiteralArrayWithSingleValue,
+  isObjectWithSingleLabelProperty,
+  getId,
+  getTypes,
+  getFirstNonIdNonTypeProperty,
+  getIriExpanded,
+  getDatatype,
+  getPredicate,
+  getPredicateFirstValue,
+  hasType,
+  hasPredicate,
+  shortenUri,
+  expandUri,  
+  findById,  
+  stripHtmlPrefix,
+  displayLabel
+});
 
-module.exports = {
-  getId: getId,
-  getTypes: getTypes,
-
-  /**
-   * Checks if a value is an array.
-   * @param {*} value - The value to check.
-   * @returns {boolean} True if the value is an array, false otherwise.
-   */
-  isArray: function (value) {
-    return Array.isArray(value);
-  },
-
-  /**
-   * Unboxes an array if it contains a single value.
-   * @param {Array} array - The array to unbox.
-   * @returns {*} The unboxed value if the array contains a single value, the array otherwise.
-   */
-  unboxArray: function (array) {
-    if (array && Array.isArray(array) && array.length === 1) {
-      return array[0];
-    }
-    return array;
-  },
-
-  isIriString: isIriString,
-  isIriPrefixed: isIriPrefixed,
-  getIriExpanded: getIriExpanded,
-
-  /**
-   * Checks if a value is an IRI object with only possibly a type.
-   * @param {object} value - The value to check.
-   * @returns {boolean} True if the value is an IRI object, possibly with only a type, false otherwise.
-   */
-  isIriObjectWithOnlyOptionalType: function (value) {
-    return (
-      typeof value === "object" &&
-      (("id" in value && !value["id"].startsWith("_:")) ||
-        ("@id" in value && !value["@id"].startsWith("_:"))) &&
-      (Object.keys(value).length === 1 ||
-        (Object.keys(value).length === 2 &&
-          ("type" in value || "@type" in value)))
-    );
-  },
-
-  isLiteralString: isLiteralString,
-
-  isLiteralObject: isLiteralObject,
-
-  isLiteralArrayWithSingleValue: isLiteralArrayWithSingleValue,
-
-  /**
-   * Checks if an object has a single label property.
-   * @param {object} obj - The object to check.
-   * @returns {boolean} True if the object has a single label property, false otherwise.
-   */
-  isObjectWithSingleLabelProperty: function (obj, context) {
-    if (!obj || !(typeof obj === "object")) return false;
-    const keys = Object.keys(obj);
-    const valueKeys = keys.filter(
-      (k) => k !== "id" && k !== "@id" && k !== "type" && k !== "@type"
-    );
-
-    return (
-      (keys.includes("id") || keys.includes("@id")) &&
-      valueKeys.length === 1 &&
-      obj[valueKeys[0]] !== null &&
-      (isLiteralString(obj[valueKeys[0]]) ||
-        isLiteralObject(obj[valueKeys[0]]) ||
-        isLiteralArrayWithSingleValue(obj[valueKeys[0]])) &&
-      isLabelPredicate(valueKeys[0], context)
-    );
-  },
-
-  /**
-   * Extracts the first non-ID, non-type property from an object.
-   * @param {object} obj - The object to extract the property from.
-   * @returns {*} The value of the first non-ID, non-type property.
-   */
-  extractFirstNonIdNonTypeProperty: function (obj) {
-    const keys = Object.keys(obj);
-    const valueKeys = keys.filter(
-      (k) => k !== "id" && k !== "@id" && k !== "type" && k !== "@type"
-    );
-    if (valueKeys.length > 0) {
-      return obj[valueKeys[0]];
-    }
-  },
-
-  shortenUri: shortenUri,
-
-  expandUri: expandUri,
-  findPredicate: findPredicate,
-  findById: findById,
-
-  getDatatype: getDatatype,
-
-  /**
-   * Strips the HTML prefix from a literal.
-   * @param {string} literal - The literal to strip the HTML prefix from.
-   * @returns {string} The literal without the HTML prefix.
-   */
-  stripHtmlPrefix: function (literal) {
-    return literal.replace(/<html:/g, "<").replace(/<\/html:/g, "</");
-  },
-
-  /**
-   * Gets the display label of an object using the provided context.
-   * @param {object} obj - The object to get the display label from.
-   * @param {object} context - The context to use for getting the display label.
-   * @returns {string} The display label of the object.
-   */
-  displayLabel: function (obj, context) {
-    let dctermsTitle = findPredicate(obj, DCTERMS_TITLE, context);
-    if (dctermsTitle) {
-      return dctermsTitle;
-    }
-    let schemaName = findPredicate(obj, SCHEMA_NAME, context);
-    if (schemaName) {
-      return schemaName;
-    }
-    let foafName = findPredicate(obj, FOAF_NAME, context);
-    if (foafName) {
-      return foafName;
-    }
-    let skosPrefLabel = findPredicate(obj, SKOS_PREFLABEL, context);
-    if (skosPrefLabel) {
-      return skosPrefLabel;
-    }
-    let rdfsLabel = findPredicate(obj, RDFS_LABEL, context);
-    if (rdfsLabel) {
-      return rdfsLabel;
-    }
-
-    return shortenUri(getId(obj), context);
-  },
-
-  /**
-   * /!\ currently not used as this is applied at the framing step
-   * Removes type keys from sublevels of an object.
-   * @param {object} obj - The object to remove type keys from.
-   * @returns {object} The object with type keys removed from sublevels.
-   */
-  removeTypeFromSublevels: function (obj) {
-    Object.entries(obj).forEach(([key, value]) => {
-      removeTypeKey(value);
-    });
-    return obj;
-  },
-
-  findMEasure: function(obj) {
-    return obj.includes("rico:measure");
-  }
-};

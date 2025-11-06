@@ -19,12 +19,12 @@
 {% import "src/_layouts/jsonld.njk" as jsonld with context %}
 {% import "src/_layouts/agentorPlaceHeader.njk" as header with context %}
 
-{% set headerData = placesHeader | findById(placeDB.id) %}
-{{ header.header(headerData) }}
 
 {# disable pagefind image #}
 <span data-pagefind-meta="image:" />
 
+{% set headerData = placesHeader | findById(placeDB.id) %}
+{{ header.header(headerData) }}
 
 {# first parameter is the object to print, second parameter is the main entity printed #}
 {{ jsonld.render(placeDB,headerData) }}

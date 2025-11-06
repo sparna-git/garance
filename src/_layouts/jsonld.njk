@@ -1,3 +1,4 @@
+{% import "src/_layouts/jsonld-plugins.njk" as plugins with context %}
 
 {# generic method to render any JSON-LD object or value. #}
 {# Tests the structure of the object/value and apply the adequate rendering function #}
@@ -12,14 +13,12 @@
 {% macro doRender(object, depth, mainObject) %}
     {% set obj = object | unboxArray %}
 
-    {# The rendering plugin foudn from the registry#}
-    {% set renderingPlugin = obj | getRenderingPlugin(context) %}
-
     {% if obj is null %}
         null
     {% elif renderingPlugin %}
-       {# temporary : call the plugin found from the registry #}
-       {{ renderingPlugin }}
+       {# call the plugin found from the registry #}
+       {# first, getContext("plugins") gets the imported macros (name must match the name of the import), then we call the macro name #}
+       {{ getContext("plugins")[renderingPlugin](object, depth, mainObject) }}
     {% elif obj | isIriPrefixed(context) %}
         {# expands the prefixed URI and print it #}
         {{ renderPlainUri(obj | expandUri(context)) }}
@@ -60,18 +59,15 @@
 
 {% macro renderObject(object, depth, mainObject) %}
     <div class="entity">
-        {% set sortedKeys = object | sortPredicates(shapes,context) %}
-        
-        {% set langOrType = object['@language'] or object['@type'] or object['language'] or object['type'] %}
-        {% if (langOrType == "rico:Coordinates") %}
-          {% set bMeasure = sortedKeys | findMEasure %}
-          {% if (bMeasure) %}
-            {% set CoordinatesValue = object["rico:measure"]["@value"] %}
-            <div id="map" data="{{ CoordinatesValue | safe | stripHtmlPrefix }}"></div>
-          {% else %}
-            {{ renderObjectValue(sortedKeys,object,depth, mainObject) }}
-          {% endif %}
+        {# The rendering plugin declared in the shapes #}
+        {% set renderingPlugin = object | getTypes | getTemplateFromTypes(shapes, context) %}
+
+        {% if renderingPlugin %}
+          {# call the plugin found from the registry #}
+          {# first, getContext("plugins") gets the imported macros (name must match the name of the import), then we call the macro name #}
+          {{ getContext("plugins")[renderingPlugin](object, depth, mainObject) }}
         {% else %}
+          {% set sortedKeys = object | sortPredicates(shapes,context) %}
           {{ renderObjectValue(sortedKeys,object,depth, mainObject) }}
         {% endif %}
     </div>
@@ -189,7 +185,7 @@
 {% endmacro %}
 
 {% macro renderObjectWithSingleLabelProperty(object) %}
-    {% set labelProperty = object | extractFirstNonIdNonTypeProperty | unboxArray %}
+    {% set labelProperty = object | getFirstNonIdNonTypeProperty | unboxArray %}
     {% set labelHtml = renderLiteralAsString(labelProperty) %}
     {{ renderLabelledUri(object.id | expandUri(context), labelHtml) }}
 {% endmacro %}

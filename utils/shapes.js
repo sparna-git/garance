@@ -5,7 +5,7 @@ const jsonld = require("./jsonld.js");
  * @param {*} nodeShape
  * @returns the property shapes of the provided node shape
  */
-exports.getProperties = function (nodeShape) {
+getProperties = function (nodeShape) {
   return nodeShape["sh:property"];
 };
 
@@ -14,8 +14,8 @@ exports.getProperties = function (nodeShape) {
  * @param {*} nodeShape
  * @returns the predicate of the property shape marked with dash:sortKeyRole inside the provided node shape
  */
-exports.getSortKeyOfShape = function (nodeShape) {
-  let props = exports.getProperties(nodeShape);
+getSortKeyOfShape = function (nodeShape) {
+  let props = getProperties(nodeShape);
   for (var i = 0; i < props.length; i++) {
     if (
       props[i]["dash:propertyRole"] &&
@@ -31,7 +31,7 @@ exports.getSortKeyOfShape = function (nodeShape) {
  * @param {*} propertyShapesArray
  * @returns The sorted property shapes array by the sh:order property
  */
-exports.sortByShOrder = function (propertyShapesArray) {
+sortByShOrder = function (propertyShapesArray) {
   return propertyShapesArray.sort((a, b) => {
     return a["sh:order"] - b["sh:order"];
   });
@@ -43,7 +43,7 @@ exports.sortByShOrder = function (propertyShapesArray) {
  * @param {*} shapes
  * @returns the node shape targeting the provided type with sh:targetClass
  */
-exports.getNodeShape = function (type, shapes) {
+getNodeShape = function (type, shapes) {
   return (shapesWithTarget = shapes.graph.find(
     (ns) => ns["sh:targetClass"] == type
   ));
@@ -56,13 +56,13 @@ exports.getNodeShape = function (type, shapes) {
  * @param {*} shapes
  * @returns The property shape describing the provided predicate in any of the provided types
  */
-exports.getPropertyShape = function (typeArray, predicateFullUri, shapes) {
+getPropertyShape = function (typeArray, predicateFullUri, shapes) {
   // 1. For each type...
   for (var i = 0; i < typeArray.length; i++) {
     // 2. Read the available properties of that type, using full URI
-    var ns = exports.getNodeShape(typeArray[i], shapes);
+    var ns = getNodeShape(typeArray[i], shapes);
     if (ns) {
-      let thisShapeProps = exports.getProperties(ns);
+      let thisShapeProps = getProperties(ns);
       for (var i = 0; i < thisShapeProps.length; i++) {
         if (thisShapeProps[i]["sh:path"] === predicateFullUri) {
           // TODO : we return the first we find, but we may have multiple ones
@@ -79,14 +79,14 @@ exports.getPropertyShape = function (typeArray, predicateFullUri, shapes) {
 /**
  * typeArray is always an array
  **/
-exports.getSortedPredicatesOfTypes = function (typeArray, shapes) {
+getSortedPredicatesOfTypes = function (typeArray, shapes) {
   var allProperties = [];
   // 1. For each type...
   for (var i = 0; i < typeArray.length; i++) {
     // 2. Read the available properties of that type, using full URI
-    var ns = exports.getNodeShape(typeArray[i], shapes);
+    var ns = getNodeShape(typeArray[i], shapes);
     if (ns) {
-      let thisShapeProps = exports.getProperties(ns);
+      let thisShapeProps = getProperties(ns);
       for (var i = 0; i < thisShapeProps.length; i++) {
         // if the same property does not already exist, add it
         // because in case of multi-typing, the same property may come from multiple shapes
@@ -102,10 +102,10 @@ exports.getSortedPredicatesOfTypes = function (typeArray, shapes) {
   }
 
   // 3. Then merge into a single sorted array, by returning only the path
-  return exports.sortByShOrder(allProperties).map((p) => p["sh:path"]);
+  return sortByShOrder(allProperties).map((p) => p["sh:path"]);
 };
 
-exports.sortPredicates = function (object, shapes, context) {
+sortPredicates = function (object, shapes, context) {
   let expandedKeys = new Map();
   Object.keys(object).forEach((key) => {
     // build a map of expanded URI to original key
@@ -118,7 +118,7 @@ exports.sortPredicates = function (object, shapes, context) {
   // get the sorted list of predicates of these types
   // flat() ensures we always have an array
   // see https://stackoverflow.com/a/58553894
-  let sortedPredicates = exports.getSortedPredicatesOfTypes(
+  let sortedPredicates = getSortedPredicatesOfTypes(
     [types].flat().map((t) => jsonld.expandUri(t, context)),
     shapes
   );
@@ -147,15 +147,14 @@ exports.sortPredicates = function (object, shapes, context) {
   return result;
 };
 
-exports.sortValues = function (array, shapes, context) {
+sortValues = function (array, shapes, context) {
   return array.sort((a, b) => {
-    return exports
-      .getSortKey(a, shapes, context)
-      .localeCompare(exports.getSortKey(b, shapes, context));
+    return getSortKey(a, shapes, context)
+      .localeCompare(getSortKey(b, shapes, context));
   });
 };
 
-exports.getSortKey = function (something, shapes, context) {
+getSortKey = function (something, shapes, context) {
   let key = null;
   if (jsonld.isIriPrefixed(something, context)) {
     key = something;
@@ -169,20 +168,20 @@ exports.getSortKey = function (something, shapes, context) {
     // return '@value' if not null/undefined, otherwise returns 'value'
     key = something["@value"] ?? something["value"];
   } else if (jsonld.isObjectWithSingleLabelProperty(something, context)) {
-    key = JSON.stringify(jsonld.extractFirstNonIdNonTypeProperty(something));
+    key = JSON.stringify(jsonld.getFirstNonIdNonTypeProperty(something));
   } else if (jsonld.isLiteralObject(something)) {
     // check if the object is literal and sort string
     key = something.value;
   } else {
     // check if a sort key is declared in the shapes for the object type
     let types = jsonld.getTypes(something);
-    let sortKey = exports.getSortKeyOfTypes(
+    let sortKey = getSortKeyOfTypes(
       [types].flat().map((t) => jsonld.expandUri(t, context)),
       shapes
     );
     if (sortKey) {
       // try to read this property on the object
-      let prop = jsonld.findPredicate(something, sortKey, context);
+      let prop = jsonld.getPredicate(something, sortKey, context);
       // returns the property or the id if none exists
       key = prop ? JSON.stringify(prop) : jsonld.getId(something);
     } else {
@@ -202,13 +201,13 @@ exports.getSortKey = function (something, shapes, context) {
 /**
  * typeArray is always an array
  **/
-exports.getSortKeyOfTypes = function (typeArray, shapes) {
+getSortKeyOfTypes = function (typeArray, shapes) {
   // 1. For each type...
   for (var i = 0; i < typeArray.length; i++) {
     // 2. Read the sort key of that type, using full URI
-    var ns = exports.getNodeShape(typeArray[i], shapes);
+    var ns = getNodeShape(typeArray[i], shapes);
     if (ns) {
-      let sortKey = exports.getSortKeyOfShape(ns);
+      let sortKey = getSortKeyOfShape(ns);
       if (sortKey) {
         return sortKey;
       }
@@ -220,12 +219,12 @@ exports.getSortKeyOfTypes = function (typeArray, shapes) {
  * Reads the volipi:class annotation on the property shape of the given predicate
  * on one of the provided type
  **/
-exports.additionnalCssClass = function (predicate, object, shapes, context) {
+additionnalCssClass = function (predicate, object, shapes, context) {
   // read the type or types of the object
   let types = jsonld.getTypes(object);
   // read the property shape of the predicate in one of those types
   // flat() ensures we always have an array
-  let propertyShape = exports.getPropertyShape(
+  let propertyShape = getPropertyShape(
     [types].flat().map((t) => jsonld.expandUri(t, context)),
     jsonld.expandUri(predicate, context),
     shapes
@@ -239,16 +238,15 @@ exports.additionnalCssClass = function (predicate, object, shapes, context) {
   }
 };
 
-exports.getCssClassesFromTypes = function (types, shapes, context) {
+getCssClassesFromTypes = function (types, shapes, context) {
   const expandedTypes = [types].flat().map((t) => {
-    // const expanded = expandManually(t, context); // forcé ici
     return (expanded = jsonld.expandUri(t, context));
   });
 
   const cssClasses = [];
 
   expandedTypes.forEach((type) => {
-    const nodeShape = exports.getNodeShape(type, shapes);
+    const nodeShape = getNodeShape(type, shapes);
     if (nodeShape && nodeShape["volipi:class"]) {
       cssClasses.push(`${nodeShape["volipi:class"]}`);
     }
@@ -257,15 +255,34 @@ exports.getCssClassesFromTypes = function (types, shapes, context) {
   return cssClasses.join(" ");
 };
 
-exports.getHeaderCssClasses = function (types, shapes, context) {
-  const classes = exports.getCssClassesFromTypes(types, shapes, context);
+getHeaderCssClasses = function (types, shapes, context) {
+  const classes = getCssClassesFromTypes(types, shapes, context);
   return classes;
 };
 
+getTemplateFromTypes = function (types, shapes, context) {
+  const expandedTypes = [types].flat().map((t) => {
+    return jsonld.expandUri(t, context);
+  });
+
+  const templates = [];
+
+  expandedTypes.forEach((type) => {
+    const nodeShape = getNodeShape(type, shapes);
+    if (nodeShape && nodeShape["volipi:template"]) {
+      templates.push(`${nodeShape["volipi:template"]}`);
+    }
+  });
+  
+  if(templates.length > 0) {
+    return templates[0];
+  }
+};
+
 /**
- * Récupère les attributs weight, meta, filter, exclude pour un prédicat donné,
- * en se basant sur le type du noeud (via jsonld.getTypes) et en cherchant
- * le PropertyShape correspondant (via getPropertyShape).
+ * Récupère les attributs pagefind:weight, pagefind:meta, pagefind:filter, pagefind:ignore
+ * pour un prédicat donné, en se basant sur le type du noeud (via jsonld.getTypes) 
+ * et en cherchant le PropertyShape correspondant (via getPropertyShape).
  *
  * @param {Object} object - L'objet RDF à analyser (pour lire son type)
  * @param {String} predicateUri - L'URI expandie du prédicat à chercher
@@ -273,7 +290,7 @@ exports.getHeaderCssClasses = function (types, shapes, context) {
  * @param {Object} context - Le contexte JSON-LD
  * @returns {Object} { weight, metaKeys, filter, exclude }
  */
-exports.findShapeAttributes = function (object, predicateUri, shapes, context) {
+findShapeAttributes = function (object, predicateUri, shapes, context) {
   const expandUri = (uri) => jsonld.expandUri(uri, context);
 
   let weight = null;
@@ -290,7 +307,7 @@ exports.findShapeAttributes = function (object, predicateUri, shapes, context) {
   const expandedTypes = [types].flat().map((t) => expandUri(t));
 
   // trouver le PropertyShape correspondant au prédicat pour un des types
-  const propertyShape = exports.getPropertyShape(
+  const propertyShape = getPropertyShape(
     expandedTypes,
     predicateUri,
     shapes
@@ -323,3 +340,22 @@ exports.findShapeAttributes = function (object, predicateUri, shapes, context) {
 
   return { weight, metaKeys, filter, exclude };
 };
+
+
+module.exports = Object.assign(module.exports || {}, {
+  getProperties,
+  getSortKeyOfShape,
+  sortByShOrder,
+  getNodeShape,
+  getPropertyShape,
+  getSortedPredicatesOfTypes,
+  sortPredicates,
+  sortValues,
+  getSortKey,
+  getSortKeyOfTypes,
+  additionnalCssClass,
+  getCssClassesFromTypes,
+  getHeaderCssClasses,
+  getTemplateFromTypes,
+  findShapeAttributes
+});
