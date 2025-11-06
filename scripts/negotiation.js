@@ -55,11 +55,11 @@ function copyResourceAgents(dirDist,pathResource) {
     }
 
     const pathResource = agent["rdfpath"];
-    console.log(name_of_dist);
     if (distWeb.includes(name_of_dist)) {
       // path target
       const dirTarget = dirDist + "/" + name_of_dist + "/";
       // Copy File
+      console.log(pathResource + " ==> " + dirTarget);
       fs.copyFile(pathResource, dirTarget+'data.rdf', (err) => {
         if (err) throw err;
         console.log("The file was copied...");
@@ -97,7 +97,7 @@ function resourcesAgents(
   console.log("Load all file in Referentiel Agents")
   const allResourcesRDFAgents = getAllListFilesResources(directoryAgentReferentiels);
   // Read Frame JSON Agents Header and get the identifier donwload RDF
-  console.log("Validate if an Agents Id exist in the referentiel Agents");
+  console.log("Validate agent Id if exist in the referentiel agents");
   const pathAgentsFiles = [];
   listOfIdAgents.forEach((agentId) => {
     const getResult = allResourcesRDFAgents.filter(function (data) {
@@ -106,12 +106,13 @@ function resourcesAgents(
     if (getResult) {
       // build the full path of the file
       const filePath = path.join(directoryAgentReferentiels, getResult[0].rdfpath);
-      pathAgentsFiles.push({ name: agentId, path: filePath });
+      pathAgentsFiles.push({ name: agentId, rdfpath: filePath });
     } else {
-      pathAgentsFiles.push({ name: agentId, path: "" });
+      pathAgentsFiles.push({ name: agentId, rdfpath: "" });
     }
   });
   // Copy all files Agents in the dist directory
+  console.log("Copy all files");
   copyResourceAgents(distAgents, pathAgentsFiles);
 }
 
@@ -125,7 +126,7 @@ function resourcesPlaces(
   const allResourcesRDFPlaces = getAllListFilesResources(
     directoryPlacesReferentiels
   );
-  console.log("Validate if an Agents Id exist in the referentiel Agents");
+  console.log("Validate places Id if exist in the referentiel folder");
   const pathPlacesFiles = [];
   listOfIdPlaces.forEach((placeId) => {
     const getResult = allResourcesRDFPlaces.filter(function (data) {
@@ -135,7 +136,7 @@ function resourcesPlaces(
       // build the full path of the file
       const filePath = path.join(
         directoryPlacesReferentiels,
-        getResult[0].path
+        getResult[0].rdfpath
       );
       pathPlacesFiles.push({ name: placeId, rdfpath: filePath });
     } else {
@@ -151,18 +152,24 @@ function resourcesPlaces(
   // --- Agents  ---
   const directoryAgentReferentiels = "Referentiels/agents";
   const distAgents = "dist/entities/agent";
+  
   console.log("Reading " + "src/_data/agentsHeader.json" + " for Agents...");
   let dataJsonAgents = fs.readFileSync("src/_data/agentsHeader.json");
+  
   // Get list of file name
   let listOfIdAgents = getIdentifiers(dataJsonAgents,"rico:isOrWasDescribedBy");
+  console.log(listOfIdAgents);
   resourcesAgents(listOfIdAgents, directoryAgentReferentiels, distAgents);
   
   // Places
   const directoryPlaceReferentiels = "Referentiels/lieux";
-  const distPlace = "dist/entities/place";
+  const distPlace = "./dist/entities/place";
+  
   console.log("Reading " + "src/_data/placesHeader.json" + " for places...");
   let dataJsonPlaces = fs.readFileSync("src/_data/placesHeader.json");
+  
   // Get list of file name
   let listOfIdPlaces = getIdentifiers(dataJsonPlaces,"rico:isOrWasDescribedBy");
+  console.log(listOfIdAgents);
   resourcesPlaces(listOfIdPlaces, directoryPlaceReferentiels, distPlace);
 })();
