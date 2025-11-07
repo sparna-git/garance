@@ -25,6 +25,12 @@
       "@reverse": "skos:inScheme",
       "@container": "@set"
     },
+    "inScheme": {
+      "@id": "skos:inScheme"
+    },
+    "topConceptOf": {
+      "@id": "skos:topConceptOf"
+    },
     "title": {
       "@id": "dcterms:title",
       "@container": "@set"
@@ -181,6 +187,14 @@
     "note": {},
     "scopeNote": {},
     "seeAlso": {},
+    "inScheme": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
+    "topConceptOf": {
+      "@explicit": true,
+      "@omitDefault": true
+    },
     "example": {
       "@explicit": true,
       "@omitDefault": true,
