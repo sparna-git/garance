@@ -79,8 +79,7 @@ function copyResource(dirDist, pathResource) {
       const dirTarget = dirDist + "/" + name_of_dist + "/";
       // Copy File
       fs.copyFile(pathAgentResource, dirTarget + "data.rdf", (err) => {
-        if (err) throw err;
-        console.log("The file was copied...");
+        if (err) throw err;        
       });
     }
   }
@@ -147,28 +146,22 @@ function resourcesPlaces(
   
   // --- Agents  ---
   const directoryAgentReferentiels = process.argv[2] //"Referentiels/agents";
-  console.log(directoryAgentReferentiels)
   const distAgents = process.argv[3] //"dist/entities/agent";
-  console.log(distAgents)
   console.log("Reading " + "src/_data/agentsHeader.json" + " for Agents...");
   let dataJsonAgents = fs.readFileSync("src/_data/agentsHeader.json");
   
   // Get list of file name
   let listOfIdAgents = getIdentifiers(dataJsonAgents,"rico:isOrWasDescribedBy");
-  console.log(listOfIdAgents);
   resourcesAgents(listOfIdAgents, directoryAgentReferentiels, distAgents);
   
   // Places
   const directoryPlaceReferentiels = process.argv[4] //"Referentiels/lieux";
-  console.log(directoryPlaceReferentiels)
   const distPlace = process.argv[5] //"./dist/entities/place";
-  console.log(distPlace)
   
   console.log("Reading " + "src/_data/placesHeader.json" + " for places...");
   let dataJsonPlaces = fs.readFileSync("src/_data/placesHeader.json");
   
   // Get list of file name
   let listOfIdPlaces = getIdentifiers(dataJsonPlaces,"rico:isOrWasDescribedBy");
-  console.log(listOfIdAgents);
   resourcesPlaces(listOfIdPlaces, directoryPlaceReferentiels, distPlace);
 })();
