@@ -247,6 +247,8 @@ function getPredicateFirstValue(object, predicateFullIri, context) {
       return predicateValue["@value"] || predicateValue["value"];
     } else if (isLiteralString(predicateValue)) {
       return predicateValue;
+    } else if (isIriObjectWithOnlyOptionalType(predicateValue)) {
+      return getId(predicateValue);
     }
   }
 }

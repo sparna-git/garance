@@ -192,6 +192,24 @@
       ]
     },
     {
+      "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#Mandate",
+      "volipi:template": "renderMandate",
+      "sh:property": [
+        {
+          "sh:order": 1,
+          "sh:path": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+        },
+        {
+          "sh:order": 2,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#title"
+        },
+        {
+          "sh:order": 3,
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+        }
+      ]
+    },
+    {
       "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#AgentName",
       "sh:property": [
         {

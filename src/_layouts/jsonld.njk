@@ -1,4 +1,3 @@
-{% import "src/_layouts/jsonld-plugins.njk" as plugins with context %}
 
 {# generic method to render any JSON-LD object or value. #}
 {# Tests the structure of the object/value and apply the adequate rendering function #}
@@ -15,10 +14,6 @@
 
     {% if obj is null %}
         null
-    {% elif renderingPlugin %}
-       {# call the plugin found from the registry #}
-       {# first, getContext("plugins") gets the imported macros (name must match the name of the import), then we call the macro name #}
-       {{ getContext("plugins")[renderingPlugin](object, depth, mainObject) }}
     {% elif obj | isIriPrefixed(context) %}
         {# expands the prefixed URI and print it #}
         {{ renderPlainUri(obj | expandUri(context)) }}
@@ -65,7 +60,7 @@
         {% if renderingPlugin %}
           {# call the plugin found from the registry #}
           {# first, getContext("plugins") gets the imported macros (name must match the name of the import), then we call the macro name #}
-          {{ getContext("plugins")[renderingPlugin](object, depth, mainObject) }}
+          {{ getContext(renderingPlugin)(object, depth, mainObject) }}
         {% else %}
           {% set sortedKeys = object | sortPredicates(shapes,context) %}
           {{ renderObjectValue(sortedKeys,object,depth, mainObject) }}
@@ -220,4 +215,57 @@
 
 {% macro renderType(uri, mainObject, depth) %}
     <span data-i18n="{{uri | shortenUri(context) }}" {% if depth == 1 %}data-pagefind-filter="type[data-i18n]"{% endif %}></span>
+{% endmacro %}
+
+
+
+
+{# ####################### SPECIFIC MACROS ################################# #}
+
+
+
+{% macro renderRicoCoordinates(obj, depth, mainObject) %}
+    {% set measure = obj | getPredicateFirstValue("rico:measure", context) %}
+    {% if measure %}
+        <div id="map" data="{{ measure | safe | stripHtmlPrefix }}"></div>
+    {% else %}
+        {% set sortedKeys = obj | sortPredicates(shapes,context) %}
+        {{ renderObjectValue(sortedKeys,obj,depth, mainObject) }}
+    {% endif %}
+{% endmacro %}
+
+
+{% macro renderRicoExtent(obj, depth, mainObject) %}
+    {% set type = obj | getPredicateFirstValue("rico:type", context) %}
+    {% set quantity = obj | getPredicateFirstValue("rico:quantity", context) %}
+    {% set unit = obj | getPredicateFirstValue("rico:unitOfMeasurement", context) %}
+    <div class="ricoExtent">
+        {% if type %}<span class="extentType">{{ type }}</span> : {% endif %}
+        {% if quantity %}<span class="extentQuantity">{{ quantity }}</span>{% endif %}
+        {% if unit %}<span class="extentUnit">{{ unit }}s</span>{% endif %}
+    </div>
+{% endmacro %}
+
+{% macro renderRicoIdentifier(obj, depth, mainObject) %}
+    {% set type = obj | getPredicateFirstValue("rico:type", context) %}
+    {% set textualValue = obj | getPredicateFirstValue("rico:textualValue", context) %}
+    <div class="ricoIdentifier">
+        {% if textualValue %}<span class="identifierTextualValue">{{ textualValue }}</span> {% endif %}
+        {% if type %}<span class="identifierType">({{ type }})</span> {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro renderMandate(obj, depth, mainObject) %}
+    {% set title = obj | getPredicateFirstValue("rico:title", context) %}
+    {% set link = obj | getPredicateFirstValue("rdfs:seeAlso", context) %}
+
+    {% if title and link %}
+        <div class="ricoMandate">
+            <span class="mandateTitle">{{ title }}</span> <a class="mandateLink" target="_blank" href="{{ link }}">↗️</a>
+        </div>            
+    {% else %}
+        {% set sortedKeys = obj | sortPredicates(shapes,context) %}
+        {{ renderObjectValue(sortedKeys,obj,depth, mainObject) }}
+    {% endif %}
+
 {% endmacro %}

@@ -354,6 +354,10 @@ mark {
   font-style: italic;
 }
 
+.mandateLink {
+  text-decoration:none;
+}
+
 /*--------------------------------------------------------------
 # Places and Agents pages css
 --------------------------------------------------------------*/
