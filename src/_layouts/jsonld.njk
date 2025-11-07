@@ -55,11 +55,10 @@
 {% macro renderObject(object, depth, mainObject) %}
     <div class="entity">
         {# The rendering plugin declared in the shapes #}
-        {% set renderingPlugin = object | getTypes | getTemplateFromTypes(shapes, context) %}
+        {% set renderingPlugin = object | getTypes | getTemplateOfTypes(shapes, context) %}
 
         {% if renderingPlugin %}
           {# call the plugin found from the registry #}
-          {# first, getContext("plugins") gets the imported macros (name must match the name of the import), then we call the macro name #}
           {{ getContext(renderingPlugin)(object, depth, mainObject) }}
         {% else %}
           {% set sortedKeys = object | sortPredicates(shapes,context) %}
@@ -105,44 +104,53 @@
          {% endif %}
          {% if exclude %}data-pagefind-ignore{% endif %}
     >
-      {# Cas particulier : type affiché horizontalement sans lien #}
-      {% if predicate == "type" or predicate == "@type" %}
-        <div class="entity-predicate-values-value entity-predicate-values-type">
-          {{ renderTypeList(values, mainObject, depth) }}
-        </div>
-      {% else %}
-        {% if values|isArray %}
-          <div class="entity-predicate-values-list">
-            {% for item in (values | sortValues(shapes, context)) %}
-              <div class="entity-predicate-values-value
-                          {% if loop.first %} first{% endif %}
-                          {% if loop.last %} last{% endif %}"
-                  {% if filter and filter|length %}
-                    data-pagefind-filter="
-                      {% for f in filter %}
-                        {{ f|e }}{% if not loop.last %}, {% endif %}
-                      {% endfor %}
-                    "
-                  {% endif %}
-              >
-                {{ doRender(item, depth + 1, mainObject) }}
-              </div>
-            {% endfor %}
-          </div>
+        {# The rendering plugin declared in the shapes #}
+        {% set renderingPlugin = object | getTemplateOfPredicate(predicate, shapes, context) %}
+
+        {% if renderingPlugin %}
+          {# call the plugin found from the registry #}
+          {{ getContext(renderingPlugin)(object, predicate, values, depth, mainObject) }}
         {% else %}
-          <div class="entity-predicate-values-value"
-               {% if filter and filter|length %}
-                 data-pagefind-filter="
-                   {% for f in filter %}
-                     {{ f|e }}{% if not loop.last %}, {% endif %}
-                   {% endfor %}
-                 "
-               {% endif %}
-          >
-            {{ doRender(values, depth + 1, mainObject) }}
-          </div>
+
+          {# Cas particulier : type affiché horizontalement sans lien #}
+          {% if predicate == "type" or predicate == "@type" %}
+            <div class="entity-predicate-values-value entity-predicate-values-type">
+              {{ renderTypeList(values, mainObject, depth) }}
+            </div>
+          {% else %}
+            {% if values|isArray %}
+              <div class="entity-predicate-values-list">
+                {% for item in (values | sortValues(shapes, context)) %}
+                  <div class="entity-predicate-values-value
+                              {% if loop.first %} first{% endif %}
+                              {% if loop.last %} last{% endif %}"
+                      {% if filter and filter|length %}
+                        data-pagefind-filter="
+                          {% for f in filter %}
+                            {{ f|e }}{% if not loop.last %}, {% endif %}
+                          {% endfor %}
+                        "
+                      {% endif %}
+                  >
+                    {{ doRender(item, depth + 1, mainObject) }}
+                  </div>
+                {% endfor %}
+              </div>
+            {% else %}
+              <div class="entity-predicate-values-value"
+                   {% if filter and filter|length %}
+                     data-pagefind-filter="
+                       {% for f in filter %}
+                         {{ f|e }}{% if not loop.last %}, {% endif %}
+                       {% endfor %}
+                     "
+                   {% endif %}
+              >
+                {{ doRender(values, depth + 1, mainObject) }}
+              </div>
+            {% endif %}
+          {% endif %}
         {% endif %}
-      {% endif %}
     </div>
   </div>
 {% endmacro %}
@@ -168,10 +176,12 @@
         {% set value = literal['@value'] or literal['value'] %}
         {% set langOrType = literal['@language'] or literal['@type'] or literal['language'] or literal['type'] %}
         {# special : if we find html tags inside, don't print the datatype - because value may contain HTML rendering, typically <p>, and the <sup> would be on a new line #}
-        {% if not (langOrType == "rdf:XMLLiteral") %}
-            <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
-        {% else %}
+        {% if langOrType == "rdf:XMLLiteral" %}
             <span class="literal">{{ value | safe | stripHtmlPrefix }}</span>
+        {% elif langOrType == "xsd:date" %}
+            <span class="literal">{{ value | xsdDateToLocale(locale) }}</span>
+        {% else %}
+            <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
         {% endif %}
     {% else %}
         {# should not happen #}
@@ -254,6 +264,23 @@
         {% if type %}<span class="identifierType">({{ type }})</span> {% endif %}
     </div>
 {% endmacro %}
+
+{% macro renderMandate(obj, depth, mainObject) %}
+    {% set title = obj | getPredicateFirstValue("rico:title", context) %}
+    {% set link = obj | getPredicateFirstValue("rdfs:seeAlso", context) %}
+
+    {% if title %}
+        <div class="ricoMandate">
+            <span class="mandateTitle">{{ title }}</span>{% if link %} <a class="mandateLink" target="_blank" href="{{ link }}">↗️</a>{% endif %}
+        </div>            
+    {% else %}
+        {% set sortedKeys = obj | sortPredicates(shapes,context) %}
+        {{ renderObjectValue(sortedKeys,obj,depth, mainObject) }}
+    {% endif %}
+
+{% endmacro %}
+
+
 
 {% macro renderMandate(obj, depth, mainObject) %}
     {% set title = obj | getPredicateFirstValue("rico:title", context) %}

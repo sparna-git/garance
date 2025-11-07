@@ -260,7 +260,7 @@ getHeaderCssClasses = function (types, shapes, context) {
   return classes;
 };
 
-getTemplateFromTypes = function (types, shapes, context) {
+getTemplateOfTypes = function (types, shapes, context) {
   const expandedTypes = [types].flat().map((t) => {
     return jsonld.expandUri(t, context);
   });
@@ -276,6 +276,25 @@ getTemplateFromTypes = function (types, shapes, context) {
   
   if(templates.length > 0) {
     return templates[0];
+  }
+};
+
+getTemplateOfPredicate = function (object, predicate, shapes, context) {
+  // read the type or types of the object
+  let types = jsonld.getTypes(object);
+  // read the property shape of the predicate in one of those types
+  // flat() ensures we always have an array
+  let propertyShape = getPropertyShape(
+    [types].flat().map((t) => jsonld.expandUri(t, context)),
+    jsonld.expandUri(predicate, context),
+    shapes
+  );
+
+  // then see if this property shape has a volipi:template attribute
+  if (propertyShape && propertyShape["volipi:template"]) {
+    return propertyShape["volipi:template"];
+  } else {
+    return "";
   }
 };
 
@@ -356,6 +375,7 @@ module.exports = Object.assign(module.exports || {}, {
   additionnalCssClass,
   getCssClassesFromTypes,
   getHeaderCssClasses,
-  getTemplateFromTypes,
+  getTemplateOfTypes,
+  getTemplateOfPredicate,
   findShapeAttributes
 });

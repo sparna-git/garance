@@ -79,8 +79,16 @@ module.exports = {
     });
   },
 
+  /**
+   * Create a DateTime from an ISO 8601 string
+   * DateTime.fromISO('2016-05-25T09:08:34.123')
+   **/
   dateFromISO: function (timestamp) {
     return DateTime.fromISO(timestamp, { zone: "utc" }).toJSDate();
+  },
+
+  xsdDateToLocale: function(xsdDate, locale) {
+    return DateTime.fromISO(xsdDate, { zone: "utc" }).toJSDate().toLocaleDateString(locale?locale:"en");
   },
 
   iso8601: function (dateObj) {
