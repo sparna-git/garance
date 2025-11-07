@@ -40,11 +40,8 @@ jobs:
             export NODE_OPTIONS=--max-old-space-size=4096
             npm run build
 
-      - name: Copy the referentiel rdf file to dist\agents or dist\places
+      - name: Copy the referentiel file
         run: npm run copyFiles Referentiels/agents dist/entities/agent Referentiels/lieux dist/entities/place
-
-      - run : |
-          ls dist/entities/agent/000001
 
       - name: Pagefind
         run: npx pagefind --write-playground
