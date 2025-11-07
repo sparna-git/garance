@@ -39,8 +39,6 @@ function getAllListFilesResources(directoryResource) {
     const e = element.split("/");
     objResource.push({ name: e[e.length - 1], rdfpath: element });
 });
-  console.log("directory Referentiels")
-  console.log(objResource)
   return objResource;
 }
 
@@ -63,7 +61,6 @@ function copyResourceAgents(dirDist,pathResource) {
       // Copy File
       fs.copyFile(pathResource, dirTarget+'data.rdf', (err) => {
         if (err) throw err;
-        console.log("The file was copied...");
       });
     }
   }
@@ -116,6 +113,7 @@ function resourcesAgents(
   // Copy all files Agents in the dist directory
   console.log("Copy all files");
   copyResourceAgents(distAgents, pathAgentsFiles);
+  console.log("End processus Agents");
 }
 
 function resourcesPlaces(
@@ -125,9 +123,7 @@ function resourcesPlaces(
 ) {
   // ist of files Referentiels Agents
   console.log("Load all file in Referentiel Agents");
-  const allResourcesRDFPlaces = getAllListFilesResources(
-    directoryPlacesReferentiels
-  );
+  const allResourcesRDFPlaces = getAllListFilesResources(directoryPlacesReferentiels);
   console.log("Validate places Id if exist in the referentiel folder");
   const pathPlacesFiles = [];
   listOfIdPlaces.forEach((placeId) => {
@@ -136,10 +132,7 @@ function resourcesPlaces(
     });
     if (getResult.length > 0) {
       // build the full path of the file
-      const filePath = path.join(
-        directoryPlacesReferentiels,
-        getResult[0].rdfpath
-      );
+      const filePath = getResult[0].rdfpath;
       pathPlacesFiles.push({ name: placeId, rdfpath: filePath });
     } else {
       pathPlacesFiles.push({ name: placeId, rdfpath: "" });
@@ -147,6 +140,7 @@ function resourcesPlaces(
   });
   // Copy all files Agents in the dist directory
   copyResource(distPlaces, pathPlacesFiles);
+  console.log("End processus Places");
 }
 
 (async () => {
