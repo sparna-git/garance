@@ -44,20 +44,20 @@ jobs:
         run: npm run copyFiles Referentiels/agents dist/entities/agent Referentiels/lieux dist/entities/place
 
       - run : |
-          ls dist\entities\agent\000001
+          ls dist/entities/agent/000001
 
       - name: Pagefind
         run: npx pagefind --write-playground
 
       # SCP transfer project to server ANS      
-      #- name: copy file via ssh key
-      #  uses: appleboy/scp-action@v0.1.7
-      #  with:
-      #    host: ${{ secrets.SERVER }}
-      #    username: ${{ secrets.USER }}
-      #    port: ${{ secrets.PORT }}
-      #    key: ${{ secrets.AUTHENTICATION }}
-      #    source: dist
-      #    target: ${{ secrets.REMOTE_PATH }}
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER }}
+          username: ${{ secrets.USER }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.AUTHENTICATION }}
+          source: dist
+          target: ${{ secrets.REMOTE_PATH }}
       #    rm: true
       #    strip_components: 1
