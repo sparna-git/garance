@@ -279,17 +279,7 @@
       "@omitDefault": true,
       "@embed": "@always",
       "rdfs:label": { "@omitDefault": true }
-    },
-    "rico:PerformanceRelation": {
-      "@explicit": true,
-      "@omitDefault": true,
-      "rdfs:label": { "@omitDefault": true }
-    },
-    "rico:Activity": {
-        "@explicit": true,
-        "@omitDefault": true,
-        "rdfs:label": { "@omitDefault": true }
-      }
+    }
   },
   "owl:sameAs": {
     "@omitDefault": true,

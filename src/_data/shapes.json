@@ -797,6 +797,14 @@
           "sh:order": 2,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#date",
           "dash:propertyRole": "dash:sortKeyRole"
+        },
+        {
+          "sh:order": 3,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasActivityType"
+        },
+        {
+          "sh:order": 4,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadLocation"
         }
       ]
     },
