@@ -12,9 +12,14 @@ layout: main.njk
       <h1 class="title-Header" data-i18n="entities.agents.title"></h1>
 
       <div class="alphabet-index mb-4">
-        {% for L in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+        {% set letters = [
+  "A","B","C","D","E","F","G","H","I","J","K","L",
+  "M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0-9"
+] %}
+
+        {% for L in letters %}
           <a href="{{ ['/entities/agents/', L] | join | relative(page) }}"
-             class="btn {% if L === currentLetter %}btn-primary{% else %}btn-outline-primary{% endif %} m-0 mx-1 alphabet-btn">
+            class="btn {% if L === currentLetter %}btn-primary{% else %}btn-outline-primary{% endif %} m-0 mx-1 alphabet-btn">
             {{ L }}
           </a>
         {% endfor %}

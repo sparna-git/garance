@@ -98,12 +98,12 @@ function getSivSeeAlsoUrl(item) {
     item?.["rico:isOrWasDescribedBy"]?.["rico:hasOrHadDigitalInstantiation"];
   // normalize to array
   let instantiations = [digitalInstances].flat();
-  
+
   for (const instantiation of instantiations) {
     const format = instantiation?.["dc:format"];
     if (format == "text/xml") {
       let seeAlso = instantiation["rdfs:seeAlso"];
-      if(seeAlso) {
+      if (seeAlso) {
         return typeof seeAlso === "object"
           ? seeAlso?.id || seeAlso?.["@id"]
           : seeAlso || null;
@@ -224,7 +224,7 @@ function getEntities(graph, currentLetter, type = "agents") {
   let entitiesByLetter = graph.filter((item) => {
     if (!item?.id || !item[labelKey]) return false;
 
-    // récupération du label (français ou @value)
+    // obtenir le label en français
     const labelObj = item[labelKey];
     const label =
       labelObj?.fr ||
@@ -235,10 +235,15 @@ function getEntities(graph, currentLetter, type = "agents") {
     if (!label) return false;
 
     const firstLetter = filters.firstLetter(label);
-    return firstLetter === currentLetter;
+
+    if (currentLetter === "0-9") {
+      // garder les labels commençant par un chiffre
+      return /^[0-9]/.test(firstLetter);
+    } else {
+      return firstLetter === currentLetter;
+    }
   });
 
-  // tri cohérent sur le même type de label
   entitiesByLetter = sortLabels(entitiesByLetter);
   return entitiesByLetter;
 }
