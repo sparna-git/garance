@@ -90,12 +90,7 @@
       {{ renderPredicate(predicate) }}
     </div>
 
-    {# Filtres & métadonnées Pagefind #}
-    {% if metaKeys and metaKeys|length %}
-      <span hidden
-        data-pagefind-meta="{% for k in metaKeys %}{{ k|safe }}{% if not loop.last %}, {% endif %}{% endfor %}">
-      </span>
-    {% endif %}
+
 
     <div class="entity-predicate-values"
          {% if weight %}data-pagefind-weight="{{ weight }}"{% endif %}

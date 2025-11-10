@@ -800,7 +800,8 @@
         },
         {
           "sh:order": 3,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasActivityType"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasActivityType",
+          "pagefind:filter": ["Type d'activité"]
         },
         {
           "sh:order": 4,
