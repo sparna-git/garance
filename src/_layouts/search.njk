@@ -17,12 +17,16 @@ layout: main.njk
                 	autofocus: true,
                     showEmptyFilters: false,
                     excerptLength: 120,
+                    processTerm: function (term) {
+                        console.log('term :', term);
+                        return term;
+                    },
                     ranking: {
                         termFrequency: 1.0,
-                        termSimilarity: 8.0,
+                        termSimilarity: 80.0,
                         pageLength: 0.0,
                         termSaturation: 1.4,
-                    }
+                    },
                 });
             });
         </script>
