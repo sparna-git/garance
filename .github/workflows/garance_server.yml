@@ -43,6 +43,9 @@ jobs:
       - name: Copy the referentiel file
         run: npm run copyFiles Referentiels/agents dist/entities/agent Referentiels/lieux dist/entities/place
 
+      - name: Pagefind
+        run: npx pagefind --write-playground
+
       # Vocabularies - Concepts
       # Python for convert JSON File to RDF File
       - uses: actions/checkout@v5
@@ -55,9 +58,6 @@ jobs:
       # install 
       - run: python -m pip install rdflib
       - run: python scripts/JsonToRDF.py dist/entities/conceptsJson
-
-      - name: Pagefind
-        run: npx pagefind --write-playground
 
       # SCP transfer project to server ANS      
       - name: copy file via ssh key
