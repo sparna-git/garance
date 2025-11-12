@@ -1,0 +1,26 @@
+---js
+{
+  pagination: {
+      data: "vocabularies.graph",
+      size: 1,
+      alias: "conceptsDB",
+      before: function(paginationData, fullData) {
+        const concepts = []
+        // filter out entries without an id
+        paginationData.map( e => 
+            e["inverse_inScheme"].map( f => concepts.push(f) )          
+        )
+        return concepts.filter( e => e.id)
+      }
+  },
+  permalink: "entities/conceptsJson/{{ conceptsDB.id | localName }}.json"
+}
+---
+
+
+{% set jsonLdContext = vocabularies["@context"] %}
+
+{
+ "@context" : {{ jsonLdContext | json }} ,
+ "graph" : {{ conceptsDB | json }}
+}
