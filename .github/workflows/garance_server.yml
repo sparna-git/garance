@@ -43,6 +43,15 @@ jobs:
       - name: Copy the referentiel file
         run: npm run copyFiles Referentiels/agents dist/entities/agent Referentiels/lieux dist/entities/place
 
+      # Vocabularies - Concepts
+      # Python for convert JSON File to RDF File
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+          cache: 'pip' # caching pip dependencies
+      - run: pip install -r rdflib
+      - run: python scripts/JsonToRDF.py dist/entities/conceptsJson
+
       - name: Pagefind
         run: npx pagefind --write-playground
 
