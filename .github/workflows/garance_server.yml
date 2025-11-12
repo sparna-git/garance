@@ -48,7 +48,7 @@ jobs:
 
       # Vocabularies - Concepts
       # Python for convert JSON File to RDF File
-      - uses: actions/checkout@v5
+      #- uses: actions/checkout@v5
       - name: Set up Python
         # This is the version of the action for setting up Python, not the Python version.
         uses: actions/setup-python@v5
