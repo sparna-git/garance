@@ -429,4 +429,5 @@ mark {
   width: 100%;
   border: 1px solid #ccc;
   z-index: 1;
+  margin-bottom: 10px;
 }

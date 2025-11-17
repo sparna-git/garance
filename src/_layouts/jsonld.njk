@@ -18,7 +18,7 @@
         {# expands the prefixed URI and print it #}
         {{ renderPlainUri(obj | expandUri(context)) }}
     {% elif obj | isIriString(context) %}
-        {{ renderPlainUri(obj) }}
+        {{ renderPlainUri(obj) }}        
     {% elif obj | isIriObjectWithOnlyOptionalType(context) %}
         {# special : circular reference to the main entity - print a non-clickable label #}
         {% if (obj.id | expandUri(context)) == (mainObject | getIriExpanded(context)) %}
@@ -36,7 +36,16 @@
     {% elif obj | isObjectWithSingleLabelProperty(context) %}
         {{ renderObjectWithSingleLabelProperty(obj) }}
     {% else %}
-        {{ renderObject(obj, depth, mainObject) }}
+        {% set type = obj['@type'] or obj['type'] %}
+        {% if (type == "rico:PhysicalLocation") %}
+          {% set renderingPlugin = obj | getTypes | getTemplateOfTypes(shapes, context) %}
+          {% if renderingPlugin %}
+            {{ renderDataMap(obj,renderingPlugin, depth, mainObject) }}
+          {% endif %}  
+        {% else %}
+          {{ renderObject(obj, depth, mainObject) }}
+        {% endif %}
+        
     {% endif %}
 {% endmacro %}
 
@@ -56,10 +65,9 @@
     <div class="entity">
         {# The rendering plugin declared in the shapes #}
         {% set renderingPlugin = object | getTypes | getTemplateOfTypes(shapes, context) %}
-
         {% if renderingPlugin %}
           {# call the plugin found from the registry #}
-          {{ getContext(renderingPlugin)(object, depth, mainObject) }}
+          {{ getContext(renderingPlugin)(object, depth, mainObject) }}          
         {% else %}
           {% set sortedKeys = object | sortPredicates(shapes,context) %}
           {{ renderObjectValue(sortedKeys,object,depth, mainObject) }}
@@ -89,8 +97,6 @@
     <div class="entity-predicate-predicate" data-pagefind-ignore>
       {{ renderPredicate(predicate) }}
     </div>
-
-
 
     <div class="entity-predicate-values"
          {% if weight %}data-pagefind-weight="{{ weight }}"{% endif %}
@@ -222,21 +228,41 @@
     <span data-i18n="{{uri | shortenUri(context) }}" {% if depth == 1 %}data-pagefind-filter="type[data-i18n]"{% endif %}></span>
 {% endmacro %}
 
-
-
+{% macro renderDataMap(obj,renderingPlugin,depth, mainObject) %}
+  
+    {% set objCoordinates = obj["rico:hasOrHadCoordinates"] %}
+    {% set objType = objCoordinates | isArray %}
+    {% if objType %}
+      {% for objMap in objCoordinates %}        
+        <div class="entity">
+        {{ getContext(renderingPlugin)(objMap, depth, mainObject) }}
+        </div>
+      {% endfor %}
+      
+    {% else %}
+      <div class="entity">
+      {{ getContext(renderingPlugin)(objCoordinates, depth, mainObject) }}
+      </div>
+    {% endif %}
+    
+{% endmacro %}
 
 {# ####################### SPECIFIC MACROS ################################# #}
 
 
 
 {% macro renderRicoCoordinates(obj, depth, mainObject) %}
-    {% set measure = obj | getPredicateFirstValue("rico:measure", context) %}
-    {% if measure %}
-        <div id="map" data="{{ measure | safe | stripHtmlPrefix }}"></div>
-    {% else %}
-        {% set sortedKeys = obj | sortPredicates(shapes,context) %}
-        {{ renderObjectValue(sortedKeys,obj,depth, mainObject) }}
-    {% endif %}
+  {% set measure = obj | getPredicateFirstValue("rico:measure", context) %}
+  {% if measure %}
+      <div id="map" data="{{ measure | safe | stripHtmlPrefix }}"></div>
+      {% set noteMap = obj | getPredicateFirstValue("rico:note", context) %}
+      {% if noteMap %}
+        {{ renderLiteral(noteMap) }}
+      {% endif %}
+  {% else %}
+      {% set sortedKeys = obj | sortPredicates(shapes,context) %}
+      {{ renderObjectValue(sortedKeys,obj,depth, mainObject) }}
+  {% endif %}  
 {% endmacro %}
 
 
