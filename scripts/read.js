@@ -18,7 +18,7 @@ let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
 
   const listFiles = originalListOfFiles.filter(f => {
     const ext = path.extname(f);
-    return ext === ".rdf" || ext === ".ttl";
+    return ext === ".rdf" || ext === ".ttl" || ext === ".jsonld";
   });
 
   // joint in only json ld
@@ -48,6 +48,10 @@ let readJsonLDfromDirectory = async function (PathDirectory, filePath) {
         quadStream = rdfParser.parse(streamRDF, {
         contentType: "text/turtle",
         baseIRI: "http://example.org",
+        });
+      } else if (path.extname(f) === ".jsonld") {
+        quadStream = rdfParser.parse(streamRDF, {
+        contentType: "application/ld+json"
         });
       }
       const textStream = rdfSerializer.serialize(quadStream, {
