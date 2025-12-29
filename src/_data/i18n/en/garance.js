@@ -1,8 +1,8 @@
 module.exports = {
   title:
     "Graphe des Archives nationales pour la Recherche, l’Accès et la Navigation des Connaissances Enrichies",
-  
-  "nav.title" : "Garance",
+
+  "nav.title": "Garance",
   "nav.menu.referentiels": "Authority Records and Vocabularies",
   "nav.menu.vocabularies": "Controlled Vocabularies",
   "nav.menu.agents": "Agents",
@@ -18,7 +18,8 @@ module.exports = {
   "Voir dans le SIV": "See also in the Virtual reading room of the AnF",
 
   // Menu Vocabularies
-  "nav.menu.vocabularies.activityTypes": "Function Types of Corporate Bodies (en)",
+  "nav.menu.vocabularies.activityTypes":
+    "Function Types of Corporate Bodies (en)",
   "nav.menu.vocabularies.carrierTypes": "Carrier Types (en)",
   "nav.menu.vocabularies.corporateBodyTypes": "Corporate Body Types (en)",
   "nav.menu.vocabularies.documentaryFormTypes": "Documentary Form Types (en)",
@@ -26,10 +27,12 @@ module.exports = {
   "nav.menu.vocabularies.languages": "Languages (en)",
   "nav.menu.vocabularies.occupationTypes": "Activity Types of Persons (en)",
   "nav.menu.vocabularies.placeTypes": "Place Types (en)",
-  "nav.menu.vocabularies.productionTechniqueTypes": "Production Technique Types of Records (en)",
+  "nav.menu.vocabularies.productionTechniqueTypes":
+    "Production Technique Types of Records (en)",
   "nav.menu.vocabularies.recordSetTypes": "Record Set Types (en)",
   "nav.menu.vocabularies.recordStates": "Record States (en)",
-  "nav.menu.vocabularies.representationTypes": "Representation Types of Records (en)",
+  "nav.menu.vocabularies.representationTypes":
+    "Representation Types of Records (en)",
   "nav.menu.vocabularies.things": "Subjects of Records (en)",
 
   // vocabulary layout
@@ -69,4 +72,23 @@ module.exports = {
   "entities.agents.title": "Agents",
   "entities.places.no-places-found": "No places found",
   "entities.agents.no-agents-found": "No agents found",
+
+  "actions.toggle": "Toggle SPARQL editor",
+  "actions.share": "Share",
+  "actions.export": "Export query in JSON",
+  "actions.import": "Import query in JSON",
+  "share.modal.title": "Direct query link",
+  "share.modal.close": "Close",
+  "export.modal.title": "Query as JSON",
+  "export.modal.close": "Close",
+  "import.modal.title": "Query as JSON",
+  "import.modal.import": "Import",
+  "example.placeholder": "Load example query...",
+  "example.1.title": "Artworks displayed in Italian museums",
+  "example.2.title": "Museums where Van Goghs artworks are displayed",
+  "example.3.title":
+    "19th Century French women artists, movements, artworks & museums",
+  Results: "Results",
+  send: "Send",
+  history: "History",
 };

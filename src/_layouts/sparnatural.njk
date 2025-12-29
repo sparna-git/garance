@@ -1,0 +1,159 @@
+---
+layout: main.njk
+---
+
+<div class="container mt-5">
+
+  <h1>{{ title }}</h1>
+
+  <!-- Endpoint -->
+  <p>
+    Queries are sent to
+    <a href="#" id="displayEndpoint">...</a>
+  </p>
+
+  <!-- ================= Sparnatural ================= -->
+  <spar-natural
+    src="/sparnatural/config.ttl"
+    endpoint="https://dbpedia.org/sparql"
+    lang="{{ lang }}"
+    defaultLang="{{ lang }}"
+    distinct="true"
+    limit="1000"
+    debug="true">
+  </spar-natural>
+
+  <input type="hidden" id="query-json" />
+
+  <!-- ================= Action bar ================= -->
+  <div class="row align-items-center">
+
+    <!-- Left actions -->
+    <div class="col-md-8">
+      <span style="font-style: italic; font-size: 0.9em">
+
+        <a href="#" id="sparql-toggle">
+          <i id="sparql-toggle-icon" class="fad fa-eye fa-fw"></i>
+          <span data-i18n="actions.toggle">Toggle SPARQL editor</span>
+        </a>
+
+        &nbsp;|&nbsp;
+
+        <a href="#" id="share">
+          <i class="fad fa-share-square"></i>
+          <span data-i18n="actions.share">Share</span>
+        </a>
+
+        &nbsp;|&nbsp;
+
+        <a href="#" id="export">
+          <i class="fad fa-file-export"></i>
+          <span data-i18n="actions.export">Export</span>
+        </a>
+
+        &nbsp;|&nbsp;
+
+        <a href="#" id="import">
+          <i class="fad fa-file-import"></i>
+          <span data-i18n="actions.import">Import</span>
+        </a>
+
+      </span>
+    </div>
+
+    <!-- Right / History -->
+    <div class="col-md-4 text-end">
+
+      <!-- Web component (hidden UI, logic only) -->
+      <sparnatural-history lang="{{ lang }}">
+        <sparnatural-services
+          href="">
+        </sparnatural-services>
+      </sparnatural-history>
+
+      <button
+        id="myCustomButton"
+        class="btn btn-primary ms-2">
+        <i class="fad fa-history"></i>
+        <span data-i18n="history">History</span>
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= YASQE ================= -->
+<div class="container">
+  <div id="yasqe" style="display:none;"></div>
+</div>
+
+<!-- ================= YASR ================= -->
+<div class="container mb-4">
+  <div id="yasr"></div>
+</div>
+
+<!-- ================= SHARE MODAL ================= -->
+<div class="modal fade" id="shareModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" data-i18n="share.modal.title">
+          Share query
+        </h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <a id="share-link" href="#"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= EXPORT MODAL ================= -->
+<div class="modal fade" id="exportModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" data-i18n="export.modal.title">
+          Export JSON
+        </h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <textarea
+          id="export-json"
+          class="form-control"
+          rows="15"
+          readonly></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= IMPORT MODAL ================= -->
+<div class="modal fade" id="importModal" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" data-i18n="import.modal.title">
+          Import JSON
+        </h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <textarea
+          id="import-json"
+          class="form-control"
+          rows="15"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button
+          id="importButton"
+          class="btn btn-primary"
+          data-i18n="import.modal.import">
+          Import
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

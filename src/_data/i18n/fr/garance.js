@@ -2,7 +2,7 @@ module.exports = {
   title:
     "Graphe des Archives nationales pour la Recherche, l’Accès et la Navigation des Connaissances Enrichies",
 
-  "nav.title" : "Garance",
+  "nav.title": "Garance",
   "nav.menu.referentiels": "Référentiels",
   "nav.menu.vocabularies": "Vocabulaires contrôlés",
   "nav.menu.agents": "Agents",
@@ -22,15 +22,20 @@ module.exports = {
   "nav.menu.vocabularies.activityTypes": "Fonctions des collectivités",
   "nav.menu.vocabularies.carrierTypes": "Supports des archives",
   "nav.menu.vocabularies.corporateBodyTypes": "Catégories des collectivités",
-  "nav.menu.vocabularies.documentaryFormTypes": "Types des documents et des données",
+  "nav.menu.vocabularies.documentaryFormTypes":
+    "Types des documents et des données",
   "nav.menu.vocabularies.identifierTypes": "Types d’identifiants",
   "nav.menu.vocabularies.languages": "Langues",
-  "nav.menu.vocabularies.occupationTypes": "Fonctions, métiers et professions des personnes",
+  "nav.menu.vocabularies.occupationTypes":
+    "Fonctions, métiers et professions des personnes",
   "nav.menu.vocabularies.placeTypes": "Types de lieux",
-  "nav.menu.vocabularies.productionTechniqueTypes": "Techniques de production des archives",
-  "nav.menu.vocabularies.recordSetTypes": "Types des groupes de documents et de données",
+  "nav.menu.vocabularies.productionTechniqueTypes":
+    "Techniques de production des archives",
+  "nav.menu.vocabularies.recordSetTypes":
+    "Types des groupes de documents et de données",
   "nav.menu.vocabularies.recordStates": "États des documents et des données",
-  "nav.menu.vocabularies.representationTypes": "Types de représentation des archives",
+  "nav.menu.vocabularies.representationTypes":
+    "Types de représentation des archives",
   "nav.menu.vocabularies.things": "Mots-matières",
 
   // vocabulary layout
@@ -70,4 +75,23 @@ module.exports = {
   "entities.agents.title": "Agents",
   "entities.places.no-places-found": "Aucun lieu trouvé",
   "entities.agents.no-agents-found": "Aucun agent trouvé",
+
+  "actions.toggle": "Afficher/Masquer éditeur SPARQL",
+  "actions.share": "Partager",
+  "actions.export": "Exporter la requête en JSON",
+  "actions.import": "Charger une requête en JSON",
+  "share.modal.title": "Lien direct vers la requête",
+  "share.modal.close": "Fermer",
+  "export.modal.title": "Requête JSON",
+  "export.modal.close": "Fermer",
+  "import.modal.title": "Charger une requête en JSON",
+  "import.modal.import": "Charger",
+  "example.placeholder": "Charger une requête d'exemple...",
+  "example.1.title": "Les œuvres exposées dans des musées italiens",
+  "example.2.title": "Les musées qui exposent les oeuvres de Vincent Van Gogh",
+  "example.3.title":
+    "Les artistes françaises du XIXe, mouvements, œuvres & lieux d exposition",
+  Results: "Résultats",
+  send: "Envoyer",
+  history: "Historique",
 };
