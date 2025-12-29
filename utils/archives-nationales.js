@@ -213,6 +213,23 @@ function toUrl(uri) {
   return result;
 }
 
+// trie un item en fonction de son label
+function getSortLabel(item) {
+  if (item["skos:hiddenLabel"]?.["@value"]) {
+    return item["skos:hiddenLabel"]["@value"];
+  }
+
+  if (item["rdfs:label"]?.["@value"]) {
+    return item["rdfs:label"]["@value"];
+  }
+
+  if (item["skos:prefLabel"]?.["@value"]) {
+    return item["skos:prefLabel"]["@value"];
+  }
+
+  return "";
+}
+
 /**
  * Filtre Eleventy pour extraire les entités (agents ou places)
  */
@@ -254,6 +271,7 @@ function getEntities(graph, currentLetter, type = "agents") {
  */
 function sortLabels(arr) {
   if (!Array.isArray(arr)) return arr;
+
   const collator = new Intl.Collator("fr", {
     sensitivity: "base",
     ignorePunctuation: true,
@@ -261,20 +279,8 @@ function sortLabels(arr) {
   });
 
   return arr.sort((a, b) => {
-    const aLabel =
-      a["rdfs:label"]?.fr ||
-      a["rdfs:label"]?.["@value"] ||
-      a["skos:prefLabel"]?.fr ||
-      a["skos:prefLabel"]?.["@value"] ||
-      "";
-
-    const bLabel =
-      b["rdfs:label"]?.fr ||
-      b["rdfs:label"]?.["@value"] ||
-      b["skos:prefLabel"]?.fr ||
-      b["skos:prefLabel"]?.["@value"] ||
-      "";
-
+    const aLabel = getSortLabel(a);
+    const bLabel = getSortLabel(b);
     return collator.compare(aLabel, bLabel);
   });
 }

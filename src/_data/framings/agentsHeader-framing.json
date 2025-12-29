@@ -44,6 +44,7 @@
   "type": ["rico:Agent"],
   "skos:prefLabel": { "@omitDefault": true },
   "rdfs:label": { "@omitDefault": true },
+  "skos:hiddenLabel": { "@omitDefault": true },
   "rico:isOrWasDescribedBy": {
     "@omitDefault": true,
     "@explicit": true,

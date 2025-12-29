@@ -2,14 +2,10 @@
 layout: main.njk
 ---
 
-{% set sortIndex = agentsHeader.graph | jsonSort("rdfs:label") %}
-
 <main class="section_garance">
 	<div class="row">
 		<div class="col-md">
-
 			{{ content | safe }}
-
 		</div>
 	</div>
 </main>

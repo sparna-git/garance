@@ -68,6 +68,13 @@
           "pagefind:meta": ["Type d'occupation"]
         },
         {
+          "sh:order": 13.5,
+          "sh:path": "https://rdf.archives-nationales.culture.gouv.fr/ontology#hasOrHadActivityOfType",
+          "volipi:class": "horizontal",
+          "pagefind:filter": ["Fonction de collectivité"],
+          "pagefind:meta": ["Fonction de collectivité"]
+        },
+        {
           "sh:order": 14,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#generalDescription",
           "pagefind:weight": 3.0
@@ -800,8 +807,7 @@
         },
         {
           "sh:order": 3,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasActivityType",
-          "pagefind:filter": ["Type d'activité"]
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasActivityType"
         },
         {
           "sh:order": 4,
