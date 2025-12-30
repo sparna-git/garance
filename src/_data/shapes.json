@@ -190,11 +190,13 @@
         {
           "sh:order": 40,
           "sh:path": "http://www.w3.org/2002/07/owl#sameAs",
-          "pagefind:ignore": true
+          "pagefind:ignore": true,
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 41,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasDescribedBy"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasDescribedBy",
+          "pagefind:ignore": true
         }
       ]
     },

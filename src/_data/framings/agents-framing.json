@@ -294,5 +294,11 @@
     "@explicit": true,
     "@id": {},
     "rdfs:label": { "@omitDefault": true }
+  },
+  "rico:isOrWasDescribedBy": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "type": "rico:Record",
+    "rdfs:seeAlso": { "@omitDefault": true }
   }
 }
