@@ -172,6 +172,8 @@
             <span class="literal">{{ value | safe | stripHtmlPrefix }}</span>
         {% elif langOrType == "xsd:date" %}
             <span class="literal">{{ value | xsdDateToLocale(locale) }}</span>
+        {% elif langOrType == "xsd:gYear" %}
+            <span class="literal">{{ value | getStringValue }}</span>
         {% else %}
             <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
         {% endif %}
