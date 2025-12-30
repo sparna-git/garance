@@ -336,7 +336,8 @@ function cleanPreferredAgentsNames(graph) {
 
 
 function filterPlacesWithUri(jsonArray) {
-  const regexPlace = new RegExp("place:FRAN_RI_");
+  // étendu pour prendre en compte les nouvelles URIs
+  const regexPlace = new RegExp("place:FRAN_RI|place:vdp");
   const newfilter = jsonArray.filter((f) => regexPlace.exec(f.id));
   return newfilter;
 }
