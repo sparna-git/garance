@@ -807,11 +807,24 @@
         },
         {
           "sh:order": 3,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasActivityType"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#occuredAtDate"
         },
         {
           "sh:order": 4,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasActivityType"
+        },
+        {
+          "sh:order": 5,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#generalDescription"
+        },
+        {
+          "sh:order": 6,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadLocation"
+        },
+        {
+          "sh:order": 7,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hadSubevent",
+          "volipi:template": "renderHadSubevent"
         }
       ]
     },
@@ -858,7 +871,7 @@
     },
     {
       "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#PhysicalLocation",
-      "volipi:template": "renderRicoCoordinates",
+      "volipi:template": "renderPhysicalLocation",
       "sh:property": [
         {
           "sh:order": 1,
