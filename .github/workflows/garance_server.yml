@@ -32,9 +32,21 @@ jobs:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
 
+      - name: Test Uploading an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-artifact-name
+          path: README.md
+
       - run: npm run read Referentiels
       - run: npm run frame
-      #- run: npm run build
+
+      - name: Uploading places.json
+        uses: actions/upload-artifact@v4
+        with:
+          name: places.json
+          path: src/_data/places.json
+
       - name: Build
         run: | 
             export NODE_OPTIONS=--max-old-space-size=4096
