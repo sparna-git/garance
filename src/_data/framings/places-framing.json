@@ -91,17 +91,6 @@
       "@explicit": true,
       "skos:prefLabel": { "@omitDefault": true }
   },
-  "rico:hasOrHadPhysicalLocation": {
-      "@omitDefault": true,
-      "@explicit": true,
-      "rico:hasOrHadCoordinates": {
-        "@omitDefault": true,
-        "@explicit": true,
-        "rico:note": { "@omitDefault": true },
-        "rico:geodesicSystem": { "@omitDefault": true },
-        "rico:measure": { "@omitDefault": true }
-      }
-  },
   "rico:hasOrHadPlaceName": {
     "@omitDefault": true,
     "@explicit": true,

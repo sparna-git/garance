@@ -4,13 +4,38 @@
   pagination: {
       data: "places.graph",
       size: 1,
-      alias: "placeDB",
+      alias: "thePlace",
       before: function(paginationData, fullData) {
+
         // filter out entries without an id
-        return paginationData.filter(item => item.id);
+        let items = paginationData.filter(item => item.id);
+
+        // Merge in any top-level properties from fullData.placesLocation.graph
+        // matching by id. Do NOT overwrite existing properties on the
+        // pagination item — only add properties that are missing.
+        if (fullData && fullData.placesLocation && Array.isArray(fullData.placesLocation.graph)) {
+          const locById = fullData.placesLocation.graph.reduce((acc, obj) => {
+            if (obj && obj.id) acc[obj.id] = obj;
+            return acc;
+          }, {});
+
+          items = items.map(item => {
+            const loc = locById[item.id];
+            if (loc) {
+              for (const [k, v] of Object.entries(loc)) {
+                if (!(k in item)) {
+                  item[k] = v;
+                }
+              }
+            }
+            return item;
+          });
+        }
+
+        return items;
       }
   },
-  permalink: "entities/place/{{ placeDB.id | localName }}/"
+  permalink: "entities/place/{{ thePlace.id | localName }}/"
 }
 ---
 
@@ -23,11 +48,11 @@
 {# disable pagefind image #}
 <span data-pagefind-meta="image:" />
 
-{% set headerData = placesHeader | findById(placeDB.id) %}
+{% set headerData = placesHeader | findById(thePlace.id) %}
 {{ header.header(headerData) }}
 
 {# first parameter is the object to print, second parameter is the main entity printed #}
-{{ jsonld.render(placeDB,headerData) }}
+{{ jsonld.render(thePlace,headerData) }}
 
 
 
