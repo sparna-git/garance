@@ -3,9 +3,76 @@ layout: main.njk
 ---
 
 <main class="section_garance">
-	<div class="row">
-		<div class="col-md">
-			{{ content | safe }}
-		</div>
-	</div>
+
+  {# ===================== DIAGRAMMES ===================== #}
+  <section class="mb-5">
+
+    <!-- GRID 2 x 2 -->
+    <div class="row g-4 justify-content-center">
+
+      {% if agents_stats %}
+      <div class="col-lg-6 col-md-12 text-center">
+        <h4>Types d’agents</h4>
+        <div class="chart-wrapper">
+          <canvas id="agentsChart"></canvas>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if persons_occupation_stats %}
+      <div class="col-lg-6 col-md-12 text-center">
+        <h4>Occupations (personnes)</h4>
+        <div class="chart-wrapper">
+          <canvas id="personsOccupationChart"></canvas>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if corporate_body_stats %}
+      <div class="col-lg-6 col-md-12 text-center">
+        <h4>Types de collectivités</h4>
+        <div class="chart-wrapper">
+          <canvas id="corporateBodyChart"></canvas>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if corporate_body_stats_anf %}
+      <div class="col-lg-6 col-md-12 text-center">
+        <h4>Activités des collectivités (ANF)</h4>
+        <div class="chart-wrapper">
+          <canvas id="corporateBodyAnfChart"></canvas>
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+  </section>
+	{# ===================== SCRIPT ===================== #}
+	  {% if agents_stats %}
+		<script>
+		window.agents_stats = {{ agents_stats | dump | safe }};
+		</script>
+	  {% endif %}
+	  {% if persons_occupation_stats %}
+		<script>
+		window.persons_occupation_stats = {{ persons_occupation_stats | dump | safe }};
+		</script>
+	  {% endif %}
+	  {% if corporate_body_stats %}
+		<script>
+		window.corporate_body_stats = {{ corporate_body_stats | dump | safe }};
+		</script>
+	  {% endif %}
+	  {% if corporate_body_stats_anf %}
+		<script>
+		window.corporate_body_stats_anf = {{ corporate_body_stats_anf | dump | safe }};
+		</script>
+	  {% endif %}
+
+  {# ===================== CONTENU TEXTE ===================== #}
+  <section>
+    {{ content | safe }}
+  </section>
+
 </main>

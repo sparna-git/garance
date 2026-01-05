@@ -39,7 +39,7 @@
                 "oType": "https://data.mydomain.com/ontologies/sparnatural-config/Country",
                 "values": [
                   {
-                    "label": "Italy (17)",
+                    "label": "Italy",
                     "rdfTerm": {
                       "type": "uri",
                       "value": "http://dbpedia.org/resource/Italy"

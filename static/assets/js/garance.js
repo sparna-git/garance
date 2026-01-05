@@ -238,6 +238,116 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// ===================== CHART HELPERS (GLOBAL) =====================
+function reduceToTopN(stats, maxItems = 20) {
+  if (!stats || stats.labels.length <= maxItems) return stats;
+
+  const combined = stats.labels.map((label, i) => ({
+    label,
+    value: stats.values[i],
+  }));
+
+  combined.sort((a, b) => b.value - a.value);
+
+  const top = combined.slice(0, maxItems - 1);
+  const rest = combined.slice(maxItems - 1);
+
+  return {
+    labels: [...top.map((d) => d.label), "Autres"],
+    values: [
+      ...top.map((d) => d.value),
+      rest.reduce((sum, d) => sum + d.value, 0),
+    ],
+  };
+}
+
+function makePieChart(canvasId, rawStats) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas || !rawStats) return;
+
+  const COLORS = [
+    "#4e79a7",
+    "#59a14f",
+    "#f28e2b",
+    "#e15759",
+    "#76b7b2",
+    "#edc948",
+    "#b07aa1",
+    "#ff9da7",
+    "#9c755f",
+    "#bab0ac",
+    "#86bc25",
+    "#ff9f40",
+    "#8c564b",
+    "#c49c94",
+    "#d62728",
+    "#17becf",
+    "#bcbd22",
+    "#7f7f7f",
+    "#aec7e8",
+    "#ffbb78",
+  ];
+
+  const stats = reduceToTopN(rawStats, 20);
+
+  new Chart(canvas, {
+    type: "pie",
+    data: {
+      labels: stats.labels,
+      datasets: [
+        {
+          data: stats.values,
+          backgroundColor: COLORS.slice(0, stats.labels.length),
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: "bottom",
+          align: "center",
+          labels: {
+            boxWidth: 12,
+            padding: 10,
+            font: { size: 11 },
+            usePointStyle: true,
+          },
+        },
+        tooltip: {
+          callbacks: {
+            label(context) {
+              const total = context.dataset.data.reduce((a, b) => a + b, 0);
+              const value = context.raw;
+              const pct = ((value / total) * 100).toFixed(1);
+              return `${context.label} : ${value.toLocaleString()} (${pct} %)`;
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof Chart === "undefined") return;
+
+  if (window.agents_stats) makePieChart("agentsChart", window.agents_stats);
+
+  if (window.persons_occupation_stats)
+    makePieChart("personsOccupationChart", window.persons_occupation_stats);
+
+  if (window.corporate_body_stats)
+    makePieChart("corporateBodyChart", window.corporate_body_stats);
+
+  if (window.corporate_body_stats_anf)
+    makePieChart("corporateBodyAnfChart", window.corporate_body_stats_anf);
+
+  if (window.places_types_stats)
+    makePieChart("placesChart", window.places_types_stats);
+});
+
 /*
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".copy-icon-btn").forEach((btn) => {

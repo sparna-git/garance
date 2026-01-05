@@ -4,7 +4,33 @@ layout: main.njk
 
 <main class="section_places">
 
-	{{ content | safe }}
+  {% if places_types_stats %}
+  <section class="mb-5">
+
+    <h2 class="text-center mt-4 mb-4">
+      Répartition des lieux par type
+    </h2>
+
+    <!-- Diagramme centré -->
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5 text-center">
+        <canvas id="placesChart"></canvas>
+      </div>
+    </div>
+
+      {# ===================== SCRIPT ===================== #}
+  {% if places_types_stats %}
+<script>
+  window.places_types_stats = {{ places_types_stats | dump | safe }};
+</script>
+{% endif %}
+
+  </section>
+  {% endif %}
+
+  <!-- Contenu éditorial -->
+  <section>
+    {{ content | safe }}
+  </section>
 
 </main>
-
