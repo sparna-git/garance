@@ -4,14 +4,6 @@ layout: main.njk
 
 <div class="container mt-5">
 
-  <h1>{{ title }}</h1>
-
-  <!-- Endpoint -->
-  <p>
-    Queries are sent to
-    <a href="#" id="displayEndpoint">...</a>
-  </p>
-
   <!-- ================= Sparnatural ================= -->
   <spar-natural
     src="/sparnatural/config.ttl"
@@ -25,16 +17,16 @@ layout: main.njk
 
   <input type="hidden" id="query-json" />
 
-  <!-- ================= Action bar ================= -->
-  <div class="row align-items-center">
+  <!-- ================= ACTION BAR ================= -->
+  <div class="row">
 
     <!-- Left actions -->
-    <div class="col-md-8">
+    <div class="col-md-6">
       <span style="font-style: italic; font-size: 0.9em">
 
         <a href="#" id="sparql-toggle">
           <i id="sparql-toggle-icon" class="fad fa-eye fa-fw"></i>
-          <span data-i18n="actions.toggle">Toggle SPARQL editor</span>
+          <span data-i18n="actions.toggle">Toggle SPARQL</span>
         </a>
 
         &nbsp;|&nbsp;
@@ -61,24 +53,37 @@ layout: main.njk
       </span>
     </div>
 
-    <!-- Right / History -->
-    <div class="col-md-4 text-end">
+    <!-- Examples -->
+    <div class="col-md-4">
+      <form>
+        <div class="form-group">
+            <select
+            class="form-control"
+            id="select-examples"
+            style="width:100%; appearance:auto !important">
+            <option value="none" selected>
+                Charger une requête d’exemple…
+            </option>
+            </select>
+        </div>
+      </form>
+    </div>
 
-      <!-- Web component (hidden UI, logic only) -->
+    <!-- History -->
+    <div class="col-md-2 text-end">
       <sparnatural-history lang="{{ lang }}">
-        <sparnatural-services
-          href="">
-        </sparnatural-services>
+        <sparnatural-services href=""></sparnatural-services>
       </sparnatural-history>
 
       <button
         id="myCustomButton"
-        class="btn btn-primary ms-2">
+        class="btn btn-primary"
+        style="width:100%">
         <i class="fad fa-history"></i>
         <span data-i18n="history">History</span>
       </button>
-
     </div>
+
   </div>
 </div>
 
@@ -96,15 +101,23 @@ layout: main.njk
 <div class="modal fade" id="shareModal" tabindex="-1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
+
       <div class="modal-header">
-        <h5 class="modal-title" data-i18n="share.modal.title">
-          Share query
-        </h5>
+        <h5 class="modal-title">Partage de requête</h5>
         <button class="btn-close" data-bs-dismiss="modal"></button>
       </div>
+
       <div class="modal-body">
-        <a id="share-link" href="#"></a>
+        <p>Pour partager cette requête, envoyez le lien suivant :</p>
+        <a id="share-link" href="#" target="_blank" rel="noopener"></a>
       </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">
+          Fermer
+        </button>
+      </div>
+
     </div>
   </div>
 </div>
@@ -113,19 +126,30 @@ layout: main.njk
 <div class="modal fade" id="exportModal" tabindex="-1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
+
       <div class="modal-header">
-        <h5 class="modal-title" data-i18n="export.modal.title">
-          Export JSON
-        </h5>
+        <h5 class="modal-title">Export JSON</h5>
         <button class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">
+
+      <div class="modal-body" style="overflow:hidden;">
         <textarea
           id="export-json"
-          class="form-control"
-          rows="15"
+          class="form-control font-monospace"
+          rows="20"
+          style="width:100%"
           readonly></textarea>
       </div>
+
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal">
+          Fermer
+        </button>
+      </div>
+
     </div>
   </div>
 </div>
@@ -134,26 +158,28 @@ layout: main.njk
 <div class="modal fade" id="importModal" tabindex="-1">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
+
       <div class="modal-header">
-        <h5 class="modal-title" data-i18n="import.modal.title">
-          Import JSON
-        </h5>
+        <h5 class="modal-title">Import JSON</h5>
         <button class="btn-close" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">
+
+      <div class="modal-body" style="overflow:hidden;">
         <textarea
           id="import-json"
-          class="form-control"
-          rows="15"></textarea>
+          class="font-monospace"
+          rows="20"
+          style="width:100%"></textarea>
       </div>
+
       <div class="modal-footer">
         <button
           id="importButton"
-          class="btn btn-primary"
-          data-i18n="import.modal.import">
+          class="btn btn-primary">
           Import
         </button>
       </div>
+
     </div>
   </div>
 </div>

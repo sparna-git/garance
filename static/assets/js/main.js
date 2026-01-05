@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // -----------------------------------------------------
   const sparnatural = document.querySelector("spar-natural");
   const historyComponent = document.querySelector("sparnatural-history");
+  // -----------------------------------------------------
+  // Sample queries
+  // -----------------------------------------------------
+  let sampleQueries = [];
+  const lang =
+    document.documentElement.lang || sparnatural.getAttribute("lang") || "fr";
 
   if (!sparnatural) {
     console.error("spar-natural not found");
@@ -52,7 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // -----------------------------------------------------
   // Sparnatural init
   // -----------------------------------------------------
+  // -----------------------------------------------------
+  // Sparnatural init
+  // -----------------------------------------------------
   sparnatural.addEventListener("init", () => {
+    // 🔹 Config plugins YASR
     for (const plugin in yasr.plugins) {
       yasr.plugins[plugin]?.notifyConfiguration?.(
         sparnatural.sparnatural.specProvider
@@ -60,6 +70,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     historyComponent.notifyConfiguration(sparnatural.sparnatural.specProvider);
+
+    // =====================================================
+    // 🔗 LOAD QUERY FROM URL (?query=...)
+    // =====================================================
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.has("query")) {
+      const compressedJson = urlParams.get("query");
+      const compressCodec = JsonUrl("lzma");
+
+      compressCodec.decompress(compressedJson).then((json) => {
+        const queryJson = JSON.parse(json);
+
+        // Load Sparnatural query
+        sparnatural.loadQuery(queryJson);
+
+        // Disable submit while executing
+        sparnatural.disablePlayBtn();
+
+        // Expand SPARQL in YASQE
+        yasqe.setValue(
+          sparnatural.expandSparql(
+            sparnatural.sparnatural.queryBuilder.buildQuery(queryJson)
+          )
+        );
+
+        // Execute SPARQL
+        sparnatural.executeSparql(
+          yasqe.getValue(),
+          (finalResult) => {
+            yasr.setResponse(finalResult);
+            sparnatural.enablePlayBtn();
+          },
+          (error) => {
+            console.error("Error executing SPARQL from shared URL");
+            console.error(error);
+            sparnatural.enablePlayBtn();
+          }
+        );
+      });
+    }
   });
 
   // -----------------------------------------------------
@@ -102,18 +153,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // -----------------------------------------------------
   // Share
   // -----------------------------------------------------
+
   document.getElementById("share").onclick = function () {
-    var compressCodec = JsonUrl("lzma");
+    const compressCodec = JsonUrl("lzma");
+
     compressCodec
       .compress(document.getElementById("query-json").value)
       .then((result) => {
-        var url = window.location.pathname;
-        url += "?query=" + result;
-        $("#share-link").text(url);
-        $("#share-link").attr("href", url);
-        $("#shareModal").modal("show");
+        let url = window.location.pathname + "?query=" + result;
+
+        const link = document.getElementById("share-link");
+        link.href = url;
+        link.textContent = "Requête Garance";
+
+        new bootstrap.Modal(document.getElementById("shareModal")).show();
       });
   };
+
   // -----------------------------------------------------
   // Export
   // -----------------------------------------------------
@@ -153,4 +209,47 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("myCustomButton")?.addEventListener("click", () => {
     historyComponent.openHistoryModal();
   });
+
+  fetch("/sparnatural/sample-queries.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("HTTP error " + response.status);
+      }
+      return response.json();
+    })
+    .then((queries) => {
+      const select = document.getElementById("select-examples");
+      if (!select) return;
+
+      queries.forEach((q, index) => {
+        const label =
+          lang === "fr" ? q.label_fr || q.label_en : q.label_en || q.label_fr;
+
+        const option = document.createElement("option");
+        option.value = index;
+        option.textContent = label;
+
+        select.appendChild(option);
+        sampleQueries.push(q);
+      });
+    })
+    .catch((err) => {
+      console.error("Error loading sample queries:", err);
+    });
+
+  document
+    .getElementById("select-examples")
+    ?.addEventListener("change", (e) => {
+      const index = e.target.value;
+
+      if (index === "none") return;
+      if (!sampleQueries[index]) return;
+
+      const query = sampleQueries[index].query;
+
+      sparnatural.loadQuery(query);
+
+      // Optionnel : auto-submit si tu veux
+      // setTimeout(() => sparnatural.dispatchEvent(new Event("submit")), 300);
+    });
 });

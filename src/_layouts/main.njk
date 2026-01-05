@@ -20,11 +20,13 @@
         <link rel='stylesheet' href="{{ '/assets/css/timeline.css' | relative(page) }}" type='text/css' />
         <!-- -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" >
-        <link rel="stylesheet" href="/sparnatural/sparnatural.css">
-        <link rel="stylesheet" href="/sparnatural/styles.css">
-        <link href="https://unpkg.com/@triply/yasgui/build/yasgui.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="/sparnatural/sparnatural-history.css">
+        
+        <link rel="stylesheet" href="/assets/css/sparnatural.css">
+        
 
+        <link href="https://unpkg.com/@triply/yasgui/build/yasgui.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/sparnatural-history.css">
+        <link rel="stylesheet" href="/assets/css/sparnatural-theme-sea.css" />
         <style>
                   .modal {
         z-index: 1050 !important; /* valeur doit etre supérieure à celle de l'overlay */
@@ -192,13 +194,16 @@
             triggerAnchors();
         </script>
         <!-- Json url (Compression) -->
-    <script src="https://cdn.jsdelivr.net/gh/masotime/json-url@master/dist/browser/json-url.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/masotime/json-url@master/dist/browser/json-url.js"></script>
+        <!-- chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
-        <script src="/sparnatural/sparnatural.js"></script>
-        <script src="/sparnatural/sparnatural-yasgui-plugins.js"></script>
-        <script src="/sparnatural/main.js"></script>
-        <script src="/sparnatural/sparnatural-history.js"></script>
-        <script src="/sparnatural/sparnatural-services.js"></script>
+        <script src="/assets/js/sparnatural.js"></script>
+        <script src="/assets/js/sparnatural-yasgui-plugins.js"></script>
+        <script src="/assets/js/main.js"></script>
+        <script src="/assets/js/sparnatural-history.js"></script>
+        <script src="/assets/js/sparnatural-services.js"></script>
 
     </body>    
 </html>
