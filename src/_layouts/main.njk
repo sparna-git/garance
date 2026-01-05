@@ -21,12 +21,15 @@
         <!-- -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" >
         
-        <link rel="stylesheet" href="/assets/css/sparnatural.css">
+        
         
 
         <link href="https://unpkg.com/@triply/yasgui/build/yasgui.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/css/sparnatural-history.css">
-        <link rel="stylesheet" href="/assets/css/sparnatural-theme-sea.css" />
+        
+        <link rel="stylesheet" href="{{ '/assets/css/sparnatural.css' | relative(page) }}">
+        <link rel="stylesheet" href="{{ '/assets/css/sparnatural-history.css' | relative(page) }}">
+        <link rel="stylesheet" href="{{ '/assets/css/sparnatural-theme-sea.css' | relative(page) }}" />
+        
         <style>
                   .modal {
         z-index: 1050 !important; /* valeur doit etre supérieure à celle de l'overlay */
@@ -34,6 +37,9 @@
       .modal-backdrop {
         z-index: 1040 !important; /* L'overlay doit avoir un z-index inferieur*/
       }  
+      .chart-wrapper{
+        height:400px;
+      }
         </style>
 
 
@@ -152,9 +158,6 @@
         <!-- i18n -->
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-
-
-
         <script src="{{ '/assets/vendor/jquery.i18n/jquery.i18n.js' | relative(page) }}"></script>
         <script src="{{ '/assets/vendor/jquery.i18n/jquery.i18n.messagestore.js' | relative(page) }}"></script>
         <script src="{{ '/assets/vendor/jquery.i18n/jquery.i18n.fallbacks.js' | relative(page) }}"></script>
@@ -184,17 +187,8 @@
             adaptPagesHrefLocale(locale);
             triggerAnchors();
         </script>
-        <!-- Json url (Compression) -->
-        <script src="https://cdn.jsdelivr.net/gh/masotime/json-url@master/dist/browser/json-url.js"></script>
         <!-- chart.js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-        <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
-        <script src="/assets/js/sparnatural.js"></script>
-        <script src="/assets/js/sparnatural-yasgui-plugins.js"></script>
-        <script src="/assets/js/main.js"></script>
-        <script src="/assets/js/sparnatural-history.js"></script>
-        <script src="/assets/js/sparnatural-services.js"></script>
 
     </body>    
 </html>
