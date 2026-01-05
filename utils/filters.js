@@ -88,6 +88,9 @@ module.exports = {
   },
 
   xsdDateToLocale: function (xsdDate, locale = "fr") {
+    if(locale == "") {
+      locale = "fr";
+    }
     return DateTime.fromISO(xsdDate, { zone: "utc" })
       .setLocale(locale)
       .toFormat("d LLLL yyyy");

@@ -336,7 +336,8 @@ function cleanPreferredAgentsNames(graph) {
 
 
 function filterPlacesWithUri(jsonArray) {
-  const regexPlace = new RegExp("place:FRAN_RI_");
+  // étendu pour prendre en compte les nouvelles URIs
+  const regexPlace = new RegExp("place:FRAN_RI|place:vdp");
   const newfilter = jsonArray.filter((f) => regexPlace.exec(f.id));
   return newfilter;
 }
@@ -440,6 +441,17 @@ async function readJsonStream(filePath) {
       console.log("Post-processing: places ...");
       framedData.graph = filterPlacesWithUri(framedData.graph);
       console.log("Done post-processing: places ...");
+      return framedData;
+    }
+  );
+  await doFrame(
+    dataJsonLdPlaces,
+    "src/_data/framings/placesLocation-framing.json",
+    "src/_data/placesLocation.json",
+    function(framedData) {
+      console.log("Post-processing: places location ...");
+      framedData.graph = filterPlacesWithUri(framedData.graph);
+      console.log("Done post-processing: places location ...");
       return framedData;
     }
   );

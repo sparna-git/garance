@@ -190,11 +190,13 @@
         {
           "sh:order": 40,
           "sh:path": "http://www.w3.org/2002/07/owl#sameAs",
-          "pagefind:ignore": true
+          "pagefind:ignore": true,
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 41,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasDescribedBy"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasDescribedBy",
+          "pagefind:ignore": true
         }
       ]
     },
@@ -807,11 +809,24 @@
         },
         {
           "sh:order": 3,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasActivityType"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#occuredAtDate"
         },
         {
           "sh:order": 4,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasActivityType"
+        },
+        {
+          "sh:order": 5,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#generalDescription"
+        },
+        {
+          "sh:order": 6,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadLocation"
+        },
+        {
+          "sh:order": 7,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hadSubevent",
+          "volipi:template": "renderHadSubevent"
         }
       ]
     },
@@ -858,7 +873,7 @@
     },
     {
       "sh:targetClass": "https://www.ica.org/standards/RiC/ontology#PhysicalLocation",
-      "volipi:template": "renderRicoCoordinates",
+      "volipi:template": "renderPhysicalLocation",
       "sh:property": [
         {
           "sh:order": 1,

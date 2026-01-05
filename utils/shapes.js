@@ -106,6 +106,7 @@ getSortedPredicatesOfTypes = function (typeArray, shapes) {
 };
 
 sortPredicates = function (object, shapes, context) {
+  if(!object) return [];
   let expandedKeys = new Map();
   Object.keys(object).forEach((key) => {
     // build a map of expanded URI to original key
@@ -261,6 +262,7 @@ getHeaderCssClasses = function (types, shapes, context) {
 };
 
 getTemplateOfTypes = function (types, shapes, context) {
+  if(!types) return null;
   const expandedTypes = [types].flat().map((t) => {
     return jsonld.expandUri(t, context);
   });

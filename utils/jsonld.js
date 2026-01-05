@@ -119,12 +119,13 @@ function isIriObjectWithOnlyOptionalType(value) {
   );
 }
 
+
 /**
- * Checks if an object has a single label property.
+ * Checks if an object has a single property (not @id/id, not @type/type).
  * @param {object} obj - The object to check.
- * @returns {boolean} True if the object has a single label property, false otherwise.
+ * @returns {boolean} True if the object has a single non-id non-type property.
  */
-function isObjectWithSingleLabelProperty(obj, context) {
+function isObjectWithSingleNonIdNonTypeProperty(obj, context) {
   if (!obj || !(typeof obj === "object")) return false;
   const keys = Object.keys(obj);
   const valueKeys = keys.filter(
@@ -137,8 +138,36 @@ function isObjectWithSingleLabelProperty(obj, context) {
     obj[valueKeys[0]] !== null &&
     (isLiteralString(obj[valueKeys[0]]) ||
       isLiteralObject(obj[valueKeys[0]]) ||
+      isLiteralArrayWithSingleValue(obj[valueKeys[0]]))
+  );
+}
+
+/**
+ * Checks if an object has a single property (not @id/id, not @type/type) which is a labelling property.
+ * @param {object} obj - The object to check.
+ * @returns {boolean} True if the object has a single non-id non-type property which is a labelling property, false otherwise.
+ */
+function isObjectWithSingleLabelProperty(obj, context) {
+  /*
+  return
+    isObjectWithSingleNonIdNonTypeProperty(obj, context)
+    &&
+    isLabelPredicate(getFirstNonIdNonTypePredicate(obj),context)
+    */
+    if (!obj || !(typeof obj === "object")) return false;
+  const keys = Object.keys(obj);
+  const valueKeys = keys.filter(
+    (k) => k !== "id" && k !== "@id" && k !== "type" && k !== "@type"
+  );
+
+  return (
+    (keys.includes("id") || keys.includes("@id")) &&
+    valueKeys.length === 1 &&
+    obj[valueKeys[0]] !== null &&
+    (isLiteralString(obj[valueKeys[0]]) ||
+      isLiteralObject(obj[valueKeys[0]]) ||
       isLiteralArrayWithSingleValue(obj[valueKeys[0]])) &&
-    isLabelPredicate(valueKeys[0], context)
+      isLabelPredicate(valueKeys[0], context)
   );
 }
 
@@ -177,6 +206,7 @@ function isLabelPredicate(predicateKey, context) {
  * @returns {string} The ID of the object.
  */
 function getId(obj) {
+  if(!obj) return null;
   return obj.id ? obj.id : obj["@id"];
 }
 
@@ -186,6 +216,7 @@ function getId(obj) {
  * @returns {string or array} The type or types of the object.
  */
 function getTypes(obj) {
+  if(!obj) return null;
   return obj.type ? obj.type : obj["@type"];
 }
 
@@ -241,15 +272,23 @@ function getPredicateFirstValue(object, predicateFullIri, context) {
     // take only the first value if an array
     if(isArray(predicateValue)) {
       predicateValue = predicateValue[0];
-    }
-    
-    if (isLiteralObject(predicateValue)) {
-      return predicateValue["@value"] || predicateValue["value"];
-    } else if (isLiteralString(predicateValue)) {
-      return predicateValue;
-    } else if (isIriObjectWithOnlyOptionalType(predicateValue)) {
-      return getId(predicateValue);
-    }
+    } 
+
+    return predicateValue;
+  }
+
+  return null;
+}
+
+function getStringValue(predicateValue) {  
+  if(!predicateValue) return null;
+  
+  if (isLiteralObject(predicateValue)) {
+    return predicateValue["@value"] || predicateValue["value"];
+  } else if (isLiteralString(predicateValue)) {
+    return predicateValue;
+  } else if (isIriObjectWithOnlyOptionalType(predicateValue)) {
+    return getId(predicateValue);
   }
 }
 
@@ -277,12 +316,21 @@ function getDatatype(literal, context) {
  * @returns {*} The value of the first non-ID, non-type property.
  */
 function getFirstNonIdNonTypeProperty(obj) {
+  return obj[getFirstNonIdNonTypePredicate(obj)];
+}
+
+/**
+ * Extracts the first non-ID, non-type predicate from an object.
+ * @param {object} obj - The object to extract the property from.
+ * @returns {*} The predicate being the first non-ID, non-type.
+ */
+function getFirstNonIdNonTypePredicate(obj) {
   const keys = Object.keys(obj);
   const valueKeys = keys.filter(
     (k) => k !== "id" && k !== "@id" && k !== "type" && k !== "@type"
   );
   if (valueKeys.length > 0) {
-    return obj[valueKeys[0]];
+    return valueKeys[0];
   }
 }
 
@@ -468,6 +516,7 @@ module.exports = Object.assign(module.exports || {}, {
   isLiteralString,
   isLiteralObject,
   isLiteralArrayWithSingleValue,
+  isObjectWithSingleNonIdNonTypeProperty,
   isObjectWithSingleLabelProperty,
   getId,
   getTypes,
@@ -476,6 +525,7 @@ module.exports = Object.assign(module.exports || {}, {
   getDatatype,
   getPredicate,
   getPredicateFirstValue,
+  getStringValue,
   hasType,
   hasPredicate,
   shortenUri,

@@ -36,16 +36,7 @@
     {% elif obj | isObjectWithSingleLabelProperty(context) %}
         {{ renderObjectWithSingleLabelProperty(obj) }}
     {% else %}
-        {% set type = obj['@type'] or obj['type'] %}
-        {% if (type == "rico:PhysicalLocation") %}
-          {% set renderingPlugin = obj | getTypes | getTemplateOfTypes(shapes, context) %}
-          {% if renderingPlugin %}
-            {{ renderDataMap(obj,renderingPlugin, depth, mainObject) }}
-          {% endif %}  
-        {% else %}
-          {{ renderObject(obj, depth, mainObject) }}
-        {% endif %}
-        
+        {{ renderObject(obj, depth, mainObject) }}
     {% endif %}
 {% endmacro %}
 
@@ -70,12 +61,12 @@
           {{ getContext(renderingPlugin)(object, depth, mainObject) }}          
         {% else %}
           {% set sortedKeys = object | sortPredicates(shapes,context) %}
-          {{ renderObjectValue(sortedKeys,object,depth, mainObject) }}
+          {{ renderObjectValues(sortedKeys,object,depth, mainObject) }}
         {% endif %}
     </div>
 {% endmacro %}
 
-{% macro renderObjectValue(sortedKeys,object,depth, mainObject) %}
+{% macro renderObjectValues(sortedKeys,object,depth, mainObject) %}
   {% for predicate in sortedKeys %}
     {% set value = object[predicate] %}
     {% if predicate != "id" and predicate != "@id" %}
@@ -181,6 +172,8 @@
             <span class="literal">{{ value | safe | stripHtmlPrefix }}</span>
         {% elif langOrType == "xsd:date" %}
             <span class="literal">{{ value | xsdDateToLocale(locale) }}</span>
+        {% elif langOrType == "xsd:gYear" %}
+            <span class="literal">{{ value | getStringValue }}</span>
         {% else %}
             <span class="literal">{{ value | safe | stripHtmlPrefix }}&nbsp;<sup>({{ langOrType }})</sup></span>
         {% endif %}
@@ -228,48 +221,48 @@
     <span data-i18n="{{uri | shortenUri(context) }}" {% if depth == 1 %}data-pagefind-filter="type[data-i18n]"{% endif %}></span>
 {% endmacro %}
 
-{% macro renderDataMap(obj,renderingPlugin,depth, mainObject) %}
-  
+
+
+{# ####################### SPECIFIC MACROS ################################# #}
+
+{% macro renderPhysicalLocation(obj, depth, mainObject) %}  
     {% set objCoordinates = obj["rico:hasOrHadCoordinates"] %}
-    {% set objType = objCoordinates | isArray %}
-    {% if objType %}
+    {% set isArray = objCoordinates | isArray %}
+    {% if isArray %}
       {% for objMap in objCoordinates %}        
         <div class="entity">
-        {{ getContext(renderingPlugin)(objMap, depth, mainObject) }}
+            {{ renderRicoCoordinates(objMap, depth, mainObject) }}
         </div>
       {% endfor %}
       
     {% else %}
       <div class="entity">
-      {{ getContext(renderingPlugin)(objCoordinates, depth, mainObject) }}
+        {{ renderRicoCoordinates(objCoordinates, depth, mainObject) }}
       </div>
     {% endif %}
     
 {% endmacro %}
 
-{# ####################### SPECIFIC MACROS ################################# #}
-
-
 
 {% macro renderRicoCoordinates(obj, depth, mainObject) %}
-  {% set measure = obj | getPredicateFirstValue("rico:measure", context) %}
+  {% set measure = obj | getPredicateFirstValue("rico:measure", context) | getStringValue %}
   {% if measure %}
       <div id="map" data="{{ measure | safe | stripHtmlPrefix }}"></div>
-      {% set noteMap = obj | getPredicateFirstValue("rico:note", context) %}
+      {% set noteMap = obj | getPredicateFirstValue("rico:note", context) | getStringValue %}
       {% if noteMap %}
         {{ renderLiteral(noteMap) }}
       {% endif %}
   {% else %}
       {% set sortedKeys = obj | sortPredicates(shapes,context) %}
-      {{ renderObjectValue(sortedKeys,obj,depth, mainObject) }}
+      {{ renderObjectValues(sortedKeys,obj,depth, mainObject) }}
   {% endif %}  
 {% endmacro %}
 
 
 {% macro renderRicoExtent(obj, depth, mainObject) %}
-    {% set type = obj | getPredicateFirstValue("rico:type", context) %}
-    {% set quantity = obj | getPredicateFirstValue("rico:quantity", context) %}
-    {% set unit = obj | getPredicateFirstValue("rico:unitOfMeasurement", context) %}
+    {% set type = obj | getPredicateFirstValue("rico:type", context) | getStringValue %}
+    {% set quantity = obj | getPredicateFirstValue("rico:quantity", context) | getStringValue %}
+    {% set unit = obj | getPredicateFirstValue("rico:unitOfMeasurement", context) | getStringValue %}
     <div class="ricoExtent">
         {% if type %}<span class="extentType">{{ type }}</span> : {% endif %}
         {% if quantity %}<span class="extentQuantity">{{ quantity }}</span>{% endif %}
@@ -278,8 +271,8 @@
 {% endmacro %}
 
 {% macro renderRicoIdentifier(obj, depth, mainObject) %}
-    {% set type = obj | getPredicateFirstValue("rico:type", context) %}
-    {% set textualValue = obj | getPredicateFirstValue("rico:textualValue", context) %}
+    {% set type = obj | getPredicateFirstValue("rico:type", context) | getStringValue %}
+    {% set textualValue = obj | getPredicateFirstValue("rico:textualValue", context) | getStringValue %}
     <div class="ricoIdentifier">
         {% if textualValue %}<span class="identifierTextualValue">{{ textualValue }}</span> {% endif %}
         {% if type %}<span class="identifierType">({{ type }})</span> {% endif %}
@@ -287,25 +280,8 @@
 {% endmacro %}
 
 {% macro renderMandate(obj, depth, mainObject) %}
-    {% set title = obj | getPredicateFirstValue("rico:title", context) %}
-    {% set link = obj | getPredicateFirstValue("rdfs:seeAlso", context) %}
-
-    {% if title %}
-        <div class="ricoMandate">
-            <span class="mandateTitle">{{ title }}</span>{% if link %} <a class="mandateLink" target="_blank" href="{{ link }}">↗️</a>{% endif %}
-        </div>            
-    {% else %}
-        {% set sortedKeys = obj | sortPredicates(shapes,context) %}
-        {{ renderObjectValue(sortedKeys,obj,depth, mainObject) }}
-    {% endif %}
-
-{% endmacro %}
-
-
-
-{% macro renderMandate(obj, depth, mainObject) %}
-    {% set title = obj | getPredicateFirstValue("rico:title", context) %}
-    {% set link = obj | getPredicateFirstValue("rdfs:seeAlso", context) %}
+    {% set title = obj | getPredicateFirstValue("rico:title", context) | getStringValue %}
+    {% set link = obj | getPredicateFirstValue("rdfs:seeAlso", context) | getStringValue %}
 
     {% if title and link %}
         <div class="ricoMandate">
@@ -313,7 +289,25 @@
         </div>            
     {% else %}
         {% set sortedKeys = obj | sortPredicates(shapes,context) %}
-        {{ renderObjectValue(sortedKeys,obj,depth, mainObject) }}
+        {{ renderObjectValues(sortedKeys,obj,depth, mainObject) }}
     {% endif %}
 
+{% endmacro %}
+
+{# Macro associée à un predicat et pas à une classe #}
+{% macro renderHadSubevent(obj, predicate, values, depth, mainObject) %}    
+    {% for item in (values | sortValues(shapes, context)) %}
+        {% set date = item | getPredicateFirstValue("rico:date", context) %}
+        {% set isObjectWithSingleNonIdNonTypeProperty = item | isObjectWithSingleNonIdNonTypeProperty(context) %}
+
+        {% if date and isObjectWithSingleNonIdNonTypeProperty %}
+            <div class="ricoActivity">
+                <span class="activityDate">{{ renderLiteral(date) }}</span>
+            </div>            
+        {% else %}
+            {# Comportement par défaut : afficher toutes les valeurs #}
+            {% set sortedKeys = item | sortPredicates(shapes,context) %}
+            {{ renderObjectValues(sortedKeys, item, depth, mainObject) }}
+        {% endif %}
+    {% endfor %}
 {% endmacro %}
