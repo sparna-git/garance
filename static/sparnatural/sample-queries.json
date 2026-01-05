@@ -1,7 +1,7 @@
 [
   {
-    "label_en": "Q1 – Artworks displayed in Italian museums",
-    "label_fr": "Q1 – Les œuvres exposées dans des musées italiens",
+    "label_en": "Artworks displayed in Italian museums",
+    "label_fr": "Les œuvres exposées dans des musées italiens",
     "query": {
       "distinct": true,
       "variables": [
@@ -55,8 +55,8 @@
     }
   },
   {
-    "label_en": "Q2 – Museums where Van Goghs artworks are displayed",
-    "label_fr": "Q2 – Les musées qui exposent les oeuvres de Vincent Van Gogh",
+    "label_en": "Museums where Van Goghs artworks are displayed",
+    "label_fr": "Les musées qui exposent les oeuvres de Vincent Van Gogh",
     "query": {
       "distinct": true,
       "variables": [
@@ -110,8 +110,8 @@
     }
   },
   {
-    "label_en": "Q2 – 19th Century French women artists, movements, artworks & museums",
-    "label_fr": "Q2 – Les artistes françaises du XIXe, mouvements, œuvres & lieux d exposition",
+    "label_en": "19th Century French women artists, movements, artworks & museums",
+    "label_fr": "Les artistes françaises du XIXe, mouvements, œuvres & lieux d'exposition",
     "query": {
       "distinct": true,
       "variables": [

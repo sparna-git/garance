@@ -311,7 +311,7 @@ function makePieChart(canvasId, rawStats) {
           labels: {
             boxWidth: 12,
             padding: 10,
-            font: { size: 11 },
+            font: { size: 12 },
             usePointStyle: true,
           },
         },
