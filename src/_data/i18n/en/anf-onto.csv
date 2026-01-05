@@ -21,3 +21,4 @@ anf-onto:someSubactivitiesWithDate,Has subactivities with date
 anf-onto:startingAtPoint,Starting at point
 anf-onto:startingOnStreet,Starting on thoroughfare
 anf-onto:streetStatus,Thoroughfare status
+anf-onto:hasOrHadActivityOfType,Has or had activity of type

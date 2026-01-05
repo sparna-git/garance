@@ -21,3 +21,4 @@ anf-onto:someSubactivitiesWithDate,A des sous-activités ayant pour date
 anf-onto:startingAtPoint,Point de départ
 anf-onto:startingOnStreet,Voie de départ
 anf-onto:streetStatus,Statut de la voie
+anf-onto:hasOrHadActivityOfType,A ou a eu une activité de type
