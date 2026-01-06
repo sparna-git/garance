@@ -15,7 +15,7 @@ Si vous voulez juste découvrir la structure des notices d’agents, voici une s
 ## Statistiques sur les agents
 
 <div class="row g-4 justify-content-center my-5">
-<h3 class="text-center mt-4 mb-4">Cliquez sur les valeurs de la légende pour désactiver certains éléments..</h3>
+<h3 class="text-center mt-4 mb-4">Cliquez sur les valeurs de la légende pour désactiver certains éléments.</h3>
   <div class="col-lg-6 col-md-12 text-center">
     <h4>Types d’agents</h4>
     <div class="chart-wrapper">

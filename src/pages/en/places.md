@@ -18,7 +18,7 @@ Si vous voulez juste découvrir la structure des notices de lieux, voici une sé
 <h3 class="text-center mt-4 mb-4">Click on legend values to disable certain elements.</h3>
   <div class="col-md-6 col-lg-5 text-center">
     <h4>
-      Répartition des lieux par type
+      Distribution of places by type
     </h4>
     <div class="chart-wrapper">
       <canvas id="placesChart"></canvas>

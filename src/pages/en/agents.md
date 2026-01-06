@@ -39,7 +39,7 @@ Si vous voulez juste découvrir la structure des notices d’agents, voici une s
 
   <div class="col-lg-6 col-md-12 text-center">
     <h4>
-      Distribution of places by type
+      Activities of corporate bodies (ANF)
     </h4>
     <div class="chart-wrapper">
       <canvas id="corporateBodyAnfChart"></canvas>
