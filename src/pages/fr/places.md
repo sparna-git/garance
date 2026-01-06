@@ -15,18 +15,15 @@ Si vous voulez juste découvrir la structure des notices de lieux, voici une sé
 ## Statistiques sur les lieux
 
 <div class="row justify-content-center my-5">
-
+<h3 class="text-center mt-4 mb-4">Cliquez sur les valeurs de la légende pour désactiver certains éléments.</h3>
   <div class="col-md-6 col-lg-5 text-center">
-    <h4 data-i18n="places.places_type_distribution">
+    <h4>
       Répartition des lieux par type
     </h4>
-
     <div class="chart-wrapper">
       <canvas id="placesChart"></canvas>
     </div>
-
   </div>
-
 </div>
 
 ---

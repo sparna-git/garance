@@ -15,30 +15,30 @@ Si vous voulez juste découvrir la structure des notices d’agents, voici une s
 ## Statistiques sur les agents
 
 <div class="row g-4 justify-content-center my-5">
-
+<h3 class="text-center mt-4 mb-4">Cliquez sur les valeurs de la légende pour désactiver certains éléments..</h3>
   <div class="col-lg-6 col-md-12 text-center">
-    <h4 data-i18n="agents.types_agents">Types d’agents</h4>
+    <h4>Types d’agents</h4>
     <div class="chart-wrapper">
       <canvas id="agentsChart"></canvas>
     </div>
   </div>
 
   <div class="col-lg-6 col-md-12 text-center">
-    <h4 data-i18n="agents.persons_occupation">Occupations (personnes)</h4>
+    <h4>Occupations (personnes)</h4>
     <div class="chart-wrapper">
       <canvas id="personsOccupationChart"></canvas>
     </div>
   </div>
 
   <div class="col-lg-6 col-md-12 text-center">
-    <h4 data-i18n="agents.corporate_body_types">Types de collectivités</h4>
+    <h4>Types de collectivités</h4>
     <div class="chart-wrapper">
       <canvas id="corporateBodyChart"></canvas>
     </div>
   </div>
 
   <div class="col-lg-6 col-md-12 text-center">
-    <h4 data-i18n="agents.corporate_body_activities_anf">
+    <h4>
       Activités des collectivités (ANF)
     </h4>
     <div class="chart-wrapper">
