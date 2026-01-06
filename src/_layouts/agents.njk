@@ -4,79 +4,32 @@ layout: main.njk
 
 <main class="section_garance">
 
-  {# ===================== DIAGRAMMES ===================== #}
-  <section class="mb-5">
+  {# ===================== CONTENU MARKDOWN ===================== #}
+  {{ content | safe }}
 
-	<h3 class="text-center mt-4 mb-4" data-i18n="click_legend">
-		Cliquez sur les valeurs de la légende pour désactiver certains éléments.
-	</h3>
+  {# ===================== DONNÉES JS ===================== #}
+  {% if agents_stats %}
+  <script>
+    window.agents_stats = {{ agents_stats | dump | safe }};
+  </script>
+  {% endif %}
 
-    <!-- GRID 2 x 2 -->
-    <div class="row g-4 justify-content-center">
+  {% if persons_occupation_stats %}
+  <script>
+    window.persons_occupation_stats = {{ persons_occupation_stats | dump | safe }};
+  </script>
+  {% endif %}
 
-      {% if agents_stats %}
-      <div class="col-lg-6 col-md-12 text-center">
-        <h4 data-i18n="agents.types_agents">Types d’agents</h4>
-        <div class="chart-wrapper">
-          <canvas id="agentsChart"></canvas>
-        </div>
-      </div>
-      {% endif %}
+  {% if corporate_body_stats %}
+  <script>
+    window.corporate_body_stats = {{ corporate_body_stats | dump | safe }};
+  </script>
+  {% endif %}
 
-      {% if persons_occupation_stats %}
-      <div class="col-lg-6 col-md-12 text-center">
-        <h4 data-i18n="agents.persons_occupation">Occupations (personnes)</h4>
-        <div class="chart-wrapper">
-          <canvas id="personsOccupationChart"></canvas>
-        </div>
-      </div>
-      {% endif %}
-
-      {% if corporate_body_stats %}
-      <div class="col-lg-6 col-md-12 text-center">
-        <h4 data-i18n="agents.corporate_body_types">Types de collectivités</h4>
-        <div class="chart-wrapper">
-          <canvas id="corporateBodyChart"></canvas>
-        </div>
-      </div>
-      {% endif %}
-
-      {% if corporate_body_stats_anf %}
-      <div class="col-lg-6 col-md-12 text-center">
-        <h4 data-i18n="agents.corporate_body_activities_anf">Activités des collectivités (ANF)</h4>
-        <div class="chart-wrapper">
-          <canvas id="corporateBodyAnfChart"></canvas>
-        </div>
-      </div>
-      {% endif %}
-
-    </div>
-  </section>
-	{# ===================== SCRIPT ===================== #}
-	  {% if agents_stats %}
-		<script>
-		window.agents_stats = {{ agents_stats | dump | safe }};
-		</script>
-	  {% endif %}
-	  {% if persons_occupation_stats %}
-		<script>
-		window.persons_occupation_stats = {{ persons_occupation_stats | dump | safe }};
-		</script>
-	  {% endif %}
-	  {% if corporate_body_stats %}
-		<script>
-		window.corporate_body_stats = {{ corporate_body_stats | dump | safe }};
-		</script>
-	  {% endif %}
-	  {% if corporate_body_stats_anf %}
-		<script>
-		window.corporate_body_stats_anf = {{ corporate_body_stats_anf | dump | safe }};
-		</script>
-	  {% endif %}
-
-  {# ===================== CONTENU TEXTE ===================== #}
-  <section>
-    {{ content | safe }}
-  </section>
+  {% if corporate_body_stats_anf %}
+  <script>
+    window.corporate_body_stats_anf = {{ corporate_body_stats_anf | dump | safe }};
+  </script>
+  {% endif %}
 
 </main>

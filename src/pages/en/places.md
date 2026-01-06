@@ -10,6 +10,29 @@ Elle sera bientôt remplacée par plusieurs listes, chacune correspondant à une
 
 Si vous voulez juste découvrir la structure des notices de lieux, voici une sélection de notices particulièrement intéressantes.
 
+---
+
+## Statistiques sur les lieux
+
+<div class="row justify-content-center my-5">
+
+  <div class="col-md-6 col-lg-5 text-center">
+    <h4 data-i18n="places.places_type_distribution">
+      Répartition des lieux par type
+    </h4>
+
+    <div class="chart-wrapper">
+      <canvas id="placesChart"></canvas>
+    </div>
+
+  </div>
+
+</div>
+
+---
+
+## Exemples de lieux
+
 - [Auvergne-Rhône-Alpes (2016-.... ; région administrative)](https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI_005-d-5f0vj727s--1abiwfn04l9rn)
 - [boulevard Raspail (Paris, France)](https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI_025-d3nzctch40-teyuun8ehowz)
 - [Finistère (Bretagne, département)](https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI_005-d3ntb7ow7c--5vehi4l7x7op)
