@@ -94,4 +94,11 @@ module.exports = {
   Results: "Résultats",
   send: "Envoyer",
   history: "Historique",
+  click_legend:
+    "Cliquez sur les valeurs de la légende pour désactiver certains éléments.",
+  "agents.types_agents": "Types d’agents",
+  "agents.persons_occupation": "Occupations (personnes)",
+  "agents.corporate_body_types": "Types de collectivités",
+  "agents.corporate_body_activities_anf": "Activités des collectivités (ANF)",
+  "places.places_type_distribution": "Répartition des lieux par type",
 };

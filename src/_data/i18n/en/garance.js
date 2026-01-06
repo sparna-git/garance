@@ -91,4 +91,11 @@ module.exports = {
   Results: "Results",
   send: "Send",
   history: "History",
+  click_legend: "Click on legend values to disable certain elements.",
+  "agents.types_agents": "Types of agents",
+  "agents.persons_occupation": "Occupations (persons)",
+  "agents.corporate_body_types": "Types of corporate bodies",
+  "agents.corporate_body_activities_anf":
+    "Activities of corporate bodies (AnF)",
+  "places.places_type_distribution": "Distribution of places by type",
 };
