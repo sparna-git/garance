@@ -10,6 +10,8 @@ Elle sera bientôt remplacée par plusieurs listes, chacune correspondant à une
 
 Si vous voulez juste découvrir la structure des notices d’agents, voici une sélection de notices particulièrement intéressantes.
 
+---
+
 ## Statistiques sur les agents
 
 <div class="row g-4 justify-content-center my-5">

@@ -4,6 +4,12 @@ layout: places.njk
 
 # Lieux
 
+Pour l’instant, cette page affiche la liste complète des lieux décrits dans Garance, organisés par "type" de lieu.
+
+Elle sera bientôt remplacée par plusieurs listes, chacune correspondant à une lettre de l’alphabet.
+
+Si vous voulez juste découvrir la structure des notices de lieux, voici une sélection de notices particulièrement intéressantes.
+
 ---
 
 ## Statistiques sur les lieux
@@ -25,11 +31,7 @@ layout: places.njk
 
 ---
 
-Pour l’instant, cette page affiche la liste complète des lieux décrits dans Garance, organisés par "type" de lieu.
-
-Elle sera bientôt remplacée par plusieurs listes, chacune correspondant à une lettre de l’alphabet.
-
-Si vous voulez juste découvrir la structure des notices de lieux, voici une sélection de notices particulièrement intéressantes.
+## Exemples de lieux
 
 - [Auvergne-Rhône-Alpes (2016-.... ; région administrative)](https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI_005-d-5f0vj727s--1abiwfn04l9rn)
 - [boulevard Raspail (Paris, France)](https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI_025-d3nzctch40-teyuun8ehowz)
