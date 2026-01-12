@@ -40,6 +40,7 @@ jobs:
 
       - run: npm run read Referentiels
       - run: npm run frame
+      - run: npm run stats
 
       - name: Build
         run: | 
