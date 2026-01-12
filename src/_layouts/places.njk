@@ -3,15 +3,13 @@ layout: main.njk
 ---
 
 <main class="section_places">
-
   {# ===================== CONTENU MARKDOWN ===================== #}
   {{ content | safe }}
 
   {# ===================== DONNÉES JS ===================== #}
-  {% if places_types_stats %}
+  {% if charts.place_types %}
   <script>
-    window.places_types_stats = {{ places_types_stats | dump | safe }};
+    window.place_types = {{ charts.place_types | dump | safe }};
   </script>
   {% endif %}
-
 </main>

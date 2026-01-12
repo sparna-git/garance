@@ -8,27 +8,27 @@ layout: main.njk
   {{ content | safe }}
 
   {# ===================== DONNÉES JS ===================== #}
-  {% if agents_stats %}
+  {% if charts.agent_types %}
   <script>
-    window.agents_stats = {{ agents_stats | dump | safe }};
+    window.agent_types = {{ charts.agent_types | dump | safe }};
   </script>
   {% endif %}
 
-  {% if persons_occupation_stats %}
+  {% if charts.person_occupations %}
   <script>
-    window.persons_occupation_stats = {{ persons_occupation_stats | dump | safe }};
+    window.person_occupations = {{ charts.person_occupations | dump | safe }};
   </script>
   {% endif %}
 
-  {% if corporate_body_stats %}
+  {% if charts.corporatebody_types %}
   <script>
-    window.corporate_body_stats = {{ corporate_body_stats | dump | safe }};
+    window.corporatebody_types = {{ charts.corporatebody_types | dump | safe }};
   </script>
   {% endif %}
 
-  {% if corporate_body_stats_anf %}
+  {% if charts.anf_types %}
   <script>
-    window.corporate_body_stats_anf = {{ corporate_body_stats_anf | dump | safe }};
+    window.anf_types = {{ charts.anf_types | dump | safe }};
   </script>
   {% endif %}
 

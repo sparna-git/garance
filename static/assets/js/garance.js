@@ -333,19 +333,17 @@ function makePieChart(canvasId, rawStats) {
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof Chart === "undefined") return;
 
-  if (window.agents_stats) makePieChart("agentsChart", window.agents_stats);
+  if (window.agent_types) makePieChart("agentsChart", window.agent_types);
 
-  if (window.persons_occupation_stats)
-    makePieChart("personsOccupationChart", window.persons_occupation_stats);
+  if (window.person_occupations)
+    makePieChart("personsOccupationChart", window.person_occupations);
 
-  if (window.corporate_body_stats)
-    makePieChart("corporateBodyChart", window.corporate_body_stats);
+  if (window.corporatebody_types)
+    makePieChart("corporateBodyChart", window.corporatebody_types);
 
-  if (window.corporate_body_stats_anf)
-    makePieChart("corporateBodyAnfChart", window.corporate_body_stats_anf);
+  if (window.anf_types) makePieChart("corporateBodyAnfChart", window.anf_types);
 
-  if (window.places_types_stats)
-    makePieChart("placesChart", window.places_types_stats);
+  if (window.place_types) makePieChart("placesChart", window.place_types);
 });
 
 /*

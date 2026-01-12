@@ -8,6 +8,7 @@
     "build": "node --max-old-space-size=10192 ./node_modules/@11ty/eleventy/cmd.cjs",
     "read": "mkdir -p _json && node --stack-size=65500 --max_old_space_size=10192 ./scripts/read.js",
     "frame": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/frame.js",
+    "stats": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/charts-request/runAll.js",
     "copyFiles": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/negotiation.js",
     "test": "jest"
   },
