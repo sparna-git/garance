@@ -241,6 +241,11 @@
     "@omitDefault": true,
     "@explicit": true,
     "skos:prefLabel": { "@omitDefault": true }
-  }
-  
+  },
+  "rico:isOrWasRegulatedBy": {
+    "@omitDefault": true,
+    "@explicit": true,
+    "rico:name": { "@omitDefault": true },
+    "rico:date": { "@omitDefault": true }
+  }  
 }
