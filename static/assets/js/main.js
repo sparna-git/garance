@@ -210,32 +210,22 @@ document.addEventListener("DOMContentLoaded", () => {
     historyComponent.openHistoryModal();
   });
 
-  fetch("/sparnatural/sample-queries.json")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("HTTP error " + response.status);
-      }
-      return response.json();
-    })
-    .then((queries) => {
-      const select = document.getElementById("select-examples");
-      if (!select) return;
+  const queries = SAMPLE_QUERIES;
 
-      queries.forEach((q, index) => {
-        const label =
-          lang === "fr" ? q.label_fr || q.label_en : q.label_en || q.label_fr;
+  const select = document.getElementById("select-examples");
+  if (!select) return;
 
-        const option = document.createElement("option");
-        option.value = index;
-        option.textContent = label;
+  queries.forEach((q, index) => {
+    const label =
+      lang === "fr" ? q.label_fr || q.label_en : q.label_en || q.label_fr;
 
-        select.appendChild(option);
-        sampleQueries.push(q);
-      });
-    })
-    .catch((err) => {
-      console.error("Error loading sample queries:", err);
-    });
+    const option = document.createElement("option");
+    option.value = index;
+    option.textContent = label;
+
+    select.appendChild(option);
+    sampleQueries.push(q);
+  });
 
   document
     .getElementById("select-examples")
