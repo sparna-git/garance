@@ -210,8 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
     historyComponent.openHistoryModal();
   });
 
-  const queries = SAMPLE_QUERIES;
-
   const select = document.getElementById("select-examples");
   if (!select) return;
 
@@ -238,8 +236,5 @@ document.addEventListener("DOMContentLoaded", () => {
       const query = sampleQueries[index].query;
 
       sparnatural.loadQuery(query);
-
-      // Optionnel : auto-submit si tu veux
-      // setTimeout(() => sparnatural.dispatchEvent(new Event("submit")), 300);
     });
 });
