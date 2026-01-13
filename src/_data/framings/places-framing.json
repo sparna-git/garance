@@ -96,6 +96,8 @@
     "@explicit": true,
     "rico:history": { "@omitDefault": true },
     "rico:textualValue": { "@omitDefault": true },
+    "rico:note": { "@omitDefault": true },
+    "rico:isOrWasPlaceNameOf": { "@omitDefault": true },
     "rico:resultsOrResultedFrom": {
       "__comment": "note the @embed @always because the same event is also included below the Place itself",
       "@embed": "@always",
