@@ -672,6 +672,10 @@
           "pagefind:weight": 3.0
         },
         {
+          "sh:order": 13.5,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasRegulatedBy"
+        },
+        {
           "sh:order": 14,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasAffectedBy"
         },
