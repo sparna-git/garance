@@ -191,8 +191,8 @@ mark {
 
 .copy-icon-btn {
   display: none;
-  margin-left: 0px;
   background-color: transparent;
+  cursor: pointer;
 }
 
 /* display the copy icon when wrapper is hovered */
@@ -274,7 +274,6 @@ mark {
   border-bottom: 1px solid #dbdbdb;
 }
 
-
 .entity-predicate.horizontal
   > .entity-predicate-values
   > .entity-predicate-values-list {
@@ -292,8 +291,8 @@ mark {
 .entity-predicate.horizontal
   > .entity-predicate-values
   > .entity-predicate-values-list
-  > .entity-predicate-values-value 
-  > .entity{
+  > .entity-predicate-values-value
+  > .entity {
   display: inline-block;
 }
 
@@ -355,7 +354,7 @@ mark {
 }
 
 .mandateLink {
-  text-decoration:none;
+  text-decoration: none;
 }
 
 /*--------------------------------------------------------------

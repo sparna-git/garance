@@ -208,14 +208,18 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
         
         {# URI #}
         <p class="concept-URI" data-pagefind-ignore>
-          <code>
+          {# URI #}
+          <code class="copy-icon-btn-wrapper d-inline-flex align-items-center gap-2">
             <a href="{{ concepts.id | expandUri(jsonLdContext) }}">{{ concepts.id | expandUri(jsonLdContext) }}</a>
+            <button class="border-0 copy-icon-btn" data-copy="{{ concepts.id | expandUri(jsonLdContext) }}">
+              <i class="fas fa-copy"></i>
+            </button>
           </code>
           {% if 'FRAN_RI_' in concepts.id %}
             <br />
             <span data-i18n="vocabulary.concept.Identifier inside the vocabulary"></span> :
             {% set suffix = concepts.id | expandUri(jsonLdContext) | replace(r/.*FRAN_RI_.*?-/, '') %}
-            <code class="copy-icon-btn-wrapper position-relative d-inline-flex align-items-center gap-2">
+            <code class="copy-icon-btn-wrapper d-inline-flex align-items-center gap-2">
               <span>{{ suffix }}</span>
               <button class="border-0 copy-icon-btn" data-copy="{{ suffix }}">
                 <i class="fas fa-copy"></i>

@@ -43,10 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // -----------------------------------------------------
   Yasr.registerPlugin("TableX", SparnaturalYasguiPlugins.TableX);
   Yasr.registerPlugin("Grid", SparnaturalYasguiPlugins.GridPlugin);
+  Yasr.registerPlugin("Map", SparnaturalYasguiPlugins.MapPlugin);
   delete Yasr.plugins["table"];
 
   const yasr = new Yasr(document.getElementById("yasr"), {
-    pluginOrder: ["Grid", "TableX", "response"],
+    pluginOrder: ["Grid", "TableX", "Map", "response"],
     defaultPlugin: "Grid",
   });
 
@@ -58,11 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // -----------------------------------------------------
   // Sparnatural init
   // -----------------------------------------------------
-  // -----------------------------------------------------
-  // Sparnatural init
-  // -----------------------------------------------------
   sparnatural.addEventListener("init", () => {
-    // 🔹 Config plugins YASR
+    // Config plugins YASR
     for (const plugin in yasr.plugins) {
       yasr.plugins[plugin]?.notifyConfiguration?.(
         sparnatural.sparnatural.specProvider
@@ -72,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     historyComponent.notifyConfiguration(sparnatural.sparnatural.specProvider);
 
     // =====================================================
-    // 🔗 LOAD QUERY FROM URL (?query=...)
+    // LOAD QUERY FROM URL (?query=...)
     // =====================================================
     const urlParams = new URLSearchParams(window.location.search);
 
