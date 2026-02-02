@@ -97,6 +97,10 @@ function extractDomainName(URL) {
   if (match) {
     domain = match[1];
   }
+  // if domains starts with www., remove it
+  if (domain && domain.startsWith("www.")) {
+    domain = domain.substring(4);
+  }
   return domain;
 }
 

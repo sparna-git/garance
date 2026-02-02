@@ -56,26 +56,26 @@
         
 
         {% set creationDate = agentOrPlace | getCreationDate %}
-        {% set lastMod = agentOrPlace | getLastModificationDate %}
-        {% set seeAlsoUrl = agentOrPlace | getSivSeeAlsoUrl %}
+        {% set lastMod = agentOrPlace | getLastModificationDate %}        
 
-        {% if creationDate or lastMod or seeAlsoUrl %}
+        {% if creationDate or lastMod %}
           <div class="header-date">
             {% if creationDate %}
-              <div><span data-i18n="Record created on"></span> : {{ creationDate }}</div>
+              <div><span data-i18n="Record created on"></span> : {{ creationDate | xsdDateToLocale(locale) }}</div>
             {% endif %}
             {% if lastMod %}
-              <div><span data-i18n="Record updated on"></span> : {{ lastMod }}</div>
-            {% endif %}
-            {% if seeAlsoUrl %}
-              <div><a href="{{ seeAlsoUrl }}" target="_blank"><span data-i18n="Voir dans le SIV"></span></a></div>
+              <div><span data-i18n="Record updated on"></span> : {{ lastMod | xsdDateToLocale(locale) }}</div>
             {% endif %}
           </div>
         {% endif %}
 
-        {% set seeAlsos = agentOrPlace | getRdfsSeeAlso(context) %}        
-        {% if seeAlsos %}
+        {% set seeAlsos = agentOrPlace | getRdfsSeeAlso(context) %}
+        {% set seeAlsoUrl = agentOrPlace | getSivSeeAlsoUrl %}      
+        {% if seeAlsos or seeAlsoUrl %}
           <div class="header-rdfsSeeAlso">
+            {% if seeAlsoUrl %}
+              <div><a href="{{ seeAlsoUrl }}" target="_blank"><span data-i18n="Voir dans le SIV"></span></a></div>
+            {% endif %}
             <span data-i18n="See also on"></span>&nbsp;
             {% for seeAlso in seeAlsos %}
               <a href="{{ seeAlso.id }}">{{ seeAlso.id | extractDomainName }}</a>{% if not loop.last %}; {% endif %}
