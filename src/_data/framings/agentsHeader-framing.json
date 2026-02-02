@@ -50,6 +50,7 @@
     "@explicit": true,
     "type": "rico:Record",
     "rico:lastModificationDate": { "@omitDefault": true },
+    "rdfs:seeAlso": { "@omitDefault": true },
     "rico:hasOrHadDigitalInstantiation": {
       "@omitDefault": true,
       "@explicit": true,
