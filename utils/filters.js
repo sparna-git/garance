@@ -87,13 +87,10 @@ module.exports = {
     return DateTime.fromISO(timestamp, { zone: "utc" }).toJSDate();
   },
 
-  xsdDateToLocale: function (xsdDate, locale = "fr") {
-    if(locale == "") {
-      locale = "fr";
-    }
+  xsdDateToLocale: function (xsdDate, locale) {
     return DateTime.fromISO(xsdDate, { zone: "utc" })
       .setLocale(locale)
-      .toFormat("d LLLL yyyy");
+      .toFormat("dd/MM/yyyy");
   },
 
   iso8601: function (dateObj) {
