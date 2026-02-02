@@ -2,46 +2,49 @@
   {% set cssClasses = agentOrPlace['type'] | unboxArray | getHeaderCssClasses(shapes, context) %}
 
   <div class="header {{ cssClasses }}">
-    <h1 class="header-title">
-      {{ jsonld.renderLiteralAsString(agentOrPlace | displayLabel(context) | unboxArray ) }}
-    </h1>
 
-    {% if agentOrPlace and agentOrPlace.id %}
-      {% set fullUri = agentOrPlace.id | expandUri(context) %}
-      <div class="copy-icon-btn-wrapper header-uri d-flex align-items-center gap-2 position-relative">
-        <code>
-          <a class="copy-link" href="{{ fullUri }}">{{ fullUri }}</a>
-        </code>
-        <button class="border-0 copy-icon-btn" data-copy="{{ fullUri }}">
-          <i class="fas fa-copy"></i>
-        </button>
-      </div>
-
-      {# Identifier #}
-      {% set identifier = agentOrPlace | getIdentifier %}
-      {% if identifier %}
-        {% for getIdentifiant in identifier %}
-          <code class="copy-icon-btn-wrapper header-id position-relative d-inline-flex align-items-center gap-2">
-            <span>{{ getIdentifiant }}</span>
-            <button class="border-0 copy-icon-btn" data-copy="{{ getIdentifiant }}">
-              <i class="fas fa-copy"></i>
-            </button>
-          </code>
-          <br/>        
-        {% endfor %}
-      {% endif %}
-
-    {% endif %}
 
     <div class="d-flex">
-      {% set links = agentOrPlace | getDownloadLinks(context) %}
-      {% if links %}
-        
-        <div class="mt-2 header-download flex-grow-1">
-          <div class="col-9">
-            <h6><span data-i18n="Download data"></span></h6>
+      <div class="mt-2 header-col-left flex-grow-1">
+
+        <h1 class="header-title">
+          {{ jsonld.renderLiteralAsString(agentOrPlace | displayLabel(context) | unboxArray ) }}
+        </h1>
+
+        {% if agentOrPlace and agentOrPlace.id %}
+          {% set fullUri = agentOrPlace.id | expandUri(context) %}
+          <div class="copy-icon-btn-wrapper header-uri d-flex align-items-center gap-2 position-relative">
+            <code>
+              <a class="copy-link" href="{{ fullUri }}">{{ fullUri }}</a>
+            </code>
+            <button class="border-0 copy-icon-btn" data-copy="{{ fullUri }}">
+              <i class="fas fa-copy"></i>
+            </button>
           </div>
-          <div class="col-10">
+        {% endif %}
+
+        {# Identifier #}
+        {% set identifier = agentOrPlace | getIdentifier %}
+        {% if identifier %}
+          {% for getIdentifiant in identifier %}
+            <code class="copy-icon-btn-wrapper header-id position-relative d-inline-flex align-items-center gap-2">
+              <span>{{ getIdentifiant }}</span>
+              <button class="border-0 copy-icon-btn" data-copy="{{ getIdentifiant }}">
+                <i class="fas fa-copy"></i>
+              </button>
+            </code>
+            <br/>
+          {% endfor %}
+        {% endif %} 
+
+      </div><!-- end col left -->
+
+      <div class="header-col-right">
+
+        {% set links = agentOrPlace | getDownloadLinks(context) %}
+        {% if links %}
+          <div class="header-download">
+            <span data-i18n="Download data"></span>
             {% if links.rdfUrl %}
               <a href="{{ links.rdfUrl }}" target="_blank"><img src="https://img.shields.io/badge/format-RDF%2FXML-blue" alt="RDF/XML" /></a>
             {% endif %}
@@ -49,27 +52,39 @@
               <a href="{{ links.eacUrl }}" target="_blank"><img src="https://img.shields.io/badge/format-EAC-blue" alt="EAC" /></a>
             {% endif %}
           </div>
-        </div>
-      {% endif %}
+        {% endif %}
+        
 
+        {% set creationDate = agentOrPlace | getCreationDate %}
+        {% set lastMod = agentOrPlace | getLastModificationDate %}
+        {% set seeAlsoUrl = agentOrPlace | getSivSeeAlsoUrl %}
 
-      {% set creationDate = agentOrPlace | getCreationDate %}
-      {% set lastMod = agentOrPlace | getLastModificationDate %}
-      {% set seeAlsoUrl = agentOrPlace | getSivSeeAlsoUrl %}
+        {% if creationDate or lastMod or seeAlsoUrl %}
+          <div class="header-date">
+            {% if creationDate %}
+              <div><span data-i18n="Record created on"></span> : {{ creationDate }}</div>
+            {% endif %}
+            {% if lastMod %}
+              <div><span data-i18n="Record updated on"></span> : {{ lastMod }}</div>
+            {% endif %}
+            {% if seeAlsoUrl %}
+              <div><a href="{{ seeAlsoUrl }}" target="_blank"><span data-i18n="Voir dans le SIV"></span></a></div>
+            {% endif %}
+          </div>
+        {% endif %}
 
-      {% if creationDate or lastMod or seeAlsoUrl %}
-        <div class="header-date">
-          {% if creationDate %}
-            <div><span data-i18n="Record created on"></span> : {{ creationDate }}</div>
-          {% endif %}
-          {% if lastMod %}
-            <div><span data-i18n="Record updated on"></span> : {{ lastMod }}</div>
-          {% endif %}
-          {% if seeAlsoUrl %}
-            <div><a href="{{ seeAlsoUrl }}" target="_blank"><span data-i18n="Voir dans le SIV"></span></a></div>
-          {% endif %}
-        </div>
-      {% endif %}
+        {% set seeAlsos = agentOrPlace | getRdfsSeeAlso(context) %}        
+        {% if seeAlsos %}
+          <div class="header-rdfsSeeAlso">
+            <span data-i18n="See also on"></span>&nbsp;
+            {% for seeAlso in seeAlsos %}
+              <a href="{{ seeAlso.id }}">{{ seeAlso.id | extractDomainName }}</a>{% if not loop.last %}; {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        
+      </div>
     </div>
 
   </div>

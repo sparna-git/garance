@@ -183,10 +183,31 @@ mark {
   position: relative;
 }
 
-.header-date {
+/* push all right column to the bottom */
+.header-col-right {
+  margin-top: auto;
+  padding-top:20px;
+}
+
+.header-download {
+  padding-bottom:7px;
   font-size: smaller;
   font-style: italic;
-  float: right;
+}
+
+.header-date {
+  padding-top:7px;
+  padding-bottom:7px;
+  font-size: smaller;
+  font-style: italic;
+  border-top: 1px grey solid;
+}
+
+.header-rdfsSeeAlso {
+  padding-top:7px;
+  font-size: smaller;
+  font-style: italic;
+  border-top: 1px grey solid;
 }
 
 .copy-icon-btn {
