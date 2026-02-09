@@ -20,8 +20,11 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
     </div>
     {# URI #}
     <p class="concept-URI">
-        <code >
+        <code class="copy-icon-btn-wrapper d-inline-flex align-items-center gap-2">
             <a href="{{ vocabulary.id | expandUri(jsonLdContext) }}">{{ vocabulary.id | expandUri(jsonLdContext) }}</a>
+            <button class="border-0 copy-icon-btn" data-copy="{{ vocabulary.id | expandUri(jsonLdContext) }}">
+              <i class="fas fa-copy"></i>
+            </button>
         </code>          
     </p>
     {# Description #}
