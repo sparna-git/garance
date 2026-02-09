@@ -90,11 +90,13 @@
         },
         {
           "sh:order": 17,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hadSubdivision"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hadSubdivision",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 18,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasDirectSubdivision"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasDirectSubdivision",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 19,
@@ -102,7 +104,8 @@
         },
         {
           "sh:order": 20,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#isDirectSubdivisionOf"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#isDirectSubdivisionOf",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 21,
@@ -110,7 +113,8 @@
         },
         {
           "sh:order": 22,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasDirectSubordinate"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasDirectSubordinate",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 23,
@@ -123,7 +127,8 @@
         },
         {
           "sh:order": 25,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasFamilyAssociationWith"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasFamilyAssociationWith",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 26,
@@ -161,7 +166,8 @@
         {
           "sh:order": 34,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#isAgentAssociatedWithAgent",
-          "pagefind:ignore": true
+          "pagefind:ignore": true,
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 35,
@@ -670,6 +676,10 @@
           "sh:order": 13,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#history",
           "pagefind:weight": 3.0
+        },
+        {
+          "sh:order": 13.5,
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasRegulatedBy"
         },
         {
           "sh:order": 14,

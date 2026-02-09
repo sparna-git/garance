@@ -193,21 +193,13 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
       <div class="col">
         {% set conceptId = concepts | json %}
         {# Title #}
-        {% if concepts.notation %}
-          <h5 class="concept-title" id="{{ concepts.notation }}"><small>{{ concepts.notation }} - </small>{{ concepts.prefLabel | lang('fr') }}
-          {# if Status = iso-thes:status = "candidat" #}
-          {% if concepts.isoThesStatus %}
-            <small><i class="fad fa-diamond-exclamation" title="Concept candidat"></i></small>          
-          {% endif %}
-          </h5>
-        {% else %}
-          <h5 class="concept-title" id="{{ concepts.id | localName }}" data-pagefind-weight="7">{{ concepts.prefLabel | lang('fr') }}
+        <h5 class="concept-title" id="{{ concepts.id | localName }}" data-pagefind-weight="7">{% if concepts.notation %}<small>{{ concepts.notation }} - </small>{% endif %}{{ concepts.prefLabel | lang('fr') }}
           {# if Status = iso-thes:status = "candidat" #}
           {% if concepts.isoThesStatus %}
             <small><i class="fad fa-diamond-exclamation" title="Concept candidat"></i></small>    
           {% endif %}
-          </h5>
-        {% endif %}        
+        </h5>          
+               
         
         {# URI #}
         <p class="concept-URI" data-pagefind-ignore>

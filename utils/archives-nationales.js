@@ -75,6 +75,37 @@ function getDownloadLinks(place) {
   return { rdfUrl, eacUrl };
 }
 
+
+function getRdfsSeeAlso(entity, context) {
+  const record = entity?.["rico:isOrWasDescribedBy"];
+  if(record) {
+    // ensure it is always an array
+    let value = jsonld.getPredicate(record, "http://www.w3.org/2000/01/rdf-schema#seeAlso", context);
+    if(value)
+      return [value].flat();
+    else
+      return null;
+  } else {
+    return null;
+  }
+}
+
+function extractDomainName(URL) {
+  // extrat the domain name from a URL, after http or https and before the next /
+  let domain;
+  const match = URL.match(/https?:\/\/([^\/]+)/);
+  if (match) {
+    domain = match[1];
+  }
+  // if domains starts with www., remove it
+  if (domain && domain.startsWith("www.")) {
+    domain = domain.substring(4);
+  }
+  return domain;
+}
+
+
+
 /**
  * Returns the last modification date of an agent.
  * @param {object} agent - The agent object.
@@ -291,6 +322,8 @@ module.exports = {
   getDownloadLinks,
   getLastModificationDate,
   getSivSeeAlsoUrl,
+  getRdfsSeeAlso,
+  extractDomainName,
   timeline,
   excludeObsolete,
   removeURL,

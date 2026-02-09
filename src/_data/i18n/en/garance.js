@@ -16,6 +16,7 @@ module.exports = {
   "Record created on": "Record created on",
   "Record updated on": "Record last updated on",
   "Voir dans le SIV": "See also in the Virtual reading room of the AnF",
+  "See also on": "See also on:",
 
   // Menu Vocabularies
   "nav.menu.vocabularies.activityTypes":

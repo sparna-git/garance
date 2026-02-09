@@ -17,6 +17,7 @@ module.exports = {
   "Record updated on": "Notice mise à jour pour la dernière fois le",
   "Voir dans le SIV":
     "Voir dans la Salle de lecture virtuelle des Archives nationales (SLV)",
+  "See also on": "Voir aussi sur:",
 
   // Libelles sur le Menu Vocabularies
   "nav.menu.vocabularies.activityTypes": "Fonctions des collectivités",
