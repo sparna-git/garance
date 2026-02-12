@@ -51,6 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
     defaultPlugin: "Grid",
   });
 
+  // red polygons with higher weight
+  yasr.plugins["Map"].config.polygonColors= ["red"];
+  yasr.plugins["Map"].config.polygonWeight= 6;
+
   yasqe.on("queryResponse", (_, response, duration) => {
     yasr.setResponse(response, duration);
     sparnatural.enablePlayBtn();
