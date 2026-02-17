@@ -76,10 +76,12 @@
             {% if seeAlsoUrl %}
               <div><a href="{{ seeAlsoUrl }}" target="_blank"><span data-i18n="Voir dans le SIV"></span></a></div>
             {% endif %}
-            <span data-i18n="See also on"></span>&nbsp;
-            {% for seeAlso in seeAlsos %}
-              <a href="{{ seeAlso.id }}">{{ seeAlso.id | extractDomainName }}</a>{% if not loop.last %}; {% endif %}
-            {% endfor %}
+            {% if seeAlsos %}
+              <span data-i18n="See also on"></span>&nbsp;
+              {% for seeAlso in seeAlsos %}
+                <a href="{{ seeAlso.id }}">{{ seeAlso.id | extractDomainName }}</a>{% if not loop.last %}; {% endif %}
+              {% endfor %}
+            {% endif %}
           </div>
         {% endif %}
 
