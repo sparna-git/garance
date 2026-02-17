@@ -86,7 +86,8 @@
         },
         {
           "sh:order": 16,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasMemberOf"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasMemberOf",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 17,
@@ -100,7 +101,8 @@
         },
         {
           "sh:order": 19,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#wasSubdivisionOf"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#wasSubdivisionOf",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 20,
@@ -109,7 +111,8 @@
         },
         {
           "sh:order": 21,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hadSubordinate"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hadSubordinate",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 22,
@@ -118,11 +121,13 @@
         },
         {
           "sh:order": 23,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#wasSubordinateTo"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#wasSubordinateTo",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 24,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#isDirectSubordinateTo",
+          "volipi:class": "horizontal",
           "pagefind:meta": ["Est subordonné à"]
         },
         {
@@ -132,19 +137,23 @@
         },
         {
           "sh:order": 26,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadController"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadController",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 27,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasControllerOf"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasControllerOf",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 28,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadLeader"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadLeader",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 29,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasLeaderOf"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#isOrWasLeaderOf",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 30,
@@ -153,15 +162,18 @@
         },
         {
           "sh:order": 31,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadMember"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadMember",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 32,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasSuccessor"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#hasSuccessor",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 33,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#isSuccessorOf"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#isSuccessorOf",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 34,
@@ -704,6 +716,7 @@
         {
           "sh:order": 19,
           "sh:path": "https://www.ica.org/standards/RiC/ontology#hasOrHadLocation",
+          "volipi:class": "horizontal",
           "pagefind:ignore": true
         },
         {
@@ -717,7 +730,8 @@
         },
         {
           "sh:order": 22,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#wasContainedBy"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#wasContainedBy",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 23,
@@ -727,7 +741,8 @@
         },
         {
           "sh:order": 24,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#isDirectlyContainedBy"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#isDirectlyContainedBy",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 25,
@@ -740,7 +755,8 @@
         },
         {
           "sh:order": 27,
-          "sh:path": "https://www.ica.org/standards/RiC/ontology#containsOrContained"
+          "sh:path": "https://www.ica.org/standards/RiC/ontology#containsOrContained",
+          "volipi:class": "horizontal"
         },
         {
           "sh:order": 28,
