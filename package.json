@@ -9,7 +9,7 @@
     "read": "mkdir -p _json && node --stack-size=65500 --max_old_space_size=10192 ./scripts/read.js",
     "frame": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/frame.js",
     "stats": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/charts-request/runAll.js",
-    "copyFiles": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/negotiation.js",
+    "conneg-agents-places": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/conneg-agents-places.js",
     "test": "jest"
   },
   "keywords": [],

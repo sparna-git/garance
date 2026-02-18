@@ -47,26 +47,27 @@ jobs:
             export NODE_OPTIONS=--max-old-space-size=4096
             npm run build
 
-      - name: Copy the referentiel file
-        run: npm run copyFiles Referentiels/agents dist/entities/agent Referentiels/lieux dist/entities/place
-
       - name: Pagefind
         run: npx pagefind --write-playground
 
+      - name: Content negotiation for Agents and Places
+        run: npm run conneg-agents-places Referentiels/agents dist/entities/agent Referentiels/lieux dist/entities/place
+
+      - name: Content negotiation for ConceptSchemes
+        run: npm run conneg-conceptSchemes Referentiels/concepts/rdf dist/entities/
+
       # Vocabularies - Concepts
-      # Python for convert JSON File to RDF File
-      #- uses: actions/checkout@v5
-      - name: Set up Python
+      # Python to convert JSON File to RDF File
+      - name: Content negotiation for Concepts - serialize the concepts JSON files into RDF/XML
         # This is the version of the action for setting up Python, not the Python version.
         uses: actions/setup-python@v5
         with:
-          # Semantic version range syntax or exact version of a Python version
           python-version: '3.x'
-      # install 
+      # install rdflib
       - run: python -m pip install rdflib
       - run: python scripts/JsonToRDF.py dist/entities/conceptsJson
 
-      # SCP transfer project to server ANS      
+      # SCP transfer project to AN server      
       - name: copy file via ssh key
         uses: appleboy/scp-action@v0.1.7
         with:
