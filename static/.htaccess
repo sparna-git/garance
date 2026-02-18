@@ -1,6 +1,42 @@
+# Directive to ensure *.rdf files served as appropriate content type,
+# if not present in main apache config
+AddType application/rdf+xml .rdf
+AddType application/rdf+xml .owl
+AddType text/turtle .ttl
+AddType application/n-triples .nt
+AddType application/ld+json .jsonld
+
 RewriteEngine on
 
 # Les pattern d'URL ne doivent PAS commencer par un /
 
 # Redirection de la base URL vers la page d'accueil en français /pages/fr
-RewriteRule ^$ /garance/pages/fr/ [L,R=302]
+RewriteRule ^$ /garance/ [L,R=302]
+
+
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^agent/(.+)$ "/garance/entities/agent/$1/data.rdf" [L,R=301]
+# Redirection pour les URI des Agents
+# URL de test en http: https//rdf.archives-nationales.culture.gouv.fr/agent/FRAN_RI_012-d-dv4qvesjj-13idlf9jnvxde
+RewriteRule ^agent/(.+)$ "/garance/entities/agent/$1" [L,R=301]
+
+
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^place/(.+)$ "/garance/entities/place/$1/data.rdf" [L,R=301]
+# Redirection pour les URI des Lieux
+RewriteRule ^place/(.+)$ "/garance/entities/place/$1" [L,R=301]
+
+# Redirection pour la négociation de contenu des Concepts
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^(corporateBodyType|recordState|activityType|occupationType|language|thing|carrierType|productionTechniqueType|identifierType|placeType|representationType|documentaryFormType|recordSetType)/(.+)$ "/garance/entities/$1s/$2.rdf" [L,R=301]
+
+# Redirection pour la négociation de contenu des ConceptScheme
+RewriteCond %{HTTP_ACCEPT} ^.*application/rdf\+xml.*
+RewriteRule ^(corporateBodyTypes|recordStates|activityTypes|occupationTypes|languages|things|carrierTypes|productionTechniqueTypes|identifierTypes|placeTypes|representationTypes|documentaryFormTypes|recordSetTypes)$ "/garance/entities/$1/data.rdf" [L,R=301]
+
+# Redirection pour les URI des ConceptScheme
+RewriteRule ^(corporateBodyTypes|recordStates|activityTypes|occupationTypes|languages|things|carrierTypes|productionTechniqueTypes|identifierTypes|placeTypes|representationTypes|documentaryFormTypes|recordSetTypes)$ "/garance/entities/$1" [L,R=301]
+
+# Redirection pour les URI des Concepts
+# NE : NoEscape pour conserver le #
+RewriteRule ^(corporateBodyType|recordState|activityType|occupationType|language|thing|carrierType|productionTechniqueType|identifierType|placeType|representationType|documentaryFormType|recordSetType)/(.+)$ "/garance/entities/$1s#$2" [NE,L,R=301]
