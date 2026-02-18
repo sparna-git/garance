@@ -10,6 +10,7 @@
     "frame": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/frame.js",
     "stats": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/charts-request/runAll.js",
     "conneg-agents-places": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/conneg-agents-places.js",
+    "conneg-conceptSchemes": "node --stack-size=65500 --max_old_space_size=10192 ./scripts/conneg-conceptSchemes.js",    
     "test": "jest"
   },
   "keywords": [],
