@@ -9,6 +9,7 @@ module.exports = {
   "nav.menu.agents.index": "Index alphabétique",
   "nav.menu.lieux": "Lieux",
   "nav.menu.lieux.index": "Index alphabétique",
+  "nav.menu.about": "A propos",
   "nav.menu.search": "Recherche",
 
   "last updated on": "dernière publication le",
@@ -95,4 +96,9 @@ module.exports = {
   Results: "Résultats",
   send: "Envoyer",
   history: "Historique",
+
+    // About
+  "nav.menu.project.title" : "Le projet",
+  "nav.menu.contact.title" : "Nous contacter",
+  "nav.menu.legal.title" : "Mentions légales"
 };
