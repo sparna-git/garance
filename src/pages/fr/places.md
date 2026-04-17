@@ -4,18 +4,23 @@ layout: places.njk
 
 # Lieux
 
-Pour l’instant, cette page affiche la liste complète des lieux décrits dans Garance, organisés par "type" de lieu.
+Les **lieux** forment un référentiel géographique incomplet mais cohérent avec des lieux interconnectés. Qu’il s’agisse d’une commune, d’une rue, d’un bâtiment emblématique ou d’un territoire étranger, chaque lieu est identifié de manière précise pour servir de **point d’ancrage** aux autres entités du système.
 
-Elle sera bientôt remplacée par plusieurs listes, chacune correspondant à une lettre de l’alphabet.
+Ces lieux permettent d’**associer les lieux** aux **agents** et aux **événements**, offrant ainsi une **cartographie cohérente** des espaces liés à l’histoire administrative, urbaine ou culturelle.
 
-Si vous voulez juste découvrir la structure des notices de lieux, voici une sélection de notices particulièrement intéressantes.
+Sur cette page, découvrez :
+- **Des statistiques** sur leur répartition et leur diversité,
+- **Des exemples de notices** illustrant leur documentation.
+
+> **Pourquoi est-ce important ?**
+> Un référentiel de lieux précis et interconnecté permet de **retracer l’histoire des territoires**, d’**éviter les ambiguïtés** et d’**enrichir l’interprétation** des archives.
 
 ---
 
 ## Statistiques sur les lieux
 
 <div class="row justify-content-center my-5">
-<h3 class="text-center mt-4 mb-4">Cliquez sur les valeurs de la légende pour désactiver certains éléments.</h3>
+<h4 class="text-center mt-4 mb-4">Cliquez sur les valeurs de la légende pour désactiver certains éléments.</h4>
   <div class="col-md-6 col-lg-5 text-center">
     <h4>
       Répartition des lieux par type
@@ -28,7 +33,7 @@ Si vous voulez juste découvrir la structure des notices de lieux, voici une sé
 
 ---
 
-## Exemples de lieux
+## Exemples de lieux bien documentées, illustrant la diversité et la richesse des informations disponibles.
 
 - [Auvergne-Rhône-Alpes (2016-.... ; région administrative)](https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI_005-d-5f0vj727s--1abiwfn04l9rn)
 - [boulevard Raspail (Paris, France)](https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI_025-d3nzctch40-teyuun8ehowz)

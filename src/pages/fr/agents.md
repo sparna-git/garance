@@ -1,21 +1,29 @@
 ---
 layout: agents.njk
 ---
-
 # Agents
 
-Pour l’instant, cette page affiche la liste complète des agents décrits dans Garance, classés par ordre alphabétique de la forme préférée de leur nom.
+Dans le modèle RIC, un **agent** désigne toute entité — **personne physique**, **collectivité** ou **famille** — qui a joué un rôle dans la création, la gestion ou la conservation de documents. Ces agents sont au cœur de la **description archivistique** : leur identification précise permet de **contextualiser les fonds** et de **faciliter la recherche** pour les chercheurs, les citoyens et les institutions.
+> **Pourquoi est-ce important ?**
+> Les agents ne sont pas de simples entrées dans une base de données : ce sont des **clés d’accès** à l’histoire administrative, culturelle et sociale de la France.
 
-Elle sera bientôt remplacée par plusieurs listes, chacune correspondant à une lettre de l’alphabet.
+Sur cette page, découvrez :
+- **Des statistiques globales** sur leur répartition et leur typologie,
+- **Des exemples concrets** de notices bien documentées, illustrant la richesse des informations disponibles.
 
-Si vous voulez juste découvrir la structure des notices d’agents, voici une sélection de notices particulièrement intéressantes.
+
 
 ---
 
 ## Statistiques sur les agents
 
+Ces graphiques offrent une **vision synthétique** de la diversité des agents référencés. Ils permettent de :
+- **Visualiser la répartition** entre personnes, collectivités et familles,
+- **Mieux cerners** les caractéristiques de ces agents et leur distribution ,
+- **Comprendre l’étendue** des données disponibles.
+
 <div class="row g-4 justify-content-center my-5">
-<h3 class="text-center mt-4 mb-4">Cliquez sur les valeurs de la légende pour désactiver certains éléments.</h3>
+<h4 class="text-center mt-4 mb-4">Cliquez sur les valeurs de la légende pour désactiver certains éléments.</h4>
   <div class="col-lg-6 col-md-12 text-center">
     <h4>Types d’agents</h4>
     <div class="chart-wrapper">
@@ -24,7 +32,7 @@ Si vous voulez juste découvrir la structure des notices d’agents, voici une s
   </div>
 
   <div class="col-lg-6 col-md-12 text-center">
-    <h4>Occupations (personnes)</h4>
+    <h4>Fonctions, métiers et professions des personnes</h4>
     <div class="chart-wrapper">
       <canvas id="personsOccupationChart"></canvas>
     </div>
@@ -39,7 +47,7 @@ Si vous voulez juste découvrir la structure des notices d’agents, voici une s
 
   <div class="col-lg-6 col-md-12 text-center">
     <h4>
-      Activités des collectivités (ANF)
+      Fonctions des collectivités
     </h4>
     <div class="chart-wrapper">
       <canvas id="corporateBodyAnfChart"></canvas>
@@ -49,6 +57,14 @@ Si vous voulez juste découvrir la structure des notices d’agents, voici une s
 </div>
 
 ---
+
+## Exemples de notices
+
+Pour illustrer la **qualité et la diversité** des notices d’agents, voici une sélection de fiches particulièrement **complètes et représentatives** :
+- Des notices **bien structurées**, avec des champs détaillés et des liens vers d’autres agents ou lieux,
+- Des exemples **variés** : personnes historiques, institutions majeures, familles influentes,
+
+> À noter : Chaque exemple est cliquable et mène vers la notice complète, où vous pourrez explorer les relations et les métadonnées associées.
 
 ## Collectivités
 
