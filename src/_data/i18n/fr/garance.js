@@ -9,7 +9,7 @@ module.exports = {
   "nav.menu.agents.index": "Index alphabétique",
   "nav.menu.lieux": "Lieux",
   "nav.menu.lieux.index": "Index alphabétique",
-  "nav.menu.about": "A propos",
+  "nav.menu.about": "À propos",
   "nav.menu.search": "Recherche",
 
   "last updated on": "dernière publication le",
