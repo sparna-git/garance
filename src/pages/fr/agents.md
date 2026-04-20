@@ -9,7 +9,7 @@ Pour l’instant, les agents décrits dans Garance sont des **personnes physique
 
 La description fine de ces agents et des relations qu’ils ont entre eux est très importante en **archivistique** : elle permet de **contextualiser les fonds** et de **faciliter la recherche** pour les chercheurs, les citoyens et les institutions. 
 
-> La plupart des notices d’agents de Garance, ayant un contenu riche, ne sont donc pas de simples entrées dans une base de données : ce sont des **clés** pour comprendre l’histoire administrative, culturelle et sociale de la France.
+> La plupart des notices d’agents de Garance, ayant un contenu riche, ne sont donc pas de simples entrées dans une base de données : ce sont des **clés** pour comprendre  ou pour faire l’histoire administrative, culturelle et sociale de la France.
 
 
 Sur cette page, découvrez :
