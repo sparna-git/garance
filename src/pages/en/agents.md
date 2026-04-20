@@ -4,18 +4,29 @@ layout: agents.njk
 
 # Agents
 
-Pour l’instant, cette page affiche la liste complète des agents décrits dans Garance, classés par ordre alphabétique de la forme préférée de leur nom.
+An **agent**, in Garance—according to the Records in Contexts standard and other metadata models—is any entity that carries out an activity (see [the definition of the Agent class in the RiC-O ontology](https://www.ica.org/standards/RiC/ontology#Agent)).
 
-Elle sera bientôt remplacée par plusieurs listes, chacune correspondant à une lettre de l’alphabet.
+For now, the agents described in Garance are **individuals**, **corporate bodies**, or **families** who have played or still play a role in the creation, management, or preservation of archives held by the Archives nationales de France (AnF), or who are the subject of these archives.
 
-Si vous voulez juste découvrir la structure des notices d’agents, voici une sélection de notices particulièrement intéressantes.
+The detailed description of these agents and their relationships is of great importance in **archival science**: it helps to **contextualize archival collections** and **facilitate research** for scholars, citizens, and institutions.
+
+> Most of the agent records in Garance, with their rich content, are therefore not simple database entries: they are **keys** to understanding or writing the administrative, cultural, and social history of France.
+
+On this page, discover:
+- **Global statistics** on the distribution and typology of the agents described,
+- **Concrete examples** of well-documented records, illustrating the richness of the available information.
 
 ---
 
-## Statistiques sur les agents
+## Agent Statistics
+
+These charts provide a **synthetic overview** of the diversity of agents described by the archivists of the Archives nationales de France. They allow you to:
+- **Visualize the distribution** between individuals, corporate bodies, and families,
+- **Better understand** the characteristics of these agents and their distribution,
+- **Grasp the extent** of the available data.
 
 <div class="row g-4 justify-content-center my-5">
-<h3 class="text-center mt-4 mb-4">Click on legend values to disable certain elements.</h3>
+<h4 class="text-center mt-4 mb-4">Click on the legend values to toggle certain elements.</h4>
   <div class="col-lg-6 col-md-12 text-center">
     <h4>Types of agents</h4>
     <div class="chart-wrapper">
@@ -24,7 +35,7 @@ Si vous voulez juste découvrir la structure des notices d’agents, voici une s
   </div>
 
   <div class="col-lg-6 col-md-12 text-center">
-    <h4>Occupations (persons)</h4>
+    <h4>Occupations and professions of individuals</h4>
     <div class="chart-wrapper">
       <canvas id="personsOccupationChart"></canvas>
     </div>
@@ -39,18 +50,23 @@ Si vous voulez juste découvrir la structure des notices d’agents, voici une s
 
   <div class="col-lg-6 col-md-12 text-center">
     <h4>
-      Activities of corporate bodies (ANF)
+      Functions of corporate bodies
     </h4>
     <div class="chart-wrapper">
       <canvas id="corporateBodyAnfChart"></canvas>
     </div>
   </div>
-
 </div>
 
 ---
 
-## Corporate bodies
+## Record Examples
+
+To illustrate the **quality and diversity** of agent records, here is a selection of **particularly complete and representative** records:
+- **Well-structured** records, with precisely qualified data, controlled content, and links to other agents or places,
+- **Varied examples**: historical figures, major institutions, influential families.
+
+> Note: Each example is clickable and leads to the full record, where you can explore the associated relationships and metadata.
 
 - [Agence nationale du sport (France ; 2019-….)](https://rdf.archives-nationales.culture.gouv.fr/agent/053579)
 - [Bibliothèque publique d'information (Paris)](https://rdf.archives-nationales.culture.gouv.fr/agent/005422)
