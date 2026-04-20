@@ -4,16 +4,17 @@ layout: places.njk
 
 # Lieux
 
-Les **lieux** forment un référentiel géographique incomplet mais cohérent avec des lieux interconnectés. Qu’il s’agisse d’une commune, d’une rue, d’un bâtiment emblématique ou d’un territoire étranger, chaque lieu est identifié de manière précise pour servir de **point d’ancrage** aux autres entités du système.
+Un **lieu**, dans Garance, selon la norme Records in Contexts et selon d’autres modèles de métadonnées, c’est n’importe quelle zone géographique ou région délimitée et nommée (voir [la définition de la classe Place dans l’ontologie RiC-O](https://www.ica.org/standards/RiC/ontology#Place).
 
-Ces lieux permettent d’**associer les lieux** aux **agents** et aux **événements**, offrant ainsi une **cartographie cohérente** des espaces liés à l’histoire administrative, urbaine ou culturelle.
+Les notices de **lieux** présentes dans Garance forment un référentiel géographique incomplet, car constitué au fur et à mesure que les archives conservées aux Archives nationales de France (AnF) ou encore les agents sont décrits, mais cohérent, dans lequel de nombreux lieux sont déjà interconnectés. Qu’il s’agisse d’une commune, d’une rue, d’un édifice ou d’un territoire étranger, chaque lieu est identifié et décrit de manière aussi précise que possible. Les lieux sont ensuite liés aux **agents** ou à des **événements**, donnant ainsi un contexte spatial aux autres entités décrites.
+
+> Un référentiel de lieux précis et interconnecté permet de **retracer l’histoire des territoires**, d’**éviter les ambiguïtés** et d’**apporter des éléments importants pour l’interprétation des archives**.
+
 
 Sur cette page, découvrez :
-- **Des statistiques** sur leur répartition et leur diversité,
-- **Des exemples de notices** illustrant leur documentation.
+- **Des statistiques** sur la répartition et la diversité des lieux décrits,
+- **Des exemples concrets de notices** bien documentées.
 
-> **Pourquoi est-ce important ?**
-> Un référentiel de lieux précis et interconnecté permet de **retracer l’histoire des territoires**, d’**éviter les ambiguïtés** et d’**enrichir l’interprétation** des archives.
 
 ---
 
@@ -33,7 +34,7 @@ Sur cette page, découvrez :
 
 ---
 
-## Exemples de lieux bien documentées, illustrant la diversité et la richesse des informations disponibles.
+## Exemples de notices de lieux, illustrant la diversité et la richesse des informations disponibles.
 
 - [Auvergne-Rhône-Alpes (2016-.... ; région administrative)](https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI_005-d-5f0vj727s--1abiwfn04l9rn)
 - [boulevard Raspail (Paris, France)](https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI_025-d3nzctch40-teyuun8ehowz)

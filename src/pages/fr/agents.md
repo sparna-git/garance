@@ -3,12 +3,17 @@ layout: agents.njk
 ---
 # Agents
 
-Dans le modèle RIC, un **agent** désigne toute entité — **personne physique**, **collectivité** ou **famille** — qui a joué un rôle dans la création, la gestion ou la conservation de documents. Ces agents sont au cœur de la **description archivistique** : leur identification précise permet de **contextualiser les fonds** et de **faciliter la recherche** pour les chercheurs, les citoyens et les institutions.
-> **Pourquoi est-ce important ?**
-> Les agents ne sont pas de simples entrées dans une base de données : ce sont des **clés d’accès** à l’histoire administrative, culturelle et sociale de la France.
+Un **agent**, dans Garance, selon la norme Records in Contexts et selon d’autres modèles de métadonnées,  c’est n’importe quelle entité qui exerce une activité (voir [la définition de la classe Agent dans l’ontologie RiC-O](https://www.ica.org/standards/RiC/ontology#Agent).
+
+Pour l’instant, les agents décrits dans Garance sont des **personnes physiques**, des **collectivités** ou des **familles** qui ont joué ou jouent un rôle dans la création, la gestion ou la conservation des archives conservées aux Archives nationales de France (AnF), ou qui en sont le sujet. 
+
+La description fine de ces agents et des relations qu’ils ont entre eux est très importante en **archivistique** : elle permet de **contextualiser les fonds** et de **faciliter la recherche** pour les chercheurs, les citoyens et les institutions. 
+
+> La plupart des notices d’agents de Garance, ayant un contenu riche, ne sont donc pas de simples entrées dans une base de données : ce sont des **clés** pour comprendre l’histoire administrative, culturelle et sociale de la France.
+
 
 Sur cette page, découvrez :
-- **Des statistiques globales** sur leur répartition et leur typologie,
+- **Des statistiques globales** sur la répartition et la typologie des agents décrits,
 - **Des exemples concrets** de notices bien documentées, illustrant la richesse des informations disponibles.
 
 
@@ -17,9 +22,9 @@ Sur cette page, découvrez :
 
 ## Statistiques sur les agents
 
-Ces graphiques offrent une **vision synthétique** de la diversité des agents référencés. Ils permettent de :
+Ces graphiques offrent une **vision synthétique** de la diversité des agents décrits par les archivistes des AnF. Ils permettent de :
 - **Visualiser la répartition** entre personnes, collectivités et familles,
-- **Mieux cerners** les caractéristiques de ces agents et leur distribution ,
+- **Mieux cerner** les caractéristiques de ces agents et leur distribution,
 - **Comprendre l’étendue** des données disponibles.
 
 <div class="row g-4 justify-content-center my-5">
@@ -60,9 +65,9 @@ Ces graphiques offrent une **vision synthétique** de la diversité des agents r
 
 ## Exemples de notices
 
-Pour illustrer la **qualité et la diversité** des notices d’agents, voici une sélection de fiches particulièrement **complètes et représentatives** :
-- Des notices **bien structurées**, avec des champs détaillés et des liens vers d’autres agents ou lieux,
-- Des exemples **variés** : personnes historiques, institutions majeures, familles influentes,
+Pour illustrer la **qualité et la diversité** des notices d’agents, voici une sélection de fiches **particulièrement complètes et représentatives** :
+- Des notices **bien structurées**, avec des données précisément qualifiées et au contenu contrôlé, et des liens vers d’autres agents ou lieux,
+- Des exemples **variés** : personnes historiques, institutions majeures, familles influentes.
 
 > À noter : Chaque exemple est cliquable et mène vers la notice complète, où vous pourrez explorer les relations et les métadonnées associées.
 
