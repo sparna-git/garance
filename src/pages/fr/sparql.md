@@ -1,0 +1,5 @@
+---
+layout: sparql.njk
+---
+
+# Sparql

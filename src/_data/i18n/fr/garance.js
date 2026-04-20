@@ -11,6 +11,7 @@ module.exports = {
   "nav.menu.lieux.index": "Index alphabétique",
   "nav.menu.about": "À propos",
   "nav.menu.search": "Recherche",
+  "nav.menu.sparql": "Accès SPARQL",
 
   "last updated on": "dernière publication le",
   "Download data": "Télécharger les données",
