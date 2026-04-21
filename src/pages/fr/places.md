@@ -4,7 +4,7 @@ layout: places.njk
 
 # Lieux
 
-Un **lieu**, dans Garance, selon la norme Records in Contexts et selon d’autres modèles de métadonnées, c’est n’importe quelle zone géographique ou région délimitée et nommée (voir [la définition de la classe Place dans l’ontologie RiC-O](https://www.ica.org/standards/RiC/ontology#Place).
+Un **lieu**, dans Garance, selon la norme Records in Contexts et selon d’autres modèles de métadonnées, c’est **n’importe quelle zone géographique ou région délimitée et nommée** (voir [la définition de la classe Place dans l’ontologie RiC-O](https://www.ica.org/standards/RiC/ontology#Place).
 
 Les notices de **lieux** présentes dans Garance forment un référentiel géographique incomplet, car constitué au fur et à mesure que les archives conservées aux Archives nationales de France (AnF) ou encore les agents sont décrits, mais cohérent, dans lequel de nombreux lieux sont déjà interconnectés. Qu’il s’agisse d’une commune, d’une rue, d’un édifice ou d’un territoire étranger, chaque lieu est identifié et décrit de manière aussi précise que possible. Les lieux sont ensuite liés aux **agents** ou à des **événements**, donnant ainsi un contexte spatial aux autres entités décrites.
 

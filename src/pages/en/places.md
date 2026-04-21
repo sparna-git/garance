@@ -4,15 +4,15 @@ layout: places.njk
 
 # Places
 
-A **place**, in Garance, according to the Records in Contexts standard and other metadata models, is any defined and named geographical area or region (see [the definition of the Place class in the RiC-O ontology](https://www.ica.org/standards/RiC/ontology#Place)).
+A **place**, in Garance, according to the Records in Contexts standard and other metadata models, is **any defined and named geographical area or region** (see [the definition of the Place class in the RiC-O ontology](https://www.ica.org/standards/RiC/ontology#Place)).
 
-The **place** records in Garance form an incomplete but coherent geographical reference dataset, built progressively as the archives held by the Archives nationales de France (AnF) or the agents described are documented. Many places are already interconnected. Whether it is a municipality, a street, a building, or a foreign territory, each place is identified and described as precisely as possible. Places are then linked to **agents** or **events**, providing a spatial context for the other described entities.
+The descriptions of **places** in Garance form an incomplete but coherent geographical reference dataset, built progressively as the records held by the Archives nationales de France (AnF) or the agents described are documented. Many places are already interconnected. Whether it is a municipality, a street, a building, or a foreign territory, each place is identified and described as precisely as possible. Places are then linked to **agents** or **events**, providing a spatial context for the other described entities.
 
-> A precise and interconnected reference dataset of places makes it possible to **trace the history of territories**, **avoid ambiguities**, and **provide important elements for the interpretation of archives**.
+> A precise and interconnected reference dataset of places makes it possible to **trace the history of territories**, **avoid ambiguities**, and **provide important elements for the interpretation of records**.
 
 On this page, discover:
 - **Statistics** on the distribution and diversity of the places described,
-- **Concrete examples** of well-documented records.
+- **Concrete examples** of well-documented descriptions of records.
 
 ---
 
@@ -32,7 +32,7 @@ On this page, discover:
 
 ---
 
-## Examples of place records, illustrating the diversity and richness of the available information.
+## Examples of descriptions of places, illustrating the diversity and richness of the available information.
 
 - [Auvergne-Rhône-Alpes (2016-.... ; région administrative)](https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI_005-d-5f0vj727s--1abiwfn04l9rn)
 - [boulevard Raspail (Paris, France)](https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI_025-d3nzctch40-teyuun8ehowz)

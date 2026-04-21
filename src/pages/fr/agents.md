@@ -3,9 +3,9 @@ layout: agents.njk
 ---
 # Agents
 
-Un **agent**, dans Garance, selon la norme Records in Contexts et selon d’autres modèles de métadonnées,  c’est n’importe quelle entité qui exerce une activité (voir [la définition de la classe Agent dans l’ontologie RiC-O](https://www.ica.org/standards/RiC/ontology#Agent).
+Un **agent**, dans Garance, selon la norme Records in Contexts et selon d’autres modèles de métadonnées,  c’est **n’importe quelle entité qui exerce une activité**  (voir [la définition de la classe Agent dans l’ontologie RiC-O](https://www.ica.org/standards/RiC/ontology#Agent).
 
-Pour l’instant, les agents décrits dans Garance sont des **personnes physiques**, des **collectivités** ou des **familles** qui ont joué ou jouent un rôle dans la création, la gestion ou la conservation des archives conservées aux Archives nationales de France (AnF), ou qui en sont le sujet. 
+Pour l’instant, les agents décrits dans Garance sont des **personnes physiques**, des **collectivités** ou des **familles** qui ont joué ou jouent un rôle dans la création, l’accumulation ou la gestion des archives conservées aux Archives nationales de France (AnF), ou qui en sont le sujet. 
 
 La description fine de ces agents et des relations qu’ils ont entre eux est très importante en **archivistique** : elle permet de **contextualiser les fonds** et de **faciliter la recherche** pour les chercheurs, les citoyens et les institutions. 
 

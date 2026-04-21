@@ -4,17 +4,17 @@ layout: agents.njk
 
 # Agents
 
-An **agent**, in Garance—according to the Records in Contexts standard and other metadata models—is any entity that carries out an activity (see [the definition of the Agent class in the RiC-O ontology](https://www.ica.org/standards/RiC/ontology#Agent)).
+An **agent**, in Garance, according to the Records in Contexts standard and other metadata models, is **any entity that carries out an activity** (see [the definition of the Agent class in the RiC-O ontology](https://www.ica.org/standards/RiC/ontology#Agent)).
 
-For now, the agents described in Garance are **individuals**, **corporate bodies**, or **families** who have played or still play a role in the creation, management, or preservation of archives held by the Archives nationales de France (AnF), or who are the subject of these archives.
+For now, the agents described in Garance are **individuals**, **corporate bodies**, or **families** who have played or still play a role in the creation, accumulation, or management of records held by the Archives nationales de France (AnF), or who are the subject of these records.
 
-The detailed description of these agents and their relationships is of great importance in **archival science**: it helps to **contextualize archival collections** and **facilitate research** for scholars, citizens, and institutions.
+The detailed description of these agents and their relationships is of great importance in **archival science**: it helps to **contextualize archival fonds and collections** and **facilitate research** for scholars, citizens, and institutions.
 
 > Most of the agent records in Garance, with their rich content, are therefore not simple database entries: they are **keys** to understanding or writing the administrative, cultural, and social history of France.
 
 On this page, discover:
 - **Global statistics** on the distribution and typology of the agents described,
-- **Concrete examples** of well-documented records, illustrating the richness of the available information.
+- **Concrete examples** of well-documented descriptions of agents, illustrating the richness of the available information.
 
 ---
 
@@ -60,10 +60,10 @@ These charts provide a **synthetic overview** of the diversity of agents describ
 
 ---
 
-## Record Examples
+## Examples of descriptions of agents
 
-To illustrate the **quality and diversity** of agent records, here is a selection of **particularly complete and representative** records:
-- **Well-structured** records, with precisely qualified data, controlled content, and links to other agents or places,
+To illustrate the **quality and diversity** of descriptions of agents, here is a selection of **particularly complete and representative** descriptions:
+- **Well-structured** descriptions, with precisely qualified data, controlled content, and links to other agents or places,
 - **Varied examples**: historical figures, major institutions, influential families.
 
 > Note: Each example is clickable and leads to the full record, where you can explore the associated relationships and metadata.
