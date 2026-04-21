@@ -14,10 +14,10 @@ The objectives of the project are as follows:
 - Reveal the underlying graph by semantically enriching the data, in order to obtain, from a collection of XML files conforming to several different models, a unified knowledge graph linking the described entities.
 
 > The chart below provides an overview of the distribution of descriptions in the initial collection of files, by type of notice and then by type of entity.
-> ![Global statistics, in the form of a pie chart, on the AnF referentials as of January 2025: approximately 18,700 agents, 58,000 places, and 3,400 concepts!](../../../static/assets/images/stats_en_small.png "Statistics on AnF referentials as of January 2025")
+> ![Global statistics, in the form of a pie chart, on the AnF referentials as of January 2025: approximately 18,700 agents, 58,000 places, and 3,400 concepts!](../../assets/images/stats_en_small.png "Statistics on AnF referentials as of January 2025")
 
 > The table below presents statistics on the number of relationships existing between producer records in the source files, relationships that are currently not searchable via the AnF Virtual Reading Room (SLV).
-> ![Summary table of data processing steps in Garance: 70,000 RDF/XML files, JSON-LD serialization, static site generation, etc.](../../../static/assets/images/tableau_garance_en.png "Data Processing Steps in Garance")
+> ![Summary table of data processing steps in Garance: 70,000 RDF/XML files, JSON-LD serialization, static site generation, etc.](../../assets/images/tableau_garance_en.png "Data Processing Steps in Garance")
 
 - Make this graph compliant with international standards adapted to the nature of the data (mainly [RiC-O 1.1](https://www.ica.org/standards/RiC/ontology) and [SKOS](https://www.w3.org/2004/02/skos/)) and allow for the future evolution of this data and its linking with other datasets (or vice versa);
 - Improve data quality by correcting certain defects, optimizing and enriching existing data, and adding new entities;
@@ -100,7 +100,7 @@ The current technical architecture of Garance includes:
 - an index of the HTML page content, configured and produced with the [PageFind](https://pagefind.app/) software;
 - a triplestore, specifically an instance of the open-source [QLever](https://github.com/ad-freiburg/qlever) software, recently developed in Switzerland, whose qualities the Lab was able to verify by testing it on its RDF datasets. In particular, we were able to verify QLever's speed in executing imports and indexing, as well as in executing SPARQL queries.
 
-![Garance technical architecture: data transformation process, including site generation, reading/merging, and framing specifications for agents, places, and vocabularies](../../../static/assets/images/architecture_garance_en.png "Garance Technical Architecture")
+![Garance technical architecture: data transformation process, including site generation, reading/merging, and framing specifications for agents, places, and vocabularies](../../assets/images/architecture_garance_en.png "Garance Technical Architecture")
 
 The source code of Garance is available [here](https://github.com/sparna-git/garance).
 

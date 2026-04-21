@@ -14,10 +14,10 @@ Les objectifs du projet sont les suivants :
 - Révéler le graphe sous-jacent en sémantisant les données, afin d’obtenir, à partir d’une collection de fichiers XML conformes à plusieurs modèles différents, un graphe de connaissances unifié reliant entre elles les entités décrites.
 
 > Le graphique ci-contre donne une idée de la répartition des descriptions dans la collection initiale de fichiers, par type de notice puis par type d’entité.
-> ![Statistiques globales, sous la forme d’un graphique circulaire, sur les référentiels des AnF en janvier 2025 : environ 18700 agents, 58 000 lieux et 3 400 concepts!](../../../static/assets/images/stats_fr_small.png "Statistiques sur les référentiels des AnF en janvier 2025")
+> ![Statistiques globales, sous la forme d’un graphique circulaire, sur les référentiels des AnF en janvier 2025 : environ 18700 agents, 58 000 lieux et 3 400 concepts!](../../assets/images/stats_fr_small.png "Statistiques sur les référentiels des AnF en janvier 2025")
 
 > Le tableau ci-dessous présente des statistiques sur le nombre de relations existant entre les notices de producteurs dans les fichiers source, relations actuellement non interrogeables via la Salle des lectures virtuelles (SLV) des AnF.
-> ![Tableau récapitulatif des étapes de traitement des données dans Garance : 70 000 fichiers RDF/XML, sérialisation JSON-LD, génération du site statique, etc.](../../../static/assets/images/tableau_garance_fr.png "Étapes de traitement des données dans Garance")
+> ![Tableau récapitulatif des étapes de traitement des données dans Garance : 70 000 fichiers RDF/XML, sérialisation JSON-LD, génération du site statique, etc.](../../assets/images/tableau_garance_fr.png "Étapes de traitement des données dans Garance")
 
 - Rendre ce graphe conforme à des standards internationaux adaptés à la nature des données (essentiellement [RiC-O 1.1](https://www.ica.org/standards/RiC/ontology) et [SKOS](https://www.w3.org/2004/02/skos/)) et permettant d’envisager ensuite de faire évoluer sans difficulté ces données, et de les lier avec d’autres jeux de données (ou l’inverse) ;
 - Améliorer la qualité des données en corrigeant certains défauts, en optimisant et en enrichissant l’existant, et en ajoutant de nouvelles entités ;
@@ -100,7 +100,7 @@ L’architecture technique actuelle de Garance inclut :
 - un index du contenu des pages HTML, configuré et produit avec le logiciel [PageFind](https://pagefind.app/) ;
 - un triplestore, en l’occurrence une instance du logiciel open source [QLever](https://github.com/ad-freiburg/qlever), récemment développé en Suisse et dont le Lab a pu vérifier les qualités en le testant sur ses jeux de données RDF. En particulier, nous avons pu vérifier la rapidité de QLever dans l’exécution des imports et de l’indexation, ainsi que dans l’exécution des requêtes SPARQL.
 
-![Architecture technique de Garance : processus de transformation des données, incluant la génération du site, la lecture/fusion, et les spécifications de framing pour les agents, lieux et vocabulaires](../../../static/assets/images/architecture_garance_fr.png "Architecture technique de Garance")
+![Architecture technique de Garance : processus de transformation des données, incluant la génération du site, la lecture/fusion, et les spécifications de framing pour les agents, lieux et vocabulaires](../../assets/images/architecture_garance_fr.png "Architecture technique de Garance")
 
 Le code source de Garance est disponible [ici](https://github.com/sparna-git/garance).
 
