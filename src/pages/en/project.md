@@ -129,6 +129,8 @@ Version 1 of Garance currently offers, through an interface available in French 
 
 - Through the **SPARQL Access** item, a page that provides useful links for users wishing to either query the SPARQL service remotely via a third-party application or directly query the SPARQL endpoint via a query entry interface in this language.
 
+- The URIs of the described entities are moreover dereferenceable (content negotiation).
+
 Each entity page has a structure defined by a specification file specific to the type of entity (agent, place, or concept). Special care was taken in the design and organization of these pages. Vocabularies are displayed as an expandable diagram. It is also possible to copy/paste an entity's URI, download the RDF file describing the agent, place, or controlled vocabulary, as well as CSV files (for controlled vocabularies) or XML/EAC-CPF files (for agent records derived from AnF creator records).
 
 
