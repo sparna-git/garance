@@ -490,7 +490,7 @@ async function readJsonStream(filePath) {
   console.log("Graph size: " + dataJsonLdAgents.graph.length);
   dataJsonLdAgents.graph = dataJsonLdAgents.graph.filter((obj) => !hasType(obj, "rico:PhysicalLocation"));
   dataJsonLdAgents.graph = dataJsonLdAgents.graph.filter((obj) => !hasType(obj, "rico:Coordinates"));
-  deleteAllOnTypeExcept(dataJsonLdAgents.graph, "rico:Place", ["rdfs:label"]);
+  deleteAllOnTypeExcept(dataJsonLdAgents.graph, "rico:Place", ["rdfs:label","rico:name"]);
   dataJsonLdAgents.graph = cleanPreferredAgentsNames(dataJsonLdAgents.graph);
   console.log("Graph size: " + dataJsonLdAgents.graph.length);
 

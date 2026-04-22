@@ -459,7 +459,11 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
               <div class="col">  
                 <ul>  
                   {% for a in concepts.relatedMatch %}
-                    <li><a href="{{ a.id | toUrl | relative(page) }}">{{ a.prefLabel | lang('fr') }}</a></li>
+                    {% if a.prefLabel %}
+                      <li><a href="{{ a.id | toUrl | relative(page) }}">{{ a.prefLabel | lang('fr') }}</a></li>
+                    {% else %}
+                      <li><a href="{{ a.id | toUrl | relative(page) }}">{{ a.id | toUrl | relative(page) }}</a></li>
+                    {% endif %}
                   {% endfor %}
                 </ul>
               </div>
