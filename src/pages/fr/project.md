@@ -117,7 +117,7 @@ L’architecture technique actuelle de Garance inclut :
 ![Architecture technique de Garance : processus de transformation des données RDF et de génération du site web](../../../assets/images/architecture_garance_fr.png "Architecture technique de Garance")
 
 
-Le code source de Garance est disponible [ici](https://github.com/sparna-git/garance).
+Le code source de Garance est disponible [ici](https://github.com/sparna-git/garance). 
 
 
 ---
