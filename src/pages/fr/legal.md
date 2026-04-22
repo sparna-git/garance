@@ -8,7 +8,7 @@ layout: legal.njk
 
 Les données RDF (données ouvertes liées) accessibles, interrogeables et téléchargeables par la présente application web ont été produites par les Archives nationales de France. Il s’agit d’informations publiques ; l’utilisateur dispose d’un droit non exclusif et gratuit de libre réutilisation de ces données à des fins commerciales ou non, dans le monde entier. Il doit accompagner chaque rediffusion des informations de l’indication précise de l’origine des métadonnées (« Archives nationales de France - site web Garance de diffusion des référentiels sémantisés  ([https://rdf.archives-nationales.culture.gouv.fr/garance](https://rdf.archives-nationales.culture.gouv.fr/garance)) » et de la date de ces métadonnées (actuellement 2026).
 
-Dans le cas où l’utilisateur souhaite citer la description d’une entité (agent, concept ou lieu) publiée dans Garance, il est invité à utiliser l’URI de l’entité, telle qu’elle est affichée sur la page web de Garance et telle qu’on la trouve dans le fichier RDF source.
+Dans le cas où l’utilisateur souhaite citer la description d’une entité (agent, concept ou lieu) publiée dans Garance, il est invité à utiliser l’URI de l’entité, tel qu’il est affiché sur la page web de Garance et tel qu’on le trouve dans le fichier RDF source.
 
 Par exemple, pour citer la description de Simone Veil dans Garance, il convient d’écrire :
 « Description de Simone Veil (1927-2017) dans le site web Garance de diffusion des référentiels sémantisés des Archives nationales de France : [https://rdf.archives-nationales.culture.gouv.fr/agent/009941](https://rdf.archives-nationales.culture.gouv.fr/agent/009941) ». 
@@ -20,9 +20,9 @@ Les textes et images constituant la documentation et les autres pages éditorial
 
 ## Téléchargement des données
 
-Vous pouvez télécharger le fichier XML/RDF de chacun des vocabulaires contrôlés, des agents et des lieux décrits depuis la page web correspondante dans Garance. Vouus pouvez aussi télécharger une version CSV, produite à partir du fichier XML/RDF, de chacun des vocabulaires contrôlés, et la version source, en XML/EAC-CPF, de la plupart des notices d’agents.
+Vous pouvez télécharger le fichier XML/RDF de chacun des vocabulaires contrôlés, des agents et des lieux décrits depuis la page web correspondante dans Garance. Vous pouvez aussi télécharger une version CSV, produite à partir du fichier XML/RDF, de chacun des vocabulaires contrôlés, et la version source, en XML/EAC-CPF, de la plupart des notices d’agents.
 
-Vous pouvez également télécharger l’ensemble des données RDF depuis le dépôt public dans lequel nous le gérons sur GitHub : [https://github.com/ArchivesNationalesFR/Referentiels](https://github.com/ArchivesNationalesFR/Referentiels). Nous tenons à préciser qu’**actuellement la version 2 de ce jeu de données est en construction ; une release cohérente sera publiée vers la mi-juin 2026**.
+Vous pouvez également télécharger l’ensemble des données RDF depuis le dépôt public dans lequel nous le gérons sur GitHub : [https://github.com/ArchivesNationalesFR/Referentiels](https://github.com/ArchivesNationalesFR/Referentiels). Nous tenons à préciser qu’**actuellement la version 2 de ce jeu de données est en construction ; une *release* cohérente sera publiée vers la mi-juin 2026**.
 
 ---
 

@@ -148,7 +148,7 @@ Vous trouverez ci-après quelques informations non exhaustives sur la feuille de
 
 **Avant la mi-juin 2026**
 
-- **Publication sur GitHub et dans Garance de la release de la version 2 des référentiels sémantisés**, incluant notamment, outre ce qui est déjà disponible, des versions fortement enrichies des référentiels des types de documents et de groupes de documents, et, sans doute, l’ajout dans chaque fichier RDF d’une propriété spécifiant un score de qualité calculé à partir du contenu du fichier.
+- **Publication sur GitHub et dans Garance de la version 2 des référentiels sémantisés**, incluant notamment, outre ce qui est déjà disponible, des versions fortement enrichies des référentiels des types de documents et de groupes de documents, et, sans doute, l’ajout dans chaque fichier RDF d’une propriété spécifiant un score de qualité calculé à partir du contenu du fichier.
 - Intégration à l’interface d’une documentation technique sur le profil des données contenues dans Garance (profils SHACL).
 
 **Avant la fin 2026**
