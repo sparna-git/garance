@@ -198,11 +198,13 @@
     "example": {
       "@explicit": true,
       "@omitDefault": true,
+      "type" : {},
       "rico:name": { "@omitDefault": true },
       "rico:title": { "@omitDefault": true },
       "rdfs:seeAlso": { "@omitDefault": true },
       "rico:identifier": { "@omitDefault": true }
     },
+    
     "changenote": {
       "@explicit": true,
       "@omitDefault": true,
@@ -269,5 +271,6 @@
       "@embed": "@always",
       "prefLabel": {}      
     }
+    
   }
 }
