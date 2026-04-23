@@ -4,18 +4,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v3
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v3
         with:
           repository: ArchivesNationalesFR/Referentiels
           path: Referentiels
           ref: main
 
       - name: Setup Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v3
         with:
-          node-version: "24"
+          node-version: "18"
       - name: Install dependencies & build
         run: |
           npm ci 
@@ -40,18 +40,8 @@ jobs:
 
       - run: npm run read Referentiels
       - run: npm run frame
-      - name: Garance-Sparna
-        uses: actions/upload-artifact@v7
-        with:
-          path: src/_data/vocabularies.json
-          archive: false
-          
       - run: npm run stats
-
-      - name: Show Vocabulary
-        run: echo src/_data/vocabularies.json
-      
-
+    
       - name: Build
         run: | 
             export NODE_OPTIONS=--max-old-space-size=4096
