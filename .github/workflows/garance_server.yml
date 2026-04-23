@@ -40,7 +40,17 @@ jobs:
 
       - run: npm run read Referentiels
       - run: npm run frame
+      - name: Garance-Sparna
+        uses: actions/upload-artifact@v7
+        with:
+          path: src/_data/vocabularies.json
+          archive: false
+          
       - run: npm run stats
+
+      - name: Show Vocabulary
+        run: echo src/_data/vocabularies.json
+      
 
       - name: Build
         run: | 
