@@ -365,7 +365,20 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
                 {% set example_sort = concepts.example | jsonSort("rico:name") %}
                 {% for e in example_sort %}
                   <li>
-                    {% set label = (e["rico:name"]["@value"] if e["rico:name"] else e["rico:title"]["@value"]) %}
+
+                    {% set label %}
+                      {% if e["rico:name"] %}
+                        {% if e["rico:name"].length %}
+                          {% set comma = joiner() %}
+                          {% for name in e["rico:name"] %} {{ comma() }}{% if name["@value"] %}{{ name["@value"] }}{% else %}{{ name }}{% endif %}{% endfor %}
+                        {% else %}
+                          {{ e["rico:name"]["@value"] }}
+                        {% endif %}
+                      {% else %}
+                        {{ e["rico:title"]["@value"] }}
+                      {% endif %}
+                    {% endset %}
+
                     {% if e.id %}
                       {# Lien vers la Salle de Lecture Virtuelle si c'est un Record #}
                       {% if e["rico:title"] and e["seeAlso"] and e["seeAlso"][0] and e["seeAlso"][0].id and e["rico:identifier"] and e["rico:identifier"]["@value"] %}
