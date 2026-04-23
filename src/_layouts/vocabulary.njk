@@ -355,7 +355,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
           {% endif %}
 
           {# skos:example #}
-          {% if concepts.example %}
+          {% if concepts.example.length > 0 %}
             <div class="row">
               <div class="col-1">
                 <h6 data-i18n="vocabulary.concept.example"></h6>                
@@ -368,7 +368,7 @@ permalink: "entities/{{ vocabulary.id | localName }}/"
                     {% set label = (e["rico:name"]["@value"] if e["rico:name"] else e["rico:title"]["@value"]) %}
                     {% if e.id %}
                       {# Lien vers la Salle de Lecture Virtuelle si c'est un Record #}
-                      {% if e["rico:title"] and e["seeAlso"] and e["rico:identifier"] %}
+                      {% if e["rico:title"] and e["seeAlso"] and e["seeAlso"][0] and e["rico:identifier"] %}
                         <a href="{{ e["seeAlso"][0].id }}">{{ e["rico:identifier"]["@value"] }}</a> : {{ label }}
                       {% else %}
                         <a href="{{ e.id | toUrl | relative(page) }}">{{ label }}</a>
