@@ -384,7 +384,7 @@ function filterPlacesWithLocationPoligone(inputJson,eNode) {
             obj[eNode][k] = newValue;            
           }
         } 
-      );
+      });
     }
   }  
 
