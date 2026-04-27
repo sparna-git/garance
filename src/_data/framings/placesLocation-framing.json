@@ -48,12 +48,13 @@
   "rico:hasOrHadPhysicalLocation": {
       "@omitDefault": true,
       "@explicit": true,
-      "rico:hasOrHadCoordinates": {
+      "rico:hasOrHadCoordinates": { 
         "@omitDefault": true,
-        "@explicit": true,
+        "@explicit": true, 
+        "rico:type": { "@omitDefault": true },
+        "rico:measure": { "@omitDefault": true },
         "rico:note": { "@omitDefault": true },
-        "rico:geodesicSystem": { "@omitDefault": true },
-        "rico:measure": { "@omitDefault": true }
-      }
+        "rico:geodesicSystem": { "@omitDefault": true }
+      }      
   }  
 }

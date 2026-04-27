@@ -373,6 +373,24 @@ let doFrame = async function (dataJsonLd, framingSpecPath, outputFile, postProce
 };
 
 
+function filterPlacesWithLocationPoligone(inputJson,eNode) {
+   
+  for (let obj of inputJson) {
+    if (Object.keys(obj).includes(eNode)) {
+      Object.entries(obj[eNode]).forEach(([k, v]) => { 
+        if (k === "rico:hasOrHadCoordinates") { 
+          if (Array.isArray(v)) {
+            const newValue = v.filter( (e) => e["rico:type"]["@value"] === "polygone" );
+            obj[eNode][k] = newValue;            
+          }
+        } 
+      );
+    }
+  }  
+
+  return inputJson;
+}
+
 async function readJsonStream(filePath) {
   return new Promise((resolve, reject) => {
     const readStream = fs.createReadStream(filePath);
@@ -451,6 +469,8 @@ async function readJsonStream(filePath) {
     function(framedData) {
       console.log("Post-processing: places location ...");
       framedData.graph = filterPlacesWithUri(framedData.graph);
+      console.log("Post-processing: places location remove all point location...");
+      framedData.graph = filterPlacesWithLocationPoligone(framedData.graph,"rico:hasOrHadPhysicalLocation")
       console.log("Done post-processing: places location ...");
       return framedData;
     }
@@ -523,9 +543,6 @@ async function readJsonStream(filePath) {
   await doFrame(dataJsonLdAgents, "src/_data/framings/agentsHeader-framing.json", "src/_data/agentsHeader.json");
   await doFrame(dataJsonLdAgents, "src/_data/framings/vocabularies-framing.json", "src/_data/vocabularies.json");
   await doFrame(dataJsonLdAgents, "src/_data/framings/index-framing.json", "src/_data/index.json");
-  console.log('Finished processing agents, vocabularies, and index.');
-
-
-
+  console.log('Finished processing agents, vocabularies, and index.'); 
 
 })();
