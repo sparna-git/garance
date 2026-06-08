@@ -255,6 +255,30 @@ function deleteRelationsWithoutProperties2(inputJson,type,properties) {
 }
 
 
+function deleteRelationsWithoutPropertiesPlace(inputJson,type,properties) {
+  
+  for (let objRP of inputJson) {
+    Object.entries(objRP).forEach(([k, v]) => {
+      if (Array.isArray(v)) {
+        // filter
+        const newValue = v.filter(
+          (item) => (item.type !== type) || (item.type === type && findItem(item, properties))          
+        );
+        if (k == type) {
+          delete objRP[k];
+        }
+      } else {
+        if (v.type === type) {
+          if (!findItem(v, properties)) {
+            delete objRP[k];
+          }
+        }
+      }
+    });
+  }
+}
+
+
 /**
  * Supprime les objets de type donné (ex: rico:PerformanceRelation) :
  * - du tableau principal `graph`
@@ -525,6 +549,10 @@ async function readJsonStream(filePath) {
     deleteRelationsWithoutProperties2(framedData.graph, "rico:MandateRelation", ["rico:beginningDate", "rico:endDate", "rico:note"]);
     deleteRelationsWithoutProperties2(framedData.graph, "rico:PlaceRelation", ["rico:beginningDate", "rico:endDate", "rico:note"]);
     // deleteRelationsWithoutProperties2(framedData.graph, "rico:PerformanceRelation", ["rico:beginningDate", "rico:endDate", "rico:note"]);
+
+    // Remove the "rico:hasOrHadLocation"
+    deleteRelationsWithoutPropertiesPlace(framedData.graph,"rico:hasOrHadLocation",["rico:Place"])
+
 
     // Supprimer les relations de OrganicProvenanceRelation
     deleteOrganicProvenanceRelation(framedData.graph, "rico:OrganicProvenanceRelation");
