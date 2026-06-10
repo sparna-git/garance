@@ -32,8 +32,8 @@ module.exports = async function (config) {
   });
 
   // ****************** generate Id ********************
-  const { IdAttributePlugin } = await import("@11ty/eleventy");
-  config.addPlugin(IdAttributePlugin);
+  //const { IdAttributePlugin } = await import("@11ty/eleventy");
+  //config.addPlugin(IdAttributePlugin);
 
 
   // ****************** Nunjucks globals ********************
