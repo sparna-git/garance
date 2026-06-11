@@ -34,12 +34,15 @@ module.exports = async function (config) {
   // ****************** generate Id ********************
   const { IdAttributePlugin } = await import("@11ty/eleventy");
   config.addPlugin(IdAttributePlugin,{    
-    filter: function({ page }) {
-			if(page.inputPath.endsWith("project.md")) {
-        return true; 
-			}
-			return false; // skip
-		}
+    
+	  filter: function({ page }) {
+		console.log(page.inputPath)
+		  if(page.inputPath.endsWith("project.md")) {
+			  return true; 
+		  }
+		  return false; // skip
+	
+	}
   });
 
 
