@@ -36,7 +36,8 @@ module.exports = async function (config) {
   config.addPlugin(IdAttributePlugin,{    
     
 	  filter: function({ page }) {
-		console.log(page.inputPath)
+		  console.log("Page URL: " + page.inputPath)
+      	  console.log("last reference in Page URL: " + page.inputPath.endsWith("project.md"))
 		  if(page.inputPath.endsWith("project.md")) {
 			  return true; 
 		  }
