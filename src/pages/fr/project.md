@@ -6,6 +6,21 @@ layout: project.njk
 
 *Note : le contenu de cette page sera modifié dans les prochaines semaines.*
 
+## Table des matières
+- [Enjeux et objectifs](#enjeux-et-objectifs)
+- [Réalisation de Garance](#realisation-de-garance)
+  - [Production du contenu](#production-du-contenu)
+    - [URIs des entités](#uris-des-entites)
+    - [Production des vocabulaires contrôlés](#production-des-vocabulaires-controles)
+    - [Production des notices d’agents](#production-des-notices-d-agents)
+    - [Production des notices de lieux](#production-des-notices-de-lieux)
+    - [Vers une version 2.0 du jeu de données](#vers-une-version-2-0-du-jeu-de-donnees)
+  - [Conception et réalisation de l’application Garance et de son interface web](#conception-et-realisation-de-l-application-garance-et-de-son-interface-web)
+    - [Architecture technique](#architecture-technique)
+    - [Fonctionnalités](#fonctionnalites)
+- [Feuille de route du projet pour 2026](#feuille-de-route-du-projet-pour-2026)
+- [Bibliographie](#bibliographie)
+
 ## Enjeux et objectifs
 
 Les objectifs du projet sont les suivants :

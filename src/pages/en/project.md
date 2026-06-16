@@ -6,6 +6,21 @@ layout: project.njk
 
 *Note: The content of this page will be updated in the coming weeks.*
 
+## Table of Contents
+- [Issues and Objectives](#issues-and-objectives)
+- [Development of Garance](#development-of-garance)
+  - [Content Production](#content-production)
+    - [URIs of Entities](#uris-of-entities)
+    - [Production of Controlled Vocabularies](#production-of-controlled-vocabularies)
+    - [Production of Agent Records](#production-of-agent-records)
+    - [Production of Place Records](#production-of-place-records)
+    - [Towards a version 2.0 of the dataset](#towards-a-version-2-0-of-the-dataset)
+  - [Design and Implementation of the Garance Application and its Web Interface](#design-and-implementation-of-the-garance-application-and-its-web-interface)
+    - [Technical Architecture](#technical-architecture)
+    - [Features](#features)
+- [Project Roadmap for 2026](#project-roadmap-for-2026)
+- [Bibliography](#bibliography)
+
 ## Issues and Objectives
 
 The objectives of the project are as follows:
