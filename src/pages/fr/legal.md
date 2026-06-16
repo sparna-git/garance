@@ -22,7 +22,7 @@ Les textes et images constituant la documentation et les autres pages éditorial
 
 Vous pouvez télécharger le fichier XML/RDF de chacun des vocabulaires contrôlés, des agents et des lieux décrits depuis la page web correspondante dans Garance. Vous pouvez aussi télécharger une version CSV, produite à partir du fichier XML/RDF, de chacun des vocabulaires contrôlés, et la version source, en XML/EAC-CPF, de la plupart des notices d’agents.
 
-Vous pouvez également télécharger l’ensemble des données RDF depuis le dépôt public dans lequel nous le gérons sur GitHub : [https://github.com/ArchivesNationalesFR/Referentiels](https://github.com/ArchivesNationalesFR/Referentiels). Nous tenons à préciser qu’**actuellement la version 2 de ce jeu de données est en construction ; une *release* cohérente sera publiée vers la mi-juin 2026**.
+Vous pouvez également télécharger l’ensemble des données RDF depuis le dépôt public dans lequel nous le gérons sur GitHub : [https://github.com/ArchivesNationalesFR/Referentiels](https://github.com/ArchivesNationalesFR/Referentiels). Nous tenons à préciser qu’**actuellement la version 2 de ce jeu de données est en construction ; une *release* cohérente sera publiée vers la fin juillet 2026**.
 
 ---
 
@@ -40,7 +40,7 @@ Pour plus d’informations sur les composants logiciels open-source utilisés po
 **Équipe projet** :
 
 
-- Lab (à la direction du Numérique et de la Conservation) des Archives nationales de France : Florence Clavaud, Pauline Charbonnier (jusqu’à son départ en octobre 2022), Mathieu Zrhal (d’avril 2023 à octobre 2024), Yanis Massamba et Xinyi Shen (depuis juin 2025)
+- Lab (à la direction du Numérique et de la Conservation) des Archives nationales de France : Florence Clavaud, Pauline Charbonnier (jusqu’à octobre 2022), Mathieu Zrhal (d’avril 2023 à octobre 2024), Yanis Massamba et Xinyi Shen (depuis juin 2025)
 - Société Sparna : Thomas Francart, Jorge Aquino Sanchez et Tarek Bouzelat
 - Société Zazuko GmbH : Adrian Gschwend et Ludovic Muller (depuis décembre 2025)
 - Département des systèmes d’information (à la direction du Numérique et de la Conservation) des Archives nationales de France : Aïssa Lakrib et Alexandre Quach

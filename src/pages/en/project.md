@@ -4,7 +4,6 @@ layout: project.njk
 
 # The Project
 
-*Note: The content of this page will be updated in the coming weeks.*
 
 ## Table of Contents
 - [Issues and Objectives](#issues-and-objectives)
@@ -98,11 +97,11 @@ For all places, preferred denominations were, as far as possible, brought into c
 
 #### Towards a version 2.0 of the dataset
 
-Version 2.0 of the resulting graph is being finalized. Some work is still ongoing, particularly concerning the standardization of place names in Paris and their categorization. All the files are already available on [GitHub](https://github.com/ArchivesNationalesFR/Referentiels). Furthermore, each of the source RDF files for the Garance pages can be downloaded from this page.
+Version 2.0 of the resulting graph is being finalized. Some work is still ongoing. All the files are already available on [GitHub](https://github.com/ArchivesNationalesFR/Referentiels) and accessible throug Garance.
 
-**A complete and consistent release will be published on GitHub before mid-June 2026, and its content will of course be made accessible via Garance at the same time.**
+**A complete and consistent release will be published on GitHub before the end of July 2026, and its content will of course be made accessible via Garance at the same time.**
 
-In addition, for the needs of the project (particularly for the description of agents and Paris streets) and other projects, a small extension of the RiC-O 1.1 ontology was developed (see[ here](https://github.com/ArchivesNationalesFR/ontology)), whose version 1.0 will be published in June 2026.
+In addition, for the needs of the project (particularly for the description of agents and Paris streets) and other projects, a small extension of the RiC-O 1.1 ontology was developed (see[ here](https://github.com/ArchivesNationalesFR/ontology)), whose version 1.0 will be published in July 2026.
 
 ---
 
@@ -155,7 +154,7 @@ Each entity page has a structure defined by a specification file specific to the
 
 Below are some non-exhaustive information about the Garance project roadmap.
 
-**Before mid-June 2026**
+**Before the end of July 2026**
 
 - **Publication on Github and in Garance of the release of version 2 of the reference data**, including notably, in addition to what is already available, significantly enriched versions of the vocabularies of documentary form types and record set types, and, likely, the addition in each RDF file of a property specifying a quality score calculated from the file's content.
 - **Integration into the interface of technical documentation on the profile of the data contained in Garance (SHACL profiles)**.
