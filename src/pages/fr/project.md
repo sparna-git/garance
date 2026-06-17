@@ -4,7 +4,21 @@ layout: project.njk
 
 # Le projet
 
-*Note : le contenu de cette page sera modifié dans les prochaines semaines.*
+
+## Table des matières
+- [Enjeux et objectifs](#enjeux-et-objectifs)
+- [Réalisation de Garance](#realisation-de-garance)
+  - [Production du contenu](#production-du-contenu)
+    - [URIs des entités](#uris-des-entites)
+    - [Production des vocabulaires contrôlés](#production-des-vocabulaires-controles)
+    - [Production des notices d’agents](#production-des-notices-d-agents)
+    - [Production des notices de lieux](#production-des-notices-de-lieux)
+    - [Vers une version 2.0 du jeu de données](#vers-une-version-2-0-du-jeu-de-donnees)
+  - [Conception et réalisation de l’application Garance et de son interface web](#conception-et-realisation-de-l-application-garance-et-de-son-interface-web)
+    - [Architecture technique](#architecture-technique)
+    - [Fonctionnalités](#fonctionnalites)
+- [Feuille de route du projet pour 2026](#feuille-de-route-du-projet-pour-2026)
+- [Bibliographie](#bibliographie)
 
 ## Enjeux et objectifs
 
@@ -89,11 +103,11 @@ Pour tous les lieux, les dénominations préférentielles ont été mises en con
 
 #### Vers une version 2.0 du jeu de données
 
-La version 2.0 du graphe obtenu est en cours de finalisation. Certains travaux sont encore en cours, notamment pour ce qui concerne la normalisation des noms de lieux de Paris et leur catégorisation. L’ensemble des fichiers est d’ores et déjà disponible sur [GitHub](https://github.com/ArchivesNationalesFR/Referentiels). Par ailleurs chacun des fichiers RDF source des pages de Garance est téléchargeable depuis cette page.
+La version 2.0 du graphe obtenu est en cours de finalisation. Certains travaux sont encore en cours. L’ensemble des fichiers est ceoendant d’ores et déjà disponible sur [GitHub](https://github.com/ArchivesNationalesFR/Referentiels) et accessible par Garance.
 
-**Une release complète et cohérente sera publiée sur GitHub avant la mi-juin 2026, et son contenu sera bien évidemment en même temps rendu accessible via Garance.**
+**Une release complète et cohérente sera publiée sur GitHub avant la fin juillet 2026, et son contenu sera bien évidemment en même temps rendu accessible via Garance.**
 
-Par ailleurs, pour les besoins du projet (en particulier pour la description des agents et des voies de Paris) et d’autres projets, une petite extension de l’ontologie RiC-O 1.1 a été élaborée (voir [ici](https://github.com/ArchivesNationalesFR/ontology)), dont la version 1.0 sera publiée en juin 2026.
+Par ailleurs, pour les besoins du projet (en particulier pour la description des agents et des voies de Paris) et d’autres projets, une petite extension de l’ontologie RiC-O 1.1 a été élaborée (voir [ici](https://github.com/ArchivesNationalesFR/ontology)), dont la version 1.0 sera publiée en juillet 2026.
 
 ---
 
@@ -132,7 +146,7 @@ La version 1 de Garance propose actuellement, via une interface disponible en fr
     - quand on clique directement sur l’item, accès à une page de présentation générale des notices, incluant quelques diagrammes et une liste d’exemples ;
     - quand on choisit le sous-item **« Index alphabétique »**, accès à une liste alphabétique complète des agents ou des lieux, triés selon les noms privilégiés des entités ;
 
-- Par l’item **Recherche**, une page permettant d’effectuer une recherche rapide dans le contenu des pages à l’aide d’un index produit par PageFind, configuré pour s’adapter à la structure et à la nature des données disponibles. Les résultats de recherche montrent le mot ou l’expression saisie en contexte. Une fois une première recherche effectuée, la colonne de gauche permet d’afficher et de choisir ou décocher divers filtres (comme le type de lieu ou le type de collectivité), pour réduire le périmètre de la recherche.
+- Par l’item **Recherche**, une page permettant d’effectuer une recherche rapide dans le contenu des notices à l’aide d’un index produit par PageFind, configuré pour s’adapter à la structure et à la nature des données disponibles. Les résultats de recherche montrent le mot ou l’expression saisie en contexte. Une fois une première recherche effectuée, la colonne de gauche permet d’afficher et de choisir ou décocher divers filtres (comme le type de lieu ou le type de collectivité), pour réduire le périmètre de la recherche.
 
 - Par l’item **Accès SPARQL**, une page qui donne notamment les liens utiles aux utilisateurs désirant soit interroger à distance le service SPARQL via une application tierce, soit interroger directement le endpoint SPARQL via une interface de saisie de requêtes dans ce langage.
 
@@ -146,7 +160,7 @@ Chaque page d’entité présente une structure définie par un fichier de spéc
 
 Vous trouverez ci-après quelques informations non exhaustives sur la feuille de route du projet Garance.
 
-**Avant la mi-juin 2026**
+**Avant la fin juillet 2026**
 
 - **Publication sur GitHub et dans Garance de la version 2 des référentiels sémantisés**, incluant notamment, outre ce qui est déjà disponible, des versions fortement enrichies des référentiels des types de documents et de groupes de documents, et, sans doute, l’ajout dans chaque fichier RDF d’une propriété spécifiant un score de qualité calculé à partir du contenu du fichier.
 - Intégration à l’interface d’une documentation technique sur le profil des données contenues dans Garance (profils SHACL).

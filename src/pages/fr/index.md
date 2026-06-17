@@ -6,7 +6,7 @@ layout: index.njk
 
 Garance est **le site web expérimental de diffusion, sous la forme de graphes de connaissances, des référentiels des Archives nationales de France (AnF)**.
 
-Ces données de référence consistent en **des vocabulaires d’indexation et des notices d’autorité produits collaborativement par les archivistes des AnF**. À ce jour, elles décrivent environ **18 400 agents, 54 000 lieux et 3 400 concepts**, entités de contexte des archives conservées par l’institution. 
+Ces données de référence consistent en **des vocabulaires d’indexation et des notices d’autorité produits collaborativement par les archivistes des AnF**. À ce jour, elles décrivent environ **18 400 agents, 54 000 lieux et 3 525 concepts**, entités de contexte des archives conservées par l’institution. 
 
 Il s’agit d’**un réservoir de connaissances incomplet et très imparfait mais sans équivalent, compte tenu du domaine d’intervention des AnF et de l’expertise nécessaire pour décrire ces entités**. Ces données sont susceptibles d’intéresser de nombreux utilisateurs (archivistes, professionnels des institutions patrimoniales, chercheurs en sciences humaines et sociales, ingénieurs...) et sont déjà utilisées dans le cadre de divers projets de recherche.
 

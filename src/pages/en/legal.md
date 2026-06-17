@@ -22,7 +22,7 @@ The texts and images constituting the documentation and other editorial pages pu
 
 You can download the XML/RDF file for each of the controlled vocabularies, agents, and places from the corresponding webpage in Garance. You can also download a CSV version, generated from the XML/RDF file, of each controlled vocabulary, and the source version, in XML/EAC-CPF format, of most of the agent descriptions.
 
-You can also download all the RDF data from the public repository where we manage it on GitHub: [https://github.com/ArchivesNationalesFR/Referentiels](https://github.com/ArchivesNationalesFR/Referentiels). Please note that **version 2 of this dataset is currently under construction; a consistent release will be published around mid-June 2026**.
+You can also download all the RDF data from the public repository where we manage it on GitHub: [https://github.com/ArchivesNationalesFR/Referentiels](https://github.com/ArchivesNationalesFR/Referentiels). Please note that **version 2 of this dataset is currently under construction; a consistent release will be published by the end of July 2026**.
 
 ---
 
@@ -36,7 +36,7 @@ For more information on the open-source software components used to create Garan
 
 **Project Team**:
 
-- Lab (within the Direction du Numérique et de la Conservation) of the Archives nationales de France: Florence Clavaud, Pauline Charbonnier (until her departure in October 2022), Mathieu Zrhal (from April 2023 to October 2024), Yanis Massamba and Xinyi Shen (since June 2025)
+- Lab (within the Direction du Numérique et de la Conservation) of the Archives nationales de France: Florence Clavaud, Pauline Charbonnier (until October 2022), Mathieu Zrhal (from April 2023 to October 2024), Yanis Massamba and Xinyi Shen (since June 2025)
 - Sparna Company: Thomas Francart, Jorge Aquino Sanchez and Tarek Bouzelat
 - Zazuko GmbH Company: Adrian Gschwend and Ludovic Muller (since December 2025)
 - Information Systems Department (within the Direction du Numérique et de la Conservation) of the Archives nationales de France: Aïssa Lakrib and Alexandre Quach
