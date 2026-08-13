@@ -120,7 +120,7 @@ Cette commande applique les specs de framing du dossier `src/_data/framings` sur
 `npm run build` pour la génération du site final.
 Le résultat finale est dans le répertoire `dist`
 
-### 4.2 Lancer le serveur sans regénérer le site
+#### 4.2 Lancer le serveur sans regénérer le site
 
 `npm run start-ignore-initial` pour lancer le serveur sans regénération complète initiale du site. Le site sera toutefois regénéré de façon incrémentale si un fichier source est modifié.
 
@@ -134,6 +134,30 @@ Le résultat finale est dans le répertoire `dist`
 2. Arrêter le serveur (CTRL+C) une fois le site généré
 3. `npx pagefind` pour générer l'index pagefind
 4. `npm run start-ignore-initial` pour relancer le serveur sans régénération initiale, mais qui prendra en compte l'index pagefind
+
+### Fichiers JSON générés par le framing
+
+L'étape de framing génère les fichiers JSON suivants dans `src/_data`:
+
+- `agents.json`
+- `agentsHeader.json`
+- `places.json`
+- `placesHeader.json`
+- `placesLocation.json`
+- `vocabularies.json`
+- `index.json`
+
+### Fichiers de "filters" sous `src/utils`
+
+Le dossier `src/utils` contient les fichiers suivants qui contiennent des "filters" Nunjucks, c'est-à-dire des fonctions utilitaires appelées par les layouts:
+
+- `filters.js`
+- `jsonld.js`
+- `shapes.js`
+- `archives-nationales.js`
+
+
+
 
 ## /!\ Instable / Non testé - Utilisation de Python pour le framing JSON-LD et les CVS RiC-O
 
