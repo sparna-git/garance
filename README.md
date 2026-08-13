@@ -156,8 +156,18 @@ Le dossier `src/utils` contient les fichiers suivants qui contiennent des "filte
 - `shapes.js`
 - `archives-nationales.js`
 
+### Fichier i18n de traductions
 
+dans `src/_data/i18n` en particulier `garance.js` contient les libellés des entrées de menu qui correspondent aux vocabulaires contrôlés
 
+### Fichiers de layout
+
+Sous `src/_layouts` :
+
+- `vocabulary.njk` : layout d'affichage des pages de vocabulaire contrôlés
+- `jsonld.njk` : layout d'affichage générique d'un objet JSON-LD en HTML
+- `letters-agents.njk` et `letters-places.njk` : indexs alphabétiques
+- `main.njk` : template racine principal dans lequel le résultat des autres templates est inclus
 
 ## /!\ Instable / Non testé - Utilisation de Python pour le framing JSON-LD et les CVS RiC-O
 
