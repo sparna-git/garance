@@ -168,6 +168,7 @@ Sous `src/_layouts` :
 - `jsonld.njk` : layout d'affichage générique d'un objet JSON-LD en HTML
 - `letters-agents.njk` et `letters-places.njk` : indexs alphabétiques
 - `main.njk` : template racine principal dans lequel le résultat des autres templates est inclus
+- `agentOrPlaceHeader.njk` : template d'entête pour les agents et les lieux
 
 ## /!\ Instable / Non testé - Utilisation de Python pour le framing JSON-LD et les CVS RiC-O
 
