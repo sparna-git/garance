@@ -139,13 +139,13 @@ Le résultat finale est dans le répertoire `dist`
 
 L'étape de framing génère les fichiers JSON suivants dans `src/_data`:
 
-- `agents.json`
-- `agentsHeader.json`
-- `places.json`
-- `placesHeader.json`
-- `placesLocation.json`
-- `vocabularies.json`
-- `index.json`
+- `agents.json` : toutes les données des notices d'agent (sans l'entête)
+- `agentsHeader.json` : toutes les données des entêtes des agents
+- `places.json` : toutes les données des notices de lieux (sans l'entête et les coordonnées)
+- `placesHeader.json` : les entêtes des lieux
+- `placesLocation.json` : les coordonnées des lieux
+- `vocabularies.json` : tous les vocabulaires SKOS
+- `index.json` : donne la liste des vocabulaires contrôlés
 
 ### Fichiers de "filters" sous `src/utils`
 
