@@ -151,10 +151,10 @@ L'étape de framing génère les fichiers JSON suivants dans `src/_data`:
 
 Le dossier `src/utils` contient les fichiers suivants qui contiennent des "filters" Nunjucks, c'est-à-dire des fonctions utilitaires appelées par les layouts:
 
-- `filters.js`
-- `jsonld.js`
-- `shapes.js`
-- `archives-nationales.js`
+- `filters.js` : filtres/fonctions génériques (affichages de dates, etc.)
+- `jsonld.js` : filtres génériques pour le parsing de JSON-LD, utilisé par le layout générique jsonld.njk
+- `shapes.js` : filtres génériques pour le parsing de `shapes.json`, qui est un fichier JSON qui encode quelques éléments d'une config SHACL - aussi utilisé par jsonld.njk
+- `archives-nationales.js` : filtres spécifiques pour le projet Garance
 
 ### Fichier i18n de traductions
 
