@@ -170,6 +170,20 @@ Sous `src/_layouts` :
 - `main.njk` : template racine principal dans lequel le résultat des autres templates est inclus
 - `agentOrPlaceHeader.njk` : template d'entête pour les agents et les lieux
 
+## Fichier `shapes.json`
+
+Ce fichier contient les paramétrages pour:
+
+- l'ordre d'affichage des propriétés pour chaque type d'entité (`sh:order`)
+- la propriété à utiliser pour trier des valeurs multiples : `"dash:propertyRole": "dash:sortKeyRole"`
+- Paramétrage PageFind :
+  - les propriétés à utiliser pour les meta dans Pagefind : `"pagefind:meta": ["Date de début"]`
+  - les propriétés à utiliser pour les facettes Pagefind : `"pagefind:filter": ["Type de collectivité"]`
+  - le poids dans l'index : `"pagefind:weight": 3.0`
+  - les propriétés à ignorer : `"pagefind:ignore": true`
+- la classe CSS à appliquer sur la propriété : `"volipi:class": "horizontal",`
+- un template spécifique d'affichage : `"volipi:template": "renderRicoIdentifier",`
+
 ## /!\ Instable / Non testé - Utilisation de Python pour le framing JSON-LD et les CVS RiC-O
 
 ## Prérequis
