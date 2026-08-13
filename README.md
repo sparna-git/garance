@@ -170,7 +170,7 @@ Sous `src/_layouts` :
 - `main.njk` : template racine principal dans lequel le résultat des autres templates est inclus
 - `agentOrPlaceHeader.njk` : template d'entête pour les agents et les lieux
 
-## Fichier `shapes.json`
+### Fichier `shapes.json`
 
 Ce fichier contient les paramétrages pour:
 
@@ -183,6 +183,16 @@ Ce fichier contient les paramétrages pour:
   - les propriétés à ignorer : `"pagefind:ignore": true`
 - la classe CSS à appliquer sur la propriété : `"volipi:class": "horizontal",`
 - un template spécifique d'affichage : `"volipi:template": "renderRicoIdentifier",`
+
+### Guide pour afficher une propriété supplémentaire dans l'entête
+
+0. Travailler avec un tout petit sous-ensemble de notices pour tester plus rapidement en supprimant à la main des notices dans les dossiers des référentiels
+1. Modifier le framing d'entête des agents ou des lieux : `src/_data/framings/agentsHeader-framing.json` et ajouter une entrée pour lire et structurer le prédicat correspondant
+  1.1 Tester avec la commande de frame et vérifier que la sortie contient bien les données attendues
+2. Ajouter un ou plusieurs filtres dans le fichier javascript `src/utils/archives-nationales.js` pour réaliser la lecture de la structure de données ajoutée dans le framing et renvoyer les bonnes données au layout d'affichage
+3. Modifier la layout d'affichage de l'entête :  `src/_layouts/agentOrPlaceHeader.njk`
+4. Modifier éventuellement les règles CSS liées à l'affichage de l'entête : `src/static/assets/css/garance.css`
+
 
 ## /!\ Instable / Non testé - Utilisation de Python pour le framing JSON-LD et les CVS RiC-O
 
