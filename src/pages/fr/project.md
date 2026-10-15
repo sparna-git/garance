@@ -13,11 +13,11 @@ layout: project.njk
     - [Production des vocabulaires contrôlés](#production-des-vocabulaires-controles)
     - [Production des notices d’agents](#production-des-notices-d-agents)
     - [Production des notices de lieux](#production-des-notices-de-lieux)
-    - [Vers une version 2.0 du jeu de données](#vers-une-version-2-0-du-jeu-de-donnees)
+    - [La version 2.0 du jeu de données](#la-version-2-0-du-jeu-de-donnees)
   - [Conception et réalisation de l’application Garance et de son interface web](#conception-et-realisation-de-l-application-garance-et-de-son-interface-web)
     - [Architecture technique](#architecture-technique)
     - [Fonctionnalités](#fonctionnalites)
-- [Feuille de route du projet pour 2026](#feuille-de-route-du-projet-pour-2026)
+- [Feuille de route du projet pour 2026](#feuille-de-route-du-projet)
 - [Bibliographie](#bibliographie)
 
 ## Enjeux et objectifs
@@ -69,7 +69,7 @@ Sauf exception (cas du vocabulaire dit des types de documents scindé en trois f
 
 Les données stockées initialement dans quelques éléments XML d’une DTD propre aux AnF ont été restructurées pour distinguer libellés, définition, note d’application, relations sémantiques, alignements, informations de gestion. Dans quelques cas (notamment pour le vocabulaire des types de collectivités), des contenus également produits par les AnF et stockés à l’externe ont été agrégés aux vocabulaires.
 
-Des métadonnées précises ont été ajoutées à chaque vocabulaire (`skos:ConceptScheme`). Quelques nouveaux concepts ont été ajoutés à ceux qui existaient déjà. Un nouveau vocabulaire contrôlé, celui des types de lieux, qui était indispensable pour catégoriser l’ensemble des lieux décrits, a par ailleurs été entièrement produit en RDF (il n’a pas d’équivalent actuel dans le SIA). Tous les concepts ainsi ajoutés à ceux existant dans le SIA sont qualifiés de candidats. Des exemples ont été ajoutés dans certains vocabulaires.
+Des métadonnées précises ont été ajoutées à chaque vocabulaire (`skos:ConceptScheme`). Quelques nouveaux concepts ont été ajoutés à ceux qui existaient déjà. Un nouveau vocabulaire contrôlé, celui des types de lieux, qui était indispensable pour catégoriser l’ensemble des lieux décrits, a par ailleurs été entièrement produit en RDF (il n’a pas d’équivalent actuel dans le SIA) ; il inclut aujourd’hui 249 concepts. Tous les concepts ainsi ajoutés à ceux existant dans le SIA sont qualifiés de candidats. Des exemples ont été ajoutés dans certains vocabulaires.
 
 Enfin, pour faciliter certaines réutilisations, à partir de chacun des fichiers SKOS produits, un fichier CSV, contenant l’intégralité de ce qui est stocké dans le vocabulaire, a été généré et est téléchargeable depuis GitHub ou depuis les pages de vocabulaires de Garance.
 
@@ -101,13 +101,11 @@ Pour tous les lieux, les dénominations préférentielles ont été mises en con
 
 ---
 
-#### Vers une version 2.0 du jeu de données
+#### La version 2.0 du jeu de données
 
-La version 2.0 du graphe obtenu est en cours de finalisation. Certains travaux sont encore en cours. L’ensemble des fichiers est ceoendant d’ores et déjà disponible sur [GitHub](https://github.com/ArchivesNationalesFR/Referentiels) et accessible par Garance.
+**La version 2.0 du graphe obtenu est disponible depuis le 15 octobre 2026 ! Vous pouvez télécharger la release [ici](https://github.com/ArchivesNationalesFR/Referentiels/releases/tag/2.0). Les données de cette version sont aussi celles que vous pouvez consulter et interroger dans Garance**.
 
-**Une release complète et cohérente sera publiée sur GitHub avant la fin juillet 2026, et son contenu sera bien évidemment en même temps rendu accessible via Garance.**
-
-Par ailleurs, pour les besoins du projet (en particulier pour la description des agents et des voies de Paris) et d’autres projets, une petite extension de l’ontologie RiC-O 1.1 a été élaborée (voir [ici](https://github.com/ArchivesNationalesFR/ontology)), dont la version 1.0 sera publiée en juillet 2026.
+Pour les besoins du projet (en particulier pour la description des agents et des voies de Paris) et d’autres projets, une petite extension de l’ontologie RiC-O 1.1 a été élaborée (voir [ici](https://github.com/ArchivesNationalesFR/ontology)).
 
 ---
 
@@ -122,7 +120,7 @@ Le triplestore QLever a été déployé et est maintenu par la société Zazuko 
 #### Architecture technique
 
 L’architecture technique actuelle de Garance inclut :
-- des scripts qui, à partir des quelque 70 000 fichiers RDF que compte le dépôt GitHub des référentiels sémantisés, produisent des fichiers JSON conformes à trois spécifications de framing écrites dans le langage [JSON-LD framing](https://www.w3.org/TR/json-ld11-framing/) ;
+- des scripts qui, à partir des quelque 72 600 fichiers RDF que compte le dépôt GitHub des référentiels sémantisés, produisent des fichiers JSON conformes à trois spécifications de framing écrites dans le langage [JSON-LD framing](https://www.w3.org/TR/json-ld11-framing/) ;
 - un générateur de site web statique, [Eleventy](https://www.11ty.dev/), qui produit, à partir des fichiers JSON, autant de pages statiques qu’il y a de vocabulaires, de notices de lieux et de notices d’agents, et produit aussi les pages statiques éditoriales du site web, à partir de fichiers Markdown faciles à éditer ;
 - un index du contenu des pages HTML, configuré et produit avec le logiciel [PageFind](https://pagefind.app/) ;
 - un triplestore, en l’occurrence une instance du logiciel open source [QLever](https://github.com/ad-freiburg/qlever), récemment développé en Suisse et dont le Lab a pu vérifier les qualités en le testant sur ses jeux de données RDF. En particulier, nous avons pu vérifier la rapidité de QLever dans l’exécution des imports et de l’indexation, ainsi que dans l’exécution des requêtes SPARQL.
@@ -156,24 +154,28 @@ Chaque page d’entité présente une structure définie par un fichier de spéc
 
 ---
 
-## Feuille de route du projet pour 2026
+## Feuille de route du projet
 
 Vous trouverez ci-après quelques informations non exhaustives sur la feuille de route du projet Garance.
 
-**Avant la fin juillet 2026**
-
-- **Publication sur GitHub et dans Garance de la version 2 des référentiels sémantisés**, incluant notamment, outre ce qui est déjà disponible, des versions fortement enrichies des référentiels des types de documents et de groupes de documents, et, sans doute, l’ajout dans chaque fichier RDF d’une propriété spécifiant un score de qualité calculé à partir du contenu du fichier.
-- Intégration à l’interface d’une documentation technique sur le profil des données contenues dans Garance (profils SHACL).
 
 **Avant la fin 2026**
+
+- **Intégration à l’interface d’une documentation technique sur le profil des données contenues dans Garance** (profils SHACL).
+
+- **Intégration à l’interface de Garance d’une fonctionnalité de recherche avancée**, permettant à tout utilisateur intéressé de construire des requêtes SPARQL en explorant le graphe, sans connaître le modèle de données utilisé ni le langage SPARQL, à l’aide de la dernière version en date de l’outil [Sparnatural](https://sparnatural.eu/).
+
+**En 2027**
 
 - **Mise à jour des contenus de Garance** à partir d’une version récente des fichiers source, qui sont continuellement enrichis par les archivistes des AnF (en particulier pour ce qui concerne le référentiel des producteurs).
 - Dans la limite du temps disponible, **travaux de mise à jour des données sur les circonscriptions administratives françaises et d’alignement de lieux avec des jeux de données externes** (afin notamment d’enrichir les fichiers RDF d’informations historiques, de relations temporelles et de coordonnées géographiques).
 - Dans la limite du temps disponible, mise en conformité des noms privilégiés des agents avec la norme RDA-FR.
-- **Intégration à l’interface de Garance d’une fonctionnalité de recherche avancée**, permettant à tout utilisateur intéressé de construire des requêtes SPARQL en explorant le graphe, sans connaître le modèle de données utilisé ni le langage SPARQL, à l’aide de la dernière version en date de l’outil [Sparnatural](https://sparnatural.eu/).
 
 ---
 
 ## Bibliographie
 
-Le projet a été présenté rapidement lors de la conférence annuelle SemWeb.Pro 2025, fin novembre 2025 à Paris. Retrouvez le poster et l’enregistrement vidéo de la présentation [ici](https://semweb.pro/conference/2025/presentation/clavaud-archives-garance/).
+
+Un **webinaire de présentation de Garance** a eu lieu le 18 juin 2026. Le support de présentation est disponible [ici](https://github.com/sparna-git/garance/blob/main/docs/Webinaire_Garance_18_06_2026.pdf). Vous en trouverez l’enregistrement vidéo, sous la forme d’une playlist (6 vidéos d’une durée totale d’environ 90 min), sur la chaîne Dailymotion des Archives nationales, à cette adresse : [https://dailymotion.com/playlist/xdd0n6](https://dailymotion.com/playlist/xdd0n6). 
+
+Le projet avait par ailleurs été présenté rapidement lors de la conférence annuelle SemWeb.Pro 2025, fin novembre 2025 à Paris. Retrouvez le poster et l’enregistrement vidéo de la présentation [ici](https://semweb.pro/conference/2025/presentation/clavaud-archives-garance/).  
