@@ -13,11 +13,11 @@ layout: project.njk
     - [Production of Controlled Vocabularies](#production-of-controlled-vocabularies)
     - [Production of Agent Records](#production-of-agent-records)
     - [Production of Place Records](#production-of-place-records)
-    - [Towards a version 2.0 of the dataset](#towards-a-version-2-0-of-the-dataset)
+    - [The version 2.0 of the dataset](#the-version-2-0-of-the-dataset)
   - [Design and Implementation of the Garance Application and its Web Interface](#design-and-implementation-of-the-garance-application-and-its-web-interface)
     - [Technical Architecture](#technical-architecture)
     - [Features](#features)
-- [Project Roadmap for 2026](#project-roadmap-for-2026)
+- [Project Roadmap for 2026](#project-roadmap)
 - [Bibliography](#bibliography)
 
 ## Issues and Objectives
@@ -63,7 +63,7 @@ With the exception of the vocabulary of document types (split into three RDF fil
 
 The data initially stored in some XML elements of a DTD specific to the AnF were restructured to distinguish labels, definitions, application notes, semantic relationships, alignments, and management information. In some cases (notably for the vocabulary of types of corporate bodies), content also produced by the AnF and stored externally was aggregated into the vocabularies.
 
-Precise metadata was added to each vocabulary (`skos:ConceptScheme`). A few new concepts were added to those that already existed. A new controlled vocabulary, that of place types, which was essential for categorizing all the described places, was also fully produced in RDF (it has no current equivalent in the SIA). All concepts thus added to those existing in the SIA are qualified as candidates. Examples were added in some vocabularies.
+Precise metadata was added to each vocabulary (`skos:ConceptScheme`). A few new concepts were added to those that already existed. A new controlled vocabulary, that of place types, which was essential for categorizing all the described places, was also fully produced in RDF (it has no current equivalent in the SIA) ; it currently includes 249 concepts. All concepts thus added to those existing in the SIA are qualified as candidates. Examples were added in some vocabularies.
 
 Finally, to facilitate certain reuses, a CSV file containing all the data stored in the vocabulary was generated from each of the SKOS files produced and is downloadable from GitHub or from the Garance vocabulary pages.
 
@@ -95,13 +95,11 @@ For all places, preferred denominations were, as far as possible, brought into c
 
 ---
 
-#### Towards a version 2.0 of the dataset
+#### The version 2.0 of the dataset
 
-Version 2.0 of the resulting graph is being finalized. Some work is still ongoing. All the files are already available on [GitHub](https://github.com/ArchivesNationalesFR/Referentiels) and accessible throug Garance.
+**Version 2.0 of the resulting graph has been available since October 15, 2026! You can download the release [here](https://github.com/ArchivesNationalesFR/Referentiels/releases/tag/2.0). The data included in this version is also available for browsing and querying in Garance.**
 
-**A complete and consistent release will be published on GitHub before the end of July 2026, and its content will of course be made accessible via Garance at the same time.**
-
-In addition, for the needs of the project (particularly for the description of agents and Paris streets) and other projects, a small extension of the RiC-O 1.1 ontology was developed (see[ here](https://github.com/ArchivesNationalesFR/ontology)), whose version 1.0 will be published in July 2026.
+For the needs of the project (particularly for the description of agents and Paris streets) and other projects, a small extension of the RiC-O 1.1 ontology was developed (see[ here](https://github.com/ArchivesNationalesFR/ontology)).
 
 ---
 
@@ -117,7 +115,7 @@ The QLever triplestore was deployed and is maintained by the company Zazuko GmbH
 #### Technical Architecture
 
 The current technical architecture of Garance includes:
-- scripts that, from the approximately 70,000 RDF files in the GitHub repository of the semantized reference data, produce JSON files conforming to three framing specifications written in the [JSON-LD framing](https://www.w3.org/TR/json-ld11-framing/) language;
+- scripts that, from the approximately 72,600 RDF files in the GitHub repository of the semantized reference data, produce JSON files conforming to three framing specifications written in the [JSON-LD framing](https://www.w3.org/TR/json-ld11-framing/) language;
 - a static website generator, [Eleventy](https://www.11ty.dev/), which produces, from the JSON files, as many static pages as there are vocabularies, place records, and agent records, and also produces the editorial static pages of the website, from easy-to-edit Markdown files;
 - an index of the HTML page content, configured and produced with the [PageFind](https://pagefind.app/) software;
 - a triplestore, specifically an instance of the open-source [QLever](https://github.com/ad-freiburg/qlever) software, recently developed in Switzerland, whose qualities the Lab was able to verify by testing it on its RDF datasets. In particular, we were able to verify QLever's speed in executing imports and indexing, as well as in executing SPARQL queries.
@@ -150,26 +148,28 @@ Each entity page has a structure defined by a specification file specific to the
 
 ---
 
-## Project Roadmap for 2026
+## Project Roadmap
 
 Below are some non-exhaustive information about the Garance project roadmap.
 
-**Before the end of July 2026**
-
-- **Publication on Github and in Garance of the release of version 2 of the reference data**, including notably, in addition to what is already available, significantly enriched versions of the vocabularies of documentary form types and record set types, and, likely, the addition in each RDF file of a property specifying a quality score calculated from the file's content.
-- **Integration into the interface of technical documentation on the profile of the data contained in Garance (SHACL profiles)**.
-
 **Before the end of 2026**
+
+- **Integration into the interface of technical documentation on the profile of the data contained in Garance** (SHACL profiles).
+
+- **Integration of an advanced search feature into the Garance interface**, allowing any interested user to build SPARQL queries by exploring the graph, without prior knowledge of the underlying data model or the SPARQL language, using the latest version of the [Sparnatural](https://sparnatural.eu/) tool.
+
+**In 2027**
 
 - **Update of Garance content** from a recent version of the source files, which are continuously enriched by AnF archivists (particularly concerning the records on archival creators).
 - Within the limits of available time, **update work on data regarding French administrative districts and alignment of places with external datasets** (in order to enrich RDF files with historical information, temporal relationships, and geographic coordinates).
 - Within the limits of available time, bring the preferred names of agents into compliance with the RDA-FR standard.
-- **Integration into the Garance interface of an advanced search feature**, allowing any interested user to build SPARQL queries by exploring the graph, without knowing the data model used or the SPARQL language, using the latest version of the [Sparnatural](https://sparnatural.eu/) tool.
 
 
 ---
 
 ## Bibliography
 
-The project was briefly presented at the SemWeb.Pro 2025 annual conference, at the end of November 2025 in Paris. You can find the poster and the video recording of the presentation [here](https://semweb.pro/conference/2025/presentation/clavaud-archives-garance/).
+A **webinar introducing Garance** was held on June 18, 2026. The presentation slides are available [here](https://github.com/sparna-git/garance/blob/main/docs/Webinaire_Garance_18_06_2026.pdf). A video recording of the webinar, in the form of a playlist (6 videos with a total duration of approximately 90 minutes), is available on the Archives nationales' Dailymotion channel at the following address: [https://dailymotion.com/playlist/xdd0n6](https://dailymotion.com/playlist/xdd0n6).
+
+The project had also been briefly presented at the annual SemWeb.Pro 2025 conference, held in Paris in late November 2025. You can find the poster and the video recording of the presentation [here](https://semweb.pro/conference/2025/presentation/clavaud-archives-garance/).
 
