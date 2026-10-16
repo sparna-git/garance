@@ -16,7 +16,7 @@ Le Lab des AnF a réalisé en 2021, et maintient depuis cette date sur GitHub, u
 
 En attendant qu’un nouveau système d’information soit conçu et réalisé, incluant des fonctionnalités de gestion et d’accès optimisées pour ces données de référence, **l’objectif du projet Garance est de mettre à disposition de tous les utilisateurs une solution web d’accès à ces données RDF, en les rendant de ce fait conformes aux  [principes FAIR](https://www.go-fair.org/fair-principles/), tout en explorant de nouvelles pistes de navigation, de recherche et de consultation, afin de nourrir la réflexion sur le futur SI**. 
 
-La version de l’interface de Garance que vous consultez est la **version 1, publiée fin avril 2026**. Les données qu’elle permet de consulter sont celles de la version 2.0 des référentiels, datant d’octobre 2026. Une version 2 de l’interface sera publiée déut 2027.
+La version de l’interface de Garance que vous consultez est la **version 1, publiée fin avril 2026**. **Les données qu’elle permet de consulter sont celles de la version 2.0 des référentiels, datant d’octobre 2026. Une version 2 de l’interface sera publiée déut 2027**.
 
 Vous trouverez plus d’informations sur le projet, le contenu et les fonctionnalités de Garance, en consultant [cette page](project).
 

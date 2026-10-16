@@ -22,7 +22,7 @@ The texts and images constituting the documentation and other editorial pages pu
 
 You can download the XML/RDF file for each of the controlled vocabularies, agents, and places from the corresponding webpage in Garance. You can also download a CSV version, generated from the XML/RDF file, of each controlled vocabulary, and the source version, in XML/EAC-CPF format, of most of the agent descriptions.
 
-You can also download all the RDF data from the public repository where we manage it on GitHub: ([October 2026 release 2.0](https://github.com/ArchivesNationalesFR/Referentiels/releases/tag/2.0)).
+You can also download all the RDF data from the public repository where we manage it on GitHub ([release 2.0, dated October 2026](https://github.com/ArchivesNationalesFR/Referentiels/releases/tag/2.0)).
 
 ---
 
