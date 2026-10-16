@@ -12,6 +12,8 @@ WHERE {
     SELECT ?place (SAMPLE(?rawLabel) AS ?placeTypeLabel)
     WHERE {
       ?place a rico:Place .
+      FILTER (isIRI(?place))
+      FILTER (strstarts(str(?place), "https://rdf.archives-nationales.culture.gouv.fr/place/FRAN_RI"))
       OPTIONAL {
         ?place rico:hasOrHadPlaceType ?placeType .
         ?placeType skos:prefLabel ?rawLabel .
