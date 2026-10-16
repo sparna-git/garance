@@ -17,7 +17,7 @@ layout: project.njk
   - [Conception et réalisation de l’application Garance et de son interface web](#conception-et-realisation-de-l-application-garance-et-de-son-interface-web)
     - [Architecture technique](#architecture-technique)
     - [Fonctionnalités](#fonctionnalites)
-- [Feuille de route du projet pour 2026](#feuille-de-route-du-projet)
+- [Feuille de route du projet](#feuille-de-route-du-projet)
 - [Bibliographie](#bibliographie)
 
 ## Enjeux et objectifs

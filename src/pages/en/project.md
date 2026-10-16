@@ -17,7 +17,7 @@ layout: project.njk
   - [Design and Implementation of the Garance Application and its Web Interface](#design-and-implementation-of-the-garance-application-and-its-web-interface)
     - [Technical Architecture](#technical-architecture)
     - [Features](#features)
-- [Project Roadmap for 2026](#project-roadmap)
+- [Project Roadmap](#project-roadmap)
 - [Bibliography](#bibliography)
 
 ## Issues and Objectives
@@ -99,7 +99,8 @@ For all places, preferred denominations were, as far as possible, brought into c
 
 **Version 2.0 of the resulting graph has been available since October 15, 2026! You can download the release [here](https://github.com/ArchivesNationalesFR/Referentiels/releases/tag/2.0). The data included in this version is also available for browsing and querying in Garance.**
 
-For the needs of the project (particularly for the description of agents and Paris streets) and other projects, a small extension of the RiC-O 1.1 ontology was developed (see[ here](https://github.com/ArchivesNationalesFR/ontology)).
+For the needs of the project (particularly for the description of agents and Paris streets) and other projects, a small extension of the RiC-O 1.1 ontology was developed (see 
+[here](https://github.com/ArchivesNationalesFR/ontology)).
 
 ---
 
